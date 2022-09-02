@@ -1,0 +1,2 @@
+/usr/bin/ar qc libfs.a CMakeFiles/fs.dir/FSUtil.cc.o CMakeFiles/fs.dir/Hadoop20.cc.o CMakeFiles/fs.dir/Hadoop20File.cc.o CMakeFiles/fs.dir/Hadoop3.cc.o CMakeFiles/fs.dir/Hadoop3File.cc.o CMakeFiles/fs.dir/QFSFile.cc.o CMakeFiles/fs.dir/QuantcastFS.cc.o CMakeFiles/fs.dir/UnderFS.cc.o CMakeFiles/fs.dir/UnderFile.cc.o
+/usr/bin/ranlib libfs.a

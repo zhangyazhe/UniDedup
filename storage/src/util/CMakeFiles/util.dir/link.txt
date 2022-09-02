@@ -1,0 +1,2 @@
+/usr/bin/ar qc libutil.a CMakeFiles/util.dir/RedisUtil.cc.o CMakeFiles/util.dir/galois.c.o CMakeFiles/util.dir/jerasure.c.o CMakeFiles/util.dir/tinyxml2.cpp.o
+/usr/bin/ranlib libutil.a

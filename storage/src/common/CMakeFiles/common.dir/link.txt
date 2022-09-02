@@ -1,0 +1,2 @@
+/usr/bin/ar qc libcommon.a CMakeFiles/common.dir/CmdDistributor.cc.o CMakeFiles/common.dir/Config.cc.o CMakeFiles/common.dir/CoorBench.cc.o CMakeFiles/common.dir/Coordinator.cc.o CMakeFiles/common.dir/FSObjInputStream.cc.o CMakeFiles/common.dir/FSObjOutputStream.cc.o CMakeFiles/common.dir/Logger.cc.o CMakeFiles/common.dir/OECDataPacket.cc.o CMakeFiles/common.dir/OECInputStream.cc.o CMakeFiles/common.dir/OECOutputStream.cc.o CMakeFiles/common.dir/OECWorker.cc.o CMakeFiles/common.dir/SSEntry.cc.o CMakeFiles/common.dir/StripeStore.cc.o
+/usr/bin/ranlib libcommon.a
