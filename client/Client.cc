@@ -9,7 +9,7 @@ void usage() {
 void write(string filepath, int sizeinBytes) {
     Config * conf = new Config(config_path);
     // tell local Agent filepath and filesize
-    AgentCommand *agCmd = nwe AgentCommand();
+    AgentCommand *agCmd = new AgentCommand();
     agCmd->buildType0(0, filepath, sizeinBytes);
     agCmd->sendTo(conf->_localIp);
 

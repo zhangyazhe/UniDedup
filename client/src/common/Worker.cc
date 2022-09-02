@@ -55,6 +55,28 @@ void Worker::clientWrite(AgentCommand *agCmd) {
     // get info
     string filepath = agCmd->getFilename();
     int filesize = agCmd->getFilesize();
-    // read to the memory pool
+
+    /* This part is for Zewen */
+
+    // open file (read to the memory pool)
+
+
+    // file to groups
+
+
+    // delegate fingerprint of groups
+
+
+    // consistent hash
+
+    /* This part is for Lin */
+
+    // generate file recipe
+
+
+    // set file recipe by echash
+
+
+    // distribute groups to different nodes
     
 }
