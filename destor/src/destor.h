@@ -31,6 +31,7 @@
 #include <getopt.h>
 
 #include "utils/sds.h"
+#include "utils/redis_util.h"
 
 #define TIMER_DECLARE(n) struct timeval b##n,e##n
 #define TIMER_BEGIN(n) gettimeofday(&b##n, NULL)
@@ -320,5 +321,8 @@ void hash2code(unsigned char hash[20], char code[40]);
 #define WARNING(fmt, arg...) destor_log(DESTOR_WARNING, fmt, ##arg);
 
 void destor_log(int level, const char *fmt, ...);
+
+// destor_server
+redisContext* _localCtx;
 
 #endif /* DESTOR_H_ */

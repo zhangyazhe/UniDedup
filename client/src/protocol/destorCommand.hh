@@ -12,7 +12,6 @@
  * 
  */ 
 
-
 class destorCommand
 {
 private:
@@ -25,6 +24,7 @@ private:
 
 public:
     destorCommand(/* args */);
+    destorCommand(char* reqStr);
     ~destorCommand();
 
     // basic construction methods

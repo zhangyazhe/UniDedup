@@ -7,6 +7,22 @@ destorCommand::destorCommand(/* args */)
     _rKey = "destor_request";
 }
 
+destorCommand::destorCommand(char* reqStr)
+{
+    _destorCmd = reqStr;
+    _cmLen = 0;
+
+    _type = readInt();
+
+    switch(_type) {
+        case 0: ; break;
+        default: break;
+    }
+    _destorCmd = nullptr;
+    _cmLen = 0;
+}
+
+
 destorCommand::~destorCommand()
 {
     if (_destorCmd)
@@ -59,4 +75,16 @@ int destorCommand::getType() {
 
 unsigned int destorCommand::getClientip() {
   return _clientIp;
+}
+
+void destorCommand::sendTo(unsigned int ip) {
+  redisContext* sendCtx = RedisUtil::createContext(ip);
+  redisReply* rReply = (redisReply*)redisCommand(sendCtx, "RPUSH %s %b", _rKey.c_str(), _destorCmd, _cmLen);
+  freeReplyObject(rReply);
+  redisFree(sendCtx);
+}
+
+void destorCommand::sendTo(redisContext* sendCtx) {
+  redisReply* rReply = (redisReply*)redisCommand(sendCtx, "RPUSH %s %b", _rKey.c_str(), _destorCmd, _cmLen);
+  freeReplyObject(rReply);
 }

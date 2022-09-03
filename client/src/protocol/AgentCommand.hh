@@ -30,6 +30,7 @@ private:
     int _filesize;
 public:
     AgentCommand(/* args */);
+    AgentCommand(char* reqStr);
     ~AgentCommand();
 
     // basic methods
@@ -52,6 +53,10 @@ public:
     void buildType0(int type,
                     string filepath,
                     int filesize);
+    
+
+    // resolve AgentCommand
+    void resolveType0();
 
 };
 

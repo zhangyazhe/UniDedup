@@ -7,6 +7,23 @@ AgentCommand::AgentCommand(/* args */)
     _rKey = "dup_agent_request";
 }
 
+AgentCommand::AgentCommand(char* reqStr)
+{
+  _agCmd = reqStr;
+  _cmLen = 0;
+  _type = readInt();
+
+  switch (_type)
+  {
+  case 0: ; break;
+  
+  default:
+    break;
+  }
+  _agCmd = nullptr;
+  _cmLen = 0;
+}
+
 AgentCommand::~AgentCommand()
 {
     if (_agCmd) {
@@ -91,4 +108,9 @@ void AgentCommand::buildType0(int type,
     writeString(_filepath);
     // 3. filesize
     writeInt(_filesize);
+}
+
+void AgentCommand::resolveType0() {
+  _filepath = readString();
+  _filesize = readInt();
 }
