@@ -4,6 +4,13 @@
 #include "../inc/include.hh"
 #include "../util/RedisUtil.hh"
 
+/*
+ * destor Command format
+ * request type:
+ *      
+ * 
+ * 
+ */ 
 
 class destorCommand
 {
@@ -17,14 +24,15 @@ private:
 
 public:
     destorCommand(/* args */);
+    destorCommand(char* reqStr);
     ~destorCommand();
 
     // basic construction methods
     void writeInt(int value);
-    void writeString(string s);
+    void writeString(std::string s);
     int readInt();
     int readRawInt();
-    string readString();
+    std::string readString();
 
     int getType();
     unsigned int getClientip();
@@ -33,8 +41,5 @@ public:
     void sendTo(unsigned int ip);
     void sendTo(redisContext* sendCtx);
 };
-
-
-
 
 #endif

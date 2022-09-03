@@ -1,6 +1,7 @@
 {
     "files.associations": {
         "iosfwd": "cpp",
+<<<<<<< HEAD
         "array": "cpp",
         "*.tcc": "cpp",
         "cctype": "cpp",
@@ -40,5 +41,27 @@
         "tuple": "cpp",
         "typeinfo": "cpp",
         "utility": "cpp"
+=======
+        "__hash_table": "c",
+        "__tree": "c",
+        "__tuple": "c",
+        "array": "c",
+        "chrono": "c",
+        "compare": "c",
+        "cstddef": "c",
+        "type_traits": "c",
+        "filesystem": "c",
+        "limits": "c",
+        "ratio": "c",
+        "tuple": "c",
+        "variant": "c",
+        "__functional_base": "c",
+        "__functional_base_03": "c",
+        "algorithm": "c",
+        "functional": "c",
+        "iterator": "c",
+        "memory": "c",
+        "utility": "c"
+>>>>>>> 1b1fa79d5d78477dc2aa69b1429baae78ce206f7
     }
 }

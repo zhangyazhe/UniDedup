@@ -7,6 +7,22 @@ destorCommand::destorCommand(/* args */)
     _rKey = "destor_request";
 }
 
+destorCommand::destorCommand(char* reqStr)
+{
+    _destorCmd = reqStr;
+    _cmLen = 0;
+
+    _type = readInt();
+
+    switch(_type) {
+        case 0: ; break;
+        default: break;
+    }
+    _destorCmd = nullptr;
+    _cmLen = 0;
+}
+
+
 destorCommand::~destorCommand()
 {
     if (_destorCmd)
@@ -22,7 +38,7 @@ void destorCommand::writeInt(int value) {
   memcpy(_destorCmd + _cmLen, (char*)&tmpv, 4); _cmLen += 4;
 }
 
-void destorCommand::writeString(string s) {
+void destorCommand::writeString(std::string s) {
   int slen = s.length();
   int tmpslen = htonl(slen);
   // string length
@@ -48,7 +64,7 @@ std::string destorCommand::readString() {
   int slen = readInt();
   char* sname = (char*)calloc(sizeof(char), slen+1);
   memcpy(sname, _destorCmd + _cmLen, slen); _cmLen += slen;
-  toret = string(sname);
+  toret = std::string(sname);
   free(sname);
   return toret;
 }
@@ -59,4 +75,16 @@ int destorCommand::getType() {
 
 unsigned int destorCommand::getClientip() {
   return _clientIp;
+}
+
+void destorCommand::sendTo(unsigned int ip) {
+  redisContext* sendCtx = RedisUtil::createContext(ip);
+  redisReply* rReply = (redisReply*)redisCommand(sendCtx, "RPUSH %s %b", _rKey.c_str(), _destorCmd, _cmLen);
+  freeReplyObject(rReply);
+  redisFree(sendCtx);
+}
+
+void destorCommand::sendTo(redisContext* sendCtx) {
+  redisReply* rReply = (redisReply*)redisCommand(sendCtx, "RPUSH %s %b", _rKey.c_str(), _destorCmd, _cmLen);
+  freeReplyObject(rReply);
 }

@@ -21,40 +21,44 @@ private:
     char *_agCmd = 0;
     int _cmLen = 0;
 
-    string _rKey;
+    std::string _rKey;
 
     int _type;
 
     // type 0
-    string _filepath;
+    std::string _filepath;
     int _filesize;
 public:
     AgentCommand(/* args */);
+    AgentCommand(char* reqStr);
     ~AgentCommand();
 
     // basic methods
     void writeInt(int value);
-    void writeString(string s);
+    void writeString(std::string s);
     int readInt();
-    string readString();
+    std::string readString();
 
     int getType();
     char* getCmd();
     int getCmdLen();
-    string getFilename();
+    std::string getFilename();
     int getFilesize();
 
     // send method
-    void setRKey(string key);
+    void setRKey(std::string key);
     void sendTo(unsigned int ip);
 
     // build AgentCommand
     void buildType0(int type,
-                    string filepath,
+                    std::string filepath,
                     int filesize);
+    
+
+    // resolve AgentCommand
+    void resolveType0();
 
 };
-
 
 
 
