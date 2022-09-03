@@ -38,7 +38,7 @@ void AgentCommand::writeInt(int value) {
   memcpy(_agCmd + _cmLen, (char*)&tmpv, 4); _cmLen += 4;
 }
 
-void AgentCommand::writeString(string s) {
+void AgentCommand::writeString(std::string s) {
   int slen = s.length();
   int tmpslen = htonl(slen);
   // string length
@@ -53,12 +53,12 @@ int AgentCommand::readInt() {
   return ntohl(tmpint);
 }
 
-string AgentCommand::readString() {
-  string toret;
+std::string AgentCommand::readString() {
+  std::string toret;
   int slen = readInt();
   char* sname = (char*)calloc(sizeof(char), slen+1);
   memcpy(sname, _agCmd + _cmLen, slen); _cmLen += slen;
-  toret = string(sname);
+  toret = std::string(sname);
   free(sname);
   return toret;
 }
@@ -75,7 +75,7 @@ int AgentCommand::getCmdLen() {
   return _cmLen;
 }
 
-string AgentCommand::getFilename() {
+std::string AgentCommand::getFilename() {
   return _filepath;
 }
 
@@ -83,7 +83,7 @@ int AgentCommand::getFilesize() {
     return _filesize;
 }
 
-void AgentCommand::setRKey(string key) {
+void AgentCommand::setRKey(std::string key) {
   _rKey = key;
 } 
 
@@ -95,7 +95,7 @@ void AgentCommand::sendTo(unsigned int ip) {
 }
 
 void AgentCommand::buildType0(int type,
-                    string filepath,
+                    std::string filepath,
                     int filesize) 
 {
     _type = type;

@@ -29,10 +29,10 @@ public:
 
     // basic construction methods
     void writeInt(int value);
-    void writeString(string s);
+    void writeString(std::string s);
     int readInt();
     int readRawInt();
-    string readString();
+    std::string readString();
 
     int getType();
     unsigned int getClientip();
@@ -41,6 +41,5 @@ public:
     void sendTo(unsigned int ip);
     void sendTo(redisContext* sendCtx);
 };
-
 
 #endif

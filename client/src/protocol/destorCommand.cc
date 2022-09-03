@@ -38,7 +38,7 @@ void destorCommand::writeInt(int value) {
   memcpy(_destorCmd + _cmLen, (char*)&tmpv, 4); _cmLen += 4;
 }
 
-void destorCommand::writeString(string s) {
+void destorCommand::writeString(std::string s) {
   int slen = s.length();
   int tmpslen = htonl(slen);
   // string length
@@ -64,7 +64,7 @@ std::string destorCommand::readString() {
   int slen = readInt();
   char* sname = (char*)calloc(sizeof(char), slen+1);
   memcpy(sname, _destorCmd + _cmLen, slen); _cmLen += slen;
-  toret = string(sname);
+  toret = std::string(sname);
   free(sname);
   return toret;
 }
