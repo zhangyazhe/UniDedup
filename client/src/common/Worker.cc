@@ -83,7 +83,7 @@ void Worker::clientWrite(AgentCommand *agCmd) {
 
     // set file recipe by echash
     int ret = setFileRecipe(fr);
-    assert(ret == 1);
+    assert(ret == 0);
 
     // distribute groups to different nodes
     
