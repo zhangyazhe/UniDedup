@@ -1,6 +1,7 @@
 #ifndef _WORKER_HH_
 #define _WORKER_HH_
 
+#include <assert.h>
 #include "../inc/include.hh"
 #include "Config.hh"
 #include "../protocol/AgentCommand.hh"

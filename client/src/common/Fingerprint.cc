@@ -8,6 +8,6 @@ fingerprint delegate(struct group* gp) {
     // TO DO:
 }
 
-int64_t consitentHash(fingerprint fp) {
+uint64_t consitentHash(fingerprint fp) {
     // TO DO:
 }

@@ -3,13 +3,21 @@
 
 #include "../inc/include.hh"
 #include "Config.hh"
+#include "Group.hh"
+#include <vector>
 
 struct fileRecipe {
+    char* filename;
     int32_t num;
     int64_t* node_id;
 };
 
-struct fileRecipe* getFileRecipe(struct group* gp);
+enum echash_return_t {
+    ECHASH_SUCCESS,
+    ECHASH_FAILURE
+}
+
+struct fileRecipe* getFileRecipe(const char* filename, vector<struct group*>& gps);
 int setFileRecipe(struct fileRecipe* fr);
 
 #endif

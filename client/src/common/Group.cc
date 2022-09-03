@@ -1,14 +1,26 @@
 #include "Group.hh"
 
+int openFile(const char* path) {
+    // TO DO:
+}
+
+char* baseName(const char* filepath){
+    // TO DO:
+}
+
 struct group* new_group(int len) {
     // TO DO:
 }
 
-void delete_group(struct group*) {
+void delete_group(struct group* gp) {
     // TO DO:
 }
 
-int split2Groups(int fd, struct group*gps) {
+vector<struct group*> split2Groups(int fd) {
+    // TO DO:
+}
+
+int getNodeId(struct group* gp) {
     // TO DO:
 }
 

@@ -59,23 +59,31 @@ void Worker::clientWrite(AgentCommand *agCmd) {
     /* This part is for Zewen */
 
     // open file (read to the memory pool)
-
+    int fd = openFile(filepath.c_str());
+    assert(fd != -1);
 
     // file to groups
+    vector<struct group*> gps = split2Groups(fd);
+    
+    for(auto gp : gps) {
+      // delegate fingerprint of groups
+      fingerprint fp = delegate(gp);
+      gp->delegate = fp;
 
-
-    // delegate fingerprint of groups
-
-
-    // consistent hash
+      // get node id by consistent hash
+      int nodeId = getNodeId(gp);
+      gp->nodeId = nodeId;
+    }
 
     /* This part is for Lin */
 
     // generate file recipe
-
+    struct fileRecipe* fr = getFileRecipe((const char*)baseName(filepath.c_str()), gps);
+    assert(fr != NULL);
 
     // set file recipe by echash
-
+    int ret = setFileRecipe(fr);
+    assert(ret == 1);
 
     // distribute groups to different nodes
     

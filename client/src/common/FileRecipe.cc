@@ -1,6 +1,6 @@
 #include "FileRecipe.hh"
 
-struct fileRecipe* getFileRecipe(struct group* gp) {
+struct fileRecipe* getFileRecipe(const char* filename, vector<struct group*>& gps) {
     // TO DO:
 }
 
