@@ -4,6 +4,14 @@
 #include "../inc/include.hh"
 #include "../util/RedisUtil.hh"
 
+/*
+ * destor Command format
+ * request type:
+ *      
+ * 
+ * 
+ */ 
+
 
 class destorCommand
 {
@@ -33,8 +41,6 @@ public:
     void sendTo(unsigned int ip);
     void sendTo(redisContext* sendCtx);
 };
-
-
 
 
 #endif
