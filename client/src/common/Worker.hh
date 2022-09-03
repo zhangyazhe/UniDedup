@@ -5,6 +5,9 @@
 #include "Config.hh"
 #include "../protocol/AgentCommand.hh"
 #include "../protocol/destorCommand.hh"
+#include "Group.hh"
+#include "Fingerprint.hh"
+#include "FileRecipe.hh"
 
 class Worker
 {
