@@ -5,6 +5,10 @@
 #include "Config.hh"
 #include "Fingerprint.hh"
 #include <vector>
+#include <string>
+#include <sys/types.h>
+#include <sys/stat.h>
+#include <fcntl.h>
 
 #define DEFAULT_GROUP_SIZE 4*1024*1024
 
