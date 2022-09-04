@@ -3,6 +3,10 @@
 
 #include "../inc/include.hh"
 
+#define REDIS_CREATION_FAILURE 1
+#define REDIS_BLPOP_FAILURE 2
+#define REDIS_RPUSH_FAILURE 3
+
 using namespace std;
 
 class RedisUtil {

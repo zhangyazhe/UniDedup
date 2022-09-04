@@ -1,3 +1,8 @@
+# chunking_algorithm tttd
+# chunking_algorithm fixed
+# chunking_algorithm ae
+# chunking_algorithm normalized_rabin
+# chunking_algorithm file
 chunking_algorithm rabin
 grouping_algorithm fixed
 grouping_number 1024
