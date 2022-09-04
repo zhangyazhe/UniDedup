@@ -64,16 +64,6 @@ void Worker::clientWrite(AgentCommand *agCmd) {
 
     // file to groups
     vector<struct group*> gps = split2Groups(fd);
-    
-    for(auto gp : gps) {
-      // delegate fingerprint of groups
-      fingerprint fp = delegate(gp);
-      gp->delegate = fp;
-
-      // get node id by consistent hash
-      int nodeId = getNodeId(gp);
-      gp->nodeId = nodeId;
-    }
 
     /* This part is for Lin */
 

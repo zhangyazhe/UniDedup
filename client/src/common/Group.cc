@@ -75,8 +75,8 @@ void delete_group(struct group* gp) {
     free(gp);
 }
 
-// 尚未测试！！！ 
-vector<struct group*> split2Groups(int fd) {
+// without test
+vector<struct group*> split2GroupsFixed(int fd) {
     // TO DO:
     char fileName[1024] = {'\0'};
     char path[1024] = {'\0'};
@@ -103,5 +103,20 @@ vector<struct group*> split2Groups(int fd) {
     return groupList;
 }
 
+vector<struct group*> split2Groups(int fd) {
+    //{
+    
+    // read file
 
+    // chunking
+
+    // hash
+
+    //}
+
+    // grouping
+    // 1. group chunks by grouping_number
+    // 2. get delegate fingerprint
+    // 3. get node id
+}
 

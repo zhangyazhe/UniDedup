@@ -14,7 +14,10 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+#include "Chunking.hh"
+
 #define DEFAULT_GROUP_SIZE 4*1024*1024
+#define GROUPING_FIXED 0
 
 struct group {
     char* groupName;
@@ -33,6 +36,7 @@ int openFile(const char* path);
 char* baseName(const char* filepath);
 struct group* new_group(char *fileName, int size);
 void delete_group(struct group* gp);
+vector<struct group*> split2GroupsFixed(int fd);
 vector<struct group*> split2Groups(int fd);
 
 #endif

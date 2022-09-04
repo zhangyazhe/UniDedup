@@ -1,0 +1,3 @@
+chunking_algorithm rabin
+grouping_algorithm fixed
+grouping_number 1024
