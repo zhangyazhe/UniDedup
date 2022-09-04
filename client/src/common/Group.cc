@@ -1,6 +1,8 @@
 #include "Group.hh"
 #include <sstream>
 
+static pthread_t read_t;
+
 int openFile(const char* path) {
     // TO DO:
     int fd = open(path, O_RDONLY);
@@ -103,13 +105,38 @@ vector<struct group*> split2GroupsFixed(int fd) {
     return groupList;
 }
 
+static void read_file(int fd) {
+    static unsigned char buf[DEFAULT_BLOCK_SIZE];
+    int size = 0;
+
+    struct chunk *c = NULL;
+
+    while ((size = read(fd, buf, DEFAULT_BLOCK_SIZE)) != 0) {
+        c = new_chunk(size);
+        memcpy(c->data, buf, size);
+        sync_queue_push(read_queue, c);
+    }
+}
+
+static void *read_thread(void *argv) {
+    int fd = *(int*)argv;
+    read_file(fd);
+    sync_queue_term(read_queue);
+    return NULL;
+}
+
+void start_read_phase(int fd) {
+    read_queue = sync_queue_new(10);
+    pthread_create(&read_t, NULL, read_thread, (void*)&fd);
+}
+
 vector<struct group*> split2Groups(int fd) {
-    //{
+    
     
     // read file
-
+    start_read_phase(fd);
     // chunking
-
+    start_chunk_phase();
     // hash
 
     //}
