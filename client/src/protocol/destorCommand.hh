@@ -40,6 +40,11 @@ public:
     // send method
     void sendTo(unsigned int ip);
     void sendTo(redisContext* sendCtx);
+
+    // 
+    void buildType0(int type,
+                    char* groupName,
+                    unsigned char* data);
 };
 
 #endif

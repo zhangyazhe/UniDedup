@@ -7,10 +7,15 @@
 #include "Echash.hh"
 #include <vector>
 
+struct groupMeta { 
+    char* groupName;
+    uint64_t nodeId;
+};
+
 struct fileRecipe {
     char* filename;
     int32_t num;
-    uint64_t* nodeId;
+    struct groupMeta* gm;
 };
 
 struct fileRecipe* new_fileRecipe(const char* filename, int num);

@@ -4,7 +4,7 @@
 #include "../inc/include.hh"
 #include "Config.hh"
 
-typedef unsigned char fingerprint[20];
+typedef unsigned char fingerprint[FP_LENGTH];
 
 fingerprint sha1(unsigned char *data, int32_t size);
 fingerprint delegate(struct group* gp);

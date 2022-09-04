@@ -26,7 +26,7 @@ char* baseName(const char* filepath){
     return ret;
 }
 
-struct group* new_group(int len) {
+struct group* new_group(char* file, int len) {
     // TO DO:
 }
 

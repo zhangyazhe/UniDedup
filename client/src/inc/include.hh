@@ -22,5 +22,6 @@
 #include <hiredis/hiredis.h>
 
 #define MAX_COMMAND_LEN 4096
+#define FP_LENGTH 20
 
 #endif
