@@ -49,11 +49,19 @@ int setByEchash(struct ECHash_st *ECH, struct echash_set_t* es) {
 
 struct echash_set_t* convertType(struct fileRecipe* fr) {
     struct echash_set_t* es = (struct echash_set_t*) malloc(sizeof(struct echash_set_t));
+
     size_t key_len = strlen(fr->filename);
-    size_t value_len = (key_len+1) * sizeof(char) + sizeof(int32_t) + fr->num * sizeof(uint64_t);
+    size_t value_len = sizeof(int32_t);
+    for(int i = 0; i < fr->num; i++) {
+        value_len += strlen(fr->gm[i].groupName)+1;
+        value_len += sizeof(uint64_t);
+    }
+    
     es->key = (char *) malloc((key_len+1) * sizeof(char));
-    es->value = (char *) malloc(value_len);
-    memcpy(es->key, fr->filename);
-    memcpy(es->value, fr, sizeof(struct fileRecipe));
+    es->value = (char *) malloc(value_len * sizeof(char));
+    
+    memcpy(es->key, fr->filename, key_len);
+    memcpy(es->value, fr->gm, value_len);
+    
     return es;
 }
