@@ -20,6 +20,7 @@ public:
     ~Config();
     unsigned int _localIP;
 
+    int node_num;
     std::unordered_map<uint64_t, unsigned int> id2Ip;
     int chunking_algorithm;
     int grouping_algorithm;
