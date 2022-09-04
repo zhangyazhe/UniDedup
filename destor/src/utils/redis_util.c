@@ -50,7 +50,7 @@ void destor_cmd_init_with_reqstr(destor_cmd *cmd, char* reqstr)
     cmd->_type = destor_cmd_read_int();
 
     switch(cmd->_type) {
-        case 0: ; break;
+        case 0: resolve_destor_command_type0(cmd); break;
         default: break;
     }
     cmd->_destorCmd = NULL;
@@ -126,4 +126,27 @@ char* agent_cmd_read_string(agent_cmd *cmd) {
   char* toret = (char*)calloc(sizeof(char), slen+1);
   memcpy(toret, cmd->_agCmd + cmd->_cmLen, slen); cmd->_cmLen += slen;
   return toret;
+}
+
+void build_destor_command_type0(destor_cmd* cmd, int type, char* group_name, char* data)
+{
+	cmd->_type = type;
+	int group_name_len = strlen(group_name);
+  int data_len = strlen(data);
+  cmd->_group_name = (char*)calloc(sizeof(char), group_name_len+1);
+  cmd->_data = (char*)calloc(sizeof(char), data_len+1);
+  strcpy(cmd->_group_name, group_name);
+  strcpy(cmd->_data, data);
+	// 1. type
+	destor_cmd_write_int(cmd->_type);
+	// 2. group_name
+	destor_cmd_write_string(cmd->_group_name);
+	// 3. data
+	destor_cmd_write_string(cmd->_data);
+}
+
+void resolve_destor_command_type0(destor_cmd* cmd)
+{
+  cmd->_group_name = destor_cmd_read_string(cmd);
+  cmd->_data = destor_cmd_read_string(cmd);
 }

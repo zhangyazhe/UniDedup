@@ -13,6 +13,11 @@ typedef struct destor_cmd
     char* _rKey;
     int _type;
     unsigned int _clientIp;
+
+    // type0
+	char* _group_name;
+	char* _data;
+
 } destor_cmd;
 
 typedef struct agent_cmd
@@ -46,6 +51,10 @@ int destor_cmd_read_int(destor_cmd *cmd);
 int agent_cmd_read_int(agent_cmd *cmd);
 char* destor_cmd_read_string(destor_cmd *cmd);
 char* agent_cmd_read_string(agent_cmd *cmd);
+
+// destor command
+void build_destor_command_type0(destor_cmd* cmd, int type, char* group_name, char* data);
+void resolve_destor_command_type0(destor_cmd* cmd);
 
 
 

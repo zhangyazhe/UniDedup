@@ -22,6 +22,10 @@ private:
     int _type;
     unsigned int _clientIp;
 
+	// type0
+	std::string _groupName;
+	std::string _data;
+
 public:
     destorCommand(/* args */);
     destorCommand(char* reqStr);
@@ -41,10 +45,13 @@ public:
     void sendTo(unsigned int ip);
     void sendTo(redisContext* sendCtx);
 
-    // 
+    // build command
     void buildType0(int type,
-                    char* groupName,
-                    unsigned char* data);
+                    std::string groupName,
+                    std::string data);
+    
+    // resolve command
+    void resolveType0();
 };
 
 #endif
