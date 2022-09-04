@@ -10,7 +10,7 @@ Config::Config(std::string& configPath)
         std::string line;
         while (std::getline(reader, line)) {
             if (line.size() <= 0) continue;
-            if (line.at(0) == "#") continue;
+            if (line.at(0) == '#') continue;
             getConfigFromLine(line);
         }
     }
