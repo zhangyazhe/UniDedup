@@ -23,5 +23,7 @@
 
 #define MAX_COMMAND_LEN 4096
 #define FP_LENGTH 20
+#define BYTE_LENGTH 8
+#define INT_SIZE 4
 
 #endif
