@@ -78,7 +78,7 @@ void Worker::clientWrite(AgentCommand *agCmd) {
     /* This part is for Lin */
 
     // generate file recipe
-    struct fileRecipe* fr = getFileRecipe((const char*)baseName(filepath.c_str()), gps);
+    struct fileRecipe* fr = getFileRecipe(filepath.c_str(), gps);
     assert(fr != NULL);
 
     // set file recipe by echash
@@ -86,5 +86,10 @@ void Worker::clientWrite(AgentCommand *agCmd) {
     assert(ret == 0);
 
     // distribute groups to different nodes
-    
+    for(int i = 0; i < gps.size(); i++) {
+      destorCommand *dstCmd = new destorCommand();
+      dstCmd->buildType0(0, (const char*)gps[i]->groupName, (const char*)gps[i]->data);
+      unsigned int nodeIp = _conf->id2Ip(gps[i]->nodeId)
+      dstCmd->sendTo(nodeIp);
+    }
 }
