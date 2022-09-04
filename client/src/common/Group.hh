@@ -9,6 +9,10 @@
 #include <sys/types.h>
 #include <sys/stat.h>
 #include <fcntl.h>
+#include <pthread.h>
+#include <unistd.h>
+#include <stdio.h>
+#include <stdlib.h>
 
 #define DEFAULT_GROUP_SIZE 4*1024*1024
 
@@ -20,11 +24,15 @@ struct group {
     unsigned char *data;
 };
 
+struct {
+    uint64_t id;
+    pthread_mutex_t mutex;
+} localId = {0, PTHREAD_MUTEX_INITIALIZER};
+
 int openFile(const char* path);
 char* baseName(const char* filepath);
-struct group* new_group(char *filename, int len);
+struct group* new_group(char *fileName, int size);
 void delete_group(struct group* gp);
 vector<struct group*> split2Groups(int fd);
-int getNodeId(struct group* gp);
 
 #endif
