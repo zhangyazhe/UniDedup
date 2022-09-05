@@ -76,10 +76,22 @@ void Worker::clientWrite(AgentCommand *agCmd) {
     assert(ret == 0);
 
     // distribute groups to different nodes
+    // thread sendThrd[gps.size()];
     for(int i = 0; i < gps.size(); i++) {
       destorCommand *dstCmd = new destorCommand();
       dstCmd->buildType0(0, (const char*)gps[i]->groupName, (const char*)gps[i]->data);
-      unsigned int nodeIp = _conf->id2Ip(gps[i]->nodeId)
+      unsigned int nodeIp = _conf->id2Ip(gps[i]->nodeId);
       dstCmd->sendTo(nodeIp);
+      // sendThrd[i] = thread([&](){
+      //   destorCommand *dstCmd = new destorCommand();
+      //   dstCmd->buildType0(0, (const char*)gps[i]->groupName, (const char*)gps[i]->data);
+      //   unsigned int nodeIp = _conf->id2Ip(gps[i]->nodeId)
+      //   dstCmd->sendTo(nodeIp);
+      // });
     }
+
+    // for(int i = 0; i < gps.size(); i++) {
+    //   sendThrd[i].join();
+    // }
+
 }
