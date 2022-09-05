@@ -626,9 +626,9 @@ char *ECHash_dget_data(struct ECHash_st *ptr, const char *key, size_t key_length
 char **ECHash_dget_data_batch(int batch, struct ECHash_st *ptr, const char **key, memcached_return_t *error, int *f1, struct pos_len_st (*pos_len_list)[100], uint32_t *count)
 {
     int b = 0;
-    uint32_t ring_id[BATCH_DATA] = { -1};
-    uint32_t chunk_id[BATCH_DATA] = { -1};
-    uint32_t stripe_id[BATCH_DATA] = { -1};
+    uint32_t ring_id[BATCH_DATA] = { (uint32_t)4294967295U};
+    uint32_t chunk_id[BATCH_DATA] = { (uint32_t)4294967295U};
+    uint32_t stripe_id[BATCH_DATA] = { (uint32_t)4294967295U};
     struct gather_value gv[BATCH_DATA][N];
     char *value[BATCH_DATA];
 
@@ -727,8 +727,8 @@ char **ECHash_dget_parity_batch(int batch, struct ECHash_st *ptr, const char **k
     uint32_t b = 0;
     char *value[BATCH_PARITY];
 
-    uint32_t stripe_id[BATCH_PARITY] = { -1};
-    uint32_t ring_id[BATCH_PARITY] = { -1};
+    uint32_t stripe_id[BATCH_PARITY] = { (uint32_t)4294967295U};
+    uint32_t ring_id[BATCH_PARITY] = { (uint32_t)4294967295U};
     struct gather_value gv[BATCH_PARITY][N];
 
     for(b = 0; b < batch; b++)

@@ -139,7 +139,7 @@ void encode(struct ECHash_st *ptr, uint32_t encode_data_ring[K], struct parity_k
     //  }
     // }
 
-    uint32_t encode_parity_ring[4] = { -1, -1, -1, -1};
+    uint32_t encode_parity_ring[4] = { (uint32_t)4294967295U, (uint32_t)4294967295U, (uint32_t)4294967295U, (uint32_t)4294967295U};
     cal_parity_id(encode_data_ring, encode_parity_ring);
 
     for(i = 0; i < N - K; i++)

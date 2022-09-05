@@ -39,7 +39,7 @@ int main(int argc, char *argv[])
 {
   options_parse(argc, argv);
 
-  if (opt_servers == false)
+  if (opt_servers == (char*)false)
   {
     char *temp;
 
@@ -48,7 +48,7 @@ int main(int argc, char *argv[])
       opt_servers= strdup(temp);
     }
 
-    if (opt_servers == false)
+    if (opt_servers == (char*)false)
     {
       std::cerr << "No Servers provided" << std::endl;
       exit(EXIT_FAILURE);

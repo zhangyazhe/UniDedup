@@ -1,6 +1,6 @@
 #include "Config.hh"
 
-Config::Config(std::string& configPath)
+Config::Config(const std::string& configPath)
 {
     getIpFromIpList(ip_list_path);
     // read config
@@ -47,7 +47,7 @@ void Config::getConfigFromLine(std::string& line) {
     }
 }
 
-void Config::getIpFromIpList(std::string& ipListPath) {
+void Config::getIpFromIpList(const std::string& ipListPath) {
     // read IPs from ip_list_path
     std::ifstream reader(ipListPath);
     uint64_t idth = 0;

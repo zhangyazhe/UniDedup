@@ -21,6 +21,8 @@
 #include <arpa/inet.h>
 #include <hiredis/hiredis.h>
 
+using namespace std;
+
 #define MAX_COMMAND_LEN 4096
 #define FP_LENGTH 20
 #define BYTE_LENGTH 8

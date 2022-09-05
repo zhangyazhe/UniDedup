@@ -13,7 +13,7 @@ struct fileRecipe* new_fileRecipe(const char* filename, int num) {
     fr->num = num;
 
     // malloc node_id;
-    fr->gm = (struct groupMeta*) malloc(num * sizeof(struct groupMeta));
+    fr->gm = (groupMeta *) malloc(num * sizeof(groupMeta));
 
     return fr;
 }
@@ -33,7 +33,7 @@ struct fileRecipe* getFileRecipe(const char* filename, vector<struct group*>& gp
         struct group* gp = gps[i];
         size_t nameLen = strlen(gp->groupName);
         fr->gm[i].groupName = (char *) malloc((nameLen+1) * sizeof(char));
-        memcpy(fr->gm[i].groupName, gp->groupName);
+        memcpy(fr->gm[i].groupName, gp->groupName, nameLen+1);
         fr->gm[i].nodeId = gp->nodeId;
     }
 

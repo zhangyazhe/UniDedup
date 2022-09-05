@@ -13,10 +13,10 @@ const std::string ip_list_path = "../config/ip_list.txt";
 class Config
 {
 private:
-    void getIpFromIpList(std::string& ipListPath);
+    void getIpFromIpList(const std::string& ipListPath);
     void getConfigFromLine(std::string& line);
 public:
-    Config(std::string& configPath);
+    Config(const std::string& configPath);
     ~Config();
     unsigned int _localIP;
 

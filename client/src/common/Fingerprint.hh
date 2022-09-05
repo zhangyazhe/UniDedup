@@ -7,8 +7,8 @@
 
 typedef unsigned char fingerprint[FP_LENGTH];
 
-fingerprint sha1(unsigned char *data, int32_t size);
+void sha1(unsigned char *data, int32_t size, fingerprint fp);
 uint64_t consistentHash(fingerprint fp, int num);
-int fp2Int(fingerprint fp);
+uint64_t fp2Int(fingerprint fp);
 
 #endif
