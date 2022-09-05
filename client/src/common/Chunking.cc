@@ -36,6 +36,9 @@ static void* chunk_thread(void *arg) {
 
     unsigned char *zeros = malloc(chunkMetaData.chunk_max_size);
     bzero(zeros, chunkMetaData.chunk_max_size);
+    unsigned char *data = malloc(chunkMetaData.chunk_max_size);
+
+    struct chunk *c = NULL;
 }
 
 void start_chunk_phase() {
