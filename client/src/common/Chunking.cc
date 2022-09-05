@@ -34,11 +34,37 @@ static void* chunk_thread(void *arg) {
     int leftoff = 0;
     unsigned char *leftbuf = malloc(DEFAULT_BLOCK_SIZE + chunkMetaData.chunk_max_size);
 
-    unsigned char *zeros = malloc(chunkMetaData.chunk_max_size);
-    bzero(zeros, chunkMetaData.chunk_max_size);
-    unsigned char *data = malloc(chunkMetaData.chunk_max_size);
+    // unsigned char *data = malloc(chunkMetaData.chunk_max_size);
 
     struct chunk *c = NULL;
+
+    while (1) {
+        c = sync_queue_pop(read_queue);
+
+        while  ((leftlen < chunkMetaData.chunk_max_size) && c != NULL) {
+            memmove(leftbuf, leftbuf + leftoff, leftlen);
+            leftoff = 0;
+            memcpy(leftbuf + leftlen, c->data, c->size);
+            leftlen += c->size;
+            free_chunk(c);
+            c = sync_queue_pop(read_queue);
+        }
+        if (leftlen == 0) {
+            assert(c == NULL);
+            break;
+        }
+        int chunk_size = chunking(leftbuf + leftoff, leftlen);
+
+        struct chunk *nc = new_chunk(chunk_size);
+        memcpy(nc->data, leftbuf + leftoff, chunk_size);
+        leftlen -= chunk_size;
+        leftoff += chunk_size;
+
+        sync_queue_push(chunk_queue, nc);
+    }
+    sync_queue_term(chunk_queue);
+    free(leftbuf);
+    return NULL;
 }
 
 void start_chunk_phase() {

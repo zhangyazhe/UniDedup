@@ -26,3 +26,7 @@ void start_read_phase(int fd) {
     read_queue = sync_queue_new(10);
     pthread_create(&read_t, NULL, read_thread, (void*)&fd);
 }
+
+void stop_read_phase() {
+    pthread_join(read_t, NULL);
+}

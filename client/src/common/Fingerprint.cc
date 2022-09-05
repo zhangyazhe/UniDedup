@@ -25,3 +25,14 @@ uint64_t fp2Int(fingerprint fp) {
     }
     return res;
 }
+
+int fingerprintCmp(fingerprint fp1, fingerprint fp2) {
+    for (int i = 0; i < FP_LENGTH; ++i) {
+        if (fp1[i] > fp2[i]) {
+            return 1;
+        } else if (fp1[i] < fp2[i]) {
+            return -1;
+        }
+    }
+    return 0;
+}

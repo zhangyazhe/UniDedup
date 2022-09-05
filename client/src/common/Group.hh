@@ -14,11 +14,12 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <pthread.h>
+#include <climits>
 #include "sync_queue.h"
 
 #include "Chunking.hh"
 
-#define DEFAULT_GROUP_SIZE 4*1024*1024
+#define DEFAULT_GROUP_SIZE 1024
 #define DEFAULT_BLOCK_SIZE 1048576
 #define GROUPING_FIXED 0
 
@@ -39,6 +40,8 @@ struct {
 SyncQueue *read_queue;
 /* Output of chunk phase. */
 SyncQueue *chunk_queue;
+/* Output of hash phase. */
+SyncQueue *hash_queue;
 
 
 int openFile(const char* path);

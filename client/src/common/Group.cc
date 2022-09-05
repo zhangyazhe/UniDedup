@@ -103,20 +103,69 @@ vector<struct group*> split2GroupsFixed(int fd) {
     return groupList;
 }
 
-vector<struct group*> split2Groups(int fd) {
-    
+std::vector<struct group*> split2Groups(int fd) {
+    std::vector<struct group*> result;
+    int groupCnt = 0;
+    char fileName[1024] = {'\0'};
+    char path[1024] = {'\0'};
+    snprintf(path, sizeof(path), "/proc/self/fd/%d", fd);
+    readlink(path, fileName, sizeof(fileName) - 1);
     
     // read file
     start_read_phase(fd);
     // chunking
     start_chunk_phase();
     // hash
-
+    start_hash_phase();
     //}
 
     // grouping
     // 1. group chunks by grouping_number
     // 2. get delegate fingerprint
     // 3. get node id
+    struct chunk* chunkList[DEFAULT_GROUP_SIZE];
+    int minFingerprint = 0;
+    uint32_t size = 0;
+    for (int i = 0; i < FP_LENGTH; i++) {
+        repFingerprint[i] = UCHAR_MAX;
+    }
+    while (1) {
+        struct chunk *c = sync_queue_pop(hash_queue);
+        if (c == NULL) {
+            break;
+        }
+        groupCnt++;
+        if (groupCnt == DEFAULT_GROUP_SIZE) {
+            for (int i = 0; i < DEFAULT_GROUP_SIZE; ++i) {
+                size += chunkList[i]->size;
+                if (fp2Int(chunkList[i]->fp) <= fp2Int(chunkList[minFingerprint])) {
+                    minFingerprint = i;
+                }
+            }
+            struct group *gp = new_group(fileName, size);
+            memcpy(gp->delegate, chunkList[minFingerprint], sizeof(fingerprint));
+            gp->nodeId = consistentHash(gp->delegate, num);
+            result.push_back(gp);
+            size = 0;
+            groupCnt = 0;
+            minFingerprint = 0;
+        }
+    }
+    if (groupCnt != 0) {
+        for (int i = 0; i < groupCnt; ++i) {
+            size += chunkList[i]->size;
+            if (fp2Int(chunkList[i]->fp) <= fp2Int(chunkList[minFingerprint])) {
+                minFingerprint = i;
+            }
+        }
+        struct group *gp = new_group(fileName, size);
+        memcpy(gp->delegate, chunkList[minFingerprint], sizeof(fingerprint));
+        gp->nodeId = consistentHash(gp->delegate, num);
+        result.push_back(gp);
+    }
+    stop_read_phase();
+    stop_chunk_phase();
+    stop_hash_phase();
+    return result;
 }
 
