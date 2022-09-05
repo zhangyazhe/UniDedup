@@ -61,6 +61,14 @@ int destorCommand::readInt()
 	return ntohl(tmpint);
 }
 
+uint32_t destorCommand::readUInt()
+{
+	uint32_t tmpint;
+	memcpy((char *)&tmpint, _destorCmd + _cmLen, 4);
+	_cmLen += 4;
+	return ntohl(tmpint);
+}
+
 int destorCommand::readRawInt()
 {
 	int tmpint;
@@ -107,11 +115,13 @@ void destorCommand::sendTo(redisContext *sendCtx)
 
 void destorCommand::buildType0(int type,
 							   std::string groupName,
-							   std::string data)
+							   std::string data,
+							   uint32_t size)
 {
 	_type = type;
 	_groupName = groupName;
 	_data = data;
+	_size = size;
 
 	// 1. type
 	writeInt(_type);
@@ -124,4 +134,5 @@ void destorCommand::buildType0(int type,
 void destorCommand::resolveType0() {
 	_groupName = readString();
 	_data = readString();
+	_size = readUInt();
 }

@@ -33,7 +33,7 @@ static void read_data(char* data) {
 	TIMER_BEGIN(1);
 	int size = 0;
 
-    
+
 }
 
 static void* read_thread(void *argv) {
@@ -50,7 +50,7 @@ void start_read_phase_from_data(char* data) {
 	pthread_create(&read_t, NULL, read_thread, (void *)data);
 }
 
-void destor_write(char *path, char *data) {
+void destor_write(char *path, char *data, uint32_t size) {
     /* 初始化recipe目录 */
 	init_recipe_store();
 	/* 创建一个container_buffer队列 */
@@ -114,7 +114,7 @@ void destor_server_process()
             switch (type)
             {
             case 0:
-                destor_write(cmd->_group_name, cmd->_data);
+                destor_write(cmd->_group_name, cmd->_data, cmd->_size);
                 break;
             default:
                 break;

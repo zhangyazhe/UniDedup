@@ -106,6 +106,12 @@ int destor_cmd_read_int(destor_cmd *cmd) {
   return ntohl(tmpint);
 }
 
+uint32_t destor_cmd_read_uint(destor_cmd *cmd) {
+  uint32_t tmpint;
+  memcpy((char*)&tmpint, cmd->_destorCmd + cmd->_cmLen, 4); cmd->_cmLen += 4;
+  return ntohl(tmpint);
+}
+
 int agent_cmd_read_int(agent_cmd *cmd) {
   int tmpint;
   memcpy((char*)&tmpint, cmd->_agCmd + cmd->_cmLen, 4); cmd->_cmLen += 4;
@@ -149,4 +155,5 @@ void resolve_destor_command_type0(destor_cmd* cmd)
 {
   cmd->_group_name = destor_cmd_read_string(cmd);
   cmd->_data = destor_cmd_read_string(cmd);
+  cmd->_size = destor_cmd_read_uint(cmd);
 }

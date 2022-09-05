@@ -25,6 +25,7 @@ private:
 	// type0
 	std::string _groupName;
 	std::string _data;
+    uint32_t _size;
 
 public:
     destorCommand(/* args */);
@@ -35,6 +36,7 @@ public:
     void writeInt(int value);
     void writeString(std::string s);
     int readInt();
+    uint32_t destorCommand::readUInt()
     int readRawInt();
     std::string readString();
 

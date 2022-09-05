@@ -17,6 +17,7 @@ typedef struct destor_cmd
     // type0
 	char* _group_name;
 	char* _data;
+    uint32_t _size;
 
 } destor_cmd;
 
@@ -48,6 +49,7 @@ void agent_cmd_write_int(agent_cmd *cmd, int value);
 void destor_cmd_write_string(destor_cmd *cmd, char* s);
 void agent_cmd_write_string(agent_cmd *cmd, char* s);
 int destor_cmd_read_int(destor_cmd *cmd);
+uint32_t destor_cmd_read_uint(destor_cmd *cmd);
 int agent_cmd_read_int(agent_cmd *cmd);
 char* destor_cmd_read_string(destor_cmd *cmd);
 char* agent_cmd_read_string(agent_cmd *cmd);
