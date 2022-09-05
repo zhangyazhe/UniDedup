@@ -20,6 +20,8 @@ public:
     ~Config();
     unsigned int _localIP;
 
+    int worker_num;
+
     int node_num;
     std::unordered_map<uint64_t, unsigned int> id2Ip;
     int chunking_algorithm;
