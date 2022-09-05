@@ -7,8 +7,6 @@
 #include "Echash.hh"
 #include <vector>
 
-using namespace std;
-
 struct groupMeta { 
     char* groupName;
     uint64_t nodeId;
