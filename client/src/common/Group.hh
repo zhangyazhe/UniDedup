@@ -37,6 +37,8 @@ struct {
 
 /* Output of read phase. */
 SyncQueue *read_queue;
+/* Output of chunk phase. */
+SyncQueue *chunk_queue;
 
 
 int openFile(const char* path);

@@ -2,6 +2,7 @@
 #define _CHUNKING_HH_
 
 #include "Fingerprint.hh"
+#include <string.h>
 
 #define CHUNK_FIXED 0
 #define CHUNK_RABIN 1
