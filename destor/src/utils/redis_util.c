@@ -5,11 +5,11 @@ char* ip2Str(unsigned int ip) {
   return inet_ntoa(addr);
 }
 
-redisContext* createContext(unsigned int ip) {
+redisContext* createContextByUint(unsigned int ip) {
   return createContext(ip2Str(ip), 6379);
 }
 
-redisContext* createContext(char* ip) {
+redisContext* createContextByChar(char* ip) {
   return createContext(ip, 6379);
 }
 
@@ -17,12 +17,14 @@ redisContext* createContext(char* ip, int port) {
   redisContext* retVal = redisConnect(ip, port);
   if (retVal == NULL || retVal -> err) {
     if (retVal) {
-      cerr << "Error: " << retVal -> errstr << endl;
+      // cerr << "Error: " << retVal -> errstr << endl;
+      printf("Error: %s\n", retVal->errstr);
       redisFree(retVal);
     } else {
-      cerr << "redis context creation error" << endl;
+      // cerr << "redis context creation error" << endl;
+      printf("redis context creation error\n");
     }
-    throw REDIS_CREATION_FAILURE;
+    // throw REDIS_CREATION_FAILURE;
   }
   return retVal;
 }
@@ -53,7 +55,7 @@ void destor_cmd_init_with_reqstr(destor_cmd *cmd, char* reqstr)
     cmd->_destorCmd = reqstr;
     cmd->_cmLen = 0;
 
-    cmd->_type = destor_cmd_read_int();
+    cmd->_type = destor_cmd_read_int(cmd);
 
     switch(cmd->_type) {
         case 0: resolve_destor_command_type0(cmd); break;
@@ -64,16 +66,16 @@ void destor_cmd_init_with_reqstr(destor_cmd *cmd, char* reqstr)
 }
 
 void agent_cmd_init_with_reqstr(agent_cmd *cmd, char* reqstr){
-    cmd->_destorCmd = reqstr;
+    cmd->_agCmd = reqstr;
     cmd->_cmLen = 0;
 
-    cmd->_type = agent_cmd_read_int();
+    cmd->_type = agent_cmd_read_int(cmd);
 
     switch(cmd->_type) {
         case 0: ; break;
         default: break;
     }
-    cmd->_destorCmd = NULL;
+    cmd->_agCmd = NULL;
     cmd->_cmLen = 0;
 
 }
@@ -92,7 +94,7 @@ void destor_cmd_write_string(destor_cmd *cmd, char* s) {
   int slen = strlen(s);
   int tmpslen = htonl(slen);
   // string length
-  memcpy(cmd->_destorCmd + cmd->_cmLen, (char*)&tmpslen, 4); cmd->__cmLen += 4;
+  memcpy(cmd->_destorCmd + cmd->_cmLen, (char*)&tmpslen, 4); cmd->_cmLen += 4;
   // string
   memcpy(cmd->_destorCmd + cmd->_cmLen, s, slen); cmd->_cmLen += slen;
 }
@@ -101,7 +103,7 @@ void agent_cmd_write_string(agent_cmd *cmd, char* s) {
   int slen = strlen(s);
   int tmpslen = htonl(slen);
   // string length
-  memcpy(cmd->_agCmd + cmd->_cmLen, (char*)&tmpslen, 4); cmd->__cmLen += 4;
+  memcpy(cmd->_agCmd + cmd->_cmLen, (char*)&tmpslen, 4); cmd->_cmLen += 4;
   // string
   memcpy(cmd->_agCmd + cmd->_cmLen, s, slen); cmd->_cmLen += slen;
 }

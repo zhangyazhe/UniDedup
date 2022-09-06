@@ -6,6 +6,8 @@
 #include "backup.h"
 #include "storage/containerstore.h"
 
+static pthread_t read_t;
+
 struct readParam {
     char* data;
     uint32_t size;
@@ -50,16 +52,19 @@ static void read_data(void* argv) {
 
 	TIMER_DECLARE(1);
 	TIMER_BEGIN(1);
-	int tmpsize = 0;
+	int writtenSize = 0;
+	int size = 0;
 
-    while(tmpsize < rp->size) {
-        if(rp->size - tmpsize <= DEFAULT_BLOCK_SIZE) {
+    while(writtenSize < rp->size) {
+        if(rp->size - writtenSize <= DEFAULT_BLOCK_SIZE) {
+			size = rp->size - writtenSize;
+
             TIMER_END(1, jcr.read_time);
 
             VERBOSE("Read phase: read %d bytes", size);
 
             c = new_chunk(size);
-            memcpy(c->data, rp->data, rp->size-tmpsize);
+            memcpy(c->data, rp->data, size);
 
             sync_queue_push(read_queue, c);
 
@@ -67,6 +72,8 @@ static void read_data(void* argv) {
 
             break;
         } else {
+			size = DEFAULT_BLOCK_SIZE;
+
             TIMER_END(1, jcr.read_time);
 
             VERBOSE("Read phase: read %d bytes", size);
@@ -78,7 +85,7 @@ static void read_data(void* argv) {
 
             TIMER_BEGIN(1);
 
-            tmpsize += DEFAULT_BLOCK_SIZE;
+            writtenSize += DEFAULT_BLOCK_SIZE;
         }
     }
 
@@ -281,10 +288,10 @@ void destor_write(char *path, char *data, uint32_t size) {
 			jcr.total_container_num,
 			jcr.sparse_container_num,
 			jcr.inherited_sparse_num,
-			index_overhead.lookup_requests,
-			index_overhead.lookup_requests_for_unique,
-			index_overhead.update_requests,
-			index_overhead.read_prefetching_units,
+			// index_overhead.lookup_requests,
+			// index_overhead.lookup_requests_for_unique,
+			// index_overhead.update_requests,
+			// index_overhead.read_prefetching_units,
 			(double) jcr.data_size * 1000000 / (1024 * 1024 * jcr.total_time));
 
 	fclose(fp);
@@ -295,7 +302,7 @@ void destor_server_process()
     // todo: where to get local ip
     _localCtx = createContext(/* local_ip */);
     redisReply *rReply;
-    while (true)
+    while (1)
     {
         printf("destor_server_process\n");
         // will never stop looping
@@ -312,7 +319,7 @@ void destor_server_process()
         {
             printf("destor_server_process: receive a request!");
             char *reqStr = rReply->element[1]->str;
-            destor_cmd *cmd = (destor_cmd *)calloc(sizeof(destor_cmd, 1));
+            destor_cmd *cmd = (destor_cmd *)calloc(sizeof(destor_cmd), 1);
             destor_cmd_init_with_reqstr(cmd, reqStr);
             int type = cmd->_type;
             printf("type: %d \n", type);

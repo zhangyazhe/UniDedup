@@ -3,6 +3,7 @@
 
 #include <hiredis/hiredis.h>
 #include <string.h>
+#include <arpa/inet.h>
 
 #define MAX_COMMAND_LEN (4096)
 #define OEC_PKTSIZE (32768ll)
@@ -40,8 +41,8 @@ typedef struct agent_cmd
 
 
 char* ip2Str(unsigned int ip);
-redisContext* createContext(unsigned int ip);
-redisContext* createContext(char* ip);
+redisContext* createContextByUint(unsigned int ip);
+redisContext* createContextByChar(char* ip);
 redisContext* createContext(char* ip, int port);
 
 double duration(struct timeval t1, struct timeval t2);
