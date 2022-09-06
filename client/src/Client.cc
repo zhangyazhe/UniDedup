@@ -14,7 +14,7 @@ void write(string filepath, int sizeinBytes) {
     // tell local Agent filepath and filesize
     AgentCommand *agCmd = new AgentCommand();
     agCmd->buildType0(0, filepath, sizeinBytes);
-    agCmd->sendTo(conf->_localIp);
+    agCmd->sendTo(conf->_localIP);
 
     delete agCmd;
     delete conf;

@@ -28,4 +28,6 @@ using namespace std;
 #define BYTE_LENGTH 8
 #define INT_SIZE 4
 
+typedef unsigned char fingerprint[FP_LENGTH];
+
 #endif

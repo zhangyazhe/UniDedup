@@ -1,8 +1,6 @@
 #include "Fingerprint.hh"
 
 void sha1(unsigned char *data, int32_t size, fingerprint fp) {
-    // TO DO:
-    fingerprint fp;
     SHA_CTX ctx;
     SHA_Init(&ctx);
 	SHA_Update(&ctx, data, size);
@@ -10,7 +8,6 @@ void sha1(unsigned char *data, int32_t size, fingerprint fp) {
 }
 
 uint64_t consistentHash(fingerprint fp, int num) {
-    // TO DO:
     uint64_t hashInt = fp2Int(fp);
     return hashInt % num;
 }

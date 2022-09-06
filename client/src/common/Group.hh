@@ -16,7 +16,7 @@
 #include <pthread.h>
 #include <climits>
 #include <sstream>
-#include "sync_queue.h"
+#include "../util/sync_queue.hh"
 
 #include "Chunking.hh"
 #include "Reading.hh"

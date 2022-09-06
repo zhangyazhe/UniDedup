@@ -1,0 +1,2 @@
+noinst_LIBRARIES=libprotocol.a
+libprotocol_a_SOURCES=destorCommand.cc AgentCommand.cc

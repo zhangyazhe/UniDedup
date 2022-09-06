@@ -5,7 +5,7 @@
 #include "Config.hh"
 #include <openssl/sha.h>
 
-typedef unsigned char fingerprint[FP_LENGTH];
+// typedef unsigned char fingerprint[FP_LENGTH];
 
 void sha1(unsigned char *data, int32_t size, fingerprint fp);
 uint64_t consistentHash(fingerprint fp, int num);
