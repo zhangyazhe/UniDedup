@@ -1,3 +1,5 @@
+.vscode/*
+
 storage/OECAgent
 storage/OECCoordinator
 storage/OECClient
