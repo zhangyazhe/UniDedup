@@ -42,6 +42,12 @@ void agent_cmd_init(agent_cmd *cmd) {
     cmd->_rKey = "dup_agent_request";
 }
 
+void openec_agent_cmd_init(agent_cmd *cmd){
+    cmd->_agCmd = (char*)calloc(MAX_COMMAND_LEN, sizeof(char));
+    cmd->_cmLen = 0;
+    cmd->_rKey = "ag_request";
+}
+
 void destor_cmd_init_with_reqstr(destor_cmd *cmd, char* reqstr)
 {
     cmd->_destorCmd = reqstr;
@@ -144,11 +150,11 @@ void build_destor_command_type0(destor_cmd* cmd, int type, char* group_name, cha
   strcpy(cmd->_group_name, group_name);
   strcpy(cmd->_data, data);
 	// 1. type
-	destor_cmd_write_int(cmd->_type);
+	destor_cmd_write_int(cmd, cmd->_type);
 	// 2. group_name
-	destor_cmd_write_string(cmd->_group_name);
+	destor_cmd_write_string(cmd, cmd->_group_name);
 	// 3. data
-	destor_cmd_write_string(cmd->_data);
+	destor_cmd_write_string(cmd, cmd->_data);
 }
 
 void resolve_destor_command_type0(destor_cmd* cmd)
@@ -156,4 +162,29 @@ void resolve_destor_command_type0(destor_cmd* cmd)
   cmd->_group_name = destor_cmd_read_string(cmd);
   cmd->_data = destor_cmd_read_string(cmd);
   cmd->_size = destor_cmd_read_uint(cmd);
+}
+
+void build_openec_agent_command_type0(agent_cmd* cmd, int type, char* filename, char* ecidpool, char* mode, int filesize)
+{
+  cmd->_type = type;
+  int filename_len = strlen(filename);
+  int ecidpool_len = strlen(ecidpool);
+  int mode_len = strlen(mode);
+  cmd->_filepath = (char*)calloc(filename_len+1);
+  cmd->_ecidpool = (char*)calloc(ecidpool_len+1);
+  cmd->_mode = (char*)calloc(mode_len+1);
+  strcpy(cmd->_filepath, filename);
+  strcpy(cmd->_ecidpool, ecidpool);
+  strcpy(cmd->_mode, mode);
+  cmd->_filesize = filesize;
+  // 1. type
+  agent_cmd_write_int(cmd, cmd->_type);
+  // 2. filename
+  agent_cmd_write_string(cmd, cmd->_filepath);
+  // 3. ecidpool
+  agent_cmd_write_string(cmd, cmd->_ecidpool);
+  // 4. mode
+  agent_cmd_write_string(cmd, cmd->_mode);
+  // 5. filesize
+  agent_cmd_write_int(cmd, cmd->_filesize);
 }

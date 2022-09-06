@@ -66,7 +66,7 @@ void write(string inputname, string filename, string ecidpool, string encodemode
      fread(buf+4, conf->_pktSize, 1, inputfile);
      outstream->write(buf, conf->_pktSize+4);
      free(buf);
-   } 
+   }
  
    gettimeofday(&time3, NULL);
    outstream->close();
