@@ -40,11 +40,11 @@ struct {
 } localId = {0, PTHREAD_MUTEX_INITIALIZER};
 
 /* Output of read phase. */
-SyncQueue *read_queue;
+struct SyncQueue *read_queue;
 /* Output of chunk phase. */
-SyncQueue *chunk_queue;
+struct SyncQueue *chunk_queue;
 /* Output of hash phase. */
-SyncQueue *hash_queue;
+struct SyncQueue *hash_queue;
 
 
 int openFile(const char* path);

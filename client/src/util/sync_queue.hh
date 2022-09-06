@@ -8,7 +8,7 @@
 struct SyncQueue{
 	int term; // terminated
 	int max_size;/* the max size of queue */
-	Queue *queue;
+	struct Queue *queue;
 	pthread_mutex_t mutex;
 	pthread_cond_t max_work;
 	pthread_cond_t min_work;

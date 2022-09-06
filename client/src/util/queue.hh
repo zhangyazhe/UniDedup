@@ -9,7 +9,7 @@
 #define _QUEUE_HH_
 
 struct queue_ele_t {
-	struct queue_ele_tag *next;
+	struct queue_ele_t *next;
 	void *data;
 };
 
@@ -17,7 +17,7 @@ struct queue_ele_t {
  * Structure describing a queue
  */
 struct Queue {
-	queue_ele_t *first, *last; /* work queue */
+	struct queue_ele_t *first, *last; /* work queue */
 	int elem_num;
 	//int max_elem_num; //-1 means infi.
 };
