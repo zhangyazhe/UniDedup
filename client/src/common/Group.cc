@@ -121,9 +121,7 @@ std::vector<struct group*> split2Groups(int fd) {
     struct chunk* chunkList[DEFAULT_GROUP_SIZE];
     int minFingerprint = 0;
     uint32_t size = 0;
-    for (int i = 0; i < FP_LENGTH; i++) {
-        repFingerprint[i] = UCHAR_MAX;
-    }
+    
     while (1) {
         struct chunk *c = (struct chunk *) sync_queue_pop(hash_queue);
         if (c == NULL) {
@@ -149,7 +147,7 @@ std::vector<struct group*> split2Groups(int fd) {
     if (groupCnt != 0) {
         for (int i = 0; i < groupCnt; ++i) {
             size += chunkList[i]->size;
-            if (fp2Int(chunkList[i]->fp) <= fp2Int(chunkList[minFingerprint])) {
+            if (fp2Int(chunkList[i]->fp) <= fp2Int(chunkList[minFingerprint]->fp)) {
                 minFingerprint = i;
             }
         }
