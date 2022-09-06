@@ -5,22 +5,22 @@
  *      Author: fumin
  */
 
-#ifndef _QUEUE_H_
-#define _QUEUE_H_
+#ifndef _QUEUE_HH_
+#define _QUEUE_HH_
 
-typedef struct queue_ele_tag {
+struct queue_ele_t {
 	struct queue_ele_tag *next;
 	void *data;
-} queue_ele_t;
+};
 
 /*
  * Structure describing a queue
  */
-typedef struct queue_tag {
+struct Queue {
 	queue_ele_t *first, *last; /* work queue */
 	int elem_num;
 	//int max_elem_num; //-1 means infi.
-} Queue;
+};
 
 Queue* queue_new();
 void queue_free(Queue *queue, void (*)(void*));

@@ -1,9 +1,9 @@
-#ifndef _SYNC_QUEUE_H_
-#define _SYNC_QUEUE_H_
+#ifndef _SYNC_QUEUE_HH_
+#define _SYNC_QUEUE_HH_
 
 #include <stdlib.h>
 #include <pthread.h>
-#include "queue.h"
+#include "queue.hh"
 
 struct SyncQueue{
 	int term; // terminated
