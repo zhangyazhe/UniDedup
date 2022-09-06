@@ -5,9 +5,9 @@ Worker::Worker(Config* conf) : _conf(conf)
     // create local context
     try
     {
-        _processCtx = RedisUtil::createContext(_conf->_localIp);
-        _localCtx = RedisUtil::createContext(_conf->_localIp);
-        _destorCtx = RedisUtil::createContext(_conf->_coorIp);
+        _processCtx = RedisUtil::createContext(_conf->_localIP);
+        _localCtx = RedisUtil::createContext(_conf->_localIP);
+        _destorCtx = RedisUtil::createContext(_conf->_localIP);
     }
     catch (int e)
     {
@@ -79,8 +79,8 @@ void Worker::clientWrite(AgentCommand *agCmd) {
     // thread sendThrd[gps.size()];
     for(int i = 0; i < gps.size(); i++) {
       destorCommand *dstCmd = new destorCommand();
-      dstCmd->buildType0(0, (const char*)gps[i]->groupName, (const char*)gps[i]->data);
-      unsigned int nodeIp = _conf->id2Ip(gps[i]->nodeId);
+      dstCmd->buildType0(0, (const char*)gps[i]->groupName, (const char*)gps[i]->data, gps[i]->size);
+      unsigned int nodeIp = _conf->id2Ip[gps[i]->nodeId];
       dstCmd->sendTo(nodeIp);
       // sendThrd[i] = thread([&](){
       //   destorCommand *dstCmd = new destorCommand();
