@@ -9,7 +9,8 @@ void usage() {
 }
 
 void write(string filepath, int sizeinBytes) {
-    Config * conf = new Config(config_path);
+    string conf_path(config_path);
+    Config * conf = new Config(conf_path);
     // tell local Agent filepath and filesize
     AgentCommand *agCmd = new AgentCommand();
     agCmd->buildType0(0, filepath, sizeinBytes);
@@ -35,8 +36,8 @@ int main(int argc, char** argv)
         }
         string input_filepath(argv[2]);
         string input_fileszie(argv[3]);
-        int input_size = atoi(input_fileszie);
-        write(input_filepath, input_fileszie);
+        int input_size = atoi(input_fileszie.c_str());
+        write(input_filepath, input_size);
     }
 
 }

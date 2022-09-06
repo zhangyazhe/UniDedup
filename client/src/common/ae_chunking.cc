@@ -47,7 +47,7 @@ int ae_chunk_data(unsigned char *p, int n) {
 			max = curr;
 			continue;
 		}
-		if (curr == max + window_size || curr == p + destor.chunk_max_size)
+		if (curr == max + window_size || curr == p + chunkMetaData.chunk_max_size)
 			return curr - p;
 	}
 	return n;

@@ -5,7 +5,7 @@ static pthread_t chunk_t;
 static int (*chunking)(unsigned char *buf, int size);
 
 static inline int fixed_chunk_data(unsigned char* buf, int size){
-	return chunkMetaData.chunk_avg_size > size ? size : destor.chunk_avg_size;
+	return chunkMetaData.chunk_avg_size > size ? size : chunkMetaData.chunk_avg_size;
 }
 
 struct chunk* new_chunk(uint32_t size) {
