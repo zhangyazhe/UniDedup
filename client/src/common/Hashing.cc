@@ -1,6 +1,4 @@
-#include "Group.hh"
-#include "Fingerprint.hh"
-#include "../util/sync_queue.hh"
+#include "Hashing.hh"
 
 pthread_t hash_t;
 

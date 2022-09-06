@@ -5,14 +5,14 @@
 #include <pthread.h>
 #include "queue.h"
 
-typedef struct {
+struct SyncQueue{
 	int term; // terminated
 	int max_size;/* the max size of queue */
 	Queue *queue;
 	pthread_mutex_t mutex;
 	pthread_cond_t max_work;
 	pthread_cond_t min_work;
-} SyncQueue;
+};
 
 SyncQueue* sync_queue_new(int);
 void sync_queue_free(SyncQueue*, void (*)(void*));

@@ -5,8 +5,8 @@
  *      Author: fumin
  */
 
-#ifndef QUEUE_H_
-#define QUEUE_H_
+#ifndef _QUEUE_H_
+#define _QUEUE_H_
 
 typedef struct queue_ele_tag {
 	struct queue_ele_tag *next;

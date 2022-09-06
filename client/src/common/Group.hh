@@ -20,6 +20,7 @@
 
 #include "Chunking.hh"
 #include "Reading.hh"
+#include "Hashing.hh"
 
 #define DEFAULT_GROUP_SIZE 1024
 #define DEFAULT_BLOCK_SIZE 1048576

@@ -40,5 +40,6 @@ struct chunk* new_chunk(uint32_t size);
 void free_chunk(struct chunk *ck);
 
 void start_chunk_phase();
+void stop_chunk_phase();
 
 #endif
