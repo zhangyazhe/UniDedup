@@ -36,7 +36,7 @@ public:
     void writeInt(int value);
     void writeString(std::string s);
     int readInt();
-    uint32_t destorCommand::readUInt()
+    uint32_t readUInt();
     int readRawInt();
     std::string readString();
 
@@ -50,7 +50,8 @@ public:
     // build command
     void buildType0(int type,
                     std::string groupName,
-                    std::string data);
+                    std::string data,
+                    uint32_t size);
     
     // resolve command
     void resolveType0();
