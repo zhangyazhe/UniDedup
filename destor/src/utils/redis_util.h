@@ -1,12 +1,18 @@
 #ifndef REDIS_UTIL_H_
 #define REDIS_UTIL_H_
 
+#include "../destor.h"
 #include <hiredis/hiredis.h>
 #include <string.h>
 #include <arpa/inet.h>
 
 #define MAX_COMMAND_LEN (4096)
-#define OEC_PKTSIZE (32768ll)
+// #define OEC_PKTSIZE (32768ll)
+
+#define MAX_OEC_FILENAME_LEN 80
+#define BASE_OEC_FILENAME "/destor_container_file"
+// #define ECID_POOL ("rs_6_2_pool")
+// #define OEC_MODE ("online")
 
 typedef struct destor_cmd
 {

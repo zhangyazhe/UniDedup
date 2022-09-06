@@ -279,6 +279,12 @@ struct destor {
 
 	int backup_retention_time;
 
+	// zz7, for openec
+	unsigned int local_ip;
+	int oec_pktsize;
+	char* ecid_pool;
+	char* oec_mode;
+
 } destor;
 
 typedef unsigned char fingerprint[20];

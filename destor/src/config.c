@@ -306,6 +306,22 @@ void load_config_from_string(sds config) {
 		} else if (strcasecmp(argv[0], "backup-retention-time") == 0
 				&& argc == 2) {
 			destor.backup_retention_time = atoi(argv[1]);
+		} else if (strcasecmp(argv[0], "local_ip") == 0
+				&& argc == 2) {
+			destor.local_ip = inet_addr(argv[1]);
+		} else if (strcasecmp(argv[0], "oec_pktsize") == 0
+				&& argc == 2) {
+			destor.oec_pktsize = atoi(argv[1]);
+		} else if (strcasecmp(argv[0], "ecid_pool") == 0
+				&& argc == 2) {
+			int str_len = strlen(argv[1]);
+			destor.ecid_pool = (char*)malloc(str_len+1);
+			strcpy(destor.ecid_pool, argv[1]);
+		} else if (strcasecmp(argv[0], "oec_mode") == 0
+				&& argc == 2) {
+			int str_len = strlen(argv[1]);
+			destor.oec_mode = (char*)malloc(str_len+1);
+			strcpy(destor.oec_mode, argv[1]);
 		} else {
 			err = "Bad directive or wrong number of arguments";
 			goto loaderr;
