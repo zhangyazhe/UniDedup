@@ -282,8 +282,16 @@ void write_container(struct container* c) {
 		// we write to OpenEC
 		int num = CONTAINER_SIZE / OEC_PKTSIZE;
 		// init
+		redisContext* _localCtx = createContextByUint(/* local ip */);
 		agent_cmd* agCmd = (agent_cmd*)calloc(sizeof(agent_cmd));
 		openec_agent_cmd_init(agCmd);
+		
+		char container_file_name[MAX_OEC_FILENAME_LEN] = BASE_OEC_FILENAME;
+		char* container_id_str = (char*)calloc(16);
+		strcat(container_file_name, itoa(c->meta.id, container_id_str));
+		
+		build_openec_agent_command_type0(agCmd, 0, container_file_name, ECID_POOL, OEC_MODE, CONTAINER_SIZE);
+		int pktid = 0;
 		for (int i = 0; i < num; i++) {
 			unsigned char* buf = (char*)calloc(OEC_PKTSIZE+4, sizeof(char));
 			
@@ -292,9 +300,20 @@ void write_container(struct container* c) {
 
 			memcpy(buf+4, cur+i*OEC_PKTSIZE, OEC_PKTSIZE);
 			//outstream write
+			char pkt_base_name[MAX_OEC_FILENAME_LEN] = BASE_OEC_FILENAME;
+			strcat(pkt_base_name, ":");
+			char* pkt_id_str = (char*)calloc(16);
+			strcat(pkt_base_name, itoa(pktid, pkt_id_str));
 
+			redisAppendCommand(_localCtx, "RPUSH %s %b", key.c_str(), buf, OEC_PKTSIZE+4);
+
+			pktid++;
+			free(pkt_id_str);
+			free(buff);
 		}
-		
+		free(agCmd);
+		redisFree(_localCtx);
+		free(container_id_str)
 
 		pthread_mutex_unlock(&mutex);
 	} else {
