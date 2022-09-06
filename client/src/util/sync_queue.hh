@@ -14,7 +14,7 @@ struct SyncQueue{
 	pthread_cond_t min_work;
 };
 
-SyncQueue* sync_queue_new(int);
+struct SyncQueue* sync_queue_new(int);
 void sync_queue_free(SyncQueue*, void (*)(void*));
 void sync_queue_push(SyncQueue*, void*);
 void* sync_queue_pop(SyncQueue*);

@@ -7,9 +7,9 @@
 
 #include <stdlib.h>
 #include <stdio.h>
-#include "queue.h"
+#include "queue.hh"
 
-Queue* queue_new() {
+struct Queue* queue_new() {
 	Queue *queue = (Queue*) malloc(sizeof(Queue));
 	queue->first = queue->last = 0;
 	queue->elem_num = 0;

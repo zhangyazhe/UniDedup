@@ -1,7 +1,7 @@
 #include "sync_queue.hh"
 #include <stdio.h>
 
-SyncQueue* sync_queue_new(int size) {
+struct SyncQueue* sync_queue_new(int size) {
 	SyncQueue *s_queue = (SyncQueue*) malloc(sizeof(SyncQueue));
 	s_queue->queue = queue_new();
 	s_queue->max_size = size;

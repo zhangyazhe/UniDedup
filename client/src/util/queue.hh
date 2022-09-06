@@ -22,7 +22,7 @@ struct Queue {
 	//int max_elem_num; //-1 means infi.
 };
 
-Queue* queue_new();
+struct Queue* queue_new();
 void queue_free(Queue *queue, void (*)(void*));
 void queue_push(Queue *queue, void *element);
 void* queue_pop(Queue *queue);
