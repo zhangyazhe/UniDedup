@@ -4,6 +4,7 @@
 #include "Fingerprint.hh"
 #include "Group.hh"
 #include <string.h>
+#include "../util/sync_queue.hh"
 
 #define CHUNK_FIXED 0
 #define CHUNK_RABIN 1
