@@ -15,9 +15,11 @@
 #include <stdlib.h>
 #include <pthread.h>
 #include <climits>
+#include <sstream>
 #include "sync_queue.h"
 
 #include "Chunking.hh"
+#include "Reading.hh"
 
 #define DEFAULT_GROUP_SIZE 1024
 #define DEFAULT_BLOCK_SIZE 1048576

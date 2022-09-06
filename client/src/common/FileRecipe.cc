@@ -19,6 +19,7 @@ struct fileRecipe* new_fileRecipe(const char* filename, int num) {
 }
 
 void delete_fileRecipe(struct fileRecipe* fr) {
+    if(fr == NULL) return;
     free(fr->filename);
     free(fr->gm->groupName);
     free(fr->gm);

@@ -1,5 +1,4 @@
 #include "Group.hh"
-#include <sstream>
 
 int openFile(const char* path) {
     // TO DO:
@@ -40,7 +39,7 @@ struct group* new_group(char* fileName, int size) {
     }
     
     grp->size = size;
-    grp->data = (unsigned char*)malloc(sizeof(unsigned char) * len);
+    grp->data = (unsigned char*)malloc(sizeof(unsigned char) * size);
     if (grp->data == NULL) {
         free(grp);
         fprintf(stderr, "new_group: memory allocate failed\n");
@@ -66,42 +65,38 @@ struct group* new_group(char* fileName, int size) {
 }
 
 void delete_group(struct group* gp) {
-    // TO DO:
-    if (gp == NULL) {
-        return ;
-    }
+    if (gp == NULL) return;
     free(gp->groupName);
     free(gp->data);
     free(gp);
 }
 
 // without test
-vector<struct group*> split2GroupsFixed(int fd) {
-    // TO DO:
-    char fileName[1024] = {'\0'};
-    char path[1024] = {'\0'};
-    snprintf(path, sizeof(path), "/proc/self/fd/%d", fd);
-    readlink(path, fileName, sizeof(fileName) - 1);
-    unsigned char buffer[DEFAULT_GROUP_SIZE];
-    std::vector<struct group*> groupList;
-    ssize_t size = read(fd, buffer, DEFAULT_GROUP_SIZE);
-    while (size != -1 && size != 0) {
-        struct group *gp = new_group(fileName, size);
-        memcpy(gp->data, buffer, size);
-        memcpy(gp->delegate, delegate(gp), FP_LENGTH);
-        gp->nodeId = consitentHash(gp->delegate);
-        groupList.push_back(gp);
-    }
-    if (size == -1) {
-        fprintf(stderr, "split2Groups: read file failed.\n");
-        for (int i = 0; i < groupList.size(); ++i) {
-            delete_group(groupList[i]);
-        }
-        groupList.clear();
-        return groupList;
-    }
-    return groupList;
-}
+// vector<struct group*> split2GroupsFixed(int fd) {
+//     char fileName[1024] = {'\0'};
+//     char path[1024] = {'\0'};
+//     snprintf(path, sizeof(path), "/proc/self/fd/%d", fd);
+//     readlink(path, fileName, sizeof(fileName) - 1);
+//     unsigned char buffer[DEFAULT_GROUP_SIZE];
+//     std::vector<struct group*> groupList;
+//     ssize_t size = read(fd, buffer, DEFAULT_GROUP_SIZE);
+//     while (size != -1 && size != 0) {
+//         struct group *gp = new_group(fileName, size);
+//         memcpy(gp->data, buffer, size);
+//         memcpy(gp->delegate, delegate(gp), FP_LENGTH);
+//         gp->nodeId = consistentHash(gp->delegate);
+//         groupList.push_back(gp);
+//     }
+//     if (size == -1) {
+//         fprintf(stderr, "split2Groups: read file failed.\n");
+//         for (int i = 0; i < groupList.size(); ++i) {
+//             delete_group(groupList[i]);
+//         }
+//         groupList.clear();
+//         return groupList;
+//     }
+//     return groupList;
+// }
 
 std::vector<struct group*> split2Groups(int fd) {
     std::vector<struct group*> result;
@@ -130,7 +125,7 @@ std::vector<struct group*> split2Groups(int fd) {
         repFingerprint[i] = UCHAR_MAX;
     }
     while (1) {
-        struct chunk *c = sync_queue_pop(hash_queue);
+        struct chunk *c = (struct chunk *) sync_queue_pop(hash_queue);
         if (c == NULL) {
             break;
         }

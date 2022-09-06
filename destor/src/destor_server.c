@@ -22,6 +22,7 @@ struct readParam* newReadParam(char* data, uint32_t size) {
 }
 
 void deleteReadParam(struct readParam* rp) {
+	if(rp == NULL) return;
     free(rp->data);
     free(rp);
 }

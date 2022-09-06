@@ -1,6 +1,6 @@
 #include "Fingerprint.hh"
 
-void sha1(unsigned char *data, int32_t size, fingerprint fp); {
+void sha1(unsigned char *data, int32_t size, fingerprint fp) {
     // TO DO:
     fingerprint fp;
     SHA_CTX ctx;

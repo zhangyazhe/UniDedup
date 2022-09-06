@@ -14,7 +14,7 @@ struct chunk* new_chunk(uint32_t size) {
     ck->size = size;
 
     if (size > 0) {
-        ck->data = malloc(size);
+        ck->data = (unsigned char*) malloc(size);
     } else {
         ck->data = NULL;
     }
@@ -32,14 +32,14 @@ void free_chunk(struct chunk *ck) {
 static void* chunk_thread(void *arg) {
     int leftlen = 0;
     int leftoff = 0;
-    unsigned char *leftbuf = malloc(DEFAULT_BLOCK_SIZE + chunkMetaData.chunk_max_size);
+    unsigned char *leftbuf = (unsigned char*) malloc(DEFAULT_BLOCK_SIZE + chunkMetaData.chunk_max_size);
 
     // unsigned char *data = malloc(chunkMetaData.chunk_max_size);
 
     struct chunk *c = NULL;
 
     while (1) {
-        c = sync_queue_pop(read_queue);
+        c = (struct chunk*) sync_queue_pop(read_queue);
 
         while  ((leftlen < chunkMetaData.chunk_max_size) && c != NULL) {
             memmove(leftbuf, leftbuf + leftoff, leftlen);
@@ -47,7 +47,7 @@ static void* chunk_thread(void *arg) {
             memcpy(leftbuf + leftlen, c->data, c->size);
             leftlen += c->size;
             free_chunk(c);
-            c = sync_queue_pop(read_queue);
+            c = (struct chunk*) sync_queue_pop(read_queue);
         }
         if (leftlen == 0) {
             assert(c == NULL);
@@ -104,12 +104,12 @@ void start_chunk_phase() {
         chunking = ae_chunk_data;
         ae_init();
     } else {
-        fpirntf(stderr, "Invalid chunking algorithm.\n");
+        fprintf(stderr, "Invalid chunking algorithm.\n");
         exit(1);
     }
 
     chunk_queue = sync_queue_new(100);
-    pthread_create(&chunk_t, NULL, chunk_tread, NULL);
+    pthread_create(&chunk_t, NULL, chunk_thread, NULL);
 }
 
 void stop_chunk_phase() {

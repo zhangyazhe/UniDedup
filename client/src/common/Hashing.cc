@@ -1,11 +1,12 @@
 #include "Group.hh"
 #include "Fingerprint.hh"
+#include "../util/sync_queue.hh"
 
 pthread_t hash_t;
 
 static void* sha1_thread(void *arg) {
     while (1) {
-        struct chunk *c = sync_queue_pop(chunk_queue);
+        struct chunk *c = (struct chunk *) sync_queue_pop(chunk_queue);
 
         if (c == NULL) {
             sync_queue_term(hash_queue);

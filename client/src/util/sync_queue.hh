@@ -1,5 +1,5 @@
-#ifndef SYNC_QUEUE_H_
-#define SYNC_QUEUE_H_
+#ifndef _SYNC_QUEUE_H_
+#define _SYNC_QUEUE_H_
 
 #include <stdlib.h>
 #include <pthread.h>
