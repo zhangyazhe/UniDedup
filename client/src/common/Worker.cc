@@ -63,7 +63,7 @@ void Worker::clientWrite(AgentCommand *agCmd) {
     assert(fd != -1);
 
     // file to groups
-    vector<struct group*> gps = split2Groups(fd);
+    vector<struct group*> gps = split2Groups(fd, _conf->node_num);
 
     /* This part is for Lin */
 

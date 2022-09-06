@@ -98,7 +98,7 @@ void delete_group(struct group* gp) {
 //     return groupList;
 // }
 
-std::vector<struct group*> split2Groups(int fd) {
+std::vector<struct group*> split2Groups(int fd, int nodeNum) {
     std::vector<struct group*> result;
     int groupCnt = 0;
     char fileName[1024] = {'\0'};
@@ -131,13 +131,13 @@ std::vector<struct group*> split2Groups(int fd) {
         if (groupCnt == DEFAULT_GROUP_SIZE) {
             for (int i = 0; i < DEFAULT_GROUP_SIZE; ++i) {
                 size += chunkList[i]->size;
-                if (fp2Int(chunkList[i]->fp) <= fp2Int(chunkList[minFingerprint])) {
+                if (fp2Int(chunkList[i]->fp) <= fp2Int((unsigned char*)chunkList[minFingerprint])) {
                     minFingerprint = i;
                 }
             }
             struct group *gp = new_group(fileName, size);
             memcpy(gp->delegate, chunkList[minFingerprint], sizeof(fingerprint));
-            gp->nodeId = consistentHash(gp->delegate, num);
+            gp->nodeId = consistentHash(gp->delegate, nodeNum);
             result.push_back(gp);
             size = 0;
             groupCnt = 0;
@@ -153,7 +153,7 @@ std::vector<struct group*> split2Groups(int fd) {
         }
         struct group *gp = new_group(fileName, size);
         memcpy(gp->delegate, chunkList[minFingerprint], sizeof(fingerprint));
-        gp->nodeId = consistentHash(gp->delegate, num);
+        gp->nodeId = consistentHash(gp->delegate, nodeNum);
         result.push_back(gp);
     }
     stop_read_phase();
