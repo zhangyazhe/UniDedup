@@ -83,4 +83,4 @@ libmemcached-1.0.18/m4/*
 libmemcached-1.0.18/build-aux/*
 libmemcached-1.0.18/configure
 
-client/count.sh
+count.sh
