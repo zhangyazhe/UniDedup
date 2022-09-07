@@ -172,9 +172,9 @@ void build_openec_agent_command_type0(agent_cmd* cmd, int type, char* filename, 
   int filename_len = strlen(filename);
   int ecidpool_len = strlen(ecidpool);
   int mode_len = strlen(mode);
-  cmd->_filepath = (char*)calloc(filename_len+1);
-  cmd->_ecidpool = (char*)calloc(ecidpool_len+1);
-  cmd->_mode = (char*)calloc(mode_len+1);
+  cmd->_filepath = (char*)calloc(filename_len+1, 1);
+  cmd->_ecidpool = (char*)calloc(ecidpool_len+1, 1);
+  cmd->_mode = (char*)calloc(mode_len+1, 1);
   strcpy(cmd->_filepath, filename);
   strcpy(cmd->_ecidpool, ecidpool);
   strcpy(cmd->_mode, mode);

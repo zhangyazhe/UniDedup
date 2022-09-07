@@ -124,4 +124,11 @@ client/*.a
 client/src/*.a
 client/src/*/*.a
 
-client/deduprc
+client/agent
+client/client
+
+destor/aclocal.m4
+destor/compile
+destor/config.log
+destor/config.status
+destor/autom4te.cache
