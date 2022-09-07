@@ -6,7 +6,10 @@ SyncQueue *hash_queue;
 
 int openFile(const char* path) {
     // TO DO:
+    cout << "path: " << string(path) << endl;
     int fd = open(path, O_RDONLY);
+    unsigned char* buf[10];
+    int size = read(fd, buf, 9);
     if (fd < 0) {
         fprintf(stderr, "openFile: open %s failed, errno is %d\n", path, errno);
         return -1;
@@ -101,62 +104,87 @@ void delete_group(struct group* gp) {
 //     }
 //     return groupList;
 // }
-
-std::vector<struct group*> split2Groups(int fd, int nodeNum) {
+static inline int my_cmp(fingerprint fp1, fingerprint fp2) {
+    for (int i = 0; i < FP_LENGTH; ++i) {
+        if (fp1[i] < fp2[i]) {
+            return -1;
+        } else if (fp1[i] > fp2[i]) {
+            return 1;
+        }
+    }
+    return 0;
+}
+std::vector<struct group*> split2Groups(const char* filepath, int nodeNum) {
+    // cout << "[debug]: 31" << endl;
+    // int fd = open(filepath, O_RDONLY);
+    // if(fd < 0) {
+    //     cout << "open file " + string(filepath) +"error" << endl;
+    //     return std::vector<struct group*>();
+    // }
     std::vector<struct group*> result;
     int groupCnt = 0;
     char fileName[1024] = {'\0'};
     char path[1024] = {'\0'};
-    snprintf(path, sizeof(path), "/proc/self/fd/%d", fd);
+    // snprintf(path, sizeof(path), "/proc/self/fd/%d", fd);
     readlink(path, fileName, sizeof(fileName) - 1);
-    
+    // cout << "[debug]: 32" << endl;
     // read file
-    start_read_phase(fd);
+    start_read_phase(filepath);
+    // cout << "[debug]: 321" << endl;
     // chunking
     start_chunk_phase();
+    // cout << "[debug]: 322" << endl;
     // hash
     start_hash_phase();
+    // cout << "[debug]: 323" << endl;
     //}
-
+    // cout << "[debug]: 33" << endl;
     // grouping
     // 1. group chunks by grouping_number
     // 2. get delegate fingerprint
     // 3. get node id
     struct chunk* chunkList[DEFAULT_GROUP_SIZE];
-    int minFingerprint = 0;
+    fingerprint minFingerprint;
+    for (int i = 0; i < FP_LENGTH; ++i) {
+        minFingerprint[i] = UCHAR_MAX;
+    }
     uint32_t size = 0;
     
     while (1) {
         struct chunk *c = (struct chunk *) sync_queue_pop(hash_queue);
+
         if (c == NULL) {
             break;
         }
+        chunkList[groupCnt] = c;
         groupCnt++;
         if (groupCnt == DEFAULT_GROUP_SIZE) {
             for (int i = 0; i < DEFAULT_GROUP_SIZE; ++i) {
                 size += chunkList[i]->size;
-                if (fp2Int(chunkList[i]->fp) <= fp2Int((unsigned char*)chunkList[minFingerprint])) {
-                    minFingerprint = i;
+                if (my_cmp(chunkList[i]->fp, minFingerprint) < 0) {
+                    memcpy(minFingerprint, chunkList[i]->fp, sizeof(fingerprint));
                 }
             }
             struct group *gp = new_group(fileName, size);
-            memcpy(gp->delegate, chunkList[minFingerprint], sizeof(fingerprint));
+            memcpy(gp->delegate, minFingerprint, sizeof(fingerprint));
             gp->nodeId = consistentHash(gp->delegate, nodeNum);
             result.push_back(gp);
             size = 0;
             groupCnt = 0;
-            minFingerprint = 0;
+            for (int i = 0; i < FP_LENGTH; ++i) {
+                minFingerprint[i] = UCHAR_MAX;
+            }
         }
     }
     if (groupCnt != 0) {
         for (int i = 0; i < groupCnt; ++i) {
             size += chunkList[i]->size;
-            if (fp2Int(chunkList[i]->fp) <= fp2Int(chunkList[minFingerprint]->fp)) {
-                minFingerprint = i;
+            if (my_cmp(chunkList[i]->fp, minFingerprint)) {
+                memcpy(minFingerprint, chunkList[i]->fp, sizeof(fingerprint));
             }
         }
         struct group *gp = new_group(fileName, size);
-        memcpy(gp->delegate, chunkList[minFingerprint], sizeof(fingerprint));
+        memcpy(gp->delegate, minFingerprint, sizeof(fingerprint));
         gp->nodeId = consistentHash(gp->delegate, nodeNum);
         result.push_back(gp);
     }

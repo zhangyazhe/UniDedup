@@ -1,9 +1,13 @@
 #include "sync_queue.hh"
 #include <stdio.h>
+#include <iostream>
 
 SyncQueue* sync_queue_new(int size) {
+	// std::cout << "[debug]: 32211" << std::endl;
 	SyncQueue *s_queue = (SyncQueue*) malloc(sizeof(SyncQueue));
+	// std::cout << "[debug]: 32212" << std::endl;
 	s_queue->queue = queue_new();
+	// std::cout << "[debug]: 32213" << std::endl;
 	s_queue->max_size = size;
 	s_queue->term = 0;
 
@@ -13,10 +17,15 @@ SyncQueue* sync_queue_new(int size) {
 		puts("Failed to init mutex or work in SyncQueue!");
 		return NULL;
 	}
+	// std::cout << "[debug]: 32214" << std::endl;
 	return s_queue;
 }
 
 void sync_queue_free(SyncQueue* s_queue, void (*free_data)(void*)) {
+	if(s_queue == NULL) {
+		std::cout << "sync_queue_free null" << std::endl;
+		return;
+	}
 	queue_free(s_queue->queue, free_data);
 	pthread_mutex_destroy(&s_queue->mutex);
 	pthread_cond_destroy(&s_queue->max_work);
@@ -25,6 +34,10 @@ void sync_queue_free(SyncQueue* s_queue, void (*free_data)(void*)) {
 }
 
 void sync_queue_push(SyncQueue* s_queue, void* item) {
+	if(s_queue == NULL) {
+		std::cout << "sync_queue_push s_queue NULL" << std::endl;
+		return;
+	}
 	if (pthread_mutex_lock(&s_queue->mutex) != 0) {
 		puts("failed to lock!");
 		return;
@@ -54,6 +67,10 @@ void sync_queue_push(SyncQueue* s_queue, void* item) {
  * Return NULL if the queue is terminated.
  */
 void* sync_queue_pop(SyncQueue* s_queue) {
+	if(s_queue == NULL) {
+		std::cout << "sync_queue_pop s_queue NULL" << std::endl;
+		return NULL;
+	}
 	if (pthread_mutex_lock(&s_queue->mutex) != 0) {
 		puts("failed to lock!");
 		return NULL;
@@ -75,10 +92,18 @@ void* sync_queue_pop(SyncQueue* s_queue) {
 }
 
 int sync_queue_size(SyncQueue* s_queue) {
+	if(s_queue == NULL) {
+		std::cout << "sync_queue_size s_queue NULL" << std::endl;
+		return 0;
+	}
 	return queue_size(s_queue->queue);
 }
 
 void sync_queue_term(SyncQueue* s_queue) {
+	if(s_queue == NULL) {
+		std::cout << "sync_queue_term s_queue NULL" << std::endl;
+		return;
+	}
 	if (pthread_mutex_lock(&s_queue->mutex) != 0) {
 		puts("failed to lock!");
 		return;
@@ -97,7 +122,10 @@ void sync_queue_term(SyncQueue* s_queue) {
 void* sync_queue_find(SyncQueue* s_queue, int (*hit)(void*, void*), void* data,
 		void* (*dup)(void*)) {
 	void* ret = NULL;
-
+	if(s_queue == NULL) {
+		std::cout << "sync_queue_find s_queue NULL" << std::endl;
+		return NULL;
+	}
 	if (pthread_mutex_lock(&s_queue->mutex) != 0) {
 		puts("failed to lock!");
 		return NULL;
@@ -116,6 +144,10 @@ void* sync_queue_find(SyncQueue* s_queue, int (*hit)(void*, void*), void* data,
 }
 
 void* sync_queue_get_top(SyncQueue* s_queue) {
+	if(s_queue == NULL) {
+		std::cout << "sync_queue_get_top s_queue NULL" << std::endl;
+		return NULL;
+	}
 	if (pthread_mutex_lock(&s_queue->mutex) != 0) {
 		puts("failed to lock!");
 		return NULL;

@@ -18,7 +18,7 @@ struct chunk* new_chunk(uint32_t size) {
     } else {
         ck->data = NULL;
     }
-    return NULL;
+    return ck;
 }
 
 void free_chunk(struct chunk *ck) {
@@ -41,16 +41,20 @@ static void* chunk_thread(void *arg) {
     while (1) {
         c = (struct chunk*) sync_queue_pop(read_queue);
 
-        while  ((leftlen < chunkMetaData.chunk_max_size) && c != NULL) {
+        while  ((leftlen < chunkMetaData.chunk_max_size)) {
             memmove(leftbuf, leftbuf + leftoff, leftlen);
             leftoff = 0;
-            memcpy(leftbuf + leftlen, c->data, c->size);
-            leftlen += c->size;
-            free_chunk(c);
+            if (c != NULL) {
+                memcpy(leftbuf + leftlen, c->data, c->size);
+                leftlen += c->size;
+                free_chunk(c);
+            } else {
+                break;
+            }
             c = (struct chunk*) sync_queue_pop(read_queue);
         }
-        if (leftlen == 0) {
-            assert(c == NULL);
+        if (leftlen == 0 && c == NULL) {
+            // assert(c == NULL);
             break;
         }
         int chunk_size = chunking(leftbuf + leftoff, leftlen);

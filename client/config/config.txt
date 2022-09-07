@@ -6,3 +6,5 @@
 chunking_algorithm rabin
 grouping_algorithm fixed
 grouping_number 1024
+worker_number 1
+node_number 1

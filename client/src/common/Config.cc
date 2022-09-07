@@ -45,6 +45,14 @@ void Config::getConfigFromLine(std::string& line) {
         std::stringstream gnss(confs[1]);
         gnss >> grouping_number;
     }
+    else if (confs[0] == "worker_number") {
+        std::stringstream wnss(confs[1]);
+        wnss >> worker_num;
+    }
+    else if(confs[0] == "node_number") {
+        std::stringstream nnss(confs[1]);
+        nnss >> node_num;
+    }
 }
 
 void Config::getIpFromIpList(const std::string& ipListPath) {

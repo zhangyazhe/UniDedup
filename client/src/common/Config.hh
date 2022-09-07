@@ -7,8 +7,8 @@
 #include "Chunking.hh"
 #include "Group.hh"
 
-const std::string config_path = "../config/config.txt";
-const std::string ip_list_path = "../config/ip_list.txt";
+const std::string config_path = "config/config.txt";
+const std::string ip_list_path = "config/ip_list.txt";
 
 class Config
 {

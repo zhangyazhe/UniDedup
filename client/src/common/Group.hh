@@ -52,6 +52,6 @@ char* baseName(const char* filepath);
 struct group* new_group(char *fileName, int size);
 void delete_group(struct group* gp);
 vector<struct group*> split2GroupsFixed(int fd);
-vector<struct group*> split2Groups(int fd, int nodeNum);
+vector<struct group*> split2Groups(const char* path, int nodeNum);
 
 #endif

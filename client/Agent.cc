@@ -1,11 +1,14 @@
 #include "src/inc/include.hh"
 #include "src/common/Worker.hh"
 #include "src/common/Config.hh"
+#include "src/common/Echash.hh"
 
 int main(int argc, char** argv)
 {
     Config* conf = new Config(config_path);
 
+    initEchash();
+    
     int worker_num = conf->worker_num;
 
     Worker** workers = (Worker**)calloc(worker_num, sizeof(Worker*));

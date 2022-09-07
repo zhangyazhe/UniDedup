@@ -8,8 +8,12 @@ void sha1(unsigned char *data, int32_t size, fingerprint fp) {
 }
 
 uint64_t consistentHash(fingerprint fp, int num) {
+    if(num == 0) {
+        cout << "consistent hash: floating exception" << endl;
+        return 0;
+    }
     uint64_t hashInt = fp2Int(fp);
-    return hashInt % num;
+    return hashInt % ((uint64_t) num);
 }
 
 uint64_t fp2Int(fingerprint fp) {

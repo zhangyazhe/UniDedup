@@ -7,7 +7,7 @@ int initEchash(void) {
 
     FILE *fin_config;
     char conf[1024];
-    if(!(fin_config = fopen("../../config/echash_config.txt", "r")))
+    if(!(fin_config = fopen("config/echash_config.txt", "r")))
     {
         printf("The config file not exist.\n");
         exit(-1);
