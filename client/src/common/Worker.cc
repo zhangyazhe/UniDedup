@@ -52,34 +52,24 @@ void Worker::doProcess() {
 }
 
 void Worker::clientWrite(AgentCommand *agCmd) {
-    cout << "[debug]: 1" << endl;
     // get info
     string filepath = agCmd->getFilename();
     int filesize = agCmd->getFilesize();
 
     /* This part is for Zewen */
 
-    cout << "[debug]: 2" << endl;
-    // open file (read to the memory pool)
-    // int fd = openFile(filepath.c_str());
-    // assert(fd >= 0);
-
-    cout << "[debug]: 3" << endl;
     // file to groups
     vector<struct group*> gps = split2Groups(filepath.c_str(), _conf->node_num);
 
     /* This part is for Lin */
-    cout << "[debug]: 4" << endl;
     // generate file recipe
     struct fileRecipe* fr = getFileRecipe(filepath.c_str(), gps);
     assert(fr != NULL);
 
-    cout << "[debug]: 5" << endl;
     // set file recipe by echash
     int ret = setFileRecipe(fr);
     assert(ret == 0);
 
-    cout << "[debug]: 6" << endl;
     // distribute groups to different nodes
     // thread sendThrd[gps.size()];
     for(int i = 0; i < gps.size(); i++) {

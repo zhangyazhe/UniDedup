@@ -9,7 +9,6 @@ int openFile(const char* path) {
     cout << "path: " << string(path) << endl;
     int fd = open(path, O_RDONLY);
     unsigned char* buf[10];
-    int size = read(fd, buf, 9);
     if (fd < 0) {
         fprintf(stderr, "openFile: open %s failed, errno is %d\n", path, errno);
         return -1;
@@ -25,7 +24,7 @@ char* baseName(const char* filepath){
     while (str[end] == ' ') {
         --end;
     }
-    int begin = str.rfind('/');
+    size_t begin = str.rfind('/');
     begin = (begin == std::string::npos) ? 0 : begin + 1;
     std::string result = str.substr(begin, end - begin + 1);
     char *ret = (char *)malloc(sizeof(char) * (result.size() + 1));
@@ -37,7 +36,7 @@ char* baseName(const char* filepath){
     return ret;
 }
 
-struct group* new_group(char* fileName, int size) {
+struct group* new_group(const char* fileName, int size) {
     // TO DO:
     struct group *grp = (struct group*)malloc(sizeof(struct group));
     if (grp == NULL) {
@@ -104,6 +103,7 @@ void delete_group(struct group* gp) {
 //     }
 //     return groupList;
 // }
+
 static inline int my_cmp(fingerprint fp1, fingerprint fp2) {
     for (int i = 0; i < FP_LENGTH; ++i) {
         if (fp1[i] < fp2[i]) {
@@ -114,31 +114,19 @@ static inline int my_cmp(fingerprint fp1, fingerprint fp2) {
     }
     return 0;
 }
+
 std::vector<struct group*> split2Groups(const char* filepath, int nodeNum) {
-    // cout << "[debug]: 31" << endl;
-    // int fd = open(filepath, O_RDONLY);
-    // if(fd < 0) {
-    //     cout << "open file " + string(filepath) +"error" << endl;
-    //     return std::vector<struct group*>();
-    // }
     std::vector<struct group*> result;
     int groupCnt = 0;
-    char fileName[1024] = {'\0'};
-    char path[1024] = {'\0'};
-    // snprintf(path, sizeof(path), "/proc/self/fd/%d", fd);
-    readlink(path, fileName, sizeof(fileName) - 1);
-    // cout << "[debug]: 32" << endl;
+
     // read file
     start_read_phase(filepath);
-    // cout << "[debug]: 321" << endl;
     // chunking
     start_chunk_phase();
-    // cout << "[debug]: 322" << endl;
     // hash
     start_hash_phase();
-    // cout << "[debug]: 323" << endl;
     //}
-    // cout << "[debug]: 33" << endl;
+
     // grouping
     // 1. group chunks by grouping_number
     // 2. get delegate fingerprint
@@ -165,7 +153,7 @@ std::vector<struct group*> split2Groups(const char* filepath, int nodeNum) {
                     memcpy(minFingerprint, chunkList[i]->fp, sizeof(fingerprint));
                 }
             }
-            struct group *gp = new_group(fileName, size);
+            struct group *gp = new_group(filepath, size);
             memcpy(gp->delegate, minFingerprint, sizeof(fingerprint));
             gp->nodeId = consistentHash(gp->delegate, nodeNum);
             result.push_back(gp);
@@ -183,7 +171,7 @@ std::vector<struct group*> split2Groups(const char* filepath, int nodeNum) {
                 memcpy(minFingerprint, chunkList[i]->fp, sizeof(fingerprint));
             }
         }
-        struct group *gp = new_group(fileName, size);
+        struct group *gp = new_group(filepath, size);
         memcpy(gp->delegate, minFingerprint, sizeof(fingerprint));
         gp->nodeId = consistentHash(gp->delegate, nodeNum);
         result.push_back(gp);
