@@ -11,6 +11,7 @@ static void* sha1_thread(void *arg) {
             sync_queue_term(hash_queue);
             break;
         }
+        assert(c->data != NULL);
         // cout << "[debug]: 3225" << endl;
         sha1(c->data, c->size, c->fp);
         // cout << "[debug]: 3226" << endl;

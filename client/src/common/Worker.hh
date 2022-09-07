@@ -9,6 +9,7 @@
 #include "Group.hh"
 #include "Fingerprint.hh"
 #include "FileRecipe.hh"
+#include "Chunking.hh"
 
 class Worker
 {

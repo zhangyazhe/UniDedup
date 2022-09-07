@@ -144,6 +144,7 @@ std::vector<struct group*> split2Groups(const char* filepath, int nodeNum) {
         if (c == NULL) {
             break;
         }
+        assert(c->data != NULL);
         chunkList[groupCnt] = c;
         groupCnt++;
         if (groupCnt == DEFAULT_GROUP_SIZE) {
@@ -156,6 +157,13 @@ std::vector<struct group*> split2Groups(const char* filepath, int nodeNum) {
             struct group *gp = new_group(filepath, size);
             memcpy(gp->delegate, minFingerprint, sizeof(fingerprint));
             gp->nodeId = consistentHash(gp->delegate, nodeNum);
+            int offset = 0;
+            for (int i = 0; i < groupCnt; ++i) {
+                assert(chunkList[i]->data != NULL);
+                memcpy(gp->data + offset, chunkList[i]->data, chunkList[i]->size);
+                free(chunkList[i]->data);
+                offset += chunkList[i]->size;
+            }
             result.push_back(gp);
             size = 0;
             groupCnt = 0;
@@ -174,6 +182,13 @@ std::vector<struct group*> split2Groups(const char* filepath, int nodeNum) {
         struct group *gp = new_group(filepath, size);
         memcpy(gp->delegate, minFingerprint, sizeof(fingerprint));
         gp->nodeId = consistentHash(gp->delegate, nodeNum);
+        int offset = 0;
+        for (int i = 0; i < groupCnt; ++i) {
+            assert(chunkList[i]->data != NULL);
+            memcpy(gp->data + offset, chunkList[i]->data, chunkList[i]->size);
+            free(chunkList[i]->data);
+            offset += chunkList[i]->size;
+        }
         result.push_back(gp);
     }
     stop_read_phase();

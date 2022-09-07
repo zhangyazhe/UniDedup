@@ -28,7 +28,9 @@ public:
     int grouping_algorithm;
     int grouping_number;
 
-    int destor_chunk_size;
+    int destor_chunk_avg_size;
+    int destor_chunk_min_size;
+    int destor_chunk_max_size;
 };
 
 

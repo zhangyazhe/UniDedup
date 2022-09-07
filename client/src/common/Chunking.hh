@@ -5,6 +5,7 @@
 #include "Group.hh"
 #include <string.h>
 #include "../util/sync_queue.hh"
+#include "Config.hh"
 
 #define CHUNK_FIXED 0
 #define CHUNK_RABIN 1
@@ -20,12 +21,14 @@ struct chunk {
     unsigned char* data;
 };
 /* Recode config information about chunking phase */
-struct {
+struct chunk_meta_data{
     int chunk_algorithm;
     int chunk_max_size;
     int chunk_min_size;
     int chunk_avg_size;
-} chunkMetaData;
+};
+
+extern struct chunk_meta_data chunkMetaData;
 
 void windows_reset();
 void chunkAlg_init();

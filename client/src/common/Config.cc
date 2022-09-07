@@ -53,9 +53,17 @@ void Config::getConfigFromLine(std::string& line) {
         std::stringstream nnss(confs[1]);
         nnss >> node_num;
     }
-    else if(confs[0] == "destor_chunk_size") {
+    else if(confs[0] == "destor_chunk_avg_size") {
         std::stringstream nnss(confs[1]);
-        nnss >> destor_chunk_size;
+        nnss >> destor_chunk_avg_size;
+    }
+    else if(confs[0] == "destor_chunk_min_size") {
+        std::stringstream nnss(confs[1]);
+        nnss >> destor_chunk_min_size;
+    }
+    else if(confs[0] == "destor_chunk_max_size") {
+        std::stringstream nnss(confs[1]);
+        nnss >> destor_chunk_max_size;
     }
 }
 

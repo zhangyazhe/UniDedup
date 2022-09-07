@@ -1,5 +1,7 @@
 #include "Worker.hh"
 
+struct chunk_meta_data chunkMetaData;
+
 Worker::Worker(Config* conf) : _conf(conf)
 {
     // create local context
@@ -14,6 +16,11 @@ Worker::Worker(Config* conf) : _conf(conf)
         // TODO: error handling
         cerr << "initializing redis context error" << endl;
     }
+    chunkMetaData.chunk_algorithm = _conf->chunking_algorithm;
+    cout << _conf->destor_chunk_max_size << endl;
+    chunkMetaData.chunk_avg_size = _conf->destor_chunk_avg_size;
+    chunkMetaData.chunk_max_size = _conf->destor_chunk_max_size;
+    chunkMetaData.chunk_min_size = _conf->destor_chunk_min_size;
 }
 
 Worker::~Worker()

@@ -36,6 +36,8 @@ static void* chunk_thread(void *arg) {
 
     // unsigned char *data = malloc(chunkMetaData.chunk_max_size);
 
+    cout << chunkMetaData.chunk_max_size << endl;
+
     struct chunk *c = NULL;
 
     while (1) {
@@ -45,6 +47,8 @@ static void* chunk_thread(void *arg) {
             memmove(leftbuf, leftbuf + leftoff, leftlen);
             leftoff = 0;
             if (c != NULL) {
+                assert(c->data != NULL);
+                assert(c->size != 0);
                 memcpy(leftbuf + leftlen, c->data, c->size);
                 leftlen += c->size;
                 free_chunk(c);
@@ -57,8 +61,9 @@ static void* chunk_thread(void *arg) {
             // assert(c == NULL);
             break;
         }
+        cout << "leftoff:" << leftoff << ", leftlen:" << leftlen << endl;
         int chunk_size = chunking(leftbuf + leftoff, leftlen);
-
+        assert(chunk_size != 0);
         struct chunk *nc = new_chunk(chunk_size);
         memcpy(nc->data, leftbuf + leftoff, chunk_size);
         leftlen -= chunk_size;

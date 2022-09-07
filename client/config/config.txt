@@ -8,4 +8,6 @@ grouping_algorithm fixed
 grouping_number 1024
 worker_number 1
 node_number 1
-destor_chunk_size 1048576
+destor_chunk_avg_size 4096
+destor_chunk_max_size 65536
+destor_chunk_min_size 512
