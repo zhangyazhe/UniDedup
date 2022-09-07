@@ -18,6 +18,12 @@ struct metaEntry {
 	fingerprint fp;
 };
 
+// zz7 for openec
+extern redisContext* createContextByUint(unsigned int ip);
+extern void openec_agent_cmd_init(agent_cmd *cmd);
+extern void build_openec_agent_command_type0(agent_cmd* cmd, int type, char* filename, char* ecidpool, char* mode, int filesize);
+
+
 /*
  * We must ensure a container is either in the buffer or written to disks.
  */
