@@ -1,2 +1,0 @@
-noinst_LIBRARIES=libdeduprc.a
-libdeduprc_a_SOURCES=Agent.cc Client.cc

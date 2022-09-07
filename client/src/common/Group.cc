@@ -1,5 +1,9 @@
 #include "Group.hh"
 
+SyncQueue *read_queue;
+SyncQueue *chunk_queue;
+SyncQueue *hash_queue;
+
 int openFile(const char* path) {
     // TO DO:
     int fd = open(path, O_RDONLY);

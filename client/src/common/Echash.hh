@@ -5,7 +5,7 @@
 #include "../inc/include.hh"
 #include "FileRecipe.hh"
 
-struct ECHash_st *ECH;
+extern struct ECHash_st *ECH;
 
 enum echash_return_t {
     ECHASH_SUCCESS,

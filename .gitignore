@@ -102,6 +102,8 @@ client/src/*/Makefile.in
 
 client/config.h
 client/config.h.in
+client/config.hh
+client/config.hh.in
 client/config.log
 client/config.status
 client/configure.scan
@@ -121,3 +123,5 @@ client/src/*/*.o
 client/*.a
 client/src/*.a
 client/src/*/*.a
+
+client/deduprc

@@ -3,13 +3,13 @@
 
 AC_PREREQ([2.69])
 AC_INIT([DedupRC], [0.1], [yuchonghu@hust.edu.cn])
-AC_CONFIG_SRCDIR([src/Agent.cc])
+AC_CONFIG_SRCDIR([Agent.cc])
 AC_CONFIG_HEADERS([config.h])
 AM_INIT_AUTOMAKE([test], [0.1])
 
 # Checks for programs.
 AC_PROG_CXX
-AC_PROG_CC
+CXXFLAGS="-std=c++11 -g -O2 -Wall"
 
 # Checks for libraries.
 AC_CHECK_LIB([pthread], [pthread_create])
@@ -24,6 +24,14 @@ AC_CHECK_LIB([glib], [g_thread_init],[thread_safe=no],[thread_safe=yes])
 AC_CHECK_LIB([crypto],[SHA_Update],[found_crypto=yes],[found_crypto=no])
     if test "$found_crypto" = "no"; then
         AC_MSG_ERROR([*** Working crypto library not found ***])
+    fi
+AC_CHECK_LIB([hiredis],[redisCommand],[found_hiredis=yes],[found_hiredis=no])
+    if test "$found_hiredis" = "no"; then
+        AC_MSG_ERROR([*** Working hiredis library not found ***])
+    fi
+AC_CHECK_LIB([memcached],[memcached_create],[found_memcached=yes],[found_memcached=no])
+    if test "$found_memcached" = "no"; then
+        AC_MSG_ERROR([*** Working memcahced library not found ***])
     fi
 
 AC_PROG_RANLIB
@@ -57,7 +65,6 @@ AC_FUNC_MALLOC
 AC_CHECK_FUNCS([gettimeofday inet_ntoa memmove memset])
 
 AC_OUTPUT(Makefile
-        src/Makefile
         src/common/Makefile
         src/protocol/Makefile
         src/util/Makefile)

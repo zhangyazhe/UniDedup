@@ -1,8 +1,6 @@
-#include "inc/include.hh"
-#include "common/Config.hh"
-#include "protocol/AgentCommand.hh"
-
-using namespace std;
+#include "src/inc/include.hh"
+#include "src/common/Config.hh"
+#include "src/protocol/AgentCommand.hh"
 
 void usage() {
     cout << "usage:\t./Client write filepath sizeinBytes" << endl;

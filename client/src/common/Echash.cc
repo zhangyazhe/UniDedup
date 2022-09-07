@@ -1,5 +1,7 @@
 #include "Echash.hh"
 
+struct ECHash_st *ECH;
+
 int initEchash(void) {
     ECHash_init(&ECH);
 

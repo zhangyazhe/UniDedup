@@ -1,6 +1,6 @@
-#include "inc/include.hh"
-#include "common/Worker.hh"
-#include "common/Config.hh"
+#include "src/inc/include.hh"
+#include "src/common/Worker.hh"
+#include "src/common/Config.hh"
 
 int main(int argc, char** argv)
 {
@@ -15,7 +15,7 @@ int main(int argc, char** argv)
         workers[i] = new Worker(conf);
         thrds[i] = thread([=]{workers[i]->doProcess();});
     }
-    std::cout << "Agent started ..." << std::endl;
+    cout << "Agent started ..." << endl;
 
     // never reach here
     for (int i = 0; i < worker_num; i++) thrds[i].join();
