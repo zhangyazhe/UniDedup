@@ -32,6 +32,7 @@
 
 #include "utils/sds.h"
 #include "utils/redis_util.h"
+#include <hiredis/hiredis.h>
 
 #define TIMER_DECLARE(n) struct timeval b##n,e##n
 #define TIMER_BEGIN(n) gettimeofday(&b##n, NULL)

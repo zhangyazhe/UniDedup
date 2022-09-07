@@ -85,7 +85,7 @@ void destor_cmd_write_int(destor_cmd *cmd, int value) {
   memcpy(cmd->_destorCmd + cmd->_cmLen, (char*)&tmpv, 4); cmd->_cmLen += 4;
 }
 
-void writeagent_cmd_write_intInt(agent_cmd *cmd, int value) {
+void agent_cmd_write_int(agent_cmd *cmd, int value) {
   int tmpv = htonl(value);
   memcpy(cmd->_agCmd + cmd->_cmLen, (char*)&tmpv, 4); cmd->_cmLen += 4;
 }
@@ -127,7 +127,6 @@ int agent_cmd_read_int(agent_cmd *cmd) {
 }
 
 char* destor_cmd_read_string(destor_cmd *cmd) {
-  char* toret;
   int slen = destor_cmd_read_int(cmd);
   char* toret = (char*)calloc(sizeof(char), slen+1);
   memcpy(toret, cmd->_destorCmd + cmd->_cmLen, slen); cmd->_cmLen += slen;
@@ -135,7 +134,6 @@ char* destor_cmd_read_string(destor_cmd *cmd) {
 }
 
 char* agent_cmd_read_string(agent_cmd *cmd) {
-  char* toret;
   int slen = agent_cmd_read_int(cmd);
   char* toret = (char*)calloc(sizeof(char), slen+1);
   memcpy(toret, cmd->_agCmd + cmd->_cmLen, slen); cmd->_cmLen += slen;

@@ -301,7 +301,7 @@ void destor_write(char *path, char *data, uint32_t size) {
 void destor_server_process()
 {
     // todo: where to get local ip
-    _localCtx = createContext(destor.local_ip);
+    _localCtx = createContextByUint(destor.local_ip);
     redisReply *rReply;
     while (1)
     {
