@@ -53,6 +53,10 @@ void Config::getConfigFromLine(std::string& line) {
         std::stringstream nnss(confs[1]);
         nnss >> node_num;
     }
+    else if(confs[0] == "destor_chunk_size") {
+        std::stringstream nnss(confs[1]);
+        nnss >> destor_chunk_size;
+    }
 }
 
 void Config::getIpFromIpList(const std::string& ipListPath) {

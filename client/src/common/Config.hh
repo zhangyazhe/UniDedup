@@ -27,6 +27,8 @@ public:
     int chunking_algorithm;
     int grouping_algorithm;
     int grouping_number;
+
+    int destor_chunk_size;
 };
 
 
