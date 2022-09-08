@@ -293,7 +293,7 @@ void destor_server_process()
 {
     // todo: where to get local ip
     _localCtx = createContextByUint(destor.local_ip);
-	printf("%s\n", ip2Str(destor.local_ip));
+	// printf("%s\n", ip2Str(destor.local_ip));
     redisReply *rReply;
     while (1)
     {

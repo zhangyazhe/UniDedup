@@ -17,7 +17,6 @@ Worker::Worker(Config* conf) : _conf(conf)
         cerr << "initializing redis context error" << endl;
     }
     chunkMetaData.chunk_algorithm = _conf->chunking_algorithm;
-    cout << _conf->destor_chunk_max_size << endl;
     chunkMetaData.chunk_avg_size = _conf->destor_chunk_avg_size;
     chunkMetaData.chunk_max_size = _conf->destor_chunk_max_size;
     chunkMetaData.chunk_min_size = _conf->destor_chunk_min_size;
@@ -86,10 +85,10 @@ void Worker::clientWrite(AgentCommand *agCmd) {
       dstCmd->sendTo(nodeIp);
 
       // for debug
-      // std::cout << "Worker::debug::Command type 0, groupName is " << gps[i]->groupName
-      //           << " data size is " << gps[i]->size
-      //           << "\ndata is " << gps[i]->data
-      //           << std::endl;
+      std::cout << "Worker::debug::Command type 0, groupName is " << gps[i]->groupName
+                << " data size is " << gps[i]->size
+                << "\ndata is " << gps[i]->data
+                << std::endl;
       std::cout << "Worker::debug::Command send to " << RedisUtil::ip2Str(_conf->id2Ip[gps[i]->nodeId]) << std::endl;
 
       // sendThrd[i] = thread([&](){
