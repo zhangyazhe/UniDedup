@@ -103,6 +103,13 @@ void destorCommand::sendTo(unsigned int ip)
 {
 	redisContext *sendCtx = RedisUtil::createContext(ip);
 	redisReply *rReply = (redisReply *)redisCommand(sendCtx, "RPUSH %s %b", _rKey.c_str(), _destorCmd, _cmLen);
+	if (rReply -> type == REDIS_REPLY_NIL) {
+      std::cerr << "destorcmd:: get feed back empty queue " << std::endl;
+      //freeReplyObject(rReply);
+    } else if (rReply -> type == REDIS_REPLY_ERROR) {
+      std::cerr << "destorcmd:: get feed back ERROR happens " << std::endl;
+    }
+	
 	freeReplyObject(rReply);
 	redisFree(sendCtx);
 }
