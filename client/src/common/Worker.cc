@@ -80,16 +80,16 @@ void Worker::clientWrite(AgentCommand *agCmd) {
     // distribute groups to different nodes
     // thread sendThrd[gps.size()];
     for(int i = 0; i < gps.size(); i++) {
-      // destorCommand *dstCmd = new destorCommand();
-      // dstCmd->buildType0(0, (const char*)gps[i]->groupName, (const char*)gps[i]->data, gps[i]->size);
-      // unsigned int nodeIp = _conf->id2Ip[gps[i]->nodeId];
-      // dstCmd->sendTo(nodeIp);
+      destorCommand *dstCmd = new destorCommand();
+      dstCmd->buildType0(0, (const char*)gps[i]->groupName, (const char*)gps[i]->data, gps[i]->size);
+      unsigned int nodeIp = _conf->id2Ip[gps[i]->nodeId];
+      dstCmd->sendTo(nodeIp);
 
       // for debug
-      std::cout << "Worker::debug::Command type 0, groupName is " << gps[i]->groupName
-                << " data size is " << gps[i]->size
-                << "\ndata is " << gps[i]->data
-                << std::endl;
+      // std::cout << "Worker::debug::Command type 0, groupName is " << gps[i]->groupName
+      //           << " data size is " << gps[i]->size
+      //           << "\ndata is " << gps[i]->data
+      //           << std::endl;
       std::cout << "Worker::debug::Command send to " << RedisUtil::ip2Str(_conf->id2Ip[gps[i]->nodeId]) << std::endl;
 
       // sendThrd[i] = thread([&](){

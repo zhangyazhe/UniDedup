@@ -293,12 +293,13 @@ void destor_server_process()
 {
     // todo: where to get local ip
     _localCtx = createContextByUint(destor.local_ip);
+	printf("%s\n", ip2Str(destor.local_ip));
     redisReply *rReply;
     while (1)
     {
         printf("destor_server_process\n");
         // will never stop looping
-        rReply = (redisReply *)redisCommand(_localCtx, "blpop coor_request 0");
+        rReply = (redisReply *)redisCommand(_localCtx, "blpop destor_request 0");
         if (rReply->type == REDIS_REPLY_NIL)
         {
             printf("destor_server_process: get feed back empty queue\n");
