@@ -361,6 +361,8 @@ int main(int argc, char **argv) {
 	/* use destor_server */
 	destor_server_process();
 
+	/*  */
+
 	destor_shutdown();
 
 	return 0;

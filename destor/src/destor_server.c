@@ -1,6 +1,8 @@
 
 #include "destor_server.h"
 
+extern void destor_shutdown();
+
 
 struct readParam* newReadParam(char* data, uint32_t size) {
     struct readParam* rp = (struct readParam*) malloc(sizeof(struct readParam));
@@ -329,5 +331,7 @@ void destor_server_process()
         }
         // free reply object
         freeReplyObject(rReply);
+		/* persist destor stat into local file */
+		destor_shutdown();
     }
 }
