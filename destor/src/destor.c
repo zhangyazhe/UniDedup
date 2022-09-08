@@ -9,6 +9,7 @@
 #include "jcr.h"
 #include "index/index.h"
 #include "storage/containerstore.h"
+#include "destor_server.h"
 
 extern void do_backup(char *path);
 //extern void do_delete(int revision);
@@ -18,6 +19,8 @@ extern void make_trace(char *raw_files);
 
 extern int load_config();
 extern void load_config_from_string(sds config);
+
+extern void destor_server_process();
 
 /* : means argument is required.
  * :: means argument is required and no space.
@@ -264,95 +267,100 @@ int main(int argc, char **argv) {
 
 	destor_start();
 
-	int job = DESTOR_BACKUP;
-	int revision = -1;
+	/* start by cmdl */
+	// int job = DESTOR_BACKUP;
+	// int revision = -1;
 
-	int opt = 0;
-	while ((opt = getopt_long(argc, argv, short_options, long_options, NULL))
-			!= -1) {
-		switch (opt) {
-		case 'r':
-			job = DESTOR_RESTORE;
-			revision = atoi(optarg);
-			break;
-		case 's':
-			destor_stat();
-			break;
-		case 't':
-			job = DESTOR_MAKE_TRACE;
-			break;
-		case 'h':
-			usage();
-			break;
-		case 'p': {
-			sds param = sdsnew(optarg);
-			load_config_from_string(param);
-			break;
-		}
-		default:
-			return 0;
-		}
-	}
+	// int opt = 0;
+	// while ((opt = getopt_long(argc, argv, short_options, long_options, NULL))
+	// 		!= -1) {
+	// 	switch (opt) {
+	// 	case 'r':
+	// 		job = DESTOR_RESTORE;
+	// 		revision = atoi(optarg);
+	// 		break;
+	// 	case 's':
+	// 		destor_stat();
+	// 		break;
+	// 	case 't':
+	// 		job = DESTOR_MAKE_TRACE;
+	// 		break;
+	// 	case 'h':
+	// 		usage();
+	// 		break;
+	// 	case 'p': {
+	// 		sds param = sdsnew(optarg);
+	// 		load_config_from_string(param);
+	// 		break;
+	// 	}
+	// 	default:
+	// 		return 0;
+	// 	}
+	// }
 
-	sds path = NULL;
+	// sds path = NULL;
 
-	switch (job) {
-	case DESTOR_BACKUP:
+	// switch (job) {
+	// case DESTOR_BACKUP:
 
-		if (argc > optind) {
-			path = sdsnew(argv[optind]);
-		} else {
-			fprintf(stderr, "backup job needs a protected path!\n");
-			usage();
-		}
+	// 	if (argc > optind) {
+	// 		path = sdsnew(argv[optind]);
+	// 	} else {
+	// 		fprintf(stderr, "backup job needs a protected path!\n");
+	// 		usage();
+	// 	}
 
-		do_backup(path);
+	// 	do_backup(path);
 
-		/*
-		 * The backup concludes.
-		 * GC starts
-		 * */
-		if(destor.backup_retention_time >= 0
-				&& jcr.id >= destor.backup_retention_time){
-			NOTICE("GC is running!");
-			do_delete(jcr.id - destor.backup_retention_time);
-		}
+	// 	/*
+	// 	 * The backup concludes.
+	// 	 * GC starts
+	// 	 * */
+	// 	if(destor.backup_retention_time >= 0
+	// 			&& jcr.id >= destor.backup_retention_time){
+	// 		NOTICE("GC is running!");
+	// 		do_delete(jcr.id - destor.backup_retention_time);
+	// 	}
 
-		sdsfree(path);
+	// 	sdsfree(path);
 
-		break;
-	case DESTOR_RESTORE:
-		if (revision < 0) {
-			fprintf(stderr, "A job id is required!\n");
-			usage();
-		}
-		if (argc > optind) {
-			path = sdsnew(argv[optind]);
-		} else {
-			fprintf(stderr, "A target directory is required!\n");
-			usage();
-		}
+	// 	break;
+	// case DESTOR_RESTORE:
+	// 	if (revision < 0) {
+	// 		fprintf(stderr, "A job id is required!\n");
+	// 		usage();
+	// 	}
+	// 	if (argc > optind) {
+	// 		path = sdsnew(argv[optind]);
+	// 	} else {
+	// 		fprintf(stderr, "A target directory is required!\n");
+	// 		usage();
+	// 	}
 
-		do_restore(revision, path[0] == 0 ? 0 : path);
+	// 	do_restore(revision, path[0] == 0 ? 0 : path);
 
-		sdsfree(path);
-		break;
-	case DESTOR_MAKE_TRACE: {
-		if (argc > optind) {
-			path = sdsnew(argv[optind]);
-		} else {
-			fprintf(stderr, "A target directory is required!\n");
-			usage();
-		}
+	// 	sdsfree(path);
+	// 	break;
+	// case DESTOR_MAKE_TRACE: {
+	// 	if (argc > optind) {
+	// 		path = sdsnew(argv[optind]);
+	// 	} else {
+	// 		fprintf(stderr, "A target directory is required!\n");
+	// 		usage();
+	// 	}
 
-		make_trace(path);
-		sdsfree(path);
-		break;
-	}
-	default:
-		fprintf(stderr, "Invalid job type!\n");
-		usage();
-	}
+	// 	make_trace(path);
+	// 	sdsfree(path);
+	// 	break;
+	// }
+	// default:
+	// 	fprintf(stderr, "Invalid job type!\n");
+	// 	usage();
+	// }
+
+	/* use destor_server */
+	destor_server_process();
+
 	destor_shutdown();
 
 	return 0;
