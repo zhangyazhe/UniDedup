@@ -68,10 +68,6 @@ void Worker::clientWrite(AgentCommand *agCmd) {
     // file to groups
     vector<struct group*> gps = split2Groups(filepath.c_str(), filename.c_str(), _conf->node_num);
 
-    cout << "gps.size(): " << gps.size() << endl;
-    // cout << string((char *)gps[0]->data).size() << endl;
-    cout << "gps[0].size: " << gps[0]->size << endl;
-
     /* This part is for Lin */
     // generate file recipe
     struct fileRecipe* fr = getFileRecipe(filename.c_str(), gps);
@@ -95,6 +91,14 @@ void Worker::clientWrite(AgentCommand *agCmd) {
       string append_data_key = string(gps[i]->groupName)+"_data";
       redisAppendCommand(_destorCtx, "RPUSH %s %b", append_data_key.c_str(), gps[i]->data, gps[i]->size);
       // cout << append_data_key.c_str() << endl;
+
+      
+      std::cout << "Worker::debug::Command type 0, groupName is " << gps[i]->groupName
+                << " data size is " << gps[i]->size
+                // << " data is " << gps[i]->data
+                << std::endl;
+
+
       redisReply* destorrReply;
       redisGetReply(_destorCtx, (void**)&destorrReply);
       freeReplyObject(destorrReply);
@@ -106,10 +110,6 @@ void Worker::clientWrite(AgentCommand *agCmd) {
       redisFree(_destorCtx);
 
       // for debug
-      // std::cout << "Worker::debug::Command type 0, groupName is " << gps[i]->groupName
-      //           << " data size is " << gps[i]->size
-      //           // << " data is " << gps[i]->data
-      //           << std::endl;
       // std::cout << "Worker::debug::Command send to " << RedisUtil::ip2Str(_conf->id2Ip[gps[i]->nodeId]) << std::endl;
 
       // sendThrd[i] = thread([&](){

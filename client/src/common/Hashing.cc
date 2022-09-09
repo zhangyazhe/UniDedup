@@ -3,7 +3,6 @@
 pthread_t hash_t;
 
 static void* sha1_thread(void *arg) {
-    int total = 0;
     while (1) {
         // cout << "[debug]: 3223" << endl;
         struct chunk *c = (struct chunk *) sync_queue_pop(chunk_queue);
@@ -12,14 +11,12 @@ static void* sha1_thread(void *arg) {
             sync_queue_term(hash_queue);
             break;
         }
-        total += c->size;
         assert(c->data != NULL);
         // cout << "[debug]: 3225" << endl;
         sha1(c->data, c->size, c->fp);
         // cout << "[debug]: 3226" << endl;
         sync_queue_push(hash_queue, c);
     }
-    printf("hash total size: %d\n", total);
     return NULL;
 }
 

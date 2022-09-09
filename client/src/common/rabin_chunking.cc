@@ -195,7 +195,6 @@ void chunkAlg_init() {
 
 /* The standard rabin chunking */
 int rabin_chunk_data(unsigned char *p, int n) {
-
 	UINT64 f_break = 0;
 	UINT64 count = 0;
 	UINT64 fp = 0;

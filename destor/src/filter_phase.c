@@ -28,6 +28,7 @@ extern struct {
  * When a container buffer is full, we push it into container_queue.
  */
 static void* filter_thread(void *arg) {
+    printf("filter thread\n");
     int enable_rewrite = 1;
     struct fileRecipeMeta* r = NULL;
 
@@ -218,6 +219,7 @@ static void* filter_thread(void *arg) {
             c = g_sequence_get(iter);
 
         	if(r == NULL){
+                printf("r==null\n");
         		assert(CHECK_CHUNK(c,CHUNK_FILE_START));
         		r = new_file_recipe_meta(c->data);
         	}else if(!CHECK_CHUNK(c,CHUNK_FILE_END)){
@@ -229,11 +231,12 @@ static void* filter_thread(void *arg) {
         		append_n_chunk_pointers(jcr.bv, &cp ,1);
         		r->chunknum++;
         		r->filesize += c->size;
-
+                printf("not end\n");
     	    	jcr.chunk_num++;
 	    	    jcr.data_size += c->size;
 
         	}else{
+                printf("end\n");
         		assert(CHECK_CHUNK(c,CHUNK_FILE_END));
         		append_file_recipe_meta(jcr.bv, r);
         		free_file_recipe_meta(r);

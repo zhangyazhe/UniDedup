@@ -142,6 +142,7 @@ std::vector<struct group*> split2Groups(const char* filepath, const char* filena
         if (c == NULL) {
             break;
         }
+
         assert(c->data != NULL);
         chunkList[groupCnt] = c;
         groupCnt++;

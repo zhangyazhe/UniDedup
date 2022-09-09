@@ -5,8 +5,12 @@ extern void destor_shutdown();
 
 struct readParam* newReadParam(char* data, uint32_t size) {
 	printf("new param start\n");
-    struct readParam* rp = (struct readParam*) malloc(sizeof(struct readParam));
-    rp->data = (char *) malloc(size*sizeof(char));
+    struct readParam* rp = (struct readParam*) calloc(sizeof(struct readParam), 1);
+    rp->data = (char *) calloc(size*sizeof(char), 1);
+	if(rp->data == NULL) {
+		printf("data malloc error!\n");
+		return NULL;
+	}
     memcpy(rp->data, data, size);
     rp->size = size;
 	printf("new param end\n");
@@ -20,7 +24,6 @@ void deleteReadParam(struct readParam* rp) {
 }
 
 static void read_data(void* argv) {
-	printf("read data start\n");
 	sds filename = sdsdup(jcr.path);
     struct readParam* rp = (struct readParam*)argv;
 
@@ -88,7 +91,6 @@ static void read_data(void* argv) {
 	sync_queue_push(read_queue, c);
 
 	sdsfree(filename);
-	printf("read data end\n");
 }
 
 static void* read_thread(void *argv) {
@@ -349,6 +351,7 @@ void destor_server_process()
 				redisFree(readCtx);
 				printf("%s\n", data_key);
 				// 3. destor_write
+				printf("cmd->size: %d\n", cmd->_size);
                 destor_write(cmd->_group_name, cmd->_data, cmd->_size);
                 // 4. tell client finished
 				char fikey[] = "_finished";
