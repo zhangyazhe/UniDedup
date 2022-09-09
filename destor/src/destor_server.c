@@ -348,9 +348,17 @@ void destor_server_process()
 				freeReplyObject(readrReply);
 				redisFree(readCtx);
 				printf("%s\n", data_key);
-				// done
+				// 3. destor_write
                 destor_write(cmd->_group_name, cmd->_data, cmd->_size);
-                break;
+                // 4. tell client finished
+				char fikey[] = "_finished";
+				char* finished_key = (char *)calloc(strlen(data_key)+1+15, 1);
+				memcpy(finished_key, data_key, strlen(data_key)+1);
+				strcat(finished_key, fikey);
+				// done
+				free(finished_key);
+				free(data_key);
+				break;
             default:
                 break;
             }

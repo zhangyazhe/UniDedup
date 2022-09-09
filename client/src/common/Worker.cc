@@ -90,10 +90,19 @@ void Worker::clientWrite(AgentCommand *agCmd) {
       unsigned int nodeIp = _conf->id2Ip[gps[i]->nodeId];
       dstCmd->sendTo(nodeIp);
       // send data
+      // extand pipelining (if need)
       _destorCtx = RedisUtil::createContext(nodeIp);
       string append_data_key = string(gps[i]->groupName)+"_data";
       redisAppendCommand(_destorCtx, "RPUSH %s %b", append_data_key.c_str(), gps[i]->data, gps[i]->size);
-      cout << append_data_key.c_str() << endl;
+      // cout << append_data_key.c_str() << endl;
+      redisReply* destorrReply;
+      redisGetReply(_destorCtx, (void**)&destorrReply);
+      freeReplyObject(destorrReply);
+      // wait for finished
+      string wait_finished_key = append_data_key + "_finished";
+      destorrReply = (redisReply*)redisCommand(_localCtx, "blpop %s 0", wait_finished_key.c_str());
+      freeReplyObject(destorrReply);
+      
       redisFree(_destorCtx);
 
       // for debug
