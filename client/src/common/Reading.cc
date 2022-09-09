@@ -13,20 +13,24 @@ static void read_file(const char* filepath) {
     }
 
     struct chunk *c = NULL;
+    int total = 0;
 
     while ((size = read(fd, buf, DEFAULT_BLOCK_SIZE)) != 0) {
         if(size == -1) {
             cout << "[error] " + to_string(errno) + ": read file error" << endl;
             break;
         }
+        // total+=size;
         c = new_chunk(size);
         if(c == NULL) {
             cout << "chunk malloc fails" << endl;
             break;
         }
         memcpy(c->data, buf, size);
+        total += c->size;
         sync_queue_push(read_queue, c);
     }
+    printf("read total size: %d\n", total);
 }
 
 static void *read_thread(void *argv) {
@@ -37,7 +41,7 @@ static void *read_thread(void *argv) {
 }
 
 void start_read_phase(const char* buf) {
-    read_queue = sync_queue_new(10);
+    read_queue = sync_queue_new(100);
     pthread_create(&read_t, NULL, read_thread, (void*)buf);
 }
 

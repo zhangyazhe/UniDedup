@@ -5,8 +5,6 @@ SyncQueue *chunk_queue;
 SyncQueue *hash_queue;
 
 int openFile(const char* path) {
-    // TO DO:
-    cout << "path: " << string(path) << endl;
     int fd = open(path, O_RDONLY);
     unsigned char* buf[10];
     if (fd < 0) {
@@ -147,6 +145,8 @@ std::vector<struct group*> split2Groups(const char* filepath, const char* filena
         assert(c->data != NULL);
         chunkList[groupCnt] = c;
         groupCnt++;
+        // printf("groupcnt: %d\n", groupCnt);
+        // printf("chunk size: %d\n", chunkList[groupCnt-1]->size);
         if (groupCnt == DEFAULT_GROUP_SIZE) {
             for (int i = 0; i < DEFAULT_GROUP_SIZE; ++i) {
                 size += chunkList[i]->size;

@@ -40,10 +40,15 @@ static void* chunk_thread(void *arg) {
 
     struct chunk *c = NULL;
 
+    int total = 0;
+
     while (1) {
         c = (struct chunk*) sync_queue_pop(read_queue);
 
-        while  ((leftlen < chunkMetaData.chunk_max_size)) {
+        while  (leftlen < chunkMetaData.chunk_max_size) {
+            // cout << "leftLen1: " << leftlen << endl;
+            // cout << "leftoff: " << leftoff << endl;
+            if(c) total += c->size;
             memmove(leftbuf, leftbuf + leftoff, leftlen);
             leftoff = 0;
             if (c != NULL) {
@@ -53,6 +58,7 @@ static void* chunk_thread(void *arg) {
                 leftlen += c->size;
                 free_chunk(c);
             } else {
+                printf("c=null, total: %d\n", total);
                 break;
             }
             c = (struct chunk*) sync_queue_pop(read_queue);
@@ -61,8 +67,9 @@ static void* chunk_thread(void *arg) {
             // assert(c == NULL);
             break;
         }
-        // cout << "leftoff:" << leftoff << ", leftlen:" << leftlen << endl;
+        cout << "leftLen2: " << leftlen << endl;
         int chunk_size = chunking(leftbuf + leftoff, leftlen);
+        // total+=chunk_size;
         assert(chunk_size != 0);
         struct chunk *nc = new_chunk(chunk_size);
         memcpy(nc->data, leftbuf + leftoff, chunk_size);
@@ -73,6 +80,8 @@ static void* chunk_thread(void *arg) {
     }
     sync_queue_term(chunk_queue);
     free(leftbuf);
+
+    printf("chunk total size: %d\n", total);
     return NULL;
 }
 

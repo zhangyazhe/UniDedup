@@ -3,11 +3,8 @@
 #include <iostream>
 
 SyncQueue* sync_queue_new(int size) {
-	// std::cout << "[debug]: 32211" << std::endl;
 	SyncQueue *s_queue = (SyncQueue*) malloc(sizeof(SyncQueue));
-	// std::cout << "[debug]: 32212" << std::endl;
 	s_queue->queue = queue_new();
-	// std::cout << "[debug]: 32213" << std::endl;
 	s_queue->max_size = size;
 	s_queue->term = 0;
 

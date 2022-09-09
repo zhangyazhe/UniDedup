@@ -4,10 +4,12 @@
 extern void destor_shutdown();
 
 struct readParam* newReadParam(char* data, uint32_t size) {
+	printf("new param start\n");
     struct readParam* rp = (struct readParam*) malloc(sizeof(struct readParam));
     rp->data = (char *) malloc(size*sizeof(char));
     memcpy(rp->data, data, size);
     rp->size = size;
+	printf("new param end\n");
     return rp;
 }
 
@@ -18,6 +20,7 @@ void deleteReadParam(struct readParam* rp) {
 }
 
 static void read_data(void* argv) {
+	printf("read data start\n");
 	sds filename = sdsdup(jcr.path);
     struct readParam* rp = (struct readParam*)argv;
 
@@ -85,10 +88,12 @@ static void read_data(void* argv) {
 	sync_queue_push(read_queue, c);
 
 	sdsfree(filename);
+	printf("read data end\n");
 }
 
 static void* read_thread(void *argv) {
 	/* Each file will be processed separately */
+	printf("read_thread start\n");
 	read_data(argv);
 	sync_queue_term(read_queue);
 	return NULL;
@@ -96,6 +101,7 @@ static void* read_thread(void *argv) {
 
 void start_read_phase_from_data(void* argv) {
     /* running job */
+	printf("start_read_phase_from_data\n");
     jcr.status = JCR_STATUS_RUNNING;
 	read_queue = sync_queue_new(10);
 	pthread_create(&read_t, NULL, read_thread, argv);
@@ -124,8 +130,10 @@ void destor_write(char *path, char *data, uint32_t size) {
 
     time_t start = time(NULL);
 	if (destor.simulation_level == SIMULATION_ALL) {
+		printf("sim\n");
 		start_read_trace_phase();
 	} else {
+		printf("not sim\n");
 		// 将jcr.path目录下的所有文件以块为单位读取出来压入到read_queue中
         struct readParam* rp = newReadParam(data, size);
 		start_read_phase_from_data((void *)rp);
@@ -293,7 +301,7 @@ void destor_server_process()
 {
     // todo: where to get local ip
     redisContext* _localCtx = createContextByUint(destor.local_ip);
-	printf("%s\n", ip2Str(destor.local_ip));
+	// printf("%s\n", ip2Str(destor.local_ip));
     redisReply *rReply;
     while (1) {
         printf("destor_server_process\n");
@@ -318,11 +326,11 @@ void destor_server_process()
             switch (type)
             {
             case 0:
-                destor_write(cmd->_group_name, cmd->_data, cmd->_size);
-				// printf("[debug] destor has received command type0.\n");
-				// printf("[debug] groupname: %s\n", cmd->_group_name);
+				printf("[debug] destor has received command type0.\n");
+				printf("[debug] groupname: %s\n", cmd->_group_name);
 				// printf("[debug] data: %s\n", cmd->_data);
-				// printf("[debug] size: %d\n", cmd->_size);
+				printf("[debug] size: %d\n", cmd->_size);
+                destor_write(cmd->_group_name, cmd->_data, cmd->_size);
                 break;
             default:
                 break;
