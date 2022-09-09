@@ -115,7 +115,7 @@ static inline int my_cmp(fingerprint fp1, fingerprint fp2) {
     return 0;
 }
 
-std::vector<struct group*> split2Groups(const char* filepath, int nodeNum) {
+std::vector<struct group*> split2Groups(const char* filepath, const char* filename, int nodeNum) {
     std::vector<struct group*> result;
     int groupCnt = 0;
 
@@ -154,7 +154,7 @@ std::vector<struct group*> split2Groups(const char* filepath, int nodeNum) {
                     memcpy(minFingerprint, chunkList[i]->fp, sizeof(fingerprint));
                 }
             }
-            struct group *gp = new_group(filepath, size);
+            struct group *gp = new_group(filename, size);
             memcpy(gp->delegate, minFingerprint, sizeof(fingerprint));
             gp->nodeId = consistentHash(gp->delegate, nodeNum);
             int offset = 0;
@@ -179,7 +179,7 @@ std::vector<struct group*> split2Groups(const char* filepath, int nodeNum) {
                 memcpy(minFingerprint, chunkList[i]->fp, sizeof(fingerprint));
             }
         }
-        struct group *gp = new_group(filepath, size);
+        struct group *gp = new_group(filename, size);
         memcpy(gp->delegate, minFingerprint, sizeof(fingerprint));
         gp->nodeId = consistentHash(gp->delegate, nodeNum);
         int offset = 0;

@@ -13,10 +13,10 @@ void init_jcr(char *path) {
 	jcr.path = sdsnew(path);
 
 	struct stat s;
-	if (stat(path, &s) != 0) {
-		fprintf(stderr, "backup path does not exist!");
-		exit(1);
-	}
+	// if (stat(path, &s) != 0) {
+	// 	fprintf(stderr, "backup path does not exist!");
+	// 	exit(1);
+	// }
 	if (S_ISDIR(s.st_mode) && jcr.path[sdslen(jcr.path) - 1] != '/')
 		jcr.path = sdscat(jcr.path, "/");
 

@@ -107,6 +107,7 @@ void stop_read_phase_from_data() {
 }
 
 void destor_write(char *path, char *data, uint32_t size) {
+	printf("size: %d\n", size);
     /* 初始化recipe目录 */
 	init_recipe_store();
 	/* 创建一个container_buffer队列 */
@@ -294,11 +295,10 @@ void destor_server_process()
     redisContext* _localCtx = createContextByUint(destor.local_ip);
 	printf("%s\n", ip2Str(destor.local_ip));
     redisReply *rReply;
-    // while (1) {
+    while (1) {
         printf("destor_server_process\n");
         // will never stop looping
         rReply = (redisReply *)redisCommand(_localCtx, "blpop destor_request 0");
-		printf("1\n");
         if (rReply->type == REDIS_REPLY_NIL)
         {
             printf("destor_server_process: get feed back empty queue\n");
@@ -309,20 +309,20 @@ void destor_server_process()
         }	
         else
         {
-            printf("destor_server_process: receive a request!");
+            printf("destor_server_process: receive a request!\n");
             char *reqStr = rReply->element[1]->str;
             destor_cmd *cmd = (destor_cmd *)calloc(sizeof(destor_cmd), 1);
             destor_cmd_init_with_reqstr(cmd, reqStr);
             int type = cmd->_type;
-            printf(" type: %d \n", type);
+            printf("type: %d \n", type);
             switch (type)
             {
             case 0:
-                // destor_write(cmd->_group_name, cmd->_data, cmd->_size);
-				printf("[debug] destor has received command type0.\n");
-				printf("[debug] groupname: %s\n", cmd->_group_name);
-				printf("[debug] data: %s\n", cmd->_data);
-				printf("[debug] size: %d\n", cmd->_size);
+                destor_write(cmd->_group_name, cmd->_data, cmd->_size);
+				// printf("[debug] destor has received command type0.\n");
+				// printf("[debug] groupname: %s\n", cmd->_group_name);
+				// printf("[debug] data: %s\n", cmd->_data);
+				// printf("[debug] size: %d\n", cmd->_size);
                 break;
             default:
                 break;
@@ -333,6 +333,6 @@ void destor_server_process()
         freeReplyObject(rReply);
 		/* persist destor stat into local file */
 		// destor_shutdown();
-    // }
+    }
 	redisFree(_localCtx);
 }

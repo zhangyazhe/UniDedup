@@ -28,14 +28,15 @@ int main(int argc, char** argv)
     string reqType(argv[1]);
 
     if (reqType == "write") {
-        if (argc != 4) {
+        if (argc != 5) {
             usage();
             return -1;
         }
         string input_filepath(argv[2]);
-        string input_fileszie(argv[3]);
+        string input_saveas(argv[3]);
+        string input_fileszie(argv[4]);
         int input_size = atoi(input_fileszie.c_str());
-        write(input_filepath, input_size);
+        write(input_filepath, input_saveas, input_size);
     }
 
 }

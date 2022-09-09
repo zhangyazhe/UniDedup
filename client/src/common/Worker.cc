@@ -66,12 +66,14 @@ void Worker::clientWrite(AgentCommand *agCmd) {
     /* This part is for Zewen */
 
     // file to groups
-    vector<struct group*> gps = split2Groups(filepath.c_str(), _conf->node_num);
+    vector<struct group*> gps = split2Groups(filepath.c_str(), filename.c_str(), _conf->node_num);
 
     /* This part is for Lin */
     // generate file recipe
-    struct fileRecipe* fr = getFileRecipe(filepath.c_str(), gps);
+    struct fileRecipe* fr = getFileRecipe(filename.c_str(), gps);
     assert(fr != NULL);
+
+    cout << "gps.size(): " << gps.size() << endl;
 
     // set file recipe by echash
     int ret = setFileRecipe(fr);
@@ -86,11 +88,11 @@ void Worker::clientWrite(AgentCommand *agCmd) {
       dstCmd->sendTo(nodeIp);
 
       // for debug
-      std::cout << "Worker::debug::Command type 0, groupName is " << gps[i]->groupName
-                << " data size is " << gps[i]->size
-                << " data is " << gps[i]->data
-                << std::endl;
-      std::cout << "Worker::debug::Command send to " << RedisUtil::ip2Str(_conf->id2Ip[gps[i]->nodeId]) << std::endl;
+      // std::cout << "Worker::debug::Command type 0, groupName is " << gps[i]->groupName
+      //           << " data size is " << gps[i]->size
+      //           << " data is " << gps[i]->data
+      //           << std::endl;
+      // std::cout << "Worker::debug::Command send to " << RedisUtil::ip2Str(_conf->id2Ip[gps[i]->nodeId]) << std::endl;
 
       // sendThrd[i] = thread([&](){
       //   destorCommand *dstCmd = new destorCommand();

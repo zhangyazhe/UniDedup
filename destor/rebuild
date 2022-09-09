@@ -1,6 +1,6 @@
 #!/bin/sh
 
-DIR=/home/data/working/
+DIR=/home/openec/working/
 mkdir -p ${DIR}/recipes/
 mkdir -p ${DIR}/index/
 
