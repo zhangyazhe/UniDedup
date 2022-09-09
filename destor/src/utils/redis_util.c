@@ -147,21 +147,21 @@ char* agent_cmd_read_string(agent_cmd *cmd) {
   return toret;
 }
 
-void build_destor_command_type0(destor_cmd* cmd, int type, char* group_name, char* data, uint32_t size)
+void build_destor_command_type0(destor_cmd* cmd, int type, char* group_name, uint32_t size)
 {
 	cmd->_type = type;
 	int group_name_len = strlen(group_name);
-  int data_len = strlen(data);
+  // int data_len = strlen(data);
   cmd->_group_name = (char*)calloc(sizeof(char), group_name_len+1);
-  cmd->_data = (char*)calloc(sizeof(char), data_len+1);
+  // cmd->_data = (char*)calloc(sizeof(char), data_len+1);
   strcpy(cmd->_group_name, group_name);
-  strcpy(cmd->_data, data);
+  // strcpy(cmd->_data, data);
 	// 1. type
 	destor_cmd_write_int(cmd, cmd->_type);
 	// 2. group_name
 	destor_cmd_write_string(cmd, cmd->_group_name);
 	// 3. data
-	destor_cmd_write_string(cmd, cmd->_data);
+	// destor_cmd_write_string(cmd, cmd->_data);
   // 4. size
   destor_cmd_write_uint(cmd, cmd->_size);
 }
@@ -169,7 +169,7 @@ void build_destor_command_type0(destor_cmd* cmd, int type, char* group_name, cha
 void resolve_destor_command_type0(destor_cmd* cmd)
 {
   cmd->_group_name = destor_cmd_read_string(cmd);
-  cmd->_data = destor_cmd_read_string(cmd);
+  // cmd->_data = destor_cmd_read_string(cmd);
   cmd->_size = destor_cmd_read_uint(cmd);
 }
 

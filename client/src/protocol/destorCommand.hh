@@ -24,7 +24,6 @@ private:
 
 	// type0
 	std::string _groupName;
-	std::string _data;
     uint32_t _size;
 
 public:
@@ -51,7 +50,6 @@ public:
     // build command
     void buildType0(int type,
                     std::string groupName,
-                    std::string data,
                     uint32_t size);
     
     // resolve command

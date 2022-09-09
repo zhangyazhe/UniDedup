@@ -129,7 +129,6 @@ void destorCommand::sendTo(redisContext *sendCtx)
 
 void destorCommand::buildType0(int type,
 							   std::string groupName,
-							   std::string data,
 							   uint32_t size)
 {
 	_type = type;
@@ -141,14 +140,11 @@ void destorCommand::buildType0(int type,
 	writeInt(_type);
 	// 2. groupName
 	writeString(_groupName);
-	// 3. data
-	writeString(_data);
-	// 4. data_size
+	// 3. data_size
 	writeUInt(size);
 }
 
 void destorCommand::resolveType0() {
 	_groupName = readString();
-	_data = readString();
 	_size = readUInt();
 }

@@ -9,7 +9,7 @@ Worker::Worker(Config* conf) : _conf(conf)
     {
         _processCtx = RedisUtil::createContext(_conf->_localIP);
         _localCtx = RedisUtil::createContext(_conf->_localIP);
-        _destorCtx = RedisUtil::createContext(_conf->_localIP);
+        // _destorCtx = RedisUtil::createContext(_conf->_localIP);
     }
     catch (int e)
     {
@@ -85,9 +85,15 @@ void Worker::clientWrite(AgentCommand *agCmd) {
     // thread sendThrd[gps.size()];
     for(int i = 0; i < gps.size(); i++) {
       destorCommand *dstCmd = new destorCommand();
-      dstCmd->buildType0(0, (const char*)gps[i]->groupName, (const char*)gps[i]->data, gps[i]->size);
+      // tell destor name and size
+      dstCmd->buildType0(0, (const char*)gps[i]->groupName, gps[i]->size);
       unsigned int nodeIp = _conf->id2Ip[gps[i]->nodeId];
       dstCmd->sendTo(nodeIp);
+      // send data
+      _destorCtx = RedisUtil::createContext(nodeIp);
+      string append_data_key = string(gps[i]->groupName)+"_data";
+      redisAppendCommand(_destorCtx, "RPUSH %s %b", append_data_key.c_str(), gps[i]->data, gps[i]->size);
+      redisFree(_destorCtx);
 
       // for debug
       // std::cout << "Worker::debug::Command type 0, groupName is " << gps[i]->groupName
