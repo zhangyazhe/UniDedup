@@ -27,6 +27,7 @@ private:
 
     // type 0
     std::string _filepath;
+    std::string _filesaveas;
     int _filesize;
 public:
     AgentCommand(/* args */);
@@ -42,6 +43,7 @@ public:
     int getType();
     char* getCmd();
     int getCmdLen();
+    std::string getFilepath();
     std::string getFilename();
     int getFilesize();
 
@@ -52,6 +54,7 @@ public:
     // build AgentCommand
     void buildType0(int type,
                     std::string filepath,
+                    std::string saveas,
                     int filesize);
     
 

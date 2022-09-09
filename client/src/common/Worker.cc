@@ -59,7 +59,8 @@ void Worker::doProcess() {
 
 void Worker::clientWrite(AgentCommand *agCmd) {
     // get info
-    string filepath = agCmd->getFilename();
+    string filepath = agCmd->getFilepath();
+    string filename = agCmd->getFilename();
     int filesize = agCmd->getFilesize();
 
     /* This part is for Zewen */

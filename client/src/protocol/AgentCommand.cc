@@ -89,6 +89,11 @@ int AgentCommand::getCmdLen()
 
 std::string AgentCommand::getFilename()
 {
+	return _filesaveas;
+}
+
+std::string AgentCommand::getFilepath()
+{
 	return _filepath;
 }
 
@@ -112,22 +117,27 @@ void AgentCommand::sendTo(unsigned int ip)
 
 void AgentCommand::buildType0(int type,
 							  std::string filepath,
+							  std::string saveas,
 							  int filesize)
 {
 	_type = type;
 	_filepath = filepath;
+	_filesaveas = saveas;
 	_filesize = filesize;
 
 	// 1. type
 	writeInt(_type);
 	// 2. filepath
 	writeString(_filepath);
-	// 3. filesize
+	// 3. saveas
+	writeString(_filesaveas);
+	// 4. filesize
 	writeInt(_filesize);
 }
 
 void AgentCommand::resolveType0()
 {
 	_filepath = readString();
+	_filesaveas = readString();
 	_filesize = readInt();
 }

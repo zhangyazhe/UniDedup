@@ -3,10 +3,10 @@
 #include "src/protocol/AgentCommand.hh"
 
 void usage() {
-    cout << "usage:\t./Client write filepath sizeinBytes" << endl;
+    cout << "usage:\t./Client write filepath saveas sizeinBytes" << endl;
 }
 
-void write(string filepath, int sizeinBytes) {
+void write(string filepath, string saveas, int sizeinBytes) {
     string conf_path(config_path);
     Config * conf = new Config(conf_path);
     // tell local Agent filepath and filesize
