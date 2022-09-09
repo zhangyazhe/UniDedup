@@ -3,7 +3,6 @@
 
 extern void destor_shutdown();
 
-
 struct readParam* newReadParam(char* data, uint32_t size) {
     struct readParam* rp = (struct readParam*) malloc(sizeof(struct readParam));
     rp->data = (char *) malloc(size*sizeof(char));
@@ -292,14 +291,15 @@ void destor_write(char *path, char *data, uint32_t size) {
 void destor_server_process()
 {
     // todo: where to get local ip
-    _localCtx = createContextByUint(destor.local_ip);
-	// printf("%s\n", ip2Str(destor.local_ip));
+    redisContext* _localCtx = createContextByUint(destor.local_ip);
+	printf("%s\n", ip2Str(destor.local_ip));
     redisReply *rReply;
     while (1)
     {
         printf("destor_server_process\n");
         // will never stop looping
         rReply = (redisReply *)redisCommand(_localCtx, "blpop destor_request 0");
+		printf("1\n");
         if (rReply->type == REDIS_REPLY_NIL)
         {
             printf("destor_server_process: get feed back empty queue\n");
@@ -307,7 +307,7 @@ void destor_server_process()
         else if (rReply->type == REDIS_REPLY_ERROR)
         {
             printf("destor_server_process: get feed back ERROR happens\n");
-        }
+        }	
         else
         {
             printf("destor_server_process: receive a request!");

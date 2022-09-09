@@ -87,7 +87,7 @@ void Worker::clientWrite(AgentCommand *agCmd) {
       // for debug
       std::cout << "Worker::debug::Command type 0, groupName is " << gps[i]->groupName
                 << " data size is " << gps[i]->size
-                << "\ndata is " << gps[i]->data
+                << " data is " << gps[i]->data
                 << std::endl;
       std::cout << "Worker::debug::Command send to " << RedisUtil::ip2Str(_conf->id2Ip[gps[i]->nodeId]) << std::endl;
 

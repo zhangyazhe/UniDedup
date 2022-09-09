@@ -330,6 +330,5 @@ void hash2code(unsigned char hash[20], char code[40]);
 void destor_log(int level, const char *fmt, ...);
 
 // destor_server
-redisContext* _localCtx;
 
 #endif /* DESTOR_H_ */

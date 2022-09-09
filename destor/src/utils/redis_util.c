@@ -15,7 +15,7 @@ redisContext* createContextByChar(char* ip) {
 
 redisContext* createContext(char* ip, int port) {
   redisContext* retVal = redisConnect(ip, port);
-  printf("destor-retval-err: %d\n", retVal->err);
+  // printf("destor-retval-err: %d\n", retVal->err);
   if (retVal == NULL || retVal -> err) {
     if (retVal) {
       // cerr << "Error: " << retVal -> errstr << endl;
