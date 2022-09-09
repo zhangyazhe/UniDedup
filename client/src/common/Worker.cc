@@ -69,7 +69,7 @@ void Worker::clientWrite(AgentCommand *agCmd) {
     vector<struct group*> gps = split2Groups(filepath.c_str(), filename.c_str(), _conf->node_num);
 
     cout << "gps.size(): " << gps.size() << endl;
-    cout << string((char *)gps[0]->data).size() << endl;
+    // cout << string((char *)gps[0]->data).size() << endl;
     cout << "gps[0].size: " << gps[0]->size << endl;
 
     /* This part is for Lin */
@@ -93,6 +93,7 @@ void Worker::clientWrite(AgentCommand *agCmd) {
       _destorCtx = RedisUtil::createContext(nodeIp);
       string append_data_key = string(gps[i]->groupName)+"_data";
       redisAppendCommand(_destorCtx, "RPUSH %s %b", append_data_key.c_str(), gps[i]->data, gps[i]->size);
+      cout << append_data_key.c_str() << endl;
       redisFree(_destorCtx);
 
       // for debug

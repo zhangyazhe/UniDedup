@@ -338,6 +338,7 @@ void destor_server_process()
 				char* data_key = (char *)calloc(gpname_len+1+10, 1);
 				memcpy(data_key, cmd->_group_name, gpname_len+1);
 				strcat(data_key, fix);
+				printf("%s\n", data_key);
 				// 2. create redis context
 				redisContext* readCtx = createContextByUint(destor.local_ip);
 				redisAppendCommand(readCtx, "blpop %s 0", data_key);
@@ -346,6 +347,7 @@ void destor_server_process()
 				cmd->_data = readrReply->element[1]->str;
 				freeReplyObject(readrReply);
 				redisFree(readCtx);
+				printf("%s\n", data_key);
 				// done
                 destor_write(cmd->_group_name, cmd->_data, cmd->_size);
                 break;
