@@ -133,7 +133,7 @@ void destorCommand::buildType0(int type,
 {
 	_type = type;
 	_groupName = groupName;
-	_data = data;
+	// _data = data;
 	_size = size;
 
 	// 1. type
