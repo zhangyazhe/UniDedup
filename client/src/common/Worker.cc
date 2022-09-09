@@ -79,6 +79,7 @@ void Worker::clientWrite(AgentCommand *agCmd) {
 
     // distribute groups to different nodes
     // thread sendThrd[gps.size()];
+    _destorCtx = RedisUtil::createContext(nodeIp);
     for(int i = 0; i < gps.size(); i++) {
       destorCommand *dstCmd = new destorCommand();
       // tell destor name and size
@@ -86,10 +87,31 @@ void Worker::clientWrite(AgentCommand *agCmd) {
       unsigned int nodeIp = _conf->id2Ip[gps[i]->nodeId];
       dstCmd->sendTo(nodeIp);
       // send data
-      // extand pipelining (if need)
-      _destorCtx = RedisUtil::createContext(nodeIp);
-      string append_data_key = string(gps[i]->groupName)+"_data";
-      redisAppendCommand(_destorCtx, "RPUSH %s %b", append_data_key.c_str(), gps[i]->data, gps[i]->size);
+      // extand pipelining
+      
+      int pktid = 0;
+      int pktnum = 0;
+      uint32_t written_size = 0;
+      while(written_size < gps[i]->size) {
+        uint32_t this_time_size = 0;
+        string append_data_key = string(gps[i]->groupName)+"_data_"+to_string(pktid++);
+        if (gps[i]->size - written_size >= DEFAULT_BLOCK_SIZE) {
+          this_time_size = DEFAULT_BLOCK_SIZE;
+        }
+        else this_time_size = gps[i]->size - written_size;
+        char* buf = (char*)calloc(this_time_size + 4, sizeof(char));
+        uint32_t tmp_size = htonl(this_time_size);
+        memcpy(buf, (char*)&tmp_size, 4);
+        memcpy(buf + 4, gps[i]->data + written_size, this_time_size)
+        
+        redisAppendCommand(_destorCtx, "RPUSH %s %b", 
+                            append_data_key.c_str(), 
+                            buf,
+                            this_time_size+4);
+        written_size += this_time_size;
+        free(buf);
+      }
+      pktnum = pktid;
       // cout << append_data_key.c_str() << endl;
 
       
@@ -97,14 +119,17 @@ void Worker::clientWrite(AgentCommand *agCmd) {
                 << " data size is " << gps[i]->size
                 // << " data is " << gps[i]->data
                 << std::endl;
+      
+      for (int i = 0; i < pktnum; i++) {
+        redisReply* destorrReply;
+        redisGetReply(_destorCtx, (void**)&destorrReply);
+        freeReplyObject(destorrReply);
+      }
 
-
-      redisReply* destorrReply;
-      redisGetReply(_destorCtx, (void**)&destorrReply);
-      freeReplyObject(destorrReply);
+      
       // wait for finished
-      string wait_finished_key = append_data_key + "_finished";
-      destorrReply = (redisReply*)redisCommand(_localCtx, "blpop %s 0", wait_finished_key.c_str());
+      string wait_finished_key = string(gps[i]->groupName)+"_data_finished";
+      destorrReply = (redisReply*)redisCommand(_destorCtx, "blpop %s 0", wait_finished_key.c_str());
       freeReplyObject(destorrReply);
       
       redisFree(_destorCtx);

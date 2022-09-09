@@ -3,15 +3,15 @@
 
 extern void destor_shutdown();
 
-struct readParam* newReadParam(char* data, uint32_t size) {
+struct readParam* newReadParam(/* char* data, */uint32_t size) {
 	printf("new param start\n");
     struct readParam* rp = (struct readParam*) calloc(sizeof(struct readParam), 1);
-    rp->data = (char *) calloc(size, 1);
-	if(rp->data == NULL) {
-		printf("data malloc error!\n");
-		return NULL;
-	}
-    memcpy(rp->data, data, size);
+    // rp->data = (char *) calloc(size, 1);
+	// if(rp->data == NULL) {
+	// 	printf("data malloc error!\n");
+	// 	return NULL;
+	// }
+    // memcpy(rp->data, data, size);
     rp->size = size;
 	printf("new param end\n");
     return rp;
@@ -19,7 +19,7 @@ struct readParam* newReadParam(char* data, uint32_t size) {
 
 void deleteReadParam(struct readParam* rp) {
 	if(rp == NULL) return;
-    free(rp->data);
+    // free(rp->data);
     free(rp);
 }
 
@@ -38,44 +38,93 @@ static void read_data(void* argv) {
 
 	TIMER_DECLARE(1);
 	TIMER_BEGIN(1);
-	int writtenSize = 0;
-	int size = 0;
 
-    while(writtenSize < rp->size) {
-        if(rp->size - writtenSize <= DEFAULT_BLOCK_SIZE) {
-			printf("last\n");
-			size = rp->size - writtenSize;
+	// get data
+	uint32_t readsize = 0;
+	int pktid = 0;
+	int pktnum = 0;
+	redisContext* readCtx = createContextByUint(destor.local_ip);
+	pktnum = rp->size / DEFAULT_BLOCK_SIZE;
+	if (rp->size % DEFAULT_BLOCK_SIZE != 0) {
+		pktnum += 1;
+	}
 
-            TIMER_END(1, jcr.read_time);
+	for (int i = 0; i < pktnum; i++) {
+		// 1. get key
+		int gpname_len = strlen(cmd->_group_name);
+		char fix[20] = "_data_";
+		strcat(fix, itoa(pktid++));
+		char* data_key = (char *)calloc(gpname_len+1+20, 1);
+		memcpy(data_key, cmd->_group_name, gpname_len+1);
+		strcat(data_key, fix);
+		printf("%s\n", data_key);
+		// 2. create redis context
+		redisAppendCommand(readCtx, "blpop %s 0", data_key);
+		free(data_key);
+	}
 
-            VERBOSE("Read phase: read %d bytes", size);
+	for (int i = 0; i < pktnum; i++) {
+		// 1. get |len|data|
+		redisReply* readrReply;
+		redisGetReply(readCtx, (void**)&readrReply);
+		char* pkt = readrReply->element[1]->str;
+		// 2. get pkt size
+		uint32_t pkt_size;
+		memcpy((char*)&pkt_size, pkt, 4);
+		pkt_size = ntohl(pkt_size);
+		// 3. get pkt
+		c = new_chunk(pkt_size);
+		memcpy(c->data, pkt+4, pkt_size);
+		TIMER_END(1, jcr.read_time);
+		VERBOSE("Read phase: read %d bytes", pkt_size);
+		readsize += pkt_size;
+		// 4. push
+		sync_queue_push(read_queue, c);
+		TIMER_BEGIN(1);
+		freeReplyObject(readrReply);
+	}
+	printf("read size : \n" readsize);
 
-            c = new_chunk(size);
-            memcpy(c->data, rp->data+writtenSize, size);
+	redisFree(readCtx);
+			
+	// int writtenSize = 0;
+	// int size = 0;
 
-            sync_queue_push(read_queue, c);
+    // while(writtenSize < rp->size) {
+    //     if(rp->size - writtenSize <= DEFAULT_BLOCK_SIZE) {
+	// 		printf("last\n");
+	// 		size = rp->size - writtenSize;
 
-            TIMER_BEGIN(1);
+    //         TIMER_END(1, jcr.read_time);
 
-            break;
-        } else {
-			printf("not last\n");
-			size = DEFAULT_BLOCK_SIZE;
+    //         VERBOSE("Read phase: read %d bytes", size);
 
-            TIMER_END(1, jcr.read_time);
+    //         c = new_chunk(size);
+    //         memcpy(c->data, rp->data+writtenSize, size);
 
-            VERBOSE("Read phase: read %d bytes", size);
+    //         sync_queue_push(read_queue, c);
 
-            c = new_chunk(size);
-            memcpy(c->data, rp->data+writtenSize, DEFAULT_BLOCK_SIZE);
+    //         TIMER_BEGIN(1);
 
-            sync_queue_push(read_queue, c);
+    //         break;
+    //     } else {
+	// 		printf("not last\n");
+	// 		size = DEFAULT_BLOCK_SIZE;
 
-            TIMER_BEGIN(1);
+    //         TIMER_END(1, jcr.read_time);
 
-            writtenSize += DEFAULT_BLOCK_SIZE;
-        }
-    }
+    //         VERBOSE("Read phase: read %d bytes", size);
+
+    //         c = new_chunk(size);
+    //         memcpy(c->data, rp->data+writtenSize, DEFAULT_BLOCK_SIZE);
+
+    //         sync_queue_push(read_queue, c);
+
+    //         TIMER_BEGIN(1);
+
+    //         writtenSize += DEFAULT_BLOCK_SIZE;
+    //     }
+    // }
 
     c = new_chunk(0);
 	SET_CHUNK(c, CHUNK_FILE_END);
@@ -128,7 +177,7 @@ void destor_write(char *path, char *data, uint32_t size) {
 	} else {
 		printf("not sim\n");
 		// 将jcr.path目录下的所有文件以块为单位读取出来压入到read_queue中
-        struct readParam* rp = newReadParam(data, size);
+        struct readParam* rp = newReadParam(size);
 		start_read_phase_from_data((void *)rp);
         deleteReadParam(rp);
 		// 根据jcr.chunk_algorithm设置分块算法
@@ -323,35 +372,26 @@ void destor_server_process()
 				printf("[debug] groupname: %s\n", cmd->_group_name);
 				// printf("[debug] data: %s\n", cmd->_data);
 				printf("[debug] size: %d\n", cmd->_size);
-				cmd->_data = (char *)calloc(cmd->_size, 1);
 				// get data
-				// 1. get key
-				int gpname_len = strlen(cmd->_group_name);
-				char fix[10] = "_data";
-				char* data_key = (char *)calloc(gpname_len+1+10, 1);
-				memcpy(data_key, cmd->_group_name, gpname_len+1);
-				strcat(data_key, fix);
-				printf("%s\n", data_key);
-				// 2. create redis context
-				redisContext* readCtx = createContextByUint(destor.local_ip);
-				redisAppendCommand(readCtx, "blpop %s 0", data_key);
-				redisReply* readrReply;
-				redisGetReply(readCtx, (void**)&readrReply);
-				cmd->_data = readrReply->element[1]->str;
-				freeReplyObject(readrReply);
-				redisFree(readCtx);
-				printf("%s\n", data_key);
+				
 				// 3. destor_write
 				printf("cmd->size: %d\n", cmd->_size);
                 destor_write(cmd->_group_name, cmd->_data, cmd->_size);
                 // 4. tell client finished
-				char fikey[] = "_finished";
-				char* finished_key = (char *)calloc(strlen(data_key)+1+15, 1);
-				memcpy(finished_key, data_key, strlen(data_key)+1);
+				redisReply* fReply;
+				redisContext* finishedCtx = createContextByUint(destor.local_ip);
+				int gpname_len = strlen(cmd->_group_name);
+				char* finished_key = (char *)calloc(gpname_len+1+20, 1);
+				memcpy(finished_key, cmd->_group_name, gpname_len+1);
+				char fikey[] = "_data_finished";
 				strcat(finished_key, fikey);
+				int tmpval = htonl(1);
+				fReply = (redisReply*)redisCommand(finishedCtx, "rpush %s %b", finished_key, (char*)&tmpval, sizeof(tmpval));
 				// done
+				freeReplyObject(fReply);
+				redisFree(finishedCtx);
 				free(finished_key);
-				free(data_key);
+				
 				break;
             default:
                 break;
