@@ -6,12 +6,13 @@ extern void destor_shutdown();
 struct readParam* newReadParam(char* data, uint32_t size) {
 	printf("new param start\n");
     struct readParam* rp = (struct readParam*) calloc(sizeof(struct readParam), 1);
-    rp->data = (char *) calloc(size*sizeof(char), 1);
-	if(rp->data == NULL) {
-		printf("data malloc error!\n");
-		return NULL;
-	}
-    memcpy(rp->data, data, size);
+    // rp->data = (char *) calloc(size*sizeof(char), 1);
+	// if(rp->data == NULL) {
+	// 	printf("data malloc error!\n");
+	// 	return NULL;
+	// }
+    // memcpy(rp->data, data, size);
+	rp->data = data;
     rp->size = size;
 	printf("new param end\n");
     return rp;
@@ -27,16 +28,16 @@ static void read_data(void* argv) {
 	sds filename = sdsdup(jcr.path);
     struct readParam* rp = (struct readParam*)argv;
 
-    if (jcr.path[sdslen(jcr.path) - 1] == '/') {
-		/* the backup path points to a direcory */
-		sdsrange(filename, sdslen(jcr.path), -1);
-	} else {
-		/* the backup path points to a file */
-		int cur = sdslen(filename) - 1;
-		while (filename[cur] != '/')
-			cur--;
-		sdsrange(filename, cur, -1);
-	}
+    // if (jcr.path[sdslen(jcr.path) - 1] == '/') {
+	// 	/* the backup path points to a direcory */
+	// 	sdsrange(filename, sdslen(jcr.path), -1);
+	// } else {
+	// 	/* the backup path points to a file */
+	// 	int cur = sdslen(filename) - 1;
+	// 	while (filename[cur] != '/')
+	// 		cur--;
+	// 	sdsrange(filename, cur, -1);
+	// }
 
     struct chunk *c = new_chunk(sdslen(filename) + 1);
 	strcpy((char*)c->data, filename);
@@ -61,7 +62,7 @@ static void read_data(void* argv) {
             VERBOSE("Read phase: read %d bytes", size);
 
             c = new_chunk(size);
-            memcpy(c->data, rp->data, size);
+            memcpy(c->data, rp->data+writtenSize, size);
 
             sync_queue_push(read_queue, c);
 
@@ -76,7 +77,7 @@ static void read_data(void* argv) {
             VERBOSE("Read phase: read %d bytes", size);
 
             c = new_chunk(size);
-            memcpy(c->data, rp->data, DEFAULT_BLOCK_SIZE);
+            memcpy(c->data, rp->data+writtenSize, DEFAULT_BLOCK_SIZE);
 
             sync_queue_push(read_queue, c);
 
@@ -105,7 +106,7 @@ void start_read_phase_from_data(void* argv) {
     /* running job */
 	printf("start_read_phase_from_data\n");
     jcr.status = JCR_STATUS_RUNNING;
-	read_queue = sync_queue_new(10);
+	read_queue = sync_queue_new(100);
 	pthread_create(&read_t, NULL, read_thread, argv);
 }
 
