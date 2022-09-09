@@ -86,6 +86,11 @@ void destor_cmd_write_int(destor_cmd *cmd, int value) {
   memcpy(cmd->_destorCmd + cmd->_cmLen, (char*)&tmpv, 4); cmd->_cmLen += 4;
 }
 
+void destor_cmd_write_uint(destor_cmd *cmd, uint32_t value) {
+  uint32_t tmpv = htonl(value);
+  memcpy(cmd->_destorCmd + cmd->_cmLen, (char*)&tmpv, 4); cmd->_cmLen += 4;
+}
+
 void agent_cmd_write_int(agent_cmd *cmd, int value) {
   int tmpv = htonl(value);
   memcpy(cmd->_agCmd + cmd->_cmLen, (char*)&tmpv, 4); cmd->_cmLen += 4;
@@ -141,7 +146,7 @@ char* agent_cmd_read_string(agent_cmd *cmd) {
   return toret;
 }
 
-void build_destor_command_type0(destor_cmd* cmd, int type, char* group_name, char* data)
+void build_destor_command_type0(destor_cmd* cmd, int type, char* group_name, char* data, uint32_t size)
 {
 	cmd->_type = type;
 	int group_name_len = strlen(group_name);
@@ -156,6 +161,8 @@ void build_destor_command_type0(destor_cmd* cmd, int type, char* group_name, cha
 	destor_cmd_write_string(cmd, cmd->_group_name);
 	// 3. data
 	destor_cmd_write_string(cmd, cmd->_data);
+  // 4. size
+  destor_cmd_write_uint(cmd, cmd->_size);
 }
 
 void resolve_destor_command_type0(destor_cmd* cmd)

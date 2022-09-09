@@ -315,7 +315,7 @@ void destor_server_process()
             destor_cmd *cmd = (destor_cmd *)calloc(sizeof(destor_cmd), 1);
             destor_cmd_init_with_reqstr(cmd, reqStr);
             int type = cmd->_type;
-            printf("type: %d \n", type);
+            printf(" type: %d \n", type);
             switch (type)
             {
             case 0:

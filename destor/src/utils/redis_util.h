@@ -59,6 +59,7 @@ void openec_agent_cmd_init(agent_cmd *cmd);
 void destor_cmd_init_with_reqstr(destor_cmd *cmd, char* reqstr);
 void agent_cmd_init_with_reqstr(agent_cmd *cmd, char* reqstr);
 void destor_cmd_write_int(destor_cmd *cmd, int value);
+void destor_cmd_write_uint(destor_cmd *cmd, uint32_t value);
 void agent_cmd_write_int(agent_cmd *cmd, int value);
 void destor_cmd_write_string(destor_cmd *cmd, char* s);
 void agent_cmd_write_string(agent_cmd *cmd, char* s);
@@ -69,7 +70,7 @@ char* destor_cmd_read_string(destor_cmd *cmd);
 char* agent_cmd_read_string(agent_cmd *cmd);
 
 // destor command
-void build_destor_command_type0(destor_cmd* cmd, int type, char* group_name, char* data);
+void build_destor_command_type0(destor_cmd* cmd, int type, char* group_name, char* data, uint32_t size);
 void resolve_destor_command_type0(destor_cmd* cmd);
 
 // openec agent command

@@ -34,6 +34,7 @@ public:
 
     // basic construction methods
     void writeInt(int value);
+    void writeUInt(uint32_t value);
     void writeString(std::string s);
     int readInt();
     uint32_t readUInt();

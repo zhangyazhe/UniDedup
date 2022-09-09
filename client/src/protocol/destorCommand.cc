@@ -41,6 +41,13 @@ void destorCommand::writeInt(int value)
 	_cmLen += 4;
 }
 
+void destorCommand::writeUInt(uint32_t value)
+{
+	int tmpv = htonl(value);
+	memcpy(_destorCmd + _cmLen, (char *)&tmpv, 4);
+	_cmLen += 4;
+}
+
 void destorCommand::writeString(std::string s)
 {
 	int slen = s.length();
@@ -103,12 +110,12 @@ void destorCommand::sendTo(unsigned int ip)
 {
 	redisContext *sendCtx = RedisUtil::createContext(ip);
 	redisReply *rReply = (redisReply *)redisCommand(sendCtx, "RPUSH %s %b", _rKey.c_str(), _destorCmd, _cmLen);
-	if (rReply -> type == REDIS_REPLY_NIL) {
-      std::cerr << "destorcmd:: get feed back empty queue " << std::endl;
-      //freeReplyObject(rReply);
-    } else if (rReply -> type == REDIS_REPLY_ERROR) {
-      std::cerr << "destorcmd:: get feed back ERROR happens " << std::endl;
-    }
+	// if (rReply -> type == REDIS_REPLY_NIL) {
+    //   std::cerr << "destorcmd:: get feed back empty queue " << std::endl;
+    //   //freeReplyObject(rReply);
+    // } else if (rReply -> type == REDIS_REPLY_ERROR) {
+    //   std::cerr << "destorcmd:: get feed back ERROR happens " << std::endl;
+    // }
 	
 	freeReplyObject(rReply);
 	redisFree(sendCtx);
@@ -136,6 +143,8 @@ void destorCommand::buildType0(int type,
 	writeString(_groupName);
 	// 3. data
 	writeString(_data);
+	// 4. data_size
+	writeUInt(size);
 }
 
 void destorCommand::resolveType0() {
