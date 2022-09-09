@@ -332,7 +332,7 @@ void destor_server_process()
         // free reply object
         freeReplyObject(rReply);
 		/* persist destor stat into local file */
-		destor_shutdown();
+		// destor_shutdown();
     // }
 	redisFree(_localCtx);
 }
