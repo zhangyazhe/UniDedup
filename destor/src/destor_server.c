@@ -6,13 +6,12 @@ extern void destor_shutdown();
 struct readParam* newReadParam(char* data, uint32_t size) {
 	printf("new param start\n");
     struct readParam* rp = (struct readParam*) calloc(sizeof(struct readParam), 1);
-    // rp->data = (char *) calloc(size*sizeof(char), 1);
-	// if(rp->data == NULL) {
-	// 	printf("data malloc error!\n");
-	// 	return NULL;
-	// }
-    // memcpy(rp->data, data, size);
-	rp->data = data;
+    rp->data = (char *) calloc(size, 1);
+	if(rp->data == NULL) {
+		printf("data malloc error!\n");
+		return NULL;
+	}
+    memcpy(rp->data, data, size);
     rp->size = size;
 	printf("new param end\n");
     return rp;
@@ -27,17 +26,6 @@ void deleteReadParam(struct readParam* rp) {
 static void read_data(void* argv) {
 	sds filename = sdsdup(jcr.path);
     struct readParam* rp = (struct readParam*)argv;
-
-    // if (jcr.path[sdslen(jcr.path) - 1] == '/') {
-	// 	/* the backup path points to a direcory */
-	// 	sdsrange(filename, sdslen(jcr.path), -1);
-	// } else {
-	// 	/* the backup path points to a file */
-	// 	int cur = sdslen(filename) - 1;
-	// 	while (filename[cur] != '/')
-	// 		cur--;
-	// 	sdsrange(filename, cur, -1);
-	// }
 
     struct chunk *c = new_chunk(sdslen(filename) + 1);
 	strcpy((char*)c->data, filename);
@@ -55,6 +43,7 @@ static void read_data(void* argv) {
 
     while(writtenSize < rp->size) {
         if(rp->size - writtenSize <= DEFAULT_BLOCK_SIZE) {
+			printf("last\n");
 			size = rp->size - writtenSize;
 
             TIMER_END(1, jcr.read_time);
@@ -70,6 +59,7 @@ static void read_data(void* argv) {
 
             break;
         } else {
+			printf("not last\n");
 			size = DEFAULT_BLOCK_SIZE;
 
             TIMER_END(1, jcr.read_time);
