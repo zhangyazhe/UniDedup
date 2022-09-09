@@ -33,7 +33,7 @@ static void read_data(void* argv) {
 	}
 
     struct chunk *c = new_chunk(sdslen(filename) + 1);
-	strcpy(c->data, filename);
+	strcpy((char*)c->data, filename);
 
 	VERBOSE("Read phase: %s", filename);
 
@@ -294,8 +294,7 @@ void destor_server_process()
     redisContext* _localCtx = createContextByUint(destor.local_ip);
 	printf("%s\n", ip2Str(destor.local_ip));
     redisReply *rReply;
-    while (1)
-    {
+    // while (1) {
         printf("destor_server_process\n");
         // will never stop looping
         rReply = (redisReply *)redisCommand(_localCtx, "blpop destor_request 0");
@@ -334,5 +333,6 @@ void destor_server_process()
         freeReplyObject(rReply);
 		/* persist destor stat into local file */
 		destor_shutdown();
-    }
+    // }
+	redisFree(_localCtx);
 }
