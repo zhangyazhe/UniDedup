@@ -99,6 +99,7 @@ static void read_data(void* argv) {
 		TIMER_END(1, jcr.read_time);
 		VERBOSE("Read phase: read %d bytes", pkt_size);
 		readsize += pkt_size;
+		printf("pktsize: %d\n", pkt_size);
 		// 4. push
 		sync_queue_push(read_queue, c);
 		TIMER_BEGIN(1);
@@ -166,7 +167,7 @@ void start_read_phase_from_data(void* argv) {
     /* running job */
 	printf("start_read_phase_from_data\n");
     jcr.status = JCR_STATUS_RUNNING;
-	read_queue = sync_queue_new(100);
+	read_queue = sync_queue_new(10);
 	pthread_create(&read_t, NULL, read_thread, argv);
 }
 
@@ -193,10 +194,8 @@ void destor_write(char *path, char *data, uint32_t size) {
 
     time_t start = time(NULL);
 	if (destor.simulation_level == SIMULATION_ALL) {
-		printf("sim\n");
 		start_read_trace_phase();
 	} else {
-		printf("not sim\n");
 		// 将jcr.path目录下的所有文件以块为单位读取出来压入到read_queue中
         // struct readParam* rp = newReadParam(size);
 		start_read_phase_from_data((void *)&size);

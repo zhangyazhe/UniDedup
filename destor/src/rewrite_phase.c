@@ -108,9 +108,10 @@ struct chunk* rewrite_buffer_pop() {
  * If rewrite is disable.
  */
 static void* no_rewrite(void* arg) {
+	int total = 0;
 	while (1) {
 		struct chunk* c = sync_queue_pop(dedup_queue);
-
+		if(c && !CHECK_CHUNK(c, CHUNK_FILE_START) && !CHECK_CHUNK(c, CHUNK_FILE_END)) {total += c->size;}
 		if (c == NULL)
 			break;
 
@@ -121,6 +122,7 @@ static void* no_rewrite(void* arg) {
             har_check(c);
     }
 	printf("rewrite phase finishes\n");
+	printf("rewrite size total: %d\n", total);
     sync_queue_term(rewrite_queue);
 
     return NULL;

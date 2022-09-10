@@ -67,12 +67,14 @@ void send_segment(struct segment* s) {
 
 void *dedup_thread(void *arg) {
 	struct segment* s = NULL;
+	int total = 0;
 	while (1) {
 		struct chunk *c = NULL;
 		if (destor.simulation_level != SIMULATION_ALL)
 			c = sync_queue_pop(hash_queue);
 		else
 			c = sync_queue_pop(trace_queue);
+		if(c && !CHECK_CHUNK(c, CHUNK_FILE_START) && !CHECK_CHUNK(c, CHUNK_FILE_END)) {total += c->size;}
 
 		/* Add the chunk to the segment. */
 		s = segmenting(c);
@@ -102,6 +104,7 @@ void *dedup_thread(void *arg) {
 			break;
 	}
 	printf("dedup phase finishes\n");
+	printf("dedup size total: %d\n", total);
 	sync_queue_term(dedup_queue);
 
 	return NULL;

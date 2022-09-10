@@ -28,6 +28,8 @@ static void* chunk_thread(void *arg) {
 
 	struct chunk* c = NULL;
 
+	int total = 0;
+
 	while (1) {
 
 		/* Try to receive a CHUNK_FILE_START. */
@@ -43,6 +45,7 @@ static void* chunk_thread(void *arg) {
 
 		/* Try to receive normal chunks. */
 		c = sync_queue_pop(read_queue);
+		total += c->size;
 		if (!CHECK_CHUNK(c, CHUNK_FILE_END)) {
 			memcpy(leftbuf, c->data, c->size);
 			leftlen += c->size;
@@ -54,6 +57,7 @@ static void* chunk_thread(void *arg) {
 			/* c == NULL indicates more data for this file can be read. */
 			while ((leftlen < destor.chunk_max_size) && c == NULL) {
 				c = sync_queue_pop(read_queue);
+				total += c->size;
 				if (!CHECK_CHUNK(c, CHUNK_FILE_END)) {
 					memmove(leftbuf, leftbuf + leftoff, leftlen);
 					leftoff = 0;
@@ -103,6 +107,7 @@ static void* chunk_thread(void *arg) {
 
 	}
 	printf("chunk phase finish\n");
+	printf("chunk size total: %d\n", total);
 	free(leftbuf);
 	free(zeros);
 	free(data);

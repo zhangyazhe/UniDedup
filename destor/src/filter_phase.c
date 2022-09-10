@@ -84,6 +84,7 @@ static void* filter_thread(void *arg) {
         for (; iter != end; iter = g_sequence_iter_next(iter)) {
             c = g_sequence_get(iter);
 
+            if(c == NULL) {printf("filter null\n");break;}
     		if (CHECK_CHUNK(c, CHUNK_FILE_START) || CHECK_CHUNK(c, CHUNK_FILE_END))
     			continue;
             printf("31\n");
