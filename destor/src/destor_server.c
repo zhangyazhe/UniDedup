@@ -87,10 +87,10 @@ static void read_data(void) {
 		free(data_key);
 	}
 
+	redisReply* readrReply;
 	for (int i = 0; i < pktnum; i++) {
 		printf("i: %d\n", i);
 		// 1. get |len|data|
-		redisReply* readrReply;
 		redisGetReply(readCtx, (void**)&readrReply);
 		if(readrReply == NULL) {printf("readreply == null \n");}
 		printf("%d\n", readrReply->type);
@@ -434,6 +434,7 @@ void destor_server_process()
                 break;
             }
             free(cmd);
+			
         }
         // free reply object
         freeReplyObject(rReply);

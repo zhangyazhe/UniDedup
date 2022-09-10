@@ -19,7 +19,7 @@ private:
 
     redisContext* _processCtx;
     redisContext* _localCtx;
-    redisContext* _destorCtx;
+    // redisContext* _destorCtx;
 public:
     Worker(Config* conf);
     ~Worker();

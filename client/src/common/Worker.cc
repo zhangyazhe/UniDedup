@@ -81,6 +81,7 @@ void Worker::clientWrite(AgentCommand *agCmd) {
     // thread sendThrd[gps.size()];
     printf("gps.size: %d\n", gps.size());
     for(int i = 0; i < gps.size(); i++) {
+      cout << "Worker::group:" << string(gps[i]->groupName) << " start!" << endl;
       destorCommand *dstCmd = new destorCommand();
       // tell destor name and size
       dstCmd->buildType0(0, (const char*)gps[i]->groupName, gps[i]->size);
@@ -88,7 +89,7 @@ void Worker::clientWrite(AgentCommand *agCmd) {
       dstCmd->sendTo(nodeIp);
       // send data
       // extand pipelining
-      _destorCtx = RedisUtil::createContext(nodeIp);
+      redisContext* _destorCtx = RedisUtil::createContext(nodeIp);
       int pktid = 0;
       int pktnum = 0;
       uint32_t written_size = 0;
@@ -134,7 +135,7 @@ void Worker::clientWrite(AgentCommand *agCmd) {
       redisReply* destorrReply = (redisReply*)redisCommand(_destorCtx, "blpop %s 0", wait_finished_key.c_str());
       freeReplyObject(destorrReply);
       
-      cout << "finished!" << endl;
+      cout << "Worker::group:" << string(gps[i]->groupName) << " finished!" << endl;
 
       redisFree(_destorCtx);
 
@@ -148,6 +149,7 @@ void Worker::clientWrite(AgentCommand *agCmd) {
       //   dstCmd->sendTo(nodeIp);
       // });
       // close(fd);
+      delete dstCmd;
     }
 
     // for(int i = 0; i < gps.size(); i++) {
