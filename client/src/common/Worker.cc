@@ -79,7 +79,7 @@ void Worker::clientWrite(AgentCommand *agCmd) {
 
     // distribute groups to different nodes
     // thread sendThrd[gps.size()];
-    
+    printf("gps.size: %d\n", gps.size());
     for(int i = 0; i < gps.size(); i++) {
       destorCommand *dstCmd = new destorCommand();
       // tell destor name and size
@@ -134,6 +134,8 @@ void Worker::clientWrite(AgentCommand *agCmd) {
       redisReply* destorrReply = (redisReply*)redisCommand(_destorCtx, "blpop %s 0", wait_finished_key.c_str());
       freeReplyObject(destorrReply);
       
+      cout << "finished!" << endl;
+
       redisFree(_destorCtx);
 
       // for debug

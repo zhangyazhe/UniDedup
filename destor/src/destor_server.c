@@ -24,6 +24,26 @@ char* intToChar(unsigned int a) {
 	return p;
 }
 
+struct readParam* newReadParam(/* char* data, */uint32_t size) {
+	printf("new param start\n");
+    struct readParam* rp = (struct readParam*) calloc(sizeof(struct readParam), 1);
+    // rp->data = (char *) calloc(size, 1);
+	// if(rp->data == NULL) {
+	// 	printf("data malloc error!\n");
+	// 	return NULL;
+	// }
+    // memcpy(rp->data, data, size);
+    rp->size = size;
+	printf("new param end\n");
+    return rp;
+}
+
+void deleteReadParam(struct readParam* rp) {
+	if(rp == NULL) return;
+    // free(rp->data);
+    free(rp);
+}
+
 static void read_data(void) {
 	sds filename = sdsdup(jcr.path);
     // struct readParam* rp = (struct readParam*)argv;
@@ -67,10 +87,12 @@ static void read_data(void) {
 	}
 
 	for (int i = 0; i < pktnum; i++) {
+		printf("i: %d\n", i);
 		// 1. get |len|data|
 		redisReply* readrReply;
 		redisGetReply(readCtx, (void**)&readrReply);
 		char* pkt = readrReply->element[1]->str;
+		printf("i: %d\n", i);
 		// 2. get pkt size
 		uint32_t pkt_size;
 		memcpy((char*)&pkt_size, pkt, 4);
@@ -167,6 +189,7 @@ void destor_write(char *path, uint32_t size) {
 	init_container_store();
 	init_index();
 
+	printf("path: %s\n", path);
 	// 初始化backup job control record
 	init_backup_jcr(path);
 

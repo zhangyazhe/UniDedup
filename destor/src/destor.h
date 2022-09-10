@@ -31,9 +31,8 @@
 #include <getopt.h>
 
 #include "utils/sds.h"
-#include "destor_server.h"
-#include <hiredis/hiredis.h>
 #include "utils/redis_util.h"
+#include <hiredis/hiredis.h>
 
 #define TIMER_DECLARE(n) struct timeval b##n,e##n
 #define TIMER_BEGIN(n) gettimeofday(&b##n, NULL)
@@ -281,6 +280,7 @@ struct destor {
 
 	int backup_retention_time;
 
+	// zz7, for openec
 	unsigned int local_ip;
 	int oec_pktsize;
 	char* ecid_pool;
