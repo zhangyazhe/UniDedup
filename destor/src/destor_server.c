@@ -3,6 +3,8 @@
 
 extern void destor_shutdown();
 
+static pthread_t read1_t;
+
 char* intToChar(unsigned int a) {
 	if(a == 0) return "0";
 	uint32_t tmpa = a;
@@ -22,30 +24,10 @@ char* intToChar(unsigned int a) {
 	return p;
 }
 
-struct readParam* newReadParam(/* char* data, */uint32_t size) {
-	printf("new param start\n");
-    struct readParam* rp = (struct readParam*) calloc(sizeof(struct readParam), 1);
-    // rp->data = (char *) calloc(size, 1);
-	// if(rp->data == NULL) {
-	// 	printf("data malloc error!\n");
-	// 	return NULL;
-	// }
-    // memcpy(rp->data, data, size);
-    rp->size = size;
-	printf("new param end\n");
-    return rp;
-}
-
-void deleteReadParam(struct readParam* rp) {
-	if(rp == NULL) return;
-    // free(rp->data);
-    free(rp);
-}
-
-static void read_data(void* argv) {
+static void read_data(void) {
 	sds filename = sdsdup(jcr.path);
     // struct readParam* rp = (struct readParam*)argv;
-	uint32_t size = *(uint32_t *)argv;
+	uint32_t size = jcr.size;
 
     struct chunk *c = new_chunk(sdslen(filename) + 1);
 	strcpy((char*)c->data, filename);
@@ -64,7 +46,7 @@ static void read_data(void* argv) {
 	int pktid = 0;
 	int pktnum = 0;
 	redisContext* readCtx = createContextByUint(destor.local_ip);
-	printf("rp->size: %d\n", size);
+	printf("jcr.size: %d\n", size);
 	pktnum = size / DEFAULT_BLOCK_SIZE;
 	if (size % DEFAULT_BLOCK_SIZE != 0) {
 		pktnum += 1;
@@ -158,25 +140,26 @@ static void read_data(void* argv) {
 static void* read_thread(void *argv) {
 	/* Each file will be processed separately */
 	printf("read_thread start\n");
-	read_data(argv);
+	read_data();
 	sync_queue_term(read_queue);
+	printf("read thread end\n");
 	return NULL;
 }
 
-void start_read_phase_from_data(void* argv) {
+void start_read_phase_from_data() {
     /* running job */
 	printf("start_read_phase_from_data\n");
     jcr.status = JCR_STATUS_RUNNING;
 	read_queue = sync_queue_new(10);
-	pthread_create(&read_t, NULL, read_thread, argv);
+	pthread_create(&read1_t, NULL, read_thread, NULL);
 }
 
 void stop_read_phase_from_data() {
-	pthread_join(read_t, NULL);
+	pthread_join(read1_t, NULL);
 	NOTICE("read phase stops successfully!");
 }
 
-void destor_write(char *path, char *data, uint32_t size) {
+void destor_write(char *path, uint32_t size) {
 	printf("size: %d\n", size);
     /* 初始化recipe目录 */
 	init_recipe_store();
@@ -187,18 +170,24 @@ void destor_write(char *path, char *data, uint32_t size) {
 	// 初始化backup job control record
 	init_backup_jcr(path);
 
+	jcr.size = size;
+
     puts("==== backup begin ====");
 
 	TIMER_DECLARE(1);
 	TIMER_BEGIN(1);
 
     time_t start = time(NULL);
+	
 	if (destor.simulation_level == SIMULATION_ALL) {
 		start_read_trace_phase();
 	} else {
 		// 将jcr.path目录下的所有文件以块为单位读取出来压入到read_queue中
         // struct readParam* rp = newReadParam(size);
-		start_read_phase_from_data((void *)&size);
+		// uint32_t* psize = (uint32_t*) calloc(sizeof(uint32_t), 1);
+		// *psize = size;
+		start_read_phase_from_data();
+		// free(psize);
         // deleteReadParam(rp);
 		// 根据jcr.chunk_algorithm设置分块算法
 		start_chunk_phase();
@@ -212,7 +201,7 @@ void destor_write(char *path, char *data, uint32_t size) {
 	start_rewrite_phase();
 	// 
 	start_filter_phase();
-
+	printf("wait for end 1\n");
     do{
         sleep(5);
         /*time_t now = time(NULL);*/
@@ -221,7 +210,7 @@ void destor_write(char *path, char *data, uint32_t size) {
     }while(jcr.status == JCR_STATUS_RUNNING || jcr.status != JCR_STATUS_DONE);
     fprintf(stderr,"job %" PRId32 ", %" PRId64 " bytes, %" PRId32 " chunks, %d files processed\n", 
         jcr.id, jcr.data_size, jcr.chunk_num, jcr.file_num);
-
+	printf("wait for end 2\n");
 	if (destor.simulation_level == SIMULATION_ALL) {
 		stop_read_trace_phase();
 	} else {
@@ -231,7 +220,9 @@ void destor_write(char *path, char *data, uint32_t size) {
 	}
 	stop_dedup_phase();
 	stop_rewrite_phase();
-	stop_filter_phase();
+	stop_filter_phase();	
+	printf("has ended\n");
+	// free(psize);
 
 	TIMER_END(1, jcr.total_time);
 
@@ -396,7 +387,7 @@ void destor_server_process()
 				
 				// 3. destor_write
 				printf("cmd->size: %d\n", cmd->_size);
-                destor_write(cmd->_group_name, cmd->_data, cmd->_size);
+                destor_write(cmd->_group_name, cmd->_size);
                 // 4. tell client finished
 				redisReply* fReply;
 				redisContext* finishedCtx = createContextByUint(destor.local_ip);

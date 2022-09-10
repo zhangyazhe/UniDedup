@@ -9,7 +9,6 @@
 #include "jcr.h"
 #include "index/index.h"
 #include "storage/containerstore.h"
-#include "destor_server.h"
 
 extern void do_backup(char *path);
 //extern void do_delete(int revision);
@@ -47,7 +46,7 @@ void usage() {
 	puts("\tprint this");
 	puts("\t\tdestor -h");
 
-	puts("\tMake a trace");
+	puts("\tMake a trance");
 	puts("\t\tdestor -t /path/to/data");
 
 	puts("\tParameter");
@@ -81,20 +80,20 @@ void check_simulation_level(int last_level, int current_level) {
 void destor_start() {
 
 	/* Init */
-	destor.working_directory = sdsnew("/home/openec/working/");
+	destor.working_directory = sdsnew("/home/data/working/");
 	destor.simulation_level = SIMULATION_NO;
     destor.trace_format = TRACE_DESTOR;
 	destor.verbosity = DESTOR_WARNING;
-	/* 配置分块算法的属性 */
+
 	destor.chunk_algorithm = CHUNK_RABIN;
 	destor.chunk_max_size = 65536;
 	destor.chunk_min_size = 1024;
 	destor.chunk_avg_size = 8192;
-	/* 配置恢复缓存的类型和大小，这里是LRU缓存 */
+
 	destor.restore_cache[0] = RESTORE_CACHE_LRU;
 	destor.restore_cache[1] = 1024;
 	destor.restore_opt_window_size = 1000000;
-	/* 配置索引相关信息 */
+
 	destor.index_category[0] = INDEX_CATEGORY_NEAR_EXACT;
 	destor.index_category[1] = INDEX_CATEGORY_PHYSICAL_LOCALITY;
 	destor.index_specific = INDEX_SPECIFIC_NO;
@@ -267,7 +266,6 @@ int main(int argc, char **argv) {
 
 	destor_start();
 
-	/* start by cmdl */
 	// int job = DESTOR_BACKUP;
 	// int revision = -1;
 
@@ -358,10 +356,7 @@ int main(int argc, char **argv) {
 	// 	usage();
 	// }
 
-	/* use destor_server */
 	destor_server_process();
-
-	/*  */
 
 	destor_shutdown();
 

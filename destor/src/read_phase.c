@@ -4,12 +4,6 @@
 
 static pthread_t read_t;
 
-/* 
-* 读文件
-* 以一个开头块作为开始，开头块里面存放文件的文件名
-* 中间存放实际数据块
-* 以一个空块结尾
-*/
 static void read_file(sds path) {
 	static unsigned char buf[DEFAULT_BLOCK_SIZE];
 

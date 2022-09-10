@@ -39,6 +39,8 @@ struct jcr{
 	int32_t inherited_sparse_num;
 	int32_t total_container_num;
 
+	uint32_t size;
+
 	struct backupVersion* bv;
 
 	double total_time;

@@ -16,14 +16,12 @@ extern struct {
 }index_overhead;
 
 void do_backup(char *path) {
-	/* 初始化recipe目录 */
+
 	init_recipe_store();
-	/* 创建一个container_buffer队列 */
 	init_container_store();
 	init_index();
 
-	// 初始化backup job control record
-	init_backup_jcr(path);			
+	init_backup_jcr(path);
 
 	puts("==== backup begin ====");
 
@@ -34,19 +32,12 @@ void do_backup(char *path) {
 	if (destor.simulation_level == SIMULATION_ALL) {
 		start_read_trace_phase();
 	} else {
-		// 将jcr.path目录下的所有文件以块为单位读取出来压入到read_queue中
 		start_read_phase();
-		// 根据jcr.chunk_algorithm设置分块算法
 		start_chunk_phase();
-		// 从chunk_queue队列里pop出块，并计算该块的指纹，放到chunk.fp中
 		start_hash_phase();
 	}
-	// 以segment为单位将chunk组织在一起，然后标记出duplicate的chunk
-	// 最后将标记好的chunk推入dedup_queue
 	start_dedup_phase();
-	// 将dedup_queue弹出，并判断是否需要重写，将弹出的块以及需要重写的块push到rewrite_queue
 	start_rewrite_phase();
-	// 
 	start_filter_phase();
 
     do{

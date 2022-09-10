@@ -28,20 +28,16 @@ extern struct {
  * When a container buffer is full, we push it into container_queue.
  */
 static void* filter_thread(void *arg) {
-    printf("filter thread\n");
     int enable_rewrite = 1;
     struct fileRecipeMeta* r = NULL;
 
     while (1) {
-        printf("filter thread pop start\n");
         struct chunk* c = sync_queue_pop(rewrite_queue);
-        printf("filter thread pop end\n");
-        if (c == NULL) {
-            printf("filter work finish\n");
+
+        if (c == NULL)
             /* backup job finish */
             break;
-        }
-        printf("1\n");
+
         /* reconstruct a segment */
         struct segment* s = new_segment();
 
@@ -59,7 +55,7 @@ static void* filter_thread(void *arg) {
             c = sync_queue_pop(rewrite_queue);
         }
         free_chunk(c);
-        printf("2\n");
+
         /* For self-references in a segment.
          * If we find an early copy of the chunk in this segment has been rewritten,
          * the rewrite request for it will be denied to avoid repeat rewriting. */
@@ -78,16 +74,15 @@ static void* filter_thread(void *arg) {
          * has been rewritten,
          * the rewrite request for it will be denied. */
         index_check_buffer(s);
-        printf("3\n");
+
     	GSequenceIter *iter = g_sequence_get_begin_iter(s->chunks);
     	GSequenceIter *end = g_sequence_get_end_iter(s->chunks);
         for (; iter != end; iter = g_sequence_iter_next(iter)) {
             c = g_sequence_get(iter);
 
-            if(c == NULL) {printf("filter null\n");break;}
     		if (CHECK_CHUNK(c, CHUNK_FILE_START) || CHECK_CHUNK(c, CHUNK_FILE_END))
     			continue;
-            printf("31\n");
+
             VERBOSE("Filter phase: %dth chunk in %s container %lld", chunk_num,
                     CHECK_CHUNK(c, CHUNK_OUT_OF_ORDER) ? "out-of-order" : "", c->id);
 
@@ -97,7 +92,7 @@ static void* filter_thread(void *arg) {
                 VERBOSE("Filter phase: %dth chunk is cached", chunk_num);
                 SET_CHUNK(c, CHUNK_IN_CACHE);
             }
-            printf("32\n");
+
             /* A cfl-switch for rewriting out-of-order chunks. */
             if (destor.rewrite_enable_cfl_switch) {
                 double cfl = restore_aware_get_cfl();
@@ -111,19 +106,18 @@ static void* filter_thread(void *arg) {
                     enable_rewrite = 1;
                 }
             }
-            printf("33\n");
+
             if(CHECK_CHUNK(c, CHUNK_DUPLICATE) && c->id == TEMPORARY_ID){
             	struct chunk* ruc = g_hash_table_lookup(recently_unique_chunks, &c->fp);
             	assert(ruc);
             	c->id = ruc->id;
             }
-            printf("331\n");
             struct chunk* rwc = g_hash_table_lookup(recently_rewritten_chunks, &c->fp);
             if(rwc){
             	c->id = rwc->id;
             	SET_CHUNK(c, CHUNK_REWRITE_DENIED);
             }
-            printf("34\n");
+
             /* A fragmented chunk will be denied if it has been rewritten recently */
             if (!CHECK_CHUNK(c, CHUNK_DUPLICATE) 
 					|| (!CHECK_CHUNK(c, CHUNK_REWRITE_DENIED)
@@ -140,7 +134,7 @@ static void* filter_thread(void *arg) {
                 	if(destor.index_category[1] == INDEX_CATEGORY_PHYSICAL_LOCALITY)
                 		storage_buffer.chunks = g_sequence_new(free_chunk);
                 }
-                printf("35\n");
+
                 if (container_overflow(storage_buffer.container_buffer, c->size)) {
 
                     if(destor.index_category[1] == INDEX_CATEGORY_PHYSICAL_LOCALITY){
@@ -160,7 +154,7 @@ static void* filter_thread(void *arg) {
                     TIMER_BEGIN(1);
                     storage_buffer.container_buffer = create_container();
                 }
-                printf("36\n");
+
                 if(add_chunk_to_container(storage_buffer.container_buffer, c)){
 
                 	struct chunk* wc = new_chunk(0);
@@ -177,7 +171,7 @@ static void* filter_thread(void *arg) {
                 		jcr.rewritten_chunk_size += c->size;
                 		g_hash_table_insert(recently_rewritten_chunks, &wc->fp, wc);
                 	}
-                    printf("37\n"); 
+
                 	if(destor.index_category[1] == INDEX_CATEGORY_PHYSICAL_LOCALITY){
                 		struct chunk* ck = new_chunk(0);
                 		memcpy(&ck->fp, &c->fp, sizeof(fingerprint));
@@ -191,7 +185,7 @@ static void* filter_thread(void *arg) {
             		assert(destor.index_category[0] != INDEX_CATEGORY_EXACT
             				|| destor.rewrite_algorithm[0]!=REWRITE_NO);
                 }
-                printf("38\n");
+
             }else{
                 if(CHECK_CHUNK(c, CHUNK_REWRITE_DENIED)){
                     VERBOSE("Filter phase: %lldth fragmented chunk is denied", chunk_num);
@@ -211,7 +205,7 @@ static void* filter_thread(void *arg) {
 
             chunk_num++;
         }
-        printf("4\n");
+
         int full = index_update_buffer(s);
 
         /* Write a SEGMENT_BEGIN */
@@ -224,7 +218,6 @@ static void* filter_thread(void *arg) {
             c = g_sequence_get(iter);
 
         	if(r == NULL){
-                printf("r==null\n");
         		assert(CHECK_CHUNK(c,CHUNK_FILE_START));
         		r = new_file_recipe_meta(c->data);
         	}else if(!CHECK_CHUNK(c,CHUNK_FILE_END)){
@@ -236,12 +229,11 @@ static void* filter_thread(void *arg) {
         		append_n_chunk_pointers(jcr.bv, &cp ,1);
         		r->chunknum++;
         		r->filesize += c->size;
-                printf("not end\n");
+
     	    	jcr.chunk_num++;
 	    	    jcr.data_size += c->size;
 
         	}else{
-                printf("end\n");
         		assert(CHECK_CHUNK(c,CHUNK_FILE_END));
         		append_file_recipe_meta(jcr.bv, r);
         		free_file_recipe_meta(r);
@@ -250,7 +242,7 @@ static void* filter_thread(void *arg) {
 	            jcr.file_num++;
         	}
         }
-        printf("5\n");
+
        	/* Write a SEGMENT_END */
        	append_segment_flag(jcr.bv, CHUNK_SEGMENT_END, 0);
 
@@ -299,7 +291,7 @@ static void* filter_thread(void *arg) {
          	}
          	index_update(s->features, sid);
          }
-        printf("6\n");
+
         free_segment(s);
 
         if(index_lock.wait_threshold > 0 && full == 0){
@@ -312,7 +304,7 @@ static void* filter_thread(void *arg) {
         g_hash_table_destroy(recently_unique_chunks);
 
     }
-    printf("7\n");
+
     if (storage_buffer.container_buffer
     		&& !container_empty(storage_buffer.container_buffer)){
         if(destor.index_category[1] == INDEX_CATEGORY_PHYSICAL_LOCALITY){
@@ -328,7 +320,7 @@ static void* filter_thread(void *arg) {
         }
         write_container_async(storage_buffer.container_buffer);
     }
-    printf("8\n");
+
     /* All files done */
     jcr.status = JCR_STATUS_DONE;
     return NULL;

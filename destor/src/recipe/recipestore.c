@@ -13,7 +13,7 @@ static sds recipepath;
 
 void init_recipe_store() {
 	recipepath = sdsdup(destor.working_directory);
-	recipepath = sdscat(recipepath, "recipes/");
+	recipepath = sdscat(recipepath, "/recipes/");
 
 	sds count_fname = sdsdup(recipepath);
 	count_fname = sdscat(count_fname, "backupversion.count");

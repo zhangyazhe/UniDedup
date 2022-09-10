@@ -7,17 +7,10 @@ static int64_t chunk_num;
 
 static void* sha1_thread(void* arg) {
 	char code[41];
-	int total = 0;
 	while (1) {
 		struct chunk* c = sync_queue_pop(chunk_queue);
 
-		if (c && !CHECK_CHUNK(c, CHUNK_FILE_START) && !CHECK_CHUNK(c, CHUNK_FILE_END)) {
-			total += c->size;
-		}
-
 		if (c == NULL) {
-			printf("hash phase finish\n");
-			printf("hash size total: %d\n", total);
 			sync_queue_term(hash_queue);
 			break;
 		}

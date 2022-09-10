@@ -24,7 +24,7 @@ typedef struct destor_cmd
 
     // type0
 	char* _group_name;
-	char* _data;
+	// char* _data;
     uint32_t _size;
 
 } destor_cmd;

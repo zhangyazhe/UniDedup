@@ -18,12 +18,6 @@ struct metaEntry {
 	fingerprint fp;
 };
 
-// zz7 for openec
-extern redisContext* createContextByUint(unsigned int ip);
-extern void openec_agent_cmd_init(agent_cmd *cmd);
-extern void build_openec_agent_command_type0(agent_cmd* cmd, int type, char* filename, char* ecidpool, char* mode, int filesize);
-
-
 /*
  * We must ensure a container is either in the buffer or written to disks.
  */
@@ -133,94 +127,6 @@ void write_container_async(struct container* c) {
 /*
  * Called by Append phase
  */
-// void write_container(struct container* c) {
-
-// 	assert(c->meta.chunk_num == g_hash_table_size(c->meta.map));
-
-// 	if (container_empty(c)) {
-// 		/* An empty container
-// 		 * It possibly occurs in the end of backup */
-// 		container_count--;
-// 		VERBOSE("Append phase: Deny writing an empty container %lld",
-// 				c->meta.id);
-// 		return;
-// 	}
-
-// 	VERBOSE("Append phase: Writing container %lld of %d chunks", c->meta.id,
-// 			c->meta.chunk_num);
-
-// 	if (destor.simulation_level < SIMULATION_APPEND) {
-
-// 		unsigned char * cur = &c->data[CONTAINER_SIZE - CONTAINER_META_SIZE];
-// 		ser_declare; // uint8_t *ser_ptr;
-// 		ser_begin(cur, CONTAINER_META_SIZE); // ser_ptr = ((uint8_t *)(cur));
-// 		ser_int64(c->meta.id); // serial_int64(&ser_ptr, c->meta.id);
-// 		ser_int32(c->meta.chunk_num); // serial_int32(&ser_ptr, c->meta.chunk_num);
-// 		ser_int32(c->meta.data_size); // serial_int32(&ser_ptr, c->meta.data_size);
-
-// 		GHashTableIter iter;
-// 		gpointer key, value;
-// 		g_hash_table_iter_init(&iter, c->meta.map);
-// 		while (g_hash_table_iter_next(&iter, &key, &value)) {
-// 			struct metaEntry *me = (struct metaEntry *) value;
-// 			ser_bytes(&me->fp, sizeof(fingerprint));
-// 			ser_bytes(&me->len, sizeof(int32_t));
-// 			ser_bytes(&me->off, sizeof(int32_t));
-// 		}
-
-// 		ser_end(cur, CONTAINER_META_SIZE);
-
-// 		pthread_mutex_lock(&mutex);
-
-// 		if (fseek(fp, c->meta.id * CONTAINER_SIZE + 8, SEEK_SET) != 0) {
-// 			perror("Fail seek in container store.");
-// 			exit(1);
-// 		}
-// 		if(fwrite(c->data, CONTAINER_SIZE, 1, fp) != 1){
-// 			perror("Fail to write a container in container store.");
-// 			exit(1);
-// 		}
-
-// 		pthread_mutex_unlock(&mutex);
-// 	} else {
-// 		char buf[CONTAINER_META_SIZE];
-// 		memset(buf, 0, CONTAINER_META_SIZE);
-
-// 		ser_declare;
-// 		ser_begin(buf, CONTAINER_META_SIZE);
-// 		ser_int64(c->meta.id);
-// 		ser_int32(c->meta.chunk_num);
-// 		ser_int32(c->meta.data_size);
-
-// 		GHashTableIter iter;
-// 		gpointer key, value;
-// 		g_hash_table_iter_init(&iter, c->meta.map);
-// 		while (g_hash_table_iter_next(&iter, &key, &value)) {
-// 			struct metaEntry *me = (struct metaEntry *) value;
-// 			ser_bytes(&me->fp, sizeof(fingerprint));
-// 			ser_bytes(&me->len, sizeof(int32_t));
-// 			ser_bytes(&me->off, sizeof(int32_t));
-// 		}
-
-// 		ser_end(buf, CONTAINER_META_SIZE);
-
-// 		pthread_mutex_lock(&mutex);
-
-// 		if(fseek(fp, c->meta.id * CONTAINER_META_SIZE + 8, SEEK_SET) != 0){
-// 			perror("Fail seek in container store.");
-// 			exit(1);
-// 		}
-// 		if(fwrite(buf, CONTAINER_META_SIZE, 1, fp) != 1){
-// 			perror("Fail to write a container in container store.");
-// 			exit(1);
-// 		}
-
-// 		pthread_mutex_unlock(&mutex);
-// 	}
-
-// }
-
-// zz7 write container into OpenEC
 void write_container(struct container* c) {
 
 	assert(c->meta.chunk_num == g_hash_table_size(c->meta.map));
@@ -240,125 +146,73 @@ void write_container(struct container* c) {
 	if (destor.simulation_level < SIMULATION_APPEND) {
 
 		unsigned char * cur = &c->data[CONTAINER_SIZE - CONTAINER_META_SIZE];
-		// serial
-		// ser_declare; // uint8_t *ser_ptr;
-		// ser_begin(cur, CONTAINER_META_SIZE); // ser_ptr = ((uint8_t *)(cur));
-		// ser_int64(c->meta.id); // serial_int64(&ser_ptr, c->meta.id);
-		// ser_int32(c->meta.chunk_num); // serial_int32(&ser_ptr, c->meta.chunk_num);
-		// ser_int32(c->meta.data_size); // serial_int32(&ser_ptr, c->meta.data_size);
-		unsigned char * tmp_ptr = cur;
-		memcpy(tmp_ptr, &(c->meta.id), sizeof(int64_t));
-		tmp_ptr += sizeof(int64_t);
-		memcpy(tmp_ptr, &(c->meta.chunk_num), sizeof(int32_t));
-		tmp_ptr += sizeof(int32_t);
-		memcpy(tmp_ptr, &(c->meta.data_size), sizeof(int32_t));
-		tmp_ptr += sizeof(int32_t);
-		
-
+		ser_declare;
+		ser_begin(cur, CONTAINER_META_SIZE);
+		ser_int64(c->meta.id);
+		ser_int32(c->meta.chunk_num);
+		ser_int32(c->meta.data_size);
 
 		GHashTableIter iter;
 		gpointer key, value;
 		g_hash_table_iter_init(&iter, c->meta.map);
 		while (g_hash_table_iter_next(&iter, &key, &value)) {
 			struct metaEntry *me = (struct metaEntry *) value;
-			// ser_bytes(&me->fp, sizeof(fingerprint));
-			// ser_bytes(&me->len, sizeof(int32_t));
-			// ser_bytes(&me->off, sizeof(int32_t));
-			memcpy(tmp_ptr, &me->fp, sizeof(fingerprint));
-			tmp_ptr += sizeof(fingerprint);
-			memcpy(tmp_ptr, &me->len, sizeof(int32_t));
-			tmp_ptr += sizeof(int32_t);
-			memcpy(tmp_ptr, &me->off, sizeof(int32_t));
-			tmp_ptr += sizeof(int32_t);
+			ser_bytes(&me->fp, sizeof(fingerprint));
+			ser_bytes(&me->len, sizeof(int32_t));
+			ser_bytes(&me->off, sizeof(int32_t));
 		}
 
-		// ser_end(cur, CONTAINER_META_SIZE);
+		ser_end(cur, CONTAINER_META_SIZE);
 
 		pthread_mutex_lock(&mutex);
 
-		// if (fseek(fp, c->meta.id * CONTAINER_SIZE + 8, SEEK_SET) != 0) {
-		// 	perror("Fail seek in container store.");
-		// 	exit(1);
-		// }
-		// if(fwrite(c->data, CONTAINER_SIZE, 1, fp) != 1){
-		// 	perror("Fail to write a container in container store.");
-		// 	exit(1);
-		// }
-
-		// we write to OpenEC
-		int num = CONTAINER_SIZE / destor.oec_pktsize;
-		// init
-		redisContext* _localCtx = createContextByUint(destor.local_ip);
-		agent_cmd* agCmd = (agent_cmd*)calloc(sizeof(agent_cmd), 1);
-		openec_agent_cmd_init(agCmd);
-		
-		char *container_file_name = (char*)malloc(MAX_OEC_FILENAME_LEN);
-		sprintf(container_file_name, "%s_%d", BASE_OEC_FILENAME, c->meta.id);
-
-		build_openec_agent_command_type0(agCmd, 0, container_file_name, destor.ecid_pool, destor.oec_mode, CONTAINER_SIZE);
-		int pktid = 0;
-		for (int i = 0; i < num; i++) {
-			unsigned char* buf = (char*)calloc(destor.oec_pktsize+4, sizeof(char));
-			
-			int tmplen = htonl(destor.oec_pktsize);
-			memcpy(buf, (unsigned char*)&tmplen, 4);
-
-			memcpy(buf+4, cur+i*destor.oec_pktsize, destor.oec_pktsize);
-			//outstream write
-			char* pkt_name = (char*)malloc(MAX_OEC_FILENAME_LEN);
-    		sprintf(pkt_name, "%s:%d", BASE_OEC_FILENAME, pktid);
-
-			redisAppendCommand(_localCtx, "RPUSH %s %b", pkt_name, buf, destor.oec_pktsize+4);
-
-			pktid++;
-			free(pkt_name);
-			free(buf);
+		if (fseek(fp, c->meta.id * CONTAINER_SIZE + 8, SEEK_SET) != 0) {
+			perror("Fail seek in container store.");
+			exit(1);
 		}
-		free(agCmd);
-		redisFree(_localCtx);
-		free(container_file_name);
+		if(fwrite(c->data, CONTAINER_SIZE, 1, fp) != 1){
+			perror("Fail to write a container in container store.");
+			exit(1);
+		}
 
 		pthread_mutex_unlock(&mutex);
 	} else {
-		/* in our system, should never reach */
+		char buf[CONTAINER_META_SIZE];
+		memset(buf, 0, CONTAINER_META_SIZE);
 
-		// char buf[CONTAINER_META_SIZE];
-		// memset(buf, 0, CONTAINER_META_SIZE);
+		ser_declare;
+		ser_begin(buf, CONTAINER_META_SIZE);
+		ser_int64(c->meta.id);
+		ser_int32(c->meta.chunk_num);
+		ser_int32(c->meta.data_size);
 
-		// ser_declare;
-		// ser_begin(buf, CONTAINER_META_SIZE);
-		// ser_int64(c->meta.id);
-		// ser_int32(c->meta.chunk_num);
-		// ser_int32(c->meta.data_size);
+		GHashTableIter iter;
+		gpointer key, value;
+		g_hash_table_iter_init(&iter, c->meta.map);
+		while (g_hash_table_iter_next(&iter, &key, &value)) {
+			struct metaEntry *me = (struct metaEntry *) value;
+			ser_bytes(&me->fp, sizeof(fingerprint));
+			ser_bytes(&me->len, sizeof(int32_t));
+			ser_bytes(&me->off, sizeof(int32_t));
+		}
 
-		// GHashTableIter iter;
-		// gpointer key, value;
-		// g_hash_table_iter_init(&iter, c->meta.map);
-		// while (g_hash_table_iter_next(&iter, &key, &value)) {
-		// 	struct metaEntry *me = (struct metaEntry *) value;
-		// 	ser_bytes(&me->fp, sizeof(fingerprint));
-		// 	ser_bytes(&me->len, sizeof(int32_t));
-		// 	ser_bytes(&me->off, sizeof(int32_t));
-		// }
+		ser_end(buf, CONTAINER_META_SIZE);
 
-		// ser_end(buf, CONTAINER_META_SIZE);
+		pthread_mutex_lock(&mutex);
 
-		// pthread_mutex_lock(&mutex);
+		if(fseek(fp, c->meta.id * CONTAINER_META_SIZE + 8, SEEK_SET) != 0){
+			perror("Fail seek in container store.");
+			exit(1);
+		}
+		if(fwrite(buf, CONTAINER_META_SIZE, 1, fp) != 1){
+			perror("Fail to write a container in container store.");
+			exit(1);
+		}
 
-		// if(fseek(fp, c->meta.id * CONTAINER_META_SIZE + 8, SEEK_SET) != 0){
-		// 	perror("Fail seek in container store.");
-		// 	exit(1);
-		// }
-		// if(fwrite(buf, CONTAINER_META_SIZE, 1, fp) != 1){
-		// 	perror("Fail to write a container in container store.");
-		// 	exit(1);
-		// }
-
-		// pthread_mutex_unlock(&mutex);
+		pthread_mutex_unlock(&mutex);
 	}
 
 }
-
 
 struct container* retrieve_container_by_id(containerid id) {
 	struct container *c = (struct container*) malloc(sizeof(struct container));

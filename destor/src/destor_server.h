@@ -10,26 +10,17 @@
 #include "storage/containerstore.h"
 #include <stdlib.h>
 
-static pthread_t read_t;
-
-struct readParam {
-    char* data;
-    uint32_t size;
-};
-
-struct readParam* newReadParam(uint32_t size);
-
-void deleteReadParam(struct readParam* rp);
+#include "utils/redis_util.h"
 
 // static void read_data(void* argv);
 
 // static void* read_thread(void *argv);
 
-void start_read_phase_from_data(void* argv);
+void start_read_phase_from_data();
 
 void stop_read_phase_from_data();
 
-void destor_write(char *path, char *data, uint32_t size);
+void destor_write(char *path, uint32_t size);
 
 void destor_server_process();
 

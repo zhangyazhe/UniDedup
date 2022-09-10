@@ -322,7 +322,8 @@ void load_config_from_string(sds config) {
 			int str_len = strlen(argv[1]);
 			destor.oec_mode = (char*)malloc(str_len+1);
 			strcpy(destor.oec_mode, argv[1]);
-		} else {
+		}
+		else {
 			err = "Bad directive or wrong number of arguments";
 			goto loaderr;
 		}
