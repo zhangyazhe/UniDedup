@@ -45,6 +45,7 @@ void deleteReadParam(struct readParam* rp) {
 }
 
 static void read_data(void) {
+	printf("1\n");
 	sds filename = sdsdup(jcr.path);
     // struct readParam* rp = (struct readParam*)argv;
 	uint32_t size = jcr.size;
@@ -55,7 +56,7 @@ static void read_data(void) {
 	VERBOSE("Read phase: %s", filename);
 
 	SET_CHUNK(c, CHUNK_FILE_START);
-
+	printf("2\n");
 	sync_queue_push(read_queue, c);
 
 	TIMER_DECLARE(1);
@@ -91,6 +92,8 @@ static void read_data(void) {
 		// 1. get |len|data|
 		redisReply* readrReply;
 		redisGetReply(readCtx, (void**)&readrReply);
+		if(readrReply == NULL) {printf("readreply == null \n");}
+		printf("%d\n", readrReply->type);
 		char* pkt = readrReply->element[1]->str;
 		printf("i: %d\n", i);
 		// 2. get pkt size
