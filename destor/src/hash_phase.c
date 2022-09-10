@@ -11,6 +11,7 @@ static void* sha1_thread(void* arg) {
 		struct chunk* c = sync_queue_pop(chunk_queue);
 
 		if (c == NULL) {
+			printf("hash phase finish\n");
 			sync_queue_term(hash_queue);
 			break;
 		}

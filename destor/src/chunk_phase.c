@@ -102,7 +102,7 @@ static void* chunk_thread(void *arg) {
 			windows_reset();
 
 	}
-
+	printf("chunk phase finish\n");
 	free(leftbuf);
 	free(zeros);
 	free(data);

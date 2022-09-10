@@ -3,6 +3,25 @@
 
 extern void destor_shutdown();
 
+char* intToChar(unsigned int a) {
+	if(a == 0) return "0";
+	uint32_t tmpa = a;
+	int len = 0;
+	while(tmpa > 0) {
+		tmpa /= 10;
+		len++;
+	}
+	char* p = (char*)calloc(len, sizeof(char));
+	int i = len-1;
+	while(a > 0) {
+		p[i] = a%10 + '0';
+		a/=10;
+		i--;
+	}
+	p[len] = '\0';
+	return p;
+}
+
 struct readParam* newReadParam(/* char* data, */uint32_t size) {
 	printf("new param start\n");
     struct readParam* rp = (struct readParam*) calloc(sizeof(struct readParam), 1);
@@ -25,7 +44,8 @@ void deleteReadParam(struct readParam* rp) {
 
 static void read_data(void* argv) {
 	sds filename = sdsdup(jcr.path);
-    struct readParam* rp = (struct readParam*)argv;
+    // struct readParam* rp = (struct readParam*)argv;
+	uint32_t size = *(uint32_t *)argv;
 
     struct chunk *c = new_chunk(sdslen(filename) + 1);
 	strcpy((char*)c->data, filename);
@@ -44,18 +64,19 @@ static void read_data(void* argv) {
 	int pktid = 0;
 	int pktnum = 0;
 	redisContext* readCtx = createContextByUint(destor.local_ip);
-	pktnum = rp->size / DEFAULT_BLOCK_SIZE;
-	if (rp->size % DEFAULT_BLOCK_SIZE != 0) {
+	printf("rp->size: %d\n", size);
+	pktnum = size / DEFAULT_BLOCK_SIZE;
+	if (size % DEFAULT_BLOCK_SIZE != 0) {
 		pktnum += 1;
 	}
-
+	printf("pkt size: %d\n", pktnum);
 	for (int i = 0; i < pktnum; i++) {
 		// 1. get key
-		int gpname_len = strlen(cmd->_group_name);
+		int gpname_len = strlen(filename);
 		char fix[20] = "_data_";
-		strcat(fix, itoa(pktid++));
+		strcat(fix, intToChar(pktid++));
 		char* data_key = (char *)calloc(gpname_len+1+20, 1);
-		memcpy(data_key, cmd->_group_name, gpname_len+1);
+		memcpy(data_key, filename, gpname_len+1);
 		strcat(data_key, fix);
 		printf("%s\n", data_key);
 		// 2. create redis context
@@ -83,7 +104,7 @@ static void read_data(void* argv) {
 		TIMER_BEGIN(1);
 		freeReplyObject(readrReply);
 	}
-	printf("read size : \n" readsize);
+	printf("read size : %d\n", readsize);
 
 	redisFree(readCtx);
 			
@@ -177,9 +198,9 @@ void destor_write(char *path, char *data, uint32_t size) {
 	} else {
 		printf("not sim\n");
 		// 将jcr.path目录下的所有文件以块为单位读取出来压入到read_queue中
-        struct readParam* rp = newReadParam(size);
-		start_read_phase_from_data((void *)rp);
-        deleteReadParam(rp);
+        // struct readParam* rp = newReadParam(size);
+		start_read_phase_from_data((void *)&size);
+        // deleteReadParam(rp);
 		// 根据jcr.chunk_algorithm设置分块算法
 		start_chunk_phase();
 		// 从chunk_queue队列里pop出块，并计算该块的指纹，放到chunk.fp中

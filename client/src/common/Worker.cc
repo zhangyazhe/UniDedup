@@ -79,7 +79,7 @@ void Worker::clientWrite(AgentCommand *agCmd) {
 
     // distribute groups to different nodes
     // thread sendThrd[gps.size()];
-    _destorCtx = RedisUtil::createContext(nodeIp);
+    
     for(int i = 0; i < gps.size(); i++) {
       destorCommand *dstCmd = new destorCommand();
       // tell destor name and size
@@ -88,7 +88,7 @@ void Worker::clientWrite(AgentCommand *agCmd) {
       dstCmd->sendTo(nodeIp);
       // send data
       // extand pipelining
-      
+      _destorCtx = RedisUtil::createContext(nodeIp);
       int pktid = 0;
       int pktnum = 0;
       uint32_t written_size = 0;
@@ -102,7 +102,7 @@ void Worker::clientWrite(AgentCommand *agCmd) {
         char* buf = (char*)calloc(this_time_size + 4, sizeof(char));
         uint32_t tmp_size = htonl(this_time_size);
         memcpy(buf, (char*)&tmp_size, 4);
-        memcpy(buf + 4, gps[i]->data + written_size, this_time_size)
+        memcpy(buf + 4, gps[i]->data + written_size, this_time_size);
         
         redisAppendCommand(_destorCtx, "RPUSH %s %b", 
                             append_data_key.c_str(), 
@@ -129,7 +129,7 @@ void Worker::clientWrite(AgentCommand *agCmd) {
       
       // wait for finished
       string wait_finished_key = string(gps[i]->groupName)+"_data_finished";
-      destorrReply = (redisReply*)redisCommand(_destorCtx, "blpop %s 0", wait_finished_key.c_str());
+      redisReply* destorrReply = (redisReply*)redisCommand(_destorCtx, "blpop %s 0", wait_finished_key.c_str());
       freeReplyObject(destorrReply);
       
       redisFree(_destorCtx);

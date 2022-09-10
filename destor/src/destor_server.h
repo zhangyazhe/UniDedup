@@ -8,6 +8,7 @@
 #include "index/index.h"
 #include "backup.h"
 #include "storage/containerstore.h"
+#include <stdlib.h>
 
 static pthread_t read_t;
 
@@ -16,7 +17,7 @@ struct readParam {
     uint32_t size;
 };
 
-struct readParam* newReadParam(char* data, uint32_t size);
+struct readParam* newReadParam(uint32_t size);
 
 void deleteReadParam(struct readParam* rp);
 
@@ -31,5 +32,7 @@ void stop_read_phase_from_data();
 void destor_write(char *path, char *data, uint32_t size);
 
 void destor_server_process();
+
+char* intToChar(unsigned int a);
 
 #endif

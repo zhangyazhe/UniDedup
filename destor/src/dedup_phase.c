@@ -101,14 +101,14 @@ void *dedup_thread(void *arg) {
 		if (c == NULL)
 			break;
 	}
-
+	printf("dedup phase finishes\n");
 	sync_queue_term(dedup_queue);
 
 	return NULL;
 }
 
 void start_dedup_phase() {
-
+	printf("start_dedup_phase\n");
 	if(destor.index_segment_algorithm[0] == INDEX_SEGMENT_CONTENT_DEFINED)
 		index_lock.wait_threshold = destor.rewrite_algorithm[1] + destor.index_segment_max - 1;
 	else if(destor.index_segment_algorithm[0] == INDEX_SEGMENT_FIXED)

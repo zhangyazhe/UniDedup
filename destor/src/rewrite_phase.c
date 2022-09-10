@@ -120,13 +120,14 @@ static void* no_rewrite(void* arg) {
         if (destor.rewrite_enable_har && CHECK_CHUNK(c, CHUNK_DUPLICATE))
             har_check(c);
     }
-
+	printf("rewrite phase finishes\n");
     sync_queue_term(rewrite_queue);
 
     return NULL;
 }
 
 void start_rewrite_phase() {
+	printf("start_rewrite_phase\n");
     rewrite_queue = sync_queue_new(1000);
 
     init_rewrite_buffer();
