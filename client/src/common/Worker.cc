@@ -66,17 +66,18 @@ void Worker::clientWrite(AgentCommand *agCmd) {
     /* This part is for Zewen */
 
     // file to groups
+    printf("1\n");
     vector<struct group*> gps = split2Groups(filepath.c_str(), filename.c_str(), _conf->node_num);
-
+    printf("2\n");
     /* This part is for Lin */
     // generate file recipe
     struct fileRecipe* fr = getFileRecipe(filename.c_str(), gps);
     assert(fr != NULL);
-
+    printf("3\n");
     // set file recipe by echash
     int ret = setFileRecipe(fr);
     assert(ret == 0);
-
+    printf("4\n");
     // distribute groups to different nodes
     // thread sendThrd[gps.size()];
     // printf("gps.size: %d\n", gps.size());

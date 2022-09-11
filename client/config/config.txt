@@ -7,7 +7,8 @@ chunking_algorithm rabin
 grouping_algorithm fixed
 grouping_number 1024
 worker_number 1
-node_number 2
+node_number 8
 destor_chunk_avg_size 4096
 destor_chunk_max_size 65536
 destor_chunk_min_size 512
+local_ip=192.168.235.179

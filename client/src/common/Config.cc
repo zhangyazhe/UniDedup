@@ -64,6 +64,10 @@ void Config::getConfigFromLine(std::string& line) {
     else if(confs[0] == "destor_chunk_max_size") {
         std::stringstream nnss(confs[1]);
         nnss >> destor_chunk_max_size;
+    } 
+    else if(confs[0] == "local_ip") {
+        std::stringstream ipss(confs[1]);
+        ipss >> _localIP;
     }
 }
 

@@ -25,7 +25,7 @@ int initEchash(void) {
         if(ip[0]=='#' || ip[0]==0)
             continue;
 
-        // fprintf(stderr,"%s, %u ,%u\n",ip, port,ring);
+        fprintf(stderr,"%s, %u ,%u\n",ip, port,ring);
         ECHash_init_addserver(ECH, ip, port, ring);
     }
     fclose(fin_config);
