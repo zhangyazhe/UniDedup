@@ -17,8 +17,8 @@ void init_jcr(char *path) {
 	// 	fprintf(stderr, "backup path does not exist!");
 	// 	exit(1);
 	// }
-	if (S_ISDIR(s.st_mode) && jcr.path[sdslen(jcr.path) - 1] != '/')
-		jcr.path = sdscat(jcr.path, "/");
+	// if (S_ISDIR(s.st_mode) && jcr.path[sdslen(jcr.path) - 1] != '/')
+	// 	jcr.path = sdscat(jcr.path, "/");
 
 	jcr.bv = NULL;
 

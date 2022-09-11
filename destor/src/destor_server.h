@@ -10,15 +10,6 @@
 #include "storage/containerstore.h"
 #include <stdlib.h>
 
-struct readParam {
-    char* data;
-    uint32_t size;
-};
-
-struct readParam* newReadParam(uint32_t size);
-
-void deleteReadParam(struct readParam* rp);
-
 // static void read_data(void* argv);
 
 // static void* read_thread(void *argv);

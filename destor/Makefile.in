@@ -86,7 +86,7 @@ POST_INSTALL = :
 NORMAL_UNINSTALL = :
 PRE_UNINSTALL = :
 POST_UNINSTALL = :
-bin_PROGRAMS = destor$(EXEEXT)
+bin_PROGRAMS = destor$(EXEEXT) proxy$(EXEEXT)
 subdir = .
 ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
 am__aclocal_m4_deps = $(top_srcdir)/configure.ac
@@ -107,6 +107,9 @@ destor_DEPENDENCIES = src/libdestor.a src/index/libindex.a \
 	src/storage/libstorage.a src/utils/libutils.a \
 	src/recipe/librecipe.a src/chunking/libchunk.a \
 	src/fsl/libfsl.a
+am_proxy_OBJECTS =
+proxy_OBJECTS = $(am_proxy_OBJECTS)
+proxy_DEPENDENCIES = src/libproxy.a
 AM_V_P = $(am__v_P_@AM_V@)
 am__v_P_ = $(am__v_P_@AM_DEFAULT_V@)
 am__v_P_0 = false
@@ -132,8 +135,8 @@ AM_V_CCLD = $(am__v_CCLD_@AM_V@)
 am__v_CCLD_ = $(am__v_CCLD_@AM_DEFAULT_V@)
 am__v_CCLD_0 = @echo "  CCLD    " $@;
 am__v_CCLD_1 = 
-SOURCES = $(destor_SOURCES)
-DIST_SOURCES = $(destor_SOURCES)
+SOURCES = $(destor_SOURCES) $(proxy_SOURCES)
+DIST_SOURCES = $(destor_SOURCES) $(proxy_SOURCES)
 RECURSIVE_TARGETS = all-recursive check-recursive cscopelist-recursive \
 	ctags-recursive dvi-recursive html-recursive info-recursive \
 	install-data-recursive install-dvi-recursive \
@@ -310,6 +313,8 @@ top_builddir = @top_builddir@
 top_srcdir = @top_srcdir@
 destor_SOURCES = 
 destor_LDADD = src/libdestor.a src/index/libindex.a src/storage/libstorage.a src/utils/libutils.a src/recipe/librecipe.a src/chunking/libchunk.a src/fsl/libfsl.a
+proxy_SOURCES = 
+proxy_LDADD = src/libproxy.a
 SUBDIRS = src src/index src/recipe src/storage src/utils src/chunking src/fsl
 all: all-recursive
 
@@ -393,6 +398,10 @@ clean-binPROGRAMS:
 destor$(EXEEXT): $(destor_OBJECTS) $(destor_DEPENDENCIES) $(EXTRA_destor_DEPENDENCIES) 
 	@rm -f destor$(EXEEXT)
 	$(AM_V_CCLD)$(LINK) $(destor_OBJECTS) $(destor_LDADD) $(LIBS)
+
+proxy$(EXEEXT): $(proxy_OBJECTS) $(proxy_DEPENDENCIES) $(EXTRA_proxy_DEPENDENCIES) 
+	@rm -f proxy$(EXEEXT)
+	$(AM_V_CCLD)$(LINK) $(proxy_OBJECTS) $(proxy_LDADD) $(LIBS)
 
 mostlyclean-compile:
 	-rm -f *.$(OBJEXT)

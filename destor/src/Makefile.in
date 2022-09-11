@@ -115,6 +115,10 @@ am_libdestor_a_OBJECTS = destor.$(OBJEXT) jcr.$(OBJEXT) \
 	optimal_restore.$(OBJEXT) assembly_restore.$(OBJEXT) \
 	cma.$(OBJEXT) do_delete.$(OBJEXT) destor_server.$(OBJEXT)
 libdestor_a_OBJECTS = $(am_libdestor_a_OBJECTS)
+libproxy_a_AR = $(AR) $(ARFLAGS)
+libproxy_a_LIBADD =
+am_libproxy_a_OBJECTS = proxy.$(OBJEXT)
+libproxy_a_OBJECTS = $(am_libproxy_a_OBJECTS)
 AM_V_P = $(am__v_P_@AM_V@)
 am__v_P_ = $(am__v_P_@AM_DEFAULT_V@)
 am__v_P_0 = false
@@ -143,8 +147,8 @@ AM_V_CCLD = $(am__v_CCLD_@AM_V@)
 am__v_CCLD_ = $(am__v_CCLD_@AM_DEFAULT_V@)
 am__v_CCLD_0 = @echo "  CCLD    " $@;
 am__v_CCLD_1 = 
-SOURCES = $(libdestor_a_SOURCES)
-DIST_SOURCES = $(libdestor_a_SOURCES)
+SOURCES = $(libdestor_a_SOURCES) $(libproxy_a_SOURCES)
+DIST_SOURCES = $(libdestor_a_SOURCES) $(libproxy_a_SOURCES)
 am__can_run_installinfo = \
   case $$AM_UPDATE_INFO_DIR in \
     n|no|NO) false;; \
@@ -259,8 +263,9 @@ target_alias = @target_alias@
 top_build_prefix = @top_build_prefix@
 top_builddir = @top_builddir@
 top_srcdir = @top_srcdir@
-noinst_LIBRARIES = libdestor.a
+noinst_LIBRARIES = libdestor.a libproxy.a
 libdestor_a_SOURCES = destor.c jcr.c config.c do_backup.c read_phase.c chunk_phase.c hash_phase.c trace_phase.c dedup_phase.c rewrite_phase.c filter_phase.c cfl_rewrite.c cap_rewrite.c cbr_rewrite.c har_rewrite.c restore_aware.c do_restore.c optimal_restore.c assembly_restore.c cma.c do_delete.c destor_server.c
+libproxy_a_SOURCES = proxy.c
 all: all-am
 
 .SUFFIXES:
@@ -303,6 +308,11 @@ libdestor.a: $(libdestor_a_OBJECTS) $(libdestor_a_DEPENDENCIES) $(EXTRA_libdesto
 	$(AM_V_AR)$(libdestor_a_AR) libdestor.a $(libdestor_a_OBJECTS) $(libdestor_a_LIBADD)
 	$(AM_V_at)$(RANLIB) libdestor.a
 
+libproxy.a: $(libproxy_a_OBJECTS) $(libproxy_a_DEPENDENCIES) $(EXTRA_libproxy_a_DEPENDENCIES) 
+	$(AM_V_at)-rm -f libproxy.a
+	$(AM_V_AR)$(libproxy_a_AR) libproxy.a $(libproxy_a_OBJECTS) $(libproxy_a_LIBADD)
+	$(AM_V_at)$(RANLIB) libproxy.a
+
 mostlyclean-compile:
 	-rm -f *.$(OBJEXT)
 
@@ -327,6 +337,7 @@ distclean-compile:
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/hash_phase.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/jcr.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/optimal_restore.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/proxy.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/read_phase.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/restore_aware.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/rewrite_phase.Po@am__quote@

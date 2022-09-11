@@ -327,7 +327,6 @@ static void* filter_thread(void *arg) {
 }
 
 void start_filter_phase() {
-
 	storage_buffer.container_buffer = NULL;
 
     init_restore_aware();

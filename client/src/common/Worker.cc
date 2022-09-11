@@ -79,7 +79,7 @@ void Worker::clientWrite(AgentCommand *agCmd) {
 
     // distribute groups to different nodes
     // thread sendThrd[gps.size()];
-    printf("gps.size: %d\n", gps.size());
+    // printf("gps.size: %d\n", gps.size());
     for(int i = 0; i < gps.size(); i++) {
       cout << "Worker::group:" << string(gps[i]->groupName) << " start!" << endl;
       destorCommand *dstCmd = new destorCommand();
@@ -93,7 +93,7 @@ void Worker::clientWrite(AgentCommand *agCmd) {
       int pktid = 0;
       int pktnum = 0;
       uint32_t written_size = 0;
-      printf("gps[i].size: %d\n", gps[i]->size);
+      // printf("gps[i].size: %d\n", gps[i]->size);
       while(written_size < gps[i]->size) {
         uint32_t this_time_size = 0;
         string append_data_key = string(gps[i]->groupName)+"_data_"+to_string(pktid++);
@@ -101,7 +101,6 @@ void Worker::clientWrite(AgentCommand *agCmd) {
           this_time_size = DEFAULT_BLOCK_SIZE;
         }
         else this_time_size = gps[i]->size - written_size;
-        printf("this time size: %d\n", this_time_size);
         char* buf = (char*)calloc(this_time_size + 4, sizeof(char));
         uint32_t tmp_size = htonl(this_time_size);
         memcpy(buf, (char*)&tmp_size, 4);
@@ -118,10 +117,10 @@ void Worker::clientWrite(AgentCommand *agCmd) {
       // cout << append_data_key.c_str() << endl;
 
       
-      std::cout << "Worker::debug::Command type 0, groupName is " << gps[i]->groupName
-                << " data size is " << gps[i]->size
-                // << " data is " << gps[i]->data
-                << std::endl;
+      // std::cout << "Worker::debug::Command type 0, groupName is " << gps[i]->groupName
+      //           << " data size is " << gps[i]->size
+      //           // << " data is " << gps[i]->data
+      //           << std::endl;
       
       for (int i = 0; i < pktnum; i++) {
         redisReply* destorrReply;

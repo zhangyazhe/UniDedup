@@ -132,3 +132,4 @@ destor/compile
 destor/config.log
 destor/config.status
 destor/autom4te.cache
+destor/proxy
