@@ -90,15 +90,12 @@ count.sh
 client/.deps/
 client/.deps/*
 client/Makefile
-client/Makefile.in
 client/*/.deps/
 client/*/.deps/*
 client/*/Makefile
-client/*/Makefile.in
 client/src/*/.deps/
 client/src/*/.deps/*
 client/src/*/Makefile
-client/src/*/Makefile.in
 
 client/config.h
 client/config.h.in
@@ -108,11 +105,7 @@ client/config.log
 client/config.status
 client/configure.scan
 client/Makefile
-client/Makefile.in
 client/src/Makefile
-client/src/Makefile.in
-client/src/*/Makefile
-client/src/*/Makefile.in
 
 client/autom4te.cache/
 client/autom4te.cache/*
