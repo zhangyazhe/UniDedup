@@ -57,10 +57,10 @@ RM = /usr/local/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/openec/openec/res/openec
+CMAKE_SOURCE_DIR = /home/openec/Fast23/storage
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/openec/openec/res/openec
+CMAKE_BINARY_DIR = /home/openec/Fast23/storage
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -87,14 +87,14 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	cd /home/openec/openec/res/openec && $(CMAKE_COMMAND) -E cmake_progress_start /home/openec/openec/res/openec/CMakeFiles /home/openec/openec/res/openec/src//CMakeFiles/progress.marks
-	cd /home/openec/openec/res/openec && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/openec/openec/res/openec/CMakeFiles 0
+	cd /home/openec/Fast23/storage && $(CMAKE_COMMAND) -E cmake_progress_start /home/openec/Fast23/storage/CMakeFiles /home/openec/Fast23/storage/src//CMakeFiles/progress.marks
+	cd /home/openec/Fast23/storage && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/openec/Fast23/storage/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /home/openec/openec/res/openec && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/clean
+	cd /home/openec/Fast23/storage && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/clean
 .PHONY : clean
 
 # The main clean target
@@ -103,22 +103,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /home/openec/openec/res/openec && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/preinstall
+	cd /home/openec/Fast23/storage && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /home/openec/openec/res/openec && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/preinstall
+	cd /home/openec/Fast23/storage && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /home/openec/openec/res/openec && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/openec/Fast23/storage && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 src/CMakeFiles/OECCoordinator.dir/rule:
-	cd /home/openec/openec/res/openec && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/CMakeFiles/OECCoordinator.dir/rule
+	cd /home/openec/Fast23/storage && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/CMakeFiles/OECCoordinator.dir/rule
 .PHONY : src/CMakeFiles/OECCoordinator.dir/rule
 
 # Convenience name for target.
@@ -127,12 +127,12 @@ OECCoordinator: src/CMakeFiles/OECCoordinator.dir/rule
 
 # fast build rule for target.
 OECCoordinator/fast:
-	cd /home/openec/openec/res/openec && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/OECCoordinator.dir/build.make src/CMakeFiles/OECCoordinator.dir/build
+	cd /home/openec/Fast23/storage && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/OECCoordinator.dir/build.make src/CMakeFiles/OECCoordinator.dir/build
 .PHONY : OECCoordinator/fast
 
 # Convenience name for target.
 src/CMakeFiles/OECAgent.dir/rule:
-	cd /home/openec/openec/res/openec && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/CMakeFiles/OECAgent.dir/rule
+	cd /home/openec/Fast23/storage && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/CMakeFiles/OECAgent.dir/rule
 .PHONY : src/CMakeFiles/OECAgent.dir/rule
 
 # Convenience name for target.
@@ -141,12 +141,12 @@ OECAgent: src/CMakeFiles/OECAgent.dir/rule
 
 # fast build rule for target.
 OECAgent/fast:
-	cd /home/openec/openec/res/openec && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/OECAgent.dir/build.make src/CMakeFiles/OECAgent.dir/build
+	cd /home/openec/Fast23/storage && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/OECAgent.dir/build.make src/CMakeFiles/OECAgent.dir/build
 .PHONY : OECAgent/fast
 
 # Convenience name for target.
 src/CMakeFiles/OECClient.dir/rule:
-	cd /home/openec/openec/res/openec && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/CMakeFiles/OECClient.dir/rule
+	cd /home/openec/Fast23/storage && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/CMakeFiles/OECClient.dir/rule
 .PHONY : src/CMakeFiles/OECClient.dir/rule
 
 # Convenience name for target.
@@ -155,12 +155,12 @@ OECClient: src/CMakeFiles/OECClient.dir/rule
 
 # fast build rule for target.
 OECClient/fast:
-	cd /home/openec/openec/res/openec && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/OECClient.dir/build.make src/CMakeFiles/OECClient.dir/build
+	cd /home/openec/Fast23/storage && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/OECClient.dir/build.make src/CMakeFiles/OECClient.dir/build
 .PHONY : OECClient/fast
 
 # Convenience name for target.
 src/CMakeFiles/ECDAGTest.dir/rule:
-	cd /home/openec/openec/res/openec && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/CMakeFiles/ECDAGTest.dir/rule
+	cd /home/openec/Fast23/storage && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/CMakeFiles/ECDAGTest.dir/rule
 .PHONY : src/CMakeFiles/ECDAGTest.dir/rule
 
 # Convenience name for target.
@@ -169,12 +169,12 @@ ECDAGTest: src/CMakeFiles/ECDAGTest.dir/rule
 
 # fast build rule for target.
 ECDAGTest/fast:
-	cd /home/openec/openec/res/openec && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/ECDAGTest.dir/build.make src/CMakeFiles/ECDAGTest.dir/build
+	cd /home/openec/Fast23/storage && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/ECDAGTest.dir/build.make src/CMakeFiles/ECDAGTest.dir/build
 .PHONY : ECDAGTest/fast
 
 # Convenience name for target.
 src/CMakeFiles/CodeTest.dir/rule:
-	cd /home/openec/openec/res/openec && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/CMakeFiles/CodeTest.dir/rule
+	cd /home/openec/Fast23/storage && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/CMakeFiles/CodeTest.dir/rule
 .PHONY : src/CMakeFiles/CodeTest.dir/rule
 
 # Convenience name for target.
@@ -183,12 +183,12 @@ CodeTest: src/CMakeFiles/CodeTest.dir/rule
 
 # fast build rule for target.
 CodeTest/fast:
-	cd /home/openec/openec/res/openec && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/CodeTest.dir/build.make src/CMakeFiles/CodeTest.dir/build
+	cd /home/openec/Fast23/storage && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/CodeTest.dir/build.make src/CMakeFiles/CodeTest.dir/build
 .PHONY : CodeTest/fast
 
 # Convenience name for target.
 src/CMakeFiles/HDFSClient.dir/rule:
-	cd /home/openec/openec/res/openec && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/CMakeFiles/HDFSClient.dir/rule
+	cd /home/openec/Fast23/storage && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/CMakeFiles/HDFSClient.dir/rule
 .PHONY : src/CMakeFiles/HDFSClient.dir/rule
 
 # Convenience name for target.
@@ -197,7 +197,7 @@ HDFSClient: src/CMakeFiles/HDFSClient.dir/rule
 
 # fast build rule for target.
 HDFSClient/fast:
-	cd /home/openec/openec/res/openec && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/HDFSClient.dir/build.make src/CMakeFiles/HDFSClient.dir/build
+	cd /home/openec/Fast23/storage && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/HDFSClient.dir/build.make src/CMakeFiles/HDFSClient.dir/build
 .PHONY : HDFSClient/fast
 
 CodeTest.o: CodeTest.cc.o
@@ -205,7 +205,7 @@ CodeTest.o: CodeTest.cc.o
 
 # target to build an object file
 CodeTest.cc.o:
-	cd /home/openec/openec/res/openec && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/CodeTest.dir/build.make src/CMakeFiles/CodeTest.dir/CodeTest.cc.o
+	cd /home/openec/Fast23/storage && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/CodeTest.dir/build.make src/CMakeFiles/CodeTest.dir/CodeTest.cc.o
 .PHONY : CodeTest.cc.o
 
 CodeTest.i: CodeTest.cc.i
@@ -213,7 +213,7 @@ CodeTest.i: CodeTest.cc.i
 
 # target to preprocess a source file
 CodeTest.cc.i:
-	cd /home/openec/openec/res/openec && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/CodeTest.dir/build.make src/CMakeFiles/CodeTest.dir/CodeTest.cc.i
+	cd /home/openec/Fast23/storage && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/CodeTest.dir/build.make src/CMakeFiles/CodeTest.dir/CodeTest.cc.i
 .PHONY : CodeTest.cc.i
 
 CodeTest.s: CodeTest.cc.s
@@ -221,7 +221,7 @@ CodeTest.s: CodeTest.cc.s
 
 # target to generate assembly for a file
 CodeTest.cc.s:
-	cd /home/openec/openec/res/openec && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/CodeTest.dir/build.make src/CMakeFiles/CodeTest.dir/CodeTest.cc.s
+	cd /home/openec/Fast23/storage && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/CodeTest.dir/build.make src/CMakeFiles/CodeTest.dir/CodeTest.cc.s
 .PHONY : CodeTest.cc.s
 
 ECDAGTest.o: ECDAGTest.cc.o
@@ -229,7 +229,7 @@ ECDAGTest.o: ECDAGTest.cc.o
 
 # target to build an object file
 ECDAGTest.cc.o:
-	cd /home/openec/openec/res/openec && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/ECDAGTest.dir/build.make src/CMakeFiles/ECDAGTest.dir/ECDAGTest.cc.o
+	cd /home/openec/Fast23/storage && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/ECDAGTest.dir/build.make src/CMakeFiles/ECDAGTest.dir/ECDAGTest.cc.o
 .PHONY : ECDAGTest.cc.o
 
 ECDAGTest.i: ECDAGTest.cc.i
@@ -237,7 +237,7 @@ ECDAGTest.i: ECDAGTest.cc.i
 
 # target to preprocess a source file
 ECDAGTest.cc.i:
-	cd /home/openec/openec/res/openec && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/ECDAGTest.dir/build.make src/CMakeFiles/ECDAGTest.dir/ECDAGTest.cc.i
+	cd /home/openec/Fast23/storage && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/ECDAGTest.dir/build.make src/CMakeFiles/ECDAGTest.dir/ECDAGTest.cc.i
 .PHONY : ECDAGTest.cc.i
 
 ECDAGTest.s: ECDAGTest.cc.s
@@ -245,7 +245,7 @@ ECDAGTest.s: ECDAGTest.cc.s
 
 # target to generate assembly for a file
 ECDAGTest.cc.s:
-	cd /home/openec/openec/res/openec && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/ECDAGTest.dir/build.make src/CMakeFiles/ECDAGTest.dir/ECDAGTest.cc.s
+	cd /home/openec/Fast23/storage && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/ECDAGTest.dir/build.make src/CMakeFiles/ECDAGTest.dir/ECDAGTest.cc.s
 .PHONY : ECDAGTest.cc.s
 
 HDFSClient.o: HDFSClient.cc.o
@@ -253,7 +253,7 @@ HDFSClient.o: HDFSClient.cc.o
 
 # target to build an object file
 HDFSClient.cc.o:
-	cd /home/openec/openec/res/openec && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/HDFSClient.dir/build.make src/CMakeFiles/HDFSClient.dir/HDFSClient.cc.o
+	cd /home/openec/Fast23/storage && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/HDFSClient.dir/build.make src/CMakeFiles/HDFSClient.dir/HDFSClient.cc.o
 .PHONY : HDFSClient.cc.o
 
 HDFSClient.i: HDFSClient.cc.i
@@ -261,7 +261,7 @@ HDFSClient.i: HDFSClient.cc.i
 
 # target to preprocess a source file
 HDFSClient.cc.i:
-	cd /home/openec/openec/res/openec && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/HDFSClient.dir/build.make src/CMakeFiles/HDFSClient.dir/HDFSClient.cc.i
+	cd /home/openec/Fast23/storage && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/HDFSClient.dir/build.make src/CMakeFiles/HDFSClient.dir/HDFSClient.cc.i
 .PHONY : HDFSClient.cc.i
 
 HDFSClient.s: HDFSClient.cc.s
@@ -269,7 +269,7 @@ HDFSClient.s: HDFSClient.cc.s
 
 # target to generate assembly for a file
 HDFSClient.cc.s:
-	cd /home/openec/openec/res/openec && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/HDFSClient.dir/build.make src/CMakeFiles/HDFSClient.dir/HDFSClient.cc.s
+	cd /home/openec/Fast23/storage && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/HDFSClient.dir/build.make src/CMakeFiles/HDFSClient.dir/HDFSClient.cc.s
 .PHONY : HDFSClient.cc.s
 
 OECAgent.o: OECAgent.cc.o
@@ -277,7 +277,7 @@ OECAgent.o: OECAgent.cc.o
 
 # target to build an object file
 OECAgent.cc.o:
-	cd /home/openec/openec/res/openec && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/OECAgent.dir/build.make src/CMakeFiles/OECAgent.dir/OECAgent.cc.o
+	cd /home/openec/Fast23/storage && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/OECAgent.dir/build.make src/CMakeFiles/OECAgent.dir/OECAgent.cc.o
 .PHONY : OECAgent.cc.o
 
 OECAgent.i: OECAgent.cc.i
@@ -285,7 +285,7 @@ OECAgent.i: OECAgent.cc.i
 
 # target to preprocess a source file
 OECAgent.cc.i:
-	cd /home/openec/openec/res/openec && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/OECAgent.dir/build.make src/CMakeFiles/OECAgent.dir/OECAgent.cc.i
+	cd /home/openec/Fast23/storage && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/OECAgent.dir/build.make src/CMakeFiles/OECAgent.dir/OECAgent.cc.i
 .PHONY : OECAgent.cc.i
 
 OECAgent.s: OECAgent.cc.s
@@ -293,7 +293,7 @@ OECAgent.s: OECAgent.cc.s
 
 # target to generate assembly for a file
 OECAgent.cc.s:
-	cd /home/openec/openec/res/openec && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/OECAgent.dir/build.make src/CMakeFiles/OECAgent.dir/OECAgent.cc.s
+	cd /home/openec/Fast23/storage && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/OECAgent.dir/build.make src/CMakeFiles/OECAgent.dir/OECAgent.cc.s
 .PHONY : OECAgent.cc.s
 
 OECClient.o: OECClient.cc.o
@@ -301,7 +301,7 @@ OECClient.o: OECClient.cc.o
 
 # target to build an object file
 OECClient.cc.o:
-	cd /home/openec/openec/res/openec && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/OECClient.dir/build.make src/CMakeFiles/OECClient.dir/OECClient.cc.o
+	cd /home/openec/Fast23/storage && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/OECClient.dir/build.make src/CMakeFiles/OECClient.dir/OECClient.cc.o
 .PHONY : OECClient.cc.o
 
 OECClient.i: OECClient.cc.i
@@ -309,7 +309,7 @@ OECClient.i: OECClient.cc.i
 
 # target to preprocess a source file
 OECClient.cc.i:
-	cd /home/openec/openec/res/openec && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/OECClient.dir/build.make src/CMakeFiles/OECClient.dir/OECClient.cc.i
+	cd /home/openec/Fast23/storage && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/OECClient.dir/build.make src/CMakeFiles/OECClient.dir/OECClient.cc.i
 .PHONY : OECClient.cc.i
 
 OECClient.s: OECClient.cc.s
@@ -317,7 +317,7 @@ OECClient.s: OECClient.cc.s
 
 # target to generate assembly for a file
 OECClient.cc.s:
-	cd /home/openec/openec/res/openec && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/OECClient.dir/build.make src/CMakeFiles/OECClient.dir/OECClient.cc.s
+	cd /home/openec/Fast23/storage && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/OECClient.dir/build.make src/CMakeFiles/OECClient.dir/OECClient.cc.s
 .PHONY : OECClient.cc.s
 
 OECCoordinator.o: OECCoordinator.cc.o
@@ -325,7 +325,7 @@ OECCoordinator.o: OECCoordinator.cc.o
 
 # target to build an object file
 OECCoordinator.cc.o:
-	cd /home/openec/openec/res/openec && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/OECCoordinator.dir/build.make src/CMakeFiles/OECCoordinator.dir/OECCoordinator.cc.o
+	cd /home/openec/Fast23/storage && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/OECCoordinator.dir/build.make src/CMakeFiles/OECCoordinator.dir/OECCoordinator.cc.o
 .PHONY : OECCoordinator.cc.o
 
 OECCoordinator.i: OECCoordinator.cc.i
@@ -333,7 +333,7 @@ OECCoordinator.i: OECCoordinator.cc.i
 
 # target to preprocess a source file
 OECCoordinator.cc.i:
-	cd /home/openec/openec/res/openec && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/OECCoordinator.dir/build.make src/CMakeFiles/OECCoordinator.dir/OECCoordinator.cc.i
+	cd /home/openec/Fast23/storage && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/OECCoordinator.dir/build.make src/CMakeFiles/OECCoordinator.dir/OECCoordinator.cc.i
 .PHONY : OECCoordinator.cc.i
 
 OECCoordinator.s: OECCoordinator.cc.s
@@ -341,7 +341,7 @@ OECCoordinator.s: OECCoordinator.cc.s
 
 # target to generate assembly for a file
 OECCoordinator.cc.s:
-	cd /home/openec/openec/res/openec && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/OECCoordinator.dir/build.make src/CMakeFiles/OECCoordinator.dir/OECCoordinator.cc.s
+	cd /home/openec/Fast23/storage && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/OECCoordinator.dir/build.make src/CMakeFiles/OECCoordinator.dir/OECCoordinator.cc.s
 .PHONY : OECCoordinator.cc.s
 
 # Help Target
@@ -387,6 +387,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /home/openec/openec/res/openec && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/openec/Fast23/storage && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

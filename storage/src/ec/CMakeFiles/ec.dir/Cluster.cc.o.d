@@ -1,8 +1,7 @@
 src/ec/CMakeFiles/ec.dir/Cluster.cc.o: \
- /home/openec/openec/res/openec/src/ec/Cluster.cc \
- /usr/include/stdc-predef.h \
- /home/openec/openec/res/openec/src/ec/Cluster.hh \
- /home/openec/openec/res/openec/src/ec/../inc/include.hh \
+ /home/openec/Fast23/storage/src/ec/Cluster.cc /usr/include/stdc-predef.h \
+ /home/openec/Fast23/storage/src/ec/Cluster.hh \
+ /home/openec/Fast23/storage/src/ec/../inc/include.hh \
  /usr/include/c++/7/algorithm /usr/include/c++/7/utility \
  /usr/include/x86_64-linux-gnu/c++/7/bits/c++config.h \
  /usr/include/x86_64-linux-gnu/c++/7/bits/os_defines.h \

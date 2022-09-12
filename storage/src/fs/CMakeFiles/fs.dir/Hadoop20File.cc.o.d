@@ -1,9 +1,9 @@
 src/fs/CMakeFiles/fs.dir/Hadoop20File.cc.o: \
- /home/openec/openec/res/openec/src/fs/Hadoop20File.cc \
+ /home/openec/Fast23/storage/src/fs/Hadoop20File.cc \
  /usr/include/stdc-predef.h \
- /home/openec/openec/res/openec/src/fs/Hadoop20File.hh \
- /home/openec/openec/res/openec/src/fs/UnderFile.hh \
- /home/openec/openec/res/openec/src/fs/../inc/include.hh \
+ /home/openec/Fast23/storage/src/fs/Hadoop20File.hh \
+ /home/openec/Fast23/storage/src/fs/UnderFile.hh \
+ /home/openec/Fast23/storage/src/fs/../inc/include.hh \
  /usr/include/c++/7/algorithm /usr/include/c++/7/utility \
  /usr/include/x86_64-linux-gnu/c++/7/bits/c++config.h \
  /usr/include/x86_64-linux-gnu/c++/7/bits/os_defines.h \
@@ -203,4 +203,4 @@ src/fs/CMakeFiles/fs.dir/Hadoop20File.cc.o: \
  /usr/include/x86_64-linux-gnu/bits/fcntl-linux.h \
  /usr/include/linux/falloc.h /usr/include/x86_64-linux-gnu/bits/stat.h \
  /usr/include/x86_64-linux-gnu/bits/fcntl2.h \
- /home/openec/openec/res/openec/src/fs/../util/hdfs.h
+ /home/openec/Fast23/storage/src/fs/../util/hdfs.h

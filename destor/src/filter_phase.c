@@ -150,6 +150,7 @@ static void* filter_thread(void *arg) {
                         storage_buffer.chunks = g_sequence_new(free_chunk);
                     }
                     TIMER_END(1, jcr.filter_time);
+                    printf("write container buffer1\n");
                     write_container_async(storage_buffer.container_buffer);
                     TIMER_BEGIN(1);
                     storage_buffer.container_buffer = create_container();
@@ -318,6 +319,7 @@ static void* filter_thread(void *arg) {
         	g_hash_table_destroy(features);
         	g_sequence_free(storage_buffer.chunks);
         }
+        printf("write container buffer2\n");
         write_container_async(storage_buffer.container_buffer);
     }
 

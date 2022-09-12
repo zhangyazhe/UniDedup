@@ -1,8 +1,8 @@
 src/fs/CMakeFiles/fs.dir/UnderFile.cc.o: \
- /home/openec/openec/res/openec/src/fs/UnderFile.cc \
+ /home/openec/Fast23/storage/src/fs/UnderFile.cc \
  /usr/include/stdc-predef.h \
- /home/openec/openec/res/openec/src/fs/UnderFile.hh \
- /home/openec/openec/res/openec/src/fs/../inc/include.hh \
+ /home/openec/Fast23/storage/src/fs/UnderFile.hh \
+ /home/openec/Fast23/storage/src/fs/../inc/include.hh \
  /usr/include/c++/7/algorithm /usr/include/c++/7/utility \
  /usr/include/x86_64-linux-gnu/c++/7/bits/c++config.h \
  /usr/include/x86_64-linux-gnu/c++/7/bits/os_defines.h \

@@ -1,8 +1,8 @@
 src/util/CMakeFiles/util.dir/RedisUtil.cc.o: \
- /home/openec/openec/res/openec/src/util/RedisUtil.cc \
+ /home/openec/Fast23/storage/src/util/RedisUtil.cc \
  /usr/include/stdc-predef.h \
- /home/openec/openec/res/openec/src/util/RedisUtil.hh \
- /home/openec/openec/res/openec/src/util/../inc/include.hh \
+ /home/openec/Fast23/storage/src/util/RedisUtil.hh \
+ /home/openec/Fast23/storage/src/util/../inc/include.hh \
  /usr/include/c++/7/algorithm /usr/include/c++/7/utility \
  /usr/include/x86_64-linux-gnu/c++/7/bits/c++config.h \
  /usr/include/x86_64-linux-gnu/c++/7/bits/os_defines.h \

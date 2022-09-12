@@ -1,8 +1,8 @@
 src/common/CMakeFiles/common.dir/OECDataPacket.cc.o: \
- /home/openec/openec/res/openec/src/common/OECDataPacket.cc \
+ /home/openec/Fast23/storage/src/common/OECDataPacket.cc \
  /usr/include/stdc-predef.h \
- /home/openec/openec/res/openec/src/common/OECDataPacket.hh \
- /home/openec/openec/res/openec/src/common/../inc/include.hh \
+ /home/openec/Fast23/storage/src/common/OECDataPacket.hh \
+ /home/openec/Fast23/storage/src/common/../inc/include.hh \
  /usr/include/c++/7/algorithm /usr/include/c++/7/utility \
  /usr/include/x86_64-linux-gnu/c++/7/bits/c++config.h \
  /usr/include/x86_64-linux-gnu/c++/7/bits/os_defines.h \

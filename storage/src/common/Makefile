@@ -57,10 +57,10 @@ RM = /usr/local/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/openec/openec/res/openec
+CMAKE_SOURCE_DIR = /home/openec/Fast23/storage
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/openec/openec/res/openec
+CMAKE_BINARY_DIR = /home/openec/Fast23/storage
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -87,14 +87,14 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	cd /home/openec/openec/res/openec && $(CMAKE_COMMAND) -E cmake_progress_start /home/openec/openec/res/openec/CMakeFiles /home/openec/openec/res/openec/src/common//CMakeFiles/progress.marks
-	cd /home/openec/openec/res/openec && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/common/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/openec/openec/res/openec/CMakeFiles 0
+	cd /home/openec/Fast23/storage && $(CMAKE_COMMAND) -E cmake_progress_start /home/openec/Fast23/storage/CMakeFiles /home/openec/Fast23/storage/src/common//CMakeFiles/progress.marks
+	cd /home/openec/Fast23/storage && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/common/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/openec/Fast23/storage/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /home/openec/openec/res/openec && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/common/clean
+	cd /home/openec/Fast23/storage && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/common/clean
 .PHONY : clean
 
 # The main clean target
@@ -103,22 +103,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /home/openec/openec/res/openec && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/common/preinstall
+	cd /home/openec/Fast23/storage && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/common/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /home/openec/openec/res/openec && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/common/preinstall
+	cd /home/openec/Fast23/storage && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/common/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /home/openec/openec/res/openec && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/openec/Fast23/storage && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 src/common/CMakeFiles/common.dir/rule:
-	cd /home/openec/openec/res/openec && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/common/CMakeFiles/common.dir/rule
+	cd /home/openec/Fast23/storage && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/common/CMakeFiles/common.dir/rule
 .PHONY : src/common/CMakeFiles/common.dir/rule
 
 # Convenience name for target.
@@ -127,7 +127,7 @@ common: src/common/CMakeFiles/common.dir/rule
 
 # fast build rule for target.
 common/fast:
-	cd /home/openec/openec/res/openec && $(MAKE) $(MAKESILENT) -f src/common/CMakeFiles/common.dir/build.make src/common/CMakeFiles/common.dir/build
+	cd /home/openec/Fast23/storage && $(MAKE) $(MAKESILENT) -f src/common/CMakeFiles/common.dir/build.make src/common/CMakeFiles/common.dir/build
 .PHONY : common/fast
 
 CmdDistributor.o: CmdDistributor.cc.o
@@ -135,7 +135,7 @@ CmdDistributor.o: CmdDistributor.cc.o
 
 # target to build an object file
 CmdDistributor.cc.o:
-	cd /home/openec/openec/res/openec && $(MAKE) $(MAKESILENT) -f src/common/CMakeFiles/common.dir/build.make src/common/CMakeFiles/common.dir/CmdDistributor.cc.o
+	cd /home/openec/Fast23/storage && $(MAKE) $(MAKESILENT) -f src/common/CMakeFiles/common.dir/build.make src/common/CMakeFiles/common.dir/CmdDistributor.cc.o
 .PHONY : CmdDistributor.cc.o
 
 CmdDistributor.i: CmdDistributor.cc.i
@@ -143,7 +143,7 @@ CmdDistributor.i: CmdDistributor.cc.i
 
 # target to preprocess a source file
 CmdDistributor.cc.i:
-	cd /home/openec/openec/res/openec && $(MAKE) $(MAKESILENT) -f src/common/CMakeFiles/common.dir/build.make src/common/CMakeFiles/common.dir/CmdDistributor.cc.i
+	cd /home/openec/Fast23/storage && $(MAKE) $(MAKESILENT) -f src/common/CMakeFiles/common.dir/build.make src/common/CMakeFiles/common.dir/CmdDistributor.cc.i
 .PHONY : CmdDistributor.cc.i
 
 CmdDistributor.s: CmdDistributor.cc.s
@@ -151,7 +151,7 @@ CmdDistributor.s: CmdDistributor.cc.s
 
 # target to generate assembly for a file
 CmdDistributor.cc.s:
-	cd /home/openec/openec/res/openec && $(MAKE) $(MAKESILENT) -f src/common/CMakeFiles/common.dir/build.make src/common/CMakeFiles/common.dir/CmdDistributor.cc.s
+	cd /home/openec/Fast23/storage && $(MAKE) $(MAKESILENT) -f src/common/CMakeFiles/common.dir/build.make src/common/CMakeFiles/common.dir/CmdDistributor.cc.s
 .PHONY : CmdDistributor.cc.s
 
 Config.o: Config.cc.o
@@ -159,7 +159,7 @@ Config.o: Config.cc.o
 
 # target to build an object file
 Config.cc.o:
-	cd /home/openec/openec/res/openec && $(MAKE) $(MAKESILENT) -f src/common/CMakeFiles/common.dir/build.make src/common/CMakeFiles/common.dir/Config.cc.o
+	cd /home/openec/Fast23/storage && $(MAKE) $(MAKESILENT) -f src/common/CMakeFiles/common.dir/build.make src/common/CMakeFiles/common.dir/Config.cc.o
 .PHONY : Config.cc.o
 
 Config.i: Config.cc.i
@@ -167,7 +167,7 @@ Config.i: Config.cc.i
 
 # target to preprocess a source file
 Config.cc.i:
-	cd /home/openec/openec/res/openec && $(MAKE) $(MAKESILENT) -f src/common/CMakeFiles/common.dir/build.make src/common/CMakeFiles/common.dir/Config.cc.i
+	cd /home/openec/Fast23/storage && $(MAKE) $(MAKESILENT) -f src/common/CMakeFiles/common.dir/build.make src/common/CMakeFiles/common.dir/Config.cc.i
 .PHONY : Config.cc.i
 
 Config.s: Config.cc.s
@@ -175,7 +175,7 @@ Config.s: Config.cc.s
 
 # target to generate assembly for a file
 Config.cc.s:
-	cd /home/openec/openec/res/openec && $(MAKE) $(MAKESILENT) -f src/common/CMakeFiles/common.dir/build.make src/common/CMakeFiles/common.dir/Config.cc.s
+	cd /home/openec/Fast23/storage && $(MAKE) $(MAKESILENT) -f src/common/CMakeFiles/common.dir/build.make src/common/CMakeFiles/common.dir/Config.cc.s
 .PHONY : Config.cc.s
 
 CoorBench.o: CoorBench.cc.o
@@ -183,7 +183,7 @@ CoorBench.o: CoorBench.cc.o
 
 # target to build an object file
 CoorBench.cc.o:
-	cd /home/openec/openec/res/openec && $(MAKE) $(MAKESILENT) -f src/common/CMakeFiles/common.dir/build.make src/common/CMakeFiles/common.dir/CoorBench.cc.o
+	cd /home/openec/Fast23/storage && $(MAKE) $(MAKESILENT) -f src/common/CMakeFiles/common.dir/build.make src/common/CMakeFiles/common.dir/CoorBench.cc.o
 .PHONY : CoorBench.cc.o
 
 CoorBench.i: CoorBench.cc.i
@@ -191,7 +191,7 @@ CoorBench.i: CoorBench.cc.i
 
 # target to preprocess a source file
 CoorBench.cc.i:
-	cd /home/openec/openec/res/openec && $(MAKE) $(MAKESILENT) -f src/common/CMakeFiles/common.dir/build.make src/common/CMakeFiles/common.dir/CoorBench.cc.i
+	cd /home/openec/Fast23/storage && $(MAKE) $(MAKESILENT) -f src/common/CMakeFiles/common.dir/build.make src/common/CMakeFiles/common.dir/CoorBench.cc.i
 .PHONY : CoorBench.cc.i
 
 CoorBench.s: CoorBench.cc.s
@@ -199,7 +199,7 @@ CoorBench.s: CoorBench.cc.s
 
 # target to generate assembly for a file
 CoorBench.cc.s:
-	cd /home/openec/openec/res/openec && $(MAKE) $(MAKESILENT) -f src/common/CMakeFiles/common.dir/build.make src/common/CMakeFiles/common.dir/CoorBench.cc.s
+	cd /home/openec/Fast23/storage && $(MAKE) $(MAKESILENT) -f src/common/CMakeFiles/common.dir/build.make src/common/CMakeFiles/common.dir/CoorBench.cc.s
 .PHONY : CoorBench.cc.s
 
 Coordinator.o: Coordinator.cc.o
@@ -207,7 +207,7 @@ Coordinator.o: Coordinator.cc.o
 
 # target to build an object file
 Coordinator.cc.o:
-	cd /home/openec/openec/res/openec && $(MAKE) $(MAKESILENT) -f src/common/CMakeFiles/common.dir/build.make src/common/CMakeFiles/common.dir/Coordinator.cc.o
+	cd /home/openec/Fast23/storage && $(MAKE) $(MAKESILENT) -f src/common/CMakeFiles/common.dir/build.make src/common/CMakeFiles/common.dir/Coordinator.cc.o
 .PHONY : Coordinator.cc.o
 
 Coordinator.i: Coordinator.cc.i
@@ -215,7 +215,7 @@ Coordinator.i: Coordinator.cc.i
 
 # target to preprocess a source file
 Coordinator.cc.i:
-	cd /home/openec/openec/res/openec && $(MAKE) $(MAKESILENT) -f src/common/CMakeFiles/common.dir/build.make src/common/CMakeFiles/common.dir/Coordinator.cc.i
+	cd /home/openec/Fast23/storage && $(MAKE) $(MAKESILENT) -f src/common/CMakeFiles/common.dir/build.make src/common/CMakeFiles/common.dir/Coordinator.cc.i
 .PHONY : Coordinator.cc.i
 
 Coordinator.s: Coordinator.cc.s
@@ -223,7 +223,7 @@ Coordinator.s: Coordinator.cc.s
 
 # target to generate assembly for a file
 Coordinator.cc.s:
-	cd /home/openec/openec/res/openec && $(MAKE) $(MAKESILENT) -f src/common/CMakeFiles/common.dir/build.make src/common/CMakeFiles/common.dir/Coordinator.cc.s
+	cd /home/openec/Fast23/storage && $(MAKE) $(MAKESILENT) -f src/common/CMakeFiles/common.dir/build.make src/common/CMakeFiles/common.dir/Coordinator.cc.s
 .PHONY : Coordinator.cc.s
 
 FSObjInputStream.o: FSObjInputStream.cc.o
@@ -231,7 +231,7 @@ FSObjInputStream.o: FSObjInputStream.cc.o
 
 # target to build an object file
 FSObjInputStream.cc.o:
-	cd /home/openec/openec/res/openec && $(MAKE) $(MAKESILENT) -f src/common/CMakeFiles/common.dir/build.make src/common/CMakeFiles/common.dir/FSObjInputStream.cc.o
+	cd /home/openec/Fast23/storage && $(MAKE) $(MAKESILENT) -f src/common/CMakeFiles/common.dir/build.make src/common/CMakeFiles/common.dir/FSObjInputStream.cc.o
 .PHONY : FSObjInputStream.cc.o
 
 FSObjInputStream.i: FSObjInputStream.cc.i
@@ -239,7 +239,7 @@ FSObjInputStream.i: FSObjInputStream.cc.i
 
 # target to preprocess a source file
 FSObjInputStream.cc.i:
-	cd /home/openec/openec/res/openec && $(MAKE) $(MAKESILENT) -f src/common/CMakeFiles/common.dir/build.make src/common/CMakeFiles/common.dir/FSObjInputStream.cc.i
+	cd /home/openec/Fast23/storage && $(MAKE) $(MAKESILENT) -f src/common/CMakeFiles/common.dir/build.make src/common/CMakeFiles/common.dir/FSObjInputStream.cc.i
 .PHONY : FSObjInputStream.cc.i
 
 FSObjInputStream.s: FSObjInputStream.cc.s
@@ -247,7 +247,7 @@ FSObjInputStream.s: FSObjInputStream.cc.s
 
 # target to generate assembly for a file
 FSObjInputStream.cc.s:
-	cd /home/openec/openec/res/openec && $(MAKE) $(MAKESILENT) -f src/common/CMakeFiles/common.dir/build.make src/common/CMakeFiles/common.dir/FSObjInputStream.cc.s
+	cd /home/openec/Fast23/storage && $(MAKE) $(MAKESILENT) -f src/common/CMakeFiles/common.dir/build.make src/common/CMakeFiles/common.dir/FSObjInputStream.cc.s
 .PHONY : FSObjInputStream.cc.s
 
 FSObjOutputStream.o: FSObjOutputStream.cc.o
@@ -255,7 +255,7 @@ FSObjOutputStream.o: FSObjOutputStream.cc.o
 
 # target to build an object file
 FSObjOutputStream.cc.o:
-	cd /home/openec/openec/res/openec && $(MAKE) $(MAKESILENT) -f src/common/CMakeFiles/common.dir/build.make src/common/CMakeFiles/common.dir/FSObjOutputStream.cc.o
+	cd /home/openec/Fast23/storage && $(MAKE) $(MAKESILENT) -f src/common/CMakeFiles/common.dir/build.make src/common/CMakeFiles/common.dir/FSObjOutputStream.cc.o
 .PHONY : FSObjOutputStream.cc.o
 
 FSObjOutputStream.i: FSObjOutputStream.cc.i
@@ -263,7 +263,7 @@ FSObjOutputStream.i: FSObjOutputStream.cc.i
 
 # target to preprocess a source file
 FSObjOutputStream.cc.i:
-	cd /home/openec/openec/res/openec && $(MAKE) $(MAKESILENT) -f src/common/CMakeFiles/common.dir/build.make src/common/CMakeFiles/common.dir/FSObjOutputStream.cc.i
+	cd /home/openec/Fast23/storage && $(MAKE) $(MAKESILENT) -f src/common/CMakeFiles/common.dir/build.make src/common/CMakeFiles/common.dir/FSObjOutputStream.cc.i
 .PHONY : FSObjOutputStream.cc.i
 
 FSObjOutputStream.s: FSObjOutputStream.cc.s
@@ -271,7 +271,7 @@ FSObjOutputStream.s: FSObjOutputStream.cc.s
 
 # target to generate assembly for a file
 FSObjOutputStream.cc.s:
-	cd /home/openec/openec/res/openec && $(MAKE) $(MAKESILENT) -f src/common/CMakeFiles/common.dir/build.make src/common/CMakeFiles/common.dir/FSObjOutputStream.cc.s
+	cd /home/openec/Fast23/storage && $(MAKE) $(MAKESILENT) -f src/common/CMakeFiles/common.dir/build.make src/common/CMakeFiles/common.dir/FSObjOutputStream.cc.s
 .PHONY : FSObjOutputStream.cc.s
 
 Logger.o: Logger.cc.o
@@ -279,7 +279,7 @@ Logger.o: Logger.cc.o
 
 # target to build an object file
 Logger.cc.o:
-	cd /home/openec/openec/res/openec && $(MAKE) $(MAKESILENT) -f src/common/CMakeFiles/common.dir/build.make src/common/CMakeFiles/common.dir/Logger.cc.o
+	cd /home/openec/Fast23/storage && $(MAKE) $(MAKESILENT) -f src/common/CMakeFiles/common.dir/build.make src/common/CMakeFiles/common.dir/Logger.cc.o
 .PHONY : Logger.cc.o
 
 Logger.i: Logger.cc.i
@@ -287,7 +287,7 @@ Logger.i: Logger.cc.i
 
 # target to preprocess a source file
 Logger.cc.i:
-	cd /home/openec/openec/res/openec && $(MAKE) $(MAKESILENT) -f src/common/CMakeFiles/common.dir/build.make src/common/CMakeFiles/common.dir/Logger.cc.i
+	cd /home/openec/Fast23/storage && $(MAKE) $(MAKESILENT) -f src/common/CMakeFiles/common.dir/build.make src/common/CMakeFiles/common.dir/Logger.cc.i
 .PHONY : Logger.cc.i
 
 Logger.s: Logger.cc.s
@@ -295,7 +295,7 @@ Logger.s: Logger.cc.s
 
 # target to generate assembly for a file
 Logger.cc.s:
-	cd /home/openec/openec/res/openec && $(MAKE) $(MAKESILENT) -f src/common/CMakeFiles/common.dir/build.make src/common/CMakeFiles/common.dir/Logger.cc.s
+	cd /home/openec/Fast23/storage && $(MAKE) $(MAKESILENT) -f src/common/CMakeFiles/common.dir/build.make src/common/CMakeFiles/common.dir/Logger.cc.s
 .PHONY : Logger.cc.s
 
 OECDataPacket.o: OECDataPacket.cc.o
@@ -303,7 +303,7 @@ OECDataPacket.o: OECDataPacket.cc.o
 
 # target to build an object file
 OECDataPacket.cc.o:
-	cd /home/openec/openec/res/openec && $(MAKE) $(MAKESILENT) -f src/common/CMakeFiles/common.dir/build.make src/common/CMakeFiles/common.dir/OECDataPacket.cc.o
+	cd /home/openec/Fast23/storage && $(MAKE) $(MAKESILENT) -f src/common/CMakeFiles/common.dir/build.make src/common/CMakeFiles/common.dir/OECDataPacket.cc.o
 .PHONY : OECDataPacket.cc.o
 
 OECDataPacket.i: OECDataPacket.cc.i
@@ -311,7 +311,7 @@ OECDataPacket.i: OECDataPacket.cc.i
 
 # target to preprocess a source file
 OECDataPacket.cc.i:
-	cd /home/openec/openec/res/openec && $(MAKE) $(MAKESILENT) -f src/common/CMakeFiles/common.dir/build.make src/common/CMakeFiles/common.dir/OECDataPacket.cc.i
+	cd /home/openec/Fast23/storage && $(MAKE) $(MAKESILENT) -f src/common/CMakeFiles/common.dir/build.make src/common/CMakeFiles/common.dir/OECDataPacket.cc.i
 .PHONY : OECDataPacket.cc.i
 
 OECDataPacket.s: OECDataPacket.cc.s
@@ -319,7 +319,7 @@ OECDataPacket.s: OECDataPacket.cc.s
 
 # target to generate assembly for a file
 OECDataPacket.cc.s:
-	cd /home/openec/openec/res/openec && $(MAKE) $(MAKESILENT) -f src/common/CMakeFiles/common.dir/build.make src/common/CMakeFiles/common.dir/OECDataPacket.cc.s
+	cd /home/openec/Fast23/storage && $(MAKE) $(MAKESILENT) -f src/common/CMakeFiles/common.dir/build.make src/common/CMakeFiles/common.dir/OECDataPacket.cc.s
 .PHONY : OECDataPacket.cc.s
 
 OECInputStream.o: OECInputStream.cc.o
@@ -327,7 +327,7 @@ OECInputStream.o: OECInputStream.cc.o
 
 # target to build an object file
 OECInputStream.cc.o:
-	cd /home/openec/openec/res/openec && $(MAKE) $(MAKESILENT) -f src/common/CMakeFiles/common.dir/build.make src/common/CMakeFiles/common.dir/OECInputStream.cc.o
+	cd /home/openec/Fast23/storage && $(MAKE) $(MAKESILENT) -f src/common/CMakeFiles/common.dir/build.make src/common/CMakeFiles/common.dir/OECInputStream.cc.o
 .PHONY : OECInputStream.cc.o
 
 OECInputStream.i: OECInputStream.cc.i
@@ -335,7 +335,7 @@ OECInputStream.i: OECInputStream.cc.i
 
 # target to preprocess a source file
 OECInputStream.cc.i:
-	cd /home/openec/openec/res/openec && $(MAKE) $(MAKESILENT) -f src/common/CMakeFiles/common.dir/build.make src/common/CMakeFiles/common.dir/OECInputStream.cc.i
+	cd /home/openec/Fast23/storage && $(MAKE) $(MAKESILENT) -f src/common/CMakeFiles/common.dir/build.make src/common/CMakeFiles/common.dir/OECInputStream.cc.i
 .PHONY : OECInputStream.cc.i
 
 OECInputStream.s: OECInputStream.cc.s
@@ -343,7 +343,7 @@ OECInputStream.s: OECInputStream.cc.s
 
 # target to generate assembly for a file
 OECInputStream.cc.s:
-	cd /home/openec/openec/res/openec && $(MAKE) $(MAKESILENT) -f src/common/CMakeFiles/common.dir/build.make src/common/CMakeFiles/common.dir/OECInputStream.cc.s
+	cd /home/openec/Fast23/storage && $(MAKE) $(MAKESILENT) -f src/common/CMakeFiles/common.dir/build.make src/common/CMakeFiles/common.dir/OECInputStream.cc.s
 .PHONY : OECInputStream.cc.s
 
 OECOutputStream.o: OECOutputStream.cc.o
@@ -351,7 +351,7 @@ OECOutputStream.o: OECOutputStream.cc.o
 
 # target to build an object file
 OECOutputStream.cc.o:
-	cd /home/openec/openec/res/openec && $(MAKE) $(MAKESILENT) -f src/common/CMakeFiles/common.dir/build.make src/common/CMakeFiles/common.dir/OECOutputStream.cc.o
+	cd /home/openec/Fast23/storage && $(MAKE) $(MAKESILENT) -f src/common/CMakeFiles/common.dir/build.make src/common/CMakeFiles/common.dir/OECOutputStream.cc.o
 .PHONY : OECOutputStream.cc.o
 
 OECOutputStream.i: OECOutputStream.cc.i
@@ -359,7 +359,7 @@ OECOutputStream.i: OECOutputStream.cc.i
 
 # target to preprocess a source file
 OECOutputStream.cc.i:
-	cd /home/openec/openec/res/openec && $(MAKE) $(MAKESILENT) -f src/common/CMakeFiles/common.dir/build.make src/common/CMakeFiles/common.dir/OECOutputStream.cc.i
+	cd /home/openec/Fast23/storage && $(MAKE) $(MAKESILENT) -f src/common/CMakeFiles/common.dir/build.make src/common/CMakeFiles/common.dir/OECOutputStream.cc.i
 .PHONY : OECOutputStream.cc.i
 
 OECOutputStream.s: OECOutputStream.cc.s
@@ -367,7 +367,7 @@ OECOutputStream.s: OECOutputStream.cc.s
 
 # target to generate assembly for a file
 OECOutputStream.cc.s:
-	cd /home/openec/openec/res/openec && $(MAKE) $(MAKESILENT) -f src/common/CMakeFiles/common.dir/build.make src/common/CMakeFiles/common.dir/OECOutputStream.cc.s
+	cd /home/openec/Fast23/storage && $(MAKE) $(MAKESILENT) -f src/common/CMakeFiles/common.dir/build.make src/common/CMakeFiles/common.dir/OECOutputStream.cc.s
 .PHONY : OECOutputStream.cc.s
 
 OECWorker.o: OECWorker.cc.o
@@ -375,7 +375,7 @@ OECWorker.o: OECWorker.cc.o
 
 # target to build an object file
 OECWorker.cc.o:
-	cd /home/openec/openec/res/openec && $(MAKE) $(MAKESILENT) -f src/common/CMakeFiles/common.dir/build.make src/common/CMakeFiles/common.dir/OECWorker.cc.o
+	cd /home/openec/Fast23/storage && $(MAKE) $(MAKESILENT) -f src/common/CMakeFiles/common.dir/build.make src/common/CMakeFiles/common.dir/OECWorker.cc.o
 .PHONY : OECWorker.cc.o
 
 OECWorker.i: OECWorker.cc.i
@@ -383,7 +383,7 @@ OECWorker.i: OECWorker.cc.i
 
 # target to preprocess a source file
 OECWorker.cc.i:
-	cd /home/openec/openec/res/openec && $(MAKE) $(MAKESILENT) -f src/common/CMakeFiles/common.dir/build.make src/common/CMakeFiles/common.dir/OECWorker.cc.i
+	cd /home/openec/Fast23/storage && $(MAKE) $(MAKESILENT) -f src/common/CMakeFiles/common.dir/build.make src/common/CMakeFiles/common.dir/OECWorker.cc.i
 .PHONY : OECWorker.cc.i
 
 OECWorker.s: OECWorker.cc.s
@@ -391,7 +391,7 @@ OECWorker.s: OECWorker.cc.s
 
 # target to generate assembly for a file
 OECWorker.cc.s:
-	cd /home/openec/openec/res/openec && $(MAKE) $(MAKESILENT) -f src/common/CMakeFiles/common.dir/build.make src/common/CMakeFiles/common.dir/OECWorker.cc.s
+	cd /home/openec/Fast23/storage && $(MAKE) $(MAKESILENT) -f src/common/CMakeFiles/common.dir/build.make src/common/CMakeFiles/common.dir/OECWorker.cc.s
 .PHONY : OECWorker.cc.s
 
 SSEntry.o: SSEntry.cc.o
@@ -399,7 +399,7 @@ SSEntry.o: SSEntry.cc.o
 
 # target to build an object file
 SSEntry.cc.o:
-	cd /home/openec/openec/res/openec && $(MAKE) $(MAKESILENT) -f src/common/CMakeFiles/common.dir/build.make src/common/CMakeFiles/common.dir/SSEntry.cc.o
+	cd /home/openec/Fast23/storage && $(MAKE) $(MAKESILENT) -f src/common/CMakeFiles/common.dir/build.make src/common/CMakeFiles/common.dir/SSEntry.cc.o
 .PHONY : SSEntry.cc.o
 
 SSEntry.i: SSEntry.cc.i
@@ -407,7 +407,7 @@ SSEntry.i: SSEntry.cc.i
 
 # target to preprocess a source file
 SSEntry.cc.i:
-	cd /home/openec/openec/res/openec && $(MAKE) $(MAKESILENT) -f src/common/CMakeFiles/common.dir/build.make src/common/CMakeFiles/common.dir/SSEntry.cc.i
+	cd /home/openec/Fast23/storage && $(MAKE) $(MAKESILENT) -f src/common/CMakeFiles/common.dir/build.make src/common/CMakeFiles/common.dir/SSEntry.cc.i
 .PHONY : SSEntry.cc.i
 
 SSEntry.s: SSEntry.cc.s
@@ -415,7 +415,7 @@ SSEntry.s: SSEntry.cc.s
 
 # target to generate assembly for a file
 SSEntry.cc.s:
-	cd /home/openec/openec/res/openec && $(MAKE) $(MAKESILENT) -f src/common/CMakeFiles/common.dir/build.make src/common/CMakeFiles/common.dir/SSEntry.cc.s
+	cd /home/openec/Fast23/storage && $(MAKE) $(MAKESILENT) -f src/common/CMakeFiles/common.dir/build.make src/common/CMakeFiles/common.dir/SSEntry.cc.s
 .PHONY : SSEntry.cc.s
 
 StripeStore.o: StripeStore.cc.o
@@ -423,7 +423,7 @@ StripeStore.o: StripeStore.cc.o
 
 # target to build an object file
 StripeStore.cc.o:
-	cd /home/openec/openec/res/openec && $(MAKE) $(MAKESILENT) -f src/common/CMakeFiles/common.dir/build.make src/common/CMakeFiles/common.dir/StripeStore.cc.o
+	cd /home/openec/Fast23/storage && $(MAKE) $(MAKESILENT) -f src/common/CMakeFiles/common.dir/build.make src/common/CMakeFiles/common.dir/StripeStore.cc.o
 .PHONY : StripeStore.cc.o
 
 StripeStore.i: StripeStore.cc.i
@@ -431,7 +431,7 @@ StripeStore.i: StripeStore.cc.i
 
 # target to preprocess a source file
 StripeStore.cc.i:
-	cd /home/openec/openec/res/openec && $(MAKE) $(MAKESILENT) -f src/common/CMakeFiles/common.dir/build.make src/common/CMakeFiles/common.dir/StripeStore.cc.i
+	cd /home/openec/Fast23/storage && $(MAKE) $(MAKESILENT) -f src/common/CMakeFiles/common.dir/build.make src/common/CMakeFiles/common.dir/StripeStore.cc.i
 .PHONY : StripeStore.cc.i
 
 StripeStore.s: StripeStore.cc.s
@@ -439,7 +439,7 @@ StripeStore.s: StripeStore.cc.s
 
 # target to generate assembly for a file
 StripeStore.cc.s:
-	cd /home/openec/openec/res/openec && $(MAKE) $(MAKESILENT) -f src/common/CMakeFiles/common.dir/build.make src/common/CMakeFiles/common.dir/StripeStore.cc.s
+	cd /home/openec/Fast23/storage && $(MAKE) $(MAKESILENT) -f src/common/CMakeFiles/common.dir/build.make src/common/CMakeFiles/common.dir/StripeStore.cc.s
 .PHONY : StripeStore.cc.s
 
 # Help Target
@@ -501,6 +501,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /home/openec/openec/res/openec && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/openec/Fast23/storage && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

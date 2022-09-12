@@ -1,6 +1,6 @@
 src/util/CMakeFiles/util.dir/galois.c.o: \
- /home/openec/openec/res/openec/src/util/galois.c \
- /usr/include/stdc-predef.h /usr/include/stdio.h \
+ /home/openec/Fast23/storage/src/util/galois.c /usr/include/stdc-predef.h \
+ /usr/include/stdio.h \
  /usr/include/x86_64-linux-gnu/bits/libc-header-start.h \
  /usr/include/features.h /usr/include/x86_64-linux-gnu/sys/cdefs.h \
  /usr/include/x86_64-linux-gnu/bits/wordsize.h \
@@ -51,7 +51,7 @@ src/util/CMakeFiles/util.dir/galois.c.o: \
  /usr/include/x86_64-linux-gnu/bits/errno.h /usr/include/linux/errno.h \
  /usr/include/x86_64-linux-gnu/asm/errno.h \
  /usr/include/asm-generic/errno.h /usr/include/asm-generic/errno-base.h \
- /usr/include/assert.h /home/openec/openec/res/openec/src/util/galois.h \
+ /usr/include/assert.h /home/openec/Fast23/storage/src/util/galois.h \
  /usr/lib/gcc/x86_64-linux-gnu/7/include/stdint.h /usr/include/stdint.h \
  /usr/include/x86_64-linux-gnu/bits/wchar.h \
  /usr/include/x86_64-linux-gnu/bits/stdint-uintn.h \

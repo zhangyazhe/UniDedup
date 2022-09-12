@@ -57,10 +57,10 @@ RM = /usr/local/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/openec/openec/res/openec
+CMAKE_SOURCE_DIR = /home/openec/Fast23/storage
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/openec/openec/res/openec
+CMAKE_BINARY_DIR = /home/openec/Fast23/storage
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -87,14 +87,14 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	cd /home/openec/openec/res/openec && $(CMAKE_COMMAND) -E cmake_progress_start /home/openec/openec/res/openec/CMakeFiles /home/openec/openec/res/openec/src/ec//CMakeFiles/progress.marks
-	cd /home/openec/openec/res/openec && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/ec/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/openec/openec/res/openec/CMakeFiles 0
+	cd /home/openec/Fast23/storage && $(CMAKE_COMMAND) -E cmake_progress_start /home/openec/Fast23/storage/CMakeFiles /home/openec/Fast23/storage/src/ec//CMakeFiles/progress.marks
+	cd /home/openec/Fast23/storage && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/ec/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/openec/Fast23/storage/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /home/openec/openec/res/openec && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/ec/clean
+	cd /home/openec/Fast23/storage && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/ec/clean
 .PHONY : clean
 
 # The main clean target
@@ -103,22 +103,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /home/openec/openec/res/openec && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/ec/preinstall
+	cd /home/openec/Fast23/storage && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/ec/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /home/openec/openec/res/openec && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/ec/preinstall
+	cd /home/openec/Fast23/storage && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/ec/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /home/openec/openec/res/openec && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/openec/Fast23/storage && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 src/ec/CMakeFiles/ec.dir/rule:
-	cd /home/openec/openec/res/openec && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/ec/CMakeFiles/ec.dir/rule
+	cd /home/openec/Fast23/storage && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/ec/CMakeFiles/ec.dir/rule
 .PHONY : src/ec/CMakeFiles/ec.dir/rule
 
 # Convenience name for target.
@@ -127,7 +127,7 @@ ec: src/ec/CMakeFiles/ec.dir/rule
 
 # fast build rule for target.
 ec/fast:
-	cd /home/openec/openec/res/openec && $(MAKE) $(MAKESILENT) -f src/ec/CMakeFiles/ec.dir/build.make src/ec/CMakeFiles/ec.dir/build
+	cd /home/openec/Fast23/storage && $(MAKE) $(MAKESILENT) -f src/ec/CMakeFiles/ec.dir/build.make src/ec/CMakeFiles/ec.dir/build
 .PHONY : ec/fast
 
 BUTTERFLY64.o: BUTTERFLY64.cc.o
@@ -135,7 +135,7 @@ BUTTERFLY64.o: BUTTERFLY64.cc.o
 
 # target to build an object file
 BUTTERFLY64.cc.o:
-	cd /home/openec/openec/res/openec && $(MAKE) $(MAKESILENT) -f src/ec/CMakeFiles/ec.dir/build.make src/ec/CMakeFiles/ec.dir/BUTTERFLY64.cc.o
+	cd /home/openec/Fast23/storage && $(MAKE) $(MAKESILENT) -f src/ec/CMakeFiles/ec.dir/build.make src/ec/CMakeFiles/ec.dir/BUTTERFLY64.cc.o
 .PHONY : BUTTERFLY64.cc.o
 
 BUTTERFLY64.i: BUTTERFLY64.cc.i
@@ -143,7 +143,7 @@ BUTTERFLY64.i: BUTTERFLY64.cc.i
 
 # target to preprocess a source file
 BUTTERFLY64.cc.i:
-	cd /home/openec/openec/res/openec && $(MAKE) $(MAKESILENT) -f src/ec/CMakeFiles/ec.dir/build.make src/ec/CMakeFiles/ec.dir/BUTTERFLY64.cc.i
+	cd /home/openec/Fast23/storage && $(MAKE) $(MAKESILENT) -f src/ec/CMakeFiles/ec.dir/build.make src/ec/CMakeFiles/ec.dir/BUTTERFLY64.cc.i
 .PHONY : BUTTERFLY64.cc.i
 
 BUTTERFLY64.s: BUTTERFLY64.cc.s
@@ -151,7 +151,7 @@ BUTTERFLY64.s: BUTTERFLY64.cc.s
 
 # target to generate assembly for a file
 BUTTERFLY64.cc.s:
-	cd /home/openec/openec/res/openec && $(MAKE) $(MAKESILENT) -f src/ec/CMakeFiles/ec.dir/build.make src/ec/CMakeFiles/ec.dir/BUTTERFLY64.cc.s
+	cd /home/openec/Fast23/storage && $(MAKE) $(MAKESILENT) -f src/ec/CMakeFiles/ec.dir/build.make src/ec/CMakeFiles/ec.dir/BUTTERFLY64.cc.s
 .PHONY : BUTTERFLY64.cc.s
 
 CL262059.o: CL262059.cc.o
@@ -159,7 +159,7 @@ CL262059.o: CL262059.cc.o
 
 # target to build an object file
 CL262059.cc.o:
-	cd /home/openec/openec/res/openec && $(MAKE) $(MAKESILENT) -f src/ec/CMakeFiles/ec.dir/build.make src/ec/CMakeFiles/ec.dir/CL262059.cc.o
+	cd /home/openec/Fast23/storage && $(MAKE) $(MAKESILENT) -f src/ec/CMakeFiles/ec.dir/build.make src/ec/CMakeFiles/ec.dir/CL262059.cc.o
 .PHONY : CL262059.cc.o
 
 CL262059.i: CL262059.cc.i
@@ -167,7 +167,7 @@ CL262059.i: CL262059.cc.i
 
 # target to preprocess a source file
 CL262059.cc.i:
-	cd /home/openec/openec/res/openec && $(MAKE) $(MAKESILENT) -f src/ec/CMakeFiles/ec.dir/build.make src/ec/CMakeFiles/ec.dir/CL262059.cc.i
+	cd /home/openec/Fast23/storage && $(MAKE) $(MAKESILENT) -f src/ec/CMakeFiles/ec.dir/build.make src/ec/CMakeFiles/ec.dir/CL262059.cc.i
 .PHONY : CL262059.cc.i
 
 CL262059.s: CL262059.cc.s
@@ -175,7 +175,7 @@ CL262059.s: CL262059.cc.s
 
 # target to generate assembly for a file
 CL262059.cc.s:
-	cd /home/openec/openec/res/openec && $(MAKE) $(MAKESILENT) -f src/ec/CMakeFiles/ec.dir/build.make src/ec/CMakeFiles/ec.dir/CL262059.cc.s
+	cd /home/openec/Fast23/storage && $(MAKE) $(MAKESILENT) -f src/ec/CMakeFiles/ec.dir/build.make src/ec/CMakeFiles/ec.dir/CL262059.cc.s
 .PHONY : CL262059.cc.s
 
 Cluster.o: Cluster.cc.o
@@ -183,7 +183,7 @@ Cluster.o: Cluster.cc.o
 
 # target to build an object file
 Cluster.cc.o:
-	cd /home/openec/openec/res/openec && $(MAKE) $(MAKESILENT) -f src/ec/CMakeFiles/ec.dir/build.make src/ec/CMakeFiles/ec.dir/Cluster.cc.o
+	cd /home/openec/Fast23/storage && $(MAKE) $(MAKESILENT) -f src/ec/CMakeFiles/ec.dir/build.make src/ec/CMakeFiles/ec.dir/Cluster.cc.o
 .PHONY : Cluster.cc.o
 
 Cluster.i: Cluster.cc.i
@@ -191,7 +191,7 @@ Cluster.i: Cluster.cc.i
 
 # target to preprocess a source file
 Cluster.cc.i:
-	cd /home/openec/openec/res/openec && $(MAKE) $(MAKESILENT) -f src/ec/CMakeFiles/ec.dir/build.make src/ec/CMakeFiles/ec.dir/Cluster.cc.i
+	cd /home/openec/Fast23/storage && $(MAKE) $(MAKESILENT) -f src/ec/CMakeFiles/ec.dir/build.make src/ec/CMakeFiles/ec.dir/Cluster.cc.i
 .PHONY : Cluster.cc.i
 
 Cluster.s: Cluster.cc.s
@@ -199,7 +199,7 @@ Cluster.s: Cluster.cc.s
 
 # target to generate assembly for a file
 Cluster.cc.s:
-	cd /home/openec/openec/res/openec && $(MAKE) $(MAKESILENT) -f src/ec/CMakeFiles/ec.dir/build.make src/ec/CMakeFiles/ec.dir/Cluster.cc.s
+	cd /home/openec/Fast23/storage && $(MAKE) $(MAKESILENT) -f src/ec/CMakeFiles/ec.dir/build.make src/ec/CMakeFiles/ec.dir/Cluster.cc.s
 .PHONY : Cluster.cc.s
 
 Computation.o: Computation.cc.o
@@ -207,7 +207,7 @@ Computation.o: Computation.cc.o
 
 # target to build an object file
 Computation.cc.o:
-	cd /home/openec/openec/res/openec && $(MAKE) $(MAKESILENT) -f src/ec/CMakeFiles/ec.dir/build.make src/ec/CMakeFiles/ec.dir/Computation.cc.o
+	cd /home/openec/Fast23/storage && $(MAKE) $(MAKESILENT) -f src/ec/CMakeFiles/ec.dir/build.make src/ec/CMakeFiles/ec.dir/Computation.cc.o
 .PHONY : Computation.cc.o
 
 Computation.i: Computation.cc.i
@@ -215,7 +215,7 @@ Computation.i: Computation.cc.i
 
 # target to preprocess a source file
 Computation.cc.i:
-	cd /home/openec/openec/res/openec && $(MAKE) $(MAKESILENT) -f src/ec/CMakeFiles/ec.dir/build.make src/ec/CMakeFiles/ec.dir/Computation.cc.i
+	cd /home/openec/Fast23/storage && $(MAKE) $(MAKESILENT) -f src/ec/CMakeFiles/ec.dir/build.make src/ec/CMakeFiles/ec.dir/Computation.cc.i
 .PHONY : Computation.cc.i
 
 Computation.s: Computation.cc.s
@@ -223,7 +223,7 @@ Computation.s: Computation.cc.s
 
 # target to generate assembly for a file
 Computation.cc.s:
-	cd /home/openec/openec/res/openec && $(MAKE) $(MAKESILENT) -f src/ec/CMakeFiles/ec.dir/build.make src/ec/CMakeFiles/ec.dir/Computation.cc.s
+	cd /home/openec/Fast23/storage && $(MAKE) $(MAKESILENT) -f src/ec/CMakeFiles/ec.dir/build.make src/ec/CMakeFiles/ec.dir/Computation.cc.s
 .PHONY : Computation.cc.s
 
 DRC643.o: DRC643.cc.o
@@ -231,7 +231,7 @@ DRC643.o: DRC643.cc.o
 
 # target to build an object file
 DRC643.cc.o:
-	cd /home/openec/openec/res/openec && $(MAKE) $(MAKESILENT) -f src/ec/CMakeFiles/ec.dir/build.make src/ec/CMakeFiles/ec.dir/DRC643.cc.o
+	cd /home/openec/Fast23/storage && $(MAKE) $(MAKESILENT) -f src/ec/CMakeFiles/ec.dir/build.make src/ec/CMakeFiles/ec.dir/DRC643.cc.o
 .PHONY : DRC643.cc.o
 
 DRC643.i: DRC643.cc.i
@@ -239,7 +239,7 @@ DRC643.i: DRC643.cc.i
 
 # target to preprocess a source file
 DRC643.cc.i:
-	cd /home/openec/openec/res/openec && $(MAKE) $(MAKESILENT) -f src/ec/CMakeFiles/ec.dir/build.make src/ec/CMakeFiles/ec.dir/DRC643.cc.i
+	cd /home/openec/Fast23/storage && $(MAKE) $(MAKESILENT) -f src/ec/CMakeFiles/ec.dir/build.make src/ec/CMakeFiles/ec.dir/DRC643.cc.i
 .PHONY : DRC643.cc.i
 
 DRC643.s: DRC643.cc.s
@@ -247,7 +247,7 @@ DRC643.s: DRC643.cc.s
 
 # target to generate assembly for a file
 DRC643.cc.s:
-	cd /home/openec/openec/res/openec && $(MAKE) $(MAKESILENT) -f src/ec/CMakeFiles/ec.dir/build.make src/ec/CMakeFiles/ec.dir/DRC643.cc.s
+	cd /home/openec/Fast23/storage && $(MAKE) $(MAKESILENT) -f src/ec/CMakeFiles/ec.dir/build.make src/ec/CMakeFiles/ec.dir/DRC643.cc.s
 .PHONY : DRC643.cc.s
 
 DRC963.o: DRC963.cc.o
@@ -255,7 +255,7 @@ DRC963.o: DRC963.cc.o
 
 # target to build an object file
 DRC963.cc.o:
-	cd /home/openec/openec/res/openec && $(MAKE) $(MAKESILENT) -f src/ec/CMakeFiles/ec.dir/build.make src/ec/CMakeFiles/ec.dir/DRC963.cc.o
+	cd /home/openec/Fast23/storage && $(MAKE) $(MAKESILENT) -f src/ec/CMakeFiles/ec.dir/build.make src/ec/CMakeFiles/ec.dir/DRC963.cc.o
 .PHONY : DRC963.cc.o
 
 DRC963.i: DRC963.cc.i
@@ -263,7 +263,7 @@ DRC963.i: DRC963.cc.i
 
 # target to preprocess a source file
 DRC963.cc.i:
-	cd /home/openec/openec/res/openec && $(MAKE) $(MAKESILENT) -f src/ec/CMakeFiles/ec.dir/build.make src/ec/CMakeFiles/ec.dir/DRC963.cc.i
+	cd /home/openec/Fast23/storage && $(MAKE) $(MAKESILENT) -f src/ec/CMakeFiles/ec.dir/build.make src/ec/CMakeFiles/ec.dir/DRC963.cc.i
 .PHONY : DRC963.cc.i
 
 DRC963.s: DRC963.cc.s
@@ -271,7 +271,7 @@ DRC963.s: DRC963.cc.s
 
 # target to generate assembly for a file
 DRC963.cc.s:
-	cd /home/openec/openec/res/openec && $(MAKE) $(MAKESILENT) -f src/ec/CMakeFiles/ec.dir/build.make src/ec/CMakeFiles/ec.dir/DRC963.cc.s
+	cd /home/openec/Fast23/storage && $(MAKE) $(MAKESILENT) -f src/ec/CMakeFiles/ec.dir/build.make src/ec/CMakeFiles/ec.dir/DRC963.cc.s
 .PHONY : DRC963.cc.s
 
 ECBase.o: ECBase.cc.o
@@ -279,7 +279,7 @@ ECBase.o: ECBase.cc.o
 
 # target to build an object file
 ECBase.cc.o:
-	cd /home/openec/openec/res/openec && $(MAKE) $(MAKESILENT) -f src/ec/CMakeFiles/ec.dir/build.make src/ec/CMakeFiles/ec.dir/ECBase.cc.o
+	cd /home/openec/Fast23/storage && $(MAKE) $(MAKESILENT) -f src/ec/CMakeFiles/ec.dir/build.make src/ec/CMakeFiles/ec.dir/ECBase.cc.o
 .PHONY : ECBase.cc.o
 
 ECBase.i: ECBase.cc.i
@@ -287,7 +287,7 @@ ECBase.i: ECBase.cc.i
 
 # target to preprocess a source file
 ECBase.cc.i:
-	cd /home/openec/openec/res/openec && $(MAKE) $(MAKESILENT) -f src/ec/CMakeFiles/ec.dir/build.make src/ec/CMakeFiles/ec.dir/ECBase.cc.i
+	cd /home/openec/Fast23/storage && $(MAKE) $(MAKESILENT) -f src/ec/CMakeFiles/ec.dir/build.make src/ec/CMakeFiles/ec.dir/ECBase.cc.i
 .PHONY : ECBase.cc.i
 
 ECBase.s: ECBase.cc.s
@@ -295,7 +295,7 @@ ECBase.s: ECBase.cc.s
 
 # target to generate assembly for a file
 ECBase.cc.s:
-	cd /home/openec/openec/res/openec && $(MAKE) $(MAKESILENT) -f src/ec/CMakeFiles/ec.dir/build.make src/ec/CMakeFiles/ec.dir/ECBase.cc.s
+	cd /home/openec/Fast23/storage && $(MAKE) $(MAKESILENT) -f src/ec/CMakeFiles/ec.dir/build.make src/ec/CMakeFiles/ec.dir/ECBase.cc.s
 .PHONY : ECBase.cc.s
 
 ECDAG.o: ECDAG.cc.o
@@ -303,7 +303,7 @@ ECDAG.o: ECDAG.cc.o
 
 # target to build an object file
 ECDAG.cc.o:
-	cd /home/openec/openec/res/openec && $(MAKE) $(MAKESILENT) -f src/ec/CMakeFiles/ec.dir/build.make src/ec/CMakeFiles/ec.dir/ECDAG.cc.o
+	cd /home/openec/Fast23/storage && $(MAKE) $(MAKESILENT) -f src/ec/CMakeFiles/ec.dir/build.make src/ec/CMakeFiles/ec.dir/ECDAG.cc.o
 .PHONY : ECDAG.cc.o
 
 ECDAG.i: ECDAG.cc.i
@@ -311,7 +311,7 @@ ECDAG.i: ECDAG.cc.i
 
 # target to preprocess a source file
 ECDAG.cc.i:
-	cd /home/openec/openec/res/openec && $(MAKE) $(MAKESILENT) -f src/ec/CMakeFiles/ec.dir/build.make src/ec/CMakeFiles/ec.dir/ECDAG.cc.i
+	cd /home/openec/Fast23/storage && $(MAKE) $(MAKESILENT) -f src/ec/CMakeFiles/ec.dir/build.make src/ec/CMakeFiles/ec.dir/ECDAG.cc.i
 .PHONY : ECDAG.cc.i
 
 ECDAG.s: ECDAG.cc.s
@@ -319,7 +319,7 @@ ECDAG.s: ECDAG.cc.s
 
 # target to generate assembly for a file
 ECDAG.cc.s:
-	cd /home/openec/openec/res/openec && $(MAKE) $(MAKESILENT) -f src/ec/CMakeFiles/ec.dir/build.make src/ec/CMakeFiles/ec.dir/ECDAG.cc.s
+	cd /home/openec/Fast23/storage && $(MAKE) $(MAKESILENT) -f src/ec/CMakeFiles/ec.dir/build.make src/ec/CMakeFiles/ec.dir/ECDAG.cc.s
 .PHONY : ECDAG.cc.s
 
 ECNode.o: ECNode.cc.o
@@ -327,7 +327,7 @@ ECNode.o: ECNode.cc.o
 
 # target to build an object file
 ECNode.cc.o:
-	cd /home/openec/openec/res/openec && $(MAKE) $(MAKESILENT) -f src/ec/CMakeFiles/ec.dir/build.make src/ec/CMakeFiles/ec.dir/ECNode.cc.o
+	cd /home/openec/Fast23/storage && $(MAKE) $(MAKESILENT) -f src/ec/CMakeFiles/ec.dir/build.make src/ec/CMakeFiles/ec.dir/ECNode.cc.o
 .PHONY : ECNode.cc.o
 
 ECNode.i: ECNode.cc.i
@@ -335,7 +335,7 @@ ECNode.i: ECNode.cc.i
 
 # target to preprocess a source file
 ECNode.cc.i:
-	cd /home/openec/openec/res/openec && $(MAKE) $(MAKESILENT) -f src/ec/CMakeFiles/ec.dir/build.make src/ec/CMakeFiles/ec.dir/ECNode.cc.i
+	cd /home/openec/Fast23/storage && $(MAKE) $(MAKESILENT) -f src/ec/CMakeFiles/ec.dir/build.make src/ec/CMakeFiles/ec.dir/ECNode.cc.i
 .PHONY : ECNode.cc.i
 
 ECNode.s: ECNode.cc.s
@@ -343,7 +343,7 @@ ECNode.s: ECNode.cc.s
 
 # target to generate assembly for a file
 ECNode.cc.s:
-	cd /home/openec/openec/res/openec && $(MAKE) $(MAKESILENT) -f src/ec/CMakeFiles/ec.dir/build.make src/ec/CMakeFiles/ec.dir/ECNode.cc.s
+	cd /home/openec/Fast23/storage && $(MAKE) $(MAKESILENT) -f src/ec/CMakeFiles/ec.dir/build.make src/ec/CMakeFiles/ec.dir/ECNode.cc.s
 .PHONY : ECNode.cc.s
 
 ECPolicy.o: ECPolicy.cc.o
@@ -351,7 +351,7 @@ ECPolicy.o: ECPolicy.cc.o
 
 # target to build an object file
 ECPolicy.cc.o:
-	cd /home/openec/openec/res/openec && $(MAKE) $(MAKESILENT) -f src/ec/CMakeFiles/ec.dir/build.make src/ec/CMakeFiles/ec.dir/ECPolicy.cc.o
+	cd /home/openec/Fast23/storage && $(MAKE) $(MAKESILENT) -f src/ec/CMakeFiles/ec.dir/build.make src/ec/CMakeFiles/ec.dir/ECPolicy.cc.o
 .PHONY : ECPolicy.cc.o
 
 ECPolicy.i: ECPolicy.cc.i
@@ -359,7 +359,7 @@ ECPolicy.i: ECPolicy.cc.i
 
 # target to preprocess a source file
 ECPolicy.cc.i:
-	cd /home/openec/openec/res/openec && $(MAKE) $(MAKESILENT) -f src/ec/CMakeFiles/ec.dir/build.make src/ec/CMakeFiles/ec.dir/ECPolicy.cc.i
+	cd /home/openec/Fast23/storage && $(MAKE) $(MAKESILENT) -f src/ec/CMakeFiles/ec.dir/build.make src/ec/CMakeFiles/ec.dir/ECPolicy.cc.i
 .PHONY : ECPolicy.cc.i
 
 ECPolicy.s: ECPolicy.cc.s
@@ -367,7 +367,7 @@ ECPolicy.s: ECPolicy.cc.s
 
 # target to generate assembly for a file
 ECPolicy.cc.s:
-	cd /home/openec/openec/res/openec && $(MAKE) $(MAKESILENT) -f src/ec/CMakeFiles/ec.dir/build.make src/ec/CMakeFiles/ec.dir/ECPolicy.cc.s
+	cd /home/openec/Fast23/storage && $(MAKE) $(MAKESILENT) -f src/ec/CMakeFiles/ec.dir/build.make src/ec/CMakeFiles/ec.dir/ECPolicy.cc.s
 .PHONY : ECPolicy.cc.s
 
 ECTask.o: ECTask.cc.o
@@ -375,7 +375,7 @@ ECTask.o: ECTask.cc.o
 
 # target to build an object file
 ECTask.cc.o:
-	cd /home/openec/openec/res/openec && $(MAKE) $(MAKESILENT) -f src/ec/CMakeFiles/ec.dir/build.make src/ec/CMakeFiles/ec.dir/ECTask.cc.o
+	cd /home/openec/Fast23/storage && $(MAKE) $(MAKESILENT) -f src/ec/CMakeFiles/ec.dir/build.make src/ec/CMakeFiles/ec.dir/ECTask.cc.o
 .PHONY : ECTask.cc.o
 
 ECTask.i: ECTask.cc.i
@@ -383,7 +383,7 @@ ECTask.i: ECTask.cc.i
 
 # target to preprocess a source file
 ECTask.cc.i:
-	cd /home/openec/openec/res/openec && $(MAKE) $(MAKESILENT) -f src/ec/CMakeFiles/ec.dir/build.make src/ec/CMakeFiles/ec.dir/ECTask.cc.i
+	cd /home/openec/Fast23/storage && $(MAKE) $(MAKESILENT) -f src/ec/CMakeFiles/ec.dir/build.make src/ec/CMakeFiles/ec.dir/ECTask.cc.i
 .PHONY : ECTask.cc.i
 
 ECTask.s: ECTask.cc.s
@@ -391,7 +391,7 @@ ECTask.s: ECTask.cc.s
 
 # target to generate assembly for a file
 ECTask.cc.s:
-	cd /home/openec/openec/res/openec && $(MAKE) $(MAKESILENT) -f src/ec/CMakeFiles/ec.dir/build.make src/ec/CMakeFiles/ec.dir/ECTask.cc.s
+	cd /home/openec/Fast23/storage && $(MAKE) $(MAKESILENT) -f src/ec/CMakeFiles/ec.dir/build.make src/ec/CMakeFiles/ec.dir/ECTask.cc.s
 .PHONY : ECTask.cc.s
 
 IA.o: IA.cc.o
@@ -399,7 +399,7 @@ IA.o: IA.cc.o
 
 # target to build an object file
 IA.cc.o:
-	cd /home/openec/openec/res/openec && $(MAKE) $(MAKESILENT) -f src/ec/CMakeFiles/ec.dir/build.make src/ec/CMakeFiles/ec.dir/IA.cc.o
+	cd /home/openec/Fast23/storage && $(MAKE) $(MAKESILENT) -f src/ec/CMakeFiles/ec.dir/build.make src/ec/CMakeFiles/ec.dir/IA.cc.o
 .PHONY : IA.cc.o
 
 IA.i: IA.cc.i
@@ -407,7 +407,7 @@ IA.i: IA.cc.i
 
 # target to preprocess a source file
 IA.cc.i:
-	cd /home/openec/openec/res/openec && $(MAKE) $(MAKESILENT) -f src/ec/CMakeFiles/ec.dir/build.make src/ec/CMakeFiles/ec.dir/IA.cc.i
+	cd /home/openec/Fast23/storage && $(MAKE) $(MAKESILENT) -f src/ec/CMakeFiles/ec.dir/build.make src/ec/CMakeFiles/ec.dir/IA.cc.i
 .PHONY : IA.cc.i
 
 IA.s: IA.cc.s
@@ -415,7 +415,7 @@ IA.s: IA.cc.s
 
 # target to generate assembly for a file
 IA.cc.s:
-	cd /home/openec/openec/res/openec && $(MAKE) $(MAKESILENT) -f src/ec/CMakeFiles/ec.dir/build.make src/ec/CMakeFiles/ec.dir/IA.cc.s
+	cd /home/openec/Fast23/storage && $(MAKE) $(MAKESILENT) -f src/ec/CMakeFiles/ec.dir/build.make src/ec/CMakeFiles/ec.dir/IA.cc.s
 .PHONY : IA.cc.s
 
 LRC32202.o: LRC32202.cc.o
@@ -423,7 +423,7 @@ LRC32202.o: LRC32202.cc.o
 
 # target to build an object file
 LRC32202.cc.o:
-	cd /home/openec/openec/res/openec && $(MAKE) $(MAKESILENT) -f src/ec/CMakeFiles/ec.dir/build.make src/ec/CMakeFiles/ec.dir/LRC32202.cc.o
+	cd /home/openec/Fast23/storage && $(MAKE) $(MAKESILENT) -f src/ec/CMakeFiles/ec.dir/build.make src/ec/CMakeFiles/ec.dir/LRC32202.cc.o
 .PHONY : LRC32202.cc.o
 
 LRC32202.i: LRC32202.cc.i
@@ -431,7 +431,7 @@ LRC32202.i: LRC32202.cc.i
 
 # target to preprocess a source file
 LRC32202.cc.i:
-	cd /home/openec/openec/res/openec && $(MAKE) $(MAKESILENT) -f src/ec/CMakeFiles/ec.dir/build.make src/ec/CMakeFiles/ec.dir/LRC32202.cc.i
+	cd /home/openec/Fast23/storage && $(MAKE) $(MAKESILENT) -f src/ec/CMakeFiles/ec.dir/build.make src/ec/CMakeFiles/ec.dir/LRC32202.cc.i
 .PHONY : LRC32202.cc.i
 
 LRC32202.s: LRC32202.cc.s
@@ -439,7 +439,7 @@ LRC32202.s: LRC32202.cc.s
 
 # target to generate assembly for a file
 LRC32202.cc.s:
-	cd /home/openec/openec/res/openec && $(MAKE) $(MAKESILENT) -f src/ec/CMakeFiles/ec.dir/build.make src/ec/CMakeFiles/ec.dir/LRC32202.cc.s
+	cd /home/openec/Fast23/storage && $(MAKE) $(MAKESILENT) -f src/ec/CMakeFiles/ec.dir/build.make src/ec/CMakeFiles/ec.dir/LRC32202.cc.s
 .PHONY : LRC32202.cc.s
 
 NativeRS.o: NativeRS.cc.o
@@ -447,7 +447,7 @@ NativeRS.o: NativeRS.cc.o
 
 # target to build an object file
 NativeRS.cc.o:
-	cd /home/openec/openec/res/openec && $(MAKE) $(MAKESILENT) -f src/ec/CMakeFiles/ec.dir/build.make src/ec/CMakeFiles/ec.dir/NativeRS.cc.o
+	cd /home/openec/Fast23/storage && $(MAKE) $(MAKESILENT) -f src/ec/CMakeFiles/ec.dir/build.make src/ec/CMakeFiles/ec.dir/NativeRS.cc.o
 .PHONY : NativeRS.cc.o
 
 NativeRS.i: NativeRS.cc.i
@@ -455,7 +455,7 @@ NativeRS.i: NativeRS.cc.i
 
 # target to preprocess a source file
 NativeRS.cc.i:
-	cd /home/openec/openec/res/openec && $(MAKE) $(MAKESILENT) -f src/ec/CMakeFiles/ec.dir/build.make src/ec/CMakeFiles/ec.dir/NativeRS.cc.i
+	cd /home/openec/Fast23/storage && $(MAKE) $(MAKESILENT) -f src/ec/CMakeFiles/ec.dir/build.make src/ec/CMakeFiles/ec.dir/NativeRS.cc.i
 .PHONY : NativeRS.cc.i
 
 NativeRS.s: NativeRS.cc.s
@@ -463,7 +463,7 @@ NativeRS.s: NativeRS.cc.s
 
 # target to generate assembly for a file
 NativeRS.cc.s:
-	cd /home/openec/openec/res/openec && $(MAKE) $(MAKESILENT) -f src/ec/CMakeFiles/ec.dir/build.make src/ec/CMakeFiles/ec.dir/NativeRS.cc.s
+	cd /home/openec/Fast23/storage && $(MAKE) $(MAKESILENT) -f src/ec/CMakeFiles/ec.dir/build.make src/ec/CMakeFiles/ec.dir/NativeRS.cc.s
 .PHONY : NativeRS.cc.s
 
 OfflineECPool.o: OfflineECPool.cc.o
@@ -471,7 +471,7 @@ OfflineECPool.o: OfflineECPool.cc.o
 
 # target to build an object file
 OfflineECPool.cc.o:
-	cd /home/openec/openec/res/openec && $(MAKE) $(MAKESILENT) -f src/ec/CMakeFiles/ec.dir/build.make src/ec/CMakeFiles/ec.dir/OfflineECPool.cc.o
+	cd /home/openec/Fast23/storage && $(MAKE) $(MAKESILENT) -f src/ec/CMakeFiles/ec.dir/build.make src/ec/CMakeFiles/ec.dir/OfflineECPool.cc.o
 .PHONY : OfflineECPool.cc.o
 
 OfflineECPool.i: OfflineECPool.cc.i
@@ -479,7 +479,7 @@ OfflineECPool.i: OfflineECPool.cc.i
 
 # target to preprocess a source file
 OfflineECPool.cc.i:
-	cd /home/openec/openec/res/openec && $(MAKE) $(MAKESILENT) -f src/ec/CMakeFiles/ec.dir/build.make src/ec/CMakeFiles/ec.dir/OfflineECPool.cc.i
+	cd /home/openec/Fast23/storage && $(MAKE) $(MAKESILENT) -f src/ec/CMakeFiles/ec.dir/build.make src/ec/CMakeFiles/ec.dir/OfflineECPool.cc.i
 .PHONY : OfflineECPool.cc.i
 
 OfflineECPool.s: OfflineECPool.cc.s
@@ -487,7 +487,7 @@ OfflineECPool.s: OfflineECPool.cc.s
 
 # target to generate assembly for a file
 OfflineECPool.cc.s:
-	cd /home/openec/openec/res/openec && $(MAKE) $(MAKESILENT) -f src/ec/CMakeFiles/ec.dir/build.make src/ec/CMakeFiles/ec.dir/OfflineECPool.cc.s
+	cd /home/openec/Fast23/storage && $(MAKE) $(MAKESILENT) -f src/ec/CMakeFiles/ec.dir/build.make src/ec/CMakeFiles/ec.dir/OfflineECPool.cc.s
 .PHONY : OfflineECPool.cc.s
 
 RSAS.o: RSAS.cc.o
@@ -495,7 +495,7 @@ RSAS.o: RSAS.cc.o
 
 # target to build an object file
 RSAS.cc.o:
-	cd /home/openec/openec/res/openec && $(MAKE) $(MAKESILENT) -f src/ec/CMakeFiles/ec.dir/build.make src/ec/CMakeFiles/ec.dir/RSAS.cc.o
+	cd /home/openec/Fast23/storage && $(MAKE) $(MAKESILENT) -f src/ec/CMakeFiles/ec.dir/build.make src/ec/CMakeFiles/ec.dir/RSAS.cc.o
 .PHONY : RSAS.cc.o
 
 RSAS.i: RSAS.cc.i
@@ -503,7 +503,7 @@ RSAS.i: RSAS.cc.i
 
 # target to preprocess a source file
 RSAS.cc.i:
-	cd /home/openec/openec/res/openec && $(MAKE) $(MAKESILENT) -f src/ec/CMakeFiles/ec.dir/build.make src/ec/CMakeFiles/ec.dir/RSAS.cc.i
+	cd /home/openec/Fast23/storage && $(MAKE) $(MAKESILENT) -f src/ec/CMakeFiles/ec.dir/build.make src/ec/CMakeFiles/ec.dir/RSAS.cc.i
 .PHONY : RSAS.cc.i
 
 RSAS.s: RSAS.cc.s
@@ -511,7 +511,7 @@ RSAS.s: RSAS.cc.s
 
 # target to generate assembly for a file
 RSAS.cc.s:
-	cd /home/openec/openec/res/openec && $(MAKE) $(MAKESILENT) -f src/ec/CMakeFiles/ec.dir/build.make src/ec/CMakeFiles/ec.dir/RSAS.cc.s
+	cd /home/openec/Fast23/storage && $(MAKE) $(MAKESILENT) -f src/ec/CMakeFiles/ec.dir/build.make src/ec/CMakeFiles/ec.dir/RSAS.cc.s
 .PHONY : RSAS.cc.s
 
 RSASP.o: RSASP.cc.o
@@ -519,7 +519,7 @@ RSASP.o: RSASP.cc.o
 
 # target to build an object file
 RSASP.cc.o:
-	cd /home/openec/openec/res/openec && $(MAKE) $(MAKESILENT) -f src/ec/CMakeFiles/ec.dir/build.make src/ec/CMakeFiles/ec.dir/RSASP.cc.o
+	cd /home/openec/Fast23/storage && $(MAKE) $(MAKESILENT) -f src/ec/CMakeFiles/ec.dir/build.make src/ec/CMakeFiles/ec.dir/RSASP.cc.o
 .PHONY : RSASP.cc.o
 
 RSASP.i: RSASP.cc.i
@@ -527,7 +527,7 @@ RSASP.i: RSASP.cc.i
 
 # target to preprocess a source file
 RSASP.cc.i:
-	cd /home/openec/openec/res/openec && $(MAKE) $(MAKESILENT) -f src/ec/CMakeFiles/ec.dir/build.make src/ec/CMakeFiles/ec.dir/RSASP.cc.i
+	cd /home/openec/Fast23/storage && $(MAKE) $(MAKESILENT) -f src/ec/CMakeFiles/ec.dir/build.make src/ec/CMakeFiles/ec.dir/RSASP.cc.i
 .PHONY : RSASP.cc.i
 
 RSASP.s: RSASP.cc.s
@@ -535,7 +535,7 @@ RSASP.s: RSASP.cc.s
 
 # target to generate assembly for a file
 RSASP.cc.s:
-	cd /home/openec/openec/res/openec && $(MAKE) $(MAKESILENT) -f src/ec/CMakeFiles/ec.dir/build.make src/ec/CMakeFiles/ec.dir/RSASP.cc.s
+	cd /home/openec/Fast23/storage && $(MAKE) $(MAKESILENT) -f src/ec/CMakeFiles/ec.dir/build.make src/ec/CMakeFiles/ec.dir/RSASP.cc.s
 .PHONY : RSASP.cc.s
 
 RSBINDX.o: RSBINDX.cc.o
@@ -543,7 +543,7 @@ RSBINDX.o: RSBINDX.cc.o
 
 # target to build an object file
 RSBINDX.cc.o:
-	cd /home/openec/openec/res/openec && $(MAKE) $(MAKESILENT) -f src/ec/CMakeFiles/ec.dir/build.make src/ec/CMakeFiles/ec.dir/RSBINDX.cc.o
+	cd /home/openec/Fast23/storage && $(MAKE) $(MAKESILENT) -f src/ec/CMakeFiles/ec.dir/build.make src/ec/CMakeFiles/ec.dir/RSBINDX.cc.o
 .PHONY : RSBINDX.cc.o
 
 RSBINDX.i: RSBINDX.cc.i
@@ -551,7 +551,7 @@ RSBINDX.i: RSBINDX.cc.i
 
 # target to preprocess a source file
 RSBINDX.cc.i:
-	cd /home/openec/openec/res/openec && $(MAKE) $(MAKESILENT) -f src/ec/CMakeFiles/ec.dir/build.make src/ec/CMakeFiles/ec.dir/RSBINDX.cc.i
+	cd /home/openec/Fast23/storage && $(MAKE) $(MAKESILENT) -f src/ec/CMakeFiles/ec.dir/build.make src/ec/CMakeFiles/ec.dir/RSBINDX.cc.i
 .PHONY : RSBINDX.cc.i
 
 RSBINDX.s: RSBINDX.cc.s
@@ -559,7 +559,7 @@ RSBINDX.s: RSBINDX.cc.s
 
 # target to generate assembly for a file
 RSBINDX.cc.s:
-	cd /home/openec/openec/res/openec && $(MAKE) $(MAKESILENT) -f src/ec/CMakeFiles/ec.dir/build.make src/ec/CMakeFiles/ec.dir/RSBINDX.cc.s
+	cd /home/openec/Fast23/storage && $(MAKE) $(MAKESILENT) -f src/ec/CMakeFiles/ec.dir/build.make src/ec/CMakeFiles/ec.dir/RSBINDX.cc.s
 .PHONY : RSBINDX.cc.s
 
 RSCONV.o: RSCONV.cc.o
@@ -567,7 +567,7 @@ RSCONV.o: RSCONV.cc.o
 
 # target to build an object file
 RSCONV.cc.o:
-	cd /home/openec/openec/res/openec && $(MAKE) $(MAKESILENT) -f src/ec/CMakeFiles/ec.dir/build.make src/ec/CMakeFiles/ec.dir/RSCONV.cc.o
+	cd /home/openec/Fast23/storage && $(MAKE) $(MAKESILENT) -f src/ec/CMakeFiles/ec.dir/build.make src/ec/CMakeFiles/ec.dir/RSCONV.cc.o
 .PHONY : RSCONV.cc.o
 
 RSCONV.i: RSCONV.cc.i
@@ -575,7 +575,7 @@ RSCONV.i: RSCONV.cc.i
 
 # target to preprocess a source file
 RSCONV.cc.i:
-	cd /home/openec/openec/res/openec && $(MAKE) $(MAKESILENT) -f src/ec/CMakeFiles/ec.dir/build.make src/ec/CMakeFiles/ec.dir/RSCONV.cc.i
+	cd /home/openec/Fast23/storage && $(MAKE) $(MAKESILENT) -f src/ec/CMakeFiles/ec.dir/build.make src/ec/CMakeFiles/ec.dir/RSCONV.cc.i
 .PHONY : RSCONV.cc.i
 
 RSCONV.s: RSCONV.cc.s
@@ -583,7 +583,7 @@ RSCONV.s: RSCONV.cc.s
 
 # target to generate assembly for a file
 RSCONV.cc.s:
-	cd /home/openec/openec/res/openec && $(MAKE) $(MAKESILENT) -f src/ec/CMakeFiles/ec.dir/build.make src/ec/CMakeFiles/ec.dir/RSCONV.cc.s
+	cd /home/openec/Fast23/storage && $(MAKE) $(MAKESILENT) -f src/ec/CMakeFiles/ec.dir/build.make src/ec/CMakeFiles/ec.dir/RSCONV.cc.s
 .PHONY : RSCONV.cc.s
 
 RSNCONV.o: RSNCONV.cc.o
@@ -591,7 +591,7 @@ RSNCONV.o: RSNCONV.cc.o
 
 # target to build an object file
 RSNCONV.cc.o:
-	cd /home/openec/openec/res/openec && $(MAKE) $(MAKESILENT) -f src/ec/CMakeFiles/ec.dir/build.make src/ec/CMakeFiles/ec.dir/RSNCONV.cc.o
+	cd /home/openec/Fast23/storage && $(MAKE) $(MAKESILENT) -f src/ec/CMakeFiles/ec.dir/build.make src/ec/CMakeFiles/ec.dir/RSNCONV.cc.o
 .PHONY : RSNCONV.cc.o
 
 RSNCONV.i: RSNCONV.cc.i
@@ -599,7 +599,7 @@ RSNCONV.i: RSNCONV.cc.i
 
 # target to preprocess a source file
 RSNCONV.cc.i:
-	cd /home/openec/openec/res/openec && $(MAKE) $(MAKESILENT) -f src/ec/CMakeFiles/ec.dir/build.make src/ec/CMakeFiles/ec.dir/RSNCONV.cc.i
+	cd /home/openec/Fast23/storage && $(MAKE) $(MAKESILENT) -f src/ec/CMakeFiles/ec.dir/build.make src/ec/CMakeFiles/ec.dir/RSNCONV.cc.i
 .PHONY : RSNCONV.cc.i
 
 RSNCONV.s: RSNCONV.cc.s
@@ -607,7 +607,7 @@ RSNCONV.s: RSNCONV.cc.s
 
 # target to generate assembly for a file
 RSNCONV.cc.s:
-	cd /home/openec/openec/res/openec && $(MAKE) $(MAKESILENT) -f src/ec/CMakeFiles/ec.dir/build.make src/ec/CMakeFiles/ec.dir/RSNCONV.cc.s
+	cd /home/openec/Fast23/storage && $(MAKE) $(MAKESILENT) -f src/ec/CMakeFiles/ec.dir/build.make src/ec/CMakeFiles/ec.dir/RSNCONV.cc.s
 .PHONY : RSNCONV.cc.s
 
 RSNSYS.o: RSNSYS.cc.o
@@ -615,7 +615,7 @@ RSNSYS.o: RSNSYS.cc.o
 
 # target to build an object file
 RSNSYS.cc.o:
-	cd /home/openec/openec/res/openec && $(MAKE) $(MAKESILENT) -f src/ec/CMakeFiles/ec.dir/build.make src/ec/CMakeFiles/ec.dir/RSNSYS.cc.o
+	cd /home/openec/Fast23/storage && $(MAKE) $(MAKESILENT) -f src/ec/CMakeFiles/ec.dir/build.make src/ec/CMakeFiles/ec.dir/RSNSYS.cc.o
 .PHONY : RSNSYS.cc.o
 
 RSNSYS.i: RSNSYS.cc.i
@@ -623,7 +623,7 @@ RSNSYS.i: RSNSYS.cc.i
 
 # target to preprocess a source file
 RSNSYS.cc.i:
-	cd /home/openec/openec/res/openec && $(MAKE) $(MAKESILENT) -f src/ec/CMakeFiles/ec.dir/build.make src/ec/CMakeFiles/ec.dir/RSNSYS.cc.i
+	cd /home/openec/Fast23/storage && $(MAKE) $(MAKESILENT) -f src/ec/CMakeFiles/ec.dir/build.make src/ec/CMakeFiles/ec.dir/RSNSYS.cc.i
 .PHONY : RSNSYS.cc.i
 
 RSNSYS.s: RSNSYS.cc.s
@@ -631,7 +631,7 @@ RSNSYS.s: RSNSYS.cc.s
 
 # target to generate assembly for a file
 RSNSYS.cc.s:
-	cd /home/openec/openec/res/openec && $(MAKE) $(MAKESILENT) -f src/ec/CMakeFiles/ec.dir/build.make src/ec/CMakeFiles/ec.dir/RSNSYS.cc.s
+	cd /home/openec/Fast23/storage && $(MAKE) $(MAKESILENT) -f src/ec/CMakeFiles/ec.dir/build.make src/ec/CMakeFiles/ec.dir/RSNSYS.cc.s
 .PHONY : RSNSYS.cc.s
 
 RSPIPE.o: RSPIPE.cc.o
@@ -639,7 +639,7 @@ RSPIPE.o: RSPIPE.cc.o
 
 # target to build an object file
 RSPIPE.cc.o:
-	cd /home/openec/openec/res/openec && $(MAKE) $(MAKESILENT) -f src/ec/CMakeFiles/ec.dir/build.make src/ec/CMakeFiles/ec.dir/RSPIPE.cc.o
+	cd /home/openec/Fast23/storage && $(MAKE) $(MAKESILENT) -f src/ec/CMakeFiles/ec.dir/build.make src/ec/CMakeFiles/ec.dir/RSPIPE.cc.o
 .PHONY : RSPIPE.cc.o
 
 RSPIPE.i: RSPIPE.cc.i
@@ -647,7 +647,7 @@ RSPIPE.i: RSPIPE.cc.i
 
 # target to preprocess a source file
 RSPIPE.cc.i:
-	cd /home/openec/openec/res/openec && $(MAKE) $(MAKESILENT) -f src/ec/CMakeFiles/ec.dir/build.make src/ec/CMakeFiles/ec.dir/RSPIPE.cc.i
+	cd /home/openec/Fast23/storage && $(MAKE) $(MAKESILENT) -f src/ec/CMakeFiles/ec.dir/build.make src/ec/CMakeFiles/ec.dir/RSPIPE.cc.i
 .PHONY : RSPIPE.cc.i
 
 RSPIPE.s: RSPIPE.cc.s
@@ -655,7 +655,7 @@ RSPIPE.s: RSPIPE.cc.s
 
 # target to generate assembly for a file
 RSPIPE.cc.s:
-	cd /home/openec/openec/res/openec && $(MAKE) $(MAKESILENT) -f src/ec/CMakeFiles/ec.dir/build.make src/ec/CMakeFiles/ec.dir/RSPIPE.cc.s
+	cd /home/openec/Fast23/storage && $(MAKE) $(MAKESILENT) -f src/ec/CMakeFiles/ec.dir/build.make src/ec/CMakeFiles/ec.dir/RSPIPE.cc.s
 .PHONY : RSPIPE.cc.s
 
 RSPPCT.o: RSPPCT.cc.o
@@ -663,7 +663,7 @@ RSPPCT.o: RSPPCT.cc.o
 
 # target to build an object file
 RSPPCT.cc.o:
-	cd /home/openec/openec/res/openec && $(MAKE) $(MAKESILENT) -f src/ec/CMakeFiles/ec.dir/build.make src/ec/CMakeFiles/ec.dir/RSPPCT.cc.o
+	cd /home/openec/Fast23/storage && $(MAKE) $(MAKESILENT) -f src/ec/CMakeFiles/ec.dir/build.make src/ec/CMakeFiles/ec.dir/RSPPCT.cc.o
 .PHONY : RSPPCT.cc.o
 
 RSPPCT.i: RSPPCT.cc.i
@@ -671,7 +671,7 @@ RSPPCT.i: RSPPCT.cc.i
 
 # target to preprocess a source file
 RSPPCT.cc.i:
-	cd /home/openec/openec/res/openec && $(MAKE) $(MAKESILENT) -f src/ec/CMakeFiles/ec.dir/build.make src/ec/CMakeFiles/ec.dir/RSPPCT.cc.i
+	cd /home/openec/Fast23/storage && $(MAKE) $(MAKESILENT) -f src/ec/CMakeFiles/ec.dir/build.make src/ec/CMakeFiles/ec.dir/RSPPCT.cc.i
 .PHONY : RSPPCT.cc.i
 
 RSPPCT.s: RSPPCT.cc.s
@@ -679,7 +679,7 @@ RSPPCT.s: RSPPCT.cc.s
 
 # target to generate assembly for a file
 RSPPCT.cc.s:
-	cd /home/openec/openec/res/openec && $(MAKE) $(MAKESILENT) -f src/ec/CMakeFiles/ec.dir/build.make src/ec/CMakeFiles/ec.dir/RSPPCT.cc.s
+	cd /home/openec/Fast23/storage && $(MAKE) $(MAKESILENT) -f src/ec/CMakeFiles/ec.dir/build.make src/ec/CMakeFiles/ec.dir/RSPPCT.cc.s
 .PHONY : RSPPCT.cc.s
 
 RSPPR.o: RSPPR.cc.o
@@ -687,7 +687,7 @@ RSPPR.o: RSPPR.cc.o
 
 # target to build an object file
 RSPPR.cc.o:
-	cd /home/openec/openec/res/openec && $(MAKE) $(MAKESILENT) -f src/ec/CMakeFiles/ec.dir/build.make src/ec/CMakeFiles/ec.dir/RSPPR.cc.o
+	cd /home/openec/Fast23/storage && $(MAKE) $(MAKESILENT) -f src/ec/CMakeFiles/ec.dir/build.make src/ec/CMakeFiles/ec.dir/RSPPR.cc.o
 .PHONY : RSPPR.cc.o
 
 RSPPR.i: RSPPR.cc.i
@@ -695,7 +695,7 @@ RSPPR.i: RSPPR.cc.i
 
 # target to preprocess a source file
 RSPPR.cc.i:
-	cd /home/openec/openec/res/openec && $(MAKE) $(MAKESILENT) -f src/ec/CMakeFiles/ec.dir/build.make src/ec/CMakeFiles/ec.dir/RSPPR.cc.i
+	cd /home/openec/Fast23/storage && $(MAKE) $(MAKESILENT) -f src/ec/CMakeFiles/ec.dir/build.make src/ec/CMakeFiles/ec.dir/RSPPR.cc.i
 .PHONY : RSPPR.cc.i
 
 RSPPR.s: RSPPR.cc.s
@@ -703,7 +703,7 @@ RSPPR.s: RSPPR.cc.s
 
 # target to generate assembly for a file
 RSPPR.cc.s:
-	cd /home/openec/openec/res/openec && $(MAKE) $(MAKESILENT) -f src/ec/CMakeFiles/ec.dir/build.make src/ec/CMakeFiles/ec.dir/RSPPR.cc.s
+	cd /home/openec/Fast23/storage && $(MAKE) $(MAKESILENT) -f src/ec/CMakeFiles/ec.dir/build.make src/ec/CMakeFiles/ec.dir/RSPPR.cc.s
 .PHONY : RSPPR.cc.s
 
 RSRPCONV.o: RSRPCONV.cc.o
@@ -711,7 +711,7 @@ RSRPCONV.o: RSRPCONV.cc.o
 
 # target to build an object file
 RSRPCONV.cc.o:
-	cd /home/openec/openec/res/openec && $(MAKE) $(MAKESILENT) -f src/ec/CMakeFiles/ec.dir/build.make src/ec/CMakeFiles/ec.dir/RSRPCONV.cc.o
+	cd /home/openec/Fast23/storage && $(MAKE) $(MAKESILENT) -f src/ec/CMakeFiles/ec.dir/build.make src/ec/CMakeFiles/ec.dir/RSRPCONV.cc.o
 .PHONY : RSRPCONV.cc.o
 
 RSRPCONV.i: RSRPCONV.cc.i
@@ -719,7 +719,7 @@ RSRPCONV.i: RSRPCONV.cc.i
 
 # target to preprocess a source file
 RSRPCONV.cc.i:
-	cd /home/openec/openec/res/openec && $(MAKE) $(MAKESILENT) -f src/ec/CMakeFiles/ec.dir/build.make src/ec/CMakeFiles/ec.dir/RSRPCONV.cc.i
+	cd /home/openec/Fast23/storage && $(MAKE) $(MAKESILENT) -f src/ec/CMakeFiles/ec.dir/build.make src/ec/CMakeFiles/ec.dir/RSRPCONV.cc.i
 .PHONY : RSRPCONV.cc.i
 
 RSRPCONV.s: RSRPCONV.cc.s
@@ -727,7 +727,7 @@ RSRPCONV.s: RSRPCONV.cc.s
 
 # target to generate assembly for a file
 RSRPCONV.cc.s:
-	cd /home/openec/openec/res/openec && $(MAKE) $(MAKESILENT) -f src/ec/CMakeFiles/ec.dir/build.make src/ec/CMakeFiles/ec.dir/RSRPCONV.cc.s
+	cd /home/openec/Fast23/storage && $(MAKE) $(MAKESILENT) -f src/ec/CMakeFiles/ec.dir/build.make src/ec/CMakeFiles/ec.dir/RSRPCONV.cc.s
 .PHONY : RSRPCONV.cc.s
 
 RSSMARTLZ.o: RSSMARTLZ.cc.o
@@ -735,7 +735,7 @@ RSSMARTLZ.o: RSSMARTLZ.cc.o
 
 # target to build an object file
 RSSMARTLZ.cc.o:
-	cd /home/openec/openec/res/openec && $(MAKE) $(MAKESILENT) -f src/ec/CMakeFiles/ec.dir/build.make src/ec/CMakeFiles/ec.dir/RSSMARTLZ.cc.o
+	cd /home/openec/Fast23/storage && $(MAKE) $(MAKESILENT) -f src/ec/CMakeFiles/ec.dir/build.make src/ec/CMakeFiles/ec.dir/RSSMARTLZ.cc.o
 .PHONY : RSSMARTLZ.cc.o
 
 RSSMARTLZ.i: RSSMARTLZ.cc.i
@@ -743,7 +743,7 @@ RSSMARTLZ.i: RSSMARTLZ.cc.i
 
 # target to preprocess a source file
 RSSMARTLZ.cc.i:
-	cd /home/openec/openec/res/openec && $(MAKE) $(MAKESILENT) -f src/ec/CMakeFiles/ec.dir/build.make src/ec/CMakeFiles/ec.dir/RSSMARTLZ.cc.i
+	cd /home/openec/Fast23/storage && $(MAKE) $(MAKESILENT) -f src/ec/CMakeFiles/ec.dir/build.make src/ec/CMakeFiles/ec.dir/RSSMARTLZ.cc.i
 .PHONY : RSSMARTLZ.cc.i
 
 RSSMARTLZ.s: RSSMARTLZ.cc.s
@@ -751,7 +751,7 @@ RSSMARTLZ.s: RSSMARTLZ.cc.s
 
 # target to generate assembly for a file
 RSSMARTLZ.cc.s:
-	cd /home/openec/openec/res/openec && $(MAKE) $(MAKESILENT) -f src/ec/CMakeFiles/ec.dir/build.make src/ec/CMakeFiles/ec.dir/RSSMARTLZ.cc.s
+	cd /home/openec/Fast23/storage && $(MAKE) $(MAKESILENT) -f src/ec/CMakeFiles/ec.dir/build.make src/ec/CMakeFiles/ec.dir/RSSMARTLZ.cc.s
 .PHONY : RSSMARTLZ.cc.s
 
 WASLRC.o: WASLRC.cc.o
@@ -759,7 +759,7 @@ WASLRC.o: WASLRC.cc.o
 
 # target to build an object file
 WASLRC.cc.o:
-	cd /home/openec/openec/res/openec && $(MAKE) $(MAKESILENT) -f src/ec/CMakeFiles/ec.dir/build.make src/ec/CMakeFiles/ec.dir/WASLRC.cc.o
+	cd /home/openec/Fast23/storage && $(MAKE) $(MAKESILENT) -f src/ec/CMakeFiles/ec.dir/build.make src/ec/CMakeFiles/ec.dir/WASLRC.cc.o
 .PHONY : WASLRC.cc.o
 
 WASLRC.i: WASLRC.cc.i
@@ -767,7 +767,7 @@ WASLRC.i: WASLRC.cc.i
 
 # target to preprocess a source file
 WASLRC.cc.i:
-	cd /home/openec/openec/res/openec && $(MAKE) $(MAKESILENT) -f src/ec/CMakeFiles/ec.dir/build.make src/ec/CMakeFiles/ec.dir/WASLRC.cc.i
+	cd /home/openec/Fast23/storage && $(MAKE) $(MAKESILENT) -f src/ec/CMakeFiles/ec.dir/build.make src/ec/CMakeFiles/ec.dir/WASLRC.cc.i
 .PHONY : WASLRC.cc.i
 
 WASLRC.s: WASLRC.cc.s
@@ -775,7 +775,7 @@ WASLRC.s: WASLRC.cc.s
 
 # target to generate assembly for a file
 WASLRC.cc.s:
-	cd /home/openec/openec/res/openec && $(MAKE) $(MAKESILENT) -f src/ec/CMakeFiles/ec.dir/build.make src/ec/CMakeFiles/ec.dir/WASLRC.cc.s
+	cd /home/openec/Fast23/storage && $(MAKE) $(MAKESILENT) -f src/ec/CMakeFiles/ec.dir/build.make src/ec/CMakeFiles/ec.dir/WASLRC.cc.s
 .PHONY : WASLRC.cc.s
 
 # Help Target
@@ -879,6 +879,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /home/openec/openec/res/openec && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/openec/Fast23/storage && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

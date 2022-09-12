@@ -57,10 +57,10 @@ RM = /usr/local/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/openec/openec/res/openec
+CMAKE_SOURCE_DIR = /home/openec/Fast23/storage
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/openec/openec/res/openec
+CMAKE_BINARY_DIR = /home/openec/Fast23/storage
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -87,14 +87,14 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	cd /home/openec/openec/res/openec && $(CMAKE_COMMAND) -E cmake_progress_start /home/openec/openec/res/openec/CMakeFiles /home/openec/openec/res/openec/src/protocol//CMakeFiles/progress.marks
-	cd /home/openec/openec/res/openec && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/protocol/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/openec/openec/res/openec/CMakeFiles 0
+	cd /home/openec/Fast23/storage && $(CMAKE_COMMAND) -E cmake_progress_start /home/openec/Fast23/storage/CMakeFiles /home/openec/Fast23/storage/src/protocol//CMakeFiles/progress.marks
+	cd /home/openec/Fast23/storage && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/protocol/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/openec/Fast23/storage/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /home/openec/openec/res/openec && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/protocol/clean
+	cd /home/openec/Fast23/storage && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/protocol/clean
 .PHONY : clean
 
 # The main clean target
@@ -103,22 +103,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /home/openec/openec/res/openec && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/protocol/preinstall
+	cd /home/openec/Fast23/storage && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/protocol/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /home/openec/openec/res/openec && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/protocol/preinstall
+	cd /home/openec/Fast23/storage && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/protocol/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /home/openec/openec/res/openec && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/openec/Fast23/storage && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 src/protocol/CMakeFiles/protocol.dir/rule:
-	cd /home/openec/openec/res/openec && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/protocol/CMakeFiles/protocol.dir/rule
+	cd /home/openec/Fast23/storage && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/protocol/CMakeFiles/protocol.dir/rule
 .PHONY : src/protocol/CMakeFiles/protocol.dir/rule
 
 # Convenience name for target.
@@ -127,7 +127,7 @@ protocol: src/protocol/CMakeFiles/protocol.dir/rule
 
 # fast build rule for target.
 protocol/fast:
-	cd /home/openec/openec/res/openec && $(MAKE) $(MAKESILENT) -f src/protocol/CMakeFiles/protocol.dir/build.make src/protocol/CMakeFiles/protocol.dir/build
+	cd /home/openec/Fast23/storage && $(MAKE) $(MAKESILENT) -f src/protocol/CMakeFiles/protocol.dir/build.make src/protocol/CMakeFiles/protocol.dir/build
 .PHONY : protocol/fast
 
 AGCommand.o: AGCommand.cc.o
@@ -135,7 +135,7 @@ AGCommand.o: AGCommand.cc.o
 
 # target to build an object file
 AGCommand.cc.o:
-	cd /home/openec/openec/res/openec && $(MAKE) $(MAKESILENT) -f src/protocol/CMakeFiles/protocol.dir/build.make src/protocol/CMakeFiles/protocol.dir/AGCommand.cc.o
+	cd /home/openec/Fast23/storage && $(MAKE) $(MAKESILENT) -f src/protocol/CMakeFiles/protocol.dir/build.make src/protocol/CMakeFiles/protocol.dir/AGCommand.cc.o
 .PHONY : AGCommand.cc.o
 
 AGCommand.i: AGCommand.cc.i
@@ -143,7 +143,7 @@ AGCommand.i: AGCommand.cc.i
 
 # target to preprocess a source file
 AGCommand.cc.i:
-	cd /home/openec/openec/res/openec && $(MAKE) $(MAKESILENT) -f src/protocol/CMakeFiles/protocol.dir/build.make src/protocol/CMakeFiles/protocol.dir/AGCommand.cc.i
+	cd /home/openec/Fast23/storage && $(MAKE) $(MAKESILENT) -f src/protocol/CMakeFiles/protocol.dir/build.make src/protocol/CMakeFiles/protocol.dir/AGCommand.cc.i
 .PHONY : AGCommand.cc.i
 
 AGCommand.s: AGCommand.cc.s
@@ -151,7 +151,7 @@ AGCommand.s: AGCommand.cc.s
 
 # target to generate assembly for a file
 AGCommand.cc.s:
-	cd /home/openec/openec/res/openec && $(MAKE) $(MAKESILENT) -f src/protocol/CMakeFiles/protocol.dir/build.make src/protocol/CMakeFiles/protocol.dir/AGCommand.cc.s
+	cd /home/openec/Fast23/storage && $(MAKE) $(MAKESILENT) -f src/protocol/CMakeFiles/protocol.dir/build.make src/protocol/CMakeFiles/protocol.dir/AGCommand.cc.s
 .PHONY : AGCommand.cc.s
 
 CoorCommand.o: CoorCommand.cc.o
@@ -159,7 +159,7 @@ CoorCommand.o: CoorCommand.cc.o
 
 # target to build an object file
 CoorCommand.cc.o:
-	cd /home/openec/openec/res/openec && $(MAKE) $(MAKESILENT) -f src/protocol/CMakeFiles/protocol.dir/build.make src/protocol/CMakeFiles/protocol.dir/CoorCommand.cc.o
+	cd /home/openec/Fast23/storage && $(MAKE) $(MAKESILENT) -f src/protocol/CMakeFiles/protocol.dir/build.make src/protocol/CMakeFiles/protocol.dir/CoorCommand.cc.o
 .PHONY : CoorCommand.cc.o
 
 CoorCommand.i: CoorCommand.cc.i
@@ -167,7 +167,7 @@ CoorCommand.i: CoorCommand.cc.i
 
 # target to preprocess a source file
 CoorCommand.cc.i:
-	cd /home/openec/openec/res/openec && $(MAKE) $(MAKESILENT) -f src/protocol/CMakeFiles/protocol.dir/build.make src/protocol/CMakeFiles/protocol.dir/CoorCommand.cc.i
+	cd /home/openec/Fast23/storage && $(MAKE) $(MAKESILENT) -f src/protocol/CMakeFiles/protocol.dir/build.make src/protocol/CMakeFiles/protocol.dir/CoorCommand.cc.i
 .PHONY : CoorCommand.cc.i
 
 CoorCommand.s: CoorCommand.cc.s
@@ -175,7 +175,7 @@ CoorCommand.s: CoorCommand.cc.s
 
 # target to generate assembly for a file
 CoorCommand.cc.s:
-	cd /home/openec/openec/res/openec && $(MAKE) $(MAKESILENT) -f src/protocol/CMakeFiles/protocol.dir/build.make src/protocol/CMakeFiles/protocol.dir/CoorCommand.cc.s
+	cd /home/openec/Fast23/storage && $(MAKE) $(MAKESILENT) -f src/protocol/CMakeFiles/protocol.dir/build.make src/protocol/CMakeFiles/protocol.dir/CoorCommand.cc.s
 .PHONY : CoorCommand.cc.s
 
 # Help Target
@@ -204,6 +204,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /home/openec/openec/res/openec && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/openec/Fast23/storage && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

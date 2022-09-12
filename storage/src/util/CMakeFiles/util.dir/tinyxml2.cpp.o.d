@@ -1,7 +1,7 @@
 src/util/CMakeFiles/util.dir/tinyxml2.cpp.o: \
- /home/openec/openec/res/openec/src/util/tinyxml2.cpp \
+ /home/openec/Fast23/storage/src/util/tinyxml2.cpp \
  /usr/include/stdc-predef.h \
- /home/openec/openec/res/openec/src/util/tinyxml2.h \
+ /home/openec/Fast23/storage/src/util/tinyxml2.h \
  /usr/include/c++/7/cctype \
  /usr/include/x86_64-linux-gnu/c++/7/bits/c++config.h \
  /usr/include/x86_64-linux-gnu/c++/7/bits/os_defines.h \

@@ -53,10 +53,10 @@ RM = /usr/local/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/openec/openec/res/openec
+CMAKE_SOURCE_DIR = /home/openec/Fast23/storage
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/openec/openec/res/openec
+CMAKE_BINARY_DIR = /home/openec/Fast23/storage
 
 # Include any dependencies generated for this target.
 include src/protocol/CMakeFiles/protocol.dir/depend.make
@@ -72,30 +72,30 @@ include src/protocol/CMakeFiles/protocol.dir/flags.make
 src/protocol/CMakeFiles/protocol.dir/AGCommand.cc.o: src/protocol/CMakeFiles/protocol.dir/flags.make
 src/protocol/CMakeFiles/protocol.dir/AGCommand.cc.o: src/protocol/AGCommand.cc
 src/protocol/CMakeFiles/protocol.dir/AGCommand.cc.o: src/protocol/CMakeFiles/protocol.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/openec/openec/res/openec/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object src/protocol/CMakeFiles/protocol.dir/AGCommand.cc.o"
-	cd /home/openec/openec/res/openec/src/protocol && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/protocol/CMakeFiles/protocol.dir/AGCommand.cc.o -MF CMakeFiles/protocol.dir/AGCommand.cc.o.d -o CMakeFiles/protocol.dir/AGCommand.cc.o -c /home/openec/openec/res/openec/src/protocol/AGCommand.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/openec/Fast23/storage/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object src/protocol/CMakeFiles/protocol.dir/AGCommand.cc.o"
+	cd /home/openec/Fast23/storage/src/protocol && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/protocol/CMakeFiles/protocol.dir/AGCommand.cc.o -MF CMakeFiles/protocol.dir/AGCommand.cc.o.d -o CMakeFiles/protocol.dir/AGCommand.cc.o -c /home/openec/Fast23/storage/src/protocol/AGCommand.cc
 
 src/protocol/CMakeFiles/protocol.dir/AGCommand.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/protocol.dir/AGCommand.cc.i"
-	cd /home/openec/openec/res/openec/src/protocol && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/openec/openec/res/openec/src/protocol/AGCommand.cc > CMakeFiles/protocol.dir/AGCommand.cc.i
+	cd /home/openec/Fast23/storage/src/protocol && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/openec/Fast23/storage/src/protocol/AGCommand.cc > CMakeFiles/protocol.dir/AGCommand.cc.i
 
 src/protocol/CMakeFiles/protocol.dir/AGCommand.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/protocol.dir/AGCommand.cc.s"
-	cd /home/openec/openec/res/openec/src/protocol && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/openec/openec/res/openec/src/protocol/AGCommand.cc -o CMakeFiles/protocol.dir/AGCommand.cc.s
+	cd /home/openec/Fast23/storage/src/protocol && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/openec/Fast23/storage/src/protocol/AGCommand.cc -o CMakeFiles/protocol.dir/AGCommand.cc.s
 
 src/protocol/CMakeFiles/protocol.dir/CoorCommand.cc.o: src/protocol/CMakeFiles/protocol.dir/flags.make
 src/protocol/CMakeFiles/protocol.dir/CoorCommand.cc.o: src/protocol/CoorCommand.cc
 src/protocol/CMakeFiles/protocol.dir/CoorCommand.cc.o: src/protocol/CMakeFiles/protocol.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/openec/openec/res/openec/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object src/protocol/CMakeFiles/protocol.dir/CoorCommand.cc.o"
-	cd /home/openec/openec/res/openec/src/protocol && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/protocol/CMakeFiles/protocol.dir/CoorCommand.cc.o -MF CMakeFiles/protocol.dir/CoorCommand.cc.o.d -o CMakeFiles/protocol.dir/CoorCommand.cc.o -c /home/openec/openec/res/openec/src/protocol/CoorCommand.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/openec/Fast23/storage/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object src/protocol/CMakeFiles/protocol.dir/CoorCommand.cc.o"
+	cd /home/openec/Fast23/storage/src/protocol && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/protocol/CMakeFiles/protocol.dir/CoorCommand.cc.o -MF CMakeFiles/protocol.dir/CoorCommand.cc.o.d -o CMakeFiles/protocol.dir/CoorCommand.cc.o -c /home/openec/Fast23/storage/src/protocol/CoorCommand.cc
 
 src/protocol/CMakeFiles/protocol.dir/CoorCommand.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/protocol.dir/CoorCommand.cc.i"
-	cd /home/openec/openec/res/openec/src/protocol && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/openec/openec/res/openec/src/protocol/CoorCommand.cc > CMakeFiles/protocol.dir/CoorCommand.cc.i
+	cd /home/openec/Fast23/storage/src/protocol && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/openec/Fast23/storage/src/protocol/CoorCommand.cc > CMakeFiles/protocol.dir/CoorCommand.cc.i
 
 src/protocol/CMakeFiles/protocol.dir/CoorCommand.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/protocol.dir/CoorCommand.cc.s"
-	cd /home/openec/openec/res/openec/src/protocol && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/openec/openec/res/openec/src/protocol/CoorCommand.cc -o CMakeFiles/protocol.dir/CoorCommand.cc.s
+	cd /home/openec/Fast23/storage/src/protocol && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/openec/Fast23/storage/src/protocol/CoorCommand.cc -o CMakeFiles/protocol.dir/CoorCommand.cc.s
 
 # Object files for target protocol
 protocol_OBJECTS = \
@@ -109,19 +109,19 @@ src/protocol/libprotocol.a: src/protocol/CMakeFiles/protocol.dir/AGCommand.cc.o
 src/protocol/libprotocol.a: src/protocol/CMakeFiles/protocol.dir/CoorCommand.cc.o
 src/protocol/libprotocol.a: src/protocol/CMakeFiles/protocol.dir/build.make
 src/protocol/libprotocol.a: src/protocol/CMakeFiles/protocol.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/openec/openec/res/openec/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX static library libprotocol.a"
-	cd /home/openec/openec/res/openec/src/protocol && $(CMAKE_COMMAND) -P CMakeFiles/protocol.dir/cmake_clean_target.cmake
-	cd /home/openec/openec/res/openec/src/protocol && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/protocol.dir/link.txt --verbose=$(VERBOSE)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/openec/Fast23/storage/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX static library libprotocol.a"
+	cd /home/openec/Fast23/storage/src/protocol && $(CMAKE_COMMAND) -P CMakeFiles/protocol.dir/cmake_clean_target.cmake
+	cd /home/openec/Fast23/storage/src/protocol && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/protocol.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
 src/protocol/CMakeFiles/protocol.dir/build: src/protocol/libprotocol.a
 .PHONY : src/protocol/CMakeFiles/protocol.dir/build
 
 src/protocol/CMakeFiles/protocol.dir/clean:
-	cd /home/openec/openec/res/openec/src/protocol && $(CMAKE_COMMAND) -P CMakeFiles/protocol.dir/cmake_clean.cmake
+	cd /home/openec/Fast23/storage/src/protocol && $(CMAKE_COMMAND) -P CMakeFiles/protocol.dir/cmake_clean.cmake
 .PHONY : src/protocol/CMakeFiles/protocol.dir/clean
 
 src/protocol/CMakeFiles/protocol.dir/depend:
-	cd /home/openec/openec/res/openec && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/openec/openec/res/openec /home/openec/openec/res/openec/src/protocol /home/openec/openec/res/openec /home/openec/openec/res/openec/src/protocol /home/openec/openec/res/openec/src/protocol/CMakeFiles/protocol.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/openec/Fast23/storage && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/openec/Fast23/storage /home/openec/Fast23/storage/src/protocol /home/openec/Fast23/storage /home/openec/Fast23/storage/src/protocol /home/openec/Fast23/storage/src/protocol/CMakeFiles/protocol.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : src/protocol/CMakeFiles/protocol.dir/depend
 

@@ -84,7 +84,7 @@ void Config::getIpFromIpList(const std::string& ipListPath) {
             id2Ip.insert(std::make_pair(idth, iip));
             idth++;
         }
-        node_num = idth;
+        // assert(node_num == idth);
         reader.close();
     }
     

@@ -1,10 +1,10 @@
 #pragma once
 
 //RS(N,K), K->data chunks, N->data+parity chunks
-#define N 5
-#define RING_SIZE 5
+#define N 9
+#define RING_SIZE 9
 
-#define K 3
+#define K 6
 
 #define CHUNK_SIZE (4ll<<10)//4KB size
 #define CHUNK_SEALED_FACTOR 0.95 //(0,1)

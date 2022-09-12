@@ -1,4 +1,4 @@
-# Install script for directory: /home/openec/openec/res/openec
+# Install script for directory: /home/openec/Fast23/storage
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -44,7 +44,7 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("/home/openec/openec/res/openec/src/cmake_install.cmake")
+  include("/home/openec/Fast23/storage/src/cmake_install.cmake")
 
 endif()
 
@@ -56,5 +56,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/openec/openec/res/openec/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/openec/Fast23/storage/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

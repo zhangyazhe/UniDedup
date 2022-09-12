@@ -53,10 +53,10 @@ RM = /usr/local/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/openec/openec/res/openec
+CMAKE_SOURCE_DIR = /home/openec/Fast23/storage
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/openec/openec/res/openec
+CMAKE_BINARY_DIR = /home/openec/Fast23/storage
 
 # Include any dependencies generated for this target.
 include src/ec/CMakeFiles/ec.dir/depend.make
@@ -72,380 +72,380 @@ include src/ec/CMakeFiles/ec.dir/flags.make
 src/ec/CMakeFiles/ec.dir/BUTTERFLY64.cc.o: src/ec/CMakeFiles/ec.dir/flags.make
 src/ec/CMakeFiles/ec.dir/BUTTERFLY64.cc.o: src/ec/BUTTERFLY64.cc
 src/ec/CMakeFiles/ec.dir/BUTTERFLY64.cc.o: src/ec/CMakeFiles/ec.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/openec/openec/res/openec/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object src/ec/CMakeFiles/ec.dir/BUTTERFLY64.cc.o"
-	cd /home/openec/openec/res/openec/src/ec && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/ec/CMakeFiles/ec.dir/BUTTERFLY64.cc.o -MF CMakeFiles/ec.dir/BUTTERFLY64.cc.o.d -o CMakeFiles/ec.dir/BUTTERFLY64.cc.o -c /home/openec/openec/res/openec/src/ec/BUTTERFLY64.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/openec/Fast23/storage/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object src/ec/CMakeFiles/ec.dir/BUTTERFLY64.cc.o"
+	cd /home/openec/Fast23/storage/src/ec && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/ec/CMakeFiles/ec.dir/BUTTERFLY64.cc.o -MF CMakeFiles/ec.dir/BUTTERFLY64.cc.o.d -o CMakeFiles/ec.dir/BUTTERFLY64.cc.o -c /home/openec/Fast23/storage/src/ec/BUTTERFLY64.cc
 
 src/ec/CMakeFiles/ec.dir/BUTTERFLY64.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ec.dir/BUTTERFLY64.cc.i"
-	cd /home/openec/openec/res/openec/src/ec && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/openec/openec/res/openec/src/ec/BUTTERFLY64.cc > CMakeFiles/ec.dir/BUTTERFLY64.cc.i
+	cd /home/openec/Fast23/storage/src/ec && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/openec/Fast23/storage/src/ec/BUTTERFLY64.cc > CMakeFiles/ec.dir/BUTTERFLY64.cc.i
 
 src/ec/CMakeFiles/ec.dir/BUTTERFLY64.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ec.dir/BUTTERFLY64.cc.s"
-	cd /home/openec/openec/res/openec/src/ec && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/openec/openec/res/openec/src/ec/BUTTERFLY64.cc -o CMakeFiles/ec.dir/BUTTERFLY64.cc.s
+	cd /home/openec/Fast23/storage/src/ec && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/openec/Fast23/storage/src/ec/BUTTERFLY64.cc -o CMakeFiles/ec.dir/BUTTERFLY64.cc.s
 
 src/ec/CMakeFiles/ec.dir/CL262059.cc.o: src/ec/CMakeFiles/ec.dir/flags.make
 src/ec/CMakeFiles/ec.dir/CL262059.cc.o: src/ec/CL262059.cc
 src/ec/CMakeFiles/ec.dir/CL262059.cc.o: src/ec/CMakeFiles/ec.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/openec/openec/res/openec/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object src/ec/CMakeFiles/ec.dir/CL262059.cc.o"
-	cd /home/openec/openec/res/openec/src/ec && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/ec/CMakeFiles/ec.dir/CL262059.cc.o -MF CMakeFiles/ec.dir/CL262059.cc.o.d -o CMakeFiles/ec.dir/CL262059.cc.o -c /home/openec/openec/res/openec/src/ec/CL262059.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/openec/Fast23/storage/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object src/ec/CMakeFiles/ec.dir/CL262059.cc.o"
+	cd /home/openec/Fast23/storage/src/ec && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/ec/CMakeFiles/ec.dir/CL262059.cc.o -MF CMakeFiles/ec.dir/CL262059.cc.o.d -o CMakeFiles/ec.dir/CL262059.cc.o -c /home/openec/Fast23/storage/src/ec/CL262059.cc
 
 src/ec/CMakeFiles/ec.dir/CL262059.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ec.dir/CL262059.cc.i"
-	cd /home/openec/openec/res/openec/src/ec && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/openec/openec/res/openec/src/ec/CL262059.cc > CMakeFiles/ec.dir/CL262059.cc.i
+	cd /home/openec/Fast23/storage/src/ec && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/openec/Fast23/storage/src/ec/CL262059.cc > CMakeFiles/ec.dir/CL262059.cc.i
 
 src/ec/CMakeFiles/ec.dir/CL262059.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ec.dir/CL262059.cc.s"
-	cd /home/openec/openec/res/openec/src/ec && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/openec/openec/res/openec/src/ec/CL262059.cc -o CMakeFiles/ec.dir/CL262059.cc.s
+	cd /home/openec/Fast23/storage/src/ec && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/openec/Fast23/storage/src/ec/CL262059.cc -o CMakeFiles/ec.dir/CL262059.cc.s
 
 src/ec/CMakeFiles/ec.dir/Cluster.cc.o: src/ec/CMakeFiles/ec.dir/flags.make
 src/ec/CMakeFiles/ec.dir/Cluster.cc.o: src/ec/Cluster.cc
 src/ec/CMakeFiles/ec.dir/Cluster.cc.o: src/ec/CMakeFiles/ec.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/openec/openec/res/openec/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object src/ec/CMakeFiles/ec.dir/Cluster.cc.o"
-	cd /home/openec/openec/res/openec/src/ec && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/ec/CMakeFiles/ec.dir/Cluster.cc.o -MF CMakeFiles/ec.dir/Cluster.cc.o.d -o CMakeFiles/ec.dir/Cluster.cc.o -c /home/openec/openec/res/openec/src/ec/Cluster.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/openec/Fast23/storage/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object src/ec/CMakeFiles/ec.dir/Cluster.cc.o"
+	cd /home/openec/Fast23/storage/src/ec && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/ec/CMakeFiles/ec.dir/Cluster.cc.o -MF CMakeFiles/ec.dir/Cluster.cc.o.d -o CMakeFiles/ec.dir/Cluster.cc.o -c /home/openec/Fast23/storage/src/ec/Cluster.cc
 
 src/ec/CMakeFiles/ec.dir/Cluster.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ec.dir/Cluster.cc.i"
-	cd /home/openec/openec/res/openec/src/ec && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/openec/openec/res/openec/src/ec/Cluster.cc > CMakeFiles/ec.dir/Cluster.cc.i
+	cd /home/openec/Fast23/storage/src/ec && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/openec/Fast23/storage/src/ec/Cluster.cc > CMakeFiles/ec.dir/Cluster.cc.i
 
 src/ec/CMakeFiles/ec.dir/Cluster.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ec.dir/Cluster.cc.s"
-	cd /home/openec/openec/res/openec/src/ec && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/openec/openec/res/openec/src/ec/Cluster.cc -o CMakeFiles/ec.dir/Cluster.cc.s
+	cd /home/openec/Fast23/storage/src/ec && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/openec/Fast23/storage/src/ec/Cluster.cc -o CMakeFiles/ec.dir/Cluster.cc.s
 
 src/ec/CMakeFiles/ec.dir/Computation.cc.o: src/ec/CMakeFiles/ec.dir/flags.make
 src/ec/CMakeFiles/ec.dir/Computation.cc.o: src/ec/Computation.cc
 src/ec/CMakeFiles/ec.dir/Computation.cc.o: src/ec/CMakeFiles/ec.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/openec/openec/res/openec/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object src/ec/CMakeFiles/ec.dir/Computation.cc.o"
-	cd /home/openec/openec/res/openec/src/ec && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/ec/CMakeFiles/ec.dir/Computation.cc.o -MF CMakeFiles/ec.dir/Computation.cc.o.d -o CMakeFiles/ec.dir/Computation.cc.o -c /home/openec/openec/res/openec/src/ec/Computation.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/openec/Fast23/storage/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object src/ec/CMakeFiles/ec.dir/Computation.cc.o"
+	cd /home/openec/Fast23/storage/src/ec && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/ec/CMakeFiles/ec.dir/Computation.cc.o -MF CMakeFiles/ec.dir/Computation.cc.o.d -o CMakeFiles/ec.dir/Computation.cc.o -c /home/openec/Fast23/storage/src/ec/Computation.cc
 
 src/ec/CMakeFiles/ec.dir/Computation.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ec.dir/Computation.cc.i"
-	cd /home/openec/openec/res/openec/src/ec && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/openec/openec/res/openec/src/ec/Computation.cc > CMakeFiles/ec.dir/Computation.cc.i
+	cd /home/openec/Fast23/storage/src/ec && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/openec/Fast23/storage/src/ec/Computation.cc > CMakeFiles/ec.dir/Computation.cc.i
 
 src/ec/CMakeFiles/ec.dir/Computation.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ec.dir/Computation.cc.s"
-	cd /home/openec/openec/res/openec/src/ec && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/openec/openec/res/openec/src/ec/Computation.cc -o CMakeFiles/ec.dir/Computation.cc.s
+	cd /home/openec/Fast23/storage/src/ec && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/openec/Fast23/storage/src/ec/Computation.cc -o CMakeFiles/ec.dir/Computation.cc.s
 
 src/ec/CMakeFiles/ec.dir/DRC643.cc.o: src/ec/CMakeFiles/ec.dir/flags.make
 src/ec/CMakeFiles/ec.dir/DRC643.cc.o: src/ec/DRC643.cc
 src/ec/CMakeFiles/ec.dir/DRC643.cc.o: src/ec/CMakeFiles/ec.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/openec/openec/res/openec/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object src/ec/CMakeFiles/ec.dir/DRC643.cc.o"
-	cd /home/openec/openec/res/openec/src/ec && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/ec/CMakeFiles/ec.dir/DRC643.cc.o -MF CMakeFiles/ec.dir/DRC643.cc.o.d -o CMakeFiles/ec.dir/DRC643.cc.o -c /home/openec/openec/res/openec/src/ec/DRC643.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/openec/Fast23/storage/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object src/ec/CMakeFiles/ec.dir/DRC643.cc.o"
+	cd /home/openec/Fast23/storage/src/ec && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/ec/CMakeFiles/ec.dir/DRC643.cc.o -MF CMakeFiles/ec.dir/DRC643.cc.o.d -o CMakeFiles/ec.dir/DRC643.cc.o -c /home/openec/Fast23/storage/src/ec/DRC643.cc
 
 src/ec/CMakeFiles/ec.dir/DRC643.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ec.dir/DRC643.cc.i"
-	cd /home/openec/openec/res/openec/src/ec && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/openec/openec/res/openec/src/ec/DRC643.cc > CMakeFiles/ec.dir/DRC643.cc.i
+	cd /home/openec/Fast23/storage/src/ec && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/openec/Fast23/storage/src/ec/DRC643.cc > CMakeFiles/ec.dir/DRC643.cc.i
 
 src/ec/CMakeFiles/ec.dir/DRC643.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ec.dir/DRC643.cc.s"
-	cd /home/openec/openec/res/openec/src/ec && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/openec/openec/res/openec/src/ec/DRC643.cc -o CMakeFiles/ec.dir/DRC643.cc.s
+	cd /home/openec/Fast23/storage/src/ec && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/openec/Fast23/storage/src/ec/DRC643.cc -o CMakeFiles/ec.dir/DRC643.cc.s
 
 src/ec/CMakeFiles/ec.dir/DRC963.cc.o: src/ec/CMakeFiles/ec.dir/flags.make
 src/ec/CMakeFiles/ec.dir/DRC963.cc.o: src/ec/DRC963.cc
 src/ec/CMakeFiles/ec.dir/DRC963.cc.o: src/ec/CMakeFiles/ec.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/openec/openec/res/openec/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object src/ec/CMakeFiles/ec.dir/DRC963.cc.o"
-	cd /home/openec/openec/res/openec/src/ec && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/ec/CMakeFiles/ec.dir/DRC963.cc.o -MF CMakeFiles/ec.dir/DRC963.cc.o.d -o CMakeFiles/ec.dir/DRC963.cc.o -c /home/openec/openec/res/openec/src/ec/DRC963.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/openec/Fast23/storage/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object src/ec/CMakeFiles/ec.dir/DRC963.cc.o"
+	cd /home/openec/Fast23/storage/src/ec && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/ec/CMakeFiles/ec.dir/DRC963.cc.o -MF CMakeFiles/ec.dir/DRC963.cc.o.d -o CMakeFiles/ec.dir/DRC963.cc.o -c /home/openec/Fast23/storage/src/ec/DRC963.cc
 
 src/ec/CMakeFiles/ec.dir/DRC963.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ec.dir/DRC963.cc.i"
-	cd /home/openec/openec/res/openec/src/ec && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/openec/openec/res/openec/src/ec/DRC963.cc > CMakeFiles/ec.dir/DRC963.cc.i
+	cd /home/openec/Fast23/storage/src/ec && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/openec/Fast23/storage/src/ec/DRC963.cc > CMakeFiles/ec.dir/DRC963.cc.i
 
 src/ec/CMakeFiles/ec.dir/DRC963.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ec.dir/DRC963.cc.s"
-	cd /home/openec/openec/res/openec/src/ec && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/openec/openec/res/openec/src/ec/DRC963.cc -o CMakeFiles/ec.dir/DRC963.cc.s
+	cd /home/openec/Fast23/storage/src/ec && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/openec/Fast23/storage/src/ec/DRC963.cc -o CMakeFiles/ec.dir/DRC963.cc.s
 
 src/ec/CMakeFiles/ec.dir/ECBase.cc.o: src/ec/CMakeFiles/ec.dir/flags.make
 src/ec/CMakeFiles/ec.dir/ECBase.cc.o: src/ec/ECBase.cc
 src/ec/CMakeFiles/ec.dir/ECBase.cc.o: src/ec/CMakeFiles/ec.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/openec/openec/res/openec/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object src/ec/CMakeFiles/ec.dir/ECBase.cc.o"
-	cd /home/openec/openec/res/openec/src/ec && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/ec/CMakeFiles/ec.dir/ECBase.cc.o -MF CMakeFiles/ec.dir/ECBase.cc.o.d -o CMakeFiles/ec.dir/ECBase.cc.o -c /home/openec/openec/res/openec/src/ec/ECBase.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/openec/Fast23/storage/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object src/ec/CMakeFiles/ec.dir/ECBase.cc.o"
+	cd /home/openec/Fast23/storage/src/ec && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/ec/CMakeFiles/ec.dir/ECBase.cc.o -MF CMakeFiles/ec.dir/ECBase.cc.o.d -o CMakeFiles/ec.dir/ECBase.cc.o -c /home/openec/Fast23/storage/src/ec/ECBase.cc
 
 src/ec/CMakeFiles/ec.dir/ECBase.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ec.dir/ECBase.cc.i"
-	cd /home/openec/openec/res/openec/src/ec && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/openec/openec/res/openec/src/ec/ECBase.cc > CMakeFiles/ec.dir/ECBase.cc.i
+	cd /home/openec/Fast23/storage/src/ec && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/openec/Fast23/storage/src/ec/ECBase.cc > CMakeFiles/ec.dir/ECBase.cc.i
 
 src/ec/CMakeFiles/ec.dir/ECBase.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ec.dir/ECBase.cc.s"
-	cd /home/openec/openec/res/openec/src/ec && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/openec/openec/res/openec/src/ec/ECBase.cc -o CMakeFiles/ec.dir/ECBase.cc.s
+	cd /home/openec/Fast23/storage/src/ec && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/openec/Fast23/storage/src/ec/ECBase.cc -o CMakeFiles/ec.dir/ECBase.cc.s
 
 src/ec/CMakeFiles/ec.dir/ECDAG.cc.o: src/ec/CMakeFiles/ec.dir/flags.make
 src/ec/CMakeFiles/ec.dir/ECDAG.cc.o: src/ec/ECDAG.cc
 src/ec/CMakeFiles/ec.dir/ECDAG.cc.o: src/ec/CMakeFiles/ec.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/openec/openec/res/openec/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object src/ec/CMakeFiles/ec.dir/ECDAG.cc.o"
-	cd /home/openec/openec/res/openec/src/ec && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/ec/CMakeFiles/ec.dir/ECDAG.cc.o -MF CMakeFiles/ec.dir/ECDAG.cc.o.d -o CMakeFiles/ec.dir/ECDAG.cc.o -c /home/openec/openec/res/openec/src/ec/ECDAG.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/openec/Fast23/storage/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object src/ec/CMakeFiles/ec.dir/ECDAG.cc.o"
+	cd /home/openec/Fast23/storage/src/ec && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/ec/CMakeFiles/ec.dir/ECDAG.cc.o -MF CMakeFiles/ec.dir/ECDAG.cc.o.d -o CMakeFiles/ec.dir/ECDAG.cc.o -c /home/openec/Fast23/storage/src/ec/ECDAG.cc
 
 src/ec/CMakeFiles/ec.dir/ECDAG.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ec.dir/ECDAG.cc.i"
-	cd /home/openec/openec/res/openec/src/ec && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/openec/openec/res/openec/src/ec/ECDAG.cc > CMakeFiles/ec.dir/ECDAG.cc.i
+	cd /home/openec/Fast23/storage/src/ec && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/openec/Fast23/storage/src/ec/ECDAG.cc > CMakeFiles/ec.dir/ECDAG.cc.i
 
 src/ec/CMakeFiles/ec.dir/ECDAG.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ec.dir/ECDAG.cc.s"
-	cd /home/openec/openec/res/openec/src/ec && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/openec/openec/res/openec/src/ec/ECDAG.cc -o CMakeFiles/ec.dir/ECDAG.cc.s
+	cd /home/openec/Fast23/storage/src/ec && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/openec/Fast23/storage/src/ec/ECDAG.cc -o CMakeFiles/ec.dir/ECDAG.cc.s
 
 src/ec/CMakeFiles/ec.dir/ECNode.cc.o: src/ec/CMakeFiles/ec.dir/flags.make
 src/ec/CMakeFiles/ec.dir/ECNode.cc.o: src/ec/ECNode.cc
 src/ec/CMakeFiles/ec.dir/ECNode.cc.o: src/ec/CMakeFiles/ec.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/openec/openec/res/openec/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object src/ec/CMakeFiles/ec.dir/ECNode.cc.o"
-	cd /home/openec/openec/res/openec/src/ec && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/ec/CMakeFiles/ec.dir/ECNode.cc.o -MF CMakeFiles/ec.dir/ECNode.cc.o.d -o CMakeFiles/ec.dir/ECNode.cc.o -c /home/openec/openec/res/openec/src/ec/ECNode.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/openec/Fast23/storage/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object src/ec/CMakeFiles/ec.dir/ECNode.cc.o"
+	cd /home/openec/Fast23/storage/src/ec && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/ec/CMakeFiles/ec.dir/ECNode.cc.o -MF CMakeFiles/ec.dir/ECNode.cc.o.d -o CMakeFiles/ec.dir/ECNode.cc.o -c /home/openec/Fast23/storage/src/ec/ECNode.cc
 
 src/ec/CMakeFiles/ec.dir/ECNode.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ec.dir/ECNode.cc.i"
-	cd /home/openec/openec/res/openec/src/ec && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/openec/openec/res/openec/src/ec/ECNode.cc > CMakeFiles/ec.dir/ECNode.cc.i
+	cd /home/openec/Fast23/storage/src/ec && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/openec/Fast23/storage/src/ec/ECNode.cc > CMakeFiles/ec.dir/ECNode.cc.i
 
 src/ec/CMakeFiles/ec.dir/ECNode.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ec.dir/ECNode.cc.s"
-	cd /home/openec/openec/res/openec/src/ec && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/openec/openec/res/openec/src/ec/ECNode.cc -o CMakeFiles/ec.dir/ECNode.cc.s
+	cd /home/openec/Fast23/storage/src/ec && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/openec/Fast23/storage/src/ec/ECNode.cc -o CMakeFiles/ec.dir/ECNode.cc.s
 
 src/ec/CMakeFiles/ec.dir/ECPolicy.cc.o: src/ec/CMakeFiles/ec.dir/flags.make
 src/ec/CMakeFiles/ec.dir/ECPolicy.cc.o: src/ec/ECPolicy.cc
 src/ec/CMakeFiles/ec.dir/ECPolicy.cc.o: src/ec/CMakeFiles/ec.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/openec/openec/res/openec/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object src/ec/CMakeFiles/ec.dir/ECPolicy.cc.o"
-	cd /home/openec/openec/res/openec/src/ec && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/ec/CMakeFiles/ec.dir/ECPolicy.cc.o -MF CMakeFiles/ec.dir/ECPolicy.cc.o.d -o CMakeFiles/ec.dir/ECPolicy.cc.o -c /home/openec/openec/res/openec/src/ec/ECPolicy.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/openec/Fast23/storage/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object src/ec/CMakeFiles/ec.dir/ECPolicy.cc.o"
+	cd /home/openec/Fast23/storage/src/ec && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/ec/CMakeFiles/ec.dir/ECPolicy.cc.o -MF CMakeFiles/ec.dir/ECPolicy.cc.o.d -o CMakeFiles/ec.dir/ECPolicy.cc.o -c /home/openec/Fast23/storage/src/ec/ECPolicy.cc
 
 src/ec/CMakeFiles/ec.dir/ECPolicy.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ec.dir/ECPolicy.cc.i"
-	cd /home/openec/openec/res/openec/src/ec && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/openec/openec/res/openec/src/ec/ECPolicy.cc > CMakeFiles/ec.dir/ECPolicy.cc.i
+	cd /home/openec/Fast23/storage/src/ec && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/openec/Fast23/storage/src/ec/ECPolicy.cc > CMakeFiles/ec.dir/ECPolicy.cc.i
 
 src/ec/CMakeFiles/ec.dir/ECPolicy.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ec.dir/ECPolicy.cc.s"
-	cd /home/openec/openec/res/openec/src/ec && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/openec/openec/res/openec/src/ec/ECPolicy.cc -o CMakeFiles/ec.dir/ECPolicy.cc.s
+	cd /home/openec/Fast23/storage/src/ec && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/openec/Fast23/storage/src/ec/ECPolicy.cc -o CMakeFiles/ec.dir/ECPolicy.cc.s
 
 src/ec/CMakeFiles/ec.dir/ECTask.cc.o: src/ec/CMakeFiles/ec.dir/flags.make
 src/ec/CMakeFiles/ec.dir/ECTask.cc.o: src/ec/ECTask.cc
 src/ec/CMakeFiles/ec.dir/ECTask.cc.o: src/ec/CMakeFiles/ec.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/openec/openec/res/openec/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object src/ec/CMakeFiles/ec.dir/ECTask.cc.o"
-	cd /home/openec/openec/res/openec/src/ec && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/ec/CMakeFiles/ec.dir/ECTask.cc.o -MF CMakeFiles/ec.dir/ECTask.cc.o.d -o CMakeFiles/ec.dir/ECTask.cc.o -c /home/openec/openec/res/openec/src/ec/ECTask.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/openec/Fast23/storage/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object src/ec/CMakeFiles/ec.dir/ECTask.cc.o"
+	cd /home/openec/Fast23/storage/src/ec && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/ec/CMakeFiles/ec.dir/ECTask.cc.o -MF CMakeFiles/ec.dir/ECTask.cc.o.d -o CMakeFiles/ec.dir/ECTask.cc.o -c /home/openec/Fast23/storage/src/ec/ECTask.cc
 
 src/ec/CMakeFiles/ec.dir/ECTask.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ec.dir/ECTask.cc.i"
-	cd /home/openec/openec/res/openec/src/ec && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/openec/openec/res/openec/src/ec/ECTask.cc > CMakeFiles/ec.dir/ECTask.cc.i
+	cd /home/openec/Fast23/storage/src/ec && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/openec/Fast23/storage/src/ec/ECTask.cc > CMakeFiles/ec.dir/ECTask.cc.i
 
 src/ec/CMakeFiles/ec.dir/ECTask.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ec.dir/ECTask.cc.s"
-	cd /home/openec/openec/res/openec/src/ec && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/openec/openec/res/openec/src/ec/ECTask.cc -o CMakeFiles/ec.dir/ECTask.cc.s
+	cd /home/openec/Fast23/storage/src/ec && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/openec/Fast23/storage/src/ec/ECTask.cc -o CMakeFiles/ec.dir/ECTask.cc.s
 
 src/ec/CMakeFiles/ec.dir/IA.cc.o: src/ec/CMakeFiles/ec.dir/flags.make
 src/ec/CMakeFiles/ec.dir/IA.cc.o: src/ec/IA.cc
 src/ec/CMakeFiles/ec.dir/IA.cc.o: src/ec/CMakeFiles/ec.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/openec/openec/res/openec/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object src/ec/CMakeFiles/ec.dir/IA.cc.o"
-	cd /home/openec/openec/res/openec/src/ec && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/ec/CMakeFiles/ec.dir/IA.cc.o -MF CMakeFiles/ec.dir/IA.cc.o.d -o CMakeFiles/ec.dir/IA.cc.o -c /home/openec/openec/res/openec/src/ec/IA.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/openec/Fast23/storage/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object src/ec/CMakeFiles/ec.dir/IA.cc.o"
+	cd /home/openec/Fast23/storage/src/ec && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/ec/CMakeFiles/ec.dir/IA.cc.o -MF CMakeFiles/ec.dir/IA.cc.o.d -o CMakeFiles/ec.dir/IA.cc.o -c /home/openec/Fast23/storage/src/ec/IA.cc
 
 src/ec/CMakeFiles/ec.dir/IA.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ec.dir/IA.cc.i"
-	cd /home/openec/openec/res/openec/src/ec && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/openec/openec/res/openec/src/ec/IA.cc > CMakeFiles/ec.dir/IA.cc.i
+	cd /home/openec/Fast23/storage/src/ec && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/openec/Fast23/storage/src/ec/IA.cc > CMakeFiles/ec.dir/IA.cc.i
 
 src/ec/CMakeFiles/ec.dir/IA.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ec.dir/IA.cc.s"
-	cd /home/openec/openec/res/openec/src/ec && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/openec/openec/res/openec/src/ec/IA.cc -o CMakeFiles/ec.dir/IA.cc.s
+	cd /home/openec/Fast23/storage/src/ec && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/openec/Fast23/storage/src/ec/IA.cc -o CMakeFiles/ec.dir/IA.cc.s
 
 src/ec/CMakeFiles/ec.dir/LRC32202.cc.o: src/ec/CMakeFiles/ec.dir/flags.make
 src/ec/CMakeFiles/ec.dir/LRC32202.cc.o: src/ec/LRC32202.cc
 src/ec/CMakeFiles/ec.dir/LRC32202.cc.o: src/ec/CMakeFiles/ec.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/openec/openec/res/openec/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object src/ec/CMakeFiles/ec.dir/LRC32202.cc.o"
-	cd /home/openec/openec/res/openec/src/ec && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/ec/CMakeFiles/ec.dir/LRC32202.cc.o -MF CMakeFiles/ec.dir/LRC32202.cc.o.d -o CMakeFiles/ec.dir/LRC32202.cc.o -c /home/openec/openec/res/openec/src/ec/LRC32202.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/openec/Fast23/storage/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object src/ec/CMakeFiles/ec.dir/LRC32202.cc.o"
+	cd /home/openec/Fast23/storage/src/ec && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/ec/CMakeFiles/ec.dir/LRC32202.cc.o -MF CMakeFiles/ec.dir/LRC32202.cc.o.d -o CMakeFiles/ec.dir/LRC32202.cc.o -c /home/openec/Fast23/storage/src/ec/LRC32202.cc
 
 src/ec/CMakeFiles/ec.dir/LRC32202.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ec.dir/LRC32202.cc.i"
-	cd /home/openec/openec/res/openec/src/ec && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/openec/openec/res/openec/src/ec/LRC32202.cc > CMakeFiles/ec.dir/LRC32202.cc.i
+	cd /home/openec/Fast23/storage/src/ec && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/openec/Fast23/storage/src/ec/LRC32202.cc > CMakeFiles/ec.dir/LRC32202.cc.i
 
 src/ec/CMakeFiles/ec.dir/LRC32202.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ec.dir/LRC32202.cc.s"
-	cd /home/openec/openec/res/openec/src/ec && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/openec/openec/res/openec/src/ec/LRC32202.cc -o CMakeFiles/ec.dir/LRC32202.cc.s
+	cd /home/openec/Fast23/storage/src/ec && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/openec/Fast23/storage/src/ec/LRC32202.cc -o CMakeFiles/ec.dir/LRC32202.cc.s
 
 src/ec/CMakeFiles/ec.dir/NativeRS.cc.o: src/ec/CMakeFiles/ec.dir/flags.make
 src/ec/CMakeFiles/ec.dir/NativeRS.cc.o: src/ec/NativeRS.cc
 src/ec/CMakeFiles/ec.dir/NativeRS.cc.o: src/ec/CMakeFiles/ec.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/openec/openec/res/openec/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object src/ec/CMakeFiles/ec.dir/NativeRS.cc.o"
-	cd /home/openec/openec/res/openec/src/ec && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/ec/CMakeFiles/ec.dir/NativeRS.cc.o -MF CMakeFiles/ec.dir/NativeRS.cc.o.d -o CMakeFiles/ec.dir/NativeRS.cc.o -c /home/openec/openec/res/openec/src/ec/NativeRS.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/openec/Fast23/storage/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object src/ec/CMakeFiles/ec.dir/NativeRS.cc.o"
+	cd /home/openec/Fast23/storage/src/ec && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/ec/CMakeFiles/ec.dir/NativeRS.cc.o -MF CMakeFiles/ec.dir/NativeRS.cc.o.d -o CMakeFiles/ec.dir/NativeRS.cc.o -c /home/openec/Fast23/storage/src/ec/NativeRS.cc
 
 src/ec/CMakeFiles/ec.dir/NativeRS.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ec.dir/NativeRS.cc.i"
-	cd /home/openec/openec/res/openec/src/ec && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/openec/openec/res/openec/src/ec/NativeRS.cc > CMakeFiles/ec.dir/NativeRS.cc.i
+	cd /home/openec/Fast23/storage/src/ec && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/openec/Fast23/storage/src/ec/NativeRS.cc > CMakeFiles/ec.dir/NativeRS.cc.i
 
 src/ec/CMakeFiles/ec.dir/NativeRS.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ec.dir/NativeRS.cc.s"
-	cd /home/openec/openec/res/openec/src/ec && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/openec/openec/res/openec/src/ec/NativeRS.cc -o CMakeFiles/ec.dir/NativeRS.cc.s
+	cd /home/openec/Fast23/storage/src/ec && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/openec/Fast23/storage/src/ec/NativeRS.cc -o CMakeFiles/ec.dir/NativeRS.cc.s
 
 src/ec/CMakeFiles/ec.dir/OfflineECPool.cc.o: src/ec/CMakeFiles/ec.dir/flags.make
 src/ec/CMakeFiles/ec.dir/OfflineECPool.cc.o: src/ec/OfflineECPool.cc
 src/ec/CMakeFiles/ec.dir/OfflineECPool.cc.o: src/ec/CMakeFiles/ec.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/openec/openec/res/openec/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object src/ec/CMakeFiles/ec.dir/OfflineECPool.cc.o"
-	cd /home/openec/openec/res/openec/src/ec && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/ec/CMakeFiles/ec.dir/OfflineECPool.cc.o -MF CMakeFiles/ec.dir/OfflineECPool.cc.o.d -o CMakeFiles/ec.dir/OfflineECPool.cc.o -c /home/openec/openec/res/openec/src/ec/OfflineECPool.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/openec/Fast23/storage/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object src/ec/CMakeFiles/ec.dir/OfflineECPool.cc.o"
+	cd /home/openec/Fast23/storage/src/ec && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/ec/CMakeFiles/ec.dir/OfflineECPool.cc.o -MF CMakeFiles/ec.dir/OfflineECPool.cc.o.d -o CMakeFiles/ec.dir/OfflineECPool.cc.o -c /home/openec/Fast23/storage/src/ec/OfflineECPool.cc
 
 src/ec/CMakeFiles/ec.dir/OfflineECPool.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ec.dir/OfflineECPool.cc.i"
-	cd /home/openec/openec/res/openec/src/ec && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/openec/openec/res/openec/src/ec/OfflineECPool.cc > CMakeFiles/ec.dir/OfflineECPool.cc.i
+	cd /home/openec/Fast23/storage/src/ec && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/openec/Fast23/storage/src/ec/OfflineECPool.cc > CMakeFiles/ec.dir/OfflineECPool.cc.i
 
 src/ec/CMakeFiles/ec.dir/OfflineECPool.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ec.dir/OfflineECPool.cc.s"
-	cd /home/openec/openec/res/openec/src/ec && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/openec/openec/res/openec/src/ec/OfflineECPool.cc -o CMakeFiles/ec.dir/OfflineECPool.cc.s
+	cd /home/openec/Fast23/storage/src/ec && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/openec/Fast23/storage/src/ec/OfflineECPool.cc -o CMakeFiles/ec.dir/OfflineECPool.cc.s
 
 src/ec/CMakeFiles/ec.dir/RSAS.cc.o: src/ec/CMakeFiles/ec.dir/flags.make
 src/ec/CMakeFiles/ec.dir/RSAS.cc.o: src/ec/RSAS.cc
 src/ec/CMakeFiles/ec.dir/RSAS.cc.o: src/ec/CMakeFiles/ec.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/openec/openec/res/openec/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object src/ec/CMakeFiles/ec.dir/RSAS.cc.o"
-	cd /home/openec/openec/res/openec/src/ec && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/ec/CMakeFiles/ec.dir/RSAS.cc.o -MF CMakeFiles/ec.dir/RSAS.cc.o.d -o CMakeFiles/ec.dir/RSAS.cc.o -c /home/openec/openec/res/openec/src/ec/RSAS.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/openec/Fast23/storage/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object src/ec/CMakeFiles/ec.dir/RSAS.cc.o"
+	cd /home/openec/Fast23/storage/src/ec && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/ec/CMakeFiles/ec.dir/RSAS.cc.o -MF CMakeFiles/ec.dir/RSAS.cc.o.d -o CMakeFiles/ec.dir/RSAS.cc.o -c /home/openec/Fast23/storage/src/ec/RSAS.cc
 
 src/ec/CMakeFiles/ec.dir/RSAS.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ec.dir/RSAS.cc.i"
-	cd /home/openec/openec/res/openec/src/ec && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/openec/openec/res/openec/src/ec/RSAS.cc > CMakeFiles/ec.dir/RSAS.cc.i
+	cd /home/openec/Fast23/storage/src/ec && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/openec/Fast23/storage/src/ec/RSAS.cc > CMakeFiles/ec.dir/RSAS.cc.i
 
 src/ec/CMakeFiles/ec.dir/RSAS.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ec.dir/RSAS.cc.s"
-	cd /home/openec/openec/res/openec/src/ec && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/openec/openec/res/openec/src/ec/RSAS.cc -o CMakeFiles/ec.dir/RSAS.cc.s
+	cd /home/openec/Fast23/storage/src/ec && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/openec/Fast23/storage/src/ec/RSAS.cc -o CMakeFiles/ec.dir/RSAS.cc.s
 
 src/ec/CMakeFiles/ec.dir/RSASP.cc.o: src/ec/CMakeFiles/ec.dir/flags.make
 src/ec/CMakeFiles/ec.dir/RSASP.cc.o: src/ec/RSASP.cc
 src/ec/CMakeFiles/ec.dir/RSASP.cc.o: src/ec/CMakeFiles/ec.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/openec/openec/res/openec/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object src/ec/CMakeFiles/ec.dir/RSASP.cc.o"
-	cd /home/openec/openec/res/openec/src/ec && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/ec/CMakeFiles/ec.dir/RSASP.cc.o -MF CMakeFiles/ec.dir/RSASP.cc.o.d -o CMakeFiles/ec.dir/RSASP.cc.o -c /home/openec/openec/res/openec/src/ec/RSASP.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/openec/Fast23/storage/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object src/ec/CMakeFiles/ec.dir/RSASP.cc.o"
+	cd /home/openec/Fast23/storage/src/ec && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/ec/CMakeFiles/ec.dir/RSASP.cc.o -MF CMakeFiles/ec.dir/RSASP.cc.o.d -o CMakeFiles/ec.dir/RSASP.cc.o -c /home/openec/Fast23/storage/src/ec/RSASP.cc
 
 src/ec/CMakeFiles/ec.dir/RSASP.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ec.dir/RSASP.cc.i"
-	cd /home/openec/openec/res/openec/src/ec && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/openec/openec/res/openec/src/ec/RSASP.cc > CMakeFiles/ec.dir/RSASP.cc.i
+	cd /home/openec/Fast23/storage/src/ec && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/openec/Fast23/storage/src/ec/RSASP.cc > CMakeFiles/ec.dir/RSASP.cc.i
 
 src/ec/CMakeFiles/ec.dir/RSASP.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ec.dir/RSASP.cc.s"
-	cd /home/openec/openec/res/openec/src/ec && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/openec/openec/res/openec/src/ec/RSASP.cc -o CMakeFiles/ec.dir/RSASP.cc.s
+	cd /home/openec/Fast23/storage/src/ec && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/openec/Fast23/storage/src/ec/RSASP.cc -o CMakeFiles/ec.dir/RSASP.cc.s
 
 src/ec/CMakeFiles/ec.dir/RSBINDX.cc.o: src/ec/CMakeFiles/ec.dir/flags.make
 src/ec/CMakeFiles/ec.dir/RSBINDX.cc.o: src/ec/RSBINDX.cc
 src/ec/CMakeFiles/ec.dir/RSBINDX.cc.o: src/ec/CMakeFiles/ec.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/openec/openec/res/openec/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building CXX object src/ec/CMakeFiles/ec.dir/RSBINDX.cc.o"
-	cd /home/openec/openec/res/openec/src/ec && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/ec/CMakeFiles/ec.dir/RSBINDX.cc.o -MF CMakeFiles/ec.dir/RSBINDX.cc.o.d -o CMakeFiles/ec.dir/RSBINDX.cc.o -c /home/openec/openec/res/openec/src/ec/RSBINDX.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/openec/Fast23/storage/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building CXX object src/ec/CMakeFiles/ec.dir/RSBINDX.cc.o"
+	cd /home/openec/Fast23/storage/src/ec && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/ec/CMakeFiles/ec.dir/RSBINDX.cc.o -MF CMakeFiles/ec.dir/RSBINDX.cc.o.d -o CMakeFiles/ec.dir/RSBINDX.cc.o -c /home/openec/Fast23/storage/src/ec/RSBINDX.cc
 
 src/ec/CMakeFiles/ec.dir/RSBINDX.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ec.dir/RSBINDX.cc.i"
-	cd /home/openec/openec/res/openec/src/ec && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/openec/openec/res/openec/src/ec/RSBINDX.cc > CMakeFiles/ec.dir/RSBINDX.cc.i
+	cd /home/openec/Fast23/storage/src/ec && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/openec/Fast23/storage/src/ec/RSBINDX.cc > CMakeFiles/ec.dir/RSBINDX.cc.i
 
 src/ec/CMakeFiles/ec.dir/RSBINDX.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ec.dir/RSBINDX.cc.s"
-	cd /home/openec/openec/res/openec/src/ec && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/openec/openec/res/openec/src/ec/RSBINDX.cc -o CMakeFiles/ec.dir/RSBINDX.cc.s
+	cd /home/openec/Fast23/storage/src/ec && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/openec/Fast23/storage/src/ec/RSBINDX.cc -o CMakeFiles/ec.dir/RSBINDX.cc.s
 
 src/ec/CMakeFiles/ec.dir/RSCONV.cc.o: src/ec/CMakeFiles/ec.dir/flags.make
 src/ec/CMakeFiles/ec.dir/RSCONV.cc.o: src/ec/RSCONV.cc
 src/ec/CMakeFiles/ec.dir/RSCONV.cc.o: src/ec/CMakeFiles/ec.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/openec/openec/res/openec/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building CXX object src/ec/CMakeFiles/ec.dir/RSCONV.cc.o"
-	cd /home/openec/openec/res/openec/src/ec && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/ec/CMakeFiles/ec.dir/RSCONV.cc.o -MF CMakeFiles/ec.dir/RSCONV.cc.o.d -o CMakeFiles/ec.dir/RSCONV.cc.o -c /home/openec/openec/res/openec/src/ec/RSCONV.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/openec/Fast23/storage/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building CXX object src/ec/CMakeFiles/ec.dir/RSCONV.cc.o"
+	cd /home/openec/Fast23/storage/src/ec && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/ec/CMakeFiles/ec.dir/RSCONV.cc.o -MF CMakeFiles/ec.dir/RSCONV.cc.o.d -o CMakeFiles/ec.dir/RSCONV.cc.o -c /home/openec/Fast23/storage/src/ec/RSCONV.cc
 
 src/ec/CMakeFiles/ec.dir/RSCONV.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ec.dir/RSCONV.cc.i"
-	cd /home/openec/openec/res/openec/src/ec && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/openec/openec/res/openec/src/ec/RSCONV.cc > CMakeFiles/ec.dir/RSCONV.cc.i
+	cd /home/openec/Fast23/storage/src/ec && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/openec/Fast23/storage/src/ec/RSCONV.cc > CMakeFiles/ec.dir/RSCONV.cc.i
 
 src/ec/CMakeFiles/ec.dir/RSCONV.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ec.dir/RSCONV.cc.s"
-	cd /home/openec/openec/res/openec/src/ec && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/openec/openec/res/openec/src/ec/RSCONV.cc -o CMakeFiles/ec.dir/RSCONV.cc.s
+	cd /home/openec/Fast23/storage/src/ec && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/openec/Fast23/storage/src/ec/RSCONV.cc -o CMakeFiles/ec.dir/RSCONV.cc.s
 
 src/ec/CMakeFiles/ec.dir/RSNCONV.cc.o: src/ec/CMakeFiles/ec.dir/flags.make
 src/ec/CMakeFiles/ec.dir/RSNCONV.cc.o: src/ec/RSNCONV.cc
 src/ec/CMakeFiles/ec.dir/RSNCONV.cc.o: src/ec/CMakeFiles/ec.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/openec/openec/res/openec/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building CXX object src/ec/CMakeFiles/ec.dir/RSNCONV.cc.o"
-	cd /home/openec/openec/res/openec/src/ec && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/ec/CMakeFiles/ec.dir/RSNCONV.cc.o -MF CMakeFiles/ec.dir/RSNCONV.cc.o.d -o CMakeFiles/ec.dir/RSNCONV.cc.o -c /home/openec/openec/res/openec/src/ec/RSNCONV.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/openec/Fast23/storage/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building CXX object src/ec/CMakeFiles/ec.dir/RSNCONV.cc.o"
+	cd /home/openec/Fast23/storage/src/ec && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/ec/CMakeFiles/ec.dir/RSNCONV.cc.o -MF CMakeFiles/ec.dir/RSNCONV.cc.o.d -o CMakeFiles/ec.dir/RSNCONV.cc.o -c /home/openec/Fast23/storage/src/ec/RSNCONV.cc
 
 src/ec/CMakeFiles/ec.dir/RSNCONV.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ec.dir/RSNCONV.cc.i"
-	cd /home/openec/openec/res/openec/src/ec && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/openec/openec/res/openec/src/ec/RSNCONV.cc > CMakeFiles/ec.dir/RSNCONV.cc.i
+	cd /home/openec/Fast23/storage/src/ec && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/openec/Fast23/storage/src/ec/RSNCONV.cc > CMakeFiles/ec.dir/RSNCONV.cc.i
 
 src/ec/CMakeFiles/ec.dir/RSNCONV.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ec.dir/RSNCONV.cc.s"
-	cd /home/openec/openec/res/openec/src/ec && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/openec/openec/res/openec/src/ec/RSNCONV.cc -o CMakeFiles/ec.dir/RSNCONV.cc.s
+	cd /home/openec/Fast23/storage/src/ec && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/openec/Fast23/storage/src/ec/RSNCONV.cc -o CMakeFiles/ec.dir/RSNCONV.cc.s
 
 src/ec/CMakeFiles/ec.dir/RSNSYS.cc.o: src/ec/CMakeFiles/ec.dir/flags.make
 src/ec/CMakeFiles/ec.dir/RSNSYS.cc.o: src/ec/RSNSYS.cc
 src/ec/CMakeFiles/ec.dir/RSNSYS.cc.o: src/ec/CMakeFiles/ec.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/openec/openec/res/openec/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Building CXX object src/ec/CMakeFiles/ec.dir/RSNSYS.cc.o"
-	cd /home/openec/openec/res/openec/src/ec && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/ec/CMakeFiles/ec.dir/RSNSYS.cc.o -MF CMakeFiles/ec.dir/RSNSYS.cc.o.d -o CMakeFiles/ec.dir/RSNSYS.cc.o -c /home/openec/openec/res/openec/src/ec/RSNSYS.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/openec/Fast23/storage/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Building CXX object src/ec/CMakeFiles/ec.dir/RSNSYS.cc.o"
+	cd /home/openec/Fast23/storage/src/ec && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/ec/CMakeFiles/ec.dir/RSNSYS.cc.o -MF CMakeFiles/ec.dir/RSNSYS.cc.o.d -o CMakeFiles/ec.dir/RSNSYS.cc.o -c /home/openec/Fast23/storage/src/ec/RSNSYS.cc
 
 src/ec/CMakeFiles/ec.dir/RSNSYS.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ec.dir/RSNSYS.cc.i"
-	cd /home/openec/openec/res/openec/src/ec && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/openec/openec/res/openec/src/ec/RSNSYS.cc > CMakeFiles/ec.dir/RSNSYS.cc.i
+	cd /home/openec/Fast23/storage/src/ec && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/openec/Fast23/storage/src/ec/RSNSYS.cc > CMakeFiles/ec.dir/RSNSYS.cc.i
 
 src/ec/CMakeFiles/ec.dir/RSNSYS.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ec.dir/RSNSYS.cc.s"
-	cd /home/openec/openec/res/openec/src/ec && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/openec/openec/res/openec/src/ec/RSNSYS.cc -o CMakeFiles/ec.dir/RSNSYS.cc.s
+	cd /home/openec/Fast23/storage/src/ec && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/openec/Fast23/storage/src/ec/RSNSYS.cc -o CMakeFiles/ec.dir/RSNSYS.cc.s
 
 src/ec/CMakeFiles/ec.dir/RSPIPE.cc.o: src/ec/CMakeFiles/ec.dir/flags.make
 src/ec/CMakeFiles/ec.dir/RSPIPE.cc.o: src/ec/RSPIPE.cc
 src/ec/CMakeFiles/ec.dir/RSPIPE.cc.o: src/ec/CMakeFiles/ec.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/openec/openec/res/openec/CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Building CXX object src/ec/CMakeFiles/ec.dir/RSPIPE.cc.o"
-	cd /home/openec/openec/res/openec/src/ec && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/ec/CMakeFiles/ec.dir/RSPIPE.cc.o -MF CMakeFiles/ec.dir/RSPIPE.cc.o.d -o CMakeFiles/ec.dir/RSPIPE.cc.o -c /home/openec/openec/res/openec/src/ec/RSPIPE.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/openec/Fast23/storage/CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Building CXX object src/ec/CMakeFiles/ec.dir/RSPIPE.cc.o"
+	cd /home/openec/Fast23/storage/src/ec && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/ec/CMakeFiles/ec.dir/RSPIPE.cc.o -MF CMakeFiles/ec.dir/RSPIPE.cc.o.d -o CMakeFiles/ec.dir/RSPIPE.cc.o -c /home/openec/Fast23/storage/src/ec/RSPIPE.cc
 
 src/ec/CMakeFiles/ec.dir/RSPIPE.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ec.dir/RSPIPE.cc.i"
-	cd /home/openec/openec/res/openec/src/ec && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/openec/openec/res/openec/src/ec/RSPIPE.cc > CMakeFiles/ec.dir/RSPIPE.cc.i
+	cd /home/openec/Fast23/storage/src/ec && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/openec/Fast23/storage/src/ec/RSPIPE.cc > CMakeFiles/ec.dir/RSPIPE.cc.i
 
 src/ec/CMakeFiles/ec.dir/RSPIPE.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ec.dir/RSPIPE.cc.s"
-	cd /home/openec/openec/res/openec/src/ec && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/openec/openec/res/openec/src/ec/RSPIPE.cc -o CMakeFiles/ec.dir/RSPIPE.cc.s
+	cd /home/openec/Fast23/storage/src/ec && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/openec/Fast23/storage/src/ec/RSPIPE.cc -o CMakeFiles/ec.dir/RSPIPE.cc.s
 
 src/ec/CMakeFiles/ec.dir/RSPPCT.cc.o: src/ec/CMakeFiles/ec.dir/flags.make
 src/ec/CMakeFiles/ec.dir/RSPPCT.cc.o: src/ec/RSPPCT.cc
 src/ec/CMakeFiles/ec.dir/RSPPCT.cc.o: src/ec/CMakeFiles/ec.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/openec/openec/res/openec/CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Building CXX object src/ec/CMakeFiles/ec.dir/RSPPCT.cc.o"
-	cd /home/openec/openec/res/openec/src/ec && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/ec/CMakeFiles/ec.dir/RSPPCT.cc.o -MF CMakeFiles/ec.dir/RSPPCT.cc.o.d -o CMakeFiles/ec.dir/RSPPCT.cc.o -c /home/openec/openec/res/openec/src/ec/RSPPCT.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/openec/Fast23/storage/CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Building CXX object src/ec/CMakeFiles/ec.dir/RSPPCT.cc.o"
+	cd /home/openec/Fast23/storage/src/ec && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/ec/CMakeFiles/ec.dir/RSPPCT.cc.o -MF CMakeFiles/ec.dir/RSPPCT.cc.o.d -o CMakeFiles/ec.dir/RSPPCT.cc.o -c /home/openec/Fast23/storage/src/ec/RSPPCT.cc
 
 src/ec/CMakeFiles/ec.dir/RSPPCT.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ec.dir/RSPPCT.cc.i"
-	cd /home/openec/openec/res/openec/src/ec && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/openec/openec/res/openec/src/ec/RSPPCT.cc > CMakeFiles/ec.dir/RSPPCT.cc.i
+	cd /home/openec/Fast23/storage/src/ec && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/openec/Fast23/storage/src/ec/RSPPCT.cc > CMakeFiles/ec.dir/RSPPCT.cc.i
 
 src/ec/CMakeFiles/ec.dir/RSPPCT.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ec.dir/RSPPCT.cc.s"
-	cd /home/openec/openec/res/openec/src/ec && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/openec/openec/res/openec/src/ec/RSPPCT.cc -o CMakeFiles/ec.dir/RSPPCT.cc.s
+	cd /home/openec/Fast23/storage/src/ec && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/openec/Fast23/storage/src/ec/RSPPCT.cc -o CMakeFiles/ec.dir/RSPPCT.cc.s
 
 src/ec/CMakeFiles/ec.dir/RSPPR.cc.o: src/ec/CMakeFiles/ec.dir/flags.make
 src/ec/CMakeFiles/ec.dir/RSPPR.cc.o: src/ec/RSPPR.cc
 src/ec/CMakeFiles/ec.dir/RSPPR.cc.o: src/ec/CMakeFiles/ec.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/openec/openec/res/openec/CMakeFiles --progress-num=$(CMAKE_PROGRESS_24) "Building CXX object src/ec/CMakeFiles/ec.dir/RSPPR.cc.o"
-	cd /home/openec/openec/res/openec/src/ec && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/ec/CMakeFiles/ec.dir/RSPPR.cc.o -MF CMakeFiles/ec.dir/RSPPR.cc.o.d -o CMakeFiles/ec.dir/RSPPR.cc.o -c /home/openec/openec/res/openec/src/ec/RSPPR.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/openec/Fast23/storage/CMakeFiles --progress-num=$(CMAKE_PROGRESS_24) "Building CXX object src/ec/CMakeFiles/ec.dir/RSPPR.cc.o"
+	cd /home/openec/Fast23/storage/src/ec && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/ec/CMakeFiles/ec.dir/RSPPR.cc.o -MF CMakeFiles/ec.dir/RSPPR.cc.o.d -o CMakeFiles/ec.dir/RSPPR.cc.o -c /home/openec/Fast23/storage/src/ec/RSPPR.cc
 
 src/ec/CMakeFiles/ec.dir/RSPPR.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ec.dir/RSPPR.cc.i"
-	cd /home/openec/openec/res/openec/src/ec && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/openec/openec/res/openec/src/ec/RSPPR.cc > CMakeFiles/ec.dir/RSPPR.cc.i
+	cd /home/openec/Fast23/storage/src/ec && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/openec/Fast23/storage/src/ec/RSPPR.cc > CMakeFiles/ec.dir/RSPPR.cc.i
 
 src/ec/CMakeFiles/ec.dir/RSPPR.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ec.dir/RSPPR.cc.s"
-	cd /home/openec/openec/res/openec/src/ec && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/openec/openec/res/openec/src/ec/RSPPR.cc -o CMakeFiles/ec.dir/RSPPR.cc.s
+	cd /home/openec/Fast23/storage/src/ec && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/openec/Fast23/storage/src/ec/RSPPR.cc -o CMakeFiles/ec.dir/RSPPR.cc.s
 
 src/ec/CMakeFiles/ec.dir/RSRPCONV.cc.o: src/ec/CMakeFiles/ec.dir/flags.make
 src/ec/CMakeFiles/ec.dir/RSRPCONV.cc.o: src/ec/RSRPCONV.cc
 src/ec/CMakeFiles/ec.dir/RSRPCONV.cc.o: src/ec/CMakeFiles/ec.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/openec/openec/res/openec/CMakeFiles --progress-num=$(CMAKE_PROGRESS_25) "Building CXX object src/ec/CMakeFiles/ec.dir/RSRPCONV.cc.o"
-	cd /home/openec/openec/res/openec/src/ec && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/ec/CMakeFiles/ec.dir/RSRPCONV.cc.o -MF CMakeFiles/ec.dir/RSRPCONV.cc.o.d -o CMakeFiles/ec.dir/RSRPCONV.cc.o -c /home/openec/openec/res/openec/src/ec/RSRPCONV.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/openec/Fast23/storage/CMakeFiles --progress-num=$(CMAKE_PROGRESS_25) "Building CXX object src/ec/CMakeFiles/ec.dir/RSRPCONV.cc.o"
+	cd /home/openec/Fast23/storage/src/ec && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/ec/CMakeFiles/ec.dir/RSRPCONV.cc.o -MF CMakeFiles/ec.dir/RSRPCONV.cc.o.d -o CMakeFiles/ec.dir/RSRPCONV.cc.o -c /home/openec/Fast23/storage/src/ec/RSRPCONV.cc
 
 src/ec/CMakeFiles/ec.dir/RSRPCONV.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ec.dir/RSRPCONV.cc.i"
-	cd /home/openec/openec/res/openec/src/ec && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/openec/openec/res/openec/src/ec/RSRPCONV.cc > CMakeFiles/ec.dir/RSRPCONV.cc.i
+	cd /home/openec/Fast23/storage/src/ec && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/openec/Fast23/storage/src/ec/RSRPCONV.cc > CMakeFiles/ec.dir/RSRPCONV.cc.i
 
 src/ec/CMakeFiles/ec.dir/RSRPCONV.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ec.dir/RSRPCONV.cc.s"
-	cd /home/openec/openec/res/openec/src/ec && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/openec/openec/res/openec/src/ec/RSRPCONV.cc -o CMakeFiles/ec.dir/RSRPCONV.cc.s
+	cd /home/openec/Fast23/storage/src/ec && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/openec/Fast23/storage/src/ec/RSRPCONV.cc -o CMakeFiles/ec.dir/RSRPCONV.cc.s
 
 src/ec/CMakeFiles/ec.dir/RSSMARTLZ.cc.o: src/ec/CMakeFiles/ec.dir/flags.make
 src/ec/CMakeFiles/ec.dir/RSSMARTLZ.cc.o: src/ec/RSSMARTLZ.cc
 src/ec/CMakeFiles/ec.dir/RSSMARTLZ.cc.o: src/ec/CMakeFiles/ec.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/openec/openec/res/openec/CMakeFiles --progress-num=$(CMAKE_PROGRESS_26) "Building CXX object src/ec/CMakeFiles/ec.dir/RSSMARTLZ.cc.o"
-	cd /home/openec/openec/res/openec/src/ec && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/ec/CMakeFiles/ec.dir/RSSMARTLZ.cc.o -MF CMakeFiles/ec.dir/RSSMARTLZ.cc.o.d -o CMakeFiles/ec.dir/RSSMARTLZ.cc.o -c /home/openec/openec/res/openec/src/ec/RSSMARTLZ.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/openec/Fast23/storage/CMakeFiles --progress-num=$(CMAKE_PROGRESS_26) "Building CXX object src/ec/CMakeFiles/ec.dir/RSSMARTLZ.cc.o"
+	cd /home/openec/Fast23/storage/src/ec && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/ec/CMakeFiles/ec.dir/RSSMARTLZ.cc.o -MF CMakeFiles/ec.dir/RSSMARTLZ.cc.o.d -o CMakeFiles/ec.dir/RSSMARTLZ.cc.o -c /home/openec/Fast23/storage/src/ec/RSSMARTLZ.cc
 
 src/ec/CMakeFiles/ec.dir/RSSMARTLZ.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ec.dir/RSSMARTLZ.cc.i"
-	cd /home/openec/openec/res/openec/src/ec && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/openec/openec/res/openec/src/ec/RSSMARTLZ.cc > CMakeFiles/ec.dir/RSSMARTLZ.cc.i
+	cd /home/openec/Fast23/storage/src/ec && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/openec/Fast23/storage/src/ec/RSSMARTLZ.cc > CMakeFiles/ec.dir/RSSMARTLZ.cc.i
 
 src/ec/CMakeFiles/ec.dir/RSSMARTLZ.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ec.dir/RSSMARTLZ.cc.s"
-	cd /home/openec/openec/res/openec/src/ec && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/openec/openec/res/openec/src/ec/RSSMARTLZ.cc -o CMakeFiles/ec.dir/RSSMARTLZ.cc.s
+	cd /home/openec/Fast23/storage/src/ec && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/openec/Fast23/storage/src/ec/RSSMARTLZ.cc -o CMakeFiles/ec.dir/RSSMARTLZ.cc.s
 
 src/ec/CMakeFiles/ec.dir/WASLRC.cc.o: src/ec/CMakeFiles/ec.dir/flags.make
 src/ec/CMakeFiles/ec.dir/WASLRC.cc.o: src/ec/WASLRC.cc
 src/ec/CMakeFiles/ec.dir/WASLRC.cc.o: src/ec/CMakeFiles/ec.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/openec/openec/res/openec/CMakeFiles --progress-num=$(CMAKE_PROGRESS_27) "Building CXX object src/ec/CMakeFiles/ec.dir/WASLRC.cc.o"
-	cd /home/openec/openec/res/openec/src/ec && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/ec/CMakeFiles/ec.dir/WASLRC.cc.o -MF CMakeFiles/ec.dir/WASLRC.cc.o.d -o CMakeFiles/ec.dir/WASLRC.cc.o -c /home/openec/openec/res/openec/src/ec/WASLRC.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/openec/Fast23/storage/CMakeFiles --progress-num=$(CMAKE_PROGRESS_27) "Building CXX object src/ec/CMakeFiles/ec.dir/WASLRC.cc.o"
+	cd /home/openec/Fast23/storage/src/ec && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/ec/CMakeFiles/ec.dir/WASLRC.cc.o -MF CMakeFiles/ec.dir/WASLRC.cc.o.d -o CMakeFiles/ec.dir/WASLRC.cc.o -c /home/openec/Fast23/storage/src/ec/WASLRC.cc
 
 src/ec/CMakeFiles/ec.dir/WASLRC.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ec.dir/WASLRC.cc.i"
-	cd /home/openec/openec/res/openec/src/ec && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/openec/openec/res/openec/src/ec/WASLRC.cc > CMakeFiles/ec.dir/WASLRC.cc.i
+	cd /home/openec/Fast23/storage/src/ec && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/openec/Fast23/storage/src/ec/WASLRC.cc > CMakeFiles/ec.dir/WASLRC.cc.i
 
 src/ec/CMakeFiles/ec.dir/WASLRC.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ec.dir/WASLRC.cc.s"
-	cd /home/openec/openec/res/openec/src/ec && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/openec/openec/res/openec/src/ec/WASLRC.cc -o CMakeFiles/ec.dir/WASLRC.cc.s
+	cd /home/openec/Fast23/storage/src/ec && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/openec/Fast23/storage/src/ec/WASLRC.cc -o CMakeFiles/ec.dir/WASLRC.cc.s
 
 # Object files for target ec
 ec_OBJECTS = \
@@ -509,19 +509,19 @@ src/ec/libec.a: src/ec/CMakeFiles/ec.dir/RSSMARTLZ.cc.o
 src/ec/libec.a: src/ec/CMakeFiles/ec.dir/WASLRC.cc.o
 src/ec/libec.a: src/ec/CMakeFiles/ec.dir/build.make
 src/ec/libec.a: src/ec/CMakeFiles/ec.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/openec/openec/res/openec/CMakeFiles --progress-num=$(CMAKE_PROGRESS_28) "Linking CXX static library libec.a"
-	cd /home/openec/openec/res/openec/src/ec && $(CMAKE_COMMAND) -P CMakeFiles/ec.dir/cmake_clean_target.cmake
-	cd /home/openec/openec/res/openec/src/ec && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/ec.dir/link.txt --verbose=$(VERBOSE)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/openec/Fast23/storage/CMakeFiles --progress-num=$(CMAKE_PROGRESS_28) "Linking CXX static library libec.a"
+	cd /home/openec/Fast23/storage/src/ec && $(CMAKE_COMMAND) -P CMakeFiles/ec.dir/cmake_clean_target.cmake
+	cd /home/openec/Fast23/storage/src/ec && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/ec.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
 src/ec/CMakeFiles/ec.dir/build: src/ec/libec.a
 .PHONY : src/ec/CMakeFiles/ec.dir/build
 
 src/ec/CMakeFiles/ec.dir/clean:
-	cd /home/openec/openec/res/openec/src/ec && $(CMAKE_COMMAND) -P CMakeFiles/ec.dir/cmake_clean.cmake
+	cd /home/openec/Fast23/storage/src/ec && $(CMAKE_COMMAND) -P CMakeFiles/ec.dir/cmake_clean.cmake
 .PHONY : src/ec/CMakeFiles/ec.dir/clean
 
 src/ec/CMakeFiles/ec.dir/depend:
-	cd /home/openec/openec/res/openec && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/openec/openec/res/openec /home/openec/openec/res/openec/src/ec /home/openec/openec/res/openec /home/openec/openec/res/openec/src/ec /home/openec/openec/res/openec/src/ec/CMakeFiles/ec.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/openec/Fast23/storage && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/openec/Fast23/storage /home/openec/Fast23/storage/src/ec /home/openec/Fast23/storage /home/openec/Fast23/storage/src/ec /home/openec/Fast23/storage/src/ec/CMakeFiles/ec.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : src/ec/CMakeFiles/ec.dir/depend
 

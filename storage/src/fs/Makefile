@@ -57,10 +57,10 @@ RM = /usr/local/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/openec/openec/res/openec
+CMAKE_SOURCE_DIR = /home/openec/Fast23/storage
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/openec/openec/res/openec
+CMAKE_BINARY_DIR = /home/openec/Fast23/storage
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -87,14 +87,14 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	cd /home/openec/openec/res/openec && $(CMAKE_COMMAND) -E cmake_progress_start /home/openec/openec/res/openec/CMakeFiles /home/openec/openec/res/openec/src/fs//CMakeFiles/progress.marks
-	cd /home/openec/openec/res/openec && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/fs/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/openec/openec/res/openec/CMakeFiles 0
+	cd /home/openec/Fast23/storage && $(CMAKE_COMMAND) -E cmake_progress_start /home/openec/Fast23/storage/CMakeFiles /home/openec/Fast23/storage/src/fs//CMakeFiles/progress.marks
+	cd /home/openec/Fast23/storage && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/fs/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/openec/Fast23/storage/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /home/openec/openec/res/openec && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/fs/clean
+	cd /home/openec/Fast23/storage && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/fs/clean
 .PHONY : clean
 
 # The main clean target
@@ -103,22 +103,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /home/openec/openec/res/openec && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/fs/preinstall
+	cd /home/openec/Fast23/storage && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/fs/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /home/openec/openec/res/openec && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/fs/preinstall
+	cd /home/openec/Fast23/storage && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/fs/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /home/openec/openec/res/openec && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/openec/Fast23/storage && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 src/fs/CMakeFiles/fs.dir/rule:
-	cd /home/openec/openec/res/openec && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/fs/CMakeFiles/fs.dir/rule
+	cd /home/openec/Fast23/storage && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/fs/CMakeFiles/fs.dir/rule
 .PHONY : src/fs/CMakeFiles/fs.dir/rule
 
 # Convenience name for target.
@@ -127,7 +127,7 @@ fs: src/fs/CMakeFiles/fs.dir/rule
 
 # fast build rule for target.
 fs/fast:
-	cd /home/openec/openec/res/openec && $(MAKE) $(MAKESILENT) -f src/fs/CMakeFiles/fs.dir/build.make src/fs/CMakeFiles/fs.dir/build
+	cd /home/openec/Fast23/storage && $(MAKE) $(MAKESILENT) -f src/fs/CMakeFiles/fs.dir/build.make src/fs/CMakeFiles/fs.dir/build
 .PHONY : fs/fast
 
 FSUtil.o: FSUtil.cc.o
@@ -135,7 +135,7 @@ FSUtil.o: FSUtil.cc.o
 
 # target to build an object file
 FSUtil.cc.o:
-	cd /home/openec/openec/res/openec && $(MAKE) $(MAKESILENT) -f src/fs/CMakeFiles/fs.dir/build.make src/fs/CMakeFiles/fs.dir/FSUtil.cc.o
+	cd /home/openec/Fast23/storage && $(MAKE) $(MAKESILENT) -f src/fs/CMakeFiles/fs.dir/build.make src/fs/CMakeFiles/fs.dir/FSUtil.cc.o
 .PHONY : FSUtil.cc.o
 
 FSUtil.i: FSUtil.cc.i
@@ -143,7 +143,7 @@ FSUtil.i: FSUtil.cc.i
 
 # target to preprocess a source file
 FSUtil.cc.i:
-	cd /home/openec/openec/res/openec && $(MAKE) $(MAKESILENT) -f src/fs/CMakeFiles/fs.dir/build.make src/fs/CMakeFiles/fs.dir/FSUtil.cc.i
+	cd /home/openec/Fast23/storage && $(MAKE) $(MAKESILENT) -f src/fs/CMakeFiles/fs.dir/build.make src/fs/CMakeFiles/fs.dir/FSUtil.cc.i
 .PHONY : FSUtil.cc.i
 
 FSUtil.s: FSUtil.cc.s
@@ -151,7 +151,7 @@ FSUtil.s: FSUtil.cc.s
 
 # target to generate assembly for a file
 FSUtil.cc.s:
-	cd /home/openec/openec/res/openec && $(MAKE) $(MAKESILENT) -f src/fs/CMakeFiles/fs.dir/build.make src/fs/CMakeFiles/fs.dir/FSUtil.cc.s
+	cd /home/openec/Fast23/storage && $(MAKE) $(MAKESILENT) -f src/fs/CMakeFiles/fs.dir/build.make src/fs/CMakeFiles/fs.dir/FSUtil.cc.s
 .PHONY : FSUtil.cc.s
 
 Hadoop20.o: Hadoop20.cc.o
@@ -159,7 +159,7 @@ Hadoop20.o: Hadoop20.cc.o
 
 # target to build an object file
 Hadoop20.cc.o:
-	cd /home/openec/openec/res/openec && $(MAKE) $(MAKESILENT) -f src/fs/CMakeFiles/fs.dir/build.make src/fs/CMakeFiles/fs.dir/Hadoop20.cc.o
+	cd /home/openec/Fast23/storage && $(MAKE) $(MAKESILENT) -f src/fs/CMakeFiles/fs.dir/build.make src/fs/CMakeFiles/fs.dir/Hadoop20.cc.o
 .PHONY : Hadoop20.cc.o
 
 Hadoop20.i: Hadoop20.cc.i
@@ -167,7 +167,7 @@ Hadoop20.i: Hadoop20.cc.i
 
 # target to preprocess a source file
 Hadoop20.cc.i:
-	cd /home/openec/openec/res/openec && $(MAKE) $(MAKESILENT) -f src/fs/CMakeFiles/fs.dir/build.make src/fs/CMakeFiles/fs.dir/Hadoop20.cc.i
+	cd /home/openec/Fast23/storage && $(MAKE) $(MAKESILENT) -f src/fs/CMakeFiles/fs.dir/build.make src/fs/CMakeFiles/fs.dir/Hadoop20.cc.i
 .PHONY : Hadoop20.cc.i
 
 Hadoop20.s: Hadoop20.cc.s
@@ -175,7 +175,7 @@ Hadoop20.s: Hadoop20.cc.s
 
 # target to generate assembly for a file
 Hadoop20.cc.s:
-	cd /home/openec/openec/res/openec && $(MAKE) $(MAKESILENT) -f src/fs/CMakeFiles/fs.dir/build.make src/fs/CMakeFiles/fs.dir/Hadoop20.cc.s
+	cd /home/openec/Fast23/storage && $(MAKE) $(MAKESILENT) -f src/fs/CMakeFiles/fs.dir/build.make src/fs/CMakeFiles/fs.dir/Hadoop20.cc.s
 .PHONY : Hadoop20.cc.s
 
 Hadoop20File.o: Hadoop20File.cc.o
@@ -183,7 +183,7 @@ Hadoop20File.o: Hadoop20File.cc.o
 
 # target to build an object file
 Hadoop20File.cc.o:
-	cd /home/openec/openec/res/openec && $(MAKE) $(MAKESILENT) -f src/fs/CMakeFiles/fs.dir/build.make src/fs/CMakeFiles/fs.dir/Hadoop20File.cc.o
+	cd /home/openec/Fast23/storage && $(MAKE) $(MAKESILENT) -f src/fs/CMakeFiles/fs.dir/build.make src/fs/CMakeFiles/fs.dir/Hadoop20File.cc.o
 .PHONY : Hadoop20File.cc.o
 
 Hadoop20File.i: Hadoop20File.cc.i
@@ -191,7 +191,7 @@ Hadoop20File.i: Hadoop20File.cc.i
 
 # target to preprocess a source file
 Hadoop20File.cc.i:
-	cd /home/openec/openec/res/openec && $(MAKE) $(MAKESILENT) -f src/fs/CMakeFiles/fs.dir/build.make src/fs/CMakeFiles/fs.dir/Hadoop20File.cc.i
+	cd /home/openec/Fast23/storage && $(MAKE) $(MAKESILENT) -f src/fs/CMakeFiles/fs.dir/build.make src/fs/CMakeFiles/fs.dir/Hadoop20File.cc.i
 .PHONY : Hadoop20File.cc.i
 
 Hadoop20File.s: Hadoop20File.cc.s
@@ -199,7 +199,7 @@ Hadoop20File.s: Hadoop20File.cc.s
 
 # target to generate assembly for a file
 Hadoop20File.cc.s:
-	cd /home/openec/openec/res/openec && $(MAKE) $(MAKESILENT) -f src/fs/CMakeFiles/fs.dir/build.make src/fs/CMakeFiles/fs.dir/Hadoop20File.cc.s
+	cd /home/openec/Fast23/storage && $(MAKE) $(MAKESILENT) -f src/fs/CMakeFiles/fs.dir/build.make src/fs/CMakeFiles/fs.dir/Hadoop20File.cc.s
 .PHONY : Hadoop20File.cc.s
 
 Hadoop3.o: Hadoop3.cc.o
@@ -207,7 +207,7 @@ Hadoop3.o: Hadoop3.cc.o
 
 # target to build an object file
 Hadoop3.cc.o:
-	cd /home/openec/openec/res/openec && $(MAKE) $(MAKESILENT) -f src/fs/CMakeFiles/fs.dir/build.make src/fs/CMakeFiles/fs.dir/Hadoop3.cc.o
+	cd /home/openec/Fast23/storage && $(MAKE) $(MAKESILENT) -f src/fs/CMakeFiles/fs.dir/build.make src/fs/CMakeFiles/fs.dir/Hadoop3.cc.o
 .PHONY : Hadoop3.cc.o
 
 Hadoop3.i: Hadoop3.cc.i
@@ -215,7 +215,7 @@ Hadoop3.i: Hadoop3.cc.i
 
 # target to preprocess a source file
 Hadoop3.cc.i:
-	cd /home/openec/openec/res/openec && $(MAKE) $(MAKESILENT) -f src/fs/CMakeFiles/fs.dir/build.make src/fs/CMakeFiles/fs.dir/Hadoop3.cc.i
+	cd /home/openec/Fast23/storage && $(MAKE) $(MAKESILENT) -f src/fs/CMakeFiles/fs.dir/build.make src/fs/CMakeFiles/fs.dir/Hadoop3.cc.i
 .PHONY : Hadoop3.cc.i
 
 Hadoop3.s: Hadoop3.cc.s
@@ -223,7 +223,7 @@ Hadoop3.s: Hadoop3.cc.s
 
 # target to generate assembly for a file
 Hadoop3.cc.s:
-	cd /home/openec/openec/res/openec && $(MAKE) $(MAKESILENT) -f src/fs/CMakeFiles/fs.dir/build.make src/fs/CMakeFiles/fs.dir/Hadoop3.cc.s
+	cd /home/openec/Fast23/storage && $(MAKE) $(MAKESILENT) -f src/fs/CMakeFiles/fs.dir/build.make src/fs/CMakeFiles/fs.dir/Hadoop3.cc.s
 .PHONY : Hadoop3.cc.s
 
 Hadoop3File.o: Hadoop3File.cc.o
@@ -231,7 +231,7 @@ Hadoop3File.o: Hadoop3File.cc.o
 
 # target to build an object file
 Hadoop3File.cc.o:
-	cd /home/openec/openec/res/openec && $(MAKE) $(MAKESILENT) -f src/fs/CMakeFiles/fs.dir/build.make src/fs/CMakeFiles/fs.dir/Hadoop3File.cc.o
+	cd /home/openec/Fast23/storage && $(MAKE) $(MAKESILENT) -f src/fs/CMakeFiles/fs.dir/build.make src/fs/CMakeFiles/fs.dir/Hadoop3File.cc.o
 .PHONY : Hadoop3File.cc.o
 
 Hadoop3File.i: Hadoop3File.cc.i
@@ -239,7 +239,7 @@ Hadoop3File.i: Hadoop3File.cc.i
 
 # target to preprocess a source file
 Hadoop3File.cc.i:
-	cd /home/openec/openec/res/openec && $(MAKE) $(MAKESILENT) -f src/fs/CMakeFiles/fs.dir/build.make src/fs/CMakeFiles/fs.dir/Hadoop3File.cc.i
+	cd /home/openec/Fast23/storage && $(MAKE) $(MAKESILENT) -f src/fs/CMakeFiles/fs.dir/build.make src/fs/CMakeFiles/fs.dir/Hadoop3File.cc.i
 .PHONY : Hadoop3File.cc.i
 
 Hadoop3File.s: Hadoop3File.cc.s
@@ -247,7 +247,7 @@ Hadoop3File.s: Hadoop3File.cc.s
 
 # target to generate assembly for a file
 Hadoop3File.cc.s:
-	cd /home/openec/openec/res/openec && $(MAKE) $(MAKESILENT) -f src/fs/CMakeFiles/fs.dir/build.make src/fs/CMakeFiles/fs.dir/Hadoop3File.cc.s
+	cd /home/openec/Fast23/storage && $(MAKE) $(MAKESILENT) -f src/fs/CMakeFiles/fs.dir/build.make src/fs/CMakeFiles/fs.dir/Hadoop3File.cc.s
 .PHONY : Hadoop3File.cc.s
 
 QFSFile.o: QFSFile.cc.o
@@ -255,7 +255,7 @@ QFSFile.o: QFSFile.cc.o
 
 # target to build an object file
 QFSFile.cc.o:
-	cd /home/openec/openec/res/openec && $(MAKE) $(MAKESILENT) -f src/fs/CMakeFiles/fs.dir/build.make src/fs/CMakeFiles/fs.dir/QFSFile.cc.o
+	cd /home/openec/Fast23/storage && $(MAKE) $(MAKESILENT) -f src/fs/CMakeFiles/fs.dir/build.make src/fs/CMakeFiles/fs.dir/QFSFile.cc.o
 .PHONY : QFSFile.cc.o
 
 QFSFile.i: QFSFile.cc.i
@@ -263,7 +263,7 @@ QFSFile.i: QFSFile.cc.i
 
 # target to preprocess a source file
 QFSFile.cc.i:
-	cd /home/openec/openec/res/openec && $(MAKE) $(MAKESILENT) -f src/fs/CMakeFiles/fs.dir/build.make src/fs/CMakeFiles/fs.dir/QFSFile.cc.i
+	cd /home/openec/Fast23/storage && $(MAKE) $(MAKESILENT) -f src/fs/CMakeFiles/fs.dir/build.make src/fs/CMakeFiles/fs.dir/QFSFile.cc.i
 .PHONY : QFSFile.cc.i
 
 QFSFile.s: QFSFile.cc.s
@@ -271,7 +271,7 @@ QFSFile.s: QFSFile.cc.s
 
 # target to generate assembly for a file
 QFSFile.cc.s:
-	cd /home/openec/openec/res/openec && $(MAKE) $(MAKESILENT) -f src/fs/CMakeFiles/fs.dir/build.make src/fs/CMakeFiles/fs.dir/QFSFile.cc.s
+	cd /home/openec/Fast23/storage && $(MAKE) $(MAKESILENT) -f src/fs/CMakeFiles/fs.dir/build.make src/fs/CMakeFiles/fs.dir/QFSFile.cc.s
 .PHONY : QFSFile.cc.s
 
 QuantcastFS.o: QuantcastFS.cc.o
@@ -279,7 +279,7 @@ QuantcastFS.o: QuantcastFS.cc.o
 
 # target to build an object file
 QuantcastFS.cc.o:
-	cd /home/openec/openec/res/openec && $(MAKE) $(MAKESILENT) -f src/fs/CMakeFiles/fs.dir/build.make src/fs/CMakeFiles/fs.dir/QuantcastFS.cc.o
+	cd /home/openec/Fast23/storage && $(MAKE) $(MAKESILENT) -f src/fs/CMakeFiles/fs.dir/build.make src/fs/CMakeFiles/fs.dir/QuantcastFS.cc.o
 .PHONY : QuantcastFS.cc.o
 
 QuantcastFS.i: QuantcastFS.cc.i
@@ -287,7 +287,7 @@ QuantcastFS.i: QuantcastFS.cc.i
 
 # target to preprocess a source file
 QuantcastFS.cc.i:
-	cd /home/openec/openec/res/openec && $(MAKE) $(MAKESILENT) -f src/fs/CMakeFiles/fs.dir/build.make src/fs/CMakeFiles/fs.dir/QuantcastFS.cc.i
+	cd /home/openec/Fast23/storage && $(MAKE) $(MAKESILENT) -f src/fs/CMakeFiles/fs.dir/build.make src/fs/CMakeFiles/fs.dir/QuantcastFS.cc.i
 .PHONY : QuantcastFS.cc.i
 
 QuantcastFS.s: QuantcastFS.cc.s
@@ -295,7 +295,7 @@ QuantcastFS.s: QuantcastFS.cc.s
 
 # target to generate assembly for a file
 QuantcastFS.cc.s:
-	cd /home/openec/openec/res/openec && $(MAKE) $(MAKESILENT) -f src/fs/CMakeFiles/fs.dir/build.make src/fs/CMakeFiles/fs.dir/QuantcastFS.cc.s
+	cd /home/openec/Fast23/storage && $(MAKE) $(MAKESILENT) -f src/fs/CMakeFiles/fs.dir/build.make src/fs/CMakeFiles/fs.dir/QuantcastFS.cc.s
 .PHONY : QuantcastFS.cc.s
 
 UnderFS.o: UnderFS.cc.o
@@ -303,7 +303,7 @@ UnderFS.o: UnderFS.cc.o
 
 # target to build an object file
 UnderFS.cc.o:
-	cd /home/openec/openec/res/openec && $(MAKE) $(MAKESILENT) -f src/fs/CMakeFiles/fs.dir/build.make src/fs/CMakeFiles/fs.dir/UnderFS.cc.o
+	cd /home/openec/Fast23/storage && $(MAKE) $(MAKESILENT) -f src/fs/CMakeFiles/fs.dir/build.make src/fs/CMakeFiles/fs.dir/UnderFS.cc.o
 .PHONY : UnderFS.cc.o
 
 UnderFS.i: UnderFS.cc.i
@@ -311,7 +311,7 @@ UnderFS.i: UnderFS.cc.i
 
 # target to preprocess a source file
 UnderFS.cc.i:
-	cd /home/openec/openec/res/openec && $(MAKE) $(MAKESILENT) -f src/fs/CMakeFiles/fs.dir/build.make src/fs/CMakeFiles/fs.dir/UnderFS.cc.i
+	cd /home/openec/Fast23/storage && $(MAKE) $(MAKESILENT) -f src/fs/CMakeFiles/fs.dir/build.make src/fs/CMakeFiles/fs.dir/UnderFS.cc.i
 .PHONY : UnderFS.cc.i
 
 UnderFS.s: UnderFS.cc.s
@@ -319,7 +319,7 @@ UnderFS.s: UnderFS.cc.s
 
 # target to generate assembly for a file
 UnderFS.cc.s:
-	cd /home/openec/openec/res/openec && $(MAKE) $(MAKESILENT) -f src/fs/CMakeFiles/fs.dir/build.make src/fs/CMakeFiles/fs.dir/UnderFS.cc.s
+	cd /home/openec/Fast23/storage && $(MAKE) $(MAKESILENT) -f src/fs/CMakeFiles/fs.dir/build.make src/fs/CMakeFiles/fs.dir/UnderFS.cc.s
 .PHONY : UnderFS.cc.s
 
 UnderFile.o: UnderFile.cc.o
@@ -327,7 +327,7 @@ UnderFile.o: UnderFile.cc.o
 
 # target to build an object file
 UnderFile.cc.o:
-	cd /home/openec/openec/res/openec && $(MAKE) $(MAKESILENT) -f src/fs/CMakeFiles/fs.dir/build.make src/fs/CMakeFiles/fs.dir/UnderFile.cc.o
+	cd /home/openec/Fast23/storage && $(MAKE) $(MAKESILENT) -f src/fs/CMakeFiles/fs.dir/build.make src/fs/CMakeFiles/fs.dir/UnderFile.cc.o
 .PHONY : UnderFile.cc.o
 
 UnderFile.i: UnderFile.cc.i
@@ -335,7 +335,7 @@ UnderFile.i: UnderFile.cc.i
 
 # target to preprocess a source file
 UnderFile.cc.i:
-	cd /home/openec/openec/res/openec && $(MAKE) $(MAKESILENT) -f src/fs/CMakeFiles/fs.dir/build.make src/fs/CMakeFiles/fs.dir/UnderFile.cc.i
+	cd /home/openec/Fast23/storage && $(MAKE) $(MAKESILENT) -f src/fs/CMakeFiles/fs.dir/build.make src/fs/CMakeFiles/fs.dir/UnderFile.cc.i
 .PHONY : UnderFile.cc.i
 
 UnderFile.s: UnderFile.cc.s
@@ -343,7 +343,7 @@ UnderFile.s: UnderFile.cc.s
 
 # target to generate assembly for a file
 UnderFile.cc.s:
-	cd /home/openec/openec/res/openec && $(MAKE) $(MAKESILENT) -f src/fs/CMakeFiles/fs.dir/build.make src/fs/CMakeFiles/fs.dir/UnderFile.cc.s
+	cd /home/openec/Fast23/storage && $(MAKE) $(MAKESILENT) -f src/fs/CMakeFiles/fs.dir/build.make src/fs/CMakeFiles/fs.dir/UnderFile.cc.s
 .PHONY : UnderFile.cc.s
 
 # Help Target
@@ -393,6 +393,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /home/openec/openec/res/openec && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/openec/Fast23/storage && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

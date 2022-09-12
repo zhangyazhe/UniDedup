@@ -1,4 +1,4 @@
-# Install script for directory: /home/openec/openec/res/openec/src/util
+# Install script for directory: /home/openec/Fast23/storage/src/util
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

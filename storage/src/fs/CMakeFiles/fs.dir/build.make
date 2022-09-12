@@ -53,10 +53,10 @@ RM = /usr/local/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/openec/openec/res/openec
+CMAKE_SOURCE_DIR = /home/openec/Fast23/storage
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/openec/openec/res/openec
+CMAKE_BINARY_DIR = /home/openec/Fast23/storage
 
 # Include any dependencies generated for this target.
 include src/fs/CMakeFiles/fs.dir/depend.make
@@ -72,128 +72,128 @@ include src/fs/CMakeFiles/fs.dir/flags.make
 src/fs/CMakeFiles/fs.dir/FSUtil.cc.o: src/fs/CMakeFiles/fs.dir/flags.make
 src/fs/CMakeFiles/fs.dir/FSUtil.cc.o: src/fs/FSUtil.cc
 src/fs/CMakeFiles/fs.dir/FSUtil.cc.o: src/fs/CMakeFiles/fs.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/openec/openec/res/openec/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object src/fs/CMakeFiles/fs.dir/FSUtil.cc.o"
-	cd /home/openec/openec/res/openec/src/fs && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/fs/CMakeFiles/fs.dir/FSUtil.cc.o -MF CMakeFiles/fs.dir/FSUtil.cc.o.d -o CMakeFiles/fs.dir/FSUtil.cc.o -c /home/openec/openec/res/openec/src/fs/FSUtil.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/openec/Fast23/storage/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object src/fs/CMakeFiles/fs.dir/FSUtil.cc.o"
+	cd /home/openec/Fast23/storage/src/fs && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/fs/CMakeFiles/fs.dir/FSUtil.cc.o -MF CMakeFiles/fs.dir/FSUtil.cc.o.d -o CMakeFiles/fs.dir/FSUtil.cc.o -c /home/openec/Fast23/storage/src/fs/FSUtil.cc
 
 src/fs/CMakeFiles/fs.dir/FSUtil.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/fs.dir/FSUtil.cc.i"
-	cd /home/openec/openec/res/openec/src/fs && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/openec/openec/res/openec/src/fs/FSUtil.cc > CMakeFiles/fs.dir/FSUtil.cc.i
+	cd /home/openec/Fast23/storage/src/fs && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/openec/Fast23/storage/src/fs/FSUtil.cc > CMakeFiles/fs.dir/FSUtil.cc.i
 
 src/fs/CMakeFiles/fs.dir/FSUtil.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/fs.dir/FSUtil.cc.s"
-	cd /home/openec/openec/res/openec/src/fs && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/openec/openec/res/openec/src/fs/FSUtil.cc -o CMakeFiles/fs.dir/FSUtil.cc.s
+	cd /home/openec/Fast23/storage/src/fs && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/openec/Fast23/storage/src/fs/FSUtil.cc -o CMakeFiles/fs.dir/FSUtil.cc.s
 
 src/fs/CMakeFiles/fs.dir/Hadoop20.cc.o: src/fs/CMakeFiles/fs.dir/flags.make
 src/fs/CMakeFiles/fs.dir/Hadoop20.cc.o: src/fs/Hadoop20.cc
 src/fs/CMakeFiles/fs.dir/Hadoop20.cc.o: src/fs/CMakeFiles/fs.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/openec/openec/res/openec/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object src/fs/CMakeFiles/fs.dir/Hadoop20.cc.o"
-	cd /home/openec/openec/res/openec/src/fs && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/fs/CMakeFiles/fs.dir/Hadoop20.cc.o -MF CMakeFiles/fs.dir/Hadoop20.cc.o.d -o CMakeFiles/fs.dir/Hadoop20.cc.o -c /home/openec/openec/res/openec/src/fs/Hadoop20.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/openec/Fast23/storage/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object src/fs/CMakeFiles/fs.dir/Hadoop20.cc.o"
+	cd /home/openec/Fast23/storage/src/fs && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/fs/CMakeFiles/fs.dir/Hadoop20.cc.o -MF CMakeFiles/fs.dir/Hadoop20.cc.o.d -o CMakeFiles/fs.dir/Hadoop20.cc.o -c /home/openec/Fast23/storage/src/fs/Hadoop20.cc
 
 src/fs/CMakeFiles/fs.dir/Hadoop20.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/fs.dir/Hadoop20.cc.i"
-	cd /home/openec/openec/res/openec/src/fs && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/openec/openec/res/openec/src/fs/Hadoop20.cc > CMakeFiles/fs.dir/Hadoop20.cc.i
+	cd /home/openec/Fast23/storage/src/fs && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/openec/Fast23/storage/src/fs/Hadoop20.cc > CMakeFiles/fs.dir/Hadoop20.cc.i
 
 src/fs/CMakeFiles/fs.dir/Hadoop20.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/fs.dir/Hadoop20.cc.s"
-	cd /home/openec/openec/res/openec/src/fs && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/openec/openec/res/openec/src/fs/Hadoop20.cc -o CMakeFiles/fs.dir/Hadoop20.cc.s
+	cd /home/openec/Fast23/storage/src/fs && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/openec/Fast23/storage/src/fs/Hadoop20.cc -o CMakeFiles/fs.dir/Hadoop20.cc.s
 
 src/fs/CMakeFiles/fs.dir/Hadoop20File.cc.o: src/fs/CMakeFiles/fs.dir/flags.make
 src/fs/CMakeFiles/fs.dir/Hadoop20File.cc.o: src/fs/Hadoop20File.cc
 src/fs/CMakeFiles/fs.dir/Hadoop20File.cc.o: src/fs/CMakeFiles/fs.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/openec/openec/res/openec/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object src/fs/CMakeFiles/fs.dir/Hadoop20File.cc.o"
-	cd /home/openec/openec/res/openec/src/fs && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/fs/CMakeFiles/fs.dir/Hadoop20File.cc.o -MF CMakeFiles/fs.dir/Hadoop20File.cc.o.d -o CMakeFiles/fs.dir/Hadoop20File.cc.o -c /home/openec/openec/res/openec/src/fs/Hadoop20File.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/openec/Fast23/storage/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object src/fs/CMakeFiles/fs.dir/Hadoop20File.cc.o"
+	cd /home/openec/Fast23/storage/src/fs && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/fs/CMakeFiles/fs.dir/Hadoop20File.cc.o -MF CMakeFiles/fs.dir/Hadoop20File.cc.o.d -o CMakeFiles/fs.dir/Hadoop20File.cc.o -c /home/openec/Fast23/storage/src/fs/Hadoop20File.cc
 
 src/fs/CMakeFiles/fs.dir/Hadoop20File.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/fs.dir/Hadoop20File.cc.i"
-	cd /home/openec/openec/res/openec/src/fs && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/openec/openec/res/openec/src/fs/Hadoop20File.cc > CMakeFiles/fs.dir/Hadoop20File.cc.i
+	cd /home/openec/Fast23/storage/src/fs && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/openec/Fast23/storage/src/fs/Hadoop20File.cc > CMakeFiles/fs.dir/Hadoop20File.cc.i
 
 src/fs/CMakeFiles/fs.dir/Hadoop20File.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/fs.dir/Hadoop20File.cc.s"
-	cd /home/openec/openec/res/openec/src/fs && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/openec/openec/res/openec/src/fs/Hadoop20File.cc -o CMakeFiles/fs.dir/Hadoop20File.cc.s
+	cd /home/openec/Fast23/storage/src/fs && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/openec/Fast23/storage/src/fs/Hadoop20File.cc -o CMakeFiles/fs.dir/Hadoop20File.cc.s
 
 src/fs/CMakeFiles/fs.dir/Hadoop3.cc.o: src/fs/CMakeFiles/fs.dir/flags.make
 src/fs/CMakeFiles/fs.dir/Hadoop3.cc.o: src/fs/Hadoop3.cc
 src/fs/CMakeFiles/fs.dir/Hadoop3.cc.o: src/fs/CMakeFiles/fs.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/openec/openec/res/openec/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object src/fs/CMakeFiles/fs.dir/Hadoop3.cc.o"
-	cd /home/openec/openec/res/openec/src/fs && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/fs/CMakeFiles/fs.dir/Hadoop3.cc.o -MF CMakeFiles/fs.dir/Hadoop3.cc.o.d -o CMakeFiles/fs.dir/Hadoop3.cc.o -c /home/openec/openec/res/openec/src/fs/Hadoop3.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/openec/Fast23/storage/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object src/fs/CMakeFiles/fs.dir/Hadoop3.cc.o"
+	cd /home/openec/Fast23/storage/src/fs && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/fs/CMakeFiles/fs.dir/Hadoop3.cc.o -MF CMakeFiles/fs.dir/Hadoop3.cc.o.d -o CMakeFiles/fs.dir/Hadoop3.cc.o -c /home/openec/Fast23/storage/src/fs/Hadoop3.cc
 
 src/fs/CMakeFiles/fs.dir/Hadoop3.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/fs.dir/Hadoop3.cc.i"
-	cd /home/openec/openec/res/openec/src/fs && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/openec/openec/res/openec/src/fs/Hadoop3.cc > CMakeFiles/fs.dir/Hadoop3.cc.i
+	cd /home/openec/Fast23/storage/src/fs && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/openec/Fast23/storage/src/fs/Hadoop3.cc > CMakeFiles/fs.dir/Hadoop3.cc.i
 
 src/fs/CMakeFiles/fs.dir/Hadoop3.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/fs.dir/Hadoop3.cc.s"
-	cd /home/openec/openec/res/openec/src/fs && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/openec/openec/res/openec/src/fs/Hadoop3.cc -o CMakeFiles/fs.dir/Hadoop3.cc.s
+	cd /home/openec/Fast23/storage/src/fs && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/openec/Fast23/storage/src/fs/Hadoop3.cc -o CMakeFiles/fs.dir/Hadoop3.cc.s
 
 src/fs/CMakeFiles/fs.dir/Hadoop3File.cc.o: src/fs/CMakeFiles/fs.dir/flags.make
 src/fs/CMakeFiles/fs.dir/Hadoop3File.cc.o: src/fs/Hadoop3File.cc
 src/fs/CMakeFiles/fs.dir/Hadoop3File.cc.o: src/fs/CMakeFiles/fs.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/openec/openec/res/openec/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object src/fs/CMakeFiles/fs.dir/Hadoop3File.cc.o"
-	cd /home/openec/openec/res/openec/src/fs && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/fs/CMakeFiles/fs.dir/Hadoop3File.cc.o -MF CMakeFiles/fs.dir/Hadoop3File.cc.o.d -o CMakeFiles/fs.dir/Hadoop3File.cc.o -c /home/openec/openec/res/openec/src/fs/Hadoop3File.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/openec/Fast23/storage/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object src/fs/CMakeFiles/fs.dir/Hadoop3File.cc.o"
+	cd /home/openec/Fast23/storage/src/fs && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/fs/CMakeFiles/fs.dir/Hadoop3File.cc.o -MF CMakeFiles/fs.dir/Hadoop3File.cc.o.d -o CMakeFiles/fs.dir/Hadoop3File.cc.o -c /home/openec/Fast23/storage/src/fs/Hadoop3File.cc
 
 src/fs/CMakeFiles/fs.dir/Hadoop3File.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/fs.dir/Hadoop3File.cc.i"
-	cd /home/openec/openec/res/openec/src/fs && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/openec/openec/res/openec/src/fs/Hadoop3File.cc > CMakeFiles/fs.dir/Hadoop3File.cc.i
+	cd /home/openec/Fast23/storage/src/fs && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/openec/Fast23/storage/src/fs/Hadoop3File.cc > CMakeFiles/fs.dir/Hadoop3File.cc.i
 
 src/fs/CMakeFiles/fs.dir/Hadoop3File.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/fs.dir/Hadoop3File.cc.s"
-	cd /home/openec/openec/res/openec/src/fs && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/openec/openec/res/openec/src/fs/Hadoop3File.cc -o CMakeFiles/fs.dir/Hadoop3File.cc.s
+	cd /home/openec/Fast23/storage/src/fs && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/openec/Fast23/storage/src/fs/Hadoop3File.cc -o CMakeFiles/fs.dir/Hadoop3File.cc.s
 
 src/fs/CMakeFiles/fs.dir/QFSFile.cc.o: src/fs/CMakeFiles/fs.dir/flags.make
 src/fs/CMakeFiles/fs.dir/QFSFile.cc.o: src/fs/QFSFile.cc
 src/fs/CMakeFiles/fs.dir/QFSFile.cc.o: src/fs/CMakeFiles/fs.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/openec/openec/res/openec/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object src/fs/CMakeFiles/fs.dir/QFSFile.cc.o"
-	cd /home/openec/openec/res/openec/src/fs && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/fs/CMakeFiles/fs.dir/QFSFile.cc.o -MF CMakeFiles/fs.dir/QFSFile.cc.o.d -o CMakeFiles/fs.dir/QFSFile.cc.o -c /home/openec/openec/res/openec/src/fs/QFSFile.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/openec/Fast23/storage/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object src/fs/CMakeFiles/fs.dir/QFSFile.cc.o"
+	cd /home/openec/Fast23/storage/src/fs && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/fs/CMakeFiles/fs.dir/QFSFile.cc.o -MF CMakeFiles/fs.dir/QFSFile.cc.o.d -o CMakeFiles/fs.dir/QFSFile.cc.o -c /home/openec/Fast23/storage/src/fs/QFSFile.cc
 
 src/fs/CMakeFiles/fs.dir/QFSFile.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/fs.dir/QFSFile.cc.i"
-	cd /home/openec/openec/res/openec/src/fs && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/openec/openec/res/openec/src/fs/QFSFile.cc > CMakeFiles/fs.dir/QFSFile.cc.i
+	cd /home/openec/Fast23/storage/src/fs && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/openec/Fast23/storage/src/fs/QFSFile.cc > CMakeFiles/fs.dir/QFSFile.cc.i
 
 src/fs/CMakeFiles/fs.dir/QFSFile.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/fs.dir/QFSFile.cc.s"
-	cd /home/openec/openec/res/openec/src/fs && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/openec/openec/res/openec/src/fs/QFSFile.cc -o CMakeFiles/fs.dir/QFSFile.cc.s
+	cd /home/openec/Fast23/storage/src/fs && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/openec/Fast23/storage/src/fs/QFSFile.cc -o CMakeFiles/fs.dir/QFSFile.cc.s
 
 src/fs/CMakeFiles/fs.dir/QuantcastFS.cc.o: src/fs/CMakeFiles/fs.dir/flags.make
 src/fs/CMakeFiles/fs.dir/QuantcastFS.cc.o: src/fs/QuantcastFS.cc
 src/fs/CMakeFiles/fs.dir/QuantcastFS.cc.o: src/fs/CMakeFiles/fs.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/openec/openec/res/openec/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object src/fs/CMakeFiles/fs.dir/QuantcastFS.cc.o"
-	cd /home/openec/openec/res/openec/src/fs && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/fs/CMakeFiles/fs.dir/QuantcastFS.cc.o -MF CMakeFiles/fs.dir/QuantcastFS.cc.o.d -o CMakeFiles/fs.dir/QuantcastFS.cc.o -c /home/openec/openec/res/openec/src/fs/QuantcastFS.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/openec/Fast23/storage/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object src/fs/CMakeFiles/fs.dir/QuantcastFS.cc.o"
+	cd /home/openec/Fast23/storage/src/fs && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/fs/CMakeFiles/fs.dir/QuantcastFS.cc.o -MF CMakeFiles/fs.dir/QuantcastFS.cc.o.d -o CMakeFiles/fs.dir/QuantcastFS.cc.o -c /home/openec/Fast23/storage/src/fs/QuantcastFS.cc
 
 src/fs/CMakeFiles/fs.dir/QuantcastFS.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/fs.dir/QuantcastFS.cc.i"
-	cd /home/openec/openec/res/openec/src/fs && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/openec/openec/res/openec/src/fs/QuantcastFS.cc > CMakeFiles/fs.dir/QuantcastFS.cc.i
+	cd /home/openec/Fast23/storage/src/fs && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/openec/Fast23/storage/src/fs/QuantcastFS.cc > CMakeFiles/fs.dir/QuantcastFS.cc.i
 
 src/fs/CMakeFiles/fs.dir/QuantcastFS.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/fs.dir/QuantcastFS.cc.s"
-	cd /home/openec/openec/res/openec/src/fs && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/openec/openec/res/openec/src/fs/QuantcastFS.cc -o CMakeFiles/fs.dir/QuantcastFS.cc.s
+	cd /home/openec/Fast23/storage/src/fs && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/openec/Fast23/storage/src/fs/QuantcastFS.cc -o CMakeFiles/fs.dir/QuantcastFS.cc.s
 
 src/fs/CMakeFiles/fs.dir/UnderFS.cc.o: src/fs/CMakeFiles/fs.dir/flags.make
 src/fs/CMakeFiles/fs.dir/UnderFS.cc.o: src/fs/UnderFS.cc
 src/fs/CMakeFiles/fs.dir/UnderFS.cc.o: src/fs/CMakeFiles/fs.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/openec/openec/res/openec/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object src/fs/CMakeFiles/fs.dir/UnderFS.cc.o"
-	cd /home/openec/openec/res/openec/src/fs && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/fs/CMakeFiles/fs.dir/UnderFS.cc.o -MF CMakeFiles/fs.dir/UnderFS.cc.o.d -o CMakeFiles/fs.dir/UnderFS.cc.o -c /home/openec/openec/res/openec/src/fs/UnderFS.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/openec/Fast23/storage/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object src/fs/CMakeFiles/fs.dir/UnderFS.cc.o"
+	cd /home/openec/Fast23/storage/src/fs && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/fs/CMakeFiles/fs.dir/UnderFS.cc.o -MF CMakeFiles/fs.dir/UnderFS.cc.o.d -o CMakeFiles/fs.dir/UnderFS.cc.o -c /home/openec/Fast23/storage/src/fs/UnderFS.cc
 
 src/fs/CMakeFiles/fs.dir/UnderFS.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/fs.dir/UnderFS.cc.i"
-	cd /home/openec/openec/res/openec/src/fs && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/openec/openec/res/openec/src/fs/UnderFS.cc > CMakeFiles/fs.dir/UnderFS.cc.i
+	cd /home/openec/Fast23/storage/src/fs && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/openec/Fast23/storage/src/fs/UnderFS.cc > CMakeFiles/fs.dir/UnderFS.cc.i
 
 src/fs/CMakeFiles/fs.dir/UnderFS.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/fs.dir/UnderFS.cc.s"
-	cd /home/openec/openec/res/openec/src/fs && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/openec/openec/res/openec/src/fs/UnderFS.cc -o CMakeFiles/fs.dir/UnderFS.cc.s
+	cd /home/openec/Fast23/storage/src/fs && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/openec/Fast23/storage/src/fs/UnderFS.cc -o CMakeFiles/fs.dir/UnderFS.cc.s
 
 src/fs/CMakeFiles/fs.dir/UnderFile.cc.o: src/fs/CMakeFiles/fs.dir/flags.make
 src/fs/CMakeFiles/fs.dir/UnderFile.cc.o: src/fs/UnderFile.cc
 src/fs/CMakeFiles/fs.dir/UnderFile.cc.o: src/fs/CMakeFiles/fs.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/openec/openec/res/openec/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object src/fs/CMakeFiles/fs.dir/UnderFile.cc.o"
-	cd /home/openec/openec/res/openec/src/fs && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/fs/CMakeFiles/fs.dir/UnderFile.cc.o -MF CMakeFiles/fs.dir/UnderFile.cc.o.d -o CMakeFiles/fs.dir/UnderFile.cc.o -c /home/openec/openec/res/openec/src/fs/UnderFile.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/openec/Fast23/storage/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object src/fs/CMakeFiles/fs.dir/UnderFile.cc.o"
+	cd /home/openec/Fast23/storage/src/fs && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/fs/CMakeFiles/fs.dir/UnderFile.cc.o -MF CMakeFiles/fs.dir/UnderFile.cc.o.d -o CMakeFiles/fs.dir/UnderFile.cc.o -c /home/openec/Fast23/storage/src/fs/UnderFile.cc
 
 src/fs/CMakeFiles/fs.dir/UnderFile.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/fs.dir/UnderFile.cc.i"
-	cd /home/openec/openec/res/openec/src/fs && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/openec/openec/res/openec/src/fs/UnderFile.cc > CMakeFiles/fs.dir/UnderFile.cc.i
+	cd /home/openec/Fast23/storage/src/fs && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/openec/Fast23/storage/src/fs/UnderFile.cc > CMakeFiles/fs.dir/UnderFile.cc.i
 
 src/fs/CMakeFiles/fs.dir/UnderFile.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/fs.dir/UnderFile.cc.s"
-	cd /home/openec/openec/res/openec/src/fs && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/openec/openec/res/openec/src/fs/UnderFile.cc -o CMakeFiles/fs.dir/UnderFile.cc.s
+	cd /home/openec/Fast23/storage/src/fs && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/openec/Fast23/storage/src/fs/UnderFile.cc -o CMakeFiles/fs.dir/UnderFile.cc.s
 
 # Object files for target fs
 fs_OBJECTS = \
@@ -221,19 +221,19 @@ src/fs/libfs.a: src/fs/CMakeFiles/fs.dir/UnderFS.cc.o
 src/fs/libfs.a: src/fs/CMakeFiles/fs.dir/UnderFile.cc.o
 src/fs/libfs.a: src/fs/CMakeFiles/fs.dir/build.make
 src/fs/libfs.a: src/fs/CMakeFiles/fs.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/openec/openec/res/openec/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Linking CXX static library libfs.a"
-	cd /home/openec/openec/res/openec/src/fs && $(CMAKE_COMMAND) -P CMakeFiles/fs.dir/cmake_clean_target.cmake
-	cd /home/openec/openec/res/openec/src/fs && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/fs.dir/link.txt --verbose=$(VERBOSE)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/openec/Fast23/storage/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Linking CXX static library libfs.a"
+	cd /home/openec/Fast23/storage/src/fs && $(CMAKE_COMMAND) -P CMakeFiles/fs.dir/cmake_clean_target.cmake
+	cd /home/openec/Fast23/storage/src/fs && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/fs.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
 src/fs/CMakeFiles/fs.dir/build: src/fs/libfs.a
 .PHONY : src/fs/CMakeFiles/fs.dir/build
 
 src/fs/CMakeFiles/fs.dir/clean:
-	cd /home/openec/openec/res/openec/src/fs && $(CMAKE_COMMAND) -P CMakeFiles/fs.dir/cmake_clean.cmake
+	cd /home/openec/Fast23/storage/src/fs && $(CMAKE_COMMAND) -P CMakeFiles/fs.dir/cmake_clean.cmake
 .PHONY : src/fs/CMakeFiles/fs.dir/clean
 
 src/fs/CMakeFiles/fs.dir/depend:
-	cd /home/openec/openec/res/openec && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/openec/openec/res/openec /home/openec/openec/res/openec/src/fs /home/openec/openec/res/openec /home/openec/openec/res/openec/src/fs /home/openec/openec/res/openec/src/fs/CMakeFiles/fs.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/openec/Fast23/storage && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/openec/Fast23/storage /home/openec/Fast23/storage/src/fs /home/openec/Fast23/storage /home/openec/Fast23/storage/src/fs /home/openec/Fast23/storage/src/fs/CMakeFiles/fs.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : src/fs/CMakeFiles/fs.dir/depend
 

@@ -2,7 +2,7 @@
 
 ps -ef|grep "memcached -d"|cut -c 9-15|xargs kill -9
 
-cat config/echash_config.txt |grep -Ev "^$|[#;]"| while read line
+cat ../client/config/echash_config.txt |grep -Ev "^$|[#;]"| while read line
 do
   	ip=${line%% *}
 	tmp=${line#* }
