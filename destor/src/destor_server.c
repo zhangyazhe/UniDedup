@@ -81,8 +81,9 @@ static void read_data(void) {
 		// 4. push
 		sync_queue_push(read_queue, c);
 		TIMER_BEGIN(1);
+		freeReplyObject(readrReply);
 	}
-	freeReplyObject(readrReply);
+	// freeReplyObject(readrReply);
 	redisFree(readCtx);
 
     c = new_chunk(0);

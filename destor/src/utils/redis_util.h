@@ -69,6 +69,8 @@ int agent_cmd_read_int(agent_cmd *cmd);
 char* destor_cmd_read_string(destor_cmd *cmd);
 char* agent_cmd_read_string(agent_cmd *cmd);
 
+void openec_agent_cmd_send_to(agent_cmd* cmd, unsigned int ip);
+
 // destor command
 void build_destor_command_type0(destor_cmd* cmd, int type, char* group_name, uint32_t size);
 void resolve_destor_command_type0(destor_cmd* cmd);

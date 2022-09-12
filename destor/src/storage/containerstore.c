@@ -290,7 +290,7 @@ void write_container(struct container* c) {
 		// we write to OpenEC
 		int num = CONTAINER_SIZE / destor.oec_pktsize;
 		// init
-		redisContext* _localCtx = createContextByUint(destor.local_ip);
+		redisContext* destor2oecCtx = createContextByUint(destor.local_ip);
 		agent_cmd* agCmd = (agent_cmd*)calloc(sizeof(agent_cmd), 1);
 		openec_agent_cmd_init(agCmd);
 		
@@ -299,27 +299,43 @@ void write_container(struct container* c) {
 		printf("[container2openec_name] %s\n", container_file_name);
 
 		build_openec_agent_command_type0(agCmd, 0, container_file_name, destor.ecid_pool, destor.oec_mode, CONTAINER_SIZE);
+		openec_agent_cmd_send_to(agCmd, destor.local_ip);
 		printf("[build_openec_agent_command_type0]\ndestor.ecid_pool is %s\noec_mode is %s\n", destor.ecid_pool, destor.oec_mode);
 		int pktid = 0;
 		for (int i = 0; i < num; i++) {
+			printf("[debug] i:%d, 0\n", i);
+			// move one oec_packet data and its length to buf.
 			unsigned char* buf = (char*)calloc(destor.oec_pktsize+4, sizeof(char));
 			
 			int tmplen = htonl(destor.oec_pktsize);
+			printf("[debug] i:%d, 1\n", i);
 			memcpy(buf, (unsigned char*)&tmplen, 4);
-
+			printf("[debug] i:%d, 2\n", i);
 			memcpy(buf+4, cur+i*destor.oec_pktsize, destor.oec_pktsize);
 			//outstream write
 			char* pkt_name = (char*)malloc(MAX_OEC_FILENAME_LEN);
     		sprintf(pkt_name, "%s:%d", container_file_name, pktid);
-
-			redisAppendCommand(_localCtx, "RPUSH %s %b", pkt_name, buf, destor.oec_pktsize+4);
-
+			printf("[debug] i:%d, 3\n", i);
+			redisAppendCommand(destor2oecCtx, "RPUSH %s %b", pkt_name, buf, destor.oec_pktsize+4);
+			printf("[debug] i:%d, 4\n", i);
 			pktid++;
 			free(pkt_name);
 			free(buf);
 		}
+		for (int i = 0; i < pktnum; i++) {
+			redisReply* destorrReply;
+			redisGetReply(destor2oecCtx, (void**)&destorrReply);
+			freeReplyObject(destorrReply);
+      	}
+
+		// wait for finish
+		char* wkey = (char*)malloc(MAX_OEC_FILENAME_LEN);
+		sprintf(wkey, "writefinish:%s", container_file_name);
+		rReply = (redisReply*)redisCommand(_localCtx, "blpop %s 0", wkey);
+		freeReplyObject(rReply);
+
 		free(agCmd);
-		redisFree(_localCtx);
+		redisFree(destor2oecCtx);
 		free(container_file_name);
 
 		pthread_mutex_unlock(&mutex);

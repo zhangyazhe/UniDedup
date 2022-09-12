@@ -147,6 +147,17 @@ char* agent_cmd_read_string(agent_cmd *cmd) {
   return toret;
 }
 
+
+void openec_agent_cmd_send_to(agent_cmd* cmd, unsigned int ip) {
+  printf("[debug] send to oec.\n");
+  redisContext* sendCtx = createContextByUint(ip);
+  redisReply* rReply = (redisReply*)redisCommand(sendCtx, "RPUSH %s %b", cmd->_rKey, cmd->_agCmd, cmd->_cmLen);
+  freeReplyObject(rReply);
+  redisFree(sendCtx);
+  printf("[debug] send to oec finished.\n");
+}
+
+
 void build_destor_command_type0(destor_cmd* cmd, int type, char* group_name, uint32_t size)
 {
 	cmd->_type = type;
