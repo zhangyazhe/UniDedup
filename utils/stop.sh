@@ -25,5 +25,7 @@ do
 	fi
 
     ssh $user@$host "$remotePath/destor/stop.sh"
-}
+} &
 done
+
+wait

@@ -28,5 +28,6 @@ do
 
     ssh $user@$host "$remotePath/destor/proxy"
 } &
-
 done
+
+wait

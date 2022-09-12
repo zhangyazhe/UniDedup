@@ -225,6 +225,7 @@ void write_container_async(struct container* c) {
 // zz7 write container into OpenEC
 void write_container(struct container* c) {
 	printf("write_container start\n");
+	assert(c != NULL);
 	assert(c->meta.chunk_num == g_hash_table_size(c->meta.map));
 
 	if (container_empty(c)) {
@@ -302,6 +303,7 @@ void write_container(struct container* c) {
 		openec_agent_cmd_send_to(agCmd, destor.local_ip);
 		printf("[build_openec_agent_command_type0]\ndestor.ecid_pool is %s\noec_mode is %s\n", destor.ecid_pool, destor.oec_mode);
 		int pktid = 0;
+		printf("num: %d\n", num);
 		for (int i = 0; i < num; i++) {
 			printf("[debug] i:%d, 0\n", i);
 			// move one oec_packet data and its length to buf.
@@ -311,13 +313,16 @@ void write_container(struct container* c) {
 			printf("[debug] i:%d, 1\n", i);
 			memcpy(buf, (unsigned char*)&tmplen, 4);
 			printf("[debug] i:%d, 2\n", i);
-			memcpy(buf+4, cur+i*destor.oec_pktsize, destor.oec_pktsize);
+			printf("[debug] pktsize: %d\n", destor.oec_pktsize);
+			memcpy(buf+4, c->data+i*destor.oec_pktsize, destor.oec_pktsize);
+			printf("[debug] i:%d, 3\n", i);
 			//outstream write
 			char* pkt_name = (char*)malloc(MAX_OEC_FILENAME_LEN);
-    		sprintf(pkt_name, "%s:%d", container_file_name, pktid);
-			printf("[debug] i:%d, 3\n", i);
-			redisAppendCommand(destor2oecCtx, "RPUSH %s %b", pkt_name, buf, destor.oec_pktsize+4);
 			printf("[debug] i:%d, 4\n", i);
+    		sprintf(pkt_name, "%s:%d", container_file_name, pktid);
+			printf("[debug] i:%d, 5\n", i);
+			redisAppendCommand(destor2oecCtx, "RPUSH %s %b", pkt_name, buf, destor.oec_pktsize+4);
+			printf("[debug] i:%d, 6\n", i);
 			pktid++;
 			free(pkt_name);
 			free(buf);
@@ -328,13 +333,13 @@ void write_container(struct container* c) {
 			redisGetReply(destor2oecCtx, (void**)&destorrReply);
 			freeReplyObject(destorrReply);
       	}
-
+		printf("write_container wait for finish\n");
 		// wait for finish
 		char* wkey = (char*)malloc(MAX_OEC_FILENAME_LEN);
 		sprintf(wkey, "writefinish:%s", container_file_name);
 		rReply = (redisReply*)redisCommand(destor2oecCtx, "blpop %s 0", wkey);
 		freeReplyObject(rReply);
-
+		printf("write_container finish\n");
 		free(agCmd);
 		redisFree(destor2oecCtx);
 		free(container_file_name);
