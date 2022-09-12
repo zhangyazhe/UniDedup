@@ -322,7 +322,8 @@ void write_container(struct container* c) {
 			free(pkt_name);
 			free(buf);
 		}
-		for (int i = 0; i < pktnum; i++) {
+		redisReply* rReply;
+		for (int i = 0; i < num; i++) {
 			redisReply* destorrReply;
 			redisGetReply(destor2oecCtx, (void**)&destorrReply);
 			freeReplyObject(destorrReply);
@@ -331,7 +332,7 @@ void write_container(struct container* c) {
 		// wait for finish
 		char* wkey = (char*)malloc(MAX_OEC_FILENAME_LEN);
 		sprintf(wkey, "writefinish:%s", container_file_name);
-		rReply = (redisReply*)redisCommand(_localCtx, "blpop %s 0", wkey);
+		rReply = (redisReply*)redisCommand(destor2oecCtx, "blpop %s 0", wkey);
 		freeReplyObject(rReply);
 
 		free(agCmd);
