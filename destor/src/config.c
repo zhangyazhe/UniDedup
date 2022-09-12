@@ -322,7 +322,10 @@ void load_config_from_string(sds config) {
 			int str_len = strlen(argv[1]);
 			destor.oec_mode = (char*)malloc(str_len+1);
 			strcpy(destor.oec_mode, argv[1]);
-		}
+		} else if (strcasecmp(argv[0], "oec_agent_ip") == 0
+				&& argc == 2) {
+			destor.oec_agent_ip = inet_addr(argv[1]);
+		} 
 		else {
 			err = "Bad directive or wrong number of arguments";
 			goto loaderr;

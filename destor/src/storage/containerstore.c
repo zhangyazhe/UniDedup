@@ -291,7 +291,7 @@ void write_container(struct container* c) {
 		// we write to OpenEC
 		int num = CONTAINER_SIZE / destor.oec_pktsize;
 		// init
-		redisContext* destor2oecCtx = createContextByUint(destor.local_ip);
+		
 		agent_cmd* agCmd = (agent_cmd*)calloc(sizeof(agent_cmd), 1);
 		openec_agent_cmd_init(agCmd);
 		
@@ -300,9 +300,11 @@ void write_container(struct container* c) {
 		printf("[container2openec_name] %s\n", container_file_name);
 
 		build_openec_agent_command_type0(agCmd, 0, container_file_name, destor.ecid_pool, destor.oec_mode, CONTAINER_SIZE);
-		openec_agent_cmd_send_to(agCmd, destor.local_ip);
+		openec_agent_cmd_send_to(agCmd, destor.oec_agent_ip);
 		printf("[build_openec_agent_command_type0]\ndestor.ecid_pool is %s\noec_mode is %s\n", destor.ecid_pool, destor.oec_mode);
+		
 		int pktid = 0;
+		redisContext* destor2oecCtx = createContextByUint(destor.oec_agent_ip);
 		printf("num: %d\n", num);
 		for (int i = 0; i < num; i++) {
 			printf("[debug] i:%d, 0\n", i);
