@@ -46,6 +46,12 @@ for((i=1;i<=$node_num;i++));
 do
 {
 	i=$i
+
+	if [[ $i -eq 5 ]]
+	then
+		continue
+	fi
+
 	if [[ $i -gt 0 && $i -lt 10 ]]
 	then
 		host=${node_name}0${i}

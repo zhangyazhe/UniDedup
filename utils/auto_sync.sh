@@ -10,7 +10,7 @@ remoteConfPath=$remotePath/client/config
 localPath=../client
 
 hadoop_home=$home/hadoop-3.0.0-src/hadoop-dist/target/hadoop-3.0.0
-exec_files=(../client/client ../client/agent ../destor/proxy ../destor/destor)
+exec_files=(../client/client ../client/agent ../destor/proxy ../destor/destor ../destor/destor.config ../client/cls.sh)
 # conf_files=(pipeSetting.xml asSetting.xml aspSetting.xml convSetting.xml rpconvSetting.xml ppctSetting.xml smlzSetting.xml)
 
 conf_files=($(ls ../client/config/))
@@ -42,6 +42,11 @@ namenode_ip=${ip_lists[0]}
 for((i=1;i<=$node_num;i++));
 do
 {
+	if [[ $i -eq 5 ]]
+	then
+		continue
+	fi
+
 	i=$i
 	if [[ $i -gt 0 && $i -lt 10 ]]
 	then

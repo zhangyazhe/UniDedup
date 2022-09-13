@@ -1,11 +1,11 @@
 <setting>
 <attribute><name>controller.addr</name><value>192.168.235.179</value></attribute>
 <attribute><name>agents.addr</name>
+<value>/0/192.168.235.179</value>
 <value>/0/192.168.235.180</value>
 <value>/1/192.168.235.181</value>
 <value>/2/192.168.235.182</value>
 <value>/3/192.168.235.183</value>
-<value>/4/192.168.235.184</value>
 <value>/5/192.168.235.185</value>
 <value>/6/192.168.235.186</value>
 <value>/7/192.168.235.187</value>
