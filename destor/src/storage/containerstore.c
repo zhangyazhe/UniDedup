@@ -296,7 +296,7 @@ void write_container(struct container* c) {
 		openec_agent_cmd_init(agCmd);
 		
 		char *container_file_name = (char*)malloc(MAX_OEC_FILENAME_LEN);
-		sprintf(container_file_name, "%s_%d", BASE_OEC_FILENAME, c->meta.id);
+		sprintf(container_file_name, "%s_%s_%d", BASE_OEC_FILENAME, ip2Str(destor.local_ip), c->meta.id);
 		printf("[container2openec_name] %s\n", container_file_name);
 
 		build_openec_agent_command_type0(agCmd, 0, container_file_name, destor.ecid_pool, destor.oec_mode, CONTAINER_SIZE);
@@ -312,19 +312,12 @@ void write_container(struct container* c) {
 			unsigned char* buf = (char*)calloc(destor.oec_pktsize+4, sizeof(char));
 			
 			int tmplen = htonl(destor.oec_pktsize);
-			printf("[debug] i:%d, 1\n", i);
 			memcpy(buf, (unsigned char*)&tmplen, 4);
-			printf("[debug] i:%d, 2\n", i);
-			printf("[debug] pktsize: %d\n", destor.oec_pktsize);
 			memcpy(buf+4, c->data+i*destor.oec_pktsize, destor.oec_pktsize);
-			printf("[debug] i:%d, 3\n", i);
 			//outstream write
 			char* pkt_name = (char*)malloc(MAX_OEC_FILENAME_LEN);
-			printf("[debug] i:%d, 4\n", i);
     		sprintf(pkt_name, "%s:%d", container_file_name, pktid);
-			printf("[debug] i:%d, 5\n", i);
 			redisAppendCommand(destor2oecCtx, "RPUSH %s %b", pkt_name, buf, destor.oec_pktsize+4);
-			printf("[debug] i:%d, 6\n", i);
 			pktid++;
 			free(pkt_name);
 			free(buf);
