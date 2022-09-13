@@ -42,7 +42,7 @@ namenode_ip=${ip_lists[0]}
 for((i=1;i<=$node_num;i++));
 do
 {
-	if [[ $i -eq 5 ]]
+	if [[ $i -gt 3 && $i -lt 6 ]]
 	then
 		continue
 	fi

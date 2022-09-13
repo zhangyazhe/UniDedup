@@ -36,8 +36,8 @@ Hadoop3File* Hadoop3::openFile(string filename, string mode) {
 }
 
 void Hadoop3::writeFile(UnderFile* file, char* buffer, int len) {
-//  cout << "Hadoop3.writeFile , len = " << len << endl;
-  hdfsWrite(_fs, ((Hadoop3File*)file)->_objfile, (void*)buffer, len);
+  int length = hdfsWrite(_fs, ((Hadoop3File*)file)->_objfile, (void*)buffer, len);
+  cout << "Hadoop3.writeFile , len = " << length << endl;
 }
 
 void Hadoop3::flushFile(UnderFile* file) {

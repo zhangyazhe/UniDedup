@@ -12,7 +12,7 @@ stop-dfs.sh
 for((i=1;i<=$NODE_NUM;i++));
 do
 {
-	if [[ $i -eq 5 ]]
+	if [[ $i -gt 3 && $i -lt 6 ]]
 	then 
 		continue
 	fi

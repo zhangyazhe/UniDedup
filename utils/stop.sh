@@ -12,7 +12,8 @@ localPath=../client
 for((i=0;i<=$node_num;i++));
 do
 {
-    if [[ $i -eq 5 ]]
+    i=$i
+    if [[ $i -gt 3 && $i -lt 6 ]]
     then
         continue
     fi

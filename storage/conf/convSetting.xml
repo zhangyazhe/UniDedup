@@ -1,11 +1,9 @@
 <setting>
 <attribute><name>controller.addr</name><value>192.168.235.179</value></attribute>
 <attribute><name>agents.addr</name>
-<value>/0/192.168.235.179</value>
 <value>/0/192.168.235.180</value>
 <value>/1/192.168.235.181</value>
-<value>/2/192.168.235.182</value>
-<value>/3/192.168.235.183</value>
+<value>/1/192.168.235.182</value>
 <value>/5/192.168.235.185</value>
 <value>/6/192.168.235.186</value>
 <value>/7/192.168.235.187</value>
@@ -20,9 +18,9 @@
 <attribute><name>ec.concurrent.num</name><value>5</value></attribute>
 <!-- <attribute><name>location.type</name><value>true</value></attribute> -->
 <attribute><name>ec.policy</name>
-<value><ecid>rs_8_6</ecid><class>RSCONV</class><n>8</n><k>6</k><w>1</w><opt>-1</opt></value>
+<value><ecid>rs_8_6</ecid><class>RSCONV</class><n>6</n><k>4</k><w>1</w><opt>-1</opt></value>
 </attribute>
 <attribute><name>offline.pool</name>
-<value><poolid>rs_8_6_pool</poolid><ecid>rs_8_6</ecid><base>262144</base></value>
+<value><poolid>rs_8_6_pool</poolid><ecid>rs_8_6</ecid><base>1048576</base></value>
 </attribute>
 </setting>

@@ -47,7 +47,7 @@ do
 {
 	i=$i
 
-	if [[ $i -eq 5 ]]
+	if [[ $i -gt 3 && $i -lt 6 ]]
 	then
 		continue
 	fi
