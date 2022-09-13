@@ -306,7 +306,7 @@ void StripeStore::addLostObj(string objname) {
   } else {
     _lostMap[objname]++;
   }
-  cout << "[debug] objname is " << objname << ", LostMap size is " << _lostMap.size() << endl;
+  // cout << "[debug] objname is " << objname << ", LostMap size is " << _lostMap.size() << endl;
   _lockLostMap.unlock();
   _lockStripeErrNum.unlock();
   _lockOfflineLostStripe.unlock();
@@ -444,7 +444,7 @@ void StripeStore::finishRepair(string objname) {
     }
   }
   gettimeofday(&_endRP, NULL);
-  cout << "[debug] Repair::finishObj " << objname << ", time is " << RedisUtil::duration(_startRP, _endRP) << endl;
+  // cout << "[debug] Repair::finishObj " << objname << ", time is " << RedisUtil::duration(_startRP, _endRP) << endl;
   if (_RPInProgress.size() == 0 && _lostMap.size() == 0 && _startTime) {
     // _enableRepair = false;
     _startTime = false;

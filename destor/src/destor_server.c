@@ -328,10 +328,10 @@ void destor_server_process()
             switch (type)
             {
             case 0:
-				printf("[debug] destor has received command type0.\n");
-				printf("[debug] groupname: %s\n", cmd->_group_name);
+				// printf("[debug] destor has received command type0.\n");
+				// printf("[debug] groupname: %s\n", cmd->_group_name);
 				// printf("[debug] data: %s\n", cmd->_data);
-				printf("[debug] size: %d\n", cmd->_size);
+				// printf("[debug] size: %d\n", cmd->_size);
 				// get data
 				
 				// 3. destor_write

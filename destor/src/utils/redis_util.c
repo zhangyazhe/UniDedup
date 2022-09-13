@@ -149,12 +149,12 @@ char* agent_cmd_read_string(agent_cmd *cmd) {
 
 
 void openec_agent_cmd_send_to(agent_cmd* cmd, unsigned int ip) {
-  printf("[debug] send to oec.\n");
+  // printf("[debug] send to oec.\n");
   redisContext* sendCtx = createContextByUint(ip);
   redisReply* rReply = (redisReply*)redisCommand(sendCtx, "RPUSH %s %b", cmd->_rKey, cmd->_agCmd, cmd->_cmLen);
   freeReplyObject(rReply);
   redisFree(sendCtx);
-  printf("[debug] send to oec finished.\n");
+  // printf("[debug] send to oec finished.\n");
 }
 
 

@@ -297,17 +297,17 @@ void write_container(struct container* c) {
 		
 		char *container_file_name = (char*)malloc(MAX_OEC_FILENAME_LEN);
 		sprintf(container_file_name, "%s_%s_%d", BASE_OEC_FILENAME, destor.local_ip_str, c->meta.id);
-		printf("[container2openec_name] %s\n", container_file_name);
+		// printf("[container2openec_name] %s\n", container_file_name);
 
 		build_openec_agent_command_type0(agCmd, 0, container_file_name, destor.ecid_pool, destor.oec_mode, CONTAINER_SIZE);
 		openec_agent_cmd_send_to(agCmd, destor.oec_agent_ip);
-		printf("[build_openec_agent_command_type0]\ndestor.ecid_pool is %s\noec_mode is %s\n", destor.ecid_pool, destor.oec_mode);
+		// printf("[build_openec_agent_command_type0]\ndestor.ecid_pool is %s\noec_mode is %s\n", destor.ecid_pool, destor.oec_mode);
 		
 		int pktid = 0;
 		redisContext* destor2oecCtx = createContextByUint(destor.oec_agent_ip);
-		printf("num: %d\n", num);
+		// printf("num: %d\n", num);
 		for (int i = 0; i < num; i++) {
-			printf("[debug] i:%d, 0\n", i);
+			// printf("[debug] i:%d, 0\n", i);
 			// move one oec_packet data and its length to buf.
 			unsigned char* buf = (char*)calloc(destor.oec_pktsize+4, sizeof(char));
 			
