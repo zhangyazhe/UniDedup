@@ -308,6 +308,9 @@ void load_config_from_string(sds config) {
 			destor.backup_retention_time = atoi(argv[1]);
 		} else if (strcasecmp(argv[0], "local_ip") == 0
 				&& argc == 2) {
+			int tmp_len = strlen(argv[1]);
+			destor.local_ip_str = (char*)malloc(tmp_len+1);
+			strcpy(destor.local_ip_str, argv[1]);
 			destor.local_ip = inet_addr(argv[1]);
 		} else if (strcasecmp(argv[0], "oec_pktsize") == 0
 				&& argc == 2) {

@@ -282,6 +282,7 @@ struct destor {
 
 	// zz7, for openec
 	unsigned int local_ip;
+	char* local_ip_str;
 	int oec_pktsize;
 	char* ecid_pool;
 	char* oec_mode;

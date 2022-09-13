@@ -296,7 +296,7 @@ void write_container(struct container* c) {
 		openec_agent_cmd_init(agCmd);
 		
 		char *container_file_name = (char*)malloc(MAX_OEC_FILENAME_LEN);
-		sprintf(container_file_name, "%s_%s_%d", BASE_OEC_FILENAME, ip2Str(destor.local_ip), c->meta.id);
+		sprintf(container_file_name, "%s_%s_%d", BASE_OEC_FILENAME, destor.local_ip_str, c->meta.id);
 		printf("[container2openec_name] %s\n", container_file_name);
 
 		build_openec_agent_command_type0(agCmd, 0, container_file_name, destor.ecid_pool, destor.oec_mode, CONTAINER_SIZE);
