@@ -97,8 +97,6 @@ client/src/*/.deps/
 client/src/*/.deps/*
 client/src/*/Makefile
 
-client/config.h
-client/config.h.in
 client/config.hh
 client/config.hh.in
 client/config.log
