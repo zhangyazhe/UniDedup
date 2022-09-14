@@ -19,8 +19,9 @@ struct echash_set_t {
 
 int initEchash(void);
 int setByEchash(struct ECHash_st *ECH, struct echash_set_t* es);
-struct FileRecipe* getByEchash(struct EChash_st *ECH, const char* key);
+struct fileRecipe* getByEchash(struct EChash_st *ECH, const char* key);
 struct echash_set_t* convertType(struct fileRecipe* fr);
 uint32_t ECH_set(struct ECHash_st *ECH, char *key, char *val);
+char* ECH_get(struct ECHash_st* ECH, const char* key);
 
 #endif

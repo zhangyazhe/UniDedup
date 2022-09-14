@@ -45,6 +45,16 @@ uint32_t ECH_set(struct ECHash_st *ECH, char *key, char *val) {
     return 0;
 }
 
+char* ECH_get(struct ECHash_st* ECH, const char* key) {
+    memcached_return_t rc = MEMCACHED_FAILURE;
+    char* val;
+    size_t len;
+    uint32_t flag;
+    val = ECHash_get(ECH, key, strlen(key), &len, &flag, &rc);
+
+    return val;
+}
+
 int setByEchash(struct ECHash_st *ECH, struct echash_set_t* es) {
     return ECH_set(ECH, es->key, es->value);
 }
@@ -53,7 +63,7 @@ struct echash_set_t* convertType(struct fileRecipe* fr) {
     struct echash_set_t* es = (struct echash_set_t*) malloc(sizeof(struct echash_set_t));
 
     size_t key_len = strlen(fr->filename);
-    size_t value_len = sizeof(int32_t);
+    size_t value_len = sizeof(int32_t) + sizeof(size_t);
     for(int i = 0; i < fr->num; i++) {
         value_len += strlen(fr->gm[i].groupName)+1;
         value_len += sizeof(uint64_t);
@@ -64,11 +74,28 @@ struct echash_set_t* convertType(struct fileRecipe* fr) {
     
     memcpy(es->key, fr->filename, key_len);
     memcpy(es->value, (char*)&fr->num, sizeof(int32_t));
-    memcpy(es->value+sizeof(int32_t), fr->gm, value_len);
+    memcpy(es->value+sizeof(int32_t), (char*)&value_len, sizeof(size_t));
+    memcpy(es->value+sizeof(int32_t)+sizeof(size_t), fr->gm, value_len-sizeof(int32_t)-sizeof(size_t));
     
     return es;
 }
 
-struct FileRecipe* getByEchash(struct EChash_st *ECH, const char* key) {
-    
+struct fileRecipe* getByEchash(struct EChash_st *ECH, const char* key) {
+    char* value = ECH_get(ECH, key);
+    if(value == NULL) {
+        return NULL;
+    }
+    int32_t num = 0;
+    size_t value_len = 0;
+    memcpy((char*)&num, value, sizeof(int32_t));
+    num = htonl(num);
+    num = (int32_t)num;
+
+    struct fileRecipe* fr = new_fileRecipe(key, num);
+
+    memcpy((char*)&value_len, value+sizeof(int32_t), sizeof(int32_t));
+
+    memcpy((char*)fr->gm, value+sizeof(int32_t)+sizeof(size_t), value_len-sizeof(int32_t)-sizeof(size_t));
+
+    return fr;
 }
