@@ -16,6 +16,7 @@ AgentCommand::AgentCommand(char *reqStr)
 	switch (_type)
 	{
 	case 0: resolveType0(); break;
+	case 1: resolveType1(); break;
 
 	default: break;
 	}
@@ -107,6 +108,10 @@ void AgentCommand::setRKey(std::string key)
 	_rKey = key;
 }
 
+std::string AgentCommand::getToReadFilename() {
+	return _to_read_filename;
+}
+
 void AgentCommand::sendTo(unsigned int ip)
 {
 	redisContext *sendCtx = RedisUtil::createContext(ip);
@@ -140,4 +145,21 @@ void AgentCommand::resolveType0()
 	_filepath = readString();
 	_filesaveas = readString();
 	_filesize = readInt();
+}
+
+void AgentCommand::buildType1(int type,
+                    std::string filename)
+{
+	_type = type;
+	_to_read_filename = filename;
+
+	// 1. type
+	writeInt(_type);
+	// 2. filename
+	writeString(_to_read_filename);
+}
+
+void AgentCommand::resolveType1()
+{
+	_to_read_filename = readString();
 }
