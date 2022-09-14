@@ -51,5 +51,13 @@ int main(int argc, char** argv)
         int input_size = atoi(input_fileszie.c_str());
         write(input_filepath, input_saveas, input_size);
     }
+    else if (reqType == "read") {
+        if (argc != 3) {
+            usage();
+            return -1;
+        }
+        string input_filename(argv[2]);
+        read(input_filename);
+    }
 
 }
