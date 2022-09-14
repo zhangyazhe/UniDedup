@@ -46,5 +46,5 @@ int setFileRecipe(struct fileRecipe* fr) {
 }
 
 struct fileRecipe* getFileRecipe(const char* filename) {
-    return getByEchash(ECH, const char* filename);
+    return getByEchash(ECH, filename);
 }

@@ -48,7 +48,7 @@ public:
     std::string getFilepath();
     std::string getFilename();
     int getFilesize();
-    std::string getToReadFilename()
+    std::string getToReadFilename();
 
     // send method
     void setRKey(std::string key);

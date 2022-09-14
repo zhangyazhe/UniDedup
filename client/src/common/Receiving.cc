@@ -8,11 +8,11 @@ static chunk* new_chunk(int size) {
     if (!size) return nullptr;
     chunk* ret = (chunk*)malloc(sizeof(chunk));
     ret->size = size;
-    ret->data = (char*)malloc(size*sizeof(char));
+    ret->data = (unsigned char*)malloc(size*sizeof(char));
     return ret;
 }
 
-static receive_data(const fileRecipe* fr) {
+static void receive_data(const fileRecipe* fr) {
     // serial
     for (int i = 0; i < fr->num; i++) {
         // get chunks from destor[i]

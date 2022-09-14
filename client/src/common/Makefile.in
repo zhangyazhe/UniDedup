@@ -108,7 +108,8 @@ libcommon_a_LIBADD =
 am_libcommon_a_OBJECTS = ae_chunking.$(OBJEXT) Chunking.$(OBJEXT) \
 	Config.$(OBJEXT) Echash.$(OBJEXT) FileRecipe.$(OBJEXT) \
 	Fingerprint.$(OBJEXT) Group.$(OBJEXT) Hashing.$(OBJEXT) \
-	rabin_chunking.$(OBJEXT) Reading.$(OBJEXT) Worker.$(OBJEXT)
+	rabin_chunking.$(OBJEXT) Reading.$(OBJEXT) Worker.$(OBJEXT) \
+	Assembling.$(OBJEXT) Receiving.$(OBJEXT)
 libcommon_a_OBJECTS = $(am_libcommon_a_OBJECTS)
 AM_V_P = $(am__v_P_@AM_V@)
 am__v_P_ = $(am__v_P_@AM_DEFAULT_V@)
@@ -251,6 +252,7 @@ pdfdir = @pdfdir@
 prefix = @prefix@
 program_transform_name = @program_transform_name@
 psdir = @psdir@
+runstatedir = @runstatedir@
 sbindir = @sbindir@
 sharedstatedir = @sharedstatedir@
 srcdir = @srcdir@
@@ -260,7 +262,7 @@ top_build_prefix = @top_build_prefix@
 top_builddir = @top_builddir@
 top_srcdir = @top_srcdir@
 noinst_LIBRARIES = libcommon.a
-libcommon_a_SOURCES = ae_chunking.cc Chunking.cc Config.cc Echash.cc FileRecipe.cc Fingerprint.cc Group.cc Hashing.cc rabin_chunking.cc Reading.cc Worker.cc
+libcommon_a_SOURCES = ae_chunking.cc Chunking.cc Config.cc Echash.cc FileRecipe.cc Fingerprint.cc Group.cc Hashing.cc rabin_chunking.cc Reading.cc Worker.cc Assembling.cc Receiving.cc
 all: all-am
 
 .SUFFIXES:
@@ -309,6 +311,7 @@ mostlyclean-compile:
 distclean-compile:
 	-rm -f *.tab.c
 
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/Assembling.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/Chunking.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/Config.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/Echash.Po@am__quote@
@@ -317,6 +320,7 @@ distclean-compile:
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/Group.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/Hashing.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/Reading.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/Receiving.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/Worker.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/ae_chunking.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/rabin_chunking.Po@am__quote@

@@ -189,7 +189,7 @@ void Worker::clientRead(AgentCommand *agCmd) {
   // 5. assemble file
   start_assemble_phase();
 
-  stop_receive_pash();
+  stop_receive_phase();
 
   stop_assemble_phase();
 

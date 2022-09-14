@@ -80,7 +80,7 @@ struct echash_set_t* convertType(struct fileRecipe* fr) {
     return es;
 }
 
-struct fileRecipe* getByEchash(struct EChash_st *ECH, const char* key) {
+struct fileRecipe* getByEchash(struct ECHash_st *ECH, const char* key) {
     char* value = ECH_get(ECH, key);
     if(value == NULL) {
         return NULL;

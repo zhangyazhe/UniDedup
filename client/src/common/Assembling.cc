@@ -9,8 +9,8 @@ void assemble(const char *path) {
     }
     unsigned char assembly_area[ASSEMBLE_BUFFER_LEN] = {'0'};
     int offset = 0;
-    chunk *c = NULL;
-    while ((c = sync_queue_pop(receive_queue)) != nullptr) {
+    struct chunk *c = NULL;
+    while ((c = (struct chunk*)sync_queue_pop(receive_queue)) != nullptr) {
         assert(c->size < ASSEMBLE_BUFFER_LEN * sizeof(unsigned char));
         if (offset + c->size < ASSEMBLE_BUFFER_LEN * sizeof(unsigned char)) {
             memcpy(assembly_area + offset, c->data, c->size);
@@ -24,4 +24,12 @@ void assemble(const char *path) {
         free_chunk(c);
     }
     close(fd);
+}
+
+void start_assemble_phase(void) {
+
+}
+
+void stop_assemble_phase(void) {
+    
 }
