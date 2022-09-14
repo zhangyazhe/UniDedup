@@ -47,6 +47,7 @@ void Worker::doProcess() {
       //agCmd->dump();
       switch (type) {
         case 0: clientWrite(agCmd); break;
+        case 1: clientRead(agCmd); break;
         
         default:break;
       }
@@ -70,7 +71,7 @@ void Worker::clientWrite(AgentCommand *agCmd) {
 
     /* This part is for Lin */
     // generate file recipe
-    struct fileRecipe* fr = getFileRecipe(filename.c_str(), gps);
+    struct fileRecipe* fr = genFileRecipe(filename.c_str(), gps);
     assert(fr != NULL);
 
     // set file recipe by echash
@@ -153,5 +154,41 @@ void Worker::clientWrite(AgentCommand *agCmd) {
     // for(int i = 0; i < gps.size(); i++) {
     //   sendThrd[i].join();
     // }
+
+}
+
+void Worker::clientRead(AgentCommand *agCmd) {
+  // 1. get filename
+  string filename = agCmd->getFilename();
+
+  /* Lin */
+  // 2. get fileRecipe (file to groups) from EChash
+  struct fileRecipe* fr = getFileRecipe(filename.c_str());
+  if(fr == NULL) {
+
+  }
+
+  /* Qi */
+  // 3. send reuqests to each node to get group (call queue_term when the last chunk is poped)
+  for(int i = 0; i < fr->num; i++) {
+    char* groupName = fr->gm[i].groupName;
+    uint64_t nodeId = fr->gm[i].nodeId;
+    unsigned int nodeIp = _conf->id2Ip[nodeId];
+
+    // TO DO:
+
+  }
+
+  // 4. receive group (chunking, ending flag is queue_term)
+  // TO DO:
+  start_receive_phase();
+
+  /* Zewen */
+  // 5. assemble file
+  start_assemble_phase();
+
+  stop_receive_pash();
+
+  stop_assemble_phase();
 
 }

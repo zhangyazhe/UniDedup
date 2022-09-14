@@ -10,6 +10,8 @@
 #include "Fingerprint.hh"
 #include "FileRecipe.hh"
 #include "Chunking.hh"
+#include "Assembling.hh"
+#include "Receiving.hh"
 
 class Worker
 {
@@ -26,6 +28,7 @@ public:
     void doProcess();
 
     void clientWrite(AgentCommand *agCmd);
+    void clientRead(AgentCommand *agCmd);
 };
 
 

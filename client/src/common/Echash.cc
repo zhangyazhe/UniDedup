@@ -63,7 +63,12 @@ struct echash_set_t* convertType(struct fileRecipe* fr) {
     es->value = (char *) malloc(value_len * sizeof(char));
     
     memcpy(es->key, fr->filename, key_len);
-    memcpy(es->value, fr->gm, value_len);
+    memcpy(es->value, (char*)&fr->num, sizeof(int32_t));
+    memcpy(es->value+sizeof(int32_t), fr->gm, value_len);
     
     return es;
+}
+
+struct FileRecipe* getByEchash(struct EChash_st *ECH, const char* key) {
+    
 }

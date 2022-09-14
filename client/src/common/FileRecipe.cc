@@ -26,7 +26,7 @@ void delete_fileRecipe(struct fileRecipe* fr) {
     free(fr);
 }
 
-struct fileRecipe* getFileRecipe(const char* filename, vector<struct group*>& gps) {
+struct fileRecipe* genFileRecipe(const char* filename, vector<struct group*>& gps) {
     size_t gps_size = gps.size();
     struct fileRecipe* fr = new_fileRecipe(filename, gps_size);
     
@@ -43,4 +43,8 @@ struct fileRecipe* getFileRecipe(const char* filename, vector<struct group*>& gp
 
 int setFileRecipe(struct fileRecipe* fr) {
     return setByEchash(ECH, convertType(fr));
+}
+
+struct FileRecipe* getFileRecipe(const char* filename) {
+
 }
