@@ -187,7 +187,7 @@ void Worker::clientRead(AgentCommand *agCmd) {
 
   /* Zewen */
   // 5. assemble file
-  start_assemble_phase();
+  start_assemble_phase(filename.c_str());
 
   stop_receive_phase();
 

@@ -1,6 +1,9 @@
 #include "Assembling.hh"
 
-void assemble(const char *path) {
+pthread_t assemble_t;
+
+void assemble_thread(void *argv) {
+    const char *path = (const char *)argv;
     int fd = -1;
     fd = open(path, O_WRONLY | O_CREAT, S_IRWXU);
     if (fd < 0) {
@@ -26,10 +29,10 @@ void assemble(const char *path) {
     close(fd);
 }
 
-void start_assemble_phase(void) {
-
+void start_assemble_phase(const char *path) {
+    pthread_create(&assemble_t, NULL, assemble_thread, (void *)path);
 }
 
 void stop_assemble_phase(void) {
-    
+    pthread_join(assemble_t, NULL);
 }
