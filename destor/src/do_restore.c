@@ -107,29 +107,112 @@ static void* read_recipe_thread(void *arg) {
 	return NULL;
 }
 
+// void* write_restore_data(void* arg) {
+
+// 	char *p, *q;
+// 	q = jcr.path + 1;/* ignore the first char*/
+// 	/*
+// 	 * recursively make directory
+// 	 */
+// 	while ((p = strchr(q, '/'))) {
+// 		if (*p == *(p - 1)) {
+// 			q++;
+// 			continue;
+// 		}
+// 		*p = 0;
+// 		if (access(jcr.path, 0) != 0) {
+// 			mkdir(jcr.path, S_IRWXU | S_IRWXG | S_IRWXO);
+// 		}
+// 		*p = '/';
+// 		q = p + 1;
+// 	}
+
+// 	struct chunk *c = NULL;
+// 	FILE *fp = NULL;
+
+// 	while ((c = sync_queue_pop(restore_chunk_queue))) {
+
+// 		TIMER_DECLARE(1);
+// 		TIMER_BEGIN(1);
+
+// 		if (CHECK_CHUNK(c, CHUNK_FILE_START)) {
+// 			VERBOSE("Restoring: %s", c->data);
+
+// 			sds filepath = sdsdup(jcr.path);
+// 			filepath = sdscat(filepath, c->data);
+
+// 			int len = sdslen(jcr.path);
+// 			char *q = filepath + len;
+// 			char *p;
+// 			while ((p = strchr(q, '/'))) {
+// 				if (*p == *(p - 1)) {
+// 					q++;
+// 					continue;
+// 				}
+// 				*p = 0;
+// 				if (access(filepath, 0) != 0) {
+// 					mkdir(filepath, S_IRWXU | S_IRWXG | S_IRWXO);
+// 				}
+// 				*p = '/';
+// 				q = p + 1;
+// 			}
+
+// 			if (destor.simulation_level == SIMULATION_NO) {
+// 				assert(fp == NULL);
+// 				fp = fopen(filepath, "w");
+// 			}
+
+// 			sdsfree(filepath);
+
+// 		} else if (CHECK_CHUNK(c, CHUNK_FILE_END)) {
+// 		    jcr.file_num++;
+
+// 			if (fp)
+// 				fclose(fp);
+// 			fp = NULL;
+// 		} else {
+// 			assert(destor.simulation_level == SIMULATION_NO);
+// 			VERBOSE("Restoring %d bytes", c->size);
+// 			fwrite(c->data, c->size, 1, fp);
+// 		}
+
+// 		free_chunk(c);
+
+// 		TIMER_END(1, jcr.write_chunk_time);
+// 	}
+
+//     jcr.status = JCR_STATUS_DONE;
+//     return NULL;
+// }
+
+// zz7 send data to client
 void* write_restore_data(void* arg) {
 
-	char *p, *q;
-	q = jcr.path + 1;/* ignore the first char*/
-	/*
-	 * recursively make directory
-	 */
-	while ((p = strchr(q, '/'))) {
-		if (*p == *(p - 1)) {
-			q++;
-			continue;
-		}
-		*p = 0;
-		if (access(jcr.path, 0) != 0) {
-			mkdir(jcr.path, S_IRWXU | S_IRWXG | S_IRWXO);
-		}
-		*p = '/';
-		q = p + 1;
-	}
+	// char *p, *q;
+	// q = jcr.path + 1;/* ignore the first char*/
+	// /*
+	//  * recursively make directory
+	//  */
+	// while ((p = strchr(q, '/'))) {
+	// 	if (*p == *(p - 1)) {
+	// 		q++;
+	// 		continue;
+	// 	}
+	// 	*p = 0;
+	// 	if (access(jcr.path, 0) != 0) {
+	// 		mkdir(jcr.path, S_IRWXU | S_IRWXG | S_IRWXO);
+	// 	}
+	// 	*p = '/';
+	// 	q = p + 1;
+	// }
 
 	struct chunk *c = NULL;
 	FILE *fp = NULL;
 
+	// jcr.path is really a filename
+	redisContext* clientCtx = createContextByUint(destor.client_ip);
+
+	int chunk_num = 0;
 	while ((c = sync_queue_pop(restore_chunk_queue))) {
 
 		TIMER_DECLARE(1);
@@ -138,49 +221,82 @@ void* write_restore_data(void* arg) {
 		if (CHECK_CHUNK(c, CHUNK_FILE_START)) {
 			VERBOSE("Restoring: %s", c->data);
 
-			sds filepath = sdsdup(jcr.path);
-			filepath = sdscat(filepath, c->data);
+			// sds filepath = sdsdup(jcr.path);
+			// filepath = sdscat(filepath, c->data);
 
-			int len = sdslen(jcr.path);
-			char *q = filepath + len;
-			char *p;
-			while ((p = strchr(q, '/'))) {
-				if (*p == *(p - 1)) {
-					q++;
-					continue;
-				}
-				*p = 0;
-				if (access(filepath, 0) != 0) {
-					mkdir(filepath, S_IRWXU | S_IRWXG | S_IRWXO);
-				}
-				*p = '/';
-				q = p + 1;
-			}
+			// int len = sdslen(jcr.path);
+			// char *q = filepath + len;
+			// char *p;
+			// while ((p = strchr(q, '/'))) {
+			// 	if (*p == *(p - 1)) {
+			// 		q++;
+			// 		continue;
+			// 	}
+			// 	*p = 0;
+			// 	if (access(filepath, 0) != 0) {
+			// 		mkdir(filepath, S_IRWXU | S_IRWXG | S_IRWXO);
+			// 	}
+			// 	*p = '/';
+			// 	q = p + 1;
+			// }
 
-			if (destor.simulation_level == SIMULATION_NO) {
-				assert(fp == NULL);
-				fp = fopen(filepath, "w");
-			}
+			// if (destor.simulation_level == SIMULATION_NO) {
+			// 	assert(fp == NULL);
+			// 	fp = fopen(filepath, "w");
+			// }
 
-			sdsfree(filepath);
+			// sdsfree(filepath);
 
 		} else if (CHECK_CHUNK(c, CHUNK_FILE_END)) {
 		    jcr.file_num++;
-
-			if (fp)
-				fclose(fp);
-			fp = NULL;
+			assert(jcr.file_num == 1);
+			// if (fp)
+			// 	fclose(fp);
+			// fp = NULL;
+			
+			// send null chunk
+			// 1. get pkt_name;
+			char* pkt_name = (char*)malloc(MAX_OEC_FILENAME_LEN);
+			sprintf(pkt_name, "%s:%d", jcr.path, chunk_num++);
+			// 2. prepare
+			unsigned char* buf = (char*)calloc(4, sizeof(char));
+			int tmplen = htonl(0);
+			memcpy(buf, (unsigned char*)&tmplen, 4);
+			// 3. send
+			redisAppendCommand(clientCtx, "RPUSH %s %b", pkt_name, buf, 4);
+			// 4. free
+			free(pkt_name);
+			free(buf);
 		} else {
 			assert(destor.simulation_level == SIMULATION_NO);
 			VERBOSE("Restoring %d bytes", c->size);
-			fwrite(c->data, c->size, 1, fp);
-		}
+			// fwrite(c->data, c->size, 1, fp);
 
+			// 1. get pkt_name;
+			char* pkt_name = (char*)malloc(MAX_OEC_FILENAME_LEN);
+			sprintf(pkt_name, "%s:%d", jcr.path, chunk_num++);
+			// 2. prepare
+			unsigned char* buf = (char*)calloc(c->size+4, sizeof(char));
+			int tmplen = htonl(c->size);
+			memcpy(buf, (unsigned char*)&tmplen, 4);
+			memcpy(buf+4, c->data, c->size);
+			// 3. send
+			redisAppendCommand(clientCtx, "RPUSH %s %b", pkt_name, buf, c->size+4);
+			// 4. free
+			free(pkt_name);
+			free(buf);
+		}
+		
 		free_chunk(c);
 
 		TIMER_END(1, jcr.write_chunk_time);
 	}
-
+	redisReply* rReply;
+	for (int i = 0; i < chunk_num; i++) {
+		redisGetReply(clientCtx, (void**)&rReply);
+		freeReplyObject(rReply);
+	}
+	redisFree(clientCtx);
     jcr.status = JCR_STATUS_DONE;
     return NULL;
 }

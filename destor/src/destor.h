@@ -286,7 +286,9 @@ struct destor {
 	int oec_pktsize;
 	char* ecid_pool;
 	char* oec_mode;
-	unsigned int oec_agent_ip
+	unsigned int oec_agent_ip;
+	// zz7, for client
+	unsigned int client_ip;
 } destor;
 
 typedef unsigned char fingerprint[20];

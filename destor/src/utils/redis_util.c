@@ -60,11 +60,62 @@ void destor_cmd_init_with_reqstr(destor_cmd *cmd, char* reqstr)
 
     switch(cmd->_type) {
         case 0: resolve_destor_command_type0(cmd); break;
+        case 1: resolve_destor_command_type1(cmd); break;
         default: break;
     }
     cmd->_destorCmd = NULL;
     cmd->_cmLen = 0;
 }
+
+void free_destor_cmd(destor_cmd* cmd){
+  switch (cmd->_type)
+  {
+  case 0:
+    free(cmd->_group_name);
+    break;
+  case 1:
+    free(cmd->_to_read_filename);
+  default:
+    break;
+  }
+  free(cmd->_destorCmd);
+  free(cmd->_rKey);
+}
+
+void free_destor_cmd(destor_cmd* cmd){
+  switch (cmd->_type)
+  {
+  case 0:
+    free(cmd->_group_name);
+    break;
+  case 1:
+    free(cmd->_to_read_filename);
+  default:
+    break;
+  }
+  free(cmd->_destorCmd);
+  free(cmd->_rKey);
+  free(cmd);
+}
+
+void free_openec_agent_cmd(agent_cmd* cmd) {
+  switch (cmd->_type)
+  {
+  case 0:
+    free(cmd->_filepath);
+    free(cmd->_mode);
+    free(cmd->_ecidpool);
+    break;
+  case 1:
+    free(cmd->_filepath);
+  default:
+    break;
+  }
+  free(cmd->_agCmd);
+  free(cmd->_rKey);
+  free(cmd);
+}
+
 
 void agent_cmd_init_with_reqstr(agent_cmd *cmd, char* reqstr){
     cmd->_agCmd = reqstr;
@@ -182,6 +233,27 @@ void resolve_destor_command_type0(destor_cmd* cmd)
   cmd->_group_name = destor_cmd_read_string(cmd);
   // cmd->_data = destor_cmd_read_string(cmd);
   cmd->_size = destor_cmd_read_uint(cmd);
+}
+
+void build_destor_command_type1(destor_cmd* cmd, int type, char* filename, unsigned int client_ip)
+{
+	cmd->_type = type;
+	int filename_len = strlen(filename);
+  cmd->_to_read_filename = (char*)calloc(sizeof(char), filename_len+1);
+  strcpy(cmd->_to_read_filename, filename);
+  cmd->_client_ip = client_ip;
+	// 1. type
+	destor_cmd_write_int(cmd, cmd->_type);
+	// 2. filename
+  destor_cmd_write_string(cmd, cmd->_to_read_filename);
+  // 3. clientip
+  destor_cmd_write_uint(cmd, cmd->_client_ip);
+}
+
+void resolve_destor_command_type1(destor_cmd* cmd)
+{
+  cmd->_to_read_filename = destor_cmd_read_string(cmd);
+  cmd->_client_ip = destor_cmd_read_uint(cmd);
 }
 
 void build_openec_agent_command_type0(agent_cmd* cmd, int type, char* filename, char* ecidpool, char* mode, int filesize)

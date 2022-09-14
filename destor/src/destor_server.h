@@ -20,6 +20,8 @@ void stop_read_phase_from_data();
 
 void destor_write(char *path, uint32_t size);
 
+void destor_read(char* filename);
+
 void destor_server_process();
 
 char* intToChar(unsigned int a);

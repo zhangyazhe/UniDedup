@@ -335,7 +335,7 @@ void write_container(struct container* c) {
 		rReply = (redisReply*)redisCommand(destor2oecCtx, "blpop %s 0", wkey);
 		freeReplyObject(rReply);
 		printf("write_container finish\n");
-		free(agCmd);
+		free_openec_agent_cmd(agCmd);
 		redisFree(destor2oecCtx);
 		free(container_file_name);
 
@@ -381,6 +381,74 @@ void write_container(struct container* c) {
 }
 
 
+// struct container* retrieve_container_by_id(containerid id) {
+// 	struct container *c = (struct container*) malloc(sizeof(struct container));
+
+// 	init_container_meta(&c->meta);
+
+// 	unsigned char *cur = 0;
+// 	if (destor.simulation_level >= SIMULATION_RESTORE) {
+// 		c->data = malloc(CONTAINER_META_SIZE);
+
+// 		pthread_mutex_lock(&mutex);
+
+// 		if (destor.simulation_level >= SIMULATION_APPEND)
+// 			fseek(fp, id * CONTAINER_META_SIZE + 8, SEEK_SET);
+// 		else
+// 			fseek(fp, (id + 1) * CONTAINER_SIZE - CONTAINER_META_SIZE + 8,
+// 			SEEK_SET);
+
+// 		fread(c->data, CONTAINER_META_SIZE, 1, fp);
+
+// 		pthread_mutex_unlock(&mutex);
+
+// 		cur = c->data;
+// 	} else {
+// 		c->data = malloc(CONTAINER_SIZE);
+
+// 		pthread_mutex_lock(&mutex);
+
+// 		fseek(fp, id * CONTAINER_SIZE + 8, SEEK_SET);
+// 		fread(c->data, CONTAINER_SIZE, 1, fp);
+
+// 		pthread_mutex_unlock(&mutex);
+
+// 		cur = &c->data[CONTAINER_SIZE - CONTAINER_META_SIZE];
+// 	}
+
+// 	unser_declare;
+// 	unser_begin(cur, CONTAINER_META_SIZE);
+
+// 	unser_int64(c->meta.id);
+// 	unser_int32(c->meta.chunk_num);
+// 	unser_int32(c->meta.data_size);
+
+// 	if(c->meta.id != id){
+// 		WARNING("expect %lld, but read %lld", id, c->meta.id);
+// 		assert(c->meta.id == id);
+// 	}
+
+// 	int i;
+// 	for (i = 0; i < c->meta.chunk_num; i++) {
+// 		struct metaEntry* me = (struct metaEntry*) malloc(
+// 				sizeof(struct metaEntry));
+// 		unser_bytes(&me->fp, sizeof(fingerprint));
+// 		unser_bytes(&me->len, sizeof(int32_t));
+// 		unser_bytes(&me->off, sizeof(int32_t));
+// 		g_hash_table_insert(c->meta.map, &me->fp, me);
+// 	}
+
+// 	unser_end(cur, CONTAINER_META_SIZE);
+
+// 	if (destor.simulation_level >= SIMULATION_RESTORE) {
+// 		free(c->data);
+// 		c->data = 0;
+// 	}
+
+// 	return c;
+// }
+
+// zz7 read container from openec
 struct container* retrieve_container_by_id(containerid id) {
 	struct container *c = (struct container*) malloc(sizeof(struct container));
 
@@ -388,29 +456,74 @@ struct container* retrieve_container_by_id(containerid id) {
 
 	unsigned char *cur = 0;
 	if (destor.simulation_level >= SIMULATION_RESTORE) {
-		c->data = malloc(CONTAINER_META_SIZE);
+		// not simulation
 
-		pthread_mutex_lock(&mutex);
+		// c->data = malloc(CONTAINER_META_SIZE);
 
-		if (destor.simulation_level >= SIMULATION_APPEND)
-			fseek(fp, id * CONTAINER_META_SIZE + 8, SEEK_SET);
-		else
-			fseek(fp, (id + 1) * CONTAINER_SIZE - CONTAINER_META_SIZE + 8,
-			SEEK_SET);
+		// pthread_mutex_lock(&mutex);
 
-		fread(c->data, CONTAINER_META_SIZE, 1, fp);
+		// if (destor.simulation_level >= SIMULATION_APPEND)
+		// 	fseek(fp, id * CONTAINER_META_SIZE + 8, SEEK_SET);
+		// else
+		// 	fseek(fp, (id + 1) * CONTAINER_SIZE - CONTAINER_META_SIZE + 8,
+		// 	SEEK_SET);
 
-		pthread_mutex_unlock(&mutex);
+		// fread(c->data, CONTAINER_META_SIZE, 1, fp);
 
-		cur = c->data;
+		// pthread_mutex_unlock(&mutex);
+
+		// cur = c->data;
 	} else {
 		c->data = malloc(CONTAINER_SIZE);
 
 		pthread_mutex_lock(&mutex);
+		// 1. get container file name by id.
+		char *container_file_name = (char*)malloc(MAX_OEC_FILENAME_LEN);
+		sprintf(container_file_name, "%s_%s_%d", BASE_OEC_FILENAME, destor.local_ip_str, id);
+		// 2. init redisCtx and tell local oec agent what to do
+		redisContext localCtx = createContextByUint(destor.local_ip);
+		agent_cmd* agCmd = (agent_cmd*)calloc(sizeof(agent_cmd), 1);
+		openec_agent_cmd_init(agCmd);
 
-		fseek(fp, id * CONTAINER_SIZE + 8, SEEK_SET);
-		fread(c->data, CONTAINER_SIZE, 1, fp);
+		build_openec_agent_command_type1(agCmd, 1, container_file_name);
+		openec_agent_cmd_send_to(agCmd, destor.local_ip);
 
+		free_openec_agent_cmd(agCmd);
+		// 3. wait for filesize
+		char* wait_key = (char*)malloc(MAX_OEC_FILENAME_LEN+12);
+		sprintf(wait_key, "filesize:%s", container_file_name);
+		redisReply* rReply = (redisReply*)redisCommand(localCtx, "blpop %s 0", wait_key);
+		
+		char* response = rReply -> element[1] -> str;
+  		int tmpfilesize;
+  		memcpy((char*)&tmpfilesize, response, 4); response += 4;
+  		
+		int container_filesize = ntohl(tmpfilesize);
+  		freeReplyObject(rReply);
+		// 4. read data
+		int pktnum = container_filesize / destor.oec_pktsize;
+		redisReply* readReply;
+  		redisContext* readCtx = localCtx;
+
+		for (int i = 0; i < pktnum; i++) {
+			char* pkt_key = (char*)malloc(MAX_OEC_FILENAME_LEN);
+			sprintf(pkt_key, "%s:%d", container_file_name, i);
+			redisAppendCommand(readCtx, "blpop %s 0", pkt_key);
+			free(pkt_key);
+		}
+
+		for (int i = 0; i < pktnum; i++) {
+			redisGetReply(readCtx, (void**)&readReply);
+			char* content = readReply->element[1]->str;
+			int tmplen;
+  			memcpy((char*)&tmplen, content, 4);
+  			int len = ntohl(tmplen);
+			memcpy(c->data+destor.oec_pktsize*i, content+4, len);
+			freeReplyObject(readReply);
+		}
+		redisFree(localCtx);
+		// fseek(fp, id * CONTAINER_SIZE + 8, SEEK_SET);
+		// fread(c->data, CONTAINER_SIZE, 1, fp);
 		pthread_mutex_unlock(&mutex);
 
 		cur = &c->data[CONTAINER_SIZE - CONTAINER_META_SIZE];

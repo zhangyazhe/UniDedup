@@ -176,12 +176,14 @@ void Worker::clientRead(AgentCommand *agCmd) {
     unsigned int nodeIp = _conf->id2Ip[nodeId];
 
     // TO DO:
-
+    destorCommand* dstCmd = new destorCommand();
+    dstCmd->buildType1(1, string(groupName), _conf->_localIP);
+    dstCmd->sendTo(nodeIp);
   }
 
   // 4. receive group (chunking, ending flag is queue_term)
   // TO DO:
-  start_receive_phase();
+  start_receive_phase((const char*)fr);
 
   /* Zewen */
   // 5. assemble file
@@ -191,4 +193,6 @@ void Worker::clientRead(AgentCommand *agCmd) {
 
   stop_assemble_phase();
 
+  delete_fileRecipe(fr);
+  
 }

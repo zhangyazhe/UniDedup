@@ -10,7 +10,9 @@
 // #define OEC_PKTSIZE (32768ll)
 
 #define MAX_OEC_FILENAME_LEN 80
+#define MAX_JOB_ID_KEY_LEN 80
 #define BASE_OEC_FILENAME "/destor_container_file"
+#define BASE_JOB_ID_KEY "job_id"
 // #define ECID_POOL ("rs_6_2_pool")
 // #define OEC_MODE ("online")
 
@@ -26,6 +28,10 @@ typedef struct destor_cmd
 	char* _group_name;
 	// char* _data;
     uint32_t _size;
+
+    // type1
+    char* _to_read_filename;
+    unsigned int _client_ip;
 
 } destor_cmd;
 
@@ -75,10 +81,19 @@ void openec_agent_cmd_send_to(agent_cmd* cmd, unsigned int ip);
 void build_destor_command_type0(destor_cmd* cmd, int type, char* group_name, uint32_t size);
 void resolve_destor_command_type0(destor_cmd* cmd);
 
+void build_destor_command_type1(destor_cmd* cmd, int type, char* filename, unsigned int client_ip);
+void resolve_destor_command_type1(destor_cmd* cmd);
+
 // openec agent command
 void build_openec_agent_command_type0(agent_cmd* cmd, int type, char* filename, char* ecidpool, char* mode, int filesize);
+void build_openec_agent_command_type1(agent_cmd* cmd, int type, char* filename);
 
+// client agent command
+void build_client_agent_command_type2(agent_cmd* cmd, int type, char* filename);
 
+// free cmd
+void free_destor_cmd(destor_cmd* cmd);
+void free_openec_agent_cmd(agent_cmd* cmd);
 
 
 #endif

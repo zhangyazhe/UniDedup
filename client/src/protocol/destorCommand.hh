@@ -25,6 +25,9 @@ private:
 	// type0
 	std::string _groupName;
     uint32_t _size;
+    // type1
+    std::string _filename;
+    unsigned int _localIp;
 
 public:
     destorCommand(/* args */);
@@ -51,9 +54,12 @@ public:
     void buildType0(int type,
                     std::string groupName,
                     uint32_t size);
-    
+    void buildType1(int type,
+                    std::string filename,
+                    unsigned int ip);
     // resolve command
     void resolveType0();
+    void resolveType1();
 };
 
 #endif

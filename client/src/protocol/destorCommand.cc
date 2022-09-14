@@ -17,6 +17,7 @@ destorCommand::destorCommand(char *reqStr)
 	switch (_type)
 	{
 	case 0: resolveType0(); break;
+	case 1: resolveType1(); break;
 	default:
 		break;
 	}
@@ -147,4 +148,25 @@ void destorCommand::buildType0(int type,
 void destorCommand::resolveType0() {
 	_groupName = readString();
 	_size = readUInt();
+}
+
+void destorCommand::buildType1(int type,
+                    std::string filename,
+                    unsigned int ip)
+{
+	_type = type;
+	_filename = filename;
+	_localIp = ip;
+
+	// 1. type
+	writeInt(_type);
+	// 2. filename
+	writeString(_filename);
+	// 3. ip
+	writeUInt(_localIp);
+}
+
+void destorCommand::resolveType1() {
+	_filename = readString();
+	_localIp = readUInt();
 }
