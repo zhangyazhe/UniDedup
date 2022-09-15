@@ -174,7 +174,6 @@ void destor_write(char *path, uint32_t size) {
 	stop_dedup_phase();
 	stop_rewrite_phase();
 	stop_filter_phase();	
-	printf("has ended\n");
 	// free(psize);
 
 	// TIMER_END(1, jcr.total_time);
@@ -302,6 +301,7 @@ void destor_write(char *path, uint32_t size) {
 
 	fclose(fp);
 	// tell client finished
+	printf("1\n");
 	redisReply* fReply;
 	redisContext* finishedCtx = createContextByUint(destor.local_ip);
 	int gpname_len = strlen(path);
@@ -325,6 +325,7 @@ void destor_write(char *path, uint32_t size) {
 	freeReplyObject(jobidReply);
 	redisFree(jobidCtx);
 	free(jobidkey);
+	printf("2\n");
 }
 
 void destor_read(char* filename)

@@ -115,6 +115,7 @@ client/src/*/*.o
 client/*.a
 client/src/*.a
 client/src/*/*.a
+client/config/*
 
 client/agent
 client/client
@@ -126,3 +127,4 @@ destor/config.status
 destor/autom4te.cache
 destor/proxy
 destor/*/*/Makefile.in
+destor/destor.config

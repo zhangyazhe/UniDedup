@@ -94,7 +94,7 @@ void free_destor_cmd(destor_cmd* cmd){
   default:
     break;
   }
-  if (cmd->_rKey != NULL) free(cmd->_rKey);
+  // if (cmd->_rKey != NULL) free(cmd->_rKey);
   if (cmd->_destorCmd != NULL)free(cmd->_destorCmd);
   
   free(cmd);
@@ -113,7 +113,7 @@ void free_openec_agent_cmd(agent_cmd* cmd) {
   default:
     break;
   }
-  if (cmd->_rKey != NULL) free(cmd->_rKey);
+  // if (cmd->_rKey != NULL) free(cmd->_rKey);
   if (cmd->_agCmd != NULL)free(cmd->_agCmd);
   free(cmd);
 }
