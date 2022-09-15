@@ -2,7 +2,7 @@
 
 pthread_t assemble_t;
 
-void assemble_thread(void *argv) {
+static void do_assemble(void *argv) {
     const char *path = (const char *)argv;
     int fd = -1;
     fd = open(path, O_WRONLY | O_CREAT, S_IRWXU);
@@ -27,6 +27,12 @@ void assemble_thread(void *argv) {
         free_chunk(c);
     }
     close(fd);
+}
+
+static void* assemble_thread(void* argv) {
+    char* path = (char*)argv;
+    do_assemble(path);
+    return NULL;
 }
 
 void start_assemble_phase(const char *path) {

@@ -22,7 +22,7 @@ struct metaEntry {
 extern redisContext* createContextByUint(unsigned int ip);
 extern void openec_agent_cmd_init(agent_cmd *cmd);
 extern void build_openec_agent_command_type0(agent_cmd* cmd, int type, char* filename, char* ecidpool, char* mode, int filesize);
-
+extern void build_openec_agent_command_type1(agent_cmd* cmd, int type, char* filename);
 
 /*
  * We must ensure a container is either in the buffer or written to disks.
@@ -481,7 +481,7 @@ struct container* retrieve_container_by_id(containerid id) {
 		char *container_file_name = (char*)malloc(MAX_OEC_FILENAME_LEN);
 		sprintf(container_file_name, "%s_%s_%d", BASE_OEC_FILENAME, destor.local_ip_str, id);
 		// 2. init redisCtx and tell local oec agent what to do
-		redisContext localCtx = createContextByUint(destor.local_ip);
+		redisContext* localCtx = createContextByUint(destor.local_ip);
 		agent_cmd* agCmd = (agent_cmd*)calloc(sizeof(agent_cmd), 1);
 		openec_agent_cmd_init(agCmd);
 

@@ -304,9 +304,9 @@ void destor_write(char *path, uint32_t size) {
 	// tell client finished
 	redisReply* fReply;
 	redisContext* finishedCtx = createContextByUint(destor.local_ip);
-	int gpname_len = strlen(cmd->_group_name);
+	int gpname_len = strlen(path);
 	char* finished_key = (char *)malloc((gpname_len+1+20)*sizeof(char));
-	memcpy(finished_key, cmd->_group_name, gpname_len+1);
+	memcpy(finished_key, path, gpname_len+1);
 	char fikey[] = "_data_finished";
 	strcat(finished_key, fikey);
 	int tmpval = htonl(1);
@@ -334,7 +334,6 @@ void destor_read(char* filename)
 	redisReply* jobidReply;
 	char* jobidkey = (char*)malloc(MAX_JOB_ID_KEY_LEN*sizeof(char));
 	sprintf(jobidkey, "%s_%s", filename, BASE_JOB_ID_KEY);
-	int job_id;
 	jobidReply = (redisReply*)redisCommand(jobidCtx, "get %s", jobidkey);
 	if (jobidReply->type == REDIS_REPLY_NIL) {
 		printf("destor_read::no job id for file:%s.\n", filename);

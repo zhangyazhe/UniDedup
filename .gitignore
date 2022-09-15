@@ -12,6 +12,7 @@ storage/poolStore
 
 storage/src/CMakeFiles/*
 storage/src/common/CMakeFiles/*
+storage/src/common/CMakeFiles/common.dir/
 storage/src/common/*.a
 storage/src/util/CMakeFiles/*
 storage/src/util/*.a
@@ -124,3 +125,4 @@ destor/config.log
 destor/config.status
 destor/autom4te.cache
 destor/proxy
+destor/*/*/Makefile.in

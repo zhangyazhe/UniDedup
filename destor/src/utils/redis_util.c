@@ -67,20 +67,20 @@ void destor_cmd_init_with_reqstr(destor_cmd *cmd, char* reqstr)
     cmd->_cmLen = 0;
 }
 
-void free_destor_cmd(destor_cmd* cmd){
-  switch (cmd->_type)
-  {
-  case 0:
-    free(cmd->_group_name);
-    break;
-  case 1:
-    free(cmd->_to_read_filename);
-  default:
-    break;
-  }
-  free(cmd->_destorCmd);
-  free(cmd->_rKey);
-}
+// void free_destor_cmd(destor_cmd* cmd){
+//   switch (cmd->_type)
+//   {
+//   case 0:
+//     free(cmd->_group_name);
+//     break;
+//   case 1:
+//     free(cmd->_to_read_filename);
+//   default:
+//     break;
+//   }
+//   free(cmd->_destorCmd);
+//   free(cmd->_rKey);
+// }
 
 void free_destor_cmd(destor_cmd* cmd){
   switch (cmd->_type)
@@ -279,4 +279,15 @@ void build_openec_agent_command_type0(agent_cmd* cmd, int type, char* filename, 
   agent_cmd_write_string(cmd, cmd->_mode);
   // 5. filesize
   agent_cmd_write_int(cmd, cmd->_filesize);
+}
+
+void build_openec_agent_command_type1(agent_cmd* cmd, int type, char* filename) {
+  cmd->_type = type;
+  int filename_len = strlen(filename);
+  cmd->_filepath = (char*)calloc(filename_len+1, 1);
+  strcpy(cmd->_filepath, filename);
+  // 1. type
+  agent_cmd_write_int(cmd, cmd->_type);
+  // 2. filename
+  agent_cmd_write_string(cmd, cmd->_filepath);
 }
