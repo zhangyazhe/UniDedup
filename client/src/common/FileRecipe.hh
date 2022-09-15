@@ -6,6 +6,9 @@
 #include "Group.hh"
 #include "Echash.hh"
 #include <vector>
+#include <unordered_map>
+
+extern std::unordered_map<char*, struct fileRecipe*> name2FileRecipe;
 
 struct groupMeta { 
     char* groupName;

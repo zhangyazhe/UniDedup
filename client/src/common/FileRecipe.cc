@@ -1,5 +1,7 @@
 #include "FileRecipe.hh"
 
+std::unordered_map<char*, struct fileRecipe*> name2FileRecipe;
+
 struct fileRecipe* new_fileRecipe(const char* filename, int num) {
     struct fileRecipe* fr = (struct fileRecipe*) malloc(sizeof(struct fileRecipe));
     size_t fileNameLen = strlen(filename);
@@ -42,9 +44,15 @@ struct fileRecipe* genFileRecipe(const char* filename, vector<struct group*>& gp
 }
 
 int setFileRecipe(struct fileRecipe* fr) {
-    return setByEchash(ECH, convertType(fr));
+    name2FileRecipe[fr->filename] = fr;
+    return 0;
+    // return setByEchash(ECH, convertType(fr));
 }
 
 struct fileRecipe* getFileRecipe(const char* filename) {
-    return getByEchash(ECH, filename);
+    if(name2FileRecipe.find(filename) == name2FileRecipe.end()) {
+        return NULL;
+    }
+    return name2FileRecipe[filename];
+    // return getByEchash(ECH, filename);
 }
