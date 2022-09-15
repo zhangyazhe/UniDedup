@@ -159,7 +159,7 @@ void Worker::clientWrite(AgentCommand *agCmd) {
 
 void Worker::clientRead(AgentCommand *agCmd) {
   // 1. get filename
-  string filename = agCmd->getFilename();
+  string filename = agCmd->getToReadFilename();
 
   /* Lin */
   // 2. get fileRecipe (file to groups) from EChash
