@@ -1,5 +1,13 @@
 #include "RedisUtil.hh"
 
+uint64_t RedisUtil::htonll(uint64_t val) {
+  return ((uint64_t) htonl(val) << 32) + htonl(val >> 32);
+}
+
+uint64_t RedisUtil::ntohll(uint64_t val) {
+  return ((uint64_t) ntohl(val) << 32) + ntohl(val >> 32);
+}
+
 string RedisUtil::ip2Str(unsigned int ip) {
   struct in_addr addr = {ip};
   return string(inet_ntoa(addr));

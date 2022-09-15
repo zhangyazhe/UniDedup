@@ -3025,6 +3025,7 @@ LIBUUID_LIB = @LIBUUID_LIB@
 LIPO = @LIPO@
 LN_S = @LN_S@
 LTLIBOBJS = @LTLIBOBJS@
+LT_SYS_LIBRARY_PATH = @LT_SYS_LIBRARY_PATH@
 MAKEINFO = @MAKEINFO@
 MANIFEST_TOOL = @MANIFEST_TOOL@
 MCHECK = @MCHECK@
@@ -3122,6 +3123,7 @@ pdfdir = @pdfdir@
 prefix = @prefix@
 program_transform_name = @program_transform_name@
 psdir = @psdir@
+runstatedir = @runstatedir@
 sbindir = @sbindir@
 sharedstatedir = @sharedstatedir@
 srcdir = @srcdir@
@@ -10274,9 +10276,9 @@ maintainer-clean-generic:
 	@echo "it deletes files that may require special tools to rebuild."
 	-test -z "$(BUILT_SOURCES)" || rm -f $(BUILT_SOURCES)
 	-test -z "$(MAINTAINERCLEANFILES)" || rm -f $(MAINTAINERCLEANFILES)
-@BUILD_WIN32_TRUE@clean-local:
-@BUILD_WIN32_TRUE@install-html-local:
 @BUILD_WIN32_TRUE@html-local:
+@BUILD_WIN32_TRUE@install-html-local:
+@BUILD_WIN32_TRUE@clean-local:
 clean: clean-am
 
 clean-am: clean-binPROGRAMS clean-checkLTLIBRARIES clean-checkPROGRAMS \

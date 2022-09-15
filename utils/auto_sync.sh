@@ -10,7 +10,7 @@ remoteConfPath=$remotePath/client/config
 localPath=../client
 
 hadoop_home=$home/hadoop-3.0.0-src/hadoop-dist/target/hadoop-3.0.0
-exec_files=(../client/client ../client/agent ../destor/proxy ../destor/destor ../destor/destor.config ../client/cls.sh)
+exec_files=(../client/client ../client/agent ../destor/proxy ../destor/destor ../client/cls.sh)
 # conf_files=(pipeSetting.xml asSetting.xml aspSetting.xml convSetting.xml rpconvSetting.xml ppctSetting.xml smlzSetting.xml)
 
 conf_files=($(ls ../client/config/))
