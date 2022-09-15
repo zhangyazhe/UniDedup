@@ -63,6 +63,7 @@ void destor_cmd_init_with_reqstr(destor_cmd *cmd, char* reqstr)
         case 1: resolve_destor_command_type1(cmd); break;
         default: break;
     }
+    cmd->_rKey = "destor_request";
     cmd->_destorCmd = NULL;
     cmd->_cmLen = 0;
 }
@@ -93,8 +94,9 @@ void free_destor_cmd(destor_cmd* cmd){
   default:
     break;
   }
-  free(cmd->_destorCmd);
-  free(cmd->_rKey);
+  if (cmd->_rKey != NULL) free(cmd->_rKey);
+  if (cmd->_destorCmd != NULL)free(cmd->_destorCmd);
+  
   free(cmd);
 }
 
@@ -111,8 +113,8 @@ void free_openec_agent_cmd(agent_cmd* cmd) {
   default:
     break;
   }
-  free(cmd->_agCmd);
-  free(cmd->_rKey);
+  if (cmd->_rKey != NULL) free(cmd->_rKey);
+  if (cmd->_agCmd != NULL)free(cmd->_agCmd);
   free(cmd);
 }
 
