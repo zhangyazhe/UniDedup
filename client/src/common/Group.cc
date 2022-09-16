@@ -128,9 +128,8 @@ std::vector<struct group*> split2Groups(const char* filepath, const char* filena
         minFingerprint[i] = UCHAR_MAX;
     }
     uint32_t size = 0;
-    
+    int id = 0;
     while (1) {
-        int id = 0;
         struct chunk *c = (struct chunk *) sync_queue_pop(hash_queue);
 
         if (c == NULL) {
