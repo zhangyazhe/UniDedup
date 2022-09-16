@@ -53,6 +53,9 @@ typedef struct agent_cmd
 
 
 char* ip2Str(unsigned int ip);
+uint64_t redis_util_htonll(uint64_t val);
+uint64_t redis_util_ntohll(uint64_t val);
+
 redisContext* createContextByUint(unsigned int ip);
 redisContext* createContextByChar(char* ip);
 redisContext* createContext(char* ip, int port);

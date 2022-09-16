@@ -5,6 +5,15 @@ char* ip2Str(unsigned int ip) {
   return inet_ntoa(addr);
 }
 
+uint64_t redis_util_htonll(uint64_t val) {
+  return ((uint64_t) htonl(val) << 32) + htonl(val >> 32);
+}
+
+uint64_t redis_util_ntohll(uint64_t val) {
+  return ((uint64_t) ntohl(val) << 32) + ntohl(val >> 32);
+}
+
+
 redisContext* createContextByUint(unsigned int ip) {
   return createContext(ip2Str(ip), 6379);
 }

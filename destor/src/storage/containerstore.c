@@ -250,11 +250,14 @@ void write_container(struct container* c) {
 		// ser_int32(c->meta.chunk_num); // serial_int32(&ser_ptr, c->meta.chunk_num);
 		// ser_int32(c->meta.data_size); // serial_int32(&ser_ptr, c->meta.data_size);
 		unsigned char * tmp_ptr = cur;
-		memcpy(tmp_ptr, &(c->meta.id), sizeof(int64_t));
+		uint64_t tmp_meta_id = redis_util_htonll(c->meta.id);
+		memcpy(tmp_ptr, &(tmp_meta_id), sizeof(int64_t));
 		tmp_ptr += sizeof(int64_t);
-		memcpy(tmp_ptr, &(c->meta.chunk_num), sizeof(int32_t));
+		uint32_t tmp_chunk_num = htonl(c->meta.chunk_num);
+		memcpy(tmp_ptr, &(tmp_chunk_num), sizeof(int32_t));
 		tmp_ptr += sizeof(int32_t);
-		memcpy(tmp_ptr, &(c->meta.data_size), sizeof(int32_t));
+		uint32_t tmp_data_size = htonl(c->meta.data_size);
+		memcpy(tmp_ptr, &(tmp_data_size), sizeof(int32_t));
 		tmp_ptr += sizeof(int32_t);
 		
 
@@ -269,9 +272,11 @@ void write_container(struct container* c) {
 			// ser_bytes(&me->off, sizeof(int32_t));
 			memcpy(tmp_ptr, &me->fp, sizeof(fingerprint));
 			tmp_ptr += sizeof(fingerprint);
-			memcpy(tmp_ptr, &me->len, sizeof(int32_t));
+			uint32_t tmp_me_len = htonl(me->len);
+			memcpy(tmp_ptr, &(tmp_me_len), sizeof(int32_t));
 			tmp_ptr += sizeof(int32_t);
-			memcpy(tmp_ptr, &me->off, sizeof(int32_t));
+			uint32_t tmp_me_off = htonl(me->off);
+			memcpy(tmp_ptr, &(tmp_me_off), sizeof(int32_t));
 			tmp_ptr += sizeof(int32_t);
 		}
 
