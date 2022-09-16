@@ -2,9 +2,9 @@
 
 pthread_t assemble_t;
 
-static void do_assemble(void *argv) {
+static void do_assemble(char *path) {
     printf("[debug] client, do_assemble begin.\n");
-    const char *path = (const char *)argv;
+    // const char *path = (const char *)argv;
     int fd = -1;
     fd = open(path, O_WRONLY | O_CREAT, S_IRWXU);
     if (fd < 0) {
@@ -33,12 +33,14 @@ static void do_assemble(void *argv) {
 }
 
 static void* assemble_thread(void* argv) {
+    printf("[debug] client assemble_thread.\n");
     char* path = (char*)argv;
     do_assemble(path);
     return NULL;
 }
 
 void start_assemble_phase(const char *path) {
+    printf("[debug] client start_assemble_phase.\n");
     pthread_create(&assemble_t, NULL, assemble_thread, (void *)path);
 }
 
