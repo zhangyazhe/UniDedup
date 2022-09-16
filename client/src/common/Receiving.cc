@@ -27,6 +27,7 @@ static void receive_data(struct fileRecipe* fr) {
             << " , fetching " << fr->gm[i].groupName 
             << endl; 
         while(1){
+            printf("enter receive loop\n");
             string pkt_key = string(fr->gm[i].groupName)+":"+to_string(pkt_id++);
             readReply = (redisReply*)redisCommand(readCtx, "blpop %s 0", pkt_key.c_str());
             char* content = readReply->element[1]->str;
@@ -43,6 +44,7 @@ static void receive_data(struct fileRecipe* fr) {
             memcpy(ck->data, content+4, ck->size);
             sync_queue_push(receive_queue, ck);
             freeReplyObject(readReply);
+            printf("receive loop end\n");
         }
         
     }

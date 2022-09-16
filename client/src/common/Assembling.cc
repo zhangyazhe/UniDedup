@@ -35,6 +35,7 @@ static void do_assemble(char *path) {
 static void* assemble_thread(void* argv) {
     printf("[debug] client assemble_thread %s.\n", (char*)argv);
     char* path = (char*)argv;
+    printf("[debug] client assemble_thread %s.\n", (char*)argv);
     do_assemble(path);
     return NULL;
 }
