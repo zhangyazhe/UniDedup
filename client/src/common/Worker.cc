@@ -102,8 +102,8 @@ void Worker::clientWrite(AgentCommand *agCmd)
   /* This part is for Zewen */
 
   // file to groups
-  vector<struct group *> gps = split2Groups(filepath.c_str(), filename.c_str(), _conf->node_num);
   localId.id = 0;
+  vector<struct group *> gps = split2Groups(filepath.c_str(), filename.c_str(), _conf->node_num);
 
   /* This part is for Lin */
   // generate file recipe
