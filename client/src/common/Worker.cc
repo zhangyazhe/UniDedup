@@ -215,7 +215,7 @@ void Worker::clientRead(AgentCommand *agCmd)
   printf("3\n");
   // 4. receive group (chunking, ending flag is queue_term)
   // TO DO:
-  start_receive_phase((const char *)fr);
+  start_receive_phase(fr);
   printf("4\n");
   /* Zewen */
   // 5. assemble file
