@@ -225,6 +225,4 @@ void Worker::clientRead(AgentCommand *agCmd)
   printf("6\n");
   stop_assemble_phase();
   printf("7\n");
-  delete_fileRecipe(fr);
-  printf("8\n");
 }
