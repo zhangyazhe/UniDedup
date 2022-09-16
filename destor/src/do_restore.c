@@ -59,13 +59,15 @@ static void* lru_restore_thread(void *arg) {
 	sync_queue_term(restore_chunk_queue);
 
 	free_lru_cache(cache);
+	printf("[debug] destor, lru_restore_thread end.\n");
 
 	return NULL;
 }
 
 static void* read_recipe_thread(void *arg) {
-
+	printf("[debug] destor in read_recipe_thread, start.\n");
 	int i, j, k;
+	printf("[debug] num of files is %d\n", jcr.bv->number_of_files);
 	for (i = 0; i < jcr.bv->number_of_files; i++) {
 		TIMER_DECLARE(1);
 		TIMER_BEGIN(1);
@@ -105,7 +107,7 @@ static void* read_recipe_thread(void *arg) {
 	}
 
 	sync_queue_term(restore_recipe_queue);
-	printf("[debug] destor, lru_restore_thread end.\n");
+	printf("[debug] destor in read_recipe_thread, end.\n");
 	return NULL;
 }
 

@@ -32,9 +32,14 @@ static void* append_thread(void *arg) {
 	while (1) {
 		printf("append thread start\n");
 		struct container *c = sync_queue_get_top(container_buffer);
-		if (c == NULL)
+		if (c == NULL){
+			printf("[debug] destor in append thread, break.\n");
 			break;
-
+		}
+		else {
+			printf("[debug] destor in append thread, get one chunk from buffer.\n");
+		}
+			
 		TIMER_DECLARE(1);
 		TIMER_BEGIN(1);
 
@@ -57,8 +62,10 @@ void init_container_store() {
 	containerfile = sdscat(containerfile, "/container.pool");
 
 	if ((fp = fopen(containerfile, "r+"))) {
+		printf("[debug] destor init_container_store, in read mode.\n");
 		fread(&container_count, 8, 1, fp);
 	} else if (!(fp = fopen(containerfile, "w+"))) {
+		printf("[debug] destor init_container_store, in write mode.\n");
 		perror(
 				"Can not create container.pool for read and write because");
 		exit(1);
@@ -479,13 +486,14 @@ struct container* retrieve_container_by_id(containerid id) {
 
 		// cur = c->data;
 	} else {
-		c->data = malloc(CONTAINER_SIZE);
+		c->data = (unsigned char *)malloc(CONTAINER_SIZE);
 
 		pthread_mutex_lock(&mutex);
 		// 1. get container file name by id.
 		char *container_file_name = (char*)malloc(MAX_OEC_FILENAME_LEN);
 		sprintf(container_file_name, "%s_%s_%d", BASE_OEC_FILENAME, destor.local_ip_str, id);
 		// 2. init redisCtx and tell local oec agent what to do
+		printf("[debug] destor retrieve_container_by_id, sending request to oec.\n");
 		redisContext* localCtx = createContextByUint(destor.local_ip);
 		agent_cmd* agCmd = (agent_cmd*)calloc(sizeof(agent_cmd), 1);
 		openec_agent_cmd_init(agCmd);
@@ -530,12 +538,13 @@ struct container* retrieve_container_by_id(containerid id) {
 		// fseek(fp, id * CONTAINER_SIZE + 8, SEEK_SET);
 		// fread(c->data, CONTAINER_SIZE, 1, fp);
 		pthread_mutex_unlock(&mutex);
-
+		printf("[debug] destor retrieve_container_by_id, retrieved from oec.\n");
 		cur = &c->data[CONTAINER_SIZE - CONTAINER_META_SIZE];
 	}
 
 	// unser_declare;
 	// unser_begin(cur, CONTAINER_META_SIZE);
+	printf("[debug] destor retrieve_container_by_id, to serial.\n");
 	unsigned char* tmp_ptr = cur;
 	uint64_t tmp_meta_id;
 	memcpy((unsigned char*)&tmp_meta_id, tmp_ptr, sizeof(int64_t)); tmp_ptr += sizeof(int64_t);
@@ -551,11 +560,12 @@ struct container* retrieve_container_by_id(containerid id) {
 	// unser_int32(c->meta.data_size);
 
 	if(c->meta.id != id){
+		printf("[debug] destor retrieve container expect %lld, but id is %lld\n", id, c->meta.id);
 		WARNING("expect %lld, but read %lld", id, c->meta.id);
 		assert(c->meta.id == id);
 	}
 	else {
-		printf("[debug] destor retrieve container, id is %d\n", c->meta.id);
+		printf("[debug] destor retrieve container, id is %lld\n", c->meta.id);
 	}
 
 	int i;
