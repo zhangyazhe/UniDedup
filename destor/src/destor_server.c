@@ -353,6 +353,7 @@ void destor_read(char* filename)
 	redisFree(jobidCtx);
 	free(jobidkey);
 	// do_restore
+	printf("[debug] destor is ready to do restore, filename is %s, job id is %d.\n", filename, job_id);
 	do_restore(job_id, filename);
 }
 

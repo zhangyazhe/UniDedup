@@ -6,6 +6,7 @@
 #include "restore.h"
 
 static void* lru_restore_thread(void *arg) {
+	printf("[debug] destor, lru_restore_thread begins.\n");
 	struct lruCache *cache;
 	if (destor.simulation_level >= SIMULATION_RESTORE)
 		cache = new_lru_cache(destor.restore_cache[1], free_container_meta,
@@ -104,6 +105,7 @@ static void* read_recipe_thread(void *arg) {
 	}
 
 	sync_queue_term(restore_recipe_queue);
+	printf("[debug] destor, lru_restore_thread end.\n");
 	return NULL;
 }
 
