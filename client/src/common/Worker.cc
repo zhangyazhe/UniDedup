@@ -102,7 +102,9 @@ void Worker::clientWrite(AgentCommand *agCmd)
   /* This part is for Zewen */
 
   // file to groups
+  pthread_mutex_lock(&localId.mutex);
   localId.id = 0;
+  pthread_mutex_unlock(&localId.mutex);
   vector<struct group *> gps = split2Groups(filepath.c_str(), filename.c_str(), _conf->node_num);
 
   /* This part is for Lin */
