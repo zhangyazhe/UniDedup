@@ -3,6 +3,7 @@
 pthread_t assemble_t;
 
 static void do_assemble(void *argv) {
+    printf("[debug] client, do_assemble begin.\n");
     const char *path = (const char *)argv;
     int fd = -1;
     fd = open(path, O_WRONLY | O_CREAT, S_IRWXU);
@@ -10,7 +11,9 @@ static void do_assemble(void *argv) {
         fprintf(stderr, "assemble: open file failed\n");
         return ;
     }
+    printf("[debug] client, do_assemble 0.\n");
     unsigned char assembly_area[ASSEMBLE_BUFFER_LEN] = {'0'};
+    printf("[debug] client, do_assemble 1.\n");
     int offset = 0;
     struct chunk *c = NULL;
     while ((c = (struct chunk*)sync_queue_pop(receive_queue)) != nullptr) {

@@ -14,7 +14,7 @@ static chunk* new_chunk(int size) {
 
 static void receive_data(struct fileRecipe* fr) {
     // serial
-    printf("[debug] client receive_data, fr is nullptr %d", fr == nullptr);
+    printf("[debug] client receive_data, fr is nullptr %d\n", fr == nullptr);
     printf("fr->num is %d.\n", fr->num);
     for (int i = 0; i < fr->num; i++) {
         // get chunks from destor[i]
