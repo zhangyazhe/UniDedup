@@ -286,7 +286,7 @@ void build_openec_agent_command_type0(agent_cmd* cmd, int type, char* filename, 
 void build_openec_agent_command_type1(agent_cmd* cmd, int type, char* filename) {
   cmd->_type = type;
   int filename_len = strlen(filename);
-  cmd->_filepath = (char*)calloc(filename_len+1, 1);
+  cmd->_filepath = (char*)malloc(filename_len+1);
   strcpy(cmd->_filepath, filename);
   // 1. type
   agent_cmd_write_int(cmd, cmd->_type);

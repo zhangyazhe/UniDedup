@@ -2,6 +2,8 @@
 
 struct chunk_meta_data chunkMetaData;
 
+extern std::unordered_map<string, struct fileRecipe*> name2FileRecipe;
+
 Worker::Worker(Config *conf) : _conf(conf)
 {
   // create local context
@@ -45,6 +47,11 @@ void Worker::doProcess()
     }
     else
     {
+      for(auto key: name2FileRecipe) {
+        printf("for 1\n");
+        printf("key: %s\n", key.first.c_str());
+        printf("num: %d\n", key.second->num);
+      }
       struct timeval time1, time2;
       gettimeofday(&time1, NULL);
       char *reqStr = rReply->element[1]->str;
@@ -65,6 +72,11 @@ void Worker::doProcess()
         break;
       }
       delete agCmd;
+      for(auto key: name2FileRecipe) {
+        printf("for 2\n");
+        printf("key: %s\n", key.first.c_str());
+        printf("num: %d\n", key.second->num);
+      }
     }
     // free reply object
     freeReplyObject(rReply);
@@ -86,7 +98,7 @@ void Worker::clientWrite(AgentCommand *agCmd)
   /* This part is for Lin */
   // generate file recipe
   struct fileRecipe *fr = genFileRecipe(filename.c_str(), gps);
-  assert(fr != NULL);
+  assert(fr != nullptr);
 
   // set file recipe by echash
   int ret = setFileRecipe(fr);
@@ -178,22 +190,16 @@ void Worker::clientRead(AgentCommand *agCmd)
   // 1. get filename
   string filename = agCmd->getToReadFilename();
 
-  printf("1\n");
   /* Lin */
   // 2. get fileRecipe (file to groups) from EChash
-  struct fileRecipe *fr = getFileRecipe(filename.c_str());
-  if (fr == NULL)
+  struct fileRecipe *fr = getFileRecipe(filename);
+  if (fr == nullptr)
   {
     printf("no such file!\n");
     return;
   }
-  printf("2\n");
   /* Qi */
   // 3. send reuqests to each node to get group (call queue_term when the last chunk is poped)
-  printf("fr->num: %d\n");
-  for(int i = 0; i < fr->num; i++) {
-    printf("%s\n", fr->gm[i].groupName);
-  }
   for (int i = 0; i < fr->num; i++)
   {
     char *groupName = fr->gm[i].groupName;

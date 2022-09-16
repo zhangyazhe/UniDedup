@@ -67,7 +67,9 @@ void Config::getConfigFromLine(std::string& line) {
     } 
     else if(confs[0] == "local_ip") {
         std::stringstream ipss(confs[1]);
-        ipss >> _localIP;
+        string ip_str;
+        ipss >> ip_str;
+        _localIP = inet_addr(ip_str.c_str());
     }
 }
 

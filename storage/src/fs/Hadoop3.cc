@@ -18,10 +18,10 @@ Hadoop3File* Hadoop3::openFile(string filename, string mode) {
   Hadoop3File* toret = NULL;
   hdfsFile underfile;
   if (mode == "read") {
-    cout << "Hadoop3.openFile for read" << endl;
+    // cout << "Hadoop3.openFile for read" << endl;
     underfile = hdfsOpenFile(_fs, filename.c_str(), O_RDONLY, _conf->_pktSize, 0, 0);
   } else {
-    cout << "Hadoop3.openFile "<<filename<<" for write" << endl;
+    // cout << "Hadoop3.openFile "<<filename<<" for write" << endl;
     underfile = hdfsOpenFile(_fs, filename.c_str(), O_WRONLY | O_CREAT, 0, 0, 0);
     hdfsCloseFile(_fs, underfile);
     underfile = hdfsOpenFile(_fs, filename.c_str(), O_WRONLY | O_APPEND, 0, 0, 0);
@@ -37,7 +37,7 @@ Hadoop3File* Hadoop3::openFile(string filename, string mode) {
 
 void Hadoop3::writeFile(UnderFile* file, char* buffer, int len) {
   int length = hdfsWrite(_fs, ((Hadoop3File*)file)->_objfile, (void*)buffer, len);
-  cout << "Hadoop3.writeFile , len = " << length << endl;
+  // cout << "Hadoop3.writeFile , len = " << length << endl;
 }
 
 void Hadoop3::flushFile(UnderFile* file) {

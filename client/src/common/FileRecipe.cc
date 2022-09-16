@@ -1,6 +1,6 @@
 #include "FileRecipe.hh"
 
-std::unordered_map<char*, struct fileRecipe*> name2FileRecipe;
+std::unordered_map<string, struct fileRecipe*> name2FileRecipe;
 
 struct fileRecipe* new_fileRecipe(const char* filename, int num) {
     struct fileRecipe* fr = (struct fileRecipe*) malloc(sizeof(struct fileRecipe));
@@ -23,7 +23,8 @@ struct fileRecipe* new_fileRecipe(const char* filename, int num) {
 void delete_fileRecipe(struct fileRecipe* fr) {
     if(fr == NULL) return;
     free(fr->filename);
-    free(fr->gm->groupName);
+    for(int i = 0; i < fr->num; i++)
+        free(fr->gm[i].groupName);
     free(fr->gm);
     free(fr);
 }
@@ -39,20 +40,36 @@ struct fileRecipe* genFileRecipe(const char* filename, vector<struct group*>& gp
         memcpy(fr->gm[i].groupName, gp->groupName, nameLen+1);
         fr->gm[i].nodeId = gp->nodeId;
     }
-
     return fr;
 }
 
 int setFileRecipe(struct fileRecipe* fr) {
-    name2FileRecipe[fr->filename] = fr;
+    // vector<struct groupMeta> gms;
+    // for(int i = 0; i < fr->num; i++) {
+    //     struct groupMeta gm;
+    //     gm.groupName = (char*)malloc(strlen(fr->gm[i].groupName)+1);
+    //     strcpy(gm.groupName, fr->gm[i].groupName);
+    //     gm.nodeId = fr->gm[i].nodeId;
+    //     gms.push_back(gm);
+    // }
+    name2FileRecipe[string(fr->filename)] = fr;
     return 0;
     // return setByEchash(ECH, convertType(fr));
 }
 
-struct fileRecipe* getFileRecipe(const char* filename) {
+struct fileRecipe* getFileRecipe(string filename) {
     if(name2FileRecipe.find(filename) == name2FileRecipe.end()) {
-        return NULL;
+        printf("not found\n");
+        return nullptr;
     }
+    // vector<struct groupMeta> gms = name2FileRecipe[filename];
+    // struct fileRecipe* fr = new_fileRecipe(filename.c_str(), gms.size());
+    // for(int i = 0; i < gms.size(); i++) {
+    //     fr->gm[i].groupName = (char*)malloc(strlen(gms[i].groupName)+1);
+    //     strcpy(fr->gm[i].groupName, gms[i].groupName);
+    //     fr->gm[i].nodeId = gms[i].nodeId;
+    // }
     return name2FileRecipe[filename];
     // return getByEchash(ECH, filename);
+    
 }

@@ -69,12 +69,12 @@ do
 		rsync -a $localPath/$file $user@$host:$remotePath/$file
 	done
 
-	for j in ${!conf_files[@]}
-	do
-		file=${conf_files[$j]}
-		rsync -a $localPath/config/$file $user@$host:$remoteConfPath/$file
-		# ssh $user@$host "sudo sed -i \"s/<attribute><name>local.addr<\/name><value>$namenode_ip<\/value><\/attribute>/<attribute><name>local.addr<\/name><value>$ip<\/value><\/attribute>/\"" $remoteConfPath/$file
-	done
+	# for j in ${!conf_files[@]}
+	# do
+	# 	file=${conf_files[$j]}
+	# 	rsync -a $localPath/config/$file $user@$host:$remoteConfPath/$file
+	# 	# ssh $user@$host "sudo sed -i \"s/<attribute><name>local.addr<\/name><value>$namenode_ip<\/value><\/attribute>/<attribute><name>local.addr<\/name><value>$ip<\/value><\/attribute>/\"" $remoteConfPath/$file
+	# done
 
 	echo ---------autoSync $user@$host finish------------
 } &

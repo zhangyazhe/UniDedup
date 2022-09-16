@@ -7,8 +7,9 @@
 #include "Echash.hh"
 #include <vector>
 #include <unordered_map>
+#include <string>
 
-extern std::unordered_map<char*, struct fileRecipe*> name2FileRecipe;
+extern std::unordered_map<string, struct fileRecipe*> name2FileRecipe;
 
 struct groupMeta { 
     char* groupName;
@@ -25,6 +26,6 @@ struct fileRecipe* new_fileRecipe(const char* filename, int num);
 void delete_fileRecipe(struct fileRecipe* fr);
 struct fileRecipe* genFileRecipe(const char* filename, vector<struct group*>& gps);
 int setFileRecipe(struct fileRecipe* fr);
-struct fileRecipe* getFileRecipe(const char* filename);
+struct fileRecipe* getFileRecipe(string filename);
 
 #endif
