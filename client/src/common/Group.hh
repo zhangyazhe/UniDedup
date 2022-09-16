@@ -50,7 +50,7 @@ extern SyncQueue *hash_queue;
 
 int openFile(const char* path);
 char* baseName(const char* filepath);
-struct group* new_group(const char *fileName, int size);
+struct group* new_group(const char *fileName, int size, int id);
 void delete_group(struct group* gp);
 vector<struct group*> split2GroupsFixed(int fd);
 std::vector<struct group*> split2Groups(const char* filepath, const char* filename, int nodeNum);

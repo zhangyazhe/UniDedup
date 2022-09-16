@@ -34,7 +34,7 @@ char* baseName(const char* filepath){
     return ret;
 }
 
-struct group* new_group(const char* fileName, int size) {
+struct group* new_group(const char* fileName, int size, int id) {
     // TO DO:
     struct group *grp = (struct group*)malloc(sizeof(struct group));
     if (grp == NULL) {
@@ -49,14 +49,7 @@ struct group* new_group(const char* fileName, int size) {
         fprintf(stderr, "new_group: memory allocate failed\n");
         return NULL;
     }
-    uint64_t id;
-    pthread_mutex_lock(&localId.mutex);
-    id = localId.id++;
-    pthread_mutex_unlock(&localId.mutex);
-    std::string groupNameStr(fileName);
-    std::ostringstream oss;
-    oss << id;
-    groupNameStr += oss.str();
+    std::string groupNameStr = string(fileName) + to_string(id);
     grp->groupName = (char *)malloc(sizeof(char) * (groupNameStr.length() + 1));
     if (grp->groupName == NULL) {
         free(grp->data);
@@ -137,6 +130,7 @@ std::vector<struct group*> split2Groups(const char* filepath, const char* filena
     uint32_t size = 0;
     
     while (1) {
+        int id = 0;
         struct chunk *c = (struct chunk *) sync_queue_pop(hash_queue);
 
         if (c == NULL) {
@@ -155,7 +149,7 @@ std::vector<struct group*> split2Groups(const char* filepath, const char* filena
                     memcpy(minFingerprint, chunkList[i]->fp, sizeof(fingerprint));
                 }
             }
-            struct group *gp = new_group(filename, size);
+            struct group *gp = new_group(filename, size, id++);
             memcpy(gp->delegate, minFingerprint, sizeof(fingerprint));
             gp->nodeId = consistentHash(gp->delegate, nodeNum);
             int offset = 0;
