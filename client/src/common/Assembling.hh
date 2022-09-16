@@ -13,8 +13,6 @@
 /* Define the length of the assembly area, the default value is 30 4MB container size */
 #define ASSEMBLE_BUFFER_LEN 30 * 4194304ll
 
-static void do_assemble(char *path);
-static void* assemble_thread(void* argv);
 void start_assemble_phase(const char *path);
 void stop_assemble_phase(void);
 
