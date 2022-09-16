@@ -258,6 +258,7 @@ void Worker::clientRead(AgentCommand *agCmd)
         printf("receive loop end\n");
     }
   }
+  fclose(w_fp);
   // printf("3\n");
   // // 4. receive group (chunking, ending flag is queue_term)
   // // TO DO:
