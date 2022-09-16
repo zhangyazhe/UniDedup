@@ -194,6 +194,7 @@ static void index_lookup_base(struct segment *s){
                     c->id = id;
                     SET_CHUNK(c, CHUNK_DUPLICATE);
                 }else{
+                    printf("our code\n");
                     NOTICE("Filter phase: A key collision occurs");
                 }
             }else{

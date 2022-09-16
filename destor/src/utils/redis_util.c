@@ -196,7 +196,6 @@ int agent_cmd_read_int(agent_cmd *cmd) {
 
 char* destor_cmd_read_string(destor_cmd *cmd) {
   int slen = destor_cmd_read_int(cmd);
-  printf("slen: %d\n", slen);
   char* toret = (char*)calloc(sizeof(char), slen+1);
   memcpy(toret, cmd->_destorCmd + cmd->_cmLen, slen); cmd->_cmLen += slen;
   return toret;
