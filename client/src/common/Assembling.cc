@@ -33,14 +33,14 @@ static void do_assemble(char *path) {
 }
 
 static void* assemble_thread(void* argv) {
-    printf("[debug] client assemble_thread.\n");
+    printf("[debug] client assemble_thread %s.\n", (char*)argv);
     char* path = (char*)argv;
     do_assemble(path);
     return NULL;
 }
 
 void start_assemble_phase(const char *path) {
-    printf("[debug] client start_assemble_phase.\n");
+    printf("[debug] client start_assemble_phase %s.\n", path);
     pthread_create(&assemble_t, NULL, assemble_thread, (void *)path);
 }
 
