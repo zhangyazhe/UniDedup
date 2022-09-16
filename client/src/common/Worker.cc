@@ -4,6 +4,15 @@ struct chunk_meta_data chunkMetaData;
 
 extern std::unordered_map<string, struct fileRecipe*> name2FileRecipe;
 
+static chunk* new_chunk(int size) {
+    if (!size) return nullptr;
+    chunk* ret = (chunk*)malloc(sizeof(chunk));
+    ret->size = size;
+    ret->data = (unsigned char*)malloc(size*sizeof(char));
+    return ret;
+}
+
+
 Worker::Worker(Config *conf) : _conf(conf)
 {
   // create local context
@@ -201,6 +210,13 @@ void Worker::clientRead(AgentCommand *agCmd)
   }
   /* Qi */
   // 3. send reuqests to each node to get group (call queue_term when the last chunk is poped)
+  redisContext* readCtx = RedisUtil::createContext(_conf->_localIP);
+  redisReply* readReply;
+  // open file to write.
+  FILE* w_fp;
+  if ((w_fp = fopen(saveas.c_str(), "w")) == nullptr) {
+    printf("Worker::Open file %s error, in ClientRead.\n", saveas.c_str());
+  }
   for (int i = 0; i < fr->num; i++)
   {
     char *groupName = fr->gm[i].groupName;
@@ -211,18 +227,48 @@ void Worker::clientRead(AgentCommand *agCmd)
     destorCommand *dstCmd = new destorCommand();
     dstCmd->buildType1(1, string(groupName), _conf->_localIP);
     dstCmd->sendTo(nodeIp);
+    
+    
+    // get chunks from destor[i]
+    printf("[debug] client receive_data, connect to redis\n");
+    int pkt_id = 0;
+    printf("[debug] client receive_data, connect to redis done\n");
+    cout << "Receiving::Receive from node" << fr->gm[i].nodeId 
+        << " , fetching " << fr->gm[i].groupName 
+        << endl; 
+    while(1){
+        printf("enter receive loop\n");
+        string pkt_key = string(fr->gm[i].groupName)+":"+to_string(pkt_id++);
+        readReply = (redisReply*)redisCommand(readCtx, "blpop %s 0", pkt_key.c_str());
+        char* content = readReply->element[1]->str;
+        // 1. get data len
+        int data_len;
+        memcpy((char*)&data_len, content, 4);
+        data_len = ntohl(data_len);
+        if (data_len == 0) {
+            freeReplyObject(readReply);
+            break;
+        }
+        // 2. get data
+        chunk* ck = new_chunk(data_len);
+        memcpy(ck->data, content+4, ck->size);
+        // sync_queue_push(receive_queue, ck);
+        fwrite(ck->data, data_len, 1, w_fp);
+        freeReplyObject(readReply);
+        printf("receive loop end\n");
+    }
   }
-  printf("3\n");
-  // 4. receive group (chunking, ending flag is queue_term)
-  // TO DO:
-  start_receive_phase(fr);
-  printf("4\n");
-  /* Zewen */
-  // 5. assemble file
-  start_assemble_phase(saveas.c_str());
-  printf("5\n");
-  stop_receive_phase();
-  printf("6\n");
-  stop_assemble_phase();
-  printf("7\n");
+  // printf("3\n");
+  // // 4. receive group (chunking, ending flag is queue_term)
+  // // TO DO:
+  // start_receive_phase(fr);
+  // printf("4\n");
+  // /* Zewen */
+  // // 5. assemble file
+  // start_assemble_phase(saveas.c_str());
+  // printf("5\n");
+  // stop_receive_phase();
+  // printf("6\n");
+  // stop_assemble_phase();
+  // printf("7\n");
 }

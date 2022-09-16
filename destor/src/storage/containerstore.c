@@ -215,7 +215,7 @@ void write_container_async(struct container* c) {
 
 // 		pthread_mutex_lock(&mutex);
 
-// 		if(fseek(fp, c->meta.id * CONTAINER_META_SIZE + 8, SEEK_SET) != 0){
+		// if(fseek(fp, c->meta.id * CONTAINER_META_SIZE + 8, SEEK_SET) != 0){
 // 			perror("Fail seek in container store.");
 // 			exit(1);
 // 		}
