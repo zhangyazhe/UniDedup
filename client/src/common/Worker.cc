@@ -103,6 +103,7 @@ void Worker::clientWrite(AgentCommand *agCmd)
 
   // file to groups
   vector<struct group *> gps = split2Groups(filepath.c_str(), filename.c_str(), _conf->node_num);
+  localId.id = 0;
 
   /* This part is for Lin */
   // generate file recipe
