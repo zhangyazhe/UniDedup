@@ -174,7 +174,7 @@ std::vector<struct group*> split2Groups(const char* filepath, const char* filena
                 memcpy(minFingerprint, chunkList[i]->fp, sizeof(fingerprint));
             }
         }
-        struct group *gp = new_group(filename, size);
+        struct group *gp = new_group(filename, size, id++);
         memcpy(gp->delegate, minFingerprint, sizeof(fingerprint));
         gp->nodeId = consistentHash(gp->delegate, nodeNum);
         int offset = 0;
