@@ -576,11 +576,11 @@ struct container* retrieve_container_by_id(containerid id) {
 		memcpy(&me->fp, tmp_ptr, sizeof(fingerprint));
 		tmp_ptr += sizeof(fingerprint);
 		uint32_t tmp_me_len;
-		memcpy((unsigned char*)&tmp_me_len), tmp_ptr, sizeof(int32_t));
+		memcpy((unsigned char*)&tmp_me_len, tmp_ptr, sizeof(int32_t));
 		tmp_ptr += sizeof(int32_t);
 		me->len = ntohl(tmp_me_len);
 		uint32_t tmp_me_off;
-		memcpy((unsigned char*)&tmp_me_off), tmp_ptr, sizeof(int32_t));
+		memcpy((unsigned char*)&tmp_me_off, tmp_ptr, sizeof(int32_t));
 		tmp_ptr += sizeof(int32_t);
 		me->off = ntohl(tmp_me_off);
 		// unser_bytes(&me->fp, sizeof(fingerprint));
