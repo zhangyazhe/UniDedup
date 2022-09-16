@@ -31,6 +31,7 @@ private:
     int _filesize;
     // type 1
     std::string _to_read_filename;
+    std::string _to_save_as;
 public:
     AgentCommand(/* args */);
     AgentCommand(char* reqStr);
@@ -49,6 +50,7 @@ public:
     std::string getFilename();
     int getFilesize();
     std::string getToReadFilename();
+    std::string getToSaveAs();
 
     // send method
     void setRKey(std::string key);
@@ -60,7 +62,8 @@ public:
                     std::string saveas,
                     int filesize);
     void buildType1(int type,
-                    std::string filename);
+                    std::string filename,
+                    std::string saveas);
 
     // resolve AgentCommand
     void resolveType0();

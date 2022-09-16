@@ -4,7 +4,7 @@
 
 void usage() {
     cout << "usage:\t./Client write filepath saveas sizeinBytes" << endl;
-    cout << "usage:\t./Client read filename" << endl;
+    cout << "usage:\t./Client read filename saveas" << endl;
 }
 
 void write(string filepath, string saveas, int sizeinBytes) {
@@ -19,12 +19,12 @@ void write(string filepath, string saveas, int sizeinBytes) {
     delete conf;
 }
 
-void read(string filename) {
+void read(string filename, string saveas) {
     string conf_path(config_path);
     Config* conf = new Config(conf_path);
     // tell local Agent filename
     AgentCommand *agCmd = new AgentCommand();
-    agCmd->buildType1(1, filename);
+    agCmd->buildType1(1, filename, saveas);
     agCmd->sendTo(conf->_localIP);
 
     delete agCmd;
@@ -52,12 +52,13 @@ int main(int argc, char** argv)
         write(input_filepath, input_saveas, input_size);
     }
     else if (reqType == "read") {
-        if (argc != 3) {
+        if (argc != 4) {
             usage();
             return -1;
         }
         string input_filename(argv[2]);
-        read(input_filename);
+        string intput_saveas(argv[3]);
+        read(input_filename, intput_saveas);
     }
 
 }

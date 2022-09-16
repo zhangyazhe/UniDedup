@@ -189,6 +189,7 @@ void Worker::clientRead(AgentCommand *agCmd)
 {
   // 1. get filename
   string filename = agCmd->getToReadFilename();
+  string saveas = agCmd->getToSaveAs();
 
   /* Lin */
   // 2. get fileRecipe (file to groups) from EChash
@@ -218,7 +219,7 @@ void Worker::clientRead(AgentCommand *agCmd)
   printf("4\n");
   /* Zewen */
   // 5. assemble file
-  start_assemble_phase(filename.c_str());
+  start_assemble_phase(saveas.c_str());
   printf("5\n");
   stop_receive_phase();
   printf("6\n");

@@ -112,6 +112,10 @@ std::string AgentCommand::getToReadFilename() {
 	return _to_read_filename;
 }
 
+std::string AgentCommand::getToSaveAs() {
+	return _to_save_as;
+}
+
 void AgentCommand::sendTo(unsigned int ip)
 {
 	redisContext *sendCtx = RedisUtil::createContext(ip);
@@ -148,18 +152,23 @@ void AgentCommand::resolveType0()
 }
 
 void AgentCommand::buildType1(int type,
-                    std::string filename)
+                    std::string filename,
+					std::string saveas)
 {
 	_type = type;
 	_to_read_filename = filename;
+	_to_save_as = saveas;
 
 	// 1. type
 	writeInt(_type);
 	// 2. filename
 	writeString(_to_read_filename);
+	// 3. saveas
+	writeString(_to_save_as);
 }
 
 void AgentCommand::resolveType1()
 {
 	_to_read_filename = readString();
+	_to_save_as = readString();
 }

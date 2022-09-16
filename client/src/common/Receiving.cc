@@ -12,8 +12,10 @@ static chunk* new_chunk(int size) {
     return ret;
 }
 
-static void receive_data(const fileRecipe* fr) {
+static void receive_data(struct fileRecipe* fr) {
     // serial
+    printf("[debug] client receive_data, fr is nullptr %d", fr == nullptr);
+    printf("fr->num is %d.\n", fr->num);
     for (int i = 0; i < fr->num; i++) {
         // get chunks from destor[i]
         redisContext* readCtx = RedisUtil::createContext(string("127.0.0.1"));
@@ -46,14 +48,13 @@ static void receive_data(const fileRecipe* fr) {
     sync_queue_push(receive_queue, new_chunk(0));
 }
 
-static void *receive_thread(void *argv) {
-    const fileRecipe* fr = (const fileRecipe*)argv;
+static void *receive_thread(struct fileRecipe* fr) {
     receive_data(fr);
     sync_queue_term(receive_queue);
     return NULL;
 }
 
-void start_receive_phase(const char* buf) {
+void start_receive_phase(struct fileRecipe * buf) {
     receive_queue = sync_queue_new(100);
     pthread_create(&receive_t, NULL, receive_thread, (void*)buf);
 }
