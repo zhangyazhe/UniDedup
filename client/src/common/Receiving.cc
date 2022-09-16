@@ -18,9 +18,11 @@ static void receive_data(struct fileRecipe* fr) {
     printf("fr->num is %d.\n", fr->num);
     for (int i = 0; i < fr->num; i++) {
         // get chunks from destor[i]
+        printf("[debug] client receive_data, connect to redis\n");
         redisContext* readCtx = RedisUtil::createContext(string("127.0.0.1"));
         redisReply* readReply;
         int pkt_id = 0;
+        printf("[debug] client receive_data, connect to redis done\n");
         cout << "Receiving::Receive from node" << fr->gm[i].nodeId 
             << " , fetching " << fr->gm[i].groupName 
             << endl; 
