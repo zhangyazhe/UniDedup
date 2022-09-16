@@ -9,7 +9,7 @@
 extern SyncQueue *receive_queue;
 
 static void receive_data(struct fileRecipe* fr);
-static void *receive_thread(struct fileRecipe* fr);
+static void *receive_thread(void* buf);
 void start_receive_phase(struct fileRecipe * buf);
 void stop_receive_phase();
 

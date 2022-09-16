@@ -48,7 +48,8 @@ static void receive_data(struct fileRecipe* fr) {
     sync_queue_push(receive_queue, new_chunk(0));
 }
 
-static void *receive_thread(struct fileRecipe* fr) {
+static void *receive_thread(void* buf) {
+    struct fileRecipe* fr = (struct fileRecipe*)buf;
     receive_data(fr);
     sync_queue_term(receive_queue);
     return NULL;
