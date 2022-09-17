@@ -267,10 +267,6 @@ void write_container(struct container* c) {
 		memcpy(tmp_ptr, &(tmp_data_size), sizeof(int32_t));
 		tmp_ptr += sizeof(int32_t);
 
-		// write meta data into container.pool file
-		fseek(fp, c->meta.id * CONTAINER_META_SIZE + 8, SEEK_SET);
-		fwrite(cur, CONTAINER_META_SIZE, 1, fp);
-
 		GHashTableIter iter;
 		gpointer key, value;
 		g_hash_table_iter_init(&iter, c->meta.map);
@@ -288,7 +284,9 @@ void write_container(struct container* c) {
 			memcpy(tmp_ptr, &(tmp_me_off), sizeof(int32_t));
 			tmp_ptr += sizeof(int32_t);
 		}
-
+		//  write meta data into container.pool file
+		fseek(fp, c->meta.id * CONTAINER_META_SIZE + 8, SEEK_SET);
+		fwrite(cur, CONTAINER_META_SIZE, 1, fp);
 		// ser_end(cur, CONTAINER_META_SIZE);
 
 		pthread_mutex_lock(&mutex);
@@ -633,6 +631,7 @@ struct containerMeta* retrieve_container_meta_by_id(containerid id) {
 	if (cm)
 		return cm;
 
+	printf("[debug] container meta not found\n");
 	cm = (struct containerMeta*) malloc(sizeof(struct containerMeta));
 	init_container_meta(cm);
 
@@ -662,13 +661,13 @@ struct containerMeta* retrieve_container_meta_by_id(containerid id) {
 	unsigned char* tmp_ptr = buf;
 	uint64_t tmp_meta_id;
 	memcpy((unsigned char*)&tmp_meta_id, tmp_ptr, sizeof(int64_t)); tmp_ptr += sizeof(int64_t);
-	c->meta.id = redis_util_ntohll(tmp_meta_id);
+	cm->id = redis_util_ntohll(tmp_meta_id);
 	uint32_t tmp_chunk_num;
 	memcpy((unsigned char*)&tmp_chunk_num, tmp_ptr, sizeof(int32_t)); tmp_ptr += sizeof(int32_t);
-	c->meta.chunk_num = ntohl(tmp_chunk_num);
+	cm->chunk_num = ntohl(tmp_chunk_num);
 	uint32_t tmp_data_size;
 	memcpy((unsigned char*)&tmp_data_size, tmp_ptr, sizeof(int32_t)); tmp_ptr += sizeof(int32_t);
-	c->meta.data_size = ntohl(tmp_data_size);
+	cm->data_size = ntohl(tmp_data_size);
 
 	if(cm->id != id){
 		WARNING("expect %lld, but read %lld", id, cm->id);
