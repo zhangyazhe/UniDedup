@@ -268,7 +268,7 @@ void write_container(struct container* c) {
 		tmp_ptr += sizeof(int32_t);
 
 		// write meta data into container.pool file
-		fseek(fp, c.meta->id * CONTAINER_META_SIZE + 8, SEEK_SET);
+		fseek(fp, c->meta.id * CONTAINER_META_SIZE + 8, SEEK_SET);
 		fwrite(cur, CONTAINER_META_SIZE, 1, fp);
 
 		GHashTableIter iter;
