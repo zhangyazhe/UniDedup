@@ -266,8 +266,10 @@ void write_container(struct container* c) {
 		uint32_t tmp_data_size = htonl(c->meta.data_size);
 		memcpy(tmp_ptr, &(tmp_data_size), sizeof(int32_t));
 		tmp_ptr += sizeof(int32_t);
-		
 
+		// write meta data into container.pool file
+		fseek(fp, c.meta->id * CONTAINER_META_SIZE + 8, SEEK_SET);
+		fwrite(cur, CONTAINER_META_SIZE, 1, fp);
 
 		GHashTableIter iter;
 		gpointer key, value;
@@ -638,11 +640,14 @@ struct containerMeta* retrieve_container_meta_by_id(containerid id) {
 
 	pthread_mutex_lock(&mutex);
 
-	if (destor.simulation_level >= SIMULATION_APPEND)
-		fseek(fp, id * CONTAINER_META_SIZE + 8, SEEK_SET);
-	else
-		fseek(fp, (id + 1) * CONTAINER_SIZE - CONTAINER_META_SIZE + 8,
-		SEEK_SET);
+	// if (destor.simulation_level >= SIMULATION_APPEND)
+	// 	fseek(fp, id * CONTAINER_META_SIZE + 8, SEEK_SET);
+	// else
+	// 	fseek(fp, (id + 1) * CONTAINER_SIZE - CONTAINER_META_SIZE + 8,
+	// 	SEEK_SET);
+
+	// only meta data in container.pool
+	fseek(fp, id * CONTAINER_META_SIZE + 8, SEEK_SET);
 
 	fread(buf, CONTAINER_META_SIZE, 1, fp);
 
