@@ -653,12 +653,22 @@ struct containerMeta* retrieve_container_meta_by_id(containerid id) {
 
 	pthread_mutex_unlock(&mutex);
 
-	unser_declare;
-	unser_begin(buf, CONTAINER_META_SIZE);
+	// unser_declare;
+	// unser_begin(buf, CONTAINER_META_SIZE);
 
-	unser_int64(cm->id);
-	unser_int32(cm->chunk_num);
-	unser_int32(cm->data_size);
+	// unser_int64(cm->id);
+	// unser_int32(cm->chunk_num);
+	// unser_int32(cm->data_size);
+	unsigned char* tmp_ptr = buf;
+	uint64_t tmp_meta_id;
+	memcpy((unsigned char*)&tmp_meta_id, tmp_ptr, sizeof(int64_t)); tmp_ptr += sizeof(int64_t);
+	c->meta.id = redis_util_ntohll(tmp_meta_id);
+	uint32_t tmp_chunk_num;
+	memcpy((unsigned char*)&tmp_chunk_num, tmp_ptr, sizeof(int32_t)); tmp_ptr += sizeof(int32_t);
+	c->meta.chunk_num = ntohl(tmp_chunk_num);
+	uint32_t tmp_data_size;
+	memcpy((unsigned char*)&tmp_data_size, tmp_ptr, sizeof(int32_t)); tmp_ptr += sizeof(int32_t);
+	c->meta.data_size = ntohl(tmp_data_size);
 
 	if(cm->id != id){
 		WARNING("expect %lld, but read %lld", id, cm->id);
@@ -669,9 +679,19 @@ struct containerMeta* retrieve_container_meta_by_id(containerid id) {
 	for (i = 0; i < cm->chunk_num; i++) {
 		struct metaEntry* me = (struct metaEntry*) malloc(
 				sizeof(struct metaEntry));
-		unser_bytes(&me->fp, sizeof(fingerprint));
-		unser_bytes(&me->len, sizeof(int32_t));
-		unser_bytes(&me->off, sizeof(int32_t));
+		// unser_bytes(&me->fp, sizeof(fingerprint));
+		// unser_bytes(&me->len, sizeof(int32_t));
+		// unser_bytes(&me->off, sizeof(int32_t));
+		memcpy(&me->fp, tmp_ptr, sizeof(fingerprint));
+		tmp_ptr += sizeof(fingerprint);
+		uint32_t tmp_me_len;
+		memcpy((unsigned char*)&tmp_me_len, tmp_ptr, sizeof(int32_t));
+		tmp_ptr += sizeof(int32_t);
+		me->len = ntohl(tmp_me_len);
+		uint32_t tmp_me_off;
+		memcpy((unsigned char*)&tmp_me_off, tmp_ptr, sizeof(int32_t));
+		tmp_ptr += sizeof(int32_t);
+		me->off = ntohl(tmp_me_off);
 		g_hash_table_insert(cm->map, &me->fp, me);
 	}
 
