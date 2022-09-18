@@ -5,15 +5,16 @@ node_num=8
 node_name=node
 
 home=/home/$user
-remotePath=/$home/Fast23
-remoteConfPath=$remotePath/client/conf
-localPath=../client
+path=/$home/Fast23
 
-bash stop.sh
-
-for((i=0;i<=$node_num;i++));
+# start openec
+for((i=1;i<=$node_num;i++))
 do
 {
+    if [[ $i -gt 3 && $i -lt 6 ]]
+    then
+        continue
+    fi
     if [[ $i -gt 0 && $i -lt 10 ]]
 	then
 		host=${node_name}0${i}
@@ -26,8 +27,7 @@ do
         fi
 	fi
 
-    ssh $user@$host "$remotePath/destor/proxy"
-} &
+    ssh $user@$host "source /etc/profile; cd $path/storage; ./OECAgent"
+}&
 done
-
 wait
