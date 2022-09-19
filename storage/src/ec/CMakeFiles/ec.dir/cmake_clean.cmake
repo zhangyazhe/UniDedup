@@ -3,6 +3,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/ec.dir/BUTTERFLY64.cc.o.d"
   "CMakeFiles/ec.dir/CL262059.cc.o"
   "CMakeFiles/ec.dir/CL262059.cc.o.d"
+  "CMakeFiles/ec.dir/Clay.cc.o"
+  "CMakeFiles/ec.dir/Clay.cc.o.d"
   "CMakeFiles/ec.dir/Cluster.cc.o"
   "CMakeFiles/ec.dir/Cluster.cc.o.d"
   "CMakeFiles/ec.dir/Computation.cc.o"

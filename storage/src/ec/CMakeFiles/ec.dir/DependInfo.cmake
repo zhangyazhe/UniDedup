@@ -10,6 +10,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/openec/Fast23/storage/src/ec/BUTTERFLY64.cc" "src/ec/CMakeFiles/ec.dir/BUTTERFLY64.cc.o" "gcc" "src/ec/CMakeFiles/ec.dir/BUTTERFLY64.cc.o.d"
   "/home/openec/Fast23/storage/src/ec/CL262059.cc" "src/ec/CMakeFiles/ec.dir/CL262059.cc.o" "gcc" "src/ec/CMakeFiles/ec.dir/CL262059.cc.o.d"
+  "/home/openec/Fast23/storage/src/ec/Clay.cc" "src/ec/CMakeFiles/ec.dir/Clay.cc.o" "gcc" "src/ec/CMakeFiles/ec.dir/Clay.cc.o.d"
   "/home/openec/Fast23/storage/src/ec/Cluster.cc" "src/ec/CMakeFiles/ec.dir/Cluster.cc.o" "gcc" "src/ec/CMakeFiles/ec.dir/Cluster.cc.o.d"
   "/home/openec/Fast23/storage/src/ec/Computation.cc" "src/ec/CMakeFiles/ec.dir/Computation.cc.o" "gcc" "src/ec/CMakeFiles/ec.dir/Computation.cc.o.d"
   "/home/openec/Fast23/storage/src/ec/DRC643.cc" "src/ec/CMakeFiles/ec.dir/DRC643.cc.o" "gcc" "src/ec/CMakeFiles/ec.dir/DRC643.cc.o.d"

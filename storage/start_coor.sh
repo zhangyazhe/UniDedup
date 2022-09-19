@@ -15,7 +15,7 @@ make
 
 # cp ./hdfs3-integration/conf/* $hadoop_home/etc/hadoop/
 
-# ./format.sh
+./format.sh
 
 if [ -f "entryStore" ];
 then

@@ -178,6 +178,30 @@ CL262059.cc.s:
 	cd /home/openec/Fast23/storage && $(MAKE) $(MAKESILENT) -f src/ec/CMakeFiles/ec.dir/build.make src/ec/CMakeFiles/ec.dir/CL262059.cc.s
 .PHONY : CL262059.cc.s
 
+Clay.o: Clay.cc.o
+.PHONY : Clay.o
+
+# target to build an object file
+Clay.cc.o:
+	cd /home/openec/Fast23/storage && $(MAKE) $(MAKESILENT) -f src/ec/CMakeFiles/ec.dir/build.make src/ec/CMakeFiles/ec.dir/Clay.cc.o
+.PHONY : Clay.cc.o
+
+Clay.i: Clay.cc.i
+.PHONY : Clay.i
+
+# target to preprocess a source file
+Clay.cc.i:
+	cd /home/openec/Fast23/storage && $(MAKE) $(MAKESILENT) -f src/ec/CMakeFiles/ec.dir/build.make src/ec/CMakeFiles/ec.dir/Clay.cc.i
+.PHONY : Clay.cc.i
+
+Clay.s: Clay.cc.s
+.PHONY : Clay.s
+
+# target to generate assembly for a file
+Clay.cc.s:
+	cd /home/openec/Fast23/storage && $(MAKE) $(MAKESILENT) -f src/ec/CMakeFiles/ec.dir/build.make src/ec/CMakeFiles/ec.dir/Clay.cc.s
+.PHONY : Clay.cc.s
+
 Cluster.o: Cluster.cc.o
 .PHONY : Cluster.o
 
@@ -793,6 +817,9 @@ help:
 	@echo "... CL262059.o"
 	@echo "... CL262059.i"
 	@echo "... CL262059.s"
+	@echo "... Clay.o"
+	@echo "... Clay.i"
+	@echo "... Clay.s"
 	@echo "... Cluster.o"
 	@echo "... Cluster.i"
 	@echo "... Cluster.s"

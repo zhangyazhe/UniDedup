@@ -44,14 +44,6 @@ struct fileRecipe* genFileRecipe(const char* filename, vector<struct group*>& gp
 }
 
 int setFileRecipe(struct fileRecipe* fr) {
-    // vector<struct groupMeta> gms;
-    // for(int i = 0; i < fr->num; i++) {
-    //     struct groupMeta gm;
-    //     gm.groupName = (char*)malloc(strlen(fr->gm[i].groupName)+1);
-    //     strcpy(gm.groupName, fr->gm[i].groupName);
-    //     gm.nodeId = fr->gm[i].nodeId;
-    //     gms.push_back(gm);
-    // }
     name2FileRecipe[string(fr->filename)] = fr;
     return 0;
     // return setByEchash(ECH, convertType(fr));
@@ -59,17 +51,10 @@ int setFileRecipe(struct fileRecipe* fr) {
 
 struct fileRecipe* getFileRecipe(string filename) {
     if(name2FileRecipe.find(filename) == name2FileRecipe.end()) {
-        printf("not found\n");
+        printf("file recipe not found\n");
         return nullptr;
     }
-    // vector<struct groupMeta> gms = name2FileRecipe[filename];
-    // struct fileRecipe* fr = new_fileRecipe(filename.c_str(), gms.size());
-    // for(int i = 0; i < gms.size(); i++) {
-    //     fr->gm[i].groupName = (char*)malloc(strlen(gms[i].groupName)+1);
-    //     strcpy(fr->gm[i].groupName, gms[i].groupName);
-    //     fr->gm[i].nodeId = gms[i].nodeId;
-    // }
     return name2FileRecipe[filename];
-    // return getByEchash(ECH, filename);
+    // return getByEchash(ECH, filename.c_str());
     
 }
