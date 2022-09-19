@@ -602,7 +602,8 @@ void OECWorker::computeWorker(vector<ECTask*> computeTasks,
   // Then we perform calculations inside ECTask list one by one, results are cached in runtime memory
   // Finally we put data from ecn into output streams
 
-  OECDataPacket** curStripe = (OECDataPacket**)calloc(ecn, sizeof(OECDataPacket*));
+  OECDataPacket** curStripe = (OECDataPacket**)calloc(eck, sizeof(OECDataPacket*));
+  OECDataPacket** targetStripe = (OECDataPacket**)calloc(ecn, sizeof(OECDataPacket*));
   int pktsize = _conf->_pktSize;
   int splitsize = pktsize / ecw;
   cout << ", pktsize: " << pktsize
@@ -617,19 +618,28 @@ void OECWorker::computeWorker(vector<ECTask*> computeTasks,
       curStripe[pktidx] = curPkt;
     }
     // now we have k pkt in a stripe, prepare pkt for parity pkt 
-    for (int i=0; i<(ecn-eck); i++) {
+    for (int i=0; i<ecn; i++) {
       OECDataPacket* paritypkt = new OECDataPacket(pktsize);
-      curStripe[eck+i] = paritypkt;
+      targetStripe[i] = paritypkt;
     }
 
-    unordered_map<int, char*> bufMap;
+    unordered_map<int, char*> srcbufMap;
+    unordered_map<int, char*> tarbufMap;
     // add pkt into bufMap
-    for (int i=0; i<ecn; i++) {
+    for (int i=0; i<eck; i++) {
       char* pktbuf = curStripe[i]->getData();
       for (int j=0; j<ecw; j++) {
         int ecidx = i*ecw + j;
         char* bufaddr = pktbuf+j*splitsize;
-        bufMap.insert(make_pair(ecidx, bufaddr));
+        srcbufMap.insert(make_pair(ecidx, bufaddr));
+      }
+    }
+    for (int i=0; i<ecn; i++) {
+      char* pktbuf = targetStripe[i]->getData();
+      for (int j=0; j<ecw; j++) {
+        int ecidx = i*ecw + j;
+        char* bufaddr = pktbuf+j*splitsize;
+        tarbufMap.insert(make_pair(ecidx, bufaddr));
       }
     }
     // now perform computation in compute task one by one
@@ -672,8 +682,8 @@ void OECWorker::computeWorker(vector<ECTask*> computeTasks,
         for (int bufIdx = 0; bufIdx < children.size(); bufIdx++) {
           int child = children[bufIdx];
           // check whether there is buf in databuf
-          assert (bufMap.find(child) != bufMap.end());
-          data[bufIdx] = bufMap[child];
+          assert (srcbufMap.find(child) != srcbufMap.end());
+          data[bufIdx] = srcbufMap[child];
           if (stripeid == 0) {
             cout << "data["<<bufIdx<<"] = bufMap[" <<child<<"]"<< endl;
           }
@@ -683,12 +693,12 @@ void OECWorker::computeWorker(vector<ECTask*> computeTasks,
         for (auto it: coefMap) {
           int target = it.first;
           char* codebuf;
-          if (bufMap.find(target) == bufMap.end()) {
+          if (tarbufMap.find(target) == tarbufMap.end()) {
             codebuf = (char*)calloc(splitsize, sizeof(char));
-            bufMap.insert(make_pair(target, codebuf)); 
+            tarbufMap.insert(make_pair(target, codebuf)); 
             if (stripeid == 0) cout << "code["<<codeBufIdx<<"] = new" << endl;
           } else {
-            codebuf = bufMap[target];
+            codebuf = tarbufMap[target];
             if (stripeid == 0) cout << "code["<<codeBufIdx<<"] = bufMap[" << target << "]" << endl;
           }
           code[codeBufIdx] = codebuf;
@@ -716,12 +726,12 @@ void OECWorker::computeWorker(vector<ECTask*> computeTasks,
     }
     // now computation is finished, we take out pkt from stripe and put into outputstream
     for (int pktidx=0; pktidx<ecn; pktidx++) {
-      objstreams[pktidx]->enqueue(curStripe[pktidx]);
-      curStripe[pktidx] = NULL;
+      objstreams[pktidx]->enqueue(targetStripe[pktidx]);
+      targetStripe[pktidx] = NULL;
     }
     // clear data in bufMap
-    unordered_map<int, char*>::iterator it = bufMap.begin();
-    while (it != bufMap.end()) {
+    unordered_map<int, char*>::iterator it = srcbufMap.begin();
+    while (it != srcbufMap.end()) {
       int sidx = it->first/ecw;
       if (sidx < ecn) {
         curStripe[sidx] = NULL;
@@ -730,11 +740,199 @@ void OECWorker::computeWorker(vector<ECTask*> computeTasks,
       }
       it++;
     }
-    bufMap.clear();
+    srcbufMap.clear();
+
+    it = tarbufMap.begin();
+    while (it != tarbufMap.end()) {
+      int sidx = it->first/ecw;
+      if (sidx < ecn) {
+        targetStripe[sidx] = NULL;
+      } else {
+        if (it->second) free(it->second);
+      }
+      it++;
+    }
+    tarbufMap.clear();
   }
 
   // free
   free(curStripe);
+  free(targetStripe);
+  gettimeofday(&time2, NULL);
+  cout << "OECWorker::computeWorker.duration = " << RedisUtil::duration(time1, time2) << endl;
+}
+
+void OECWorker::computeWorkerNonSys(vector<ECTask*> computeTasks,
+                       BlockingQueue<OECDataPacket*>** readQueue,
+                       FSObjOutputStream** objstreams,
+                       int stripenum,
+                       int ecn,
+                       int eck,
+                       int ecw) {
+  struct timeval time1, time2, time3;
+  gettimeofday(&time1, NULL);
+  cout << "OECWorker::computeWorker.stripenum: " << stripenum;
+  // In this method, we fetch eck pkts from readQueue and cache into runtime memory
+  // If there is need, we need to divide pkt into splits for sub-packetization
+  // Then we perform calculations inside ECTask list one by one, results are cached in runtime memory
+  // Finally we put data from ecn into output streams
+
+  OECDataPacket** curStripe = (OECDataPacket**)calloc(eck, sizeof(OECDataPacket*));
+  OECDataPacket** targetStripe = (OECDataPacket**)calloc(eck, sizeof(OECDataPacket*));
+  int pktsize = _conf->_pktSize;
+  int splitsize = pktsize / ecw;
+  cout << ", pktsize: " << pktsize
+       << ", splitsize: " << splitsize
+       << ", ecn: " << ecn
+       << ", eck: " << eck
+       << ", ecw: " << ecw << endl;
+
+  for (int stripeid=0; stripeid<stripenum; stripeid++) {
+    for (int pktidx=0; pktidx < eck; pktidx++) {
+      OECDataPacket* curPkt = readQueue[pktidx]->pop();
+      curStripe[pktidx] = curPkt;
+    }
+    // now we have k pkt in a stripe, prepare pkt for parity pkt 
+    for (int i=0; i<eck; i++) {
+      OECDataPacket* targetpkt = new OECDataPacket(pktsize);
+      targetStripe[i] = targetpkt;
+    }
+
+    unordered_map<int, char*> srcbufMap;
+    unordered_map<int, char*> tarbufMap;
+    // add pkt into bufMap
+    for (int i=0; i<eck; i++) {
+      char* pktbuf = curStripe[i]->getData();
+      for (int j=0; j<ecw; j++) {
+        int ecidx = i*ecw + j;
+        char* bufaddr = pktbuf+j*splitsize;
+        srcbufMap.insert(make_pair(ecidx, bufaddr));
+      }
+    }
+    for (int i=0; i<eck; i++) {
+      char* pktbuf = targetStripe[i]->getData();
+      for (int j=0; j<ecw; j++) {
+        int ecidx = i*ecw + j;
+        char* bufaddr = pktbuf+j*splitsize;
+        tarbufMap.insert(make_pair(ecidx, bufaddr));
+      }
+    }
+    // now perform computation in compute task one by one
+    for (int taskid=0; taskid<computeTasks.size(); taskid++) {
+      ECTask* compute = computeTasks[taskid];
+      vector<int> children = compute->getChildren();
+
+      if (stripeid == 0) {
+        cout << "children: ";
+        for (int childid=0; childid<children.size(); childid++) {
+          cout << children[childid] << " ";
+        }
+        cout << endl;
+      }
+
+      unordered_map<int, vector<int>> coefMap = compute->getCoefMap();
+
+      if (stripeid == 0) {
+        cout << "coef: "<< endl;
+        for (auto item: coefMap) {
+          int target = item.first;
+          vector<int> coefs = item.second;
+          cout << "    " << target << ": " << "( ";
+          for (int coefidx=0; coefidx<coefs.size(); coefidx++) cout << coefs[coefidx] << " ";
+          cout << ")" << endl;
+        }
+      }
+
+      int col = children.size();
+      int row = coefMap.size();
+      vector<int> targets;
+      // here xiaolu modify > to >=
+      if (col*row >= 1) {
+        int* matrix = (int*)calloc(row*col, sizeof(int));
+        char** data = (char**)calloc(col, sizeof(char*));
+        char** code = (char**)calloc(row, sizeof(char*));
+
+        // prepare the data buf
+        // actually, data buf should always exist
+        for (int bufIdx = 0; bufIdx < children.size(); bufIdx++) {
+          int child = children[bufIdx];
+          // check whether there is buf in databuf
+          assert (srcbufMap.find(child) != srcbufMap.end());
+          data[bufIdx] = srcbufMap[child];
+          if (stripeid == 0) {
+            cout << "data["<<bufIdx<<"] = bufMap[" <<child<<"]"<< endl;
+          }
+        }
+        // prepare the code buf
+        int codeBufIdx = 0;
+        for (auto it: coefMap) {
+          int target = it.first;
+          char* codebuf;
+          if (tarbufMap.find(target) == tarbufMap.end()) {
+            codebuf = (char*)calloc(splitsize, sizeof(char));
+            tarbufMap.insert(make_pair(target, codebuf)); 
+            if (stripeid == 0) cout << "code["<<codeBufIdx<<"] = new" << endl;
+          } else {
+            codebuf = tarbufMap[target];
+            if (stripeid == 0) cout << "code["<<codeBufIdx<<"] = bufMap[" << target << "]" << endl;
+          }
+          code[codeBufIdx] = codebuf;
+
+          targets.push_back(target);
+          vector<int> curcoef = it.second;
+          for (int j=0; j<col; j++) {
+            matrix[codeBufIdx * col + j] = curcoef[j];
+          }
+          codeBufIdx++;
+        }
+        if (stripeid == 0) {
+          cout << "matrix: " << endl;
+          for (int ii=0; ii<row; ii++) {
+            for (int jj=0; jj<col; jj++) {
+              cout << matrix[ii*col+jj] << " ";
+            }
+            cout << endl;
+          }
+        }
+        // perform compute operation
+        Computation::Multi(code, data, matrix, row, col, splitsize, "Isal");
+      }
+      // check whether there is a need to discuss about row*col = 1
+    }
+    // now computation is finished, we take out pkt from stripe and put into outputstream
+    for (int pktidx=0; pktidx<eck; pktidx++) {
+      objstreams[pktidx]->enqueue(targetStripe[pktidx]);
+      targetStripe[pktidx] = NULL;
+    }
+    // clear data in bufMap
+    unordered_map<int, char*>::iterator it = srcbufMap.begin();
+    while (it != srcbufMap.end()) {
+      int sidx = it->first/ecw;
+      if (sidx < ecn) {
+        curStripe[sidx] = NULL;
+      } else {
+        if (it->second) free(it->second);
+      }
+      it++;
+    }
+    srcbufMap.clear();
+
+    it = tarbufMap.begin();
+    while (it != tarbufMap.end()) {
+      int sidx = it->first/ecw;
+      if (sidx < ecn) {
+        targetStripe[sidx] = NULL;
+      } else {
+        if (it->second) free(it->second);
+      }
+      it++;
+    }
+    tarbufMap.clear();
+  }
+
+  // free
+  free(curStripe);
+  free(targetStripe);
   gettimeofday(&time2, NULL);
   cout << "OECWorker::computeWorker.duration = " << RedisUtil::duration(time1, time2) << endl;
 }
@@ -1740,57 +1938,18 @@ void OECWorker::readOnline(string filename, int filesizeMB, int ecn, int eck, in
   gettimeofday(&time2, NULL);
   cout << "OECWorker::readOnline.createInputStream.duration: " << RedisUtil::duration(time1, time2) << endl;
 
-  if (!needRecovery) {
-    cout << "OECWorker::readOnline.do not need recovery" << endl;
-    // we do not need recovery
-    vector<thread> readThreads = vector<thread>(eck);
-    for (int i=0; i<eck; i++) {
-      readThreads[i] = thread([=]{objstreams[i]->readObj();});
-    }
-
-    // version 1 start: single caching thread
-    // int pktnum = filesizeMB * 1048576/_conf->_pktSize; 
-    int pktnum = filesizeMB /_conf->_pktSize;
-    BlockingQueue<OECDataPacket*>* writeQueue = new BlockingQueue<OECDataPacket*>();
-    // 1.1 cacheThread
-    thread cacheThread = thread([=]{cacheWorker(writeQueue, filename, pktnum, 1);});
-
-    // 1.3 get pkt from readThread to writeThread
-    struct timeval push1, push2;
-    gettimeofday(&push1, NULL);
-    while (true) {
-      for (int i=0; i<eck; i++) {
-        if (objstreams[i]->hasNext()) {
-          OECDataPacket* curpkt = objstreams[i]->dequeue();
-          if (curpkt->getDatalen()) writeQueue->push(curpkt);
-        }
-      }
-      // check whether to do another round
-      bool goon=false;
-      for (int i=0; i<eck; i++) { 
-        if (objstreams[i]->hasNext()) { goon = true; break;}
-      }
-      if (!goon) break;
-    }
-    gettimeofday(&push2, NULL);
-    cout << "OECWorker::readOnline.pushduration: " << RedisUtil::duration(push1, push2) << endl;
-
-    // join
-    for (int i=0; i<eck; i++) readThreads[i].join();
-    cacheThread.join();
-
-    // delete
-    delete writeQueue;
-    // version 1 end
-  } else {
-    cout << "OECWorker::readOnline.need repair" << endl;
-    // need recovery
-    // send request to coordinator
+  if (_conf->_is_non_sys_codes) {
+    
+    /* ToDo: 
+     * 1. send request to coor
+     * 2. receive coefs map and decode
+    */
+    cout << "OECWorker::readOnline. non sys codes read." << endl;
     CoorCommand* degradedCmd = new CoorCommand();
     degradedCmd->buildType9(9, _conf->_localIp, filename, corruptIdx);
     degradedCmd->sendTo(_conf->_coorIp);
     delete degradedCmd;
-    
+
     // 0. wait for instruction from coordinator
     // |loadn|loadidx|computen|computetasks
     struct timeval instt1, instt2;
@@ -1802,7 +1961,7 @@ void OECWorker::readOnline(string filename, int filesizeMB, int ecn, int eck, in
     char* inststr = instreply->element[1]->str;
 
     // 0.1 loadn
-    cout << "OECWorker::readOnline.degraded.loadidx: ";
+    cout << "OECWorker::readOnline.non sys codes.loadidx: ";
     int loadn;
     memcpy((char*)&loadn, inststr, 4); inststr += 4;
     loadn = ntohl(loadn);
@@ -1837,7 +1996,7 @@ void OECWorker::readOnline(string filename, int filesizeMB, int ecn, int eck, in
     redisFree(waitCtx);
     gettimeofday(&instt2, NULL);
 
-    cout << "OECWorker::readOnline.wait degraded inst = " << RedisUtil::duration(time1, time2) << endl;
+    cout << "OECWorker::readOnline.non sys codes inst = " << RedisUtil::duration(time1, time2) << endl;
     cout << "OECWorker::loadn = " << loadn << ", loadidx.size() = " << loadidx.size() << endl;
  
     FSObjInputStream** readStreams = (FSObjInputStream**)calloc(loadn, sizeof(FSObjInputStream*));
@@ -1859,7 +2018,7 @@ void OECWorker::readOnline(string filename, int filesizeMB, int ecn, int eck, in
 
     // 2.1 computeThread
     int stripenum = pktnum/eck;
-    thread computeThread = thread([=]{computeWorker(readStreams, loadidx, writeQueue, computeTasks, stripenum, ecn, eck, ecw);});
+    thread computeThread = thread([=]{computeWorkerNonSys(readStreams, loadidx, writeQueue, computeTasks, stripenum, ecn, eck, ecw);});
 
     // join
     for (int i=0; i<loadn; i++) {
@@ -1871,6 +2030,169 @@ void OECWorker::readOnline(string filename, int filesizeMB, int ecn, int eck, in
     // delete
     free(readStreams);
     delete writeQueue;
+  }
+  else
+  {
+    if (!needRecovery)
+    {
+      cout << "OECWorker::readOnline.do not need recovery" << endl;
+      // we do not need recovery
+      vector<thread> readThreads = vector<thread>(eck);
+      for (int i = 0; i < eck; i++)
+      {
+        readThreads[i] = thread([=]
+                                { objstreams[i]->readObj(); });
+      }
+
+      // version 1 start: single caching thread
+      // int pktnum = filesizeMB * 1048576/_conf->_pktSize;
+      int pktnum = filesizeMB / _conf->_pktSize;
+      BlockingQueue<OECDataPacket *> *writeQueue = new BlockingQueue<OECDataPacket *>();
+      // 1.1 cacheThread
+      thread cacheThread = thread([=]
+                                  { cacheWorker(writeQueue, filename, pktnum, 1); });
+
+      // 1.3 get pkt from readThread to writeThread
+      struct timeval push1, push2;
+      gettimeofday(&push1, NULL);
+      while (true)
+      {
+        for (int i = 0; i < eck; i++)
+        {
+          if (objstreams[i]->hasNext())
+          {
+            OECDataPacket *curpkt = objstreams[i]->dequeue();
+            if (curpkt->getDatalen())
+              writeQueue->push(curpkt);
+          }
+        }
+        // check whether to do another round
+        bool goon = false;
+        for (int i = 0; i < eck; i++)
+        {
+          if (objstreams[i]->hasNext())
+          {
+            goon = true;
+            break;
+          }
+        }
+        if (!goon)
+          break;
+      }
+      gettimeofday(&push2, NULL);
+      cout << "OECWorker::readOnline.pushduration: " << RedisUtil::duration(push1, push2) << endl;
+
+      // join
+      for (int i = 0; i < eck; i++)
+        readThreads[i].join();
+      cacheThread.join();
+
+      // delete
+      delete writeQueue;
+      // version 1 end
+    }
+    else
+    {
+      cout << "OECWorker::readOnline.need repair" << endl;
+      // need recovery
+      // send request to coordinator
+      CoorCommand *degradedCmd = new CoorCommand();
+      degradedCmd->buildType9(9, _conf->_localIp, filename, corruptIdx);
+      degradedCmd->sendTo(_conf->_coorIp);
+      delete degradedCmd;
+
+      // 0. wait for instruction from coordinator
+      // |loadn|loadidx|computen|computetasks
+      struct timeval instt1, instt2;
+      gettimeofday(&instt1, NULL);
+      string instkey = "onlinedegradedinst:" + filename;
+      redisReply *instreply;
+      redisContext *instCtx = RedisUtil::createContext(_conf->_localIp);
+      instreply = (redisReply *)redisCommand(instCtx, "blpop %s 0", instkey.c_str());
+      char *inststr = instreply->element[1]->str;
+
+      // 0.1 loadn
+      cout << "OECWorker::readOnline.degraded.loadidx: ";
+      int loadn;
+      memcpy((char *)&loadn, inststr, 4);
+      inststr += 4;
+      loadn = ntohl(loadn);
+      vector<int> loadidx;
+      for (int i = 0; i < loadn; i++)
+      {
+        int idx;
+        memcpy((char *)&idx, inststr, 4);
+        inststr += 4;
+        idx = ntohl(idx);
+        cout << idx << " ";
+        loadidx.push_back(idx);
+      }
+      cout << endl;
+      // 0.2 computen
+      int computen;
+      memcpy((char *)&computen, inststr, 4);
+      inststr += 4;
+      computen = ntohl(computen);
+      vector<ECTask *> computeTasks;
+      freeReplyObject(instreply);
+      redisFree(instCtx);
+
+      redisReply *rReply;
+      redisContext *waitCtx = RedisUtil::createContext(_conf->_localIp);
+      for (int i = 0; i < computen; i++)
+      {
+        string wkey = "compute:" + filename + ":" + to_string(i);
+        rReply = (redisReply *)redisCommand(waitCtx, "blpop %s 0", wkey.c_str());
+        char *reqStr = rReply->element[1]->str;
+        ECTask *compute = new ECTask(reqStr);
+        compute->dump();
+        freeReplyObject(rReply);
+        computeTasks.push_back(compute);
+      }
+      redisFree(waitCtx);
+      gettimeofday(&instt2, NULL);
+
+      cout << "OECWorker::readOnline.wait degraded inst = " << RedisUtil::duration(time1, time2) << endl;
+      cout << "OECWorker::loadn = " << loadn << ", loadidx.size() = " << loadidx.size() << endl;
+
+      FSObjInputStream **readStreams = (FSObjInputStream **)calloc(loadn, sizeof(FSObjInputStream *));
+      for (int i = 0; i < loadn; i++)
+      {
+        readStreams[i] = objstreams[loadidx[i]];
+        cout << "readStreams[" << i << "] = objstreams[" << loadidx[i] << "]" << endl;
+      }
+
+      vector<thread> readThreads = vector<thread>(loadn);
+      for (int i = 0; i < loadn; i++)
+      {
+        readThreads[i] = thread([=]
+                                { readStreams[i]->readObj(); });
+      }
+
+      BlockingQueue<OECDataPacket *> *writeQueue = new BlockingQueue<OECDataPacket *>();
+      // 1.1 cacheThread
+      // int pktnum = filesizeMB * 1048576/_conf->_pktSize;
+      int pktnum = filesizeMB / _conf->_pktSize;
+      thread cacheThread = thread([=]
+                                  { cacheWorker(writeQueue, filename, pktnum, 1); });
+
+      // 2.1 computeThread
+      int stripenum = pktnum / eck;
+      thread computeThread = thread([=]
+                                    { computeWorker(readStreams, loadidx, writeQueue, computeTasks, stripenum, ecn, eck, ecw); });
+
+      // join
+      for (int i = 0; i < loadn; i++)
+      {
+        readThreads[i].join();
+      }
+      computeThread.join();
+      cacheThread.join();
+
+      // delete
+      free(readStreams);
+      delete writeQueue;
+    }
   }
 
   // last. delete and free

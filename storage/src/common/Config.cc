@@ -69,7 +69,9 @@ Config::Config(std::string& filepath) {
     } else if (attName == "repair.rp.repairboost") {
       string ifrepairboost = ele -> NextSiblingElement("value") -> GetText();
       if (ifrepairboost == "true") _repairboost = true;
-     
+    } else if (attName == "ec.nonsyscodes") {
+      string ifnonsyscodes = ele -> NextSiblingElement("value") -> GetText();
+      if (ifnonsyscodes == "true") _is_non_sys_codes = true; 
 //    } else if (attName == "repair.policy") {
 //      _repair_policy = ele -> NextSiblingElement("value") -> GetText();
 //    } else if (attName == "repair.threshold") {

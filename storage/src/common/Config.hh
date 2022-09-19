@@ -68,5 +68,8 @@ class Config {
     bool _smlz_rpenhanced = false;
     int _repair_threshold = 10;
     int _ec_concurrent; // concurrent stripe num
+
+    // for non systematic codes
+    bool _is_non_sys_codes = false;
 };
 #endif

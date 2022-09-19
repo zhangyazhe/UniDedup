@@ -764,7 +764,15 @@ void Coordinator::onlineDegradedInst(CoorCommand* coorCmd) {
     }
   }
   // obtain decode ecdag
-  ECDAG* ecdag = ec->Decode(availcidx, toreccidx);
+  
+  // zz7, for non-sys
+  if (_conf->_is_non_sys_codes) {
+    ECDAG* ecdag = ((RSNSYS*)ec)->NormalRead();
+  }
+  else {
+    ECDAG* ecdag = ec->Decode(availcidx, toreccidx);
+  }
+  
   vector<int> toposeq = ecdag->toposort();
   cout << "toposeq: ";
   for (int i=0; i<toposeq.size(); i++) cout << toposeq[i] << " ";
