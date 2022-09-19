@@ -1,1 +1,0 @@
-/usr/bin/c++  -O3 -mmmx -msse -mpclmul -msse4.2 -DINTEL_SSE4 -mavx -rdynamic CMakeFiles/CodeTest.dir/CodeTest.cc.o -o ../CodeTest  common/libcommon.a ec/libec.a -lisal protocol/libprotocol.a util/libutil.a -lhiredis -lgf_complete 

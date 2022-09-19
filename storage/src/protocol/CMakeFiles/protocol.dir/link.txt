@@ -1,2 +1,0 @@
-/usr/bin/ar qc libprotocol.a CMakeFiles/protocol.dir/AGCommand.cc.o CMakeFiles/protocol.dir/CoorCommand.cc.o
-/usr/bin/ranlib libprotocol.a
