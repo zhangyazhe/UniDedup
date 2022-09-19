@@ -1,8 +1,0 @@
-*.o
-*.out
-*.files
-*.a
-Makefile
-.deps
-tags
-destor

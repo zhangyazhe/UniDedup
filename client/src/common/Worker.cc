@@ -99,12 +99,9 @@ void Worker::clientWrite(AgentCommand *agCmd)
   string filename = agCmd->getFilename();
   int filesize = agCmd->getFilesize();
 
-  /* This part is for Zewen */
-
   // file to groups
   vector<struct group *> gps = split2Groups(filepath.c_str(), filename.c_str(), _conf->node_num);
 
-  /* This part is for Lin */
   // generate file recipe
   struct fileRecipe *fr = genFileRecipe(filename.c_str(), gps);
   assert(fr != nullptr);
@@ -176,16 +173,6 @@ void Worker::clientWrite(AgentCommand *agCmd)
 
     redisFree(_destorCtx);
 
-    // for debug
-    // std::cout << "Worker::debug::Command send to " << RedisUtil::ip2Str(_conf->id2Ip[gps[i]->nodeId]) << std::endl;
-
-    // sendThrd[i] = thread([&](){
-    //   destorCommand *dstCmd = new destorCommand();
-    //   dstCmd->buildType0(0, (const char*)gps[i]->groupName, (const char*)gps[i]->data);
-    //   unsigned int nodeIp = _conf->id2Ip(gps[i]->nodeId)
-    //   dstCmd->sendTo(nodeIp);
-    // });
-    // close(fd);
     delete dstCmd;
   }
 
@@ -200,15 +187,13 @@ void Worker::clientRead(AgentCommand *agCmd)
   string filename = agCmd->getToReadFilename();
   string saveas = agCmd->getToSaveAs();
 
-  /* Lin */
   // 2. get fileRecipe (file to groups) from EChash
   struct fileRecipe *fr = getFileRecipe(filename);
   if (fr == nullptr)
   {
-    printf("no such file!\n");
+    printf("[error]: no such file!\n");
     return;
   }
-  /* Qi */
   // 3. send reuqests to each node to get group (call queue_term when the last chunk is poped)
   redisContext* readCtx = RedisUtil::createContext(_conf->_localIP);
   redisReply* readReply;
@@ -237,7 +222,6 @@ void Worker::clientRead(AgentCommand *agCmd)
         << " , fetching " << fr->gm[i].groupName 
         << endl; 
     while(1){
-        printf("enter receive loop\n");
         string pkt_key = string(fr->gm[i].groupName)+":"+to_string(pkt_id++);
         readReply = (redisReply*)redisCommand(readCtx, "blpop %s 0", pkt_key.c_str());
         char* content = readReply->element[1]->str;
@@ -255,16 +239,12 @@ void Worker::clientRead(AgentCommand *agCmd)
         // sync_queue_push(receive_queue, ck);
         fwrite(ck->data, data_len, 1, w_fp);
         freeReplyObject(readReply);
-        printf("receive loop end\n");
     }
   }
   fclose(w_fp);
-  // printf("3\n");
   // // 4. receive group (chunking, ending flag is queue_term)
-  // // TO DO:
   // start_receive_phase(fr);
   // printf("4\n");
-  // /* Zewen */
   // // 5. assemble file
   // start_assemble_phase(saveas.c_str());
   // printf("5\n");
