@@ -4653,51 +4653,10 @@ fi
     if test "$found_hiredis" = "no"; then
         as_fn_error $? "*** Working hiredis library not found ***" "$LINENO" 5
     fi
-{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for memcached_create in -lmemcached" >&5
-$as_echo_n "checking for memcached_create in -lmemcached... " >&6; }
-if ${ac_cv_lib_memcached_memcached_create+:} false; then :
-  $as_echo_n "(cached) " >&6
-else
-  ac_check_lib_save_LIBS=$LIBS
-LIBS="-lmemcached  $LIBS"
-cat confdefs.h - <<_ACEOF >conftest.$ac_ext
-/* end confdefs.h.  */
-
-/* Override any GCC internal prototype to avoid an error.
-   Use char because int might match the return type of a GCC
-   builtin and then its argument prototype would still apply.  */
-#ifdef __cplusplus
-extern "C"
-#endif
-char memcached_create ();
-int
-main ()
-{
-return memcached_create ();
-  ;
-  return 0;
-}
-_ACEOF
-if ac_fn_c_try_link "$LINENO"; then :
-  ac_cv_lib_memcached_memcached_create=yes
-else
-  ac_cv_lib_memcached_memcached_create=no
-fi
-rm -f core conftest.err conftest.$ac_objext \
-    conftest$ac_exeext conftest.$ac_ext
-LIBS=$ac_check_lib_save_LIBS
-fi
-{ $as_echo "$as_me:${as_lineno-$LINENO}: result: $ac_cv_lib_memcached_memcached_create" >&5
-$as_echo "$ac_cv_lib_memcached_memcached_create" >&6; }
-if test "x$ac_cv_lib_memcached_memcached_create" = xyes; then :
-  found_memcached=yes
-else
-  found_memcached=no
-fi
-
-    if test "$found_memcached" = "no"; then
-        as_fn_error $? "*** Working memcahced library not found ***" "$LINENO" 5
-    fi
+#AC_CHECK_LIB([memcached],[memcached_create],[found_memcached=yes],[found_memcached=no])
+#    if test "$found_memcached" = "no"; then
+#        AC_MSG_ERROR([*** Working memcahced library not found ***])
+#    fi
 
 if test -n "$ac_tool_prefix"; then
   # Extract the first word of "${ac_tool_prefix}ranlib", so it can be a program name with args.

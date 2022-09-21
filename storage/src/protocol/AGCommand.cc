@@ -297,17 +297,24 @@ void AGCommand::buildType3(int type,
   }
 
   writeInt(_type);
+  // cout << "[buildType3 deubg1] cmd_len is " << _cmLen << endl;
   writeString(_stripeName);
+  // cout << "[buildType3 deubg2] cmd_len is " << _cmLen << endl;
   writeInt(_ecw);
+  // cout << "[buildType3 deubg3] cmd_len is " << _cmLen << endl;
   writeInt(_num);
+  // cout << "[buildType3 deubg4] cmd_len is " << _cmLen << endl;
   writeInt(_nprevs);
+  // cout << "[buildType3 deubg5] cmd_len is " << _cmLen << endl;
  
   for (int i=0; i<_nprevs; i++) {
     writeInt(_prevCids[i]);
     writeInt(_prevLocs[i]);
   }
+  // cout << "[buildType3 deubg6] cmd_len is " << _cmLen << endl;
   int targetnum = _coefs.size();
   writeInt(targetnum);
+  // cout << "[buildType3 deubg7] cmd_len is " << _cmLen << endl;
   for (auto item: _coefs) {
     int target = item.first;
     vector<int> coef = item.second;

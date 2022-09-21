@@ -42,6 +42,7 @@ void FSObjOutputStream::writeObj() {
     OECDataPacket* curPkt = _queue->pop();
     _objsize += curPkt->getDatalen();
     // write to hdfs
+    cout << "FSObjOutputStream::writeObj objname is " << _objname << ", pktid is " << pktid << ", pktlen is " << curPkt->getDatalen() << endl; 
     _underfs->writeFile(_underfile, curPkt->getData(), curPkt->getDatalen());
     _underfs->flushFile(_underfile);
     delete curPkt;

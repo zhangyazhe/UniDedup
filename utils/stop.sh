@@ -1,7 +1,7 @@
 #!/bin/bash
 
 user="$USER"
-node_num=8
+node_num=6
 node_name=node
 
 home=/home/$user
@@ -16,10 +16,10 @@ killall OECCoordinator
 for((i=1;i<=$node_num;i++));
 do
 {
-	if [[ $i -gt 3 && $i -lt 6 ]]
-	then
-		continue
-	fi
+	# if [[ $i -gt 3 && $i -lt 6 ]]
+	# then
+	# 	continue
+	# fi
     if [[ $i -gt 0 && $i -lt 10 ]]
 	then
 		host=${node_name}0${i}
@@ -39,10 +39,10 @@ for((i=1;i<=$node_num;i++));
 do
 {
     i=$i
-    if [[ $i -gt 3 && $i -lt 6 ]]
-    then
-        continue
-    fi
+    # if [[ $i -gt 3 && $i -lt 6 ]]
+    # then
+    #     continue
+    # fi
 
     if [[ $i -gt 0 && $i -lt 10 ]]
 	then

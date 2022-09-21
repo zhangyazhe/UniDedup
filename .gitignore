@@ -27,6 +27,14 @@ storage/src/fs/CMakeFiles/*
 
 storage/coor_output
 
+storage/CMakeCache.txt
+storage/CMakeFiles/
+storage/cmake_install.cmake
+storage/src/cmake_install.cmake
+storage/src/*/CMakeCache.txt
+storage/src/*/CMakeFiles/
+storage/src/*/cmake_install.cmake
+
 libmemcached-1.0.18/*/*.o
 libmemcached-1.0.18/*/*.lo
 libmemcached-1.0.18/*/*.la
@@ -128,3 +136,12 @@ destor/autom4te.cache
 destor/proxy
 destor/*/*/Makefile.in
 destor/destor.config
+destor/*.o
+destor/src/*.o
+destor/src/*.a
+destor/src/*/*.a
+destor/src/*/*.o
+destor/destor
+destor/src/.deps/
+destor/src/*/.deps/
+Makefile

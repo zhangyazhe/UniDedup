@@ -29,10 +29,10 @@ AC_CHECK_LIB([hiredis],[redisCommand],[found_hiredis=yes],[found_hiredis=no])
     if test "$found_hiredis" = "no"; then
         AC_MSG_ERROR([*** Working hiredis library not found ***])
     fi
-AC_CHECK_LIB([memcached],[memcached_create],[found_memcached=yes],[found_memcached=no])
-    if test "$found_memcached" = "no"; then
-        AC_MSG_ERROR([*** Working memcahced library not found ***])
-    fi
+#AC_CHECK_LIB([memcached],[memcached_create],[found_memcached=yes],[found_memcached=no])
+#    if test "$found_memcached" = "no"; then
+#        AC_MSG_ERROR([*** Working memcahced library not found ***])
+#    fi
 
 AC_PROG_RANLIB
 

@@ -79,6 +79,10 @@ ECBase* ECPolicy::createECClass() {
     toret = new RSPPCT(_n, _k, _w, _opt, _param);
   } else if (_classname == "RSSMARTLZ") {
     toret = new RSSMARTLZ(_n, _k, _w, _opt, _param);
+  } else if (_classname == "RSNSYS") {
+    toret = new RSNSYS(_n, _k, _w, _opt, _param);
+  } else if (_classname == "Clay") {
+    toret = new Clay(_n, _k, _w, _opt, _param);
   } else {
     cout << "unrecognized code, use default RSCONV" << endl;
 //    toret = new RSCONV(_n, _k, _w, _locality, _opt, _param);

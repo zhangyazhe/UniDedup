@@ -18,9 +18,9 @@
 <attribute><name>ec.concurrent.num</name><value>5</value></attribute>
 <!-- <attribute><name>location.type</name><value>true</value></attribute> -->
 <attribute><name>ec.policy</name>
-<value><ecid>rs_6_4</ecid><class>RSCONV</class><n>6</n><k>4</k><w>1</w><opt>-1</opt></value>
+<value><ecid>clay</ecid><class>Clay</class><n>4</n><k>2</k><w>4</w><opt>-1</opt><param>3</param></value>
 </attribute>
 <attribute><name>offline.pool</name>
-<value><poolid>rs_6_4_pool</poolid><ecid>rs_6_4</ecid><base>1048576</base></value>
+<value><poolid>clay_pool</poolid><ecid>clay</ecid><base>1048576</base></value>
 </attribute>
 </setting>

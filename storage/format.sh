@@ -3,7 +3,7 @@
 USER="$USER"
 HOME=/home/$USER
 NODE_NAME=node
-NODE_NUM=8
+NODE_NUM=6
 HADOOP_HOME=$HOME/hadoop-3.0.0-src/hadoop-dist/target/hadoop-3.0.0
 HDFS_TMP_DIR=$HADOOP_HOME/data
 
@@ -12,10 +12,10 @@ stop-dfs.sh
 for((i=1;i<=$NODE_NUM;i++));
 do
 {
-	if [[ $i -gt 3 && $i -lt 6 ]]
-	then 
-		continue
-	fi
+	# if [[ $i -gt 3 && $i -lt 6 ]]
+	# then 
+	# 	continue
+	# fi
     if [[ $i -gt 0 && $i -lt 10 ]]
 	then
 		host=${NODE_NAME}0${i}

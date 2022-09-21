@@ -17,10 +17,11 @@
 <attribute><name>dss.parameter</name><value>192.168.1.1,9000</value></attribute>
 <attribute><name>ec.concurrent.num</name><value>5</value></attribute>
 <!-- <attribute><name>location.type</name><value>true</value></attribute> -->
+<attribute><name>ec.nonsyscodes</name><value>true</value></attribute>
 <attribute><name>ec.policy</name>
-<value><ecid>rs_6_4</ecid><class>RSCONV</class><n>6</n><k>4</k><w>1</w><opt>-1</opt></value>
+<value><ecid>non_sys_6_4</ecid><class>RSNSYS</class><n>6</n><k>4</k><w>2</w><opt>-1</opt></value>
 </attribute>
 <attribute><name>offline.pool</name>
-<value><poolid>rs_6_4_pool</poolid><ecid>rs_6_4</ecid><base>1048576</base></value>
+<value><poolid>non_sys_6_4_pool</poolid><ecid>rs_6_4</ecid><base>1048576</base></value>
 </attribute>
 </setting>

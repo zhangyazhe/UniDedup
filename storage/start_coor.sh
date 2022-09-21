@@ -11,9 +11,9 @@ cmake . -DFS_TYPE:STRING=HDFS3
 
 make
 
-# ./autoSync.sh
+./autoSync.sh
 
-# cp ./hdfs3-integration/conf/* $hadoop_home/etc/hadoop/
+cp ./hdfs3-integration/conf/* $hadoop_home/etc/hadoop/
 
 ./format.sh
 

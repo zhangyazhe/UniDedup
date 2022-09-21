@@ -14,10 +14,10 @@ RSNSYS::RSNSYS(int n, int k, int w, int opt, vector<string> param) {
   assert(_m == _w);
 
   // init _encode_matrix
-  generate(_encode_matrix, (_k+_m)*_m, _k*_m, 8);
+  generate_matrix(_encode_matrix, (_k+_m)*_m, _k*_m, 8);
 
   // init _repair_matrix
-  generate(_repair_matrix, _m, _k + _m -1, 8);
+  generate_matrix(_repair_matrix, _m, _k + _m - 1, 8);
  
 }
 
@@ -91,8 +91,8 @@ ECDAG* RSNSYS::Decode(vector<int> from, vector<int> to) {
   for (int i = 0; i < _w; i++) {
     int cidx = lostidx*_w+i;
     vector<int> coef;
-    for (int j = 0; j < _k+_m; j++) {
-      if (i != lostidx) coef.push_back(_repair_matrix[i*(_k+_m-1)+j]);
+    for (int j = 0; j < _k+_m - 1; j++) {
+      coef.push_back(_repair_matrix[i*(_k+_m-1)+j]);
     }
     ecdag->Join(cidx, data, coef);
     // tobindx.push_back(cidx);
@@ -110,8 +110,8 @@ ECDAG* RSNSYS::Decode(vector<int> from, vector<int> to) {
 ECDAG* RSNSYS::NormalRead() {
   ECDAG* ecdag = new ECDAG();
 
-  int *select_matrix = (int*)malloc((_m*_k)*(_m*k)*sizeof(int));
-  int *invert_matrix = (int*)malloc((_m*_k)*(_m*k)*sizeof(int));
+  int *select_matrix = (int*)malloc((_m*_k)*(_m*_k)*sizeof(int));
+  int *invert_matrix = (int*)malloc((_m*_k)*(_m*_k)*sizeof(int));
 
   // select _m*_k row from _encode_matrix
   for (int i = 0; i < _k*_m; i++)

@@ -64,9 +64,9 @@ class OECWorker {
                               int ecn,
                               int eck,
                               int ecw);
-    void computeWorkerNonSys(vector<ECTask*> computeTasks,
-                       BlockingQueue<OECDataPacket*>** readQueue,
-                       FSObjOutputStream** objstreams,
+    void computeWorkerNonSys(vector<ECTask*> compute, 
+                       FSObjInputStream** readStreams,
+                       BlockingQueue<OECDataPacket*>* writeQueue,
                        int stripenum,
                        int ecn,
                        int eck,

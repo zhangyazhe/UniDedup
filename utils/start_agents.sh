@@ -1,7 +1,7 @@
 #!/bin/bash
 
 user="$USER"
-node_num=8
+node_num=6
 node_name=node
 
 home=/home/$user
@@ -11,10 +11,10 @@ path=/$home/Fast23
 for((i=1;i<=$node_num;i++))
 do
 {
-    if [[ $i -gt 3 && $i -lt 6 ]]
-    then
-        continue
-    fi
+    # if [[ $i -gt 3 && $i -lt 6 ]]
+    # then
+    #     continue
+    # fi
     if [[ $i -gt 0 && $i -lt 10 ]]
 	then
 		host=${node_name}0${i}
@@ -27,7 +27,7 @@ do
         fi
 	fi
 
-    ssh $user@$host "source /etc/profile; cd $path/storage; ./OECAgent"
-}&
+    ssh $user@$host "source /etc/profile; cd $path/storage; redis-cli flushall; sudo service redis_6379 restart; ./OECAgent"
+} &
 done
 wait

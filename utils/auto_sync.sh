@@ -1,7 +1,7 @@
 #!/bin/bash
 
 user="$USER"
-node_num=8
+node_num=6
 node_name=node
 
 home=/home/$user
@@ -26,15 +26,13 @@ conf_files=($(ls ../client/config/))
 # done
 
 ip_lists=(
-	192.168.235.179
-	192.168.235.180
-	192.168.235.181
-	192.168.235.182
-	192.168.235.183
-	192.168.235.184
-	192.168.235.185
-	192.168.235.186
-	192.168.235.187
+	192.168.1.1
+	192.168.1.2
+	192.168.1.3
+	192.168.1.4
+	192.168.1.5
+	192.168.1.6
+	192.168.1.7
 )
 
 namenode_ip=${ip_lists[0]}
@@ -42,10 +40,10 @@ namenode_ip=${ip_lists[0]}
 for((i=1;i<=$node_num;i++));
 do
 {
-	if [[ $i -gt 3 && $i -lt 6 ]]
-	then
-		continue
-	fi
+# 	if [[ $i -gt 3 && $i -lt 6 ]]
+# 	then
+# 		continue
+# 	fi
 
 	i=$i
 	if [[ $i -gt 0 && $i -lt 10 ]]

@@ -1,7 +1,7 @@
 #!/bin/bash
 
 user="$USER"
-node_num=8
+node_num=6
 node_name=node
 
 home=/home/$user
@@ -29,15 +29,13 @@ shell_files=($(ls *.sh))
 hdfs_files=(hdfs-site.xml core-site.xml hadoop-env.sh workers)
 
 ip_lists=(
-	192.168.235.179
-	192.168.235.180
-	192.168.235.181
-	192.168.235.182
-	192.168.235.183
-	192.168.235.184
-	192.168.235.185
-	192.168.235.186
-	192.168.235.187
+	192.168.1.1
+	192.168.1.2
+	192.168.1.3
+	192.168.1.4
+	192.168.1.5
+	192.168.1.6
+	192.168.1.7
 )
 
 namenode_ip=${ip_lists[0]}
@@ -47,10 +45,10 @@ do
 {
 	i=$i
 
-	if [[ $i -gt 3 && $i -lt 6 ]]
-	then
-		continue
-	fi
+	# if [[ $i -gt 3 && $i -lt 6 ]]
+	# then
+	# 	continue
+	# fi
 
 	if [[ $i -gt 0 && $i -lt 10 ]]
 	then
@@ -84,7 +82,7 @@ do
 	for hdfs_file in ${hdfs_files[@]}
 	do
 		rsync -a $localPath/hdfs3-integration/conf/$hdfs_file $user@$host:$hadoop_home/etc/hadoop/
-		ssh $user@$host "sudo sed -i \"s/<property><name>oec.local.addr<\/name><value>192.168.235.159<\/value><\/property>/<property><name>oec.local.addr<\/name><value>$ip<\/value><\/property>/\"" $hadoop_home/etc/hadoop/$hdfs_file
+		ssh $user@$host "sudo sed -i \"s/<property><name>oec.local.addr<\/name><value>$namenode_ip<\/value><\/property>/<property><name>oec.local.addr<\/name><value>$ip<\/value><\/property>/\"" $hadoop_home/etc/hadoop/$hdfs_file
 	done
 
 	echo ---------autoSync $user@$host finish------------

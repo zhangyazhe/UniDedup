@@ -77,12 +77,12 @@ class Clay: public ECBase {
         int get_short_from_real(int idx);
 
     public:
-        Clay(int n, int k, int w, vector<string> param);
-//        Clay(int n, int k, int w, int opt, vector<string> param);
+        // Clay(int n, int k, int w, vector<string> param);
+       Clay(int n, int k, int w, int opt, vector<string> param);
 //
         ECDAG* Encode();
         ECDAG* Decode(vector<int> from, vector<int> to);
-//        void Place(vector<vector<int>>& group);
+       void Place(vector<vector<int>>& group);
 //        void Shorten(unordered_map<int, int>& shortening);
 };
 

@@ -452,11 +452,14 @@ void StripeStore::finishRepair(string objname) {
     double repairtime = RedisUtil::duration(_startRP, _endRP);
     cout << "Repair::finishECStripe.repairTime = " << repairtime << endl;
     // get ecclass
-    OfflineECPool* ecpool = offlineObjToEcpool(objname);
-    ECPolicy* ecpolicy = ecpool->getEcpolicy();
-    string ecid = ecpolicy->getPolicyId();
-    string ecclass = ecpolicy->getClassName();
-    _log.logRepairTime(ecid, ecclass, repairtime);
+    if (objIsOffline(objname)) {
+      OfflineECPool* ecpool = offlineObjToEcpool(objname);
+      ECPolicy* ecpolicy = ecpool->getEcpolicy();
+      string ecid = ecpolicy->getPolicyId();
+      string ecclass = ecpolicy->getClassName();
+      _log.logRepairTime(ecid, ecclass, repairtime);
+    }
+   
   }
   _lockRPInProgress.unlock();
   _lockStripeErrNum.unlock();

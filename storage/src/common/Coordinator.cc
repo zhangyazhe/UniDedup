@@ -766,11 +766,12 @@ void Coordinator::onlineDegradedInst(CoorCommand* coorCmd) {
   // obtain decode ecdag
   
   // zz7, for non-sys
+  ECDAG* ecdag;
   if (_conf->_is_non_sys_codes) {
-    ECDAG* ecdag = ((RSNSYS*)ec)->NormalRead();
+    ecdag = ((RSNSYS*)ec)->NormalRead();
   }
   else {
-    ECDAG* ecdag = ec->Decode(availcidx, toreccidx);
+    ecdag = ec->Decode(availcidx, toreccidx);
   }
   
   vector<int> toposeq = ecdag->toposort();
@@ -1331,6 +1332,9 @@ void Coordinator::recoveryOnline(string lostobj) {
   // 8. send commands to cmddistributor
   vector<char*> todelete;
   redisContext* distCtx = RedisUtil::createContext(_conf->_coorIp);
+
+  // time
+  _stripeStore->setEnableStart();
 
   redisAppendCommand(distCtx, "MULTI");
   for (auto item: agCmds) {

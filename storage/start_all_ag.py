@@ -3,7 +3,7 @@ import threading
 from time import sleep
 
 START = 1
-NUM = 8
+NUM = 6
 
 remote_path="/home/openec/Fast23/storage"
 

@@ -21,6 +21,7 @@
 #include "CL262059.hh"
 // #include "Hitchhiker.hh"
 #include "RSNSYS.hh"
+#include "Clay.hh"
 #include "../inc/include.hh"
 
 using namespace std;

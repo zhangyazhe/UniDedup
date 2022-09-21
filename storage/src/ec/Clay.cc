@@ -9,19 +9,19 @@ void Erasure_t::dump() {
     cout << "(" << _x << ", " << _y << ")" << endl;
 }
 
-//Clay::Clay(int n, int k, int w, int opt, vector<string> param) {
-Clay::Clay(int n, int k, int w, vector<string> param) {
+Clay::Clay(int n, int k, int w, int opt, vector<string> param) {
+// Clay::Clay(int n, int k, int w, vector<string> param) {
     _n = n;
     _k = k;
     _w = w;
-//    _opt = opt;
+   _opt = opt;
 
     // param[0]: d
     _d = atoi(param[0].c_str());
 
     _m = _n - _k;
     _q = _d - _k + 1;
-
+    // 6%(_d-4+1) == 0
     if ((_k+_m) % _q) {
         _nu = _q - (_k+_m)%_q;
     } else {
@@ -248,7 +248,7 @@ ECDAG* Clay::Encode() {
             }
         }
     }
-
+    ecdag->dump();
     return ecdag;
 }
 
@@ -1016,9 +1016,15 @@ void Clay::generate_matrix(int* matrix, int rows, int cols, int w) {
 //    }
 //}
 //
-//void Clay::Place(vector<vector<int>>& group) {
-//
-//}
+
+void Clay::Place(vector<vector<int>>& group) {
+  // for (int i = 0; i < _n; i++) {
+  //   vector<int> tmpv;
+  //   tmpv.push_back(i);
+  //   group.push_back(tmpv);
+  // }
+}
+
 //
 //void Clay::Shorten(unordered_map<int, int>& shortening) {
 //    // map shortenidx 2 storageidx
