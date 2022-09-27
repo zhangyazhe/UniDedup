@@ -1953,7 +1953,7 @@ void Coordinator::coorBenchmark(CoorCommand* coorCmd) {
   string benchname = coorCmd->getBenchName();
   unsigned int clientIp = coorCmd->getClientip();
   // plan to do simple ECDAG parsing in benchmark
-  string ecid="rs_9_6";
+  string ecid="clay";
   ECPolicy* ecpolicy = _conf->_ecPolicyMap[ecid];
   ECBase* ec=ecpolicy->createECClass();
   int ecn = ecpolicy->getN();
@@ -1991,16 +1991,16 @@ void Coordinator::coorBenchmark(CoorCommand* coorCmd) {
   }
 
   ecdag->optimize2(opt, cid2ip, _conf->_ip2Rack, ecn, eck, ecw, sid2ip, _conf->_agentsIPs, locality || (opt>0));
-  // ecdag->dump();
+  ecdag->dump();
 
   for (auto item: cid2ip) {
-//    cout << "cid: " << item.first << ", ip: " << RedisUtil::ip2Str(item.second) << ", ";
+  //  cout << "cid: " << item.first << ", ip: " << RedisUtil::ip2Str(item.second) << ", ";
     ECNode* cnode = ecdag->getNode(item.first);
     unordered_map<int, int> map = cnode->getRefMap();
-//    for (auto iitem: map) {
-//      cout << "ref["<<iitem.first<<"]: " << iitem.second << ", ";
-//    }
-//    cout << endl;
+   for (auto iitem: map) {
+     cout << "ref["<<iitem.first<<"]: " << iitem.second << ", ";
+   }
+   cout << endl;
   }
 
   string stripename = "teststripe";
