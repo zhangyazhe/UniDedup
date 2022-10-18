@@ -1190,6 +1190,9 @@ void Coordinator::repairReqFromSS(CoorCommand* coorCmd) {
 }
 
 void Coordinator::recoveryOnline(string lostobj) {
+  struct timeval time4startrp, time4endrp;
+  gettimeofday(&time4startrp, NULL);
+
   // we need ecdag, toposort and parseForOEC, which requires cid2ip, stripename, n,k,w,pktnum,objlist
   // we also need to create persist command to persist repaired block
   // after we create commands, we send these commands to corresponding Agenst
@@ -1334,7 +1337,7 @@ void Coordinator::recoveryOnline(string lostobj) {
   redisContext* distCtx = RedisUtil::createContext(_conf->_coorIp);
 
   // time
-  _stripeStore->setEnableStart();
+  // _stripeStore->setEnableStart();
 
   redisAppendCommand(distCtx, "MULTI");
   for (auto item: agCmds) {
@@ -1387,7 +1390,9 @@ void Coordinator::recoveryOnline(string lostobj) {
     freeReplyObject(fReply);
     redisFree(waitCtx);
   }
-  cout << "Coordinator::repair for " << lostobj << " finishes" << endl;
+
+  gettimeofday(&time4endrp, NULL);
+  cout << "Coordinator::repair for " << lostobj << " finishes, overall repair time is " << RedisUtil::duration(time4startrp, time4endrp) << endl;
 
   // delete
   delete ec;

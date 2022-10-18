@@ -1,12 +1,15 @@
 #include "RSNSYS.hh"
 
+int RSNSYS::_row_idx = 0;
+int RSNSYS::_central_idx = 0;
+
 RSNSYS::RSNSYS(int n, int k, int w, int opt, vector<string> param) {
   _n = n;
   _k = k;
   _w = w;
   _opt = opt;
   _convbindY = 0;
-  _row_idx = 0;
+  // _row_idx = 0;
 
   _m = _n - _k;
 
@@ -95,10 +98,15 @@ ECDAG* RSNSYS::Decode(vector<int> from, vector<int> to) {
       coef.push_back(_repair_matrix[i*(_k+_m-1)+j]);
     }
     ecdag->Join(cidx, data, coef);
-    // tobindx.push_back(cidx);
+    tobindx.push_back(cidx);
   }
-  // int vn = ecdag->BindX(tobindx);
-  // ecdag->BindY(vn, data[0]);
+  int vn = ecdag->BindX(tobindx);
+
+  _lockCentIdx.lock();
+  int tobindy = (lostidx == _central_idx)? (_central_idx+1)%_n : _central_idx;
+  ecdag->BindY(vn, tobindy*_w+_row_idx);
+  _central_idx = (_central_idx+1)%_n;
+  _lockCentIdx.unlock();
 
   free(new_encode_matrix);
   free(tmp_matrix);

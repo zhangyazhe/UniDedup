@@ -22,7 +22,9 @@ class RSNSYS : public ECBase {
     void generate_matrix(int* matrix, int rows, int cols, int w);  // This w is for galois field, which is different from our sub-packetization level _w
 
   public:
-    int _row_idx;
+    static int _row_idx;
+    static int _central_idx;
+    mutex _lockCentIdx;
 
     RSNSYS(int n, int k, int w, int opt, vector<string> param);
  

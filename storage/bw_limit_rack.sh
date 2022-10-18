@@ -21,7 +21,7 @@ do
 
     node_index=$i
     # echo ------------set agent$node_index bandwidth-------------
-    ssh $user@$host "sudo /home/openec/openec/res/openec/limit_bandwidth.sh rack $inner $cross $node_index"
+    ssh $user@$host "sudo /home/openec/Fast23/storage/limit_bandwidth.sh rack $inner $cross $node_index"
 } &
 done
 

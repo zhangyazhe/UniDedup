@@ -1,0 +1,135 @@
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/openec/Fast23/storage
+Consolidate compiler generated dependencies of target util
+[  6%] Built target util
+Consolidate compiler generated dependencies of target ec
+[ 46%] Built target ec
+Consolidate compiler generated dependencies of target protocol
+[ 50%] Built target protocol
+Consolidate compiler generated dependencies of target common
+[ 69%] Built target common
+Consolidate compiler generated dependencies of target fs
+[ 83%] Built target fs
+Consolidate compiler generated dependencies of target OECCoordinator
+[ 86%] Built target OECCoordinator
+Consolidate compiler generated dependencies of target OECAgent
+[ 89%] Built target OECAgent
+Consolidate compiler generated dependencies of target OECClient
+[ 91%] Built target OECClient
+Consolidate compiler generated dependencies of target ECDAGTest
+[ 94%] Built target ECDAGTest
+Consolidate compiler generated dependencies of target CodeTest
+[ 97%] Built target CodeTest
+Consolidate compiler generated dependencies of target HDFSClient
+[100%] Built target HDFSClient
+---------autoSync openec@node01 start------------
+---------autoSync openec@node03 start------------
+---------autoSync openec@node04 start------------
+---------autoSync openec@node09 start------------
+---------autoSync openec@node10 start------------
+---------autoSync openec@node08 start------------
+---------autoSync openec@node11 start------------
+---------autoSync openec@node12 start------------
+---------autoSync openec@node07 start------------
+---------autoSync openec@node05 start------------
+---------autoSync openec@node06 start------------
+---------autoSync openec@node02 start------------
+---------autoSync openec@node07 finish------------
+---------autoSync openec@node03 finish------------
+---------autoSync openec@node01 finish------------
+---------autoSync openec@node08 finish------------
+---------autoSync openec@node04 finish------------
+---------autoSync openec@node06 finish------------
+---------autoSync openec@node02 finish------------
+---------autoSync openec@node11 finish------------
+---------autoSync openec@node10 finish------------
+---------autoSync openec@node12 finish------------
+---------autoSync openec@node05 finish------------
+---------autoSync openec@node09 finish------------
+Stopping namenodes on [master]
+Stopping datanodes
+Stopping secondary namenodes [master]
+---------format @node02 start------------
+---------format @node03 start------------
+---------format @node04 start------------
+---------format @node05 start------------
+---------format @node06 start------------
+---------format @node11 start------------
+---------format @node08 start------------
+---------format @node07 start------------
+---------format @node12 start------------
+---------format @node10 start------------
+---------format @node09 start------------
+---------format @node01 start------------
+---------format @node02 finish------------
+---------format @node04 finish------------
+---------format @node06 finish------------
+---------format @node10 finish------------
+---------format @node01 finish------------
+---------format @node03 finish------------
+---------format @node11 finish------------
+---------format @node08 finish------------
+---------format @node12 finish------------
+---------format @node07 finish------------
+---------format @node05 finish------------
+---------format @node09 finish------------
+Formatting using clusterid: CID-5cad8133-aa16-411c-9a09-0ef3cd423156
+Starting namenodes on [master]
+Starting datanodes
+Starting secondary namenodes [master]
+OK
+FSUtil::HDFS3
+hadoop3 constructor!
+CmdDistributor::distribute.wait for request!
+CmdDistributor::distribute.wait for request!
+FSUtil::HDFS3
+hadoop3 constructor!
+Coordinator::doProcess
+FSUtil::HDFS3
+hadoop3 constructor!
+FSUtil::HDFS3
+hadoop3 constructor!
+Coordinator::doProcess
+Coordinator::doProcess
+FSUtil::HDFS3
+hadoop3 constructor!
+Coordinator::doProcess
+FSUtil::HDFS3
+hadoop3 constructor!
+Coordinator::doProcess
+FSUtil::HDFS3
+hadoop3 constructor!
+Coordinator::doProcess
+FSUtil::HDFS3
+hadoop3 constructor!
+Coordinator::doProcess
+FSUtil::HDFS3
+hadoop3 constructor!
+Coordinator::doProcess
+FSUtil::HDFS3
+hadoop3 constructor!
+Coordinator::doProcess
+OECCoordinator started ......
+Coordinator::doProcess
+Coordinator::doProcess() receive a request!
+CoorCommand::type: 0, client: 192.168.1.2, filename: /testfile4M, ecid: non_sys_12_9, mode: 0, filesizeMB: 4194304
+type: 0
+#
+# A fatal error has been detected by the Java Runtime Environment:
+#
+#  SIGSEGV (0xb) at pc=0x00007fe67f178c40, pid=22766, tid=0x00007fe636822700
+#
+# JRE version: Java(TM) SE Runtime Environment (8.0_333-b02) (build 1.8.0_333-b02)
+# Java VM: Java HotSpot(TM) 64-Bit Server VM (25.333-b02 mixed mode linux-amd64 compressed oops)
+# Problematic frame:
+# C  [libstdc++.so.6+0x126c40]  std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::compare(char const*) const+0x10
+#
+# Failed to write core dump. Core dumps have been disabled. To enable core dumping, try "ulimit -c unlimited" before starting Java again
+#
+# An error report file with more information is saved as:
+# /home/openec/Fast23/storage/hs_err_pid22766.log
+#
+# If you would like to submit a bug report, please visit:
+#   http://bugreport.java.com/bugreport/crash.jsp
+#

@@ -1,7 +1,7 @@
 #!/bin/bash
 
 user="$USER"
-node_num=6
+node_num=12
 node_name=node
 
 home=/home/$user
@@ -15,6 +15,7 @@ do
     # then
     #     continue
     # fi
+    i=$i
     if [[ $i -gt 0 && $i -lt 10 ]]
 	then
 		host=${node_name}0${i}
@@ -27,7 +28,7 @@ do
         fi
 	fi
 
-    ssh $user@$host "source /etc/profile; cd $path/storage; redis-cli flushall; sudo service redis_6379 restart; ./OECAgent"
+    ssh $user@$host "source /etc/profile; cd $path/storage; redis-cli flushall; sudo service redis_6379 restart; ./OECAgent" > log/log$i.txt
 } &
 done
 wait

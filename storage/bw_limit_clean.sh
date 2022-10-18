@@ -1,8 +1,8 @@
 #!/bin/bash
 
-user="$USER"
+user=openec
 
-node_num=32
+node_num=12
 node_name=node
 
 # echo ------------clean bandwidth limited-------------
@@ -18,7 +18,7 @@ do
     fi
 
     # echo ------------clean agent$i-------------
-    ssh $user@$host "sudo /home/openec/openec/res/openec/limit_bandwidth.sh clean $i"
+    ssh $user@$host "sudo /home/openec/Fast23/storage/limit_bandwidth.sh clean $i"
 } &
 done
 

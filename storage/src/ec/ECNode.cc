@@ -154,6 +154,7 @@ void ECNode::parseForClient(vector<ECTask*>& tasks) {
     if (childNode->getCoefmap().size() > 1) computebool = false;
     // 2> this node is not linked to a bind node, there is calculation of res = coef * value
     else if (childNode->getCoefmap().size() == 1) computebool = true;
+    else if (_coefMap.size() == 1) computebool = true;
   }
 
   if (computebool) {

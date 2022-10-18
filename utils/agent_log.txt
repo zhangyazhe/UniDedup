@@ -1,0 +1,384 @@
+OK
+OK
+OK
+OK
+OK
+OK
+OK
+OK
+OK
+OK
+OK
+FSUtil::HDFS3
+hadoop3 constructor!
+OK
+FSUtil::HDFS3
+hadoop3 constructor!
+FSUtil::HDFS3
+hadoop3 constructor!
+FSUtil::HDFS3
+hadoop3 constructor!
+FSUtil::HDFS3
+hadoop3 constructor!
+FSUtil::HDFS3
+hadoop3 constructor!
+FSUtil::HDFS3
+hadoop3 constructor!
+FSUtil::HDFS3
+hadoop3 constructor!
+FSUtil::HDFS3
+hadoop3 constructor!
+FSUtil::HDFS3
+hadoop3 constructor!
+FSUtil::HDFS3
+hadoop3 constructor!
+FSUtil::HDFS3
+hadoop3 constructor!
+OECWorker::doProcess
+FSUtil::HDFS3
+hadoop3 constructor!
+OECWorker::doProcess
+FSUtil::HDFS3
+hadoop3 constructor!
+OECWorker::doProcess
+FSUtil::HDFS3
+hadoop3 constructor!
+OECWorker::doProcess
+FSUtil::HDFS3
+hadoop3 constructor!
+OECWorker::doProcess
+FSUtil::HDFS3
+hadoop3 constructor!
+OECWorker::doProcess
+FSUtil::HDFS3
+hadoop3 constructor!
+OECWorker::doProcess
+FSUtil::HDFS3
+hadoop3 constructor!
+FSUtil::HDFS3
+hadoop3 constructor!
+OECWorker::doProcess
+FSUtil::HDFS3
+hadoop3 constructor!
+OECWorker::doProcess
+OECAgent started ...
+OECWorker::doProcess
+FSUtil::HDFS3
+hadoop3 constructor!
+OECWorker::doProcess
+OECWorker::doProcess
+FSUtil::HDFS3
+hadoop3 constructor!
+OECWorker::doProcess
+FSUtil::HDFS3
+hadoop3 constructor!
+OECWorker::doProcess
+FSUtil::HDFS3
+hadoop3 constructor!
+OECWorker::doProcess
+FSUtil::HDFS3
+hadoop3 constructor!
+OECWorker::doProcess
+FSUtil::HDFS3
+hadoop3 constructor!
+OECWorker::doProcess
+FSUtil::HDFS3
+hadoop3 constructor!
+FSUtil::HDFS3
+hadoop3 constructor!
+OECWorker::doProcess
+FSUtil::HDFS3
+hadoop3 constructor!
+OECWorker::doProcess
+OECAgent started ...
+OECWorker::doProcess
+OECWorker::doProcess
+FSUtil::HDFS3
+hadoop3 constructor!
+OECWorker::doProcess
+FSUtil::HDFS3
+hadoop3 constructor!
+OECWorker::doProcess
+FSUtil::HDFS3
+hadoop3 constructor!
+OECWorker::doProcess
+FSUtil::HDFS3
+hadoop3 constructor!
+OECWorker::doProcess
+FSUtil::HDFS3
+hadoop3 constructor!
+OECWorker::doProcess
+FSUtil::HDFS3
+hadoop3 constructor!
+OECWorker::doProcess
+FSUtil::HDFS3
+hadoop3 constructor!
+OECWorker::doProcess
+FSUtil::HDFS3
+hadoop3 constructor!
+OECWorker::doProcess
+FSUtil::HDFS3
+hadoop3 constructor!
+FSUtil::HDFS3
+hadoop3 constructor!
+OECWorker::doProcess
+FSUtil::HDFS3
+hadoop3 constructor!
+OECWorker::doProcess
+OECWorker::doProcess
+FSUtil::HDFS3
+hadoop3 constructor!
+FSUtil::HDFS3
+hadoop3 constructor!
+OECWorker::doProcess
+FSUtil::HDFS3
+hadoop3 constructor!
+OECWorker::doProcess
+OECWorker::doProcess
+FSUtil::HDFS3
+hadoop3 constructor!
+OECAgent started ...
+OECWorker::doProcess
+OECWorker::doProcess
+FSUtil::HDFS3
+hadoop3 constructor!
+OECWorker::doProcess
+FSUtil::HDFS3
+hadoop3 constructor!
+OECWorker::doProcess
+FSUtil::HDFS3
+hadoop3 constructor!
+OECWorker::doProcess
+FSUtil::HDFS3
+hadoop3 constructor!
+OECWorker::doProcess
+FSUtil::HDFS3
+hadoop3 constructor!
+OECWorker::doProcess
+FSUtil::HDFS3
+hadoop3 constructor!
+FSUtil::HDFS3
+hadoop3 constructor!
+OECWorker::doProcess
+FSUtil::HDFS3
+hadoop3 constructor!
+OECWorker::doProcess
+OECWorker::doProcess
+FSUtil::HDFS3
+hadoop3 constructor!
+FSUtil::HDFS3
+hadoop3 constructor!
+OECWorker::doProcess
+FSUtil::HDFS3
+hadoop3 constructor!
+FSUtil::HDFS3
+hadoop3 constructor!
+OECWorker::doProcess
+FSUtil::HDFS3
+hadoop3 constructor!
+OECWorker::doProcess
+FSUtil::HDFS3
+hadoop3 constructor!
+OECWorker::doProcess
+OECWorker::doProcess
+FSUtil::HDFS3
+hadoop3 constructor!
+FSUtil::HDFS3
+hadoop3 constructor!
+OECWorker::doProcess
+FSUtil::HDFS3
+hadoop3 constructor!
+OECWorker::doProcess
+OECWorker::doProcess
+OECWorker::doProcess
+FSUtil::HDFS3
+hadoop3 constructor!
+OECWorker::doProcess
+OECWorker::doProcess
+FSUtil::HDFS3
+hadoop3 constructor!
+FSUtil::HDFS3
+hadoop3 constructor!
+OECWorker::doProcess
+FSUtil::HDFS3
+hadoop3 constructor!
+OECWorker::doProcess
+FSUtil::HDFS3
+hadoop3 constructor!
+OECWorker::doProcess
+FSUtil::HDFS3
+hadoop3 constructor!
+OECWorker::doProcess
+OECAgent started ...
+OECWorker::doProcess
+OECAgent started ...
+FSUtil::HDFS3
+hadoop3 constructor!
+OECWorker::doProcess
+OECWorker::doProcess
+OECWorker::doProcess
+FSUtil::HDFS3
+hadoop3 constructor!
+OECWorker::doProcess
+FSUtil::HDFS3
+hadoop3 constructor!
+FSUtil::HDFS3
+hadoop3 constructor!
+OECWorker::doProcess
+FSUtil::HDFS3
+hadoop3 constructor!
+OECWorker::doProcess
+FSUtil::HDFS3
+hadoop3 constructor!
+OECWorker::doProcess
+OECWorker::doProcess
+FSUtil::HDFS3
+hadoop3 constructor!
+FSUtil::HDFS3
+hadoop3 constructor!
+FSUtil::HDFS3
+hadoop3 constructor!
+OECWorker::doProcess
+FSUtil::HDFS3
+hadoop3 constructor!
+OECWorker::doProcess
+FSUtil::HDFS3
+hadoop3 constructor!
+FSUtil::HDFS3
+hadoop3 constructor!
+FSUtil::HDFS3
+hadoop3 constructor!
+OECWorker::doProcess
+OECWorker::doProcess
+OECWorker::doProcess
+OECWorker::doProcess
+FSUtil::HDFS3
+hadoop3 constructor!
+OECWorker::doProcess
+FSUtil::HDFS3
+hadoop3 constructor!
+FSUtil::HDFS3
+hadoop3 constructor!
+OECWorker::doProcess
+FSUtil::HDFS3
+hadoop3 constructor!
+OECWorker::doProcess
+OECWorker::doProcess
+FSUtil::HDFS3
+hadoop3 constructor!
+OECWorker::doProcess
+FSUtil::HDFS3
+hadoop3 constructor!
+FSUtil::HDFS3
+hadoop3 constructor!
+OECWorker::doProcess
+FSUtil::HDFS3
+hadoop3 constructor!
+OECAgent started ...
+OECWorker::doProcess
+OECWorker::doProcess
+OECWorker::doProcess
+FSUtil::HDFS3
+hadoop3 constructor!
+FSUtil::HDFS3
+hadoop3 constructor!
+FSUtil::HDFS3
+hadoop3 constructor!
+OECWorker::doProcess
+OECWorker::doProcess
+FSUtil::HDFS3
+hadoop3 constructor!
+OECWorker::doProcess
+OECAgent started ...
+OECWorker::doProcess
+FSUtil::HDFS3
+hadoop3 constructor!
+OECWorker::doProcess
+OECWorker::doProcess
+FSUtil::HDFS3
+hadoop3 constructor!
+FSUtil::HDFS3
+hadoop3 constructor!
+OECAgent started ...
+OECWorker::doProcess
+OECWorker::doProcess
+OECAgent started ...
+OECWorker::doProcess
+OECWorker::doProcess
+OECWorker::doProcess
+FSUtil::HDFS3
+hadoop3 constructor!
+FSUtil::HDFS3
+hadoop3 constructor!
+OECWorker::doProcess
+FSUtil::HDFS3
+hadoop3 constructor!
+OECWorker::doProcess
+FSUtil::HDFS3
+hadoop3 constructor!
+OECWorker::doProcess
+FSUtil::HDFS3
+hadoop3 constructor!
+OECWorker::doProcess
+FSUtil::HDFS3
+hadoop3 constructor!
+OECWorker::doProcess
+FSUtil::HDFS3
+hadoop3 constructor!
+OECWorker::doProcess
+FSUtil::HDFS3
+hadoop3 constructor!
+OECWorker::doProcess
+FSUtil::HDFS3
+hadoop3 constructor!
+OECWorker::doProcess
+OECWorker::doProcess
+FSUtil::HDFS3
+hadoop3 constructor!
+FSUtil::HDFS3
+hadoop3 constructor!
+FSUtil::HDFS3
+hadoop3 constructor!
+FSUtil::HDFS3
+hadoop3 constructor!
+OECWorker::doProcess
+OECWorker::doProcess
+OECWorker::doProcess
+FSUtil::HDFS3
+hadoop3 constructor!
+FSUtil::HDFS3
+hadoop3 constructor!
+OECWorker::doProcess
+FSUtil::HDFS3
+hadoop3 constructor!
+OECWorker::doProcess
+OECWorker::doProcess
+OECWorker::doProcess
+FSUtil::HDFS3
+hadoop3 constructor!
+FSUtil::HDFS3
+hadoop3 constructor!
+OECAgent started ...
+OECWorker::doProcess
+OECAgent started ...
+OECWorker::doProcess
+OECWorker::doProcess
+FSUtil::HDFS3
+hadoop3 constructor!
+OECWorker::doProcess
+FSUtil::HDFS3
+hadoop3 constructor!
+OECWorker::doProcess
+FSUtil::HDFS3
+hadoop3 constructor!
+OECWorker::doProcess
+FSUtil::HDFS3
+hadoop3 constructor!
+FSUtil::HDFS3
+hadoop3 constructor!
+OECWorker::doProcess
+FSUtil::HDFS3
+hadoop3 constructor!
+OECWorker::doProcess
+OECAgent started ...
+OECWorker::doProcess

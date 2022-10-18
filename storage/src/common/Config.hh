@@ -7,7 +7,7 @@
 
 using namespace tinyxml2;
 
-const string config_path = "./conf/claySetting.xml";
+const string config_path = "./conf/nonSysSetting.xml";
 
 class Config {
   public:

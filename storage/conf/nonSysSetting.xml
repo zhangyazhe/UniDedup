@@ -7,6 +7,16 @@
 <value>/3/192.168.1.5</value>
 <value>/4/192.168.1.6</value>
 <value>/5/192.168.1.7</value>
+<value>/6/192.168.1.8</value>
+<value>/7/192.168.1.9</value>
+<value>/8/192.168.1.10</value>
+<value>/9/192.168.1.11</value>
+<value>/10/192.168.1.12</value>
+<value>/11/192.168.1.13</value>
+<!-- <value>/12/192.168.1.14</value>
+<value>/13/192.168.1.15</value>
+<value>/14/192.168.1.16</value>
+<value>/15/192.168.1.17</value> -->
 </attribute>
 <attribute><name>oec.controller.thread.num</name><value>10</value></attribute>
 <attribute><name>oec.agent.thread.num</name><value>10</value></attribute>
@@ -19,9 +29,9 @@
 <!-- <attribute><name>location.type</name><value>true</value></attribute> -->
 <attribute><name>ec.nonsyscodes</name><value>true</value></attribute>
 <attribute><name>ec.policy</name>
-<value><ecid>non_sys_6_4</ecid><class>RSNSYS</class><n>6</n><k>4</k><w>2</w><opt>-1</opt></value>
+<value><ecid>non_sys</ecid><class>RSNSYS</class><n>12</n><k>9</k><w>3</w><opt>-1</opt></value>
 </attribute>
 <attribute><name>offline.pool</name>
-<value><poolid>non_sys_6_4_pool</poolid><ecid>rs_6_4</ecid><base>1048576</base></value>
+<value><poolid>non_sys_12_9_pool</poolid><ecid>rs_12_9</ecid><base>4194304</base></value>
 </attribute>
 </setting>

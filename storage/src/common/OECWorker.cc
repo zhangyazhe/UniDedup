@@ -118,7 +118,7 @@ void OECWorker::onlineWrite(string filename, string ecid, int filesizeMB) {
     rReply = (redisReply*)redisCommand(waitCtx, "blpop %s 0", wkey.c_str());
     char* reqStr = rReply -> element[1] -> str;
     ECTask* compute = new ECTask(reqStr);
-    compute->dump();
+    // compute->dump();
     freeReplyObject(rReply);
     computeTasks.push_back(compute);
   }
@@ -613,16 +613,16 @@ void OECWorker::computeWorker(vector<ECTask*> computeTasks,
        << ", ecw: " << ecw << endl;
 
   for (int stripeid=0; stripeid<stripenum; stripeid++) {
-    cout << "OECWorker::ComputeWorker stripeid is " << stripeid << endl;
-    cout << "OECWorker::ComputeWorker::add pkt into stripe2" << endl;
+    // cout << "OECWorker::ComputeWorker stripeid is " << stripeid << endl;
+    // cout << "OECWorker::ComputeWorker::add pkt into stripe2" << endl;
     for (int pktidx=0; pktidx < eck; pktidx++) {
       OECDataPacket* curPkt = readQueue[pktidx]->pop();
       curStripe[pktidx] = curPkt;
     }
     // now we have k pkt in a stripe, prepare pkt for parity pkt 
-    cout << "OECWorker::ComputeWorker::add pkt into stripe1" << endl;
+    // cout << "OECWorker::ComputeWorker::add pkt into stripe1" << endl;
     for (int i=0; i<ecn; i++) {
-      cout << "OECWorker::ComputeWorker::add pkt into stripe1 -- " << i << endl;
+      // cout << "OECWorker::ComputeWorker::add pkt into stripe1 -- " << i << endl;
       OECDataPacket* paritypkt;
       if (i < eck) {
         paritypkt = new OECDataPacket(curStripe[i]->getRaw());
@@ -636,7 +636,7 @@ void OECWorker::computeWorker(vector<ECTask*> computeTasks,
     unordered_map<int, char*> srcbufMap;
     unordered_map<int, char*> tarbufMap;
     // add pkt into bufMap
-    cout << "OECWorker::ComputeWorker::add pkt into bufMap1" << endl;
+    // cout << "OECWorker::ComputeWorker::add pkt into bufMap1" << endl;
     for (int i=0; i<eck; i++) {
       char* pktbuf = curStripe[i]->getData();
       for (int j=0; j<ecw; j++) {
@@ -645,7 +645,7 @@ void OECWorker::computeWorker(vector<ECTask*> computeTasks,
         srcbufMap.insert(make_pair(ecidx, bufaddr));
       }
     }
-    cout << "OECWorker::ComputeWorker::add pkt into bufMap2" << endl;
+    // cout << "OECWorker::ComputeWorker::add pkt into bufMap2" << endl;
     for (int i=0; i<ecn; i++) {
       char* pktbuf = targetStripe[i]->getData();
       for (int j=0; j<ecw; j++) {
@@ -659,17 +659,17 @@ void OECWorker::computeWorker(vector<ECTask*> computeTasks,
       ECTask* compute = computeTasks[taskid];
       vector<int> children = compute->getChildren();
 
-      // if (stripeid == 0) {
+      if (stripeid == 0) {
         cout << "children: ";
         for (int childid=0; childid<children.size(); childid++) {
           cout << children[childid] << " ";
         }
         cout << endl;
-      // }
+      }
 
       unordered_map<int, vector<int>> coefMap = compute->getCoefMap();
 
-      // if (stripeid == 0) {
+      if (stripeid == 0) {
         cout << "coef: "<< endl;
         for (auto item: coefMap) {
           int target = item.first;
@@ -678,7 +678,7 @@ void OECWorker::computeWorker(vector<ECTask*> computeTasks,
           for (int coefidx=0; coefidx<coefs.size(); coefidx++) cout << coefs[coefidx] << " ";
           cout << ")" << endl;
         }
-      // }
+      }
 
       int col = children.size();
       int row = coefMap.size();
@@ -697,7 +697,7 @@ void OECWorker::computeWorker(vector<ECTask*> computeTasks,
           assert (srcbufMap.find(child) != srcbufMap.end());
           data[bufIdx] = srcbufMap[child];
           // if (stripeid == 0) {
-            cout << "data["<<bufIdx<<"] = bufMap[" <<child<<"]"<< endl;
+          //   cout << "data["<<bufIdx<<"] = bufMap[" <<child<<"]"<< endl;
           // }
         }
         // prepare the code buf
@@ -710,11 +710,11 @@ void OECWorker::computeWorker(vector<ECTask*> computeTasks,
             tarbufMap.insert(make_pair(target, codebuf));
             srcbufMap.insert(make_pair(target, codebuf));
             // if (stripeid == 0) 
-            cout << "code["<<codeBufIdx<<"] = new" << endl;
+            // cout << "code["<<codeBufIdx<<"] = new" << endl;
           } else {
             codebuf = tarbufMap[target];
             // if (stripeid == 0) 
-            cout << "code["<<codeBufIdx<<"] = bufMap[" << target << "]" << endl;
+            // cout << "code["<<codeBufIdx<<"] = bufMap[" << target << "]" << endl;
           }
           code[codeBufIdx] = codebuf;
 
@@ -726,13 +726,13 @@ void OECWorker::computeWorker(vector<ECTask*> computeTasks,
           codeBufIdx++;
         }
         // if (stripeid == 0) {
-          cout << "matrix: " << endl;
-          for (int ii=0; ii<row; ii++) {
-            for (int jj=0; jj<col; jj++) {
-              cout << matrix[ii*col+jj] << " ";
-            }
-            cout << endl;
-          }
+        //   cout << "matrix: " << endl;
+        //   for (int ii=0; ii<row; ii++) {
+        //     for (int jj=0; jj<col; jj++) {
+        //       cout << matrix[ii*col+jj] << " ";
+        //     }
+        //     cout << endl;
+        //   }
         // }
         // perform compute operation
         Computation::Multi(code, data, matrix, row, col, splitsize, "Isal");
@@ -835,26 +835,26 @@ void OECWorker::computeWorkerNonSys(vector<ECTask*> computeTasks,
       ECTask* compute = computeTasks[taskid];
       vector<int> children = compute->getChildren();
 
-      if (stripeid == 0) {
-        cout << "children: ";
-        for (int childid=0; childid<children.size(); childid++) {
-          cout << children[childid] << " ";
-        }
-        cout << endl;
-      }
+      // if (stripeid == 0) {
+      //   cout << "children: ";
+      //   for (int childid=0; childid<children.size(); childid++) {
+      //     cout << children[childid] << " ";
+      //   }
+      //   cout << endl;
+      // }
 
       unordered_map<int, vector<int>> coefMap = compute->getCoefMap();
 
-      if (stripeid == 0) {
-        cout << "coef: "<< endl;
-        for (auto item: coefMap) {
-          int target = item.first;
-          vector<int> coefs = item.second;
-          cout << "    " << target << ": " << "( ";
-          for (int coefidx=0; coefidx<coefs.size(); coefidx++) cout << coefs[coefidx] << " ";
-          cout << ")" << endl;
-        }
-      }
+      // if (stripeid == 0) {
+      //   cout << "coef: "<< endl;
+      //   for (auto item: coefMap) {
+      //     int target = item.first;
+      //     vector<int> coefs = item.second;
+      //     cout << "    " << target << ": " << "( ";
+      //     for (int coefidx=0; coefidx<coefs.size(); coefidx++) cout << coefs[coefidx] << " ";
+      //     cout << ")" << endl;
+      //   }
+      // }
 
       int col = children.size();
       int row = coefMap.size();
@@ -872,9 +872,9 @@ void OECWorker::computeWorkerNonSys(vector<ECTask*> computeTasks,
           // check whether there is buf in databuf
           assert (srcbufMap.find(child) != srcbufMap.end());
           data[bufIdx] = srcbufMap[child];
-          if (stripeid == 0) {
-            cout << "data["<<bufIdx<<"] = bufMap[" <<child<<"]"<< endl;
-          }
+          // if (stripeid == 0) {
+          //   cout << "data["<<bufIdx<<"] = bufMap[" <<child<<"]"<< endl;
+          // }
         }
         // prepare the code buf
         int codeBufIdx = 0;
@@ -884,10 +884,10 @@ void OECWorker::computeWorkerNonSys(vector<ECTask*> computeTasks,
           if (tarbufMap.find(target) == tarbufMap.end()) {
             codebuf = (char*)calloc(splitsize, sizeof(char));
             tarbufMap.insert(make_pair(target, codebuf)); 
-            if (stripeid == 0) cout << "code["<<codeBufIdx<<"] = new" << endl;
+            // if (stripeid == 0) cout << "code["<<codeBufIdx<<"] = new" << endl;
           } else {
             codebuf = tarbufMap[target];
-            if (stripeid == 0) cout << "code["<<codeBufIdx<<"] = bufMap[" << target << "]" << endl;
+            // if (stripeid == 0) cout << "code["<<codeBufIdx<<"] = bufMap[" << target << "]" << endl;
           }
           code[codeBufIdx] = codebuf;
 
@@ -898,15 +898,15 @@ void OECWorker::computeWorkerNonSys(vector<ECTask*> computeTasks,
           }
           codeBufIdx++;
         }
-        if (stripeid == 0) {
-          cout << "matrix: " << endl;
-          for (int ii=0; ii<row; ii++) {
-            for (int jj=0; jj<col; jj++) {
-              cout << matrix[ii*col+jj] << " ";
-            }
-            cout << endl;
-          }
-        }
+        // if (stripeid == 0) {
+        //   cout << "matrix: " << endl;
+        //   for (int ii=0; ii<row; ii++) {
+        //     for (int jj=0; jj<col; jj++) {
+        //       cout << matrix[ii*col+jj] << " ";
+        //     }
+        //     cout << endl;
+        //   }
+        // }
         // perform compute operation
         Computation::Multi(code, data, matrix, row, col, splitsize, "Isal");
       }

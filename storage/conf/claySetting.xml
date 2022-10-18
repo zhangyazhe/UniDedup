@@ -7,18 +7,28 @@
 <value>/3/192.168.1.5</value>
 <value>/4/192.168.1.6</value>
 <value>/5/192.168.1.7</value>
+<value>/6/192.168.1.8</value>
+<value>/7/192.168.1.9</value>
+<value>/8/192.168.1.10</value>
+<value>/9/192.168.1.11</value>
+<value>/10/192.168.1.12</value>
+<value>/11/192.168.1.13</value>
+<!-- <value>/12/192.168.1.14</value>
+<value>/13/192.168.1.15</value>
+<value>/14/192.168.1.16</value>
+<value>/15/192.168.1.17</value> -->
 </attribute>
-<attribute><name>oec.controller.thread.num</name><value>10</value></attribute>
-<attribute><name>oec.agent.thread.num</name><value>10</value></attribute>
+<attribute><name>oec.controller.thread.num</name><value>40</value></attribute>
+<attribute><name>oec.agent.thread.num</name><value>40</value></attribute>
 <attribute><name>oec.cmddist.thread.num</name><value>2</value></attribute>
 <attribute><name>local.addr</name><value>192.168.1.1</value></attribute>
-<attribute><name>packet.size</name><value>32768</value></attribute>
+<attribute><name>packet.size</name><value>32724</value></attribute>
 <attribute><name>dss.type</name><value>HDFS3</value></attribute>
 <attribute><name>dss.parameter</name><value>192.168.1.1,9000</value></attribute>
 <attribute><name>ec.concurrent.num</name><value>5</value></attribute>
 <!-- <attribute><name>location.type</name><value>true</value></attribute> -->
 <attribute><name>ec.policy</name>
-<value><ecid>clay</ecid><class>Clay</class><n>4</n><k>2</k><w>4</w><opt>-1</opt><param>3</param></value>
+<value><ecid>clay</ecid><class>Clay</class><n>12</n><k>9</k><w>81</w><opt>-1</opt><param>11</param></value>
 </attribute>
 <attribute><name>offline.pool</name>
 <value><poolid>clay_pool</poolid><ecid>clay</ecid><base>1048576</base></value>

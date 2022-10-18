@@ -3,7 +3,7 @@
 USER="$USER"
 HOME=/home/$USER
 NODE_NAME=node
-NODE_NUM=6
+NODE_NUM=12
 HADOOP_HOME=$HOME/hadoop-3.0.0-src/hadoop-dist/target/hadoop-3.0.0
 HDFS_TMP_DIR=$HADOOP_HOME/data
 

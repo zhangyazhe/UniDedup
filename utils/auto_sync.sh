@@ -1,7 +1,7 @@
 #!/bin/bash
 
 user="$USER"
-node_num=6
+node_num=16
 node_name=node
 
 home=/home/$user
@@ -33,6 +33,16 @@ ip_lists=(
 	192.168.1.5
 	192.168.1.6
 	192.168.1.7
+	192.168.1.8
+	192.168.1.9
+	192.168.1.10
+	192.168.1.11
+	192.168.1.12
+	192.168.1.13
+	192.168.1.14
+	192.168.1.15
+	192.168.1.16
+	192.168.1.17
 )
 
 namenode_ip=${ip_lists[0]}
@@ -62,10 +72,10 @@ do
 		rsync -a $localPath/$file $user@$host:$remotePath/client/$file
 	done
 
-	for file in ${shell_files[@]}
-	do
-		rsync -a $localPath/$file $user@$host:$remotePath/$file
-	done
+	# for file in ${shell_files[@]}
+	# do
+	# 	rsync -a $localPath/$file $user@$host:$remotePath/$file
+	# done
 
 	# for j in ${!conf_files[@]}
 	# do

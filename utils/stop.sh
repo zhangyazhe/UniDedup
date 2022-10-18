@@ -1,7 +1,7 @@
 #!/bin/bash
 
 user="$USER"
-node_num=6
+node_num=16
 node_name=node
 
 home=/home/$user
@@ -15,7 +15,7 @@ killall OECCoordinator
 
 for((i=1;i<=$node_num;i++));
 do
-{
+{ 
 	# if [[ $i -gt 3 && $i -lt 6 ]]
 	# then
 	# 	continue

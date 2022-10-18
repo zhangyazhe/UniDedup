@@ -1,19 +1,27 @@
 #!/bin/bash 
 dev_names=(
-    ens33
-    ens33
-    ens33
-    ens33
-    ens33
-    ens33
-    ens33
-    ens33
-    ens33
+    eth0
+    eth0
+    eth0
+    eth0
+    eth0
+    eth0
+    eth0
+    eth0
+    eth0
+    eth0
+    eth0
+    eth0
+    eth0
+    eth0
+    eth0
+    eth0
+    eth0
 )
 
 IFB=ifb0
 
-USER="$USER"
+USER=openec
 HOME=/home/$USER
 OPENEC=$HOME/Fast23/storage
 
