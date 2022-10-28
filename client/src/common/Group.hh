@@ -1,3 +1,6 @@
+/**
+ * Divide file to different group.
+ */
 #ifndef _GROUP_HH_
 #define _GROUP_HH_
 
@@ -24,7 +27,7 @@
 #include "Config.hh"
 
 #define DEFAULT_GROUP_SIZE 1024
-#define DEFAULT_BLOCK_SIZE 1048576
+#define DEFAULT_BLOCK_SIZE 1048576 // 1MB
 #define GROUPING_FIXED 0
 
 struct group {
@@ -49,6 +52,7 @@ extern SyncQueue *hash_queue;
 
 
 int openFile(const char* path);
+/* get the file name behind the last '/' */
 char* baseName(const char* filepath);
 struct group* new_group(const char *fileName, int size, int id);
 void delete_group(struct group* gp);

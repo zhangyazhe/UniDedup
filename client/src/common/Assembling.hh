@@ -1,3 +1,8 @@
+/**
+ * When user reads data, the data block is captured from multiple nodes. 
+ * This program is responsible for assembling these decentralized blocks into a complete file. Execute by agent.
+ */
+
 #ifndef _ASSEMBLING_HH_
 #define _ASSEMBLING_HH_
 

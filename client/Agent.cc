@@ -5,7 +5,7 @@
 
 int main(int argc, char** argv)
 {
-    Config* conf = new Config(config_path);
+    Config* conf = new Config(config_path); // read the config
 
     initEchash();
     
@@ -16,7 +16,7 @@ int main(int argc, char** argv)
     thread thrds[worker_num];
     for (int i = 0; i < worker_num; i++) {
         workers[i] = new Worker(conf);
-        thrds[i] = thread([=]{workers[i]->doProcess();});
+        thrds[i] = thread([=]{workers[i]->doProcess();}); // Open worker thread.
     }
     cout << "Agent started ..." << endl;
 

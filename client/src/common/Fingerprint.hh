@@ -1,3 +1,6 @@
+/**
+ * Provide the functions to compute the fingerprint.
+ */
 #ifndef _FINGERPRINT_HH_
 #define _FINGERPRINT_HH_
 

@@ -1,3 +1,6 @@
+/**
+ * Client reads user's command and executes
+ */
 #include "src/inc/include.hh"
 #include "src/common/Config.hh"
 #include "src/protocol/AgentCommand.hh"
@@ -9,8 +12,9 @@ void usage() {
 
 void write(string filepath, string saveas, int sizeinBytes) {
     string conf_path(config_path);
-    Config * conf = new Config(conf_path);
+    Config * conf = new Config(conf_path); // read config
     // tell local Agent filepath and filesize
+    // create a command and send it to LOCAL agent
     AgentCommand *agCmd = new AgentCommand();
     agCmd->buildType0(0, filepath, saveas, sizeinBytes);
     agCmd->sendTo(conf->_localIP);

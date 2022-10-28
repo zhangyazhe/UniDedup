@@ -33,22 +33,11 @@ static void* chunk_thread(void *arg) {
     int leftlen = 0;
     int leftoff = 0;
     unsigned char *leftbuf = (unsigned char*) malloc(DEFAULT_BLOCK_SIZE + chunkMetaData.chunk_max_size);
-
-    // unsigned char *data = malloc(chunkMetaData.chunk_max_size);
-
-    // cout << chunkMetaData.chunk_max_size << endl;
-
     struct chunk *c = NULL;
-
     int total = 0;
-
     while (1) {
-
         while  (leftlen < chunkMetaData.chunk_max_size) {
-            // cout << "leftLen1: " << leftlen << endl;
-            // cout << "leftoff: " << leftoff << endl;
             c = (struct chunk*) sync_queue_pop(read_queue);
-            // if(c) total += c->size;
             memmove(leftbuf, leftbuf + leftoff, leftlen);
             leftoff = 0;
             if (c != NULL) {
@@ -56,20 +45,15 @@ static void* chunk_thread(void *arg) {
                 assert(c->size != 0);
                 memcpy(leftbuf + leftlen, c->data, c->size);
                 leftlen += c->size;
-                // cout << "c->size: " << c->size << endl;
                 free_chunk(c);
             } else {
                 break;
             }
-            // if(leftlen < chunkMetaData.chunk_max_size)
-            //     c = (struct chunk*) sync_queue_pop(read_queue);
         }
         if (leftlen == 0 && c == NULL) {
-            // assert(c == NULL);
             break;
         }
         int chunk_size = chunking(leftbuf + leftoff, leftlen);
-        // total+=chunk_size;
         assert(chunk_size != 0);
         struct chunk *nc = new_chunk(chunk_size);
         memcpy(nc->data, leftbuf + leftoff, chunk_size);
@@ -87,7 +71,6 @@ static void* chunk_thread(void *arg) {
 
 void start_chunk_phase() {
     if (chunkMetaData.chunk_algorithm == CHUNK_RABIN) {
-        // printf("algo rabin\n");
         int pwr;
         for (pwr = 0; chunkMetaData.chunk_avg_size; pwr++) {
             chunkMetaData.chunk_avg_size >>= 1;

@@ -15,7 +15,6 @@ int openFile(const char* path) {
 }
 
 char* baseName(const char* filepath){
-    // TO DO:
     std::string str(filepath);
     int len = str.length();
     int end = len - 1;
@@ -35,7 +34,6 @@ char* baseName(const char* filepath){
 }
 
 struct group* new_group(const char* fileName, int size, int id) {
-    // TO DO:
     struct group *grp = (struct group*)malloc(sizeof(struct group));
     if (grp == NULL) {
         fprintf(stderr, "new_group: memory allocate failed\n");
@@ -68,33 +66,6 @@ void delete_group(struct group* gp) {
     free(gp);
 }
 
-// without test
-// vector<struct group*> split2GroupsFixed(int fd) {
-//     char fileName[1024] = {'\0'};
-//     char path[1024] = {'\0'};
-//     snprintf(path, sizeof(path), "/proc/self/fd/%d", fd);
-//     readlink(path, fileName, sizeof(fileName) - 1);
-//     unsigned char buffer[DEFAULT_GROUP_SIZE];
-//     std::vector<struct group*> groupList;
-//     ssize_t size = read(fd, buffer, DEFAULT_GROUP_SIZE);
-//     while (size != -1 && size != 0) {
-//         struct group *gp = new_group(fileName, size);
-//         memcpy(gp->data, buffer, size);
-//         memcpy(gp->delegate, delegate(gp), FP_LENGTH);
-//         gp->nodeId = consistentHash(gp->delegate);
-//         groupList.push_back(gp);
-//     }
-//     if (size == -1) {
-//         fprintf(stderr, "split2Groups: read file failed.\n");
-//         for (int i = 0; i < groupList.size(); ++i) {
-//             delete_group(groupList[i]);
-//         }
-//         groupList.clear();
-//         return groupList;
-//     }
-//     return groupList;
-// }
-
 static inline int my_cmp(fingerprint fp1, fingerprint fp2) {
     for (int i = 0; i < FP_LENGTH; ++i) {
         if (fp1[i] < fp2[i]) {
@@ -114,9 +85,8 @@ std::vector<struct group*> split2Groups(const char* filepath, const char* filena
     start_read_phase(filepath);
     // chunking
     start_chunk_phase();
-    // hash
+    // hashing
     start_hash_phase();
-    //}
 
     // grouping
     // 1. group chunks by grouping_number
@@ -139,16 +109,16 @@ std::vector<struct group*> split2Groups(const char* filepath, const char* filena
         assert(c->data != NULL);
         chunkList[groupCnt] = c;
         groupCnt++;
-        // printf("groupcnt: %d\n", groupCnt);
-        // printf("chunk size: %d\n", chunkList[groupCnt-1]->size);
         if (groupCnt == DEFAULT_GROUP_SIZE) {
             for (int i = 0; i < DEFAULT_GROUP_SIZE; ++i) {
                 size += chunkList[i]->size;
+                // find the least fp and set it to minFingerprint
                 if (my_cmp(chunkList[i]->fp, minFingerprint) < 0) {
                     memcpy(minFingerprint, chunkList[i]->fp, sizeof(fingerprint));
                 }
             }
             struct group *gp = new_group(filename, size, id++);
+            // set minFingerprint to be the delegate of this group
             memcpy(gp->delegate, minFingerprint, sizeof(fingerprint));
             gp->nodeId = consistentHash(gp->delegate, nodeNum);
             int offset = 0;
@@ -166,6 +136,7 @@ std::vector<struct group*> split2Groups(const char* filepath, const char* filena
             }
         }
     }
+    // Process the last set of less than 1024 chunks
     if (groupCnt != 0) {
         for (int i = 0; i < groupCnt; ++i) {
             size += chunkList[i]->size;

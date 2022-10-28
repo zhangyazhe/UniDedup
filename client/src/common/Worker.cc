@@ -2,6 +2,10 @@
 
 struct chunk_meta_data chunkMetaData;
 
+/** 
+ * filename -> fileRecipe* 
+ * The definition is in fileRecipe.cc
+*/
 extern std::unordered_map<string, struct fileRecipe*> name2FileRecipe;
 
 static chunk* new_chunk(int size) {

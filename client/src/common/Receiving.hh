@@ -1,3 +1,6 @@
+/**
+ * Client calls receiving() to get data from agent, and agent will return the assembly data.
+ */
 #ifndef _RECEIVING_HH_
 #define _RECEIVING_HH_
 
