@@ -1,3 +1,6 @@
+/**
+ * Read the file into fixed size blocks from disk to system.
+ */
 #ifndef _READING_HH_
 #define _READING_HH_
 

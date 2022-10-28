@@ -1,3 +1,6 @@
+/**
+ * Compute fingerprint by openssl's sha-1 function.
+ */
 #ifndef _HASHING_HH_
 #define _HASHING_HH_
 

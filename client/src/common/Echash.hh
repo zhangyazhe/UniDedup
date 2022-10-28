@@ -1,3 +1,6 @@
+/**
+ * Disaptive distributed cache interface(memcache).
+ */
 #ifndef _ECHASH_HH_
 #define _ECHASH_HH_
 

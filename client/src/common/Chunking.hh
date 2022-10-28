@@ -1,3 +1,4 @@
+// Read the data from read queue, add chunk to chunk queue after chunking
 #ifndef _CHUNKING_HH_
 #define _CHUNKING_HH_
 
