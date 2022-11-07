@@ -71,6 +71,10 @@ void Config::getConfigFromLine(std::string& line) {
         ipss >> ip_str;
         _localIP = inet_addr(ip_str.c_str());
     }
+    else if(confs[0] == "redis_cluster_enabled") {
+        std::stringstream nnss(confs[1]);
+        nnss >> redis_cluster_enabled;
+    }
 }
 
 void Config::getIpFromIpList(const std::string& ipListPath) {

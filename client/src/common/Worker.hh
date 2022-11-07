@@ -12,6 +12,7 @@
 #include "Chunking.hh"
 #include "Assembling.hh"
 #include "Receiving.hh"
+#include "redis_cluster.hh"
 
 class Worker
 {

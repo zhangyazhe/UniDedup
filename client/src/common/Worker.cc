@@ -60,11 +60,6 @@ void Worker::doProcess()
     }
     else
     {
-      for(auto key: name2FileRecipe) {
-        printf("for 1\n");
-        printf("key: %s\n", key.first.c_str());
-        printf("num: %d\n", key.second->num);
-      }
       struct timeval time1, time2;
       gettimeofday(&time1, NULL);
       char *reqStr = rReply->element[1]->str;
@@ -85,11 +80,6 @@ void Worker::doProcess()
         break;
       }
       delete agCmd;
-      for(auto key: name2FileRecipe) {
-        printf("for 2\n");
-        printf("key: %s\n", key.first.c_str());
-        printf("num: %d\n", key.second->num);
-      }
     }
     // free reply object
     freeReplyObject(rReply);
@@ -110,8 +100,12 @@ void Worker::clientWrite(AgentCommand *agCmd)
   struct fileRecipe *fr = genFileRecipe(filename.c_str(), gps);
   assert(fr != nullptr);
 
-  // set file recipe by echash
-  int ret = setFileRecipe(fr);
+  int ret;
+  if (_conf->redis_cluster_enabled == 1) {
+    ret = setFileRecipeToRedis(fr);
+  } else {
+    ret = setFileRecipe(fr);
+  }
   assert(ret == 0);
 
   // distribute groups to different nodes
@@ -191,8 +185,13 @@ void Worker::clientRead(AgentCommand *agCmd)
   string filename = agCmd->getToReadFilename();
   string saveas = agCmd->getToSaveAs();
 
-  // 2. get fileRecipe (file to groups) from EChash
-  struct fileRecipe *fr = getFileRecipe(filename);
+  // 2. get fileRecipe (file to groups) from EChash or redis cluster
+  struct fileRecipe *fr;
+  if (_conf->redis_cluster_enabled == 1) {
+    fr = getFileRecipeFromRedis(filename);
+  } else {
+    fr = getFileRecipe(filename);
+  }
   if (fr == nullptr)
   {
     printf("[error]: no such file!\n");

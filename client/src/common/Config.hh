@@ -31,6 +31,8 @@ public:
     int destor_chunk_avg_size;
     int destor_chunk_min_size;
     int destor_chunk_max_size;
+
+    int redis_cluster_enabled;
 };
 
 

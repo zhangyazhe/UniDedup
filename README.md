@@ -1,2 +1,9 @@
 # Fast23
+## 开发注意事项
 开发时，先切换到自己的分支，以避免出现conflict。开发完成后，由所有开发者进行code review，没问题后再合并到主分支。
+## 安装
+0. 以搭建一个拥有三个节点的集群为例。
+1. 首先准备三台服务器，或者创建三个虚拟机。虚拟机的名字分别命名为：master、node01、node02。节点或虚拟机中运行ubuntu18.04。进入ubuntu后，各个节点均创建一个名为openec的用户，之后的操作均在该用户下进行。
+2. 在每个节点安装vim、net-tools、openssh-server、make、gcc。
+3. 配置master免密登陆自己，以及master免密登陆其他node。
+4. 在三个节点上均安装redis，并将三个节点搭建成redis的无中心集群。
