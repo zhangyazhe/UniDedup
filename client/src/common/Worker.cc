@@ -102,7 +102,7 @@ void Worker::clientWrite(AgentCommand *agCmd)
 
   int ret;
   if (_conf->redis_cluster_enabled == 1) {
-    ret = setFileRecipeToRedis(fr);
+    ret = setFileRecipeToRedis(fr, _conf->_localIP);
   } else {
     ret = setFileRecipe(fr);
   }
@@ -188,7 +188,7 @@ void Worker::clientRead(AgentCommand *agCmd)
   // 2. get fileRecipe (file to groups) from EChash or redis cluster
   struct fileRecipe *fr;
   if (_conf->redis_cluster_enabled == 1) {
-    fr = getFileRecipeFromRedis(filename);
+    fr = getFileRecipeFromRedis(filename, _conf->_localIP);
   } else {
     fr = getFileRecipe(filename);
   }

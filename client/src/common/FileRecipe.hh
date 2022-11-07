@@ -18,7 +18,7 @@ struct groupMeta {
 
 struct fileRecipe {
     char* filename;
-    int32_t group_num;
+    int32_t num;
     groupMeta* gm;
 };
 

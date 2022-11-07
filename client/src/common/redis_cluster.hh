@@ -5,7 +5,10 @@
 #include "FileRecipe.hh"
 #include "../inc/include.hh"
 
-int setFileRecipeToRedis(struct fileRecipe* fr);
-struct fileRecipe* getFileRecipeFromRedis(string filename);
+/**
+ * @return 0 for success, -1 for fail
+*/
+int setFileRecipeToRedis(struct fileRecipe* fr, unsigned int local_ip);
+struct fileRecipe* getFileRecipeFromRedis(string filename, unsigned int local_ip);
 
 #endif
