@@ -9,4 +9,5 @@
 4. 配置sudo免密
 5. 修改master节点的/etc/hosts，添加master、node01、node02的ip
 6. 执行dependency目录下的setup.sh，安装依赖
-7. 使用三个节点搭建redis集群
+7. run destor_setup.sh in utils
+8. 使用三个节点搭建redis集群
