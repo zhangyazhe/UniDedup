@@ -1,7 +1,7 @@
 #!/bin/bash
 
 user="$USER"
-node_num=12
+node_num=2
 node_name=node
 
 home=/home/$user

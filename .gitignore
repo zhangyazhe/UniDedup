@@ -145,3 +145,4 @@ destor/destor
 destor/src/.deps/
 destor/src/*/.deps/
 Makefile
+utils/log/log*.txt
