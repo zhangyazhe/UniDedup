@@ -33,6 +33,7 @@ public:
     int destor_chunk_max_size;
 
     int redis_cluster_enabled;
+    int stateful_routing_enabled;
 };
 
 

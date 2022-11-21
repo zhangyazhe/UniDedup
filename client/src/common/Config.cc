@@ -13,6 +13,9 @@ Config::Config(const std::string& configPath)
             if (line.at(0) == '#') continue;
             getConfigFromLine(line);
         }
+        if (stateful_routing_enabled == 1 && redis_cluster_enabled == 0) {
+            cerr << "Err: stateful routing is enabled but redis cluster is not." << endl;
+        }
     }
 }
 
@@ -74,6 +77,16 @@ void Config::getConfigFromLine(std::string& line) {
     else if(confs[0] == "redis_cluster_enabled") {
         std::stringstream nnss(confs[1]);
         nnss >> redis_cluster_enabled;
+        if (redis_cluster_enabled != 0 && redis_cluster_enabled != 1) {
+            cerr << "Err: redis_cluster_enabled get invalid config value, shoule be 0 or 1." << endl;
+        }
+    }
+    else if(confs[0] == "stateful_routing_enabled") {
+        std::stringstream nnss(confs[1]);
+        nnss >> stateful_routing_enabled;
+        if (stateful_routing_enabled != 0 && stateful_routing_enabled != 1) {
+            cerr << "Err: stateful_routing_enabled get invalid config value, shoule be 0 or 1." << endl;
+        }
     }
 }
 

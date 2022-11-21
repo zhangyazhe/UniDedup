@@ -77,7 +77,7 @@ static inline int my_cmp(fingerprint fp1, fingerprint fp2) {
     return 0;
 }
 
-std::vector<struct group*> split2Groups(const char* filepath, const char* filename, int nodeNum) {
+std::vector<struct group*> split2Groups(const char* filepath, const char* filename, int nodeNum, int stateful_routing_enabled, unsigned int local_ip) {
     std::vector<struct group*> result;
     int groupCnt = 0;
 
@@ -120,7 +120,33 @@ std::vector<struct group*> split2Groups(const char* filepath, const char* filena
             struct group *gp = new_group(filename, size, id++);
             // set minFingerprint to be the delegate of this group
             memcpy(gp->delegate, minFingerprint, sizeof(fingerprint));
-            gp->nodeId = consistentHash(gp->delegate, nodeNum);
+            
+            if (stateful_routing_enabled == 0) {
+                gp->nodeId = consistentHash(gp->delegate, nodeNum);
+            } else {
+                // prepare sample_unit info for stateful routing
+                vector<SampleUnit> sample_unit_list;
+                SampleUnit su;
+                for (int i = 0; i < DEFAULT_GROUP_SIZE; i++) {
+                    if (i % DEFAULT_SAMPLE_UNIT_SIZE == 0) {
+                        for (int j = 0; j < FP_LENGTH; ++j) {
+                            su.feature[j] = UCHAR_MAX;
+                        }
+                        su.size = 0;
+                    }
+                    su.size += chunkList[i]->size;
+                    if (my_cmp(chunkList[i]->fp, su.feature) < 0) {
+                        memcpy(su.feature, chunkList[i]->fp, sizeof(fingerprint));
+                    }
+                    if ((i + 1) % DEFAULT_SAMPLE_UNIT_SIZE == 0) {
+                        sample_unit_list.push_back(su);
+                    }
+                }
+                gp->nodeId = getNodeForStatefulRouting(sample_unit_list, nodeNum, local_ip);
+                if (gp->nodeId == -1) {
+                    cerr << "[Stateful Routing] getNodeForStatefulRouting failed" << endl;
+                }
+            }
             int offset = 0;
             for (int i = 0; i < groupCnt; ++i) {
                 assert(chunkList[i]->data != NULL);
@@ -146,7 +172,32 @@ std::vector<struct group*> split2Groups(const char* filepath, const char* filena
         }
         struct group *gp = new_group(filename, size, id++);
         memcpy(gp->delegate, minFingerprint, sizeof(fingerprint));
-        gp->nodeId = consistentHash(gp->delegate, nodeNum);
+        if (stateful_routing_enabled == 0) {
+            gp->nodeId = consistentHash(gp->delegate, nodeNum);
+        } else {
+            // prepare sample_unit info for stateful routing
+            vector<SampleUnit> sample_unit_list;
+            SampleUnit su;
+            for (int i = 0; i < groupCnt; i++) {
+                if (i % DEFAULT_SAMPLE_UNIT_SIZE == 0) {
+                    for (int j = 0; j < FP_LENGTH; ++j) {
+                        su.feature[j] = UCHAR_MAX;
+                    }
+                    su.size = 0;
+                }
+                su.size += chunkList[i]->size;
+                if (my_cmp(chunkList[i]->fp, su.feature) < 0) {
+                    memcpy(su.feature, chunkList[i]->fp, sizeof(fingerprint));
+                }
+                if ((i + 1) % DEFAULT_SAMPLE_UNIT_SIZE == 0 || (i + 1) == groupCnt) {
+                    sample_unit_list.push_back(su);
+                }
+            }
+            gp->nodeId = getNodeForStatefulRouting(sample_unit_list, nodeNum, local_ip);
+            if (gp->nodeId == -1) {
+                cerr << "[Stateful Routing] getNodeForStatefulRouting failed" << endl;
+            }
+        }
         int offset = 0;
         for (int i = 0; i < groupCnt; ++i) {
             assert(chunkList[i]->data != NULL);

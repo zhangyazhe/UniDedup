@@ -26,9 +26,13 @@
 #include "Hashing.hh"
 #include "Config.hh"
 
+#include "stateful_routing.hh"
+
 #define DEFAULT_GROUP_SIZE 1024
 #define DEFAULT_BLOCK_SIZE 1048576 // 1MB
 #define GROUPING_FIXED 0
+// each sample_unit has 128 chunks, each group has 8 sample unit
+#define DEFAULT_SAMPLE_UNIT_SIZE 128
 
 struct group {
     char* groupName;
@@ -37,6 +41,11 @@ struct group {
     uint32_t size;
     unsigned char *data;
 };
+
+typedef struct SampleUnit {
+    fingerprint feature;
+    uint64_t size;
+} SampleUnit;
 
 struct {
     uint64_t id;
@@ -57,6 +66,6 @@ char* baseName(const char* filepath);
 struct group* new_group(const char *fileName, int size, int id);
 void delete_group(struct group* gp);
 vector<struct group*> split2GroupsFixed(int fd);
-std::vector<struct group*> split2Groups(const char* filepath, const char* filename, int nodeNum);
+std::vector<struct group*> split2Groups(const char* filepath, const char* filename, int nodeNum, int stateful_routing_enabled, unsigned int local_ip);
 
 #endif
