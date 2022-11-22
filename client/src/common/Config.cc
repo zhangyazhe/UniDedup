@@ -13,9 +13,6 @@ Config::Config(const std::string& configPath)
             if (line.at(0) == '#') continue;
             getConfigFromLine(line);
         }
-        if (stateful_routing_enabled == 1 && redis_cluster_enabled == 0) {
-            cerr << "Err: stateful routing is enabled but redis cluster is not." << endl;
-        }
     }
 }
 

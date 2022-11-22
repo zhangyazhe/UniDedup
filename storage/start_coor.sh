@@ -29,6 +29,6 @@ fi
 
 redis-cli flushall
 
-sudo service redis_6379 restart
+# sudo service redis_6379 restart
 
 ./OECCoordinator

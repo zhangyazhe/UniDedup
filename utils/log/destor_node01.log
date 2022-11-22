@@ -1,0 +1,114 @@
+destor_server_process
+destor_server_process: receive a request!
+type: 0 
+Init recipe store successfully
+Init container store successfully
+Init index module successfully
+==== backup begin ====
+pkt size: 1
+Read 0 inherited sparse containers
+append thread start
+write container buffer2
+push container buffer
+[debug] destor in append thread, get one chunk from buffer.
+write_container start
+write_container wait for finish
+write_container finish
+write_container end
+append thread end
+append thread start
+read phase stops successfully!
+chunk phase stops successfully!
+hash phase stops successfully!
+dedup phase stops successfully: 1 segments of 1 chunks on average
+rewrite phase stops successfully!
+Record 0 sparse containers, and 0 of them are inherited
+CMA: update 1 records.
+filter phase stops successfully!
+flushing hash table!
+flushing hash table successfully!
+[debug] destor in append thread, break.
+append phase stops successfully!
+==== backup end ====
+job id: 0
+backup path: /test.txt0
+number of files: 1
+number of chunks: 1 (82 bytes on average)
+number of unique chunks: 1
+total size(B): 82
+stored data size(B): 82
+deduplication ratio: 0.0000, 1.0000
+total time(s): 0.000
+throughput(MB/s): inf
+number of zero chunks: 0
+size of zero chunks: 0
+number of rewritten chunks: 0
+size of rewritten chunks: 0
+rewritten rate in size: 0.000
+read_time : 0.001s, 0.09MB/s
+chunk_time : 0.000s, 8.69MB/s
+hash_time : 0.000s, 7.11MB/s
+dedup_time : 0.000s, 5.59MB/s
+rewrite_time : 0.000s, 7.82MB/s
+filter_time : 0.000s, 1.53MB/s
+write_time : 1.216s, 0.00MB/s
+1
+2
+destor_server_process
+destor_server_process: receive a request!
+type: 0 
+Init recipe store successfully
+[debug] destor init_container_store, in read mode.
+Init container store successfully
+Init index module successfully
+append thread start
+==== backup begin ====
+Read 0 inherited sparse containers
+pkt size: 1
+write container buffer2
+push container buffer
+[debug] destor in append thread, get one chunk from buffer.
+write_container start
+write_container wait for finish
+write_container finish
+write_container end
+append thread end
+append thread start
+read phase stops successfully!
+chunk phase stops successfully!
+hash phase stops successfully!
+dedup phase stops successfully: 1 segments of 1 chunks on average
+rewrite phase stops successfully!
+Record 0 sparse containers, and 0 of them are inherited
+CMA: read 1 records.
+CMA: update 2 records.
+filter phase stops successfully!
+flushing hash table!
+flushing hash table successfully!
+[debug] destor in append thread, break.
+append phase stops successfully!
+==== backup end ====
+job id: 1
+backup path: /test.txt0
+number of files: 1
+number of chunks: 1 (85 bytes on average)
+number of unique chunks: 1
+total size(B): 85
+stored data size(B): 85
+deduplication ratio: 0.0000, 1.0000
+total time(s): 0.000
+throughput(MB/s): inf
+number of zero chunks: 0
+size of zero chunks: 0
+number of rewritten chunks: 0
+size of rewritten chunks: 0
+rewritten rate in size: 0.000
+read_time : 0.004s, 0.02MB/s
+chunk_time : 0.000s, 7.37MB/s
+hash_time : 0.000s, 7.37MB/s
+dedup_time : 0.000s, 4.27MB/s
+rewrite_time : 0.000s, 0.19MB/s
+filter_time : 0.000s, 0.17MB/s
+write_time : 0.370s, 0.00MB/s
+1
+2

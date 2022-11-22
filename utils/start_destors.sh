@@ -26,7 +26,7 @@ do
         fi
 	fi
 
-    ssh $user@$host "source /etc/profile; cd $path/destor; ./proxy"
+    ssh $user@$host "source /etc/profile; cd $path/destor; ./proxy" > log/destor_$host.log
 } &
 done
 

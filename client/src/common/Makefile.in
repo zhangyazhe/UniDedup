@@ -106,11 +106,11 @@ am__v_AR_1 =
 libcommon_a_AR = $(AR) $(ARFLAGS)
 libcommon_a_LIBADD =
 am_libcommon_a_OBJECTS = ae_chunking.$(OBJEXT) Chunking.$(OBJEXT) \
-	Config.$(OBJEXT) Echash.$(OBJEXT) FileRecipe.$(OBJEXT) \
-	Fingerprint.$(OBJEXT) Group.$(OBJEXT) Hashing.$(OBJEXT) \
-	rabin_chunking.$(OBJEXT) Reading.$(OBJEXT) Worker.$(OBJEXT) \
-	Assembling.$(OBJEXT) Receiving.$(OBJEXT) \
-	redis_cluster.$(OBJEXT)
+	Config.$(OBJEXT) FileRecipe.$(OBJEXT) Fingerprint.$(OBJEXT) \
+	Group.$(OBJEXT) Hashing.$(OBJEXT) rabin_chunking.$(OBJEXT) \
+	Reading.$(OBJEXT) Worker.$(OBJEXT) Assembling.$(OBJEXT) \
+	Receiving.$(OBJEXT) redis_cluster.$(OBJEXT) \
+	stateful_routing.$(OBJEXT)
 libcommon_a_OBJECTS = $(am_libcommon_a_OBJECTS)
 AM_V_P = $(am__v_P_@AM_V@)
 am__v_P_ = $(am__v_P_@AM_DEFAULT_V@)
@@ -200,7 +200,7 @@ INSTALL_SCRIPT = @INSTALL_SCRIPT@
 INSTALL_STRIP_PROGRAM = @INSTALL_STRIP_PROGRAM@
 LDFLAGS = @LDFLAGS@
 LIBOBJS = @LIBOBJS@
-LIBS = -lglib -lpthread -lcrypto -lglib -lhiredis -lmemcached
+LIBS = -lglib -lpthread -lcrypto -lglib -lhiredis
 LTLIBOBJS = @LTLIBOBJS@
 MAKEINFO = @MAKEINFO@
 MKDIR_P = @MKDIR_P@
@@ -263,7 +263,7 @@ top_build_prefix = @top_build_prefix@
 top_builddir = @top_builddir@
 top_srcdir = @top_srcdir@
 noinst_LIBRARIES = libcommon.a
-libcommon_a_SOURCES = ae_chunking.cc Chunking.cc Config.cc Echash.cc FileRecipe.cc Fingerprint.cc Group.cc Hashing.cc rabin_chunking.cc Reading.cc Worker.cc Assembling.cc Receiving.cc redis_cluster.cc
+libcommon_a_SOURCES = ae_chunking.cc Chunking.cc Config.cc FileRecipe.cc Fingerprint.cc Group.cc Hashing.cc rabin_chunking.cc Reading.cc Worker.cc Assembling.cc Receiving.cc redis_cluster.cc stateful_routing.cc
 all: all-am
 
 .SUFFIXES:
@@ -315,7 +315,6 @@ distclean-compile:
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/Assembling.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/Chunking.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/Config.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/Echash.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/FileRecipe.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/Fingerprint.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/Group.Po@am__quote@
@@ -326,6 +325,7 @@ distclean-compile:
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/ae_chunking.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/rabin_chunking.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/redis_cluster.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/stateful_routing.Po@am__quote@
 
 .cc.o:
 @am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXXCOMPILE) -MT $@ -MD -MP -MF $(DEPDIR)/$*.Tpo -c -o $@ $<

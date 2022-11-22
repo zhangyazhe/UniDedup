@@ -7,7 +7,7 @@ int main(int argc, char** argv)
 {
     Config* conf = new Config(config_path); // read the config
 
-    initEchash();
+    // initEchash();
     
     int worker_num = conf->worker_num;
 

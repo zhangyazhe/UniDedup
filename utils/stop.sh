@@ -10,7 +10,7 @@ remotePath=/$home/Fast23
 # stop openec
 
 echo ------------stop coordinator-------------
-redis-cli flushall
+#redis-cli flushall
 killall OECCoordinator
 
 for((i=1;i<=$node_num;i++));
@@ -28,7 +28,7 @@ do
 	fi
 
     echo ------------stop agent$i-------------
-    ssh $user@$host "killall OECAgent; redis-cli flushall"
+    ssh $user@$host "killall OECAgent"
 } 
 done
 # wait

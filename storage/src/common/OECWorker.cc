@@ -8,7 +8,7 @@ OECWorker::OECWorker(Config* conf) : _conf(conf) {
     _coorCtx = RedisUtil::createContext(_conf -> _coorIp);
   } catch (int e) {
     // TODO: error handling
-    cerr << "initializing redis context error" << endl;
+    cerr << "OECWorker: initializing redis context error" << endl;
   }
 
   _underfs = FSUtil::createFS(_conf->_fsType, _conf->_fsFactory[_conf->_fsType], _conf);
@@ -37,7 +37,7 @@ void OECWorker::doProcess() {
       cerr << "OECWorker::doProcess() get feed back empty queue " << endl;
       //freeReplyObject(rReply);
     } else if (rReply -> type == REDIS_REPLY_ERROR) {
-      cerr << "OECWorker::doProcess() get feed back ERROR happens " << endl;
+      cerr << "OECWorker::doProcess() get feed back ERROR happens: " << string(rReply->str) << endl;
     } else {
       struct timeval time1, time2;
       gettimeofday(&time1, NULL);

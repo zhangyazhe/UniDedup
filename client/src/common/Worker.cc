@@ -29,7 +29,7 @@ Worker::Worker(Config *conf) : _conf(conf)
   catch (int e)
   {
     // TODO: error handling
-    cerr << "initializing redis context error" << endl;
+    cerr << "Worker: initializing redis context error" << endl;
   }
   chunkMetaData.chunk_algorithm = _conf->chunking_algorithm;
   chunkMetaData.chunk_avg_size = _conf->destor_chunk_avg_size;
@@ -163,6 +163,7 @@ void Worker::clientWrite(AgentCommand *agCmd)
     }
 
     // wait for finished
+    cout << "Worker: waiting ..." << endl;
     string wait_finished_key = string(gps[i]->groupName) + "_data_finished";
     redisReply *destorrReply = (redisReply *)redisCommand(_destorCtx, "blpop %s 0", wait_finished_key.c_str());
     freeReplyObject(destorrReply);

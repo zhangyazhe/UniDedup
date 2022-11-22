@@ -42,11 +42,6 @@ struct group {
     unsigned char *data;
 };
 
-typedef struct SampleUnit {
-    fingerprint feature;
-    uint64_t size;
-} SampleUnit;
-
 struct {
     uint64_t id;
     pthread_mutex_t mutex;

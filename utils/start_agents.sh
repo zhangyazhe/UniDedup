@@ -28,7 +28,7 @@ do
         fi
 	fi
 
-    ssh $user@$host "source /etc/profile; cd $path/storage; redis-cli flushall; sudo service redis_6379 restart; ./OECAgent" > log/log$i.txt
+    ssh $user@$host "source /etc/profile; cd $path/storage; ./OECAgent" > log/log$i.txt
 } &
 done
 wait
