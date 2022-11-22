@@ -25,7 +25,7 @@ int getNodeForStatefulRouting(vector<SampleUnit> & sample_unit_list, int node_nu
         for (int j = 0; j < reply->elements; j++) {
             for (int k = 0; k < sample_unit_list.size(); k++) {
                 string fp_str;
-                for (int m = 0; m < 20; m++) {
+                for (int m = 0; m < FP_LENGTH; m++) {
                     fp_str = fp_str + to_string(sample_unit_list[k].feature[m]) + "_";
                 }
                 if (strcmp(fp_str.c_str(), reply->element[j]->str) == 0) {
@@ -36,7 +36,7 @@ int getNodeForStatefulRouting(vector<SampleUnit> & sample_unit_list, int node_nu
         }
     }
     // compute score for each node
-    vector<double> node_score(node_num, 0);
+    vector<double> node_score(node_num, 0.0);
     uint64_t group_size = 0;
     for (int i = 0; i < sample_unit_list.size(); i++) {
         group_size += sample_unit_list[i].size;
@@ -63,7 +63,7 @@ int getNodeForStatefulRouting(vector<SampleUnit> & sample_unit_list, int node_nu
     string cmd = "sadd " + to_string(selected_node) + " ";
     for (int i = 0; i < sample_unit_list.size(); i++) {
         // send command 'sadd selected_node feature_x_str feature_y_str ...'
-        for (int j = 0; j < 20; j++) {
+        for (int j = 0; j < FP_LENGTH; j++) {
             cmd += to_string(sample_unit_list[i].feature[j]);
             cmd += "_";
         }
@@ -72,11 +72,12 @@ int getNodeForStatefulRouting(vector<SampleUnit> & sample_unit_list, int node_nu
         }
     }
     redisReply* reply = (redisReply*)redisCommand(redis_ctx, cmd.c_str());
-    if (reply->type == REDIS_REPLY_ERROR || strcmp(reply->str, "OK") != 0) {
+    if (reply->type == REDIS_REPLY_ERROR) {
         cerr << "Command sadd failed, reply->type = " << reply->type << ", reply->str = " << string(reply->str) << endl;
         freeReplyObject(reply);
         return -1;
     }
     freeReplyObject(reply);
+    cout << "[Stateful Routing] Select destination node done." << endl;
     return selected_node;
 }

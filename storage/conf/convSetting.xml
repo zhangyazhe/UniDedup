@@ -1,8 +1,9 @@
 <setting>
 <attribute><name>controller.addr</name><value>192.168.18.130</value></attribute>
 <attribute><name>agents.addr</name>
-<value>/0/192.168.18.131</value>
-<value>/1/192.168.18.132</value>
+<value>/0/192.168.18.130</value>
+<value>/1/192.168.18.131</value>
+<value>/2/192.168.18.132</value>
 </attribute>
 <attribute><name>oec.controller.thread.num</name><value>4</value></attribute>
 <attribute><name>oec.agent.thread.num</name><value>4</value></attribute>
@@ -14,9 +15,9 @@
 <attribute><name>ec.concurrent.num</name><value>5</value></attribute>
 <!-- <attribute><name>location.type</name><value>true</value></attribute> -->
 <attribute><name>ec.policy</name>
-<value><ecid>rs_2_1</ecid><class>RSCONV</class><n>2</n><k>1</k><w>1</w><opt>-1</opt></value>
+<value><ecid>rs_3_2</ecid><class>RSCONV</class><n>3</n><k>2</k><w>1</w><opt>-1</opt></value>
 </attribute>
 <attribute><name>offline.pool</name>
-<value><poolid>rs_2_1_pool</poolid><ecid>rs_2_1</ecid><base>1048576</base></value>
+<value><poolid>rs_3_2_pool</poolid><ecid>rs_3_2</ecid><base>1048576</base></value>
 </attribute>
 </setting>

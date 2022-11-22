@@ -13,7 +13,7 @@ echo ------------stop coordinator-------------
 #redis-cli flushall
 killall OECCoordinator
 
-for((i=1;i<=$node_num;i++));
+for((i=0;i<=$node_num;i++));
 do
 { 
 	# if [[ $i -gt 3 && $i -lt 6 ]]
@@ -24,7 +24,12 @@ do
 	then
 		host=${node_name}0${i}
 	else
-		host=${node_name}$i
+		if [[ $i -eq 0 ]]
+        then
+            host=master
+        else
+		    host=${node_name}$i
+        fi
 	fi
 
     echo ------------stop agent$i-------------
@@ -35,7 +40,7 @@ done
 
 # stop destor
 
-for((i=1;i<=$node_num;i++));
+for((i=0;i<=$node_num;i++));
 do
 {
     i=$i

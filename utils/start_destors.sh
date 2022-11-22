@@ -7,7 +7,7 @@ node_name=node
 home=/home/$user
 path=/$home/Fast23
 
-for((i=1;i<=$node_num;i++));
+for((i=0;i<=$node_num;i++));
 do
 {
     # if [[ $i -gt 3 && $i -lt 6 ]]

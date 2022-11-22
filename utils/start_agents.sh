@@ -8,7 +8,7 @@ home=/home/$user
 path=/$home/Fast23
 
 # start openec
-for((i=1;i<=$node_num;i++))
+for((i=0;i<=$node_num;i++))
 do
 {
     # if [[ $i -gt 3 && $i -lt 6 ]]
@@ -27,8 +27,14 @@ do
 		    host=${node_name}$i
         fi
 	fi
-
-    ssh $user@$host "source /etc/profile; cd $path/storage; ./OECAgent" > log/log$i.txt
+    if [ $host = "master" ]
+    then
+        source /etc/profile
+        cd $path/storage
+        ./OECAgent
+    else
+        ssh $user@$host "source /etc/profile; cd $path/storage; ./OECAgent" > log/log$i.txt
+    fi
 } &
 done
 wait
