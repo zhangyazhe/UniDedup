@@ -4,6 +4,9 @@
 #include "Group.hh"
 #include "FileRecipe.hh"
 #include "../inc/include.hh"
+#include <unordered_map>
+#include "sw/redis++/redis++.h"
+#include "sw/redis++/errors.h"
 
 /**
  * @return 0 for success, -1 for fail

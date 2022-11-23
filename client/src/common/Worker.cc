@@ -94,7 +94,7 @@ void Worker::clientWrite(AgentCommand *agCmd)
   int filesize = agCmd->getFilesize();
 
   // file to groups
-  vector<struct group *> gps = split2Groups(filepath.c_str(), filename.c_str(), _conf->node_num, _conf->stateful_routing_enabled, _conf->_localIP);
+  vector<struct group *> gps = split2Groups(filepath.c_str(), filename.c_str(), _conf);
 
   // generate file recipe
   struct fileRecipe *fr = genFileRecipe(filename.c_str(), gps);

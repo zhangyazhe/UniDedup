@@ -77,7 +77,11 @@ static inline int my_cmp(fingerprint fp1, fingerprint fp2) {
     return 0;
 }
 
-std::vector<struct group*> split2Groups(const char* filepath, const char* filename, int nodeNum, int stateful_routing_enabled, unsigned int local_ip) {
+std::vector<struct group*> split2Groups(const char* filepath, const char* filename, Config* conf) {
+    int nodeNum = conf->node_num;
+    int stateful_routing_enabled = conf->stateful_routing_enabled;
+    unsigned int local_ip = conf->_localIP;
+    int cluster_enabled = conf->redis_cluster_enabled;
     std::vector<struct group*> result;
     int groupCnt = 0;
 
@@ -142,7 +146,7 @@ std::vector<struct group*> split2Groups(const char* filepath, const char* filena
                         sample_unit_list.push_back(su);
                     }
                 }
-                gp->nodeId = getNodeForStatefulRouting(sample_unit_list, nodeNum, local_ip);
+                gp->nodeId = getNodeForStatefulRouting(sample_unit_list, nodeNum, local_ip, cluster_enabled);
                 if (gp->nodeId == -1) {
                     cerr << "[Stateful Routing] getNodeForStatefulRouting failed" << endl;
                 }
@@ -193,7 +197,7 @@ std::vector<struct group*> split2Groups(const char* filepath, const char* filena
                     sample_unit_list.push_back(su);
                 }
             }
-            gp->nodeId = getNodeForStatefulRouting(sample_unit_list, nodeNum, local_ip);
+            gp->nodeId = getNodeForStatefulRouting(sample_unit_list, nodeNum, local_ip, cluster_enabled);
             if (gp->nodeId == -1) {
                 cerr << "[Stateful Routing] getNodeForStatefulRouting failed" << endl;
             }

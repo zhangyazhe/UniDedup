@@ -34,6 +34,8 @@
 // each sample_unit has 128 chunks, each group has 8 sample unit
 #define DEFAULT_SAMPLE_UNIT_SIZE 128
 
+class Config;
+
 struct group {
     char* groupName;
     fingerprint delegate;
@@ -61,6 +63,6 @@ char* baseName(const char* filepath);
 struct group* new_group(const char *fileName, int size, int id);
 void delete_group(struct group* gp);
 vector<struct group*> split2GroupsFixed(int fd);
-std::vector<struct group*> split2Groups(const char* filepath, const char* filename, int nodeNum, int stateful_routing_enabled, unsigned int local_ip);
+std::vector<struct group*> split2Groups(const char* filepath, const char* filename, Config* conf);
 
 #endif
