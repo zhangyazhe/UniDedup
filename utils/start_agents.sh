@@ -29,7 +29,6 @@ do
 	fi
     if [ $host = "master" ]
     then
-        source /etc/profile
         cd $path/storage
         ./OECAgent
     else

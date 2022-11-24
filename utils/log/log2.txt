@@ -3,11 +3,11 @@ hadoop3 constructor!
 OECWorker::doProcess
 FSUtil::HDFS3
 hadoop3 constructor!
-OECWorker::doProcess
-FSUtil::HDFS3
-hadoop3 constructor!
 FSUtil::HDFS3
 hadoop3 constructor!
 OECWorker::doProcess
+OECWorker::doProcess
+FSUtil::HDFS3
+hadoop3 constructor!
 OECAgent started ...
 OECWorker::doProcess

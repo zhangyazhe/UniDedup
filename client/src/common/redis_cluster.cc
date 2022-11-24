@@ -122,7 +122,7 @@ struct fileRecipe* getFileRecipeFromRedis(string filename, unsigned int local_ip
         fr.gm[i].
         nodeId = node_id;
     }
-    
+
     return &fr;
     // send hmget command
     // for (int i = 0; i < group_num; i++) {
