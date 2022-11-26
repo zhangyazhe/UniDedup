@@ -250,12 +250,6 @@ void write_container(struct container* c) {
 	if (destor.simulation_level < SIMULATION_APPEND) {
 
 		unsigned char * cur = &c->data[CONTAINER_SIZE - CONTAINER_META_SIZE];
-		// serial
-		// ser_declare; // uint8_t *ser_ptr;
-		// ser_begin(cur, CONTAINER_META_SIZE); // ser_ptr = ((uint8_t *)(cur));
-		// ser_int64(c->meta.id); // serial_int64(&ser_ptr, c->meta.id);
-		// ser_int32(c->meta.chunk_num); // serial_int32(&ser_ptr, c->meta.chunk_num);
-		// ser_int32(c->meta.data_size); // serial_int32(&ser_ptr, c->meta.data_size);
 		unsigned char * tmp_ptr = cur;
 		uint64_t tmp_meta_id = redis_util_htonll(c->meta.id);
 		memcpy(tmp_ptr, &(tmp_meta_id), sizeof(int64_t));
@@ -288,6 +282,8 @@ void write_container(struct container* c) {
 		fseek(fp, c->meta.id * CONTAINER_META_SIZE + 8, SEEK_SET);
 		fwrite(cur, CONTAINER_META_SIZE, 1, fp);
 		// ser_end(cur, CONTAINER_META_SIZE);
+
+		return;
 
 		pthread_mutex_lock(&mutex);
 

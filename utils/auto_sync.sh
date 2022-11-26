@@ -1,7 +1,7 @@
 #!/bin/bash
 
 user="$USER"
-node_num=2
+node_num=3
 node_name=node
 
 home=/home/$user
@@ -29,6 +29,7 @@ ip_lists=(
 	192.168.18.130
 	192.168.18.131
 	192.168.18.132
+	192.168.18.133
 )
 
 namenode_ip=${ip_lists[0]}

@@ -4,6 +4,7 @@
 <value>/0/192.168.18.130</value>
 <value>/1/192.168.18.131</value>
 <value>/2/192.168.18.132</value>
+<value>/3/192.168.18.133</value>
 </attribute>
 <attribute><name>oec.controller.thread.num</name><value>4</value></attribute>
 <attribute><name>oec.agent.thread.num</name><value>4</value></attribute>

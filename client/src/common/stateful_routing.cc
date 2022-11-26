@@ -1,7 +1,15 @@
 #include "stateful_routing.hh"
 #include "../util/RedisUtil.hh"
+#include <algorithm>
+
+vector<long long> count_byte_for_each_node;
 
 int getNodeForStatefulRouting(vector<SampleUnit> & sample_unit_list, int node_num, unsigned int local_ip, int cluster_enabled) {
+    if (count_byte_for_each_node.size() == 0) {
+        for (int i = 0; i < node_num; i++) {
+            count_byte_for_each_node.push_back(0);
+        }
+    }
     vector<int> node_match_num(node_num, 0);
     vector<uint64_t> node_match_size(node_num, 0);
     redisContext* redis_ctx;
@@ -77,14 +85,14 @@ int getNodeForStatefulRouting(vector<SampleUnit> & sample_unit_list, int node_nu
     }
     cout << endl;
     // select node
-    int selected_node = 0;
-    double max_score = 0.0;
-    for (int i = 0; i < node_score.size(); i++) {
-        if (node_score[i] > max_score) {
-            max_score = node_score[i];
-            selected_node = i;
-        }
-    }
+    int selected_node = getSelectedNode(node_score);
+    // double max_score = 0.0;
+    // for (int i = 0; i < node_score.size(); i++) {
+    //     if (node_score[i] > max_score) {
+    //         max_score = node_score[i];
+    //         selected_node = i;
+    //     }
+    // }
     cout << "[Stateful Routing] Routing destination is node" << selected_node << endl;
     // update redis
     if (cluster_enabled == 0) {
@@ -126,6 +134,34 @@ int getNodeForStatefulRouting(vector<SampleUnit> & sample_unit_list, int node_nu
             return -1;
         }
     }
-    cout << "[Stateful Routing] Select destination node done." << endl;
+    count_byte_for_each_node[selected_node] += group_size;
+    cout << "[Stateful Routing] Select destination node done. ";
+    for (int i = 0; i < count_byte_for_each_node.size(); i++) {
+        cout << count_byte_for_each_node[i] << " ";
+    }
+    cout << endl;
     return selected_node;
+}
+
+int getSelectedNode(vector<double> & node_score) {
+    double max_score = 0;
+    int select_node = 0;
+    for (int i = 0; i < node_score.size(); i++) {
+        if (node_score[i] > max_score) {
+            max_score = node_score[i];
+            select_node = i;
+        }
+    }
+    vector<int> equal_max_node;
+    for (int i = 0; i < node_score.size(); i++) {
+        if (node_score[i] == max_score) {
+            equal_max_node.push_back(i);
+        }
+    }
+    if (equal_max_node.size() == 0) {
+        return select_node;
+    } else {
+        srand((unsigned int)time(nullptr));
+        return equal_max_node[rand() % equal_max_node.size()];
+    }
 }

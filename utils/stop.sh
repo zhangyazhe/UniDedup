@@ -1,7 +1,7 @@
 #!/bin/bash
 
 user="$USER"
-node_num=2
+node_num=3
 node_name=node
 
 home=/home/$user
@@ -13,7 +13,7 @@ echo ------------stop coordinator-------------
 #redis-cli flushall
 killall OECCoordinator
 
-for((i=0;i<=$node_num;i++));
+for((i=1;i<=$node_num;i++));
 do
 { 
 	# if [[ $i -gt 3 && $i -lt 6 ]]
@@ -40,7 +40,7 @@ done
 
 # stop destor
 
-for((i=0;i<=$node_num;i++));
+for((i=1;i<=$node_num;i++));
 do
 {
     i=$i

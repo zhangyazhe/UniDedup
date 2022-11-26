@@ -5,6 +5,8 @@
 #include "sw/redis++/redis++.h"
 #include <unordered_set>
 #include "sw/redis++/errors.h"
+#include <ctime>
+#include <cstdlib>
 
 typedef struct SampleUnit {
     fingerprint feature;
@@ -18,5 +20,12 @@ typedef struct SampleUnit {
  * @return destination node index, -1 if error occurs
 */
 int getNodeForStatefulRouting(vector<SampleUnit> & sample_unit_list, int node_num, unsigned int local_ip, int cluster_enabled);
+
+/**
+ * @brief invoke by getNodeForStatefulRouting, select the destination node
+ * @param node_score score for each node
+ * @return destination node index
+*/
+int getSelectedNode(vector<double> & node_score);
 
 #endif
