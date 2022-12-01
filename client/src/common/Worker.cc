@@ -65,6 +65,7 @@ void Worker::doProcess()
       char *reqStr = rReply->element[1]->str;
       AgentCommand *agCmd = new AgentCommand(reqStr);
       int type = agCmd->getType();
+      printTime(getTimeStamp());
       cout << "Worker::doProcess() receive a request of type " << type << endl;
       // agCmd->dump();
       switch (type)
@@ -167,7 +168,7 @@ void Worker::clientWrite(AgentCommand *agCmd)
     string wait_finished_key = string(gps[i]->groupName) + "_data_finished";
     redisReply *destorrReply = (redisReply *)redisCommand(_destorCtx, "blpop %s 0", wait_finished_key.c_str());
     freeReplyObject(destorrReply);
-
+    printTime(getTimeStamp());
     cout << "Worker::group:" << string(gps[i]->groupName) << " finished!" << endl;
 
     redisFree(_destorCtx);

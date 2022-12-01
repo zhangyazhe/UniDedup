@@ -13,6 +13,7 @@
 #include "Assembling.hh"
 #include "Receiving.hh"
 #include "redis_cluster.hh"
+#include "../util/time.hh"
 
 class Worker
 {
