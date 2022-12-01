@@ -64,12 +64,19 @@ int main() {
     string filename_prefix = "/home/openec/Fast23/utils/log/destor_";
     vector<string> name{"node01.log", "node02.log", "node03.log"};
     long long readTotalSum = 0, readStoredSum = 0;
+    vector<long long> read_stored_node(name.size(), 0);
     for (int i = 0; i < name.size(); i++) {
         string filename = filename_prefix + name[i];
         readTotalSum += readTotal(filename);
-        readStoredSum += readStored(filename);
+        read_stored_node[i] = readStored(filename);
+        readStoredSum += read_stored_node[i];
     }
     cout << "dedup radio = " << ((double)readTotalSum - (double)readStoredSum) / (double)readTotalSum << " ";
     cout << (double)readTotalSum / (double)readStoredSum << endl;
+    cout << "stored data of each node: ";
+    for (auto num : read_stored_node) {
+        cout << num << " ";
+    }
+    cout << endl;
     return 0;
 }

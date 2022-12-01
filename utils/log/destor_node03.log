@@ -4,8 +4,8 @@ type: 0
 Init recipe store successfully
 Init container store successfully
 Init index module successfully
-append thread start
 ==== backup begin ====
+append thread start
 Read 0 inherited sparse containers
 pkt size: 5
 write container buffer1
@@ -34,13 +34,13 @@ flushing hash table successfully!
 append phase stops successfully!
 ==== backup end ====
 job id: 0
-backup path: /k8s15
+backup path: /hadoop10
 number of files: 1
-number of chunks: 1024 (4665 bytes on average)
-number of unique chunks: 1016
-total size(B): 4777952
-stored data size(B): 4759405
-deduplication ratio: 0.0039, 1.0039
+number of chunks: 1024 (4879 bytes on average)
+number of unique chunks: 1024
+total size(B): 4996940
+stored data size(B): 4996940
+deduplication ratio: 0.0000, 1.0000
 total time(s): 0.000
 throughput(MB/s): inf
 number of zero chunks: 0
@@ -48,13 +48,13 @@ size of zero chunks: 0
 number of rewritten chunks: 0
 size of rewritten chunks: 0
 rewritten rate in size: 0.000
-read_time : 0.067s, 67.79MB/s
-chunk_time : 0.013s, 349.62MB/s
-hash_time : 0.019s, 234.94MB/s
-dedup_time : 0.001s, 8847.79MB/s
-rewrite_time : 0.000s, 99056.74MB/s
-filter_time : 0.005s, 928.59MB/s
-write_time : 0.000s, 19811.35MB/s
+read_time : 0.153s, 31.05MB/s
+chunk_time : 0.016s, 297.38MB/s
+hash_time : 0.013s, 378.60MB/s
+dedup_time : 0.002s, 2907.54MB/s
+rewrite_time : 0.000s, 59568.17MB/s
+filter_time : 0.013s, 368.81MB/s
+write_time : 0.001s, 8160.02MB/s
 1
 2
 destor_server_process
@@ -68,7 +68,6 @@ Init index module successfully
 ==== backup begin ====
 Read 0 inherited sparse containers
 pkt size: 5
-[debug] container meta not found
 write container buffer1
 push container buffer
 [debug] destor in append thread, get one chunk from buffer.
@@ -86,7 +85,7 @@ chunk phase stops successfully!
 hash phase stops successfully!
 dedup phase stops successfully: 1 segments of 1024 chunks on average
 rewrite phase stops successfully!
-Record 1 sparse containers, and 0 of them are inherited
+Record 0 sparse containers, and 0 of them are inherited
 CMA: read 2 records.
 CMA: update 4 records.
 filter phase stops successfully!
@@ -96,13 +95,13 @@ flushing hash table successfully!
 append phase stops successfully!
 ==== backup end ====
 job id: 1
-backup path: /k8s16
+backup path: /hadoop11
 number of files: 1
-number of chunks: 1024 (4560 bytes on average)
-number of unique chunks: 1019
-total size(B): 4669990
-stored data size(B): 4663503
-deduplication ratio: 0.0014, 1.0014
+number of chunks: 1024 (4519 bytes on average)
+number of unique chunks: 1021
+total size(B): 4627506
+stored data size(B): 4618398
+deduplication ratio: 0.0020, 1.0020
 total time(s): 0.000
 throughput(MB/s): inf
 number of zero chunks: 0
@@ -110,13 +109,13 @@ size of zero chunks: 0
 number of rewritten chunks: 0
 size of rewritten chunks: 0
 rewritten rate in size: 0.000
-read_time : 0.044s, 101.19MB/s
-chunk_time : 0.018s, 247.15MB/s
-hash_time : 0.017s, 267.92MB/s
-dedup_time : 0.001s, 6768.46MB/s
-rewrite_time : 0.000s, 66472.38MB/s
-filter_time : 0.008s, 570.91MB/s
-write_time : 0.000s, 36208.53MB/s
+read_time : 0.079s, 56.02MB/s
+chunk_time : 0.022s, 204.73MB/s
+hash_time : 0.015s, 296.08MB/s
+dedup_time : 0.000s, 9155.88MB/s
+rewrite_time : 0.000s, 88262.67MB/s
+filter_time : 0.014s, 308.59MB/s
+write_time : 0.000s, 37399.44MB/s
 1
 2
 destor_server_process
@@ -128,9 +127,8 @@ Init container store successfully
 append thread start
 Init index module successfully
 ==== backup begin ====
-Read 1 inherited sparse containers
+Read 0 inherited sparse containers
 pkt size: 5
-[debug] container meta not found
 write container buffer1
 push container buffer
 [debug] destor in append thread, get one chunk from buffer.
@@ -148,7 +146,7 @@ chunk phase stops successfully!
 hash phase stops successfully!
 dedup phase stops successfully: 1 segments of 1024 chunks on average
 rewrite phase stops successfully!
-Record 1 sparse containers, and 1 of them are inherited
+Record 0 sparse containers, and 0 of them are inherited
 CMA: read 4 records.
 CMA: update 6 records.
 filter phase stops successfully!
@@ -158,13 +156,13 @@ flushing hash table successfully!
 append phase stops successfully!
 ==== backup end ====
 job id: 2
-backup path: /k8s17
+backup path: /hadoop12
 number of files: 1
-number of chunks: 1024 (4383 bytes on average)
-number of unique chunks: 1000
-total size(B): 4489144
-stored data size(B): 4467952
-deduplication ratio: 0.0047, 1.0047
+number of chunks: 1024 (4718 bytes on average)
+number of unique chunks: 1024
+total size(B): 4831720
+stored data size(B): 4831720
+deduplication ratio: 0.0000, 1.0000
 total time(s): 0.000
 throughput(MB/s): inf
 number of zero chunks: 0
@@ -172,13 +170,13 @@ size of zero chunks: 0
 number of rewritten chunks: 0
 size of rewritten chunks: 0
 rewritten rate in size: 0.000
-read_time : 0.028s, 152.24MB/s
-chunk_time : 0.021s, 207.22MB/s
-hash_time : 0.019s, 223.72MB/s
-dedup_time : 0.001s, 4436.46MB/s
-rewrite_time : 0.000s, 122319.47MB/s
-filter_time : 0.006s, 747.28MB/s
-write_time : 0.000s, 34249.45MB/s
+read_time : 0.084s, 55.15MB/s
+chunk_time : 0.017s, 273.51MB/s
+hash_time : 0.030s, 153.61MB/s
+dedup_time : 0.002s, 2679.00MB/s
+rewrite_time : 0.000s, 79446.33MB/s
+filter_time : 0.022s, 214.00MB/s
+write_time : 0.002s, 2733.03MB/s
 1
 2
 destor_server_process
@@ -190,9 +188,8 @@ Init container store successfully
 append thread start
 Init index module successfully
 ==== backup begin ====
-Read 1 inherited sparse containers
 pkt size: 5
-[debug] container meta not found
+Read 0 inherited sparse containers
 write container buffer1
 push container buffer
 [debug] destor in append thread, get one chunk from buffer.
@@ -210,7 +207,7 @@ chunk phase stops successfully!
 hash phase stops successfully!
 dedup phase stops successfully: 1 segments of 1024 chunks on average
 rewrite phase stops successfully!
-Record 1 sparse containers, and 1 of them are inherited
+Record 0 sparse containers, and 0 of them are inherited
 CMA: read 6 records.
 CMA: update 8 records.
 filter phase stops successfully!
@@ -220,13 +217,13 @@ flushing hash table successfully!
 append phase stops successfully!
 ==== backup end ====
 job id: 3
-backup path: /k8s18
+backup path: /hadoop13
 number of files: 1
-number of chunks: 1024 (4374 bytes on average)
-number of unique chunks: 1013
-total size(B): 4479822
-stored data size(B): 4470835
-deduplication ratio: 0.0020, 1.0020
+number of chunks: 1024 (4551 bytes on average)
+number of unique chunks: 1024
+total size(B): 4660722
+stored data size(B): 4660722
+deduplication ratio: 0.0000, 1.0000
 total time(s): 0.000
 throughput(MB/s): inf
 number of zero chunks: 0
@@ -234,13 +231,13 @@ size of zero chunks: 0
 number of rewritten chunks: 0
 size of rewritten chunks: 0
 rewritten rate in size: 0.000
-read_time : 0.026s, 161.73MB/s
-chunk_time : 0.025s, 171.58MB/s
-hash_time : 0.012s, 361.91MB/s
-dedup_time : 0.001s, 6552.59MB/s
-rewrite_time : 0.000s, 115467.33MB/s
-filter_time : 0.005s, 808.99MB/s
-write_time : 0.000s, 25131.12MB/s
+read_time : 0.041s, 109.74MB/s
+chunk_time : 0.017s, 266.67MB/s
+hash_time : 0.027s, 164.17MB/s
+dedup_time : 0.001s, 8402.29MB/s
+rewrite_time : 0.000s, 116968.71MB/s
+filter_time : 0.006s, 694.61MB/s
+write_time : 0.002s, 2669.56MB/s
 1
 2
 destor_server_process
@@ -249,11 +246,11 @@ type: 0
 Init recipe store successfully
 [debug] destor init_container_store, in read mode.
 Init container store successfully
-append thread start
 Init index module successfully
+append thread start
 ==== backup begin ====
+Read 0 inherited sparse containers
 pkt size: 5
-Read 1 inherited sparse containers
 write container buffer1
 push container buffer
 [debug] destor in append thread, get one chunk from buffer.
@@ -281,13 +278,13 @@ flushing hash table successfully!
 append phase stops successfully!
 ==== backup end ====
 job id: 4
-backup path: /k8s19
+backup path: /hadoop14
 number of files: 1
-number of chunks: 1024 (4581 bytes on average)
-number of unique chunks: 1021
-total size(B): 4691829
-stored data size(B): 4689055
-deduplication ratio: 0.0006, 1.0006
+number of chunks: 1024 (4745 bytes on average)
+number of unique chunks: 984
+total size(B): 4859683
+stored data size(B): 4697253
+deduplication ratio: 0.0334, 1.0346
 total time(s): 0.000
 throughput(MB/s): inf
 number of zero chunks: 0
@@ -295,13 +292,13 @@ size of zero chunks: 0
 number of rewritten chunks: 0
 size of rewritten chunks: 0
 rewritten rate in size: 0.000
-read_time : 0.022s, 205.73MB/s
-chunk_time : 0.015s, 294.37MB/s
-hash_time : 0.014s, 323.30MB/s
-dedup_time : 0.001s, 6419.62MB/s
-rewrite_time : 0.000s, 114730.17MB/s
-filter_time : 0.006s, 792.64MB/s
-write_time : 0.000s, 27791.78MB/s
+read_time : 0.074s, 62.95MB/s
+chunk_time : 0.016s, 289.97MB/s
+hash_time : 0.025s, 182.51MB/s
+dedup_time : 0.001s, 6454.81MB/s
+rewrite_time : 0.000s, 96553.23MB/s
+filter_time : 0.015s, 306.48MB/s
+write_time : 0.001s, 3484.63MB/s
 1
 2
 destor_server_process
@@ -315,6 +312,301 @@ Init index module successfully
 ==== backup begin ====
 Read 0 inherited sparse containers
 pkt size: 5
+[debug] container meta not found
+[debug] container meta not found
+write container buffer2
+push container buffer
+[debug] destor in append thread, get one chunk from buffer.
+write_container start
+append thread end
+append thread start
+read phase stops successfully!
+chunk phase stops successfully!
+hash phase stops successfully!
+dedup phase stops successfully: 1 segments of 1024 chunks on average
+rewrite phase stops successfully!
+Record 1 sparse containers, and 0 of them are inherited
+CMA: read 10 records.
+CMA: update 11 records.
+filter phase stops successfully!
+flushing hash table!
+flushing hash table successfully!
+[debug] destor in append thread, break.
+append phase stops successfully!
+==== backup end ====
+job id: 5
+backup path: /hadoop20
+number of files: 1
+number of chunks: 1024 (4804 bytes on average)
+number of unique chunks: 288
+total size(B): 4919818
+stored data size(B): 1566972
+deduplication ratio: 0.6815, 3.1397
+total time(s): 0.000
+throughput(MB/s): inf
+number of zero chunks: 0
+size of zero chunks: 0
+number of rewritten chunks: 0
+size of rewritten chunks: 0
+rewritten rate in size: 0.000
+read_time : 0.074s, 63.79MB/s
+chunk_time : 0.013s, 374.96MB/s
+hash_time : 0.030s, 153.93MB/s
+dedup_time : 0.001s, 3130.02MB/s
+rewrite_time : 0.000s, 114436.68MB/s
+filter_time : 0.002s, 1970.56MB/s
+write_time : 0.000s, 104264.53MB/s
+1
+2
+destor_server_process
+destor_server_process: receive a request!
+type: 0 
+Init recipe store successfully
+[debug] destor init_container_store, in read mode.
+Init container store successfully
+append thread start
+Init index module successfully
+==== backup begin ====
+Read 1 inherited sparse containers
+pkt size: 5
+[debug] container meta not found
+[debug] container meta not found
+[debug] container meta not found
+write container buffer2
+push container buffer
+[debug] destor in append thread, get one chunk from buffer.
+write_container start
+append thread end
+append thread start
+read phase stops successfully!
+chunk phase stops successfully!
+hash phase stops successfully!
+dedup phase stops successfully: 1 segments of 1024 chunks on average
+rewrite phase stops successfully!
+Record 2 sparse containers, and 1 of them are inherited
+CMA: read 11 records.
+CMA: update 12 records.
+filter phase stops successfully!
+flushing hash table!
+flushing hash table successfully!
+[debug] destor in append thread, break.
+append phase stops successfully!
+==== backup end ====
+job id: 6
+backup path: /hadoop21
+number of files: 1
+number of chunks: 1024 (4570 bytes on average)
+number of unique chunks: 593
+total size(B): 4680328
+stored data size(B): 3251222
+deduplication ratio: 0.3053, 1.4396
+total time(s): 0.000
+throughput(MB/s): inf
+number of zero chunks: 0
+size of zero chunks: 0
+number of rewritten chunks: 0
+size of rewritten chunks: 0
+rewritten rate in size: 0.000
+read_time : 0.053s, 84.46MB/s
+chunk_time : 0.019s, 240.21MB/s
+hash_time : 0.025s, 177.06MB/s
+dedup_time : 0.002s, 2278.46MB/s
+rewrite_time : 0.000s, 106274.01MB/s
+filter_time : 0.004s, 1234.72MB/s
+write_time : 0.000s, 81154.70MB/s
+1
+2
+destor_server_process
+destor_server_process: receive a request!
+type: 0 
+Init recipe store successfully
+[debug] destor init_container_store, in read mode.
+Init container store successfully
+append thread start
+Init index module successfully
+==== backup begin ====
+Read 2 inherited sparse containers
+pkt size: 5
+[debug] container meta not found
+[debug] container meta not found
+[debug] container meta not found
+write container buffer1
+push container buffer
+[debug] destor in append thread, get one chunk from buffer.
+write_container start
+append thread end
+append thread start
+write container buffer2
+push container buffer
+[debug] destor in append thread, get one chunk from buffer.
+write_container start
+append thread end
+append thread start
+read phase stops successfully!
+chunk phase stops successfully!
+hash phase stops successfully!
+dedup phase stops successfully: 1 segments of 1024 chunks on average
+rewrite phase stops successfully!
+Record 3 sparse containers, and 1 of them are inherited
+CMA: read 12 records.
+CMA: update 14 records.
+filter phase stops successfully!
+flushing hash table!
+flushing hash table successfully!
+[debug] destor in append thread, break.
+append phase stops successfully!
+==== backup end ====
+job id: 7
+backup path: /hadoop22
+number of files: 1
+number of chunks: 1024 (4772 bytes on average)
+number of unique chunks: 819
+total size(B): 4886557
+stored data size(B): 4324717
+deduplication ratio: 0.1150, 1.1299
+total time(s): 0.000
+throughput(MB/s): inf
+number of zero chunks: 0
+size of zero chunks: 0
+number of rewritten chunks: 0
+size of rewritten chunks: 0
+rewritten rate in size: 0.000
+read_time : 0.098s, 47.74MB/s
+chunk_time : 0.020s, 228.43MB/s
+hash_time : 0.021s, 222.68MB/s
+dedup_time : 0.001s, 5594.46MB/s
+rewrite_time : 0.000s, 70608.85MB/s
+filter_time : 0.012s, 379.06MB/s
+write_time : 0.000s, 28590.09MB/s
+1
+2
+destor_server_process
+destor_server_process: receive a request!
+type: 0 
+Init recipe store successfully
+[debug] destor init_container_store, in read mode.
+Init container store successfully
+append thread start
+Init index module successfully
+==== backup begin ====
+Read 3 inherited sparse containers
+pkt size: 5
+[debug] container meta not found
+[debug] container meta not found
+write container buffer2
+push container buffer
+[debug] destor in append thread, get one chunk from buffer.
+write_container start
+append thread end
+append thread start
+read phase stops successfully!
+chunk phase stops successfully!
+hash phase stops successfully!
+dedup phase stops successfully: 1 segments of 1024 chunks on average
+rewrite phase stops successfully!
+Record 1 sparse containers, and 1 of them are inherited
+CMA: read 14 records.
+CMA: update 15 records.
+filter phase stops successfully!
+flushing hash table!
+flushing hash table successfully!
+[debug] destor in append thread, break.
+append phase stops successfully!
+==== backup end ====
+job id: 8
+backup path: /hadoop23
+number of files: 1
+number of chunks: 1024 (4390 bytes on average)
+number of unique chunks: 569
+total size(B): 4495422
+stored data size(B): 2889443
+deduplication ratio: 0.3572, 1.5558
+total time(s): 0.000
+throughput(MB/s): inf
+number of zero chunks: 0
+size of zero chunks: 0
+number of rewritten chunks: 0
+size of rewritten chunks: 0
+rewritten rate in size: 0.000
+read_time : 0.080s, 53.40MB/s
+chunk_time : 0.025s, 173.29MB/s
+hash_time : 0.014s, 296.75MB/s
+dedup_time : 0.001s, 5670.86MB/s
+rewrite_time : 0.000s, 115869.42MB/s
+filter_time : 0.003s, 1307.46MB/s
+write_time : 0.000s, 38278.29MB/s
+1
+2
+destor_server_process
+destor_server_process: receive a request!
+type: 0 
+Init recipe store successfully
+[debug] destor init_container_store, in read mode.
+Init container store successfully
+append thread start
+Init index module successfully
+==== backup begin ====
+Read 1 inherited sparse containers
+pkt size: 5
+[debug] container meta not found
+[debug] container meta not found
+[debug] container meta not found
+write container buffer2
+push container buffer
+[debug] destor in append thread, get one chunk from buffer.
+write_container start
+append thread end
+append thread start
+read phase stops successfully!
+chunk phase stops successfully!
+hash phase stops successfully!
+dedup phase stops successfully: 1 segments of 1024 chunks on average
+rewrite phase stops successfully!
+Record 1 sparse containers, and 0 of them are inherited
+CMA: read 15 records.
+CMA: update 16 records.
+filter phase stops successfully!
+flushing hash table!
+flushing hash table successfully!
+[debug] destor in append thread, break.
+append phase stops successfully!
+==== backup end ====
+job id: 9
+backup path: /hadoop24
+number of files: 1
+number of chunks: 1024 (4607 bytes on average)
+number of unique chunks: 571
+total size(B): 4717801
+stored data size(B): 2996435
+deduplication ratio: 0.3649, 1.5745
+total time(s): 0.000
+throughput(MB/s): inf
+number of zero chunks: 0
+size of zero chunks: 0
+number of rewritten chunks: 0
+size of rewritten chunks: 0
+rewritten rate in size: 0.000
+read_time : 0.034s, 133.91MB/s
+chunk_time : 0.015s, 302.31MB/s
+hash_time : 0.014s, 316.22MB/s
+dedup_time : 0.001s, 3687.91MB/s
+rewrite_time : 0.000s, 145136.96MB/s
+filter_time : 0.003s, 1459.37MB/s
+write_time : 0.000s, 77573.20MB/s
+1
+2
+destor_server_process
+destor_server_process: receive a request!
+type: 0 
+Init recipe store successfully
+[debug] destor init_container_store, in read mode.
+Init container store successfully
+append thread start
+Init index module successfully
+==== backup begin ====
+Read 1 inherited sparse containers
+pkt size: 5
+[debug] container meta not found
 [debug] container meta not found
 write container buffer1
 push container buffer
@@ -334,356 +626,7 @@ hash phase stops successfully!
 dedup phase stops successfully: 1 segments of 1024 chunks on average
 rewrite phase stops successfully!
 Record 1 sparse containers, and 0 of them are inherited
-CMA: read 10 records.
-CMA: update 12 records.
-filter phase stops successfully!
-flushing hash table!
-flushing hash table successfully!
-[debug] destor in append thread, break.
-append phase stops successfully!
-==== backup end ====
-job id: 5
-backup path: /k8s110
-number of files: 1
-number of chunks: 1024 (4767 bytes on average)
-number of unique chunks: 1001
-total size(B): 4882374
-stored data size(B): 4849098
-deduplication ratio: 0.0068, 1.0069
-total time(s): 0.000
-throughput(MB/s): inf
-number of zero chunks: 0
-size of zero chunks: 0
-number of rewritten chunks: 0
-size of rewritten chunks: 0
-rewritten rate in size: 0.000
-read_time : 0.024s, 196.22MB/s
-chunk_time : 0.018s, 264.72MB/s
-hash_time : 0.012s, 390.46MB/s
-dedup_time : 0.001s, 4885.83MB/s
-rewrite_time : 0.000s, 113565.72MB/s
-filter_time : 0.008s, 606.12MB/s
-write_time : 0.000s, 33258.53MB/s
-1
-2
-destor_server_process
-destor_server_process: receive a request!
-type: 0 
-Init recipe store successfully
-[debug] destor init_container_store, in read mode.
-Init container store successfully
-append thread start
-Init index module successfully
-==== backup begin ====
-Read 1 inherited sparse containers
-pkt size: 5
-[debug] container meta not found
-[debug] container meta not found
-write container buffer2
-push container buffer
-[debug] destor in append thread, get one chunk from buffer.
-write_container start
-append thread end
-append thread start
-read phase stops successfully!
-chunk phase stops successfully!
-hash phase stops successfully!
-dedup phase stops successfully: 1 segments of 1024 chunks on average
-rewrite phase stops successfully!
-Record 1 sparse containers, and 1 of them are inherited
-CMA: read 12 records.
-CMA: update 13 records.
-filter phase stops successfully!
-flushing hash table!
-flushing hash table successfully!
-[debug] destor in append thread, break.
-append phase stops successfully!
-==== backup end ====
-job id: 6
-backup path: /k8s25
-number of files: 1
-number of chunks: 1024 (4650 bytes on average)
-number of unique chunks: 557
-total size(B): 4762039
-stored data size(B): 3108100
-deduplication ratio: 0.3473, 1.5321
-total time(s): 0.000
-throughput(MB/s): inf
-number of zero chunks: 0
-size of zero chunks: 0
-number of rewritten chunks: 0
-size of rewritten chunks: 0
-rewritten rate in size: 0.000
-read_time : 0.063s, 71.71MB/s
-chunk_time : 0.014s, 316.17MB/s
-hash_time : 0.014s, 322.61MB/s
-dedup_time : 0.001s, 4841.61MB/s
-rewrite_time : 0.000s, 126150.95MB/s
-filter_time : 0.004s, 1081.81MB/s
-write_time : 0.000s, 74449.74MB/s
-1
-2
-destor_server_process
-destor_server_process: receive a request!
-type: 0 
-Init recipe store successfully
-[debug] destor init_container_store, in read mode.
-Init container store successfully
-Init index module successfully
-==== backup begin ====
-Read 1 inherited sparse containers
-pkt size: 5
-append thread start
-[debug] container meta not found
-[debug] container meta not found
-[debug] container meta not found
-[debug] container meta not found
-write container buffer2
-push container buffer
-[debug] destor in append thread, get one chunk from buffer.
-write_container start
-append thread end
-append thread start
-read phase stops successfully!
-chunk phase stops successfully!
-hash phase stops successfully!
-dedup phase stops successfully: 1 segments of 1024 chunks on average
-rewrite phase stops successfully!
-Record 3 sparse containers, and 1 of them are inherited
-CMA: read 13 records.
-CMA: update 14 records.
-filter phase stops successfully!
-flushing hash table!
-flushing hash table successfully!
-[debug] destor in append thread, break.
-append phase stops successfully!
-==== backup end ====
-job id: 7
-backup path: /k8s26
-number of files: 1
-number of chunks: 1024 (4529 bytes on average)
-number of unique chunks: 700
-total size(B): 4638703
-stored data size(B): 3756256
-deduplication ratio: 0.1902, 1.2349
-total time(s): 0.000
-throughput(MB/s): inf
-number of zero chunks: 0
-size of zero chunks: 0
-number of rewritten chunks: 0
-size of rewritten chunks: 0
-rewritten rate in size: 0.000
-read_time : 0.034s, 130.34MB/s
-chunk_time : 0.016s, 270.19MB/s
-hash_time : 0.036s, 123.12MB/s
-dedup_time : 0.001s, 4380.01MB/s
-rewrite_time : 0.000s, 142703.61MB/s
-filter_time : 0.004s, 1076.88MB/s
-write_time : 0.000s, 90281.88MB/s
-1
-2
-destor_server_process
-destor_server_process: receive a request!
-type: 0 
-Init recipe store successfully
-[debug] destor init_container_store, in read mode.
-Init container store successfully
-append thread start
-Init index module successfully
-==== backup begin ====
-pkt size: 5
-Read 3 inherited sparse containers
-[debug] container meta not found
-[debug] container meta not found
-[debug] container meta not found
-[debug] container meta not found
-write container buffer2
-push container buffer
-[debug] destor in append thread, get one chunk from buffer.
-write_container start
-append thread end
-append thread start
-read phase stops successfully!
-chunk phase stops successfully!
-hash phase stops successfully!
-dedup phase stops successfully: 1 segments of 1024 chunks on average
-rewrite phase stops successfully!
-Record 3 sparse containers, and 2 of them are inherited
-CMA: read 14 records.
-CMA: update 15 records.
-filter phase stops successfully!
-flushing hash table!
-flushing hash table successfully!
-[debug] destor in append thread, break.
-append phase stops successfully!
-==== backup end ====
-job id: 8
-backup path: /k8s27
-number of files: 1
-number of chunks: 1024 (4447 bytes on average)
-number of unique chunks: 658
-total size(B): 4554329
-stored data size(B): 3370761
-deduplication ratio: 0.2599, 1.3511
-total time(s): 0.000
-throughput(MB/s): inf
-number of zero chunks: 0
-size of zero chunks: 0
-number of rewritten chunks: 0
-size of rewritten chunks: 0
-rewritten rate in size: 0.000
-read_time : 0.050s, 86.61MB/s
-chunk_time : 0.028s, 154.47MB/s
-hash_time : 0.012s, 375.24MB/s
-dedup_time : 0.001s, 3763.73MB/s
-rewrite_time : 0.000s, 58693.87MB/s
-filter_time : 0.005s, 905.62MB/s
-write_time : 0.000s, 73616.04MB/s
-1
-2
-destor_server_process
-destor_server_process: receive a request!
-type: 0 
-Init recipe store successfully
-[debug] destor init_container_store, in read mode.
-Init container store successfully
-Init index module successfully
-==== backup begin ====
-Read 3 inherited sparse containers
-append thread start
-pkt size: 5
-[debug] container meta not found
-[debug] container meta not found
-[debug] container meta not found
-[debug] container meta not found
-write container buffer2
-push container buffer
-[debug] destor in append thread, get one chunk from buffer.
-write_container start
-append thread end
-append thread start
-read phase stops successfully!
-chunk phase stops successfully!
-hash phase stops successfully!
-dedup phase stops successfully: 1 segments of 1024 chunks on average
-rewrite phase stops successfully!
-Record 3 sparse containers, and 2 of them are inherited
-CMA: read 15 records.
-CMA: update 16 records.
-filter phase stops successfully!
-flushing hash table!
-flushing hash table successfully!
-[debug] destor in append thread, break.
-append phase stops successfully!
-==== backup end ====
-job id: 9
-backup path: /k8s28
-number of files: 1
-number of chunks: 1024 (4406 bytes on average)
-number of unique chunks: 626
-total size(B): 4511848
-stored data size(B): 3293345
-deduplication ratio: 0.2701, 1.3700
-total time(s): 0.000
-throughput(MB/s): inf
-number of zero chunks: 0
-size of zero chunks: 0
-number of rewritten chunks: 0
-size of rewritten chunks: 0
-rewritten rate in size: 0.000
-read_time : 0.021s, 209.33MB/s
-chunk_time : 0.014s, 313.69MB/s
-hash_time : 0.011s, 391.34MB/s
-dedup_time : 0.001s, 3521.14MB/s
-rewrite_time : 0.000s, 79682.10MB/s
-filter_time : 0.004s, 980.81MB/s
-write_time : 0.000s, 30955.64MB/s
-1
-2
-destor_server_process
-destor_server_process: receive a request!
-type: 0 
-Init recipe store successfully
-[debug] destor init_container_store, in read mode.
-Init container store successfully
-append thread start
-Init index module successfully
-==== backup begin ====
-Read 3 inherited sparse containers
-pkt size: 5
-[debug] container meta not found
-[debug] container meta not found
-[debug] container meta not found
-write container buffer2
-push container buffer
-[debug] destor in append thread, get one chunk from buffer.
-write_container start
-append thread end
-append thread start
-read phase stops successfully!
-chunk phase stops successfully!
-hash phase stops successfully!
-dedup phase stops successfully: 1 segments of 1024 chunks on average
-rewrite phase stops successfully!
-Record 1 sparse containers, and 0 of them are inherited
 CMA: read 16 records.
-CMA: update 17 records.
-filter phase stops successfully!
-flushing hash table!
-flushing hash table successfully!
-[debug] destor in append thread, break.
-append phase stops successfully!
-==== backup end ====
-job id: 10
-backup path: /k8s29
-number of files: 1
-number of chunks: 1024 (4619 bytes on average)
-number of unique chunks: 296
-total size(B): 4730113
-stored data size(B): 1758960
-deduplication ratio: 0.6281, 2.6892
-total time(s): 0.000
-throughput(MB/s): inf
-number of zero chunks: 0
-size of zero chunks: 0
-number of rewritten chunks: 0
-size of rewritten chunks: 0
-rewritten rate in size: 0.000
-read_time : 0.038s, 119.53MB/s
-chunk_time : 0.015s, 295.18MB/s
-hash_time : 0.014s, 319.95MB/s
-dedup_time : 0.001s, 5659.96MB/s
-rewrite_time : 0.000s, 95978.45MB/s
-filter_time : 0.002s, 2280.58MB/s
-write_time : 0.000s, 110024.08MB/s
-1
-2
-destor_server_process
-destor_server_process: receive a request!
-type: 0 
-Init recipe store successfully
-[debug] destor init_container_store, in read mode.
-Init container store successfully
-append thread start
-Init index module successfully
-==== backup begin ====
-Read 1 inherited sparse containers
-pkt size: 5
-[debug] container meta not found
-[debug] container meta not found
-write container buffer2
-push container buffer
-[debug] destor in append thread, get one chunk from buffer.
-write_container start
-append thread end
-append thread start
-read phase stops successfully!
-chunk phase stops successfully!
-hash phase stops successfully!
-dedup phase stops successfully: 1 segments of 1024 chunks on average
-rewrite phase stops successfully!
-Record 1 sparse containers, and 1 of them are inherited
-CMA: read 17 records.
 CMA: update 18 records.
 filter phase stops successfully!
 flushing hash table!
@@ -691,14 +634,14 @@ flushing hash table successfully!
 [debug] destor in append thread, break.
 append phase stops successfully!
 ==== backup end ====
-job id: 11
-backup path: /k8s210
+job id: 10
+backup path: /hadoop25
 number of files: 1
-number of chunks: 1024 (5056 bytes on average)
-number of unique chunks: 632
-total size(B): 5177386
-stored data size(B): 3597704
-deduplication ratio: 0.3051, 1.4391
+number of chunks: 1024 (4638 bytes on average)
+number of unique chunks: 951
+total size(B): 4750280
+stored data size(B): 4410065
+deduplication ratio: 0.0716, 1.0771
 total time(s): 0.000
 throughput(MB/s): inf
 number of zero chunks: 0
@@ -706,13 +649,13 @@ size of zero chunks: 0
 number of rewritten chunks: 0
 size of rewritten chunks: 0
 rewritten rate in size: 0.000
-read_time : 0.060s, 82.37MB/s
-chunk_time : 0.019s, 257.32MB/s
-hash_time : 0.015s, 338.40MB/s
-dedup_time : 0.001s, 5085.01MB/s
-rewrite_time : 0.000s, 120427.81MB/s
-filter_time : 0.004s, 1337.00MB/s
-write_time : 0.000s, 42935.13MB/s
+read_time : 0.065s, 69.71MB/s
+chunk_time : 0.025s, 180.49MB/s
+hash_time : 0.025s, 181.52MB/s
+dedup_time : 0.001s, 5793.12MB/s
+rewrite_time : 0.000s, 49782.64MB/s
+filter_time : 0.022s, 208.44MB/s
+write_time : 0.001s, 4525.69MB/s
 1
 2
 destor_server_process
@@ -721,11 +664,14 @@ type: 0
 Init recipe store successfully
 [debug] destor init_container_store, in read mode.
 Init container store successfully
-Init index module successfully
 append thread start
+Init index module successfully
 ==== backup begin ====
 Read 1 inherited sparse containers
-pkt size: 2
+pkt size: 5
+[debug] container meta not found
+[debug] container meta not found
+[debug] container meta not found
 write container buffer2
 push container buffer
 [debug] destor in append thread, get one chunk from buffer.
@@ -735,9 +681,9 @@ append thread start
 read phase stops successfully!
 chunk phase stops successfully!
 hash phase stops successfully!
-dedup phase stops successfully: 1 segments of 317 chunks on average
+dedup phase stops successfully: 1 segments of 1024 chunks on average
 rewrite phase stops successfully!
-Record 0 sparse containers, and 0 of them are inherited
+Record 2 sparse containers, and 0 of them are inherited
 CMA: read 18 records.
 CMA: update 19 records.
 filter phase stops successfully!
@@ -746,14 +692,14 @@ flushing hash table successfully!
 [debug] destor in append thread, break.
 append phase stops successfully!
 ==== backup end ====
-job id: 12
-backup path: /k8s211
+job id: 11
+backup path: /hadoop30
 number of files: 1
-number of chunks: 317 (6241 bytes on average)
-number of unique chunks: 317
-total size(B): 1978673
-stored data size(B): 1978673
-deduplication ratio: 0.0000, 1.0000
+number of chunks: 1024 (4821 bytes on average)
+number of unique chunks: 257
+total size(B): 4936977
+stored data size(B): 1418642
+deduplication ratio: 0.7126, 3.4801
 total time(s): 0.000
 throughput(MB/s): inf
 number of zero chunks: 0
@@ -761,13 +707,13 @@ size of zero chunks: 0
 number of rewritten chunks: 0
 size of rewritten chunks: 0
 rewritten rate in size: 0.000
-read_time : 0.006s, 307.08MB/s
-chunk_time : 0.005s, 365.77MB/s
-hash_time : 0.005s, 375.97MB/s
-dedup_time : 0.000s, 11793.81MB/s
-rewrite_time : 0.000s, 314501.60MB/s
-filter_time : 0.002s, 984.87MB/s
-write_time : 0.000s, 39312.70MB/s
+read_time : 0.164s, 28.73MB/s
+chunk_time : 0.027s, 176.54MB/s
+hash_time : 0.021s, 228.75MB/s
+dedup_time : 0.002s, 3002.72MB/s
+rewrite_time : 0.000s, 117706.70MB/s
+filter_time : 0.002s, 2288.90MB/s
+write_time : 0.000s, 82601.20MB/s
 1
 2
 destor_server_process
@@ -779,8 +725,193 @@ Init container store successfully
 append thread start
 Init index module successfully
 ==== backup begin ====
-Read 0 inherited sparse containers
 pkt size: 5
+Read 2 inherited sparse containers
+[debug] container meta not found
+[debug] container meta not found
+[debug] container meta not found
+write container buffer2
+push container buffer
+[debug] destor in append thread, get one chunk from buffer.
+write_container start
+append thread end
+append thread start
+read phase stops successfully!
+chunk phase stops successfully!
+hash phase stops successfully!
+dedup phase stops successfully: 1 segments of 1024 chunks on average
+rewrite phase stops successfully!
+Record 2 sparse containers, and 1 of them are inherited
+CMA: read 19 records.
+CMA: update 20 records.
+filter phase stops successfully!
+flushing hash table!
+flushing hash table successfully!
+[debug] destor in append thread, break.
+append phase stops successfully!
+==== backup end ====
+job id: 12
+backup path: /hadoop31
+number of files: 1
+number of chunks: 1024 (4491 bytes on average)
+number of unique chunks: 597
+total size(B): 4599029
+stored data size(B): 3175617
+deduplication ratio: 0.3095, 1.4482
+total time(s): 0.000
+throughput(MB/s): inf
+number of zero chunks: 0
+size of zero chunks: 0
+number of rewritten chunks: 0
+size of rewritten chunks: 0
+rewritten rate in size: 0.000
+read_time : 0.065s, 67.14MB/s
+chunk_time : 0.015s, 291.39MB/s
+hash_time : 0.017s, 253.04MB/s
+dedup_time : 0.002s, 2643.75MB/s
+rewrite_time : 0.000s, 99681.27MB/s
+filter_time : 0.004s, 1065.07MB/s
+write_time : 0.000s, 53487.51MB/s
+1
+2
+destor_server_process
+destor_server_process: receive a request!
+type: 0 
+Init recipe store successfully
+[debug] destor init_container_store, in read mode.
+Init container store successfully
+Init index module successfully
+append thread start
+==== backup begin ====
+Read 2 inherited sparse containers
+pkt size: 5
+[debug] container meta not found
+[debug] container meta not found
+[debug] container meta not found
+[debug] container meta not found
+[debug] container meta not found
+[debug] container meta not found
+write container buffer1
+push container buffer
+[debug] destor in append thread, get one chunk from buffer.
+write_container start
+append thread end
+append thread start
+write container buffer2
+push container buffer
+[debug] destor in append thread, get one chunk from buffer.
+write_container start
+append thread end
+append thread start
+read phase stops successfully!
+chunk phase stops successfully!
+hash phase stops successfully!
+dedup phase stops successfully: 1 segments of 1024 chunks on average
+rewrite phase stops successfully!
+Record 5 sparse containers, and 1 of them are inherited
+CMA: read 20 records.
+CMA: update 22 records.
+filter phase stops successfully!
+flushing hash table!
+flushing hash table successfully!
+[debug] destor in append thread, break.
+append phase stops successfully!
+==== backup end ====
+job id: 13
+backup path: /hadoop32
+number of files: 1
+number of chunks: 1024 (4834 bytes on average)
+number of unique chunks: 795
+total size(B): 4950536
+stored data size(B): 4330521
+deduplication ratio: 0.1252, 1.1432
+total time(s): 0.000
+throughput(MB/s): inf
+number of zero chunks: 0
+size of zero chunks: 0
+number of rewritten chunks: 0
+size of rewritten chunks: 0
+rewritten rate in size: 0.000
+read_time : 0.064s, 73.31MB/s
+chunk_time : 0.036s, 132.61MB/s
+hash_time : 0.016s, 295.94MB/s
+dedup_time : 0.002s, 2900.00MB/s
+rewrite_time : 0.001s, 8742.96MB/s
+filter_time : 0.035s, 133.02MB/s
+write_time : 0.000s, 24462.17MB/s
+1
+2
+destor_server_process
+destor_server_process: receive a request!
+type: 0 
+Init recipe store successfully
+[debug] destor init_container_store, in read mode.
+Init container store successfully
+append thread start
+Init index module successfully
+==== backup begin ====
+pkt size: 5
+Read 5 inherited sparse containers
+[debug] container meta not found
+[debug] container meta not found
+[debug] container meta not found
+write container buffer2
+push container buffer
+[debug] destor in append thread, get one chunk from buffer.
+write_container start
+append thread end
+append thread start
+read phase stops successfully!
+chunk phase stops successfully!
+hash phase stops successfully!
+dedup phase stops successfully: 1 segments of 1024 chunks on average
+rewrite phase stops successfully!
+Record 2 sparse containers, and 1 of them are inherited
+CMA: read 22 records.
+CMA: update 23 records.
+filter phase stops successfully!
+flushing hash table!
+flushing hash table successfully!
+[debug] destor in append thread, break.
+append phase stops successfully!
+==== backup end ====
+job id: 14
+backup path: /hadoop33
+number of files: 1
+number of chunks: 1024 (4405 bytes on average)
+number of unique chunks: 634
+total size(B): 4511329
+stored data size(B): 3206691
+deduplication ratio: 0.2892, 1.4068
+total time(s): 0.000
+throughput(MB/s): inf
+number of zero chunks: 0
+size of zero chunks: 0
+number of rewritten chunks: 0
+size of rewritten chunks: 0
+rewritten rate in size: 0.000
+read_time : 0.043s, 100.29MB/s
+chunk_time : 0.020s, 214.55MB/s
+hash_time : 0.029s, 146.60MB/s
+dedup_time : 0.002s, 2174.00MB/s
+rewrite_time : 0.000s, 100054.39MB/s
+filter_time : 0.003s, 1278.94MB/s
+write_time : 0.000s, 76827.48MB/s
+1
+2
+destor_server_process
+destor_server_process: receive a request!
+type: 0 
+Init recipe store successfully
+[debug] destor init_container_store, in read mode.
+Init container store successfully
+append thread start
+Init index module successfully
+==== backup begin ====
+Read 2 inherited sparse containers
+pkt size: 5
+[debug] container meta not found
+[debug] container meta not found
 [debug] container meta not found
 [debug] container meta not found
 write container buffer2
@@ -795,22 +926,22 @@ hash phase stops successfully!
 dedup phase stops successfully: 1 segments of 1024 chunks on average
 rewrite phase stops successfully!
 Record 1 sparse containers, and 0 of them are inherited
-CMA: read 19 records.
-CMA: update 20 records.
+CMA: read 23 records.
+CMA: update 24 records.
 filter phase stops successfully!
 flushing hash table!
 flushing hash table successfully!
 [debug] destor in append thread, break.
 append phase stops successfully!
 ==== backup end ====
-job id: 13
-backup path: /k8s35
+job id: 15
+backup path: /hadoop34
 number of files: 1
-number of chunks: 1024 (4658 bytes on average)
-number of unique chunks: 550
-total size(B): 4770504
-stored data size(B): 3043998
-deduplication ratio: 0.3619, 1.5672
+number of chunks: 1024 (4655 bytes on average)
+number of unique chunks: 489
+total size(B): 4767599
+stored data size(B): 2630366
+deduplication ratio: 0.4483, 1.8125
 total time(s): 0.000
 throughput(MB/s): inf
 number of zero chunks: 0
@@ -818,13 +949,13 @@ size of zero chunks: 0
 number of rewritten chunks: 0
 size of rewritten chunks: 0
 rewritten rate in size: 0.000
-read_time : 0.062s, 73.11MB/s
-chunk_time : 0.031s, 146.39MB/s
-hash_time : 0.019s, 235.85MB/s
-dedup_time : 0.001s, 5117.56MB/s
-rewrite_time : 0.000s, 126375.20MB/s
-filter_time : 0.003s, 1489.69MB/s
-write_time : 0.000s, 89206.02MB/s
+read_time : 0.081s, 56.33MB/s
+chunk_time : 0.016s, 278.05MB/s
+hash_time : 0.016s, 284.94MB/s
+dedup_time : 0.001s, 4501.72MB/s
+rewrite_time : 0.000s, 108255.64MB/s
+filter_time : 0.004s, 1087.74MB/s
+write_time : 0.000s, 45017.20MB/s
 1
 2
 destor_server_process
@@ -854,22 +985,22 @@ hash phase stops successfully!
 dedup phase stops successfully: 1 segments of 1024 chunks on average
 rewrite phase stops successfully!
 Record 3 sparse containers, and 0 of them are inherited
-CMA: read 20 records.
-CMA: update 21 records.
+CMA: read 24 records.
+CMA: update 25 records.
 filter phase stops successfully!
 flushing hash table!
 flushing hash table successfully!
 [debug] destor in append thread, break.
 append phase stops successfully!
 ==== backup end ====
-job id: 14
-backup path: /k8s36
+job id: 16
+backup path: /hadoop40
 number of files: 1
-number of chunks: 1024 (4565 bytes on average)
-number of unique chunks: 695
-total size(B): 4675339
-stored data size(B): 3774522
-deduplication ratio: 0.1927, 1.2387
+number of chunks: 1024 (4755 bytes on average)
+number of unique chunks: 277
+total size(B): 4869435
+stored data size(B): 1439893
+deduplication ratio: 0.7043, 3.3818
 total time(s): 0.000
 throughput(MB/s): inf
 number of zero chunks: 0
@@ -877,13 +1008,372 @@ size of zero chunks: 0
 number of rewritten chunks: 0
 size of rewritten chunks: 0
 rewritten rate in size: 0.000
-read_time : 0.042s, 104.94MB/s
-chunk_time : 0.013s, 330.92MB/s
-hash_time : 0.024s, 186.61MB/s
-dedup_time : 0.006s, 739.80MB/s
-rewrite_time : 0.000s, 108750.02MB/s
-filter_time : 0.004s, 1145.33MB/s
-write_time : 0.000s, 78223.70MB/s
+read_time : 0.066s, 70.49MB/s
+chunk_time : 0.031s, 150.96MB/s
+hash_time : 0.031s, 148.42MB/s
+dedup_time : 0.001s, 4648.50MB/s
+rewrite_time : 0.000s, 136583.97MB/s
+filter_time : 0.002s, 2518.36MB/s
+write_time : 0.000s, 91055.98MB/s
+1
+2
+destor_server_process
+destor_server_process: receive a request!
+type: 0 
+Init recipe store successfully
+[debug] destor init_container_store, in read mode.
+Init container store successfully
+append thread start
+Init index module successfully
+==== backup begin ====
+pkt size: 5
+Read 3 inherited sparse containers
+[debug] container meta not found
+[debug] container meta not found
+[debug] container meta not found
+[debug] container meta not found
+[debug] container meta not found
+write container buffer2
+push container buffer
+[debug] destor in append thread, get one chunk from buffer.
+write_container start
+append thread end
+append thread start
+read phase stops successfully!
+chunk phase stops successfully!
+hash phase stops successfully!
+dedup phase stops successfully: 1 segments of 1024 chunks on average
+rewrite phase stops successfully!
+Record 4 sparse containers, and 1 of them are inherited
+CMA: read 25 records.
+CMA: update 26 records.
+filter phase stops successfully!
+flushing hash table!
+flushing hash table successfully!
+[debug] destor in append thread, break.
+append phase stops successfully!
+==== backup end ====
+job id: 17
+backup path: /hadoop41
+number of files: 1
+number of chunks: 1024 (4625 bytes on average)
+number of unique chunks: 784
+total size(B): 4736279
+stored data size(B): 3998715
+deduplication ratio: 0.1557, 1.1845
+total time(s): 0.000
+throughput(MB/s): inf
+number of zero chunks: 0
+size of zero chunks: 0
+number of rewritten chunks: 0
+size of rewritten chunks: 0
+rewritten rate in size: 0.000
+read_time : 0.060s, 74.70MB/s
+chunk_time : 0.016s, 286.73MB/s
+hash_time : 0.015s, 291.92MB/s
+dedup_time : 0.001s, 4241.19MB/s
+rewrite_time : 0.000s, 92180.97MB/s
+filter_time : 0.005s, 978.52MB/s
+write_time : 0.000s, 88566.03MB/s
+1
+2
+destor_server_process
+destor_server_process: receive a request!
+type: 0 
+Init recipe store successfully
+[debug] destor init_container_store, in read mode.
+Init container store successfully
+append thread start
+Init index module successfully
+==== backup begin ====
+Read 4 inherited sparse containers
+pkt size: 5
+[debug] container meta not found
+[debug] container meta not found
+[debug] container meta not found
+[debug] container meta not found
+[debug] container meta not found
+[debug] container meta not found
+[debug] container meta not found
+write container buffer2
+push container buffer
+[debug] destor in append thread, get one chunk from buffer.
+write_container start
+append thread end
+append thread start
+read phase stops successfully!
+chunk phase stops successfully!
+hash phase stops successfully!
+dedup phase stops successfully: 1 segments of 1024 chunks on average
+rewrite phase stops successfully!
+Record 6 sparse containers, and 0 of them are inherited
+CMA: read 26 records.
+CMA: update 27 records.
+filter phase stops successfully!
+flushing hash table!
+flushing hash table successfully!
+[debug] destor in append thread, break.
+append phase stops successfully!
+==== backup end ====
+job id: 18
+backup path: /hadoop43
+number of files: 1
+number of chunks: 1024 (4508 bytes on average)
+number of unique chunks: 717
+total size(B): 4617093
+stored data size(B): 3637026
+deduplication ratio: 0.2123, 1.2695
+total time(s): 0.000
+throughput(MB/s): inf
+number of zero chunks: 0
+size of zero chunks: 0
+number of rewritten chunks: 0
+size of rewritten chunks: 0
+rewritten rate in size: 0.000
+read_time : 0.096s, 46.08MB/s
+chunk_time : 0.013s, 334.44MB/s
+hash_time : 0.013s, 349.85MB/s
+dedup_time : 0.001s, 3053.54MB/s
+rewrite_time : 0.000s, 88064.06MB/s
+filter_time : 0.005s, 887.92MB/s
+write_time : 0.000s, 55736.75MB/s
+1
+2
+destor_server_process
+destor_server_process: receive a request!
+type: 0 
+Init recipe store successfully
+[debug] destor init_container_store, in read mode.
+Init container store successfully
+append thread start
+Init index module successfully
+==== backup begin ====
+Read 6 inherited sparse containers
+pkt size: 5
+[debug] container meta not found
+[debug] container meta not found
+[debug] container meta not found
+[debug] container meta not found
+[debug] container meta not found
+[debug] container meta not found
+[debug] container meta not found
+write container buffer2
+push container buffer
+[debug] destor in append thread, get one chunk from buffer.
+write_container start
+append thread end
+append thread start
+read phase stops successfully!
+chunk phase stops successfully!
+hash phase stops successfully!
+dedup phase stops successfully: 1 segments of 1024 chunks on average
+rewrite phase stops successfully!
+Record 4 sparse containers, and 1 of them are inherited
+CMA: read 27 records.
+CMA: update 28 records.
+filter phase stops successfully!
+flushing hash table!
+flushing hash table successfully!
+[debug] destor in append thread, break.
+append phase stops successfully!
+==== backup end ====
+job id: 19
+backup path: /hadoop44
+number of files: 1
+number of chunks: 1024 (4671 bytes on average)
+number of unique chunks: 537
+total size(B): 4783697
+stored data size(B): 2709866
+deduplication ratio: 0.4335, 1.7653
+total time(s): 0.000
+throughput(MB/s): inf
+number of zero chunks: 0
+size of zero chunks: 0
+number of rewritten chunks: 0
+size of rewritten chunks: 0
+rewritten rate in size: 0.000
+read_time : 0.083s, 55.29MB/s
+chunk_time : 0.018s, 258.17MB/s
+hash_time : 0.014s, 329.06MB/s
+dedup_time : 0.002s, 2275.36MB/s
+rewrite_time : 0.000s, 123299.70MB/s
+filter_time : 0.003s, 1559.69MB/s
+write_time : 0.000s, 64254.77MB/s
+1
+2
+destor_server_process
+destor_server_process: receive a request!
+type: 0 
+Init recipe store successfully
+[debug] destor init_container_store, in read mode.
+Init container store successfully
+append thread start
+Init index module successfully
+==== backup begin ====
+Read 4 inherited sparse containers
+pkt size: 3
+write container buffer2
+push container buffer
+[debug] destor in append thread, get one chunk from buffer.
+write_container start
+append thread end
+append thread start
+read phase stops successfully!
+chunk phase stops successfully!
+hash phase stops successfully!
+dedup phase stops successfully: 1 segments of 459 chunks on average
+rewrite phase stops successfully!
+Record 0 sparse containers, and 0 of them are inherited
+CMA: read 28 records.
+CMA: update 29 records.
+filter phase stops successfully!
+flushing hash table!
+flushing hash table successfully!
+[debug] destor in append thread, break.
+append phase stops successfully!
+==== backup end ====
+job id: 20
+backup path: /hadoop49
+number of files: 1
+number of chunks: 459 (6720 bytes on average)
+number of unique chunks: 459
+total size(B): 3084926
+stored data size(B): 3084926
+deduplication ratio: 0.0000, 1.0000
+total time(s): 0.000
+throughput(MB/s): inf
+number of zero chunks: 0
+size of zero chunks: 0
+number of rewritten chunks: 0
+size of rewritten chunks: 0
+rewritten rate in size: 0.000
+read_time : 0.050s, 59.43MB/s
+chunk_time : 0.020s, 145.88MB/s
+hash_time : 0.013s, 231.58MB/s
+dedup_time : 0.000s, 12735.99MB/s
+rewrite_time : 0.000s, 173059.69MB/s
+filter_time : 0.003s, 1002.05MB/s
+write_time : 0.000s, 52535.98MB/s
+1
+2
+destor_server_process
+destor_server_process: receive a request!
+type: 0 
+Init recipe store successfully
+[debug] destor init_container_store, in read mode.
+Init container store successfully
+append thread start
+Init index module successfully
+==== backup begin ====
+Read 0 inherited sparse containers
+pkt size: 5
+[debug] container meta not found
+[debug] container meta not found
+[debug] container meta not found
+[debug] container meta not found
+[debug] container meta not found
+write container buffer2
+push container buffer
+[debug] destor in append thread, get one chunk from buffer.
+write_container start
+append thread end
+append thread start
+read phase stops successfully!
+chunk phase stops successfully!
+hash phase stops successfully!
+dedup phase stops successfully: 1 segments of 1024 chunks on average
+rewrite phase stops successfully!
+Record 3 sparse containers, and 0 of them are inherited
+CMA: read 29 records.
+CMA: update 30 records.
+filter phase stops successfully!
+flushing hash table!
+flushing hash table successfully!
+[debug] destor in append thread, break.
+append phase stops successfully!
+==== backup end ====
+job id: 21
+backup path: /hadoop50
+number of files: 1
+number of chunks: 1024 (4818 bytes on average)
+number of unique chunks: 260
+total size(B): 4934077
+stored data size(B): 1379754
+deduplication ratio: 0.7204, 3.5761
+total time(s): 0.000
+throughput(MB/s): inf
+number of zero chunks: 0
+size of zero chunks: 0
+number of rewritten chunks: 0
+size of rewritten chunks: 0
+rewritten rate in size: 0.000
+read_time : 0.062s, 75.78MB/s
+chunk_time : 0.025s, 184.76MB/s
+hash_time : 0.014s, 348.38MB/s
+dedup_time : 0.001s, 4489.98MB/s
+rewrite_time : 0.000s, 156850.08MB/s
+filter_time : 0.002s, 2617.08MB/s
+write_time : 0.000s, 61110.42MB/s
+1
+2
+destor_server_process
+destor_server_process: receive a request!
+type: 0 
+Init recipe store successfully
+[debug] destor init_container_store, in read mode.
+Init container store successfully
+append thread start
+Init index module successfully
+==== backup begin ====
+pkt size: 5
+Read 3 inherited sparse containers
+[debug] container meta not found
+[debug] container meta not found
+[debug] container meta not found
+[debug] container meta not found
+[debug] container meta not found
+write container buffer2
+push container buffer
+[debug] destor in append thread, get one chunk from buffer.
+write_container start
+append thread end
+append thread start
+read phase stops successfully!
+chunk phase stops successfully!
+hash phase stops successfully!
+dedup phase stops successfully: 1 segments of 1024 chunks on average
+rewrite phase stops successfully!
+Record 3 sparse containers, and 1 of them are inherited
+CMA: read 30 records.
+CMA: update 31 records.
+filter phase stops successfully!
+flushing hash table!
+flushing hash table successfully!
+[debug] destor in append thread, break.
+append phase stops successfully!
+==== backup end ====
+job id: 22
+backup path: /hadoop51
+number of files: 1
+number of chunks: 1024 (4575 bytes on average)
+number of unique chunks: 607
+total size(B): 4685003
+stored data size(B): 3213604
+deduplication ratio: 0.3141, 1.4579
+total time(s): 0.000
+throughput(MB/s): inf
+number of zero chunks: 0
+size of zero chunks: 0
+number of rewritten chunks: 0
+size of rewritten chunks: 0
+rewritten rate in size: 0.000
+read_time : 0.065s, 68.42MB/s
+chunk_time : 0.022s, 205.04MB/s
+hash_time : 0.026s, 173.18MB/s
+dedup_time : 0.001s, 3312.06MB/s
+rewrite_time : 0.000s, 148932.23MB/s
+filter_time : 0.004s, 1172.39MB/s
+write_time : 0.000s, 51355.94MB/s
 1
 2
 destor_server_process
@@ -902,6 +1392,10 @@ pkt size: 5
 [debug] container meta not found
 [debug] container meta not found
 [debug] container meta not found
+[debug] container meta not found
+[debug] container meta not found
+[debug] container meta not found
+[debug] container meta not found
 write container buffer2
 push container buffer
 [debug] destor in append thread, get one chunk from buffer.
@@ -913,23 +1407,23 @@ chunk phase stops successfully!
 hash phase stops successfully!
 dedup phase stops successfully: 1 segments of 1024 chunks on average
 rewrite phase stops successfully!
-Record 4 sparse containers, and 2 of them are inherited
-CMA: read 21 records.
-CMA: update 22 records.
+Record 8 sparse containers, and 0 of them are inherited
+CMA: read 31 records.
+CMA: update 32 records.
 filter phase stops successfully!
 flushing hash table!
 flushing hash table successfully!
 [debug] destor in append thread, break.
 append phase stops successfully!
 ==== backup end ====
-job id: 15
-backup path: /k8s37
+job id: 23
+backup path: /hadoop53
 number of files: 1
-number of chunks: 1024 (4483 bytes on average)
-number of unique chunks: 665
-total size(B): 4591139
-stored data size(B): 3410187
-deduplication ratio: 0.2572, 1.3463
+number of chunks: 1024 (4649 bytes on average)
+number of unique chunks: 761
+total size(B): 4761022
+stored data size(B): 3965019
+deduplication ratio: 0.1672, 1.2008
 total time(s): 0.000
 throughput(MB/s): inf
 number of zero chunks: 0
@@ -937,13 +1431,450 @@ size of zero chunks: 0
 number of rewritten chunks: 0
 size of rewritten chunks: 0
 rewritten rate in size: 0.000
-read_time : 0.084s, 51.98MB/s
-chunk_time : 0.017s, 252.93MB/s
-hash_time : 0.014s, 307.41MB/s
-dedup_time : 0.001s, 3076.92MB/s
-rewrite_time : 0.000s, 21783.34MB/s
-filter_time : 0.004s, 1202.54MB/s
-write_time : 0.000s, 74211.04MB/s
+read_time : 0.095s, 47.86MB/s
+chunk_time : 0.027s, 169.19MB/s
+hash_time : 0.019s, 234.66MB/s
+dedup_time : 0.002s, 2443.74MB/s
+rewrite_time : 0.000s, 85669.14MB/s
+filter_time : 0.005s, 1005.64MB/s
+write_time : 0.000s, 35197.40MB/s
+1
+2
+destor_server_process
+destor_server_process: receive a request!
+type: 0 
+Init recipe store successfully
+[debug] destor init_container_store, in read mode.
+Init container store successfully
+append thread start
+Init index module successfully
+==== backup begin ====
+Read 8 inherited sparse containers
+pkt size: 5
+[debug] container meta not found
+[debug] container meta not found
+[debug] container meta not found
+[debug] container meta not found
+[debug] container meta not found
+[debug] container meta not found
+[debug] container meta not found
+[debug] container meta not found
+[debug] container meta not found
+write container buffer2
+push container buffer
+[debug] destor in append thread, get one chunk from buffer.
+write_container start
+append thread end
+append thread start
+read phase stops successfully!
+chunk phase stops successfully!
+hash phase stops successfully!
+dedup phase stops successfully: 1 segments of 1024 chunks on average
+rewrite phase stops successfully!
+Record 5 sparse containers, and 3 of them are inherited
+CMA: read 32 records.
+CMA: update 33 records.
+filter phase stops successfully!
+flushing hash table!
+flushing hash table successfully!
+[debug] destor in append thread, break.
+append phase stops successfully!
+==== backup end ====
+job id: 24
+backup path: /hadoop54
+number of files: 1
+number of chunks: 1024 (4589 bytes on average)
+number of unique chunks: 516
+total size(B): 4699341
+stored data size(B): 2525651
+deduplication ratio: 0.4626, 1.8606
+total time(s): 0.000
+throughput(MB/s): inf
+number of zero chunks: 0
+size of zero chunks: 0
+number of rewritten chunks: 0
+size of rewritten chunks: 0
+rewritten rate in size: 0.000
+read_time : 0.083s, 54.05MB/s
+chunk_time : 0.027s, 165.37MB/s
+hash_time : 0.016s, 287.56MB/s
+dedup_time : 0.003s, 1792.66MB/s
+rewrite_time : 0.000s, 106705.73MB/s
+filter_time : 0.003s, 1612.68MB/s
+write_time : 0.000s, 75960.01MB/s
+1
+2
+destor_server_process
+destor_server_process: receive a request!
+type: 0 
+Init recipe store successfully
+[debug] destor init_container_store, in read mode.
+Init container store successfully
+append thread start
+Init index module successfully
+==== backup begin ====
+pkt size: 5
+Read 5 inherited sparse containers
+[debug] container meta not found
+[debug] container meta not found
+[debug] container meta not found
+[debug] container meta not found
+[debug] container meta not found
+write container buffer2
+push container buffer
+[debug] destor in append thread, get one chunk from buffer.
+write_container start
+append thread end
+append thread start
+read phase stops successfully!
+chunk phase stops successfully!
+hash phase stops successfully!
+dedup phase stops successfully: 1 segments of 1024 chunks on average
+rewrite phase stops successfully!
+Record 2 sparse containers, and 1 of them are inherited
+CMA: read 33 records.
+CMA: update 34 records.
+filter phase stops successfully!
+flushing hash table!
+flushing hash table successfully!
+[debug] destor in append thread, break.
+append phase stops successfully!
+==== backup end ====
+job id: 25
+backup path: /hadoop55
+number of files: 1
+number of chunks: 1024 (4615 bytes on average)
+number of unique chunks: 594
+total size(B): 4726228
+stored data size(B): 3070340
+deduplication ratio: 0.3504, 1.5393
+total time(s): 0.000
+throughput(MB/s): inf
+number of zero chunks: 0
+size of zero chunks: 0
+number of rewritten chunks: 0
+size of rewritten chunks: 0
+rewritten rate in size: 0.000
+read_time : 0.048s, 94.13MB/s
+chunk_time : 0.027s, 166.66MB/s
+hash_time : 0.022s, 204.90MB/s
+dedup_time : 0.001s, 4300.84MB/s
+rewrite_time : 0.000s, 104820.52MB/s
+filter_time : 0.003s, 1465.31MB/s
+write_time : 0.000s, 93901.71MB/s
+1
+2
+destor_server_process
+destor_server_process: receive a request!
+type: 0 
+Init recipe store successfully
+[debug] destor init_container_store, in read mode.
+Init container store successfully
+append thread start
+Init index module successfully
+==== backup begin ====
+Read 2 inherited sparse containers
+pkt size: 5
+[debug] container meta not found
+[debug] container meta not found
+[debug] container meta not found
+[debug] container meta not found
+[debug] container meta not found
+[debug] container meta not found
+write container buffer2
+push container buffer
+[debug] destor in append thread, get one chunk from buffer.
+write_container start
+append thread end
+append thread start
+read phase stops successfully!
+chunk phase stops successfully!
+hash phase stops successfully!
+dedup phase stops successfully: 1 segments of 1024 chunks on average
+rewrite phase stops successfully!
+Record 3 sparse containers, and 0 of them are inherited
+CMA: read 34 records.
+CMA: update 35 records.
+filter phase stops successfully!
+flushing hash table!
+flushing hash table successfully!
+[debug] destor in append thread, break.
+append phase stops successfully!
+==== backup end ====
+job id: 26
+backup path: /hadoop60
+number of files: 1
+number of chunks: 1024 (4815 bytes on average)
+number of unique chunks: 203
+total size(B): 4930976
+stored data size(B): 1096079
+deduplication ratio: 0.7777, 4.4987
+total time(s): 0.000
+throughput(MB/s): inf
+number of zero chunks: 0
+size of zero chunks: 0
+number of rewritten chunks: 0
+size of rewritten chunks: 0
+rewritten rate in size: 0.000
+read_time : 0.078s, 60.02MB/s
+chunk_time : 0.025s, 191.44MB/s
+hash_time : 0.016s, 288.57MB/s
+dedup_time : 0.001s, 4255.70MB/s
+rewrite_time : 0.000s, 111965.36MB/s
+filter_time : 0.002s, 2173.08MB/s
+write_time : 0.000s, 18086.71MB/s
+1
+2
+destor_server_process
+destor_server_process: receive a request!
+type: 0 
+Init recipe store successfully
+[debug] destor init_container_store, in read mode.
+Init container store successfully
+append thread start
+Init index module successfully
+==== backup begin ====
+Read 3 inherited sparse containers
+pkt size: 5
+[debug] container meta not found
+[debug] container meta not found
+[debug] container meta not found
+[debug] container meta not found
+[debug] container meta not found
+[debug] container meta not found
+write container buffer2
+push container buffer
+[debug] destor in append thread, get one chunk from buffer.
+write_container start
+append thread end
+append thread start
+read phase stops successfully!
+chunk phase stops successfully!
+hash phase stops successfully!
+dedup phase stops successfully: 1 segments of 1024 chunks on average
+rewrite phase stops successfully!
+Record 4 sparse containers, and 1 of them are inherited
+CMA: read 35 records.
+CMA: update 36 records.
+filter phase stops successfully!
+flushing hash table!
+flushing hash table successfully!
+[debug] destor in append thread, break.
+append phase stops successfully!
+==== backup end ====
+job id: 27
+backup path: /hadoop61
+number of files: 1
+number of chunks: 1024 (4626 bytes on average)
+number of unique chunks: 570
+total size(B): 4737349
+stored data size(B): 3164019
+deduplication ratio: 0.3321, 1.4973
+total time(s): 0.000
+throughput(MB/s): inf
+number of zero chunks: 0
+size of zero chunks: 0
+number of rewritten chunks: 0
+size of rewritten chunks: 0
+rewritten rate in size: 0.000
+read_time : 0.106s, 42.76MB/s
+chunk_time : 0.013s, 339.84MB/s
+hash_time : 0.024s, 184.44MB/s
+dedup_time : 0.002s, 2956.73MB/s
+rewrite_time : 0.000s, 27216.19MB/s
+filter_time : 0.003s, 1475.95MB/s
+write_time : 0.000s, 74063.74MB/s
+1
+2
+destor_server_process
+destor_server_process: receive a request!
+type: 0 
+Init recipe store successfully
+[debug] destor init_container_store, in read mode.
+Init container store successfully
+append thread start
+Init index module successfully
+==== backup begin ====
+Read 4 inherited sparse containers
+pkt size: 5
+[debug] container meta not found
+[debug] container meta not found
+[debug] container meta not found
+[debug] container meta not found
+[debug] container meta not found
+[debug] container meta not found
+[debug] container meta not found
+[debug] container meta not found
+[debug] container meta not found
+[debug] container meta not found
+write container buffer2
+push container buffer
+[debug] destor in append thread, get one chunk from buffer.
+write_container start
+append thread end
+append thread start
+read phase stops successfully!
+chunk phase stops successfully!
+hash phase stops successfully!
+dedup phase stops successfully: 1 segments of 1024 chunks on average
+rewrite phase stops successfully!
+Record 7 sparse containers, and 0 of them are inherited
+CMA: read 36 records.
+CMA: update 37 records.
+filter phase stops successfully!
+flushing hash table!
+flushing hash table successfully!
+[debug] destor in append thread, break.
+append phase stops successfully!
+==== backup end ====
+job id: 28
+backup path: /hadoop63
+number of files: 1
+number of chunks: 1024 (4672 bytes on average)
+number of unique chunks: 586
+total size(B): 4784751
+stored data size(B): 3353707
+deduplication ratio: 0.2991, 1.4267
+total time(s): 0.000
+throughput(MB/s): inf
+number of zero chunks: 0
+size of zero chunks: 0
+number of rewritten chunks: 0
+size of rewritten chunks: 0
+rewritten rate in size: 0.000
+read_time : 0.102s, 44.67MB/s
+chunk_time : 0.040s, 114.89MB/s
+hash_time : 0.013s, 358.99MB/s
+dedup_time : 0.002s, 2469.21MB/s
+rewrite_time : 0.000s, 101402.09MB/s
+filter_time : 0.004s, 1075.44MB/s
+write_time : 0.000s, 19753.65MB/s
+1
+2
+destor_server_process
+destor_server_process: receive a request!
+type: 0 
+Init recipe store successfully
+[debug] destor init_container_store, in read mode.
+Init container store successfully
+append thread start
+Init index module successfully
+==== backup begin ====
+Read 7 inherited sparse containers
+pkt size: 5
+[debug] container meta not found
+[debug] container meta not found
+[debug] container meta not found
+[debug] container meta not found
+[debug] container meta not found
+[debug] container meta not found
+[debug] container meta not found
+[debug] container meta not found
+[debug] container meta not found
+[debug] container meta not found
+write container buffer2
+push container buffer
+[debug] destor in append thread, get one chunk from buffer.
+write_container start
+append thread end
+append thread start
+read phase stops successfully!
+chunk phase stops successfully!
+hash phase stops successfully!
+dedup phase stops successfully: 1 segments of 1024 chunks on average
+rewrite phase stops successfully!
+Record 5 sparse containers, and 3 of them are inherited
+CMA: read 37 records.
+CMA: update 38 records.
+filter phase stops successfully!
+flushing hash table!
+flushing hash table successfully!
+[debug] destor in append thread, break.
+append phase stops successfully!
+==== backup end ====
+job id: 29
+backup path: /hadoop64
+number of files: 1
+number of chunks: 1024 (4601 bytes on average)
+number of unique chunks: 425
+total size(B): 4711842
+stored data size(B): 2226555
+deduplication ratio: 0.5275, 2.1162
+total time(s): 0.000
+throughput(MB/s): inf
+number of zero chunks: 0
+size of zero chunks: 0
+number of rewritten chunks: 0
+size of rewritten chunks: 0
+rewritten rate in size: 0.000
+read_time : 0.063s, 71.15MB/s
+chunk_time : 0.024s, 189.18MB/s
+hash_time : 0.012s, 390.68MB/s
+dedup_time : 0.002s, 1801.03MB/s
+rewrite_time : 0.000s, 102126.42MB/s
+filter_time : 0.003s, 1719.69MB/s
+write_time : 0.000s, 86414.67MB/s
+1
+2
+destor_server_process
+destor_server_process: receive a request!
+type: 0 
+Init recipe store successfully
+[debug] destor init_container_store, in read mode.
+Init container store successfully
+append thread start
+Init index module successfully
+==== backup begin ====
+Read 5 inherited sparse containers
+pkt size: 5
+[debug] container meta not found
+[debug] container meta not found
+[debug] container meta not found
+[debug] container meta not found
+[debug] container meta not found
+[debug] container meta not found
+write container buffer2
+push container buffer
+[debug] destor in append thread, get one chunk from buffer.
+write_container start
+append thread end
+append thread start
+read phase stops successfully!
+chunk phase stops successfully!
+hash phase stops successfully!
+dedup phase stops successfully: 1 segments of 1024 chunks on average
+rewrite phase stops successfully!
+Record 3 sparse containers, and 1 of them are inherited
+CMA: read 38 records.
+CMA: update 39 records.
+filter phase stops successfully!
+flushing hash table!
+flushing hash table successfully!
+[debug] destor in append thread, break.
+append phase stops successfully!
+==== backup end ====
+job id: 30
+backup path: /hadoop65
+number of files: 1
+number of chunks: 1024 (4607 bytes on average)
+number of unique chunks: 559
+total size(B): 4717890
+stored data size(B): 2955474
+deduplication ratio: 0.3736, 1.5963
+total time(s): 0.000
+throughput(MB/s): inf
+number of zero chunks: 0
+size of zero chunks: 0
+number of rewritten chunks: 0
+size of rewritten chunks: 0
+rewritten rate in size: 0.000
+read_time : 0.060s, 74.68MB/s
+chunk_time : 0.013s, 346.88MB/s
+hash_time : 0.016s, 274.35MB/s
+dedup_time : 0.002s, 2376.83MB/s
+rewrite_time : 0.000s, 67154.19MB/s
+filter_time : 0.008s, 537.30MB/s
+write_time : 0.000s, 33829.55MB/s
 1
 2
 destor_server_process
@@ -954,9 +1885,198 @@ Init recipe store successfully
 Init container store successfully
 Init index module successfully
 ==== backup begin ====
+Read 3 inherited sparse containers
 append thread start
+pkt size: 5
+[debug] container meta not found
+[debug] container meta not found
+[debug] container meta not found
+[debug] container meta not found
+[debug] container meta not found
+write container buffer2
+push container buffer
+[debug] destor in append thread, get one chunk from buffer.
+write_container start
+append thread end
+append thread start
+read phase stops successfully!
+chunk phase stops successfully!
+hash phase stops successfully!
+dedup phase stops successfully: 1 segments of 1024 chunks on average
+rewrite phase stops successfully!
+Record 3 sparse containers, and 0 of them are inherited
+CMA: read 39 records.
+CMA: update 40 records.
+filter phase stops successfully!
+flushing hash table!
+flushing hash table successfully!
+[debug] destor in append thread, break.
+append phase stops successfully!
+==== backup end ====
+job id: 31
+backup path: /hadoop70
+number of files: 1
+number of chunks: 1024 (4726 bytes on average)
+number of unique chunks: 274
+total size(B): 4839699
+stored data size(B): 1316282
+deduplication ratio: 0.7280, 3.6768
+total time(s): 0.000
+throughput(MB/s): inf
+number of zero chunks: 0
+size of zero chunks: 0
+number of rewritten chunks: 0
+size of rewritten chunks: 0
+rewritten rate in size: 0.000
+read_time : 0.128s, 36.19MB/s
+chunk_time : 0.025s, 185.35MB/s
+hash_time : 0.014s, 325.88MB/s
+dedup_time : 0.001s, 4547.29MB/s
+rewrite_time : 0.000s, 135749.90MB/s
+filter_time : 0.002s, 2802.37MB/s
+write_time : 0.000s, 55608.39MB/s
+1
+2
+destor_server_process
+destor_server_process: receive a request!
+type: 0 
+Init recipe store successfully
+[debug] destor init_container_store, in read mode.
+Init container store successfully
+append thread start
+Init index module successfully
+==== backup begin ====
+Read 3 inherited sparse containers
+pkt size: 5
+[debug] container meta not found
+[debug] container meta not found
+[debug] container meta not found
+[debug] container meta not found
+[debug] container meta not found
+[debug] container meta not found
+write container buffer2
+push container buffer
+[debug] destor in append thread, get one chunk from buffer.
+write_container start
+append thread end
+append thread start
+read phase stops successfully!
+chunk phase stops successfully!
+hash phase stops successfully!
+dedup phase stops successfully: 1 segments of 1024 chunks on average
+rewrite phase stops successfully!
+Record 4 sparse containers, and 1 of them are inherited
+CMA: read 40 records.
+CMA: update 41 records.
+filter phase stops successfully!
+flushing hash table!
+flushing hash table successfully!
+[debug] destor in append thread, break.
+append phase stops successfully!
+==== backup end ====
+job id: 32
+backup path: /hadoop71
+number of files: 1
+number of chunks: 1024 (4501 bytes on average)
+number of unique chunks: 628
+total size(B): 4609728
+stored data size(B): 3192351
+deduplication ratio: 0.3075, 1.4440
+total time(s): 0.000
+throughput(MB/s): inf
+number of zero chunks: 0
+size of zero chunks: 0
+number of rewritten chunks: 0
+size of rewritten chunks: 0
+rewritten rate in size: 0.000
+read_time : 0.052s, 84.22MB/s
+chunk_time : 0.021s, 204.82MB/s
+hash_time : 0.014s, 314.60MB/s
+dedup_time : 0.002s, 1950.39MB/s
+rewrite_time : 0.000s, 81410.73MB/s
+filter_time : 0.004s, 1144.84MB/s
+write_time : 0.000s, 64649.69MB/s
+1
+2
+destor_server_process
+destor_server_process: receive a request!
+type: 0 
+Init recipe store successfully
+[debug] destor init_container_store, in read mode.
+Init container store successfully
+append thread start
+Init index module successfully
+==== backup begin ====
 Read 4 inherited sparse containers
 pkt size: 5
+[debug] container meta not found
+[debug] container meta not found
+[debug] container meta not found
+[debug] container meta not found
+[debug] container meta not found
+write container buffer1
+push container buffer
+[debug] destor in append thread, get one chunk from buffer.
+write_container start
+append thread end
+append thread start
+write container buffer2
+push container buffer
+[debug] destor in append thread, get one chunk from buffer.
+write_container start
+append thread end
+append thread start
+read phase stops successfully!
+chunk phase stops successfully!
+hash phase stops successfully!
+dedup phase stops successfully: 1 segments of 1024 chunks on average
+rewrite phase stops successfully!
+Record 5 sparse containers, and 1 of them are inherited
+CMA: read 41 records.
+CMA: update 43 records.
+filter phase stops successfully!
+flushing hash table!
+flushing hash table successfully!
+[debug] destor in append thread, break.
+append phase stops successfully!
+==== backup end ====
+job id: 33
+backup path: /hadoop72
+number of files: 1
+number of chunks: 1024 (4770 bytes on average)
+number of unique chunks: 990
+total size(B): 4884926
+stored data size(B): 4839490
+deduplication ratio: 0.0093, 1.0094
+total time(s): 0.000
+throughput(MB/s): inf
+number of zero chunks: 0
+size of zero chunks: 0
+number of rewritten chunks: 0
+size of rewritten chunks: 0
+rewritten rate in size: 0.000
+read_time : 0.055s, 84.23MB/s
+chunk_time : 0.016s, 292.32MB/s
+hash_time : 0.013s, 352.50MB/s
+dedup_time : 0.003s, 1850.87MB/s
+rewrite_time : 0.001s, 7465.75MB/s
+filter_time : 0.018s, 257.21MB/s
+write_time : 0.000s, 10758.96MB/s
+1
+2
+destor_server_process
+destor_server_process: receive a request!
+type: 0 
+Init recipe store successfully
+[debug] destor init_container_store, in read mode.
+Init container store successfully
+append thread start
+Init index module successfully
+==== backup begin ====
+pkt size: 5
+Read 5 inherited sparse containers
+[debug] container meta not found
+[debug] container meta not found
 [debug] container meta not found
 [debug] container meta not found
 [debug] container meta not found
@@ -975,22 +2095,22 @@ hash phase stops successfully!
 dedup phase stops successfully: 1 segments of 1024 chunks on average
 rewrite phase stops successfully!
 Record 5 sparse containers, and 2 of them are inherited
-CMA: read 22 records.
-CMA: update 23 records.
+CMA: read 43 records.
+CMA: update 44 records.
 filter phase stops successfully!
 flushing hash table!
 flushing hash table successfully!
 [debug] destor in append thread, break.
 append phase stops successfully!
 ==== backup end ====
-job id: 16
-backup path: /k8s38
+job id: 34
+backup path: /hadoop73
 number of files: 1
-number of chunks: 1024 (4382 bytes on average)
-number of unique chunks: 627
-total size(B): 4487451
-stored data size(B): 3276846
-deduplication ratio: 0.2698, 1.3694
+number of chunks: 1024 (4609 bytes on average)
+number of unique chunks: 702
+total size(B): 4719713
+stored data size(B): 3615842
+deduplication ratio: 0.2339, 1.3053
 total time(s): 0.000
 throughput(MB/s): inf
 number of zero chunks: 0
@@ -998,13 +2118,13 @@ size of zero chunks: 0
 number of rewritten chunks: 0
 size of rewritten chunks: 0
 rewritten rate in size: 0.000
-read_time : 0.045s, 95.92MB/s
-chunk_time : 0.022s, 191.96MB/s
-hash_time : 0.017s, 254.65MB/s
-dedup_time : 0.001s, 3356.52MB/s
-rewrite_time : 0.000s, 118876.85MB/s
-filter_time : 0.004s, 1145.19MB/s
-write_time : 0.000s, 91054.61MB/s
+read_time : 0.066s, 68.19MB/s
+chunk_time : 0.045s, 99.09MB/s
+hash_time : 0.028s, 161.09MB/s
+dedup_time : 0.004s, 1159.47MB/s
+rewrite_time : 0.000s, 10047.03MB/s
+filter_time : 0.016s, 283.46MB/s
+write_time : 0.002s, 1973.29MB/s
 1
 2
 destor_server_process
@@ -1016,182 +2136,14 @@ Init container store successfully
 append thread start
 Init index module successfully
 ==== backup begin ====
-pkt size: 5
 Read 5 inherited sparse containers
-[debug] container meta not found
-[debug] container meta not found
-[debug] container meta not found
-[debug] container meta not found
-write container buffer2
-push container buffer
-[debug] destor in append thread, get one chunk from buffer.
-write_container start
-append thread end
-append thread start
-read phase stops successfully!
-chunk phase stops successfully!
-hash phase stops successfully!
-dedup phase stops successfully: 1 segments of 1024 chunks on average
-rewrite phase stops successfully!
-Record 2 sparse containers, and 0 of them are inherited
-CMA: read 23 records.
-CMA: update 24 records.
-filter phase stops successfully!
-flushing hash table!
-flushing hash table successfully!
-[debug] destor in append thread, break.
-append phase stops successfully!
-==== backup end ====
-job id: 17
-backup path: /k8s39
-number of files: 1
-number of chunks: 1024 (4612 bytes on average)
-number of unique chunks: 315
-total size(B): 4723060
-stored data size(B): 1864440
-deduplication ratio: 0.6052, 2.5332
-total time(s): 0.000
-throughput(MB/s): inf
-number of zero chunks: 0
-size of zero chunks: 0
-number of rewritten chunks: 0
-size of rewritten chunks: 0
-rewritten rate in size: 0.000
-read_time : 0.053s, 84.73MB/s
-chunk_time : 0.027s, 164.18MB/s
-hash_time : 0.024s, 188.93MB/s
-dedup_time : 0.006s, 745.12MB/s
-rewrite_time : 0.000s, 121736.78MB/s
-filter_time : 0.003s, 1648.70MB/s
-write_time : 0.000s, 64346.59MB/s
-1
-2
-destor_server_process
-destor_server_process: receive a request!
-type: 0 
-Init recipe store successfully
-[debug] destor init_container_store, in read mode.
-append thread start
-Init container store successfully
-Init index module successfully
-==== backup begin ====
-Read 2 inherited sparse containers
 pkt size: 5
 [debug] container meta not found
 [debug] container meta not found
-write container buffer2
-push container buffer
-[debug] destor in append thread, get one chunk from buffer.
-write_container start
-append thread end
-append thread start
-read phase stops successfully!
-chunk phase stops successfully!
-hash phase stops successfully!
-dedup phase stops successfully: 1 segments of 1024 chunks on average
-rewrite phase stops successfully!
-Record 1 sparse containers, and 1 of them are inherited
-CMA: read 24 records.
-CMA: update 25 records.
-filter phase stops successfully!
-flushing hash table!
-flushing hash table successfully!
-[debug] destor in append thread, break.
-append phase stops successfully!
-==== backup end ====
-job id: 18
-backup path: /k8s310
-number of files: 1
-number of chunks: 1024 (4645 bytes on average)
-number of unique chunks: 595
-total size(B): 4756746
-stored data size(B): 3021835
-deduplication ratio: 0.3647, 1.5741
-total time(s): 0.000
-throughput(MB/s): inf
-number of zero chunks: 0
-size of zero chunks: 0
-number of rewritten chunks: 0
-size of rewritten chunks: 0
-rewritten rate in size: 0.000
-read_time : 0.044s, 103.89MB/s
-chunk_time : 0.025s, 181.72MB/s
-hash_time : 0.017s, 273.47MB/s
-dedup_time : 0.001s, 3854.19MB/s
-rewrite_time : 0.000s, 94508.05MB/s
-filter_time : 0.006s, 814.87MB/s
-write_time : 0.000s, 75606.44MB/s
-1
-2
-destor_server_process
-destor_server_process: receive a request!
-type: 0 
-Init recipe store successfully
-[debug] destor init_container_store, in read mode.
-Init container store successfully
-Init index module successfully
-==== backup begin ====
-Read 1 inherited sparse containers
-pkt size: 5
-append thread start
 [debug] container meta not found
 [debug] container meta not found
 [debug] container meta not found
-write container buffer2
-push container buffer
-[debug] destor in append thread, get one chunk from buffer.
-write_container start
-append thread end
-append thread start
-read phase stops successfully!
-chunk phase stops successfully!
-hash phase stops successfully!
-dedup phase stops successfully: 1 segments of 1024 chunks on average
-rewrite phase stops successfully!
-Record 2 sparse containers, and 1 of them are inherited
-CMA: read 25 records.
-CMA: update 26 records.
-filter phase stops successfully!
-flushing hash table!
-flushing hash table successfully!
-[debug] destor in append thread, break.
-append phase stops successfully!
-==== backup end ====
-job id: 19
-backup path: /k8s45
-number of files: 1
-number of chunks: 1024 (4730 bytes on average)
-number of unique chunks: 569
-total size(B): 4844312
-stored data size(B): 3266761
-deduplication ratio: 0.3257, 1.4829
-total time(s): 0.000
-throughput(MB/s): inf
-number of zero chunks: 0
-size of zero chunks: 0
-number of rewritten chunks: 0
-size of rewritten chunks: 0
-rewritten rate in size: 0.000
-read_time : 0.068s, 67.57MB/s
-chunk_time : 0.018s, 253.81MB/s
-hash_time : 0.020s, 233.66MB/s
-dedup_time : 0.001s, 3513.23MB/s
-rewrite_time : 0.000s, 149028.90MB/s
-filter_time : 0.003s, 1364.41MB/s
-write_time : 0.000s, 81050.81MB/s
-1
-2
-destor_server_process
-destor_server_process: receive a request!
-type: 0 
-Init recipe store successfully
-[debug] destor init_container_store, in read mode.
-Init container store successfully
-append thread start
-Init index module successfully
-==== backup begin ====
-pkt size: 5
-Read 2 inherited sparse containers
+[debug] container meta not found
 [debug] container meta not found
 [debug] container meta not found
 [debug] container meta not found
@@ -1208,23 +2160,23 @@ chunk phase stops successfully!
 hash phase stops successfully!
 dedup phase stops successfully: 1 segments of 1024 chunks on average
 rewrite phase stops successfully!
-Record 4 sparse containers, and 1 of them are inherited
-CMA: read 26 records.
-CMA: update 27 records.
+Record 7 sparse containers, and 1 of them are inherited
+CMA: read 44 records.
+CMA: update 45 records.
 filter phase stops successfully!
 flushing hash table!
 flushing hash table successfully!
 [debug] destor in append thread, break.
 append phase stops successfully!
 ==== backup end ====
-job id: 20
-backup path: /k8s46
+job id: 35
+backup path: /hadoop74
 number of files: 1
-number of chunks: 1024 (4457 bytes on average)
-number of unique chunks: 730
-total size(B): 4564391
-stored data size(B): 3803379
-deduplication ratio: 0.1667, 1.2001
+number of chunks: 1024 (4580 bytes on average)
+number of unique chunks: 513
+total size(B): 4690136
+stored data size(B): 2511535
+deduplication ratio: 0.4645, 1.8674
 total time(s): 0.000
 throughput(MB/s): inf
 number of zero chunks: 0
@@ -1232,13 +2184,13 @@ size of zero chunks: 0
 number of rewritten chunks: 0
 size of rewritten chunks: 0
 rewritten rate in size: 0.000
-read_time : 0.062s, 70.52MB/s
-chunk_time : 0.026s, 170.06MB/s
-hash_time : 0.013s, 331.55MB/s
-dedup_time : 0.001s, 3667.18MB/s
-rewrite_time : 0.000s, 128027.72MB/s
-filter_time : 0.004s, 1084.44MB/s
-write_time : 0.000s, 70208.75MB/s
+read_time : 0.020s, 225.75MB/s
+chunk_time : 0.014s, 328.45MB/s
+hash_time : 0.015s, 294.27MB/s
+dedup_time : 0.002s, 2615.71MB/s
+rewrite_time : 0.000s, 91282.90MB/s
+filter_time : 0.004s, 1209.21MB/s
+write_time : 0.000s, 22253.05MB/s
 1
 2
 destor_server_process
@@ -1250,68 +2202,9 @@ Init container store successfully
 append thread start
 Init index module successfully
 ==== backup begin ====
-Read 4 inherited sparse containers
+Read 7 inherited sparse containers
 pkt size: 5
 [debug] container meta not found
-[debug] container meta not found
-[debug] container meta not found
-[debug] container meta not found
-[debug] container meta not found
-write container buffer2
-push container buffer
-[debug] destor in append thread, get one chunk from buffer.
-write_container start
-append thread end
-append thread start
-read phase stops successfully!
-chunk phase stops successfully!
-hash phase stops successfully!
-dedup phase stops successfully: 1 segments of 1024 chunks on average
-rewrite phase stops successfully!
-Record 4 sparse containers, and 2 of them are inherited
-CMA: read 27 records.
-CMA: update 28 records.
-filter phase stops successfully!
-flushing hash table!
-flushing hash table successfully!
-[debug] destor in append thread, break.
-append phase stops successfully!
-==== backup end ====
-job id: 21
-backup path: /k8s47
-number of files: 1
-number of chunks: 1024 (4403 bytes on average)
-number of unique chunks: 649
-total size(B): 4509507
-stored data size(B): 3281569
-deduplication ratio: 0.2723, 1.3742
-total time(s): 0.000
-throughput(MB/s): inf
-number of zero chunks: 0
-size of zero chunks: 0
-number of rewritten chunks: 0
-size of rewritten chunks: 0
-rewritten rate in size: 0.000
-read_time : 0.051s, 83.83MB/s
-chunk_time : 0.020s, 220.46MB/s
-hash_time : 0.018s, 232.63MB/s
-dedup_time : 0.001s, 3370.38MB/s
-rewrite_time : 0.000s, 116232.46MB/s
-filter_time : 0.004s, 1216.58MB/s
-write_time : 0.000s, 55135.91MB/s
-1
-2
-destor_server_process
-destor_server_process: receive a request!
-type: 0 
-Init recipe store successfully
-[debug] destor init_container_store, in read mode.
-Init container store successfully
-append thread start
-Init index module successfully
-==== backup begin ====
-Read 4 inherited sparse containers
-pkt size: 5
 [debug] container meta not found
 [debug] container meta not found
 [debug] container meta not found
@@ -1330,22 +2223,22 @@ hash phase stops successfully!
 dedup phase stops successfully: 1 segments of 1024 chunks on average
 rewrite phase stops successfully!
 Record 4 sparse containers, and 2 of them are inherited
-CMA: read 28 records.
-CMA: update 29 records.
+CMA: read 45 records.
+CMA: update 46 records.
 filter phase stops successfully!
 flushing hash table!
 flushing hash table successfully!
 [debug] destor in append thread, break.
 append phase stops successfully!
 ==== backup end ====
-job id: 22
-backup path: /k8s48
+job id: 36
+backup path: /hadoop75
 number of files: 1
-number of chunks: 1024 (4457 bytes on average)
-number of unique chunks: 607
-total size(B): 4564918
-stored data size(B): 3275919
-deduplication ratio: 0.2824, 1.3935
+number of chunks: 1024 (4564 bytes on average)
+number of unique chunks: 641
+total size(B): 4673960
+stored data size(B): 3313945
+deduplication ratio: 0.2910, 1.4104
 total time(s): 0.000
 throughput(MB/s): inf
 number of zero chunks: 0
@@ -1353,13 +2246,13 @@ size of zero chunks: 0
 number of rewritten chunks: 0
 size of rewritten chunks: 0
 rewritten rate in size: 0.000
-read_time : 0.073s, 59.80MB/s
-chunk_time : 0.013s, 327.65MB/s
-hash_time : 0.015s, 299.39MB/s
-dedup_time : 0.001s, 3577.19MB/s
-rewrite_time : 0.000s, 90696.77MB/s
-filter_time : 0.008s, 543.09MB/s
-write_time : 0.000s, 56538.25MB/s
+read_time : 0.102s, 43.76MB/s
+chunk_time : 0.033s, 136.80MB/s
+hash_time : 0.025s, 175.78MB/s
+dedup_time : 0.002s, 2547.11MB/s
+rewrite_time : 0.000s, 82545.10MB/s
+filter_time : 0.003s, 1478.42MB/s
+write_time : 0.000s, 76852.34MB/s
 1
 2
 destor_server_process
@@ -1371,12 +2264,8 @@ Init container store successfully
 append thread start
 Init index module successfully
 ==== backup begin ====
-pkt size: 5
 Read 4 inherited sparse containers
-[debug] container meta not found
-[debug] container meta not found
-[debug] container meta not found
-[debug] container meta not found
+pkt size: 1
 write container buffer2
 push container buffer
 [debug] destor in append thread, get one chunk from buffer.
@@ -1386,204 +2275,24 @@ append thread start
 read phase stops successfully!
 chunk phase stops successfully!
 hash phase stops successfully!
-dedup phase stops successfully: 1 segments of 1024 chunks on average
-rewrite phase stops successfully!
-Record 1 sparse containers, and 0 of them are inherited
-CMA: read 29 records.
-CMA: update 30 records.
-filter phase stops successfully!
-flushing hash table!
-flushing hash table successfully!
-[debug] destor in append thread, break.
-append phase stops successfully!
-==== backup end ====
-job id: 23
-backup path: /k8s49
-number of files: 1
-number of chunks: 1024 (4690 bytes on average)
-number of unique chunks: 277
-total size(B): 4803220
-stored data size(B): 1658268
-deduplication ratio: 0.6548, 2.8965
-total time(s): 0.000
-throughput(MB/s): inf
-number of zero chunks: 0
-size of zero chunks: 0
-number of rewritten chunks: 0
-size of rewritten chunks: 0
-rewritten rate in size: 0.000
-read_time : 0.053s, 85.87MB/s
-chunk_time : 0.016s, 288.00MB/s
-hash_time : 0.016s, 282.79MB/s
-dedup_time : 0.001s, 3911.79MB/s
-rewrite_time : 0.000s, 130877.36MB/s
-filter_time : 0.002s, 2277.83MB/s
-write_time : 0.000s, 77639.11MB/s
-1
-2
-destor_server_process
-destor_server_process: receive a request!
-type: 0 
-Init recipe store successfully
-[debug] destor init_container_store, in read mode.
-Init container store successfully
-append thread start
-Init index module successfully
-==== backup begin ====
-Read 1 inherited sparse containers
-pkt size: 5
-[debug] container meta not found
-[debug] container meta not found
-write container buffer2
-push container buffer
-[debug] destor in append thread, get one chunk from buffer.
-write_container start
-append thread end
-append thread start
-read phase stops successfully!
-chunk phase stops successfully!
-hash phase stops successfully!
-dedup phase stops successfully: 1 segments of 1024 chunks on average
-rewrite phase stops successfully!
-Record 1 sparse containers, and 0 of them are inherited
-CMA: read 30 records.
-CMA: update 31 records.
-filter phase stops successfully!
-flushing hash table!
-flushing hash table successfully!
-[debug] destor in append thread, break.
-append phase stops successfully!
-==== backup end ====
-job id: 24
-backup path: /k8s410
-number of files: 1
-number of chunks: 1024 (5022 bytes on average)
-number of unique chunks: 683
-total size(B): 5143208
-stored data size(B): 3837429
-deduplication ratio: 0.2539, 1.3403
-total time(s): 0.000
-throughput(MB/s): inf
-number of zero chunks: 0
-size of zero chunks: 0
-number of rewritten chunks: 0
-size of rewritten chunks: 0
-rewritten rate in size: 0.000
-read_time : 0.083s, 58.88MB/s
-chunk_time : 0.015s, 336.05MB/s
-hash_time : 0.013s, 371.73MB/s
-dedup_time : 0.001s, 4856.38MB/s
-rewrite_time : 0.000s, 153279.54MB/s
-filter_time : 0.006s, 867.06MB/s
-write_time : 0.000s, 81749.09MB/s
-1
-2
-destor_server_process
-destor_server_process: receive a request!
-type: 0 
-Init recipe store successfully
-[debug] destor init_container_store, in read mode.
-Init container store successfully
-append thread start
-Init index module successfully
-==== backup begin ====
-Read 1 inherited sparse containers
-pkt size: 5
-[debug] container meta not found
-write container buffer1
-push container buffer
-[debug] destor in append thread, get one chunk from buffer.
-write_container start
-append thread end
-append thread start
-write container buffer2
-push container buffer
-[debug] destor in append thread, get one chunk from buffer.
-write_container start
-append thread end
-append thread start
-read phase stops successfully!
-chunk phase stops successfully!
-hash phase stops successfully!
-dedup phase stops successfully: 1 segments of 1024 chunks on average
-rewrite phase stops successfully!
-Record 1 sparse containers, and 1 of them are inherited
-CMA: read 31 records.
-CMA: update 33 records.
-filter phase stops successfully!
-flushing hash table!
-flushing hash table successfully!
-[debug] destor in append thread, break.
-append phase stops successfully!
-==== backup end ====
-job id: 25
-backup path: /k8s50
-number of files: 1
-number of chunks: 1024 (4340 bytes on average)
-number of unique chunks: 1021
-total size(B): 4444566
-stored data size(B): 4441599
-deduplication ratio: 0.0007, 1.0007
-total time(s): 0.000
-throughput(MB/s): inf
-number of zero chunks: 0
-size of zero chunks: 0
-number of rewritten chunks: 0
-size of rewritten chunks: 0
-rewritten rate in size: 0.000
-read_time : 0.048s, 88.00MB/s
-chunk_time : 0.011s, 374.80MB/s
-hash_time : 0.011s, 372.96MB/s
-dedup_time : 0.001s, 4494.88MB/s
-rewrite_time : 0.000s, 84773.37MB/s
-filter_time : 0.005s, 845.20MB/s
-write_time : 0.000s, 34460.72MB/s
-1
-2
-destor_server_process
-destor_server_process: receive a request!
-type: 0 
-Init recipe store successfully
-[debug] destor init_container_store, in read mode.
-Init container store successfully
-append thread start
-Init index module successfully
-==== backup begin ====
-Read 1 inherited sparse containers
-pkt size: 5
-write container buffer1
-push container buffer
-[debug] destor in append thread, get one chunk from buffer.
-write_container start
-append thread end
-append thread start
-write container buffer2
-push container buffer
-[debug] destor in append thread, get one chunk from buffer.
-write_container start
-append thread end
-append thread start
-read phase stops successfully!
-chunk phase stops successfully!
-hash phase stops successfully!
-dedup phase stops successfully: 1 segments of 1024 chunks on average
+dedup phase stops successfully: 1 segments of 34 chunks on average
 rewrite phase stops successfully!
 Record 0 sparse containers, and 0 of them are inherited
-CMA: read 33 records.
-CMA: update 35 records.
+CMA: read 46 records.
+CMA: update 47 records.
 filter phase stops successfully!
 flushing hash table!
 flushing hash table successfully!
 [debug] destor in append thread, break.
 append phase stops successfully!
 ==== backup end ====
-job id: 26
-backup path: /k8s51
+job id: 37
+backup path: /hadoop710
 number of files: 1
-number of chunks: 1024 (4702 bytes on average)
-number of unique chunks: 1024
-total size(B): 4815081
-stored data size(B): 4815081
+number of chunks: 34 (5366 bytes on average)
+number of unique chunks: 34
+total size(B): 182459
+stored data size(B): 182459
 deduplication ratio: 0.0000, 1.0000
 total time(s): 0.000
 throughput(MB/s): inf
@@ -1592,13 +2301,13 @@ size of zero chunks: 0
 number of rewritten chunks: 0
 size of rewritten chunks: 0
 rewritten rate in size: 0.000
-read_time : 0.038s, 120.01MB/s
-chunk_time : 0.013s, 354.54MB/s
-hash_time : 0.013s, 341.95MB/s
-dedup_time : 0.001s, 9021.65MB/s
-rewrite_time : 0.000s, 93714.68MB/s
-filter_time : 0.007s, 614.32MB/s
-write_time : 0.000s, 36736.15MB/s
+read_time : 0.002s, 91.20MB/s
+chunk_time : 0.001s, 341.19MB/s
+hash_time : 0.001s, 346.63MB/s
+dedup_time : 0.000s, 6214.52MB/s
+rewrite_time : 0.000s, infMB/s
+filter_time : 0.000s, 630.46MB/s
+write_time : 0.000s, 2718.85MB/s
 1
 2
 destor_server_process
@@ -1607,133 +2316,13 @@ type: 0
 Init recipe store successfully
 [debug] destor init_container_store, in read mode.
 Init container store successfully
-append thread start
 Init index module successfully
 ==== backup begin ====
+pkt size: 5
 Read 0 inherited sparse containers
-pkt size: 5
-[debug] container meta not found
-[debug] container meta not found
-[debug] container meta not found
-write container buffer2
-push container buffer
-[debug] destor in append thread, get one chunk from buffer.
-write_container start
-append thread end
 append thread start
-read phase stops successfully!
-chunk phase stops successfully!
-hash phase stops successfully!
-dedup phase stops successfully: 1 segments of 1024 chunks on average
-rewrite phase stops successfully!
-Record 2 sparse containers, and 0 of them are inherited
-CMA: read 35 records.
-CMA: update 36 records.
-filter phase stops successfully!
-flushing hash table!
-flushing hash table successfully!
-[debug] destor in append thread, break.
-append phase stops successfully!
-==== backup end ====
-job id: 27
-backup path: /k8s55
-number of files: 1
-number of chunks: 1024 (4444 bytes on average)
-number of unique chunks: 628
-total size(B): 4551544
-stored data size(B): 3009912
-deduplication ratio: 0.3387, 1.5122
-total time(s): 0.000
-throughput(MB/s): inf
-number of zero chunks: 0
-size of zero chunks: 0
-number of rewritten chunks: 0
-size of rewritten chunks: 0
-rewritten rate in size: 0.000
-read_time : 0.074s, 58.97MB/s
-chunk_time : 0.019s, 233.63MB/s
-hash_time : 0.011s, 396.92MB/s
-dedup_time : 0.001s, 4371.29MB/s
-rewrite_time : 0.000s, 135646.58MB/s
-filter_time : 0.003s, 1462.00MB/s
-write_time : 0.000s, 70011.14MB/s
-1
-2
-destor_server_process
-destor_server_process: receive a request!
-type: 0 
-Init recipe store successfully
-[debug] destor init_container_store, in read mode.
-Init container store successfully
-append thread start
-Init index module successfully
-==== backup begin ====
-Read 2 inherited sparse containers
-pkt size: 5
 [debug] container meta not found
 [debug] container meta not found
-[debug] container meta not found
-write container buffer1
-push container buffer
-[debug] destor in append thread, get one chunk from buffer.
-write_container start
-append thread end
-append thread start
-write container buffer2
-push container buffer
-[debug] destor in append thread, get one chunk from buffer.
-write_container start
-append thread end
-append thread start
-read phase stops successfully!
-chunk phase stops successfully!
-hash phase stops successfully!
-dedup phase stops successfully: 1 segments of 1024 chunks on average
-rewrite phase stops successfully!
-Record 2 sparse containers, and 0 of them are inherited
-CMA: read 36 records.
-CMA: update 38 records.
-filter phase stops successfully!
-flushing hash table!
-flushing hash table successfully!
-[debug] destor in append thread, break.
-append phase stops successfully!
-==== backup end ====
-job id: 28
-backup path: /k8s56
-number of files: 1
-number of chunks: 1024 (4861 bytes on average)
-number of unique chunks: 903
-total size(B): 4977889
-stored data size(B): 4665809
-deduplication ratio: 0.0627, 1.0669
-total time(s): 0.000
-throughput(MB/s): inf
-number of zero chunks: 0
-size of zero chunks: 0
-number of rewritten chunks: 0
-size of rewritten chunks: 0
-rewritten rate in size: 0.000
-read_time : 0.045s, 104.35MB/s
-chunk_time : 0.026s, 179.56MB/s
-hash_time : 0.015s, 319.30MB/s
-dedup_time : 0.001s, 4919.47MB/s
-rewrite_time : 0.000s, 124928.55MB/s
-filter_time : 0.005s, 906.14MB/s
-write_time : 0.000s, 31648.57MB/s
-1
-2
-destor_server_process
-destor_server_process: receive a request!
-type: 0 
-Init recipe store successfully
-[debug] destor init_container_store, in read mode.
-Init container store successfully
-append thread start
-Init index module successfully
-==== backup begin ====
-Read 2 inherited sparse containers
-pkt size: 5
 [debug] container meta not found
 [debug] container meta not found
 [debug] container meta not found
@@ -1749,23 +2338,23 @@ chunk phase stops successfully!
 hash phase stops successfully!
 dedup phase stops successfully: 1 segments of 1024 chunks on average
 rewrite phase stops successfully!
-Record 2 sparse containers, and 1 of them are inherited
-CMA: read 38 records.
-CMA: update 39 records.
+Record 3 sparse containers, and 0 of them are inherited
+CMA: read 47 records.
+CMA: update 48 records.
 filter phase stops successfully!
 flushing hash table!
 flushing hash table successfully!
 [debug] destor in append thread, break.
 append phase stops successfully!
 ==== backup end ====
-job id: 29
-backup path: /k8s57
+job id: 38
+backup path: /hadoop80
 number of files: 1
-number of chunks: 1024 (4583 bytes on average)
-number of unique chunks: 683
-total size(B): 4693353
-stored data size(B): 3519100
-deduplication ratio: 0.2502, 1.3337
+number of chunks: 1024 (4791 bytes on average)
+number of unique chunks: 241
+total size(B): 4906301
+stored data size(B): 1217946
+deduplication ratio: 0.7518, 4.0283
 total time(s): 0.000
 throughput(MB/s): inf
 number of zero chunks: 0
@@ -1773,13 +2362,13 @@ size of zero chunks: 0
 number of rewritten chunks: 0
 size of rewritten chunks: 0
 rewritten rate in size: 0.000
-read_time : 0.023s, 191.52MB/s
-chunk_time : 0.016s, 287.93MB/s
-hash_time : 0.012s, 379.16MB/s
-dedup_time : 0.001s, 4242.59MB/s
-rewrite_time : 0.000s, 97302.83MB/s
-filter_time : 0.003s, 1303.04MB/s
-write_time : 0.000s, 75863.22MB/s
+read_time : 0.082s, 57.06MB/s
+chunk_time : 0.027s, 175.99MB/s
+hash_time : 0.014s, 342.61MB/s
+dedup_time : 0.001s, 3968.63MB/s
+rewrite_time : 0.000s, 111405.08MB/s
+filter_time : 0.002s, 3005.15MB/s
+write_time : 0.000s, 95490.07MB/s
 1
 2
 destor_server_process
@@ -1788,11 +2377,12 @@ type: 0
 Init recipe store successfully
 [debug] destor init_container_store, in read mode.
 Init container store successfully
-append thread start
 Init index module successfully
 ==== backup begin ====
-Read 2 inherited sparse containers
-pkt size: 4
+Read 3 inherited sparse containers
+append thread start
+pkt size: 5
+[debug] container meta not found
 [debug] container meta not found
 [debug] container meta not found
 [debug] container meta not found
@@ -1812,22 +2402,22 @@ hash phase stops successfully!
 dedup phase stops successfully: 1 segments of 1024 chunks on average
 rewrite phase stops successfully!
 Record 6 sparse containers, and 1 of them are inherited
-CMA: read 39 records.
-CMA: update 40 records.
+CMA: read 48 records.
+CMA: update 49 records.
 filter phase stops successfully!
 flushing hash table!
 flushing hash table successfully!
 [debug] destor in append thread, break.
 append phase stops successfully!
 ==== backup end ====
-job id: 30
-backup path: /k8s58
+job id: 39
+backup path: /hadoop81
 number of files: 1
-number of chunks: 1024 (3962 bytes on average)
-number of unique chunks: 719
-total size(B): 4058007
-stored data size(B): 3193906
-deduplication ratio: 0.2129, 1.2705
+number of chunks: 1024 (4577 bytes on average)
+number of unique chunks: 614
+total size(B): 4687220
+stored data size(B): 3190759
+deduplication ratio: 0.3193, 1.4690
 total time(s): 0.000
 throughput(MB/s): inf
 number of zero chunks: 0
@@ -1835,13 +2425,13 @@ size of zero chunks: 0
 number of rewritten chunks: 0
 size of rewritten chunks: 0
 rewritten rate in size: 0.000
-read_time : 0.030s, 129.07MB/s
-chunk_time : 0.011s, 351.44MB/s
-hash_time : 0.012s, 323.93MB/s
-dedup_time : 0.002s, 2202.63MB/s
-rewrite_time : 0.000s, 104595.06MB/s
-filter_time : 0.003s, 1182.41MB/s
-write_time : 0.000s, 60469.02MB/s
+read_time : 0.026s, 174.98MB/s
+chunk_time : 0.015s, 293.06MB/s
+hash_time : 0.015s, 299.80MB/s
+dedup_time : 0.001s, 3063.80MB/s
+rewrite_time : 0.000s, 99335.14MB/s
+filter_time : 0.004s, 995.56MB/s
+write_time : 0.000s, 75764.09MB/s
 1
 2
 destor_server_process
@@ -1860,176 +2450,6 @@ pkt size: 5
 [debug] container meta not found
 [debug] container meta not found
 [debug] container meta not found
-write container buffer2
-push container buffer
-[debug] destor in append thread, get one chunk from buffer.
-write_container start
-append thread end
-append thread start
-read phase stops successfully!
-chunk phase stops successfully!
-hash phase stops successfully!
-dedup phase stops successfully: 1 segments of 1024 chunks on average
-rewrite phase stops successfully!
-Record 3 sparse containers, and 1 of them are inherited
-CMA: read 40 records.
-CMA: update 41 records.
-filter phase stops successfully!
-flushing hash table!
-flushing hash table successfully!
-[debug] destor in append thread, break.
-append phase stops successfully!
-==== backup end ====
-job id: 31
-backup path: /k8s59
-number of files: 1
-number of chunks: 1024 (4481 bytes on average)
-number of unique chunks: 509
-total size(B): 4589501
-stored data size(B): 2673211
-deduplication ratio: 0.4175, 1.7168
-total time(s): 0.000
-throughput(MB/s): inf
-number of zero chunks: 0
-size of zero chunks: 0
-number of rewritten chunks: 0
-size of rewritten chunks: 0
-rewritten rate in size: 0.000
-read_time : 0.033s, 134.05MB/s
-chunk_time : 0.024s, 178.77MB/s
-hash_time : 0.016s, 274.29MB/s
-dedup_time : 0.001s, 3914.93MB/s
-rewrite_time : 0.000s, 25010.80MB/s
-filter_time : 0.003s, 1532.52MB/s
-write_time : 0.000s, 95149.77MB/s
-1
-2
-destor_server_process
-destor_server_process: receive a request!
-type: 0 
-Init recipe store successfully
-[debug] destor init_container_store, in read mode.
-Init container store successfully
-append thread start
-Init index module successfully
-==== backup begin ====
-Read 3 inherited sparse containers
-pkt size: 5
-[debug] container meta not found
-[debug] container meta not found
-[debug] container meta not found
-write container buffer2
-push container buffer
-[debug] destor in append thread, get one chunk from buffer.
-write_container start
-append thread end
-append thread start
-read phase stops successfully!
-chunk phase stops successfully!
-hash phase stops successfully!
-dedup phase stops successfully: 1 segments of 1024 chunks on average
-rewrite phase stops successfully!
-Record 2 sparse containers, and 1 of them are inherited
-CMA: read 41 records.
-CMA: update 42 records.
-filter phase stops successfully!
-flushing hash table!
-flushing hash table successfully!
-[debug] destor in append thread, break.
-append phase stops successfully!
-==== backup end ====
-job id: 32
-backup path: /k8s60
-number of files: 1
-number of chunks: 1024 (4321 bytes on average)
-number of unique chunks: 525
-total size(B): 4425416
-stored data size(B): 2787857
-deduplication ratio: 0.3700, 1.5874
-total time(s): 0.000
-throughput(MB/s): inf
-number of zero chunks: 0
-size of zero chunks: 0
-number of rewritten chunks: 0
-size of rewritten chunks: 0
-rewritten rate in size: 0.000
-read_time : 0.051s, 83.43MB/s
-chunk_time : 0.023s, 185.81MB/s
-hash_time : 0.024s, 175.78MB/s
-dedup_time : 0.001s, 3744.81MB/s
-rewrite_time : 0.000s, 89795.86MB/s
-filter_time : 0.003s, 1307.03MB/s
-write_time : 0.000s, 71532.30MB/s
-1
-2
-destor_server_process
-destor_server_process: receive a request!
-type: 0 
-Init recipe store successfully
-[debug] destor init_container_store, in read mode.
-Init container store successfully
-append thread start
-Init index module successfully
-==== backup begin ====
-Read 2 inherited sparse containers
-pkt size: 5
-[debug] container meta not found
-[debug] container meta not found
-write container buffer2
-push container buffer
-[debug] destor in append thread, get one chunk from buffer.
-write_container start
-append thread end
-append thread start
-read phase stops successfully!
-chunk phase stops successfully!
-hash phase stops successfully!
-dedup phase stops successfully: 1 segments of 1024 chunks on average
-rewrite phase stops successfully!
-Record 1 sparse containers, and 0 of them are inherited
-CMA: read 42 records.
-CMA: update 43 records.
-filter phase stops successfully!
-flushing hash table!
-flushing hash table successfully!
-[debug] destor in append thread, break.
-append phase stops successfully!
-==== backup end ====
-job id: 33
-backup path: /k8s61
-number of files: 1
-number of chunks: 1024 (4607 bytes on average)
-number of unique chunks: 737
-total size(B): 4717695
-stored data size(B): 3933326
-deduplication ratio: 0.1663, 1.1994
-total time(s): 0.000
-throughput(MB/s): inf
-number of zero chunks: 0
-size of zero chunks: 0
-number of rewritten chunks: 0
-size of rewritten chunks: 0
-rewritten rate in size: 0.000
-read_time : 0.022s, 204.36MB/s
-chunk_time : 0.026s, 172.43MB/s
-hash_time : 0.012s, 389.44MB/s
-dedup_time : 0.001s, 3421.40MB/s
-rewrite_time : 0.000s, 115362.68MB/s
-filter_time : 0.004s, 1177.79MB/s
-write_time : 0.000s, 78932.36MB/s
-1
-2
-destor_server_process
-destor_server_process: receive a request!
-type: 0 
-Init recipe store successfully
-[debug] destor init_container_store, in read mode.
-Init container store successfully
-append thread start
-Init index module successfully
-==== backup begin ====
-Read 1 inherited sparse containers
-pkt size: 5
 [debug] container meta not found
 [debug] container meta not found
 [debug] container meta not found
@@ -2045,23 +2465,23 @@ chunk phase stops successfully!
 hash phase stops successfully!
 dedup phase stops successfully: 1 segments of 1024 chunks on average
 rewrite phase stops successfully!
-Record 2 sparse containers, and 0 of them are inherited
-CMA: read 43 records.
-CMA: update 44 records.
+Record 6 sparse containers, and 0 of them are inherited
+CMA: read 49 records.
+CMA: update 50 records.
 filter phase stops successfully!
 flushing hash table!
 flushing hash table successfully!
 [debug] destor in append thread, break.
 append phase stops successfully!
 ==== backup end ====
-job id: 34
-backup path: /k8s65
+job id: 40
+backup path: /hadoop83
 number of files: 1
-number of chunks: 1024 (4474 bytes on average)
-number of unique chunks: 403
-total size(B): 4582338
-stored data size(B): 2212147
-deduplication ratio: 0.5172, 2.0714
+number of chunks: 1024 (4624 bytes on average)
+number of unique chunks: 694
+total size(B): 4735875
+stored data size(B): 3541316
+deduplication ratio: 0.2522, 1.3373
 total time(s): 0.000
 throughput(MB/s): inf
 number of zero chunks: 0
@@ -2069,13 +2489,13 @@ size of zero chunks: 0
 number of rewritten chunks: 0
 size of rewritten chunks: 0
 rewritten rate in size: 0.000
-read_time : 0.064s, 68.33MB/s
-chunk_time : 0.025s, 172.64MB/s
-hash_time : 0.011s, 383.74MB/s
-dedup_time : 0.001s, 3905.32MB/s
-rewrite_time : 0.000s, 128531.12MB/s
-filter_time : 0.003s, 1722.53MB/s
-write_time : 0.000s, 82453.93MB/s
+read_time : 0.121s, 37.32MB/s
+chunk_time : 0.024s, 184.60MB/s
+hash_time : 0.015s, 308.46MB/s
+dedup_time : 0.002s, 2822.80MB/s
+rewrite_time : 0.000s, 102647.33MB/s
+filter_time : 0.005s, 970.24MB/s
+write_time : 0.000s, 80651.47MB/s
 1
 2
 destor_server_process
@@ -2087,135 +2507,9 @@ Init container store successfully
 append thread start
 Init index module successfully
 ==== backup begin ====
-pkt size: 5
-Read 2 inherited sparse containers
-[debug] container meta not found
-[debug] container meta not found
-[debug] container meta not found
-[debug] container meta not found
-[debug] container meta not found
-write container buffer1
-push container buffer
-[debug] destor in append thread, get one chunk from buffer.
-write_container start
-append thread end
-append thread start
-write container buffer2
-push container buffer
-[debug] destor in append thread, get one chunk from buffer.
-write_container start
-append thread end
-append thread start
-read phase stops successfully!
-chunk phase stops successfully!
-hash phase stops successfully!
-dedup phase stops successfully: 1 segments of 1024 chunks on average
-rewrite phase stops successfully!
-Record 4 sparse containers, and 0 of them are inherited
-CMA: read 44 records.
-CMA: update 46 records.
-filter phase stops successfully!
-flushing hash table!
-flushing hash table successfully!
-[debug] destor in append thread, break.
-append phase stops successfully!
-==== backup end ====
-job id: 35
-backup path: /k8s66
-number of files: 1
-number of chunks: 1024 (4665 bytes on average)
-number of unique chunks: 770
-total size(B): 4777245
-stored data size(B): 4166013
-deduplication ratio: 0.1279, 1.1467
-total time(s): 0.000
-throughput(MB/s): inf
-number of zero chunks: 0
-size of zero chunks: 0
-number of rewritten chunks: 0
-size of rewritten chunks: 0
-rewritten rate in size: 0.000
-read_time : 0.012s, 366.91MB/s
-chunk_time : 0.015s, 297.25MB/s
-hash_time : 0.014s, 330.79MB/s
-dedup_time : 0.001s, 4014.04MB/s
-rewrite_time : 0.000s, 126553.77MB/s
-filter_time : 0.007s, 662.59MB/s
-write_time : 0.000s, 48988.56MB/s
-1
-2
-destor_server_process
-destor_server_process: receive a request!
-type: 0 
-Init recipe store successfully
-[debug] destor init_container_store, in read mode.
-Init container store successfully
-append thread start
-Init index module successfully
-==== backup begin ====
-Read 4 inherited sparse containers
+Read 6 inherited sparse containers
 pkt size: 5
 [debug] container meta not found
-[debug] container meta not found
-[debug] container meta not found
-[debug] container meta not found
-[debug] container meta not found
-[debug] container meta not found
-write container buffer2
-push container buffer
-[debug] destor in append thread, get one chunk from buffer.
-write_container start
-append thread end
-append thread start
-read phase stops successfully!
-chunk phase stops successfully!
-hash phase stops successfully!
-dedup phase stops successfully: 1 segments of 1024 chunks on average
-rewrite phase stops successfully!
-Record 4 sparse containers, and 2 of them are inherited
-CMA: read 46 records.
-CMA: update 47 records.
-filter phase stops successfully!
-flushing hash table!
-flushing hash table successfully!
-[debug] destor in append thread, break.
-append phase stops successfully!
-==== backup end ====
-job id: 36
-backup path: /k8s67
-number of files: 1
-number of chunks: 1024 (4542 bytes on average)
-number of unique chunks: 623
-total size(B): 4651485
-stored data size(B): 3224595
-deduplication ratio: 0.3068, 1.4425
-total time(s): 0.000
-throughput(MB/s): inf
-number of zero chunks: 0
-size of zero chunks: 0
-number of rewritten chunks: 0
-size of rewritten chunks: 0
-rewritten rate in size: 0.000
-read_time : 0.028s, 160.50MB/s
-chunk_time : 0.012s, 358.18MB/s
-hash_time : 0.012s, 362.45MB/s
-dedup_time : 0.002s, 2751.86MB/s
-rewrite_time : 0.000s, 123222.27MB/s
-filter_time : 0.004s, 1095.04MB/s
-write_time : 0.000s, 90530.65MB/s
-1
-2
-destor_server_process
-destor_server_process: receive a request!
-type: 0 
-Init recipe store successfully
-[debug] destor init_container_store, in read mode.
-Init container store successfully
-append thread start
-Init index module successfully
-==== backup begin ====
-Read 4 inherited sparse containers
-pkt size: 5
 [debug] container meta not found
 [debug] container meta not found
 [debug] container meta not found
@@ -2238,22 +2532,22 @@ hash phase stops successfully!
 dedup phase stops successfully: 1 segments of 1024 chunks on average
 rewrite phase stops successfully!
 Record 8 sparse containers, and 2 of them are inherited
-CMA: read 47 records.
-CMA: update 48 records.
+CMA: read 50 records.
+CMA: update 51 records.
 filter phase stops successfully!
 flushing hash table!
 flushing hash table successfully!
 [debug] destor in append thread, break.
 append phase stops successfully!
 ==== backup end ====
-job id: 37
-backup path: /k8s68
+job id: 41
+backup path: /hadoop84
 number of files: 1
-number of chunks: 1024 (4405 bytes on average)
-number of unique chunks: 670
-total size(B): 4511509
-stored data size(B): 3519738
-deduplication ratio: 0.2198, 1.2818
+number of chunks: 1024 (4723 bytes on average)
+number of unique chunks: 549
+total size(B): 4837339
+stored data size(B): 2807777
+deduplication ratio: 0.4196, 1.7228
 total time(s): 0.000
 throughput(MB/s): inf
 number of zero chunks: 0
@@ -2261,13 +2555,13 @@ size of zero chunks: 0
 number of rewritten chunks: 0
 size of rewritten chunks: 0
 rewritten rate in size: 0.000
-read_time : 0.038s, 112.03MB/s
-chunk_time : 0.019s, 228.14MB/s
-hash_time : 0.013s, 331.32MB/s
-dedup_time : 0.002s, 2527.91MB/s
-rewrite_time : 0.000s, 81179.44MB/s
-filter_time : 0.003s, 1306.17MB/s
-write_time : 0.000s, 82740.58MB/s
+read_time : 0.093s, 49.67MB/s
+chunk_time : 0.026s, 174.20MB/s
+hash_time : 0.017s, 266.40MB/s
+dedup_time : 0.002s, 1974.00MB/s
+rewrite_time : 0.000s, 121401.21MB/s
+filter_time : 0.004s, 1175.95MB/s
+write_time : 0.000s, 83877.20MB/s
 1
 2
 destor_server_process
@@ -2279,8 +2573,11 @@ Init container store successfully
 append thread start
 Init index module successfully
 ==== backup begin ====
-Read 8 inherited sparse containers
 pkt size: 5
+Read 8 inherited sparse containers
+[debug] container meta not found
+[debug] container meta not found
+[debug] container meta not found
 [debug] container meta not found
 [debug] container meta not found
 [debug] container meta not found
@@ -2297,23 +2594,23 @@ chunk phase stops successfully!
 hash phase stops successfully!
 dedup phase stops successfully: 1 segments of 1024 chunks on average
 rewrite phase stops successfully!
-Record 2 sparse containers, and 2 of them are inherited
-CMA: read 48 records.
-CMA: update 49 records.
+Record 4 sparse containers, and 2 of them are inherited
+CMA: read 51 records.
+CMA: update 52 records.
 filter phase stops successfully!
 flushing hash table!
 flushing hash table successfully!
 [debug] destor in append thread, break.
 append phase stops successfully!
 ==== backup end ====
-job id: 38
-backup path: /k8s69
+job id: 42
+backup path: /hadoop85
 number of files: 1
-number of chunks: 1024 (4477 bytes on average)
-number of unique chunks: 417
-total size(B): 4585025
-stored data size(B): 2411571
-deduplication ratio: 0.4740, 1.9013
+number of chunks: 1024 (4608 bytes on average)
+number of unique chunks: 691
+total size(B): 4719376
+stored data size(B): 3538133
+deduplication ratio: 0.2503, 1.3339
 total time(s): 0.000
 throughput(MB/s): inf
 number of zero chunks: 0
@@ -2321,13 +2618,13 @@ size of zero chunks: 0
 number of rewritten chunks: 0
 size of rewritten chunks: 0
 rewritten rate in size: 0.000
-read_time : 0.046s, 94.22MB/s
-chunk_time : 0.015s, 300.85MB/s
-hash_time : 0.015s, 288.93MB/s
-dedup_time : 0.001s, 3451.16MB/s
-rewrite_time : 0.000s, 101688.85MB/s
-filter_time : 0.003s, 1650.67MB/s
-write_time : 0.000s, 69406.68MB/s
+read_time : 0.046s, 97.29MB/s
+chunk_time : 0.023s, 194.36MB/s
+hash_time : 0.016s, 280.53MB/s
+dedup_time : 0.002s, 2793.76MB/s
+rewrite_time : 0.000s, 93765.58MB/s
+filter_time : 0.008s, 544.88MB/s
+write_time : 0.000s, 64296.40MB/s
 1
 2
 destor_server_process
@@ -2339,8 +2636,9 @@ Init container store successfully
 append thread start
 Init index module successfully
 ==== backup begin ====
-Read 2 inherited sparse containers
-pkt size: 1
+Read 4 inherited sparse containers
+pkt size: 5
+[debug] container meta not found
 write container buffer2
 push container buffer
 [debug] destor in append thread, get one chunk from buffer.
@@ -2350,24 +2648,85 @@ append thread start
 read phase stops successfully!
 chunk phase stops successfully!
 hash phase stops successfully!
-dedup phase stops successfully: 1 segments of 119 chunks on average
+dedup phase stops successfully: 1 segments of 1024 chunks on average
 rewrite phase stops successfully!
 Record 0 sparse containers, and 0 of them are inherited
-CMA: read 49 records.
-CMA: update 50 records.
+CMA: read 52 records.
+CMA: update 53 records.
 filter phase stops successfully!
 flushing hash table!
 flushing hash table successfully!
 [debug] destor in append thread, break.
 append phase stops successfully!
 ==== backup end ====
-job id: 39
-backup path: /k8s612
+job id: 43
+backup path: /hadoop86
 number of files: 1
-number of chunks: 119 (4057 bytes on average)
-number of unique chunks: 119
-total size(B): 482801
-stored data size(B): 482801
+number of chunks: 1024 (4310 bytes on average)
+number of unique chunks: 837
+total size(B): 4413592
+stored data size(B): 3610485
+deduplication ratio: 0.1820, 1.2224
+total time(s): 0.000
+throughput(MB/s): inf
+number of zero chunks: 0
+size of zero chunks: 0
+number of rewritten chunks: 0
+size of rewritten chunks: 0
+rewritten rate in size: 0.000
+read_time : 0.051s, 82.49MB/s
+chunk_time : 0.033s, 126.29MB/s
+hash_time : 0.014s, 291.41MB/s
+dedup_time : 0.001s, 4745.35MB/s
+rewrite_time : 0.000s, 65767.65MB/s
+filter_time : 0.015s, 287.18MB/s
+write_time : 0.000s, 12235.84MB/s
+1
+2
+destor_server_process
+destor_server_process: receive a request!
+type: 0 
+Init recipe store successfully
+[debug] destor init_container_store, in read mode.
+Init container store successfully
+append thread start
+Init index module successfully
+==== backup begin ====
+Read 0 inherited sparse containers
+pkt size: 5
+write container buffer1
+push container buffer
+[debug] destor in append thread, get one chunk from buffer.
+write_container start
+append thread end
+append thread start
+write container buffer2
+push container buffer
+[debug] destor in append thread, get one chunk from buffer.
+write_container start
+append thread end
+append thread start
+read phase stops successfully!
+chunk phase stops successfully!
+hash phase stops successfully!
+dedup phase stops successfully: 1 segments of 1024 chunks on average
+rewrite phase stops successfully!
+Record 0 sparse containers, and 0 of them are inherited
+CMA: read 53 records.
+CMA: update 55 records.
+filter phase stops successfully!
+flushing hash table!
+flushing hash table successfully!
+[debug] destor in append thread, break.
+append phase stops successfully!
+==== backup end ====
+job id: 44
+backup path: /hadoop89
+number of files: 1
+number of chunks: 1024 (4822 bytes on average)
+number of unique chunks: 1024
+total size(B): 4938034
+stored data size(B): 4938034
 deduplication ratio: 0.0000, 1.0000
 total time(s): 0.000
 throughput(MB/s): inf
@@ -2376,13 +2735,68 @@ size of zero chunks: 0
 number of rewritten chunks: 0
 size of rewritten chunks: 0
 rewritten rate in size: 0.000
-read_time : 0.003s, 159.10MB/s
-chunk_time : 0.001s, 388.55MB/s
-hash_time : 0.001s, 368.64MB/s
-dedup_time : 0.000s, 6771.10MB/s
-rewrite_time : 0.000s, 115108.73MB/s
-filter_time : 0.000s, 973.44MB/s
-write_time : 0.000s, 6771.10MB/s
+read_time : 0.067s, 69.83MB/s
+chunk_time : 0.045s, 103.61MB/s
+hash_time : 0.012s, 391.20MB/s
+dedup_time : 0.001s, 8737.06MB/s
+rewrite_time : 0.000s, 114860.40MB/s
+filter_time : 0.007s, 711.37MB/s
+write_time : 0.000s, 40250.22MB/s
+1
+2
+destor_server_process
+destor_server_process: receive a request!
+type: 0 
+Init recipe store successfully
+[debug] destor init_container_store, in read mode.
+Init container store successfully
+append thread start
+Init index module successfully
+==== backup begin ====
+Read 0 inherited sparse containers
+pkt size: 3
+write container buffer2
+push container buffer
+[debug] destor in append thread, get one chunk from buffer.
+write_container start
+append thread end
+append thread start
+read phase stops successfully!
+chunk phase stops successfully!
+hash phase stops successfully!
+dedup phase stops successfully: 1 segments of 373 chunks on average
+rewrite phase stops successfully!
+Record 0 sparse containers, and 0 of them are inherited
+CMA: read 55 records.
+CMA: update 56 records.
+filter phase stops successfully!
+flushing hash table!
+flushing hash table successfully!
+[debug] destor in append thread, break.
+append phase stops successfully!
+==== backup end ====
+job id: 45
+backup path: /hadoop810
+number of files: 1
+number of chunks: 373 (7532 bytes on average)
+number of unique chunks: 373
+total size(B): 2809738
+stored data size(B): 2809738
+deduplication ratio: 0.0000, 1.0000
+total time(s): 0.000
+throughput(MB/s): inf
+number of zero chunks: 0
+size of zero chunks: 0
+number of rewritten chunks: 0
+size of rewritten chunks: 0
+rewritten rate in size: 0.000
+read_time : 0.066s, 40.76MB/s
+chunk_time : 0.010s, 271.84MB/s
+hash_time : 0.009s, 306.10MB/s
+dedup_time : 0.000s, 12463.14MB/s
+rewrite_time : 0.000s, 167473.44MB/s
+filter_time : 0.003s, 785.34MB/s
+write_time : 0.000s, 47010.09MB/s
 1
 2
 destor_server_process
@@ -2401,123 +2815,6 @@ pkt size: 5
 [debug] container meta not found
 [debug] container meta not found
 [debug] container meta not found
-write container buffer2
-push container buffer
-[debug] destor in append thread, get one chunk from buffer.
-write_container start
-append thread end
-append thread start
-read phase stops successfully!
-chunk phase stops successfully!
-hash phase stops successfully!
-dedup phase stops successfully: 1 segments of 1024 chunks on average
-rewrite phase stops successfully!
-Record 4 sparse containers, and 0 of them are inherited
-CMA: read 50 records.
-CMA: update 51 records.
-filter phase stops successfully!
-flushing hash table!
-flushing hash table successfully!
-[debug] destor in append thread, break.
-append phase stops successfully!
-==== backup end ====
-job id: 40
-backup path: /k8s70
-number of files: 1
-number of chunks: 1024 (4366 bytes on average)
-number of unique chunks: 524
-total size(B): 4471600
-stored data size(B): 2831991
-deduplication ratio: 0.3667, 1.5790
-total time(s): 0.000
-throughput(MB/s): inf
-number of zero chunks: 0
-size of zero chunks: 0
-number of rewritten chunks: 0
-size of rewritten chunks: 0
-rewritten rate in size: 0.000
-read_time : 0.045s, 94.61MB/s
-chunk_time : 0.025s, 170.49MB/s
-hash_time : 0.012s, 367.15MB/s
-dedup_time : 0.001s, 3498.32MB/s
-rewrite_time : 0.000s, 118456.95MB/s
-filter_time : 0.003s, 1338.50MB/s
-write_time : 0.000s, 71074.17MB/s
-1
-2
-destor_server_process
-destor_server_process: receive a request!
-type: 0 
-Init recipe store successfully
-[debug] destor init_container_store, in read mode.
-Init container store successfully
-append thread start
-Init index module successfully
-==== backup begin ====
-pkt size: 5
-Read 4 inherited sparse containers
-[debug] container meta not found
-[debug] container meta not found
-[debug] container meta not found
-write container buffer2
-push container buffer
-[debug] destor in append thread, get one chunk from buffer.
-write_container start
-append thread end
-append thread start
-read phase stops successfully!
-chunk phase stops successfully!
-hash phase stops successfully!
-dedup phase stops successfully: 1 segments of 1024 chunks on average
-rewrite phase stops successfully!
-Record 2 sparse containers, and 1 of them are inherited
-CMA: read 51 records.
-CMA: update 52 records.
-filter phase stops successfully!
-flushing hash table!
-flushing hash table successfully!
-[debug] destor in append thread, break.
-append phase stops successfully!
-==== backup end ====
-job id: 41
-backup path: /k8s71
-number of files: 1
-number of chunks: 1024 (4682 bytes on average)
-number of unique chunks: 733
-total size(B): 4795329
-stored data size(B): 4000299
-deduplication ratio: 0.1658, 1.1987
-total time(s): 0.000
-throughput(MB/s): inf
-number of zero chunks: 0
-size of zero chunks: 0
-number of rewritten chunks: 0
-size of rewritten chunks: 0
-rewritten rate in size: 0.000
-read_time : 0.020s, 228.54MB/s
-chunk_time : 0.015s, 299.74MB/s
-hash_time : 0.017s, 273.43MB/s
-dedup_time : 0.001s, 4992.56MB/s
-rewrite_time : 0.000s, 138581.28MB/s
-filter_time : 0.004s, 1217.89MB/s
-write_time : 0.000s, 80231.27MB/s
-1
-2
-destor_server_process
-destor_server_process: receive a request!
-type: 0 
-Init recipe store successfully
-[debug] destor init_container_store, in read mode.
-Init container store successfully
-append thread start
-Init index module successfully
-==== backup begin ====
-Read 2 inherited sparse containers
-pkt size: 5
-[debug] container meta not found
-[debug] container meta not found
-[debug] container meta not found
-[debug] container meta not found
 [debug] container meta not found
 [debug] container meta not found
 write container buffer2
@@ -2532,250 +2829,6 @@ hash phase stops successfully!
 dedup phase stops successfully: 1 segments of 1024 chunks on average
 rewrite phase stops successfully!
 Record 4 sparse containers, and 0 of them are inherited
-CMA: read 52 records.
-CMA: update 53 records.
-filter phase stops successfully!
-flushing hash table!
-flushing hash table successfully!
-[debug] destor in append thread, break.
-append phase stops successfully!
-==== backup end ====
-job id: 42
-backup path: /k8s75
-number of files: 1
-number of chunks: 1024 (4475 bytes on average)
-number of unique chunks: 403
-total size(B): 4582510
-stored data size(B): 2207607
-deduplication ratio: 0.5183, 2.0758
-total time(s): 0.000
-throughput(MB/s): inf
-number of zero chunks: 0
-size of zero chunks: 0
-number of rewritten chunks: 0
-size of rewritten chunks: 0
-rewritten rate in size: 0.000
-read_time : 0.053s, 82.32MB/s
-chunk_time : 0.021s, 208.07MB/s
-hash_time : 0.012s, 379.72MB/s
-dedup_time : 0.001s, 3678.64MB/s
-rewrite_time : 0.000s, 104052.91MB/s
-filter_time : 0.002s, 1765.75MB/s
-write_time : 0.000s, 80930.04MB/s
-1
-2
-destor_server_process
-destor_server_process: receive a request!
-type: 0 
-Init recipe store successfully
-[debug] destor init_container_store, in read mode.
-Init container store successfully
-append thread start
-Init index module successfully
-==== backup begin ====
-pkt size: 5
-Read 4 inherited sparse containers
-[debug] container meta not found
-[debug] container meta not found
-[debug] container meta not found
-[debug] container meta not found
-[debug] container meta not found
-[debug] container meta not found
-write container buffer2
-push container buffer
-[debug] destor in append thread, get one chunk from buffer.
-write_container start
-append thread end
-append thread start
-read phase stops successfully!
-chunk phase stops successfully!
-hash phase stops successfully!
-dedup phase stops successfully: 1 segments of 1024 chunks on average
-rewrite phase stops successfully!
-Record 4 sparse containers, and 1 of them are inherited
-CMA: read 53 records.
-CMA: update 54 records.
-filter phase stops successfully!
-flushing hash table!
-flushing hash table successfully!
-[debug] destor in append thread, break.
-append phase stops successfully!
-==== backup end ====
-job id: 43
-backup path: /k8s76
-number of files: 1
-number of chunks: 1024 (4695 bytes on average)
-number of unique chunks: 759
-total size(B): 4808684
-stored data size(B): 4146508
-deduplication ratio: 0.1377, 1.1597
-total time(s): 0.000
-throughput(MB/s): inf
-number of zero chunks: 0
-size of zero chunks: 0
-number of rewritten chunks: 0
-size of rewritten chunks: 0
-rewritten rate in size: 0.000
-read_time : 0.039s, 116.99MB/s
-chunk_time : 0.016s, 284.08MB/s
-hash_time : 0.016s, 281.83MB/s
-dedup_time : 0.001s, 3325.54MB/s
-rewrite_time : 0.000s, 31410.40MB/s
-filter_time : 0.004s, 1027.31MB/s
-write_time : 0.000s, 62820.80MB/s
-1
-2
-destor_server_process
-destor_server_process: receive a request!
-type: 0 
-Init recipe store successfully
-[debug] destor init_container_store, in read mode.
-Init container store successfully
-append thread start
-Init index module successfully
-==== backup begin ====
-Read 4 inherited sparse containers
-pkt size: 5
-[debug] container meta not found
-[debug] container meta not found
-[debug] container meta not found
-[debug] container meta not found
-[debug] container meta not found
-write container buffer2
-push container buffer
-[debug] destor in append thread, get one chunk from buffer.
-write_container start
-append thread end
-append thread start
-read phase stops successfully!
-chunk phase stops successfully!
-hash phase stops successfully!
-dedup phase stops successfully: 1 segments of 1024 chunks on average
-rewrite phase stops successfully!
-Record 3 sparse containers, and 1 of them are inherited
-CMA: read 54 records.
-CMA: update 55 records.
-filter phase stops successfully!
-flushing hash table!
-flushing hash table successfully!
-[debug] destor in append thread, break.
-append phase stops successfully!
-==== backup end ====
-job id: 44
-backup path: /k8s77
-number of files: 1
-number of chunks: 1024 (4648 bytes on average)
-number of unique chunks: 627
-total size(B): 4760308
-stored data size(B): 3373396
-deduplication ratio: 0.2913, 1.4111
-total time(s): 0.000
-throughput(MB/s): inf
-number of zero chunks: 0
-size of zero chunks: 0
-number of rewritten chunks: 0
-size of rewritten chunks: 0
-rewritten rate in size: 0.000
-read_time : 0.040s, 113.36MB/s
-chunk_time : 0.015s, 294.01MB/s
-hash_time : 0.012s, 363.94MB/s
-dedup_time : 0.001s, 3513.76MB/s
-rewrite_time : 0.000s, 122696.85MB/s
-filter_time : 0.004s, 1131.83MB/s
-write_time : 0.000s, 76945.48MB/s
-1
-2
-destor_server_process
-destor_server_process: receive a request!
-type: 0 
-Init recipe store successfully
-[debug] destor init_container_store, in read mode.
-Init container store successfully
-append thread start
-Init index module successfully
-==== backup begin ====
-Read 3 inherited sparse containers
-pkt size: 5
-[debug] container meta not found
-[debug] container meta not found
-[debug] container meta not found
-[debug] container meta not found
-[debug] container meta not found
-[debug] container meta not found
-[debug] container meta not found
-[debug] container meta not found
-[debug] container meta not found
-write container buffer2
-push container buffer
-[debug] destor in append thread, get one chunk from buffer.
-write_container start
-append thread end
-append thread start
-read phase stops successfully!
-chunk phase stops successfully!
-hash phase stops successfully!
-dedup phase stops successfully: 1 segments of 1024 chunks on average
-rewrite phase stops successfully!
-Record 7 sparse containers, and 1 of them are inherited
-CMA: read 55 records.
-CMA: update 56 records.
-filter phase stops successfully!
-flushing hash table!
-flushing hash table successfully!
-[debug] destor in append thread, break.
-append phase stops successfully!
-==== backup end ====
-job id: 45
-backup path: /k8s78
-number of files: 1
-number of chunks: 1024 (4208 bytes on average)
-number of unique chunks: 681
-total size(B): 4309790
-stored data size(B): 3335930
-deduplication ratio: 0.2260, 1.2919
-total time(s): 0.000
-throughput(MB/s): inf
-number of zero chunks: 0
-size of zero chunks: 0
-number of rewritten chunks: 0
-size of rewritten chunks: 0
-rewritten rate in size: 0.000
-read_time : 0.028s, 147.81MB/s
-chunk_time : 0.016s, 252.64MB/s
-hash_time : 0.012s, 338.14MB/s
-dedup_time : 0.002s, 1997.15MB/s
-rewrite_time : 0.000s, 87449.70MB/s
-filter_time : 0.004s, 967.77MB/s
-write_time : 0.000s, 52027.04MB/s
-1
-2
-destor_server_process
-destor_server_process: receive a request!
-type: 0 
-Init recipe store successfully
-[debug] destor init_container_store, in read mode.
-Init container store successfully
-append thread start
-Init index module successfully
-==== backup begin ====
-pkt size: 5
-Read 7 inherited sparse containers
-[debug] container meta not found
-[debug] container meta not found
-[debug] container meta not found
-[debug] container meta not found
-write container buffer2
-push container buffer
-[debug] destor in append thread, get one chunk from buffer.
-write_container start
-append thread end
-append thread start
-read phase stops successfully!
-chunk phase stops successfully!
-hash phase stops successfully!
-dedup phase stops successfully: 1 segments of 1024 chunks on average
-rewrite phase stops successfully!
-Record 1 sparse containers, and 1 of them are inherited
 CMA: read 56 records.
 CMA: update 57 records.
 filter phase stops successfully!
@@ -2785,13 +2838,13 @@ flushing hash table successfully!
 append phase stops successfully!
 ==== backup end ====
 job id: 46
-backup path: /k8s79
+backup path: /hadoop90
 number of files: 1
-number of chunks: 1024 (4467 bytes on average)
-number of unique chunks: 420
-total size(B): 4574703
-stored data size(B): 2405893
-deduplication ratio: 0.4741, 1.9015
+number of chunks: 1024 (4806 bytes on average)
+number of unique chunks: 214
+total size(B): 4922002
+stored data size(B): 1159607
+deduplication ratio: 0.7644, 4.2445
 total time(s): 0.000
 throughput(MB/s): inf
 number of zero chunks: 0
@@ -2799,73 +2852,13 @@ size of zero chunks: 0
 number of rewritten chunks: 0
 size of rewritten chunks: 0
 rewritten rate in size: 0.000
-read_time : 0.032s, 134.63MB/s
-chunk_time : 0.016s, 275.64MB/s
-hash_time : 0.016s, 276.65MB/s
-dedup_time : 0.001s, 4666.07MB/s
-rewrite_time : 0.000s, 117912.89MB/s
-filter_time : 0.003s, 1541.07MB/s
-write_time : 0.000s, 103875.64MB/s
-1
-2
-destor_server_process
-destor_server_process: receive a request!
-type: 0 
-Init recipe store successfully
-[debug] destor init_container_store, in read mode.
-Init container store successfully
-append thread start
-Init index module successfully
-==== backup begin ====
-Read 1 inherited sparse containers
-pkt size: 5
-[debug] container meta not found
-[debug] container meta not found
-[debug] container meta not found
-[debug] container meta not found
-[debug] container meta not found
-write container buffer2
-push container buffer
-[debug] destor in append thread, get one chunk from buffer.
-write_container start
-append thread end
-append thread start
-read phase stops successfully!
-chunk phase stops successfully!
-hash phase stops successfully!
-dedup phase stops successfully: 1 segments of 1024 chunks on average
-rewrite phase stops successfully!
-Record 4 sparse containers, and 0 of them are inherited
-CMA: read 57 records.
-CMA: update 58 records.
-filter phase stops successfully!
-flushing hash table!
-flushing hash table successfully!
-[debug] destor in append thread, break.
-append phase stops successfully!
-==== backup end ====
-job id: 47
-backup path: /k8s80
-number of files: 1
-number of chunks: 1024 (4299 bytes on average)
-number of unique chunks: 522
-total size(B): 4402630
-stored data size(B): 2760787
-deduplication ratio: 0.3729, 1.5947
-total time(s): 0.000
-throughput(MB/s): inf
-number of zero chunks: 0
-size of zero chunks: 0
-number of rewritten chunks: 0
-size of rewritten chunks: 0
-rewritten rate in size: 0.000
-read_time : 0.026s, 163.03MB/s
-chunk_time : 0.025s, 168.82MB/s
-hash_time : 0.011s, 370.68MB/s
-dedup_time : 0.001s, 3683.05MB/s
-rewrite_time : 0.000s, 102406.71MB/s
-filter_time : 0.003s, 1524.02MB/s
-write_time : 0.000s, 66645.64MB/s
+read_time : 0.087s, 54.17MB/s
+chunk_time : 0.025s, 188.42MB/s
+hash_time : 0.045s, 103.35MB/s
+dedup_time : 0.001s, 3879.33MB/s
+rewrite_time : 0.000s, 146687.09MB/s
+filter_time : 0.002s, 3078.02MB/s
+write_time : 0.000s, 57243.74MB/s
 1
 2
 destor_server_process
@@ -2882,61 +2875,7 @@ pkt size: 5
 [debug] container meta not found
 [debug] container meta not found
 [debug] container meta not found
-write container buffer2
-push container buffer
-[debug] destor in append thread, get one chunk from buffer.
-write_container start
-append thread end
-append thread start
-read phase stops successfully!
-chunk phase stops successfully!
-hash phase stops successfully!
-dedup phase stops successfully: 1 segments of 1024 chunks on average
-rewrite phase stops successfully!
-Record 2 sparse containers, and 0 of them are inherited
-CMA: read 58 records.
-CMA: update 59 records.
-filter phase stops successfully!
-flushing hash table!
-flushing hash table successfully!
-[debug] destor in append thread, break.
-append phase stops successfully!
-==== backup end ====
-job id: 48
-backup path: /k8s81
-number of files: 1
-number of chunks: 1024 (4646 bytes on average)
-number of unique chunks: 732
-total size(B): 4758167
-stored data size(B): 3953911
-deduplication ratio: 0.1690, 1.2034
-total time(s): 0.000
-throughput(MB/s): inf
-number of zero chunks: 0
-size of zero chunks: 0
-number of rewritten chunks: 0
-size of rewritten chunks: 0
-rewritten rate in size: 0.000
-read_time : 0.053s, 85.43MB/s
-chunk_time : 0.015s, 310.23MB/s
-hash_time : 0.015s, 298.87MB/s
-dedup_time : 0.001s, 4461.89MB/s
-rewrite_time : 0.000s, 92606.97MB/s
-filter_time : 0.004s, 1271.79MB/s
-write_time : 0.000s, 20257.78MB/s
-1
-2
-destor_server_process
-destor_server_process: receive a request!
-type: 0 
-Init recipe store successfully
-[debug] destor init_container_store, in read mode.
-Init container store successfully
-append thread start
-Init index module successfully
-==== backup begin ====
-Read 2 inherited sparse containers
-pkt size: 5
+[debug] container meta not found
 [debug] container meta not found
 [debug] container meta not found
 [debug] container meta not found
@@ -2953,23 +2892,23 @@ chunk phase stops successfully!
 hash phase stops successfully!
 dedup phase stops successfully: 1 segments of 1024 chunks on average
 rewrite phase stops successfully!
-Record 3 sparse containers, and 0 of them are inherited
-CMA: read 59 records.
-CMA: update 60 records.
+Record 6 sparse containers, and 1 of them are inherited
+CMA: read 57 records.
+CMA: update 58 records.
 filter phase stops successfully!
 flushing hash table!
 flushing hash table successfully!
 [debug] destor in append thread, break.
 append phase stops successfully!
 ==== backup end ====
-job id: 49
-backup path: /k8s85
+job id: 47
+backup path: /hadoop91
 number of files: 1
-number of chunks: 1024 (4408 bytes on average)
-number of unique chunks: 397
-total size(B): 4514399
-stored data size(B): 2124841
-deduplication ratio: 0.5293, 2.1246
+number of chunks: 1024 (4503 bytes on average)
+number of unique chunks: 596
+total size(B): 4611502
+stored data size(B): 3090297
+deduplication ratio: 0.3299, 1.4923
 total time(s): 0.000
 throughput(MB/s): inf
 number of zero chunks: 0
@@ -2977,81 +2916,13 @@ size of zero chunks: 0
 number of rewritten chunks: 0
 size of rewritten chunks: 0
 rewritten rate in size: 0.000
-read_time : 0.079s, 54.24MB/s
-chunk_time : 0.015s, 294.54MB/s
-hash_time : 0.015s, 278.14MB/s
-dedup_time : 0.001s, 4042.50MB/s
-rewrite_time : 0.000s, 113296.48MB/s
-filter_time : 0.002s, 1729.02MB/s
-write_time : 0.000s, 36797.15MB/s
-1
-2
-destor_server_process
-destor_server_process: receive a request!
-type: 0 
-Init recipe store successfully
-[debug] destor init_container_store, in read mode.
-Init container store successfully
-append thread start
-Init index module successfully
-==== backup begin ====
-Read 3 inherited sparse containers
-pkt size: 5
-[debug] container meta not found
-[debug] container meta not found
-[debug] container meta not found
-[debug] container meta not found
-[debug] container meta not found
-[debug] container meta not found
-[debug] container meta not found
-write container buffer1
-push container buffer
-[debug] destor in append thread, get one chunk from buffer.
-write_container start
-append thread end
-append thread start
-write container buffer2
-push container buffer
-[debug] destor in append thread, get one chunk from buffer.
-write_container start
-append thread end
-append thread start
-read phase stops successfully!
-chunk phase stops successfully!
-hash phase stops successfully!
-dedup phase stops successfully: 1 segments of 1024 chunks on average
-rewrite phase stops successfully!
-Record 6 sparse containers, and 0 of them are inherited
-CMA: read 60 records.
-CMA: update 62 records.
-filter phase stops successfully!
-flushing hash table!
-flushing hash table successfully!
-[debug] destor in append thread, break.
-append phase stops successfully!
-==== backup end ====
-job id: 50
-backup path: /k8s86
-number of files: 1
-number of chunks: 1024 (4683 bytes on average)
-number of unique chunks: 766
-total size(B): 4795397
-stored data size(B): 4173719
-deduplication ratio: 0.1296, 1.1490
-total time(s): 0.000
-throughput(MB/s): inf
-number of zero chunks: 0
-size of zero chunks: 0
-number of rewritten chunks: 0
-size of rewritten chunks: 0
-rewritten rate in size: 0.000
-read_time : 0.028s, 161.26MB/s
-chunk_time : 0.014s, 323.24MB/s
-hash_time : 0.022s, 204.95MB/s
-dedup_time : 0.002s, 2927.81MB/s
-rewrite_time : 0.000s, 91464.94MB/s
-filter_time : 0.006s, 731.72MB/s
-write_time : 0.000s, 35728.49MB/s
+read_time : 0.055s, 80.38MB/s
+chunk_time : 0.013s, 329.06MB/s
+hash_time : 0.014s, 315.35MB/s
+dedup_time : 0.002s, 2157.93MB/s
+rewrite_time : 0.000s, 59430.69MB/s
+filter_time : 0.005s, 835.46MB/s
+write_time : 0.000s, 81442.06MB/s
 1
 2
 destor_server_process
@@ -3071,368 +2942,6 @@ pkt size: 5
 [debug] container meta not found
 [debug] container meta not found
 [debug] container meta not found
-write container buffer2
-push container buffer
-[debug] destor in append thread, get one chunk from buffer.
-write_container start
-append thread end
-append thread start
-read phase stops successfully!
-chunk phase stops successfully!
-hash phase stops successfully!
-dedup phase stops successfully: 1 segments of 1024 chunks on average
-rewrite phase stops successfully!
-Record 4 sparse containers, and 2 of them are inherited
-CMA: read 62 records.
-CMA: update 63 records.
-filter phase stops successfully!
-flushing hash table!
-flushing hash table successfully!
-[debug] destor in append thread, break.
-append phase stops successfully!
-==== backup end ====
-job id: 51
-backup path: /k8s87
-number of files: 1
-number of chunks: 1024 (4535 bytes on average)
-number of unique chunks: 625
-total size(B): 4643949
-stored data size(B): 3219875
-deduplication ratio: 0.3067, 1.4423
-total time(s): 0.000
-throughput(MB/s): inf
-number of zero chunks: 0
-size of zero chunks: 0
-number of rewritten chunks: 0
-size of rewritten chunks: 0
-rewritten rate in size: 0.000
-read_time : 0.016s, 269.46MB/s
-chunk_time : 0.012s, 379.99MB/s
-hash_time : 0.012s, 370.05MB/s
-dedup_time : 0.001s, 3740.55MB/s
-rewrite_time : 0.000s, 119697.70MB/s
-filter_time : 0.003s, 1476.76MB/s
-write_time : 0.000s, 29723.59MB/s
-1
-2
-destor_server_process
-destor_server_process: receive a request!
-type: 0 
-Init recipe store successfully
-[debug] destor init_container_store, in read mode.
-Init container store successfully
-append thread start
-Init index module successfully
-==== backup begin ====
-Read 4 inherited sparse containers
-pkt size: 5
-[debug] container meta not found
-[debug] container meta not found
-[debug] container meta not found
-[debug] container meta not found
-[debug] container meta not found
-[debug] container meta not found
-[debug] container meta not found
-[debug] container meta not found
-[debug] container meta not found
-write container buffer2
-push container buffer
-[debug] destor in append thread, get one chunk from buffer.
-write_container start
-append thread end
-append thread start
-read phase stops successfully!
-chunk phase stops successfully!
-hash phase stops successfully!
-dedup phase stops successfully: 1 segments of 1024 chunks on average
-rewrite phase stops successfully!
-Record 7 sparse containers, and 2 of them are inherited
-CMA: read 63 records.
-CMA: update 64 records.
-filter phase stops successfully!
-flushing hash table!
-flushing hash table successfully!
-[debug] destor in append thread, break.
-append phase stops successfully!
-==== backup end ====
-job id: 52
-backup path: /k8s88
-number of files: 1
-number of chunks: 1024 (4315 bytes on average)
-number of unique chunks: 673
-total size(B): 4419321
-stored data size(B): 3431639
-deduplication ratio: 0.2235, 1.2878
-total time(s): 0.000
-throughput(MB/s): inf
-number of zero chunks: 0
-size of zero chunks: 0
-number of rewritten chunks: 0
-size of rewritten chunks: 0
-rewritten rate in size: 0.000
-read_time : 0.049s, 85.75MB/s
-chunk_time : 0.020s, 211.43MB/s
-hash_time : 0.011s, 385.00MB/s
-dedup_time : 0.002s, 2479.17MB/s
-rewrite_time : 0.000s, 87804.02MB/s
-filter_time : 0.003s, 1234.86MB/s
-write_time : 0.000s, 73940.23MB/s
-1
-2
-destor_server_process
-destor_server_process: receive a request!
-type: 0 
-Init recipe store successfully
-[debug] destor init_container_store, in read mode.
-Init container store successfully
-append thread start
-Init index module successfully
-==== backup begin ====
-pkt size: 5
-Read 7 inherited sparse containers
-[debug] container meta not found
-[debug] container meta not found
-[debug] container meta not found
-[debug] container meta not found
-[debug] container meta not found
-[debug] container meta not found
-write container buffer2
-push container buffer
-[debug] destor in append thread, get one chunk from buffer.
-write_container start
-append thread end
-append thread start
-read phase stops successfully!
-chunk phase stops successfully!
-hash phase stops successfully!
-dedup phase stops successfully: 1 segments of 1024 chunks on average
-rewrite phase stops successfully!
-Record 3 sparse containers, and 2 of them are inherited
-CMA: read 64 records.
-CMA: update 65 records.
-filter phase stops successfully!
-flushing hash table!
-flushing hash table successfully!
-[debug] destor in append thread, break.
-append phase stops successfully!
-==== backup end ====
-job id: 53
-backup path: /k8s89
-number of files: 1
-number of chunks: 1024 (4474 bytes on average)
-number of unique chunks: 444
-total size(B): 4581752
-stored data size(B): 2507643
-deduplication ratio: 0.4527, 1.8271
-total time(s): 0.000
-throughput(MB/s): inf
-number of zero chunks: 0
-size of zero chunks: 0
-number of rewritten chunks: 0
-size of rewritten chunks: 0
-rewritten rate in size: 0.000
-read_time : 0.034s, 129.15MB/s
-chunk_time : 0.028s, 156.37MB/s
-hash_time : 0.016s, 265.57MB/s
-dedup_time : 0.002s, 2725.83MB/s
-rewrite_time : 0.000s, 106573.15MB/s
-filter_time : 0.002s, 1822.90MB/s
-write_time : 0.000s, 91031.23MB/s
-1
-2
-destor_server_process
-destor_server_process: receive a request!
-type: 0 
-Init recipe store successfully
-[debug] destor init_container_store, in read mode.
-Init container store successfully
-append thread start
-Init index module successfully
-==== backup begin ====
-Read 3 inherited sparse containers
-pkt size: 5
-[debug] container meta not found
-[debug] container meta not found
-[debug] container meta not found
-[debug] container meta not found
-[debug] container meta not found
-[debug] container meta not found
-write container buffer2
-push container buffer
-[debug] destor in append thread, get one chunk from buffer.
-write_container start
-append thread end
-append thread start
-read phase stops successfully!
-chunk phase stops successfully!
-hash phase stops successfully!
-dedup phase stops successfully: 1 segments of 1024 chunks on average
-rewrite phase stops successfully!
-Record 5 sparse containers, and 1 of them are inherited
-CMA: read 65 records.
-CMA: update 66 records.
-filter phase stops successfully!
-flushing hash table!
-flushing hash table successfully!
-[debug] destor in append thread, break.
-append phase stops successfully!
-==== backup end ====
-job id: 54
-backup path: /k8s90
-number of files: 1
-number of chunks: 1024 (4363 bytes on average)
-number of unique chunks: 579
-total size(B): 4467807
-stored data size(B): 3051538
-deduplication ratio: 0.3170, 1.4641
-total time(s): 0.000
-throughput(MB/s): inf
-number of zero chunks: 0
-size of zero chunks: 0
-number of rewritten chunks: 0
-size of rewritten chunks: 0
-rewritten rate in size: 0.000
-read_time : 0.058s, 74.04MB/s
-chunk_time : 0.019s, 228.18MB/s
-hash_time : 0.013s, 325.73MB/s
-dedup_time : 0.001s, 2857.70MB/s
-rewrite_time : 0.000s, 62659.31MB/s
-filter_time : 0.006s, 743.34MB/s
-write_time : 0.000s, 76086.30MB/s
-1
-2
-destor_server_process
-destor_server_process: receive a request!
-type: 0 
-Init recipe store successfully
-[debug] destor init_container_store, in read mode.
-Init container store successfully
-append thread start
-Init index module successfully
-==== backup begin ====
-Read 5 inherited sparse containers
-pkt size: 5
-[debug] container meta not found
-[debug] container meta not found
-[debug] container meta not found
-write container buffer2
-push container buffer
-[debug] destor in append thread, get one chunk from buffer.
-write_container start
-append thread end
-append thread start
-read phase stops successfully!
-chunk phase stops successfully!
-hash phase stops successfully!
-dedup phase stops successfully: 1 segments of 1024 chunks on average
-rewrite phase stops successfully!
-Record 2 sparse containers, and 1 of them are inherited
-CMA: read 66 records.
-CMA: update 67 records.
-filter phase stops successfully!
-flushing hash table!
-flushing hash table successfully!
-[debug] destor in append thread, break.
-append phase stops successfully!
-==== backup end ====
-job id: 55
-backup path: /k8s91
-number of files: 1
-number of chunks: 1024 (4586 bytes on average)
-number of unique chunks: 738
-total size(B): 4696637
-stored data size(B): 3905970
-deduplication ratio: 0.1683, 1.2024
-total time(s): 0.000
-throughput(MB/s): inf
-number of zero chunks: 0
-size of zero chunks: 0
-number of rewritten chunks: 0
-size of rewritten chunks: 0
-rewritten rate in size: 0.000
-read_time : 0.043s, 104.96MB/s
-chunk_time : 0.015s, 299.74MB/s
-hash_time : 0.017s, 256.44MB/s
-dedup_time : 0.001s, 3362.66MB/s
-rewrite_time : 0.000s, 97370.91MB/s
-filter_time : 0.004s, 1070.78MB/s
-write_time : 0.000s, 32223.47MB/s
-1
-2
-destor_server_process
-destor_server_process: receive a request!
-type: 0 
-Init recipe store successfully
-[debug] destor init_container_store, in read mode.
-Init container store successfully
-append thread start
-Init index module successfully
-==== backup begin ====
-Read 2 inherited sparse containers
-pkt size: 5
-[debug] container meta not found
-[debug] container meta not found
-[debug] container meta not found
-[debug] container meta not found
-[debug] container meta not found
-[debug] container meta not found
-write container buffer2
-push container buffer
-[debug] destor in append thread, get one chunk from buffer.
-write_container start
-append thread end
-append thread start
-read phase stops successfully!
-chunk phase stops successfully!
-hash phase stops successfully!
-dedup phase stops successfully: 1 segments of 1024 chunks on average
-rewrite phase stops successfully!
-Record 4 sparse containers, and 0 of them are inherited
-CMA: read 67 records.
-CMA: update 68 records.
-filter phase stops successfully!
-flushing hash table!
-flushing hash table successfully!
-[debug] destor in append thread, break.
-append phase stops successfully!
-==== backup end ====
-job id: 56
-backup path: /k8s95
-number of files: 1
-number of chunks: 1024 (4448 bytes on average)
-number of unique chunks: 418
-total size(B): 4555120
-stored data size(B): 2273722
-deduplication ratio: 0.5008, 2.0034
-total time(s): 0.000
-throughput(MB/s): inf
-number of zero chunks: 0
-size of zero chunks: 0
-number of rewritten chunks: 0
-size of rewritten chunks: 0
-rewritten rate in size: 0.000
-read_time : 0.037s, 117.28MB/s
-chunk_time : 0.025s, 173.79MB/s
-hash_time : 0.015s, 284.99MB/s
-dedup_time : 0.002s, 2715.06MB/s
-rewrite_time : 0.000s, 135753.15MB/s
-filter_time : 0.003s, 1712.97MB/s
-write_time : 0.000s, 78983.65MB/s
-1
-2
-destor_server_process
-destor_server_process: receive a request!
-type: 0 
-Init recipe store successfully
-[debug] destor init_container_store, in read mode.
-Init container store successfully
-append thread start
-Init index module successfully
-==== backup begin ====
-Read 4 inherited sparse containers
-pkt size: 5
-[debug] container meta not found
-[debug] container meta not found
 [debug] container meta not found
 [debug] container meta not found
 [debug] container meta not found
@@ -3454,23 +2963,23 @@ chunk phase stops successfully!
 hash phase stops successfully!
 dedup phase stops successfully: 1 segments of 1024 chunks on average
 rewrite phase stops successfully!
-Record 5 sparse containers, and 0 of them are inherited
-CMA: read 68 records.
-CMA: update 70 records.
+Record 9 sparse containers, and 2 of them are inherited
+CMA: read 58 records.
+CMA: update 60 records.
 filter phase stops successfully!
 flushing hash table!
 flushing hash table successfully!
 [debug] destor in append thread, break.
 append phase stops successfully!
 ==== backup end ====
-job id: 57
-backup path: /k8s96
+job id: 48
+backup path: /hadoop92
 number of files: 1
-number of chunks: 1024 (4687 bytes on average)
-number of unique chunks: 789
-total size(B): 4800254
-stored data size(B): 4248506
-deduplication ratio: 0.1149, 1.1299
+number of chunks: 1024 (4876 bytes on average)
+number of unique chunks: 854
+total size(B): 4993882
+stored data size(B): 4512121
+deduplication ratio: 0.0965, 1.1068
 total time(s): 0.000
 throughput(MB/s): inf
 number of zero chunks: 0
@@ -3478,13 +2987,13 @@ size of zero chunks: 0
 number of rewritten chunks: 0
 size of rewritten chunks: 0
 rewritten rate in size: 0.000
-read_time : 0.016s, 278.97MB/s
-chunk_time : 0.016s, 284.91MB/s
-hash_time : 0.015s, 312.87MB/s
-dedup_time : 0.001s, 3144.15MB/s
-rewrite_time : 0.000s, 80313.67MB/s
-filter_time : 0.006s, 828.43MB/s
-write_time : 0.000s, 37833.71MB/s
+read_time : 0.108s, 44.24MB/s
+chunk_time : 0.037s, 129.54MB/s
+hash_time : 0.039s, 121.96MB/s
+dedup_time : 0.003s, 1381.25MB/s
+rewrite_time : 0.000s, 119063.43MB/s
+filter_time : 0.007s, 697.91MB/s
+write_time : 0.000s, 41776.64MB/s
 1
 2
 destor_server_process
@@ -3496,8 +3005,13 @@ Init container store successfully
 append thread start
 Init index module successfully
 ==== backup begin ====
-Read 5 inherited sparse containers
+Read 9 inherited sparse containers
 pkt size: 5
+[debug] container meta not found
+[debug] container meta not found
+[debug] container meta not found
+[debug] container meta not found
+[debug] container meta not found
 [debug] container meta not found
 [debug] container meta not found
 [debug] container meta not found
@@ -3514,23 +3028,23 @@ chunk phase stops successfully!
 hash phase stops successfully!
 dedup phase stops successfully: 1 segments of 1024 chunks on average
 rewrite phase stops successfully!
-Record 3 sparse containers, and 1 of them are inherited
-CMA: read 70 records.
-CMA: update 71 records.
+Record 6 sparse containers, and 3 of them are inherited
+CMA: read 60 records.
+CMA: update 61 records.
 filter phase stops successfully!
 flushing hash table!
 flushing hash table successfully!
 [debug] destor in append thread, break.
 append phase stops successfully!
 ==== backup end ====
-job id: 58
-backup path: /k8s97
+job id: 49
+backup path: /hadoop93
 number of files: 1
-number of chunks: 1024 (4623 bytes on average)
-number of unique chunks: 624
-total size(B): 4734212
-stored data size(B): 3311833
-deduplication ratio: 0.3004, 1.4295
+number of chunks: 1024 (4736 bytes on average)
+number of unique chunks: 601
+total size(B): 4850361
+stored data size(B): 3450885
+deduplication ratio: 0.2885, 1.4055
 total time(s): 0.000
 throughput(MB/s): inf
 number of zero chunks: 0
@@ -3538,13 +3052,13 @@ size of zero chunks: 0
 number of rewritten chunks: 0
 size of rewritten chunks: 0
 rewritten rate in size: 0.000
-read_time : 0.056s, 80.95MB/s
-chunk_time : 0.013s, 349.29MB/s
-hash_time : 0.012s, 388.08MB/s
-dedup_time : 0.001s, 3629.34MB/s
-rewrite_time : 0.000s, 88527.38MB/s
-filter_time : 0.003s, 1359.09MB/s
-write_time : 0.000s, 34999.20MB/s
+read_time : 0.072s, 64.11MB/s
+chunk_time : 0.044s, 104.32MB/s
+hash_time : 0.021s, 220.04MB/s
+dedup_time : 0.002s, 2285.41MB/s
+rewrite_time : 0.000s, 94401.32MB/s
+filter_time : 0.003s, 1330.74MB/s
+write_time : 0.000s, 24092.00MB/s
 1
 2
 destor_server_process
@@ -3556,8 +3070,10 @@ Init container store successfully
 append thread start
 Init index module successfully
 ==== backup begin ====
-Read 3 inherited sparse containers
+Read 6 inherited sparse containers
 pkt size: 5
+[debug] container meta not found
+[debug] container meta not found
 [debug] container meta not found
 [debug] container meta not found
 [debug] container meta not found
@@ -3581,22 +3097,22 @@ hash phase stops successfully!
 dedup phase stops successfully: 1 segments of 1024 chunks on average
 rewrite phase stops successfully!
 Record 9 sparse containers, and 2 of them are inherited
-CMA: read 71 records.
-CMA: update 72 records.
+CMA: read 61 records.
+CMA: update 62 records.
 filter phase stops successfully!
 flushing hash table!
 flushing hash table successfully!
 [debug] destor in append thread, break.
 append phase stops successfully!
 ==== backup end ====
-job id: 59
-backup path: /k8s98
+job id: 50
+backup path: /hadoop94
 number of files: 1
-number of chunks: 1024 (4342 bytes on average)
-number of unique chunks: 680
-total size(B): 4446721
-stored data size(B): 3469330
-deduplication ratio: 0.2198, 1.2817
+number of chunks: 1024 (4774 bytes on average)
+number of unique chunks: 488
+total size(B): 4888894
+stored data size(B): 2720020
+deduplication ratio: 0.4436, 1.7974
 total time(s): 0.000
 throughput(MB/s): inf
 number of zero chunks: 0
@@ -3604,13 +3120,13 @@ size of zero chunks: 0
 number of rewritten chunks: 0
 size of rewritten chunks: 0
 rewritten rate in size: 0.000
-read_time : 0.026s, 163.47MB/s
-chunk_time : 0.011s, 370.11MB/s
-hash_time : 0.013s, 338.50MB/s
-dedup_time : 0.002s, 2266.55MB/s
-rewrite_time : 0.000s, 98621.48MB/s
-filter_time : 0.004s, 1072.24MB/s
-write_time : 0.000s, 90228.16MB/s
+read_time : 0.051s, 91.63MB/s
+chunk_time : 0.045s, 103.59MB/s
+hash_time : 0.024s, 191.48MB/s
+dedup_time : 0.002s, 1987.39MB/s
+rewrite_time : 0.000s, 105963.92MB/s
+filter_time : 0.003s, 1546.41MB/s
+write_time : 0.000s, 76432.99MB/s
 1
 2
 destor_server_process
@@ -3622,444 +3138,12 @@ Init container store successfully
 append thread start
 Init index module successfully
 ==== backup begin ====
+pkt size: 5
 Read 9 inherited sparse containers
-pkt size: 4
 [debug] container meta not found
 [debug] container meta not found
 [debug] container meta not found
 [debug] container meta not found
-[debug] container meta not found
-write container buffer2
-push container buffer
-[debug] destor in append thread, get one chunk from buffer.
-write_container start
-append thread end
-append thread start
-read phase stops successfully!
-chunk phase stops successfully!
-hash phase stops successfully!
-dedup phase stops successfully: 1 segments of 1024 chunks on average
-rewrite phase stops successfully!
-Record 2 sparse containers, and 2 of them are inherited
-CMA: read 72 records.
-CMA: update 73 records.
-filter phase stops successfully!
-flushing hash table!
-flushing hash table successfully!
-[debug] destor in append thread, break.
-append phase stops successfully!
-==== backup end ====
-job id: 60
-backup path: /k8s99
-number of files: 1
-number of chunks: 1024 (3656 bytes on average)
-number of unique chunks: 567
-total size(B): 3744243
-stored data size(B): 2148228
-deduplication ratio: 0.4263, 1.7429
-total time(s): 0.000
-throughput(MB/s): inf
-number of zero chunks: 0
-size of zero chunks: 0
-number of rewritten chunks: 0
-size of rewritten chunks: 0
-rewritten rate in size: 0.000
-read_time : 0.032s, 112.89MB/s
-chunk_time : 0.016s, 229.82MB/s
-hash_time : 0.010s, 367.14MB/s
-dedup_time : 0.001s, 2490.09MB/s
-rewrite_time : 0.000s, 89269.71MB/s
-filter_time : 0.003s, 1372.85MB/s
-write_time : 0.000s, 60521.84MB/s
-1
-2
-destor_server_process
-destor_server_process: receive a request!
-type: 0 
-Init recipe store successfully
-[debug] destor init_container_store, in read mode.
-Init container store successfully
-append thread start
-Init index module successfully
-==== backup begin ====
-Read 2 inherited sparse containers
-pkt size: 5
-[debug] container meta not found
-[debug] container meta not found
-[debug] container meta not found
-[debug] container meta not found
-[debug] container meta not found
-write container buffer2
-push container buffer
-[debug] destor in append thread, get one chunk from buffer.
-write_container start
-append thread end
-append thread start
-read phase stops successfully!
-chunk phase stops successfully!
-hash phase stops successfully!
-dedup phase stops successfully: 1 segments of 1024 chunks on average
-rewrite phase stops successfully!
-Record 4 sparse containers, and 0 of them are inherited
-CMA: read 73 records.
-CMA: update 74 records.
-filter phase stops successfully!
-flushing hash table!
-flushing hash table successfully!
-[debug] destor in append thread, break.
-append phase stops successfully!
-==== backup end ====
-job id: 61
-backup path: /k8s100
-number of files: 1
-number of chunks: 1024 (4291 bytes on average)
-number of unique chunks: 817
-total size(B): 4394094
-stored data size(B): 3730650
-deduplication ratio: 0.1510, 1.1778
-total time(s): 0.000
-throughput(MB/s): inf
-number of zero chunks: 0
-size of zero chunks: 0
-number of rewritten chunks: 0
-size of rewritten chunks: 0
-rewritten rate in size: 0.000
-read_time : 0.060s, 70.20MB/s
-chunk_time : 0.021s, 197.84MB/s
-hash_time : 0.015s, 283.49MB/s
-dedup_time : 0.001s, 3429.24MB/s
-rewrite_time : 0.000s, 123251.02MB/s
-filter_time : 0.003s, 1251.28MB/s
-write_time : 0.000s, 45059.51MB/s
-1
-2
-destor_server_process
-destor_server_process: receive a request!
-type: 0 
-Init recipe store successfully
-[debug] destor init_container_store, in read mode.
-Init container store successfully
-append thread start
-Init index module successfully
-==== backup begin ====
-Read 4 inherited sparse containers
-pkt size: 5
-[debug] container meta not found
-[debug] container meta not found
-write container buffer1
-push container buffer
-[debug] destor in append thread, get one chunk from buffer.
-write_container start
-append thread end
-append thread start
-write container buffer2
-push container buffer
-[debug] destor in append thread, get one chunk from buffer.
-write_container start
-append thread end
-append thread start
-read phase stops successfully!
-chunk phase stops successfully!
-hash phase stops successfully!
-dedup phase stops successfully: 1 segments of 1024 chunks on average
-rewrite phase stops successfully!
-Record 2 sparse containers, and 0 of them are inherited
-CMA: read 74 records.
-CMA: update 76 records.
-filter phase stops successfully!
-flushing hash table!
-flushing hash table successfully!
-[debug] destor in append thread, break.
-append phase stops successfully!
-==== backup end ====
-job id: 62
-backup path: /k8s101
-number of files: 1
-number of chunks: 1024 (4636 bytes on average)
-number of unique chunks: 932
-total size(B): 4747787
-stored data size(B): 4553356
-deduplication ratio: 0.0410, 1.0427
-total time(s): 0.000
-throughput(MB/s): inf
-number of zero chunks: 0
-size of zero chunks: 0
-number of rewritten chunks: 0
-size of rewritten chunks: 0
-rewritten rate in size: 0.000
-read_time : 0.040s, 112.80MB/s
-chunk_time : 0.017s, 266.28MB/s
-hash_time : 0.011s, 401.90MB/s
-dedup_time : 0.001s, 5076.06MB/s
-rewrite_time : 0.000s, 78066.25MB/s
-filter_time : 0.005s, 886.42MB/s
-write_time : 0.000s, 42316.29MB/s
-1
-2
-destor_server_process
-destor_server_process: receive a request!
-type: 0 
-Init recipe store successfully
-[debug] destor init_container_store, in read mode.
-Init container store successfully
-append thread start
-Init index module successfully
-==== backup begin ====
-pkt size: 5
-Read 2 inherited sparse containers
-[debug] container meta not found
-[debug] container meta not found
-write container buffer1
-push container buffer
-[debug] destor in append thread, get one chunk from buffer.
-write_container start
-append thread end
-append thread start
-write container buffer2
-push container buffer
-[debug] destor in append thread, get one chunk from buffer.
-write_container start
-append thread end
-append thread start
-read phase stops successfully!
-chunk phase stops successfully!
-hash phase stops successfully!
-dedup phase stops successfully: 1 segments of 1024 chunks on average
-rewrite phase stops successfully!
-Record 2 sparse containers, and 1 of them are inherited
-CMA: read 76 records.
-CMA: update 78 records.
-filter phase stops successfully!
-flushing hash table!
-flushing hash table successfully!
-[debug] destor in append thread, break.
-append phase stops successfully!
-==== backup end ====
-job id: 63
-backup path: /k8s102
-number of files: 1
-number of chunks: 1024 (4507 bytes on average)
-number of unique chunks: 1022
-total size(B): 4615709
-stored data size(B): 4614292
-deduplication ratio: 0.0003, 1.0003
-total time(s): 0.000
-throughput(MB/s): inf
-number of zero chunks: 0
-size of zero chunks: 0
-number of rewritten chunks: 0
-size of rewritten chunks: 0
-rewritten rate in size: 0.000
-read_time : 0.033s, 132.98MB/s
-chunk_time : 0.018s, 246.44MB/s
-hash_time : 0.014s, 317.94MB/s
-dedup_time : 0.001s, 5130.40MB/s
-rewrite_time : 0.000s, 176075.33MB/s
-filter_time : 0.005s, 899.26MB/s
-write_time : 0.000s, 23167.81MB/s
-1
-2
-destor_server_process
-destor_server_process: receive a request!
-type: 0 
-Init recipe store successfully
-[debug] destor init_container_store, in read mode.
-Init container store successfully
-append thread start
-Init index module successfully
-==== backup begin ====
-Read 2 inherited sparse containers
-pkt size: 5
-[debug] container meta not found
-[debug] container meta not found
-[debug] container meta not found
-write container buffer1
-push container buffer
-[debug] destor in append thread, get one chunk from buffer.
-write_container start
-append thread end
-append thread start
-write container buffer2
-push container buffer
-[debug] destor in append thread, get one chunk from buffer.
-write_container start
-append thread end
-append thread start
-read phase stops successfully!
-chunk phase stops successfully!
-hash phase stops successfully!
-dedup phase stops successfully: 1 segments of 1024 chunks on average
-rewrite phase stops successfully!
-Record 3 sparse containers, and 1 of them are inherited
-CMA: read 78 records.
-CMA: update 80 records.
-filter phase stops successfully!
-flushing hash table!
-flushing hash table successfully!
-[debug] destor in append thread, break.
-append phase stops successfully!
-==== backup end ====
-job id: 64
-backup path: /k8s104
-number of files: 1
-number of chunks: 1024 (4863 bytes on average)
-number of unique chunks: 975
-total size(B): 4980316
-stored data size(B): 4810624
-deduplication ratio: 0.0341, 1.0353
-total time(s): 0.000
-throughput(MB/s): inf
-number of zero chunks: 0
-size of zero chunks: 0
-number of rewritten chunks: 0
-size of rewritten chunks: 0
-rewritten rate in size: 0.000
-read_time : 0.057s, 82.90MB/s
-chunk_time : 0.026s, 184.92MB/s
-hash_time : 0.013s, 365.13MB/s
-dedup_time : 0.001s, 4011.49MB/s
-rewrite_time : 0.000s, 118739.99MB/s
-filter_time : 0.006s, 826.30MB/s
-write_time : 0.000s, 33447.88MB/s
-1
-2
-destor_server_process
-destor_server_process: receive a request!
-type: 0 
-Init recipe store successfully
-[debug] destor init_container_store, in read mode.
-Init container store successfully
-append thread start
-Init index module successfully
-==== backup begin ====
-pkt size: 5
-Read 3 inherited sparse containers
-[debug] container meta not found
-[debug] container meta not found
-[debug] container meta not found
-[debug] container meta not found
-[debug] container meta not found
-write container buffer2
-push container buffer
-[debug] destor in append thread, get one chunk from buffer.
-write_container start
-append thread end
-append thread start
-read phase stops successfully!
-chunk phase stops successfully!
-hash phase stops successfully!
-dedup phase stops successfully: 1 segments of 1024 chunks on average
-rewrite phase stops successfully!
-Record 3 sparse containers, and 2 of them are inherited
-CMA: read 80 records.
-CMA: update 81 records.
-filter phase stops successfully!
-flushing hash table!
-flushing hash table successfully!
-[debug] destor in append thread, break.
-append phase stops successfully!
-==== backup end ====
-job id: 65
-backup path: /k8s105
-number of files: 1
-number of chunks: 1024 (4635 bytes on average)
-number of unique chunks: 576
-total size(B): 4746531
-stored data size(B): 2979578
-deduplication ratio: 0.3723, 1.5930
-total time(s): 0.000
-throughput(MB/s): inf
-number of zero chunks: 0
-size of zero chunks: 0
-number of rewritten chunks: 0
-size of rewritten chunks: 0
-rewritten rate in size: 0.000
-read_time : 0.031s, 145.93MB/s
-chunk_time : 0.021s, 219.47MB/s
-hash_time : 0.012s, 378.67MB/s
-dedup_time : 0.004s, 1208.07MB/s
-rewrite_time : 0.000s, 116067.81MB/s
-filter_time : 0.004s, 1020.66MB/s
-write_time : 0.000s, 52635.40MB/s
-1
-2
-destor_server_process
-destor_server_process: receive a request!
-type: 0 
-Init recipe store successfully
-[debug] destor init_container_store, in read mode.
-Init container store successfully
-append thread start
-Init index module successfully
-==== backup begin ====
-Read 3 inherited sparse containers
-pkt size: 5
-[debug] container meta not found
-[debug] container meta not found
-[debug] container meta not found
-[debug] container meta not found
-[debug] container meta not found
-write container buffer1
-push container buffer
-[debug] destor in append thread, get one chunk from buffer.
-write_container start
-append thread end
-append thread start
-write container buffer2
-push container buffer
-[debug] destor in append thread, get one chunk from buffer.
-write_container start
-append thread end
-append thread start
-read phase stops successfully!
-chunk phase stops successfully!
-hash phase stops successfully!
-dedup phase stops successfully: 1 segments of 1024 chunks on average
-rewrite phase stops successfully!
-Record 4 sparse containers, and 1 of them are inherited
-CMA: read 81 records.
-CMA: update 83 records.
-filter phase stops successfully!
-flushing hash table!
-flushing hash table successfully!
-[debug] destor in append thread, break.
-append phase stops successfully!
-==== backup end ====
-job id: 66
-backup path: /k8s106
-number of files: 1
-number of chunks: 1024 (4743 bytes on average)
-number of unique chunks: 886
-total size(B): 4857078
-stored data size(B): 4410264
-deduplication ratio: 0.0920, 1.1013
-total time(s): 0.000
-throughput(MB/s): inf
-number of zero chunks: 0
-size of zero chunks: 0
-number of rewritten chunks: 0
-size of rewritten chunks: 0
-rewritten rate in size: 0.000
-read_time : 0.034s, 135.02MB/s
-chunk_time : 0.014s, 329.19MB/s
-hash_time : 0.014s, 322.23MB/s
-dedup_time : 0.001s, 3596.33MB/s
-rewrite_time : 0.000s, 110287.39MB/s
-filter_time : 0.005s, 882.13MB/s
-write_time : 0.000s, 13122.01MB/s
-1
-2
-destor_server_process
-destor_server_process: receive a request!
-type: 0 
-Init recipe store successfully
-[debug] destor init_container_store, in read mode.
-Init container store successfully
-append thread start
-Init index module successfully
-==== backup begin ====
-Read 4 inherited sparse containers
-pkt size: 5
 [debug] container meta not found
 [debug] container meta not found
 [debug] container meta not found
@@ -4077,23 +3161,23 @@ chunk phase stops successfully!
 hash phase stops successfully!
 dedup phase stops successfully: 1 segments of 1024 chunks on average
 rewrite phase stops successfully!
-Record 5 sparse containers, and 1 of them are inherited
-CMA: read 83 records.
-CMA: update 84 records.
+Record 5 sparse containers, and 2 of them are inherited
+CMA: read 62 records.
+CMA: update 63 records.
 filter phase stops successfully!
 flushing hash table!
 flushing hash table successfully!
 [debug] destor in append thread, break.
 append phase stops successfully!
 ==== backup end ====
-job id: 67
-backup path: /k8s107
+job id: 51
+backup path: /hadoop95
 number of files: 1
-number of chunks: 1024 (4494 bytes on average)
-number of unique chunks: 678
-total size(B): 4602151
-stored data size(B): 3478812
-deduplication ratio: 0.2441, 1.3229
+number of chunks: 1024 (4599 bytes on average)
+number of unique chunks: 638
+total size(B): 4710359
+stored data size(B): 3377391
+deduplication ratio: 0.2830, 1.3947
 total time(s): 0.000
 throughput(MB/s): inf
 number of zero chunks: 0
@@ -4101,13 +3185,13 @@ size of zero chunks: 0
 number of rewritten chunks: 0
 size of rewritten chunks: 0
 rewritten rate in size: 0.000
-read_time : 0.051s, 86.31MB/s
-chunk_time : 0.024s, 180.99MB/s
-hash_time : 0.034s, 128.53MB/s
-dedup_time : 0.001s, 3035.24MB/s
-rewrite_time : 0.000s, 132998.58MB/s
-filter_time : 0.003s, 1285.95MB/s
-write_time : 0.000s, 11991.68MB/s
+read_time : 0.125s, 36.03MB/s
+chunk_time : 0.018s, 248.71MB/s
+hash_time : 0.015s, 302.99MB/s
+dedup_time : 0.002s, 2116.94MB/s
+rewrite_time : 0.000s, 74869.14MB/s
+filter_time : 0.009s, 498.02MB/s
+write_time : 0.000s, 23642.89MB/s
 1
 2
 destor_server_process
@@ -4122,13 +3206,12 @@ Init index module successfully
 Read 5 inherited sparse containers
 pkt size: 5
 [debug] container meta not found
-[debug] container meta not found
-[debug] container meta not found
-[debug] container meta not found
-[debug] container meta not found
-[debug] container meta not found
-[debug] container meta not found
-[debug] container meta not found
+write container buffer1
+push container buffer
+[debug] destor in append thread, get one chunk from buffer.
+write_container start
+append thread end
+append thread start
 write container buffer2
 push container buffer
 [debug] destor in append thread, get one chunk from buffer.
@@ -4140,23 +3223,23 @@ chunk phase stops successfully!
 hash phase stops successfully!
 dedup phase stops successfully: 1 segments of 1024 chunks on average
 rewrite phase stops successfully!
-Record 7 sparse containers, and 1 of them are inherited
-CMA: read 84 records.
-CMA: update 85 records.
+Record 1 sparse containers, and 0 of them are inherited
+CMA: read 63 records.
+CMA: update 65 records.
 filter phase stops successfully!
 flushing hash table!
 flushing hash table successfully!
 [debug] destor in append thread, break.
 append phase stops successfully!
 ==== backup end ====
-job id: 68
-backup path: /k8s108
+job id: 52
+backup path: /hadoop99
 number of files: 1
-number of chunks: 1024 (4395 bytes on average)
-number of unique chunks: 719
-total size(B): 4501071
-stored data size(B): 3650428
-deduplication ratio: 0.1890, 1.2330
+number of chunks: 1024 (4895 bytes on average)
+number of unique chunks: 739
+total size(B): 5013110
+stored data size(B): 4261659
+deduplication ratio: 0.1499, 1.1763
 total time(s): 0.000
 throughput(MB/s): inf
 number of zero chunks: 0
@@ -4164,13 +3247,13 @@ size of zero chunks: 0
 number of rewritten chunks: 0
 size of rewritten chunks: 0
 rewritten rate in size: 0.000
-read_time : 0.012s, 344.15MB/s
-chunk_time : 0.022s, 196.12MB/s
-hash_time : 0.012s, 351.27MB/s
-dedup_time : 0.002s, 2064.72MB/s
-rewrite_time : 0.000s, 110065.53MB/s
-filter_time : 0.004s, 1109.47MB/s
-write_time : 0.000s, 85851.12MB/s
+read_time : 0.061s, 78.32MB/s
+chunk_time : 0.013s, 372.57MB/s
+hash_time : 0.024s, 200.63MB/s
+dedup_time : 0.001s, 6999.82MB/s
+rewrite_time : 0.000s, 66401.03MB/s
+filter_time : 0.019s, 249.19MB/s
+write_time : 0.000s, 33906.91MB/s
 1
 2
 destor_server_process
@@ -4182,8 +3265,65 @@ Init container store successfully
 append thread start
 Init index module successfully
 ==== backup begin ====
-Read 7 inherited sparse containers
+Read 1 inherited sparse containers
+pkt size: 3
+write container buffer2
+push container buffer
+[debug] destor in append thread, get one chunk from buffer.
+write_container start
+append thread end
+append thread start
+read phase stops successfully!
+chunk phase stops successfully!
+hash phase stops successfully!
+dedup phase stops successfully: 1 segments of 354 chunks on average
+rewrite phase stops successfully!
+Record 0 sparse containers, and 0 of them are inherited
+CMA: read 65 records.
+CMA: update 66 records.
+filter phase stops successfully!
+flushing hash table!
+flushing hash table successfully!
+[debug] destor in append thread, break.
+append phase stops successfully!
+==== backup end ====
+job id: 53
+backup path: /hadoop910
+number of files: 1
+number of chunks: 354 (7263 bytes on average)
+number of unique chunks: 354
+total size(B): 2571273
+stored data size(B): 2571273
+deduplication ratio: 0.0000, 1.0000
+total time(s): 0.000
+throughput(MB/s): inf
+number of zero chunks: 0
+size of zero chunks: 0
+number of rewritten chunks: 0
+size of rewritten chunks: 0
+rewritten rate in size: 0.000
+read_time : 0.028s, 88.78MB/s
+chunk_time : 0.014s, 170.80MB/s
+hash_time : 0.007s, 332.95MB/s
+dedup_time : 0.000s, 12199.79MB/s
+rewrite_time : 0.000s, 175154.07MB/s
+filter_time : 0.002s, 1180.62MB/s
+write_time : 0.000s, 52173.55MB/s
+1
+2
+destor_server_process
+destor_server_process: receive a request!
+type: 0 
+Init recipe store successfully
+[debug] destor init_container_store, in read mode.
+Init container store successfully
+Init index module successfully
+==== backup begin ====
+Read 0 inherited sparse containers
+append thread start
 pkt size: 5
+[debug] container meta not found
+[debug] container meta not found
 [debug] container meta not found
 [debug] container meta not found
 [debug] container meta not found
@@ -4200,23 +3340,23 @@ chunk phase stops successfully!
 hash phase stops successfully!
 dedup phase stops successfully: 1 segments of 1024 chunks on average
 rewrite phase stops successfully!
-Record 3 sparse containers, and 1 of them are inherited
-CMA: read 85 records.
-CMA: update 86 records.
+Record 3 sparse containers, and 0 of them are inherited
+CMA: read 66 records.
+CMA: update 67 records.
 filter phase stops successfully!
 flushing hash table!
 flushing hash table successfully!
 [debug] destor in append thread, break.
 append phase stops successfully!
 ==== backup end ====
-job id: 69
-backup path: /k8s109
+job id: 54
+backup path: /hadoop100
 number of files: 1
-number of chunks: 1024 (4569 bytes on average)
-number of unique chunks: 546
-total size(B): 4679613
-stored data size(B): 2837991
-deduplication ratio: 0.3935, 1.6489
+number of chunks: 1024 (4684 bytes on average)
+number of unique chunks: 211
+total size(B): 4796723
+stored data size(B): 1019940
+deduplication ratio: 0.7874, 4.7029
 total time(s): 0.000
 throughput(MB/s): inf
 number of zero chunks: 0
@@ -4224,12 +3364,400 @@ size of zero chunks: 0
 number of rewritten chunks: 0
 size of rewritten chunks: 0
 rewritten rate in size: 0.000
-read_time : 0.031s, 143.94MB/s
-chunk_time : 0.024s, 187.29MB/s
-hash_time : 0.015s, 296.32MB/s
-dedup_time : 0.001s, 3966.96MB/s
-rewrite_time : 0.000s, 131259.61MB/s
-filter_time : 0.003s, 1557.71MB/s
-write_time : 0.000s, 82644.94MB/s
+read_time : 0.061s, 75.06MB/s
+chunk_time : 0.019s, 235.79MB/s
+hash_time : 0.021s, 215.87MB/s
+dedup_time : 0.001s, 3120.40MB/s
+rewrite_time : 0.000s, 147564.89MB/s
+filter_time : 0.001s, 3587.85MB/s
+write_time : 0.000s, 93357.38MB/s
+1
+2
+destor_server_process
+destor_server_process: receive a request!
+type: 0 
+Init recipe store successfully
+[debug] destor init_container_store, in read mode.
+Init container store successfully
+append thread start
+Init index module successfully
+==== backup begin ====
+Read 3 inherited sparse containers
+pkt size: 5
+[debug] container meta not found
+[debug] container meta not found
+[debug] container meta not found
+[debug] container meta not found
+[debug] container meta not found
+[debug] container meta not found
+[debug] container meta not found
+[debug] container meta not found
+[debug] container meta not found
+[debug] container meta not found
+[debug] container meta not found
+[debug] container meta not found
+[debug] container meta not found
+write container buffer2
+push container buffer
+[debug] destor in append thread, get one chunk from buffer.
+write_container start
+append thread end
+append thread start
+read phase stops successfully!
+chunk phase stops successfully!
+hash phase stops successfully!
+dedup phase stops successfully: 1 segments of 1024 chunks on average
+rewrite phase stops successfully!
+Record 10 sparse containers, and 3 of them are inherited
+CMA: read 67 records.
+CMA: update 68 records.
+filter phase stops successfully!
+flushing hash table!
+flushing hash table successfully!
+[debug] destor in append thread, break.
+append phase stops successfully!
+==== backup end ====
+job id: 55
+backup path: /hadoop101
+number of files: 1
+number of chunks: 1024 (4596 bytes on average)
+number of unique chunks: 569
+total size(B): 4707062
+stored data size(B): 3144695
+deduplication ratio: 0.3319, 1.4968
+total time(s): 0.000
+throughput(MB/s): inf
+number of zero chunks: 0
+size of zero chunks: 0
+number of rewritten chunks: 0
+size of rewritten chunks: 0
+rewritten rate in size: 0.000
+read_time : 0.061s, 73.84MB/s
+chunk_time : 0.039s, 116.36MB/s
+hash_time : 0.030s, 148.44MB/s
+dedup_time : 0.002s, 2278.68MB/s
+rewrite_time : 0.000s, 115102.67MB/s
+filter_time : 0.004s, 1004.25MB/s
+write_time : 0.000s, 73590.23MB/s
+1
+2
+destor_server_process
+destor_server_process: receive a request!
+type: 0 
+Init recipe store successfully
+[debug] destor init_container_store, in read mode.
+Init container store successfully
+append thread start
+Init index module successfully
+==== backup begin ====
+pkt size: 5
+Read 10 inherited sparse containers
+[debug] container meta not found
+[debug] container meta not found
+[debug] container meta not found
+[debug] container meta not found
+[debug] container meta not found
+[debug] container meta not found
+[debug] container meta not found
+[debug] container meta not found
+[debug] container meta not found
+[debug] container meta not found
+[debug] container meta not found
+[debug] container meta not found
+[debug] container meta not found
+write container buffer2
+push container buffer
+[debug] destor in append thread, get one chunk from buffer.
+write_container start
+append thread end
+append thread start
+read phase stops successfully!
+chunk phase stops successfully!
+hash phase stops successfully!
+dedup phase stops successfully: 1 segments of 1024 chunks on average
+rewrite phase stops successfully!
+Record 8 sparse containers, and 0 of them are inherited
+CMA: read 68 records.
+CMA: update 69 records.
+filter phase stops successfully!
+flushing hash table!
+flushing hash table successfully!
+[debug] destor in append thread, break.
+append phase stops successfully!
+==== backup end ====
+job id: 56
+backup path: /hadoop103
+number of files: 1
+number of chunks: 1024 (4680 bytes on average)
+number of unique chunks: 570
+total size(B): 4793267
+stored data size(B): 3375880
+deduplication ratio: 0.2957, 1.4199
+total time(s): 0.000
+throughput(MB/s): inf
+number of zero chunks: 0
+size of zero chunks: 0
+number of rewritten chunks: 0
+size of rewritten chunks: 0
+rewritten rate in size: 0.000
+read_time : 0.052s, 87.75MB/s
+chunk_time : 0.039s, 116.47MB/s
+hash_time : 0.014s, 331.95MB/s
+dedup_time : 0.002s, 1971.20MB/s
+rewrite_time : 0.000s, 51361.97MB/s
+filter_time : 0.007s, 649.23MB/s
+write_time : 0.001s, 8251.29MB/s
+1
+2
+destor_server_process
+destor_server_process: receive a request!
+type: 0 
+Init recipe store successfully
+[debug] destor init_container_store, in read mode.
+Init container store successfully
+append thread start
+Init index module successfully
+==== backup begin ====
+Read 8 inherited sparse containers
+pkt size: 5
+[debug] container meta not found
+[debug] container meta not found
+[debug] container meta not found
+[debug] container meta not found
+[debug] container meta not found
+[debug] container meta not found
+[debug] container meta not found
+[debug] container meta not found
+[debug] container meta not found
+[debug] container meta not found
+[debug] container meta not found
+[debug] container meta not found
+[debug] container meta not found
+[debug] container meta not found
+write container buffer2
+push container buffer
+[debug] destor in append thread, get one chunk from buffer.
+write_container start
+append thread end
+append thread start
+read phase stops successfully!
+chunk phase stops successfully!
+hash phase stops successfully!
+dedup phase stops successfully: 1 segments of 1024 chunks on average
+rewrite phase stops successfully!
+Record 8 sparse containers, and 2 of them are inherited
+CMA: read 69 records.
+CMA: update 70 records.
+filter phase stops successfully!
+flushing hash table!
+flushing hash table successfully!
+[debug] destor in append thread, break.
+append phase stops successfully!
+==== backup end ====
+job id: 57
+backup path: /hadoop104
+number of files: 1
+number of chunks: 1024 (4736 bytes on average)
+number of unique chunks: 459
+total size(B): 4849992
+stored data size(B): 2640976
+deduplication ratio: 0.4555, 1.8364
+total time(s): 0.000
+throughput(MB/s): inf
+number of zero chunks: 0
+size of zero chunks: 0
+number of rewritten chunks: 0
+size of rewritten chunks: 0
+rewritten rate in size: 0.000
+read_time : 0.110s, 42.22MB/s
+chunk_time : 0.025s, 185.65MB/s
+hash_time : 0.023s, 201.21MB/s
+dedup_time : 0.004s, 1092.16MB/s
+rewrite_time : 0.000s, 118597.76MB/s
+filter_time : 0.003s, 1691.77MB/s
+write_time : 0.000s, 112812.51MB/s
+1
+2
+destor_server_process
+destor_server_process: receive a request!
+type: 0 
+Init recipe store successfully
+[debug] destor init_container_store, in read mode.
+Init container store successfully
+append thread start
+Init index module successfully
+==== backup begin ====
+pkt size: 5
+Read 8 inherited sparse containers
+[debug] container meta not found
+[debug] container meta not found
+[debug] container meta not found
+[debug] container meta not found
+[debug] container meta not found
+[debug] container meta not found
+[debug] container meta not found
+[debug] container meta not found
+[debug] container meta not found
+[debug] container meta not found
+write container buffer2
+push container buffer
+[debug] destor in append thread, get one chunk from buffer.
+write_container start
+append thread end
+append thread start
+read phase stops successfully!
+chunk phase stops successfully!
+hash phase stops successfully!
+dedup phase stops successfully: 1 segments of 1024 chunks on average
+rewrite phase stops successfully!
+Record 6 sparse containers, and 2 of them are inherited
+CMA: read 70 records.
+CMA: update 71 records.
+filter phase stops successfully!
+flushing hash table!
+flushing hash table successfully!
+[debug] destor in append thread, break.
+append phase stops successfully!
+==== backup end ====
+job id: 58
+backup path: /hadoop105
+number of files: 1
+number of chunks: 1024 (4561 bytes on average)
+number of unique chunks: 626
+total size(B): 4671139
+stored data size(B): 3309736
+deduplication ratio: 0.2914, 1.4113
+total time(s): 0.000
+throughput(MB/s): inf
+number of zero chunks: 0
+size of zero chunks: 0
+number of rewritten chunks: 0
+size of rewritten chunks: 0
+rewritten rate in size: 0.000
+read_time : 0.063s, 71.09MB/s
+chunk_time : 0.023s, 197.46MB/s
+hash_time : 0.018s, 245.62MB/s
+dedup_time : 0.002s, 2176.23MB/s
+rewrite_time : 0.000s, 75504.16MB/s
+filter_time : 0.005s, 839.41MB/s
+write_time : 0.000s, 74245.75MB/s
+1
+2
+destor_server_process
+destor_server_process: receive a request!
+type: 0 
+Init recipe store successfully
+[debug] destor init_container_store, in read mode.
+Init container store successfully
+append thread start
+Init index module successfully
+==== backup begin ====
+pkt size: 5
+Read 6 inherited sparse containers
+[debug] container meta not found
+[debug] container meta not found
+[debug] container meta not found
+[debug] container meta not found
+[debug] container meta not found
+[debug] container meta not found
+write container buffer2
+push container buffer
+[debug] destor in append thread, get one chunk from buffer.
+write_container start
+append thread end
+append thread start
+read phase stops successfully!
+chunk phase stops successfully!
+hash phase stops successfully!
+dedup phase stops successfully: 1 segments of 1024 chunks on average
+rewrite phase stops successfully!
+Record 4 sparse containers, and 2 of them are inherited
+CMA: read 71 records.
+CMA: update 72 records.
+filter phase stops successfully!
+flushing hash table!
+flushing hash table successfully!
+[debug] destor in append thread, break.
+append phase stops successfully!
+==== backup end ====
+job id: 59
+backup path: /hadoop106
+number of files: 1
+number of chunks: 1024 (4401 bytes on average)
+number of unique chunks: 661
+total size(B): 4507230
+stored data size(B): 3070257
+deduplication ratio: 0.3188, 1.4680
+total time(s): 0.000
+throughput(MB/s): inf
+number of zero chunks: 0
+size of zero chunks: 0
+number of rewritten chunks: 0
+size of rewritten chunks: 0
+rewritten rate in size: 0.000
+read_time : 0.039s, 110.76MB/s
+chunk_time : 0.017s, 257.51MB/s
+hash_time : 0.031s, 137.02MB/s
+dedup_time : 0.002s, 2800.28MB/s
+rewrite_time : 0.000s, 82662.11MB/s
+filter_time : 0.004s, 1030.30MB/s
+write_time : 0.000s, 74110.85MB/s
+1
+2
+destor_server_process
+destor_server_process: receive a request!
+type: 0 
+Init recipe store successfully
+[debug] destor init_container_store, in read mode.
+Init container store successfully
+append thread start
+Init index module successfully
+==== backup begin ====
+Read 4 inherited sparse containers
+pkt size: 5
+[debug] container meta not found
+[debug] container meta not found
+write container buffer2
+push container buffer
+[debug] destor in append thread, get one chunk from buffer.
+write_container start
+append thread end
+append thread start
+read phase stops successfully!
+chunk phase stops successfully!
+hash phase stops successfully!
+dedup phase stops successfully: 1 segments of 1024 chunks on average
+rewrite phase stops successfully!
+Record 1 sparse containers, and 0 of them are inherited
+CMA: read 72 records.
+CMA: update 73 records.
+filter phase stops successfully!
+flushing hash table!
+flushing hash table successfully!
+[debug] destor in append thread, break.
+append phase stops successfully!
+==== backup end ====
+job id: 60
+backup path: /hadoop109
+number of files: 1
+number of chunks: 1024 (4461 bytes on average)
+number of unique chunks: 738
+total size(B): 4568805
+stored data size(B): 3811977
+deduplication ratio: 0.1657, 1.1985
+total time(s): 0.000
+throughput(MB/s): inf
+number of zero chunks: 0
+size of zero chunks: 0
+number of rewritten chunks: 0
+size of rewritten chunks: 0
+rewritten rate in size: 0.000
+read_time : 0.026s, 168.02MB/s
+chunk_time : 0.012s, 376.14MB/s
+hash_time : 0.015s, 298.91MB/s
+dedup_time : 0.001s, 4309.74MB/s
+rewrite_time : 0.000s, 87143.04MB/s
+filter_time : 0.005s, 840.82MB/s
+write_time : 0.000s, 67033.11MB/s
 1
 2
