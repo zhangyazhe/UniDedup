@@ -85,10 +85,19 @@ void Config::getConfigFromLine(std::string& line) {
         std::stringstream nnss(confs[1]);
         nnss >> stateful_routing_enabled;
         if (stateful_routing_enabled != 0 && stateful_routing_enabled != 1) {
-            cerr << "Err: stateful_routing_enabled get invalid config value, shoule be 0 or 1." << endl;
+            cerr << "[Config Error] Stateful_routing_enabled get invalid config value, shoule be 0 or 1." << endl;
+            exit(-1);
         }
         if (stateful_routing_enabled == 1) {
             cout << "[Config] Stateful routing is enabled." << endl;
+        }
+    } else if (confs[0] == "computing_power") {
+        if (confs.size() != node_num + 1) {
+            cerr << "[Config Error] The number of computing power parameters does not match the number of nodes" << endl;
+            exit(-1);
+        }
+        for (int i = 0; i < node_num; i++) {
+            computing_power_vec.push_back(stoi(confs[i+1]));
         }
     }
 }

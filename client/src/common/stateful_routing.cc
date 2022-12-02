@@ -4,7 +4,10 @@
 
 vector<long long> count_byte_for_each_node;
 
-int getNodeForStatefulRouting(vector<SampleUnit> & sample_unit_list, int node_num, unsigned int local_ip, int cluster_enabled) {
+int getNodeForStatefulRouting(vector<SampleUnit> & sample_unit_list, Config* conf) {
+    int node_num = conf->node_num;
+    unsigned int local_ip = conf->_localIP;
+    int cluster_enabled = conf->redis_cluster_enabled;
     if (count_byte_for_each_node.size() == 0) {
         for (int i = 0; i < node_num; i++) {
             count_byte_for_each_node.push_back(0);
@@ -76,8 +79,12 @@ int getNodeForStatefulRouting(vector<SampleUnit> & sample_unit_list, int node_nu
     for (int i = 0; i < sample_unit_list.size(); i++) {
         group_size += sample_unit_list[i].size;
     }
+    uint64_t total_computing_power = 0;
+    for (auto cp : conf->computing_power_vec) {
+        total_computing_power += cp;
+    }
     for (int i = 0; i < node_num; i++) {
-        node_score[i] = (double)node_match_num[i] * node_match_size[i] / group_size;
+        node_score[i] = (double)node_match_num[i] * (node_match_size[i] / (double)group_size) * (conf->computing_power_vec[i] / (double)total_computing_power);
     }
     cout << "[Stateful Routing] routing score: ";
     for (auto score : node_score) {
@@ -86,13 +93,6 @@ int getNodeForStatefulRouting(vector<SampleUnit> & sample_unit_list, int node_nu
     cout << endl;
     // select node
     int selected_node = getSelectedNode(node_score);
-    // double max_score = 0.0;
-    // for (int i = 0; i < node_score.size(); i++) {
-    //     if (node_score[i] > max_score) {
-    //         max_score = node_score[i];
-    //         selected_node = i;
-    //     }
-    // }
     cout << "[Stateful Routing] Routing destination is node" << selected_node << endl;
     // update redis
     if (cluster_enabled == 0) {

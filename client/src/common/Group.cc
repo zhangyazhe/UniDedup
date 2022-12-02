@@ -146,7 +146,7 @@ std::vector<struct group*> split2Groups(const char* filepath, const char* filena
                         sample_unit_list.push_back(su);
                     }
                 }
-                gp->nodeId = getNodeForStatefulRouting(sample_unit_list, nodeNum, local_ip, cluster_enabled);
+                gp->nodeId = getNodeForStatefulRouting(sample_unit_list, conf);
                 if (gp->nodeId == -1) {
                     cerr << "[Stateful Routing] getNodeForStatefulRouting failed" << endl;
                 }
@@ -197,7 +197,7 @@ std::vector<struct group*> split2Groups(const char* filepath, const char* filena
                     sample_unit_list.push_back(su);
                 }
             }
-            gp->nodeId = getNodeForStatefulRouting(sample_unit_list, nodeNum, local_ip, cluster_enabled);
+            gp->nodeId = getNodeForStatefulRouting(sample_unit_list, conf);
             if (gp->nodeId == -1) {
                 cerr << "[Stateful Routing] getNodeForStatefulRouting failed" << endl;
             }

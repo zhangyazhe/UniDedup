@@ -34,6 +34,7 @@ public:
 
     int redis_cluster_enabled;
     int stateful_routing_enabled;
+    vector<int> computing_power_vec;
 };
 
 

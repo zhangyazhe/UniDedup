@@ -14,3 +14,4 @@ destor_chunk_min_size 512
 local_ip 192.168.18.130
 redis_cluster_enabled 1
 stateful_routing_enabled 1
+computing_power 100 100 100
