@@ -106,7 +106,7 @@ am__v_AR_1 =
 libutil_a_AR = $(AR) $(ARFLAGS)
 libutil_a_LIBADD =
 am_libutil_a_OBJECTS = queue.$(OBJEXT) RedisUtil.$(OBJEXT) \
-	sync_queue.$(OBJEXT) time.$(OBJEXT)
+	sync_queue.$(OBJEXT) time.$(OBJEXT) disk_usage.$(OBJEXT)
 libutil_a_OBJECTS = $(am_libutil_a_OBJECTS)
 AM_V_P = $(am__v_P_@AM_V@)
 am__v_P_ = $(am__v_P_@AM_DEFAULT_V@)
@@ -259,7 +259,7 @@ top_build_prefix = @top_build_prefix@
 top_builddir = @top_builddir@
 top_srcdir = @top_srcdir@
 noinst_LIBRARIES = libutil.a
-libutil_a_SOURCES = queue.cc RedisUtil.cc sync_queue.cc time.cc
+libutil_a_SOURCES = queue.cc RedisUtil.cc sync_queue.cc time.cc disk_usage.cc
 all: all-am
 
 .SUFFIXES:
@@ -309,6 +309,7 @@ distclean-compile:
 	-rm -f *.tab.c
 
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/RedisUtil.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/disk_usage.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/queue.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/sync_queue.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/time.Po@am__quote@

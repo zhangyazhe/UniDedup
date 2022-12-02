@@ -8,6 +8,7 @@
 #include <ctime>
 #include <cstdlib>
 #include "Config.hh"
+#include "../util/disk_usage.hh"
 
 class Config;
 
