@@ -126,7 +126,6 @@ void destor_write(char *path, uint32_t size) {
 	init_backup_jcr(path);
 
 	jcr.size = size;
-
     puts("==== backup begin ====");
 
 	TIMER_DECLARE(1);
@@ -156,12 +155,12 @@ void destor_write(char *path, uint32_t size) {
 	start_rewrite_phase();
 	// 
 	start_filter_phase();
-    do{
-        sleep(5);
-        /*time_t now = time(NULL);*/
-        fprintf(stderr,"job %" PRId32 ", %" PRId64 " bytes, %" PRId32 " chunks, %d files processed\r", 
-                jcr.id, jcr.data_size, jcr.chunk_num, jcr.file_num);
-    }while(jcr.status == JCR_STATUS_RUNNING || jcr.status != JCR_STATUS_DONE);
+    // do{
+    //     sleep(5);
+    //     /*time_t now = time(NULL);*/
+    //     fprintf(stderr,"job %" PRId32 ", %" PRId64 " bytes, %" PRId32 " chunks, %d files processed\r", 
+    //             jcr.id, jcr.data_size, jcr.chunk_num, jcr.file_num);
+    // }while(jcr.status == JCR_STATUS_RUNNING || jcr.status != JCR_STATUS_DONE);
     fprintf(stderr,"job %" PRId32 ", %" PRId64 " bytes, %" PRId32 " chunks, %d files processed\n", 
         jcr.id, jcr.data_size, jcr.chunk_num, jcr.file_num);
 	if (destor.simulation_level == SIMULATION_ALL) {
@@ -359,9 +358,8 @@ void destor_read(char* filename)
 
 void destor_server_process()
 {
-    // while (1) {
-		redisContext* _localCtx = createContextByUint(destor.local_ip);
-		destor_start();
+	redisContext* _localCtx = createContextByUint(destor.local_ip);
+	destor_start();
         printf("destor_server_process\n");
         // will never stop looping
         redisReply *rReply = (redisReply *)redisCommand(_localCtx, "blpop destor_request 0");
@@ -401,13 +399,11 @@ void destor_server_process()
                 break;
             }
             free_destor_cmd(cmd);
-			
         }
-        // free reply object
-        
 		redisFree(_localCtx);
-		/* persist destor stat into local file */
 		destor_shutdown();
-    // }
-	freeReplyObject(rReply);
+		freeReplyObject(rReply);
+	
+	/* persist destor stat into local file */
+		
 }

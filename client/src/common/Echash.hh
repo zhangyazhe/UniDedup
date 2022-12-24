@@ -4,7 +4,6 @@
 #ifndef _ECHASH_HH_
 #define _ECHASH_HH_
 
-#include "../libmemcached-1.0.18/libmemcached/memcached.h"
 #include "../inc/include.hh"
 #include "FileRecipe.hh"
 #include "../util/RedisUtil.hh"

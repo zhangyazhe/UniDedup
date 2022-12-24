@@ -95,11 +95,11 @@ struct fileRecipe* getFileRecipeFromRedis(string filename, unsigned int local_ip
         return nullptr;
     }
 
-    struct fileRecipe fr;
-    fr.filename = (char*)malloc(filename.size() + 1);
-    strcpy(fr.filename, filename.c_str());
-    fr.num = group_num;
-    fr.gm = (groupMeta*)malloc(group_num * sizeof(groupMeta));
+    struct fileRecipe *fr = (struct fileRecipe*)malloc(sizeof(fileRecipe));
+    fr->filename = (char*)malloc(filename.size() + 1);
+    strcpy(fr->filename, filename.c_str());
+    fr->num = group_num;
+    fr->gm = (groupMeta*)malloc(group_num * sizeof(groupMeta));
 
     for (int i = 0; i < group_num; i++) {
         string hash_key = filename + "_" + to_string(i);
@@ -108,22 +108,21 @@ struct fileRecipe* getFileRecipeFromRedis(string filename, unsigned int local_ip
             cluster.hmget(hash_key, {"group_name", "node_id"}, back_inserter(vals));
         } catch (const sw::redis::Error & err) {
             cerr << "[Redis Cluster] hmget failed: " << err.what() << endl;
-            free(fr.filename);
+            free(fr->filename);
             for (int j = 0; j < i; j++) {
-                free(fr.gm[j].groupName);
+                free(fr->gm[j].groupName);
             }
-            free(fr.gm);
+            free(fr->gm);
             return nullptr;
         }
         string group_name = *vals[0];
         int node_id = stoi(*vals[1]);
-        fr.gm[i].groupName = (char*)malloc(group_name.size() + 1);
-        strcpy(fr.gm[i].groupName, group_name.c_str());
-        fr.gm[i].
-        nodeId = node_id;
+        fr->gm[i].groupName = (char*)malloc(group_name.size() + 1);
+        strcpy(fr->gm[i].groupName, group_name.c_str());
+        fr->gm[i].nodeId = node_id;
     }
 
-    return &fr;
+    return fr;
     // send hmget command
     // for (int i = 0; i < group_num; i++) {
     //     string hash_key = filename + "_" + to_string(i);

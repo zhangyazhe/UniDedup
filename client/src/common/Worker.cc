@@ -220,9 +220,8 @@ void Worker::clientRead(AgentCommand *agCmd)
     
     
     // get chunks from destor[i]
-    printf("[debug] client receive_data, connect to redis\n");
     int pkt_id = 0;
-    printf("[debug] client receive_data, connect to redis done\n");
+    printTime(getTimeStamp());
     cout << "Receiving::Receive from node" << fr->gm[i].nodeId 
         << " , fetching " << fr->gm[i].groupName 
         << endl; 
@@ -247,6 +246,9 @@ void Worker::clientRead(AgentCommand *agCmd)
     }
   }
   fclose(w_fp);
+  free(fr->filename);
+  free(fr->gm);
+  free(fr);
   // // 4. receive group (chunking, ending flag is queue_term)
   // start_receive_phase(fr);
   // printf("4\n");

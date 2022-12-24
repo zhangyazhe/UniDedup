@@ -5,885 +5,29 @@ Init recipe store successfully
 Init container store successfully
 Init index module successfully
 ==== backup begin ====
-Read 0 inherited sparse containers
-pkt size: 5
-write container buffer1
-write container buffer2
-read phase stops successfully!
-chunk phase stops successfully!
-hash phase stops successfully!
-dedup phase stops successfully: 1 segments of 1024 chunks on average
-rewrite phase stops successfully!
-Record 0 sparse containers, and 0 of them are inherited
-CMA: update 2 records.
-filter phase stops successfully!
-flushing hash table!
-flushing hash table successfully!
-append phase stops successfully!
-==== backup end ====
-job id: 0
-backup path: /hadoop10
-number of files: 1
-number of chunks: 1024 (4879 bytes on average)
-number of unique chunks: 1024
-total size(B): 4996940
-stored data size(B): 4996940
-deduplication ratio: 0.0000, 1.0000
-total time(s): 0.000
-throughput(MB/s): inf
-number of zero chunks: 0
-size of zero chunks: 0
-number of rewritten chunks: 0
-size of rewritten chunks: 0
-rewritten rate in size: 0.000
-read_time : 0.109s, 43.66MB/s
-chunk_time : 0.054s, 87.72MB/s
-hash_time : 0.029s, 165.69MB/s
-dedup_time : 0.000s, 9745.30MB/s
-rewrite_time : 0.013s, 361.62MB/s
-filter_time : 0.034s, 140.65MB/s
-write_time : 0.009s, 503.85MB/s
-1
-2
-destor_server_process
-destor_server_process: receive a request!
-type: 0 
-Init recipe store successfully
-Init container store successfully
-Init index module successfully
-==== backup begin ====
 pkt size: 5
 Read 0 inherited sparse containers
-write container buffer1
-write container buffer2
 read phase stops successfully!
 chunk phase stops successfully!
 hash phase stops successfully!
 dedup phase stops successfully: 1 segments of 1024 chunks on average
 rewrite phase stops successfully!
-Record 0 sparse containers, and 0 of them are inherited
-CMA: read 2 records.
-CMA: update 4 records.
+Record 11 sparse containers, and 0 of them are inherited
+CMA: read 75 records.
+CMA: update 75 records.
 filter phase stops successfully!
 flushing hash table!
 flushing hash table successfully!
 append phase stops successfully!
 ==== backup end ====
-job id: 1
-backup path: /hadoop11
-number of files: 1
-number of chunks: 1024 (4519 bytes on average)
-number of unique chunks: 1021
-total size(B): 4627506
-stored data size(B): 4618398
-deduplication ratio: 0.0020, 1.0020
-total time(s): 0.000
-throughput(MB/s): inf
-number of zero chunks: 0
-size of zero chunks: 0
-number of rewritten chunks: 0
-size of rewritten chunks: 0
-rewritten rate in size: 0.000
-read_time : 0.120s, 36.92MB/s
-chunk_time : 0.046s, 95.72MB/s
-hash_time : 0.028s, 159.27MB/s
-dedup_time : 0.001s, 4259.78MB/s
-rewrite_time : 0.014s, 312.59MB/s
-filter_time : 0.046s, 95.05MB/s
-write_time : 0.014s, 312.35MB/s
-1
-2
-destor_server_process
-destor_server_process: receive a request!
-type: 0 
-Init recipe store successfully
-Init container store successfully
-Init index module successfully
-==== backup begin ====
-pkt size: 5
-Read 0 inherited sparse containers
-write container buffer1
-write container buffer2
-read phase stops successfully!
-chunk phase stops successfully!
-hash phase stops successfully!
-dedup phase stops successfully: 1 segments of 1024 chunks on average
-rewrite phase stops successfully!
-Record 0 sparse containers, and 0 of them are inherited
-CMA: read 4 records.
-CMA: update 6 records.
-filter phase stops successfully!
-flushing hash table!
-flushing hash table successfully!
-append phase stops successfully!
-==== backup end ====
-job id: 2
-backup path: /hadoop12
-number of files: 1
-number of chunks: 1024 (4718 bytes on average)
-number of unique chunks: 1024
-total size(B): 4831720
-stored data size(B): 4831720
-deduplication ratio: 0.0000, 1.0000
-total time(s): 0.000
-throughput(MB/s): inf
-number of zero chunks: 0
-size of zero chunks: 0
-number of rewritten chunks: 0
-size of rewritten chunks: 0
-rewritten rate in size: 0.000
-read_time : 0.093s, 49.56MB/s
-chunk_time : 0.044s, 103.66MB/s
-hash_time : 0.057s, 80.78MB/s
-dedup_time : 0.000s, 9384.70MB/s
-rewrite_time : 0.011s, 416.66MB/s
-filter_time : 0.032s, 145.33MB/s
-write_time : 0.013s, 365.44MB/s
-1
-2
-destor_server_process
-destor_server_process: receive a request!
-type: 0 
-Init recipe store successfully
-Init container store successfully
-Init index module successfully
-==== backup begin ====
-Read 0 inherited sparse containers
-pkt size: 5
-write container buffer1
-write container buffer2
-read phase stops successfully!
-chunk phase stops successfully!
-hash phase stops successfully!
-dedup phase stops successfully: 1 segments of 1024 chunks on average
-rewrite phase stops successfully!
-Record 0 sparse containers, and 0 of them are inherited
-CMA: read 6 records.
-CMA: update 8 records.
-filter phase stops successfully!
-flushing hash table!
-flushing hash table successfully!
-append phase stops successfully!
-==== backup end ====
-job id: 3
-backup path: /hadoop13
-number of files: 1
-number of chunks: 1024 (4551 bytes on average)
-number of unique chunks: 1024
-total size(B): 4660722
-stored data size(B): 4660722
-deduplication ratio: 0.0000, 1.0000
-total time(s): 0.000
-throughput(MB/s): inf
-number of zero chunks: 0
-size of zero chunks: 0
-number of rewritten chunks: 0
-size of rewritten chunks: 0
-rewritten rate in size: 0.000
-read_time : 0.133s, 33.54MB/s
-chunk_time : 0.086s, 51.92MB/s
-hash_time : 0.027s, 161.85MB/s
-dedup_time : 0.001s, 8323.62MB/s
-rewrite_time : 0.011s, 417.43MB/s
-filter_time : 0.031s, 142.78MB/s
-write_time : 0.028s, 159.75MB/s
-1
-2
-destor_server_process
-destor_server_process: receive a request!
-type: 0 
-Init recipe store successfully
-Init container store successfully
-Init index module successfully
-==== backup begin ====
-Read 0 inherited sparse containers
-pkt size: 5
-write container buffer1
-write container buffer2
-read phase stops successfully!
-chunk phase stops successfully!
-hash phase stops successfully!
-dedup phase stops successfully: 1 segments of 1024 chunks on average
-rewrite phase stops successfully!
-Record 0 sparse containers, and 0 of them are inherited
-CMA: read 8 records.
-CMA: update 10 records.
-filter phase stops successfully!
-flushing hash table!
-flushing hash table successfully!
-append phase stops successfully!
-==== backup end ====
-job id: 4
-backup path: /hadoop14
-number of files: 1
-number of chunks: 1024 (4745 bytes on average)
-number of unique chunks: 984
-total size(B): 4859683
-stored data size(B): 4697253
-deduplication ratio: 0.0334, 1.0346
-total time(s): 0.000
-throughput(MB/s): inf
-number of zero chunks: 0
-size of zero chunks: 0
-number of rewritten chunks: 0
-size of rewritten chunks: 0
-rewritten rate in size: 0.000
-read_time : 0.093s, 49.79MB/s
-chunk_time : 0.038s, 121.00MB/s
-hash_time : 0.032s, 143.67MB/s
-dedup_time : 0.001s, 5465.28MB/s
-rewrite_time : 0.012s, 402.44MB/s
-filter_time : 0.052s, 89.34MB/s
-write_time : 0.059s, 78.82MB/s
-1
-2
-destor_server_process
-destor_server_process: receive a request!
-type: 0 
-Init recipe store successfully
-Init container store successfully
-Init index module successfully
-==== backup begin ====
-Read 0 inherited sparse containers
-pkt size: 5
-write container buffer1
-write container buffer2
-read phase stops successfully!
-chunk phase stops successfully!
-hash phase stops successfully!
-dedup phase stops successfully: 1 segments of 1024 chunks on average
-rewrite phase stops successfully!
-Record 0 sparse containers, and 0 of them are inherited
-CMA: read 10 records.
-CMA: update 12 records.
-filter phase stops successfully!
-flushing hash table!
-flushing hash table successfully!
-append phase stops successfully!
-==== backup end ====
-job id: 5
-backup path: /hadoop15
-number of files: 1
-number of chunks: 1024 (4605 bytes on average)
-number of unique chunks: 1024
-total size(B): 4716477
-stored data size(B): 4716477
-deduplication ratio: 0.0000, 1.0000
-total time(s): 0.000
-throughput(MB/s): inf
-number of zero chunks: 0
-size of zero chunks: 0
-number of rewritten chunks: 0
-size of rewritten chunks: 0
-rewritten rate in size: 0.000
-read_time : 0.062s, 72.76MB/s
-chunk_time : 0.031s, 142.99MB/s
-hash_time : 0.037s, 120.21MB/s
-dedup_time : 0.001s, 6434.88MB/s
-rewrite_time : 0.012s, 360.88MB/s
-filter_time : 0.059s, 76.72MB/s
-write_time : 0.034s, 131.58MB/s
-1
-2
-destor_server_process
-destor_server_process: receive a request!
-type: 0 
-Init recipe store successfully
-Init container store successfully
-Init index module successfully
-==== backup begin ====
-Read 0 inherited sparse containers
-pkt size: 5
-write container buffer1
-write container buffer2
-read phase stops successfully!
-chunk phase stops successfully!
-hash phase stops successfully!
-dedup phase stops successfully: 1 segments of 1024 chunks on average
-rewrite phase stops successfully!
-Record 1 sparse containers, and 0 of them are inherited
-CMA: read 12 records.
-CMA: update 14 records.
-filter phase stops successfully!
-flushing hash table!
-flushing hash table successfully!
-append phase stops successfully!
-==== backup end ====
-job id: 6
-backup path: /hadoop16
-number of files: 1
-number of chunks: 1024 (4989 bytes on average)
-number of unique chunks: 1013
-total size(B): 5109600
-stored data size(B): 5064855
-deduplication ratio: 0.0088, 1.0088
-total time(s): 0.000
-throughput(MB/s): inf
-number of zero chunks: 0
-size of zero chunks: 0
-number of rewritten chunks: 0
-size of rewritten chunks: 0
-rewritten rate in size: 0.000
-read_time : 0.069s, 70.76MB/s
-chunk_time : 0.027s, 178.15MB/s
-hash_time : 0.030s, 160.44MB/s
-dedup_time : 0.001s, 6711.98MB/s
-rewrite_time : 0.011s, 425.69MB/s
-filter_time : 0.065s, 74.47MB/s
-write_time : 0.050s, 97.61MB/s
-1
-2
-destor_server_process
-destor_server_process: receive a request!
-type: 0 
-Init recipe store successfully
-Init container store successfully
-Init index module successfully
-==== backup begin ====
-Read 1 inherited sparse containers
-pkt size: 5
-write container buffer1
-write container buffer2
-read phase stops successfully!
-chunk phase stops successfully!
-hash phase stops successfully!
-dedup phase stops successfully: 1 segments of 1024 chunks on average
-rewrite phase stops successfully!
-Record 1 sparse containers, and 0 of them are inherited
-CMA: read 14 records.
-CMA: update 16 records.
-filter phase stops successfully!
-flushing hash table!
-flushing hash table successfully!
-append phase stops successfully!
-==== backup end ====
-job id: 7
-backup path: /hadoop17
-number of files: 1
-number of chunks: 1024 (4806 bytes on average)
-number of unique chunks: 1023
-total size(B): 4921921
-stored data size(B): 4917369
-deduplication ratio: 0.0009, 1.0009
-total time(s): 0.000
-throughput(MB/s): inf
-number of zero chunks: 0
-size of zero chunks: 0
-number of rewritten chunks: 0
-size of rewritten chunks: 0
-rewritten rate in size: 0.000
-read_time : 0.137s, 34.33MB/s
-chunk_time : 0.076s, 61.50MB/s
-hash_time : 0.028s, 165.14MB/s
-dedup_time : 0.001s, 5291.89MB/s
-rewrite_time : 0.010s, 450.43MB/s
-filter_time : 0.031s, 149.30MB/s
-write_time : 0.044s, 106.58MB/s
-1
-2
-destor_server_process
-destor_server_process: receive a request!
-type: 0 
-Init recipe store successfully
-Init container store successfully
-Init index module successfully
-==== backup begin ====
-Read 1 inherited sparse containers
-pkt size: 3
-write container buffer2
-read phase stops successfully!
-chunk phase stops successfully!
-hash phase stops successfully!
-dedup phase stops successfully: 1 segments of 418 chunks on average
-rewrite phase stops successfully!
-Record 0 sparse containers, and 0 of them are inherited
-CMA: read 16 records.
-CMA: update 17 records.
-filter phase stops successfully!
-flushing hash table!
-flushing hash table successfully!
-append phase stops successfully!
-==== backup end ====
-job id: 8
-backup path: /hadoop18
-number of files: 1
-number of chunks: 418 (6993 bytes on average)
-number of unique chunks: 418
-total size(B): 2923385
-stored data size(B): 2923385
-deduplication ratio: 0.0000, 1.0000
-total time(s): 0.000
-throughput(MB/s): inf
-number of zero chunks: 0
-size of zero chunks: 0
-number of rewritten chunks: 0
-size of rewritten chunks: 0
-rewritten rate in size: 0.000
-read_time : 0.029s, 97.09MB/s
-chunk_time : 0.017s, 161.46MB/s
-hash_time : 0.015s, 190.86MB/s
-dedup_time : 0.000s, 12446.24MB/s
-rewrite_time : 0.004s, 670.99MB/s
-filter_time : 0.030s, 94.30MB/s
-write_time : 0.045s, 61.28MB/s
-1
-2
-destor_server_process
-destor_server_process: receive a request!
-type: 0 
-Init recipe store successfully
-Init container store successfully
-Init index module successfully
-==== backup begin ====
-Read 0 inherited sparse containers
-pkt size: 5
-write container buffer2
-read phase stops successfully!
-chunk phase stops successfully!
-hash phase stops successfully!
-dedup phase stops successfully: 1 segments of 1024 chunks on average
-rewrite phase stops successfully!
-Record 1 sparse containers, and 0 of them are inherited
-CMA: read 17 records.
-CMA: update 18 records.
-filter phase stops successfully!
-flushing hash table!
-flushing hash table successfully!
-append phase stops successfully!
-==== backup end ====
-job id: 9
-backup path: /hadoop20
-number of files: 1
-number of chunks: 1024 (4804 bytes on average)
-number of unique chunks: 288
-total size(B): 4919818
-stored data size(B): 1566972
-deduplication ratio: 0.6815, 3.1397
-total time(s): 0.000
-throughput(MB/s): inf
-number of zero chunks: 0
-size of zero chunks: 0
-number of rewritten chunks: 0
-size of rewritten chunks: 0
-rewritten rate in size: 0.000
-read_time : 0.085s, 55.35MB/s
-chunk_time : 0.064s, 73.65MB/s
-hash_time : 0.029s, 159.46MB/s
-dedup_time : 0.001s, 3570.70MB/s
-rewrite_time : 0.014s, 337.43MB/s
-filter_time : 0.035s, 133.61MB/s
-write_time : 0.048s, 97.96MB/s
-1
-2
-destor_server_process
-destor_server_process: receive a request!
-type: 0 
-Init recipe store successfully
-Init container store successfully
-Init index module successfully
-==== backup begin ====
-pkt size: 5
-Read 1 inherited sparse containers
-write container buffer2
-read phase stops successfully!
-chunk phase stops successfully!
-hash phase stops successfully!
-dedup phase stops successfully: 1 segments of 1024 chunks on average
-rewrite phase stops successfully!
-Record 2 sparse containers, and 1 of them are inherited
-CMA: read 18 records.
-CMA: update 19 records.
-filter phase stops successfully!
-flushing hash table!
-flushing hash table successfully!
-append phase stops successfully!
-==== backup end ====
-job id: 10
-backup path: /hadoop21
-number of files: 1
-number of chunks: 1024 (4570 bytes on average)
-number of unique chunks: 593
-total size(B): 4680328
-stored data size(B): 3251222
-deduplication ratio: 0.3053, 1.4396
-total time(s): 0.000
-throughput(MB/s): inf
-number of zero chunks: 0
-size of zero chunks: 0
-number of rewritten chunks: 0
-size of rewritten chunks: 0
-rewritten rate in size: 0.000
-read_time : 0.078s, 57.10MB/s
-chunk_time : 0.061s, 73.49MB/s
-hash_time : 0.027s, 165.08MB/s
-dedup_time : 0.001s, 5722.45MB/s
-rewrite_time : 0.011s, 423.80MB/s
-filter_time : 0.029s, 152.12MB/s
-write_time : 0.014s, 309.71MB/s
-1
-2
-destor_server_process
-destor_server_process: receive a request!
-type: 0 
-Init recipe store successfully
-Init container store successfully
-Init index module successfully
-==== backup begin ====
-Read 2 inherited sparse containers
-pkt size: 5
-write container buffer2
-read phase stops successfully!
-chunk phase stops successfully!
-hash phase stops successfully!
-dedup phase stops successfully: 1 segments of 1024 chunks on average
-rewrite phase stops successfully!
-Record 1 sparse containers, and 0 of them are inherited
-CMA: read 19 records.
-CMA: update 20 records.
-filter phase stops successfully!
-flushing hash table!
-flushing hash table successfully!
-append phase stops successfully!
-==== backup end ====
-job id: 11
-backup path: /hadoop23
-number of files: 1
-number of chunks: 1024 (4390 bytes on average)
-number of unique chunks: 569
-total size(B): 4495422
-stored data size(B): 2889443
-deduplication ratio: 0.3572, 1.5558
-total time(s): 0.000
-throughput(MB/s): inf
-number of zero chunks: 0
-size of zero chunks: 0
-number of rewritten chunks: 0
-size of rewritten chunks: 0
-rewritten rate in size: 0.000
-read_time : 0.085s, 50.53MB/s
-chunk_time : 0.069s, 62.22MB/s
-hash_time : 0.037s, 117.00MB/s
-dedup_time : 0.001s, 4330.47MB/s
-rewrite_time : 0.012s, 369.17MB/s
-filter_time : 0.028s, 152.03MB/s
-write_time : 0.011s, 384.09MB/s
-1
-2
-destor_server_process
-destor_server_process: receive a request!
-type: 0 
-Init recipe store successfully
-Init container store successfully
-Init index module successfully
-==== backup begin ====
-Read 1 inherited sparse containers
-pkt size: 5
-write container buffer2
-read phase stops successfully!
-chunk phase stops successfully!
-hash phase stops successfully!
-dedup phase stops successfully: 1 segments of 1024 chunks on average
-rewrite phase stops successfully!
-Record 1 sparse containers, and 0 of them are inherited
-CMA: read 20 records.
-CMA: update 21 records.
-filter phase stops successfully!
-flushing hash table!
-flushing hash table successfully!
-append phase stops successfully!
-==== backup end ====
-job id: 12
-backup path: /hadoop24
-number of files: 1
-number of chunks: 1024 (4607 bytes on average)
-number of unique chunks: 571
-total size(B): 4717801
-stored data size(B): 2996435
-deduplication ratio: 0.3649, 1.5745
-total time(s): 0.000
-throughput(MB/s): inf
-number of zero chunks: 0
-size of zero chunks: 0
-number of rewritten chunks: 0
-size of rewritten chunks: 0
-rewritten rate in size: 0.000
-read_time : 0.118s, 38.07MB/s
-chunk_time : 0.034s, 131.29MB/s
-hash_time : 0.040s, 112.01MB/s
-dedup_time : 0.003s, 1391.23MB/s
-rewrite_time : 0.012s, 373.60MB/s
-filter_time : 0.052s, 86.17MB/s
-write_time : 0.008s, 562.48MB/s
-1
-2
-destor_server_process
-destor_server_process: receive a request!
-type: 0 
-Init recipe store successfully
-Init container store successfully
-Init index module successfully
-==== backup begin ====
-Read 1 inherited sparse containers
-pkt size: 5
-write container buffer2
-read phase stops successfully!
-chunk phase stops successfully!
-hash phase stops successfully!
-dedup phase stops successfully: 1 segments of 1024 chunks on average
-rewrite phase stops successfully!
-Record 2 sparse containers, and 1 of them are inherited
-CMA: read 21 records.
-CMA: update 22 records.
-filter phase stops successfully!
-flushing hash table!
-flushing hash table successfully!
-append phase stops successfully!
-==== backup end ====
-job id: 13
-backup path: /hadoop26
-number of files: 1
-number of chunks: 1024 (4955 bytes on average)
-number of unique chunks: 669
-total size(B): 5074912
-stored data size(B): 3827775
-deduplication ratio: 0.2457, 1.3258
-total time(s): 0.000
-throughput(MB/s): inf
-number of zero chunks: 0
-size of zero chunks: 0
-number of rewritten chunks: 0
-size of rewritten chunks: 0
-rewritten rate in size: 0.000
-read_time : 0.127s, 38.25MB/s
-chunk_time : 0.039s, 123.45MB/s
-hash_time : 0.043s, 113.64MB/s
-dedup_time : 0.002s, 2691.78MB/s
-rewrite_time : 0.011s, 435.74MB/s
-filter_time : 0.037s, 130.69MB/s
-write_time : 0.031s, 158.10MB/s
-1
-2
-destor_server_process
-destor_server_process: receive a request!
-type: 0 
-Init recipe store successfully
-Init container store successfully
-Init index module successfully
-==== backup begin ====
-pkt size: 5
-Read 2 inherited sparse containers
-write container buffer1
-write container buffer2
-read phase stops successfully!
-chunk phase stops successfully!
-hash phase stops successfully!
-dedup phase stops successfully: 1 segments of 1024 chunks on average
-rewrite phase stops successfully!
-Record 3 sparse containers, and 0 of them are inherited
-CMA: read 22 records.
-CMA: update 24 records.
-filter phase stops successfully!
-flushing hash table!
-flushing hash table successfully!
-append phase stops successfully!
-==== backup end ====
-job id: 14
-backup path: /hadoop27
-number of files: 1
-number of chunks: 1024 (4600 bytes on average)
-number of unique chunks: 817
-total size(B): 4711348
-stored data size(B): 4269454
-deduplication ratio: 0.0938, 1.1035
-total time(s): 0.000
-throughput(MB/s): inf
-number of zero chunks: 0
-size of zero chunks: 0
-number of rewritten chunks: 0
-size of rewritten chunks: 0
-rewritten rate in size: 0.000
-read_time : 0.046s, 98.48MB/s
-chunk_time : 0.070s, 64.32MB/s
-hash_time : 0.025s, 182.17MB/s
-dedup_time : 0.001s, 4561.51MB/s
-rewrite_time : 0.016s, 281.20MB/s
-filter_time : 0.045s, 98.84MB/s
-write_time : 0.034s, 132.68MB/s
-1
-2
-destor_server_process
-destor_server_process: receive a request!
-type: 0 
-Init recipe store successfully
-Init container store successfully
-Init index module successfully
-==== backup begin ====
-pkt size: 4
-Read 3 inherited sparse containers
-write container buffer2
-read phase stops successfully!
-chunk phase stops successfully!
-hash phase stops successfully!
-dedup phase stops successfully: 1 segments of 674 chunks on average
-rewrite phase stops successfully!
-Record 2 sparse containers, and 1 of them are inherited
-CMA: read 24 records.
-CMA: update 25 records.
-filter phase stops successfully!
-flushing hash table!
-flushing hash table successfully!
-append phase stops successfully!
-==== backup end ====
-job id: 15
-backup path: /hadoop28
-number of files: 1
-number of chunks: 674 (6222 bytes on average)
-number of unique chunks: 539
-total size(B): 4193873
-stored data size(B): 3749697
-deduplication ratio: 0.1059, 1.1185
-total time(s): 0.000
-throughput(MB/s): inf
-number of zero chunks: 0
-size of zero chunks: 0
-number of rewritten chunks: 0
-size of rewritten chunks: 0
-rewritten rate in size: 0.000
-read_time : 0.078s, 51.61MB/s
-chunk_time : 0.054s, 74.51MB/s
-hash_time : 0.028s, 145.33MB/s
-dedup_time : 0.001s, 3809.13MB/s
-rewrite_time : 0.016s, 255.09MB/s
-filter_time : 0.065s, 61.29MB/s
-write_time : 0.023s, 172.08MB/s
-1
-2
-destor_server_process
-destor_server_process: receive a request!
-type: 0 
-Init recipe store successfully
-Init container store successfully
-Init index module successfully
-==== backup begin ====
-Read 2 inherited sparse containers
-pkt size: 5
-write container buffer2
-read phase stops successfully!
-chunk phase stops successfully!
-hash phase stops successfully!
-dedup phase stops successfully: 1 segments of 1024 chunks on average
-rewrite phase stops successfully!
-Record 2 sparse containers, and 0 of them are inherited
-CMA: read 25 records.
-CMA: update 26 records.
-filter phase stops successfully!
-flushing hash table!
-flushing hash table successfully!
-append phase stops successfully!
-==== backup end ====
-job id: 16
-backup path: /hadoop30
-number of files: 1
-number of chunks: 1024 (4821 bytes on average)
-number of unique chunks: 257
-total size(B): 4936977
-stored data size(B): 1418642
-deduplication ratio: 0.7126, 3.4801
-total time(s): 0.000
-throughput(MB/s): inf
-number of zero chunks: 0
-size of zero chunks: 0
-number of rewritten chunks: 0
-size of rewritten chunks: 0
-rewritten rate in size: 0.000
-read_time : 0.081s, 58.45MB/s
-chunk_time : 0.025s, 188.80MB/s
-hash_time : 0.025s, 186.59MB/s
-dedup_time : 0.002s, 2742.15MB/s
-rewrite_time : 0.014s, 325.58MB/s
-filter_time : 0.028s, 165.50MB/s
-write_time : 0.004s, 1176.18MB/s
-1
-2
-destor_server_process
-destor_server_process: receive a request!
-type: 0 
-Init recipe store successfully
-Init container store successfully
-Init index module successfully
-==== backup begin ====
-pkt size: 5
-Read 2 inherited sparse containers
-write container buffer2
-read phase stops successfully!
-chunk phase stops successfully!
-hash phase stops successfully!
-dedup phase stops successfully: 1 segments of 1024 chunks on average
-rewrite phase stops successfully!
-Record 2 sparse containers, and 1 of them are inherited
-CMA: read 26 records.
-CMA: update 27 records.
-filter phase stops successfully!
-flushing hash table!
-flushing hash table successfully!
-append phase stops successfully!
-==== backup end ====
-job id: 17
-backup path: /hadoop31
-number of files: 1
-number of chunks: 1024 (4491 bytes on average)
-number of unique chunks: 597
-total size(B): 4599029
-stored data size(B): 3175617
-deduplication ratio: 0.3095, 1.4482
-total time(s): 0.000
-throughput(MB/s): inf
-number of zero chunks: 0
-size of zero chunks: 0
-number of rewritten chunks: 0
-size of rewritten chunks: 0
-rewritten rate in size: 0.000
-read_time : 0.043s, 102.95MB/s
-chunk_time : 0.024s, 184.94MB/s
-hash_time : 0.025s, 175.94MB/s
-dedup_time : 0.001s, 4846.38MB/s
-rewrite_time : 0.011s, 387.08MB/s
-filter_time : 0.036s, 121.34MB/s
-write_time : 0.025s, 178.48MB/s
-1
-2
-destor_server_process
-destor_server_process: receive a request!
-type: 0 
-Init recipe store successfully
-Init container store successfully
-Init index module successfully
-==== backup begin ====
-Read 2 inherited sparse containers
-pkt size: 5
-write container buffer1
-write container buffer2
-read phase stops successfully!
-chunk phase stops successfully!
-hash phase stops successfully!
-dedup phase stops successfully: 1 segments of 1024 chunks on average
-rewrite phase stops successfully!
-Record 4 sparse containers, and 1 of them are inherited
-CMA: read 27 records.
-CMA: update 29 records.
-filter phase stops successfully!
-flushing hash table!
-flushing hash table successfully!
-append phase stops successfully!
-==== backup end ====
-job id: 18
+job id: 499
 backup path: /hadoop32
 number of files: 1
 number of chunks: 1024 (4834 bytes on average)
-number of unique chunks: 848
+number of unique chunks: 0
 total size(B): 4950536
-stored data size(B): 4475489
-deduplication ratio: 0.0960, 1.1061
+stored data size(B): 0
+deduplication ratio: 1.0000, inf
 total time(s): 0.000
 throughput(MB/s): inf
 number of zero chunks: 0
@@ -891,13 +35,13 @@ size of zero chunks: 0
 number of rewritten chunks: 0
 size of rewritten chunks: 0
 rewritten rate in size: 0.000
-read_time : 0.091s, 52.15MB/s
-chunk_time : 0.028s, 168.80MB/s
-hash_time : 0.025s, 186.36MB/s
-dedup_time : 0.001s, 4387.73MB/s
-rewrite_time : 0.015s, 316.88MB/s
-filter_time : 0.050s, 93.86MB/s
-write_time : 0.029s, 162.01MB/s
+read_time : 0.165s, 28.58MB/s
+chunk_time : 0.067s, 70.49MB/s
+hash_time : 0.030s, 158.61MB/s
+dedup_time : 0.004s, 1117.71MB/s
+rewrite_time : 0.012s, 409.54MB/s
+filter_time : 0.024s, 198.84MB/s
+write_time : 0.000s, infMB/s
 1
 2
 destor_server_process
@@ -908,29 +52,28 @@ Init container store successfully
 Init index module successfully
 ==== backup begin ====
 pkt size: 5
-Read 4 inherited sparse containers
-write container buffer2
+Read 11 inherited sparse containers
 read phase stops successfully!
 chunk phase stops successfully!
 hash phase stops successfully!
 dedup phase stops successfully: 1 segments of 1024 chunks on average
 rewrite phase stops successfully!
-Record 2 sparse containers, and 1 of them are inherited
-CMA: read 29 records.
-CMA: update 30 records.
+Record 6 sparse containers, and 2 of them are inherited
+CMA: read 75 records.
+CMA: update 75 records.
 filter phase stops successfully!
 flushing hash table!
 flushing hash table successfully!
 append phase stops successfully!
 ==== backup end ====
-job id: 19
+job id: 500
 backup path: /hadoop33
 number of files: 1
 number of chunks: 1024 (4405 bytes on average)
-number of unique chunks: 634
+number of unique chunks: 0
 total size(B): 4511329
-stored data size(B): 3206691
-deduplication ratio: 0.2892, 1.4068
+stored data size(B): 0
+deduplication ratio: 1.0000, inf
 total time(s): 0.000
 throughput(MB/s): inf
 number of zero chunks: 0
@@ -938,13 +81,13 @@ size of zero chunks: 0
 number of rewritten chunks: 0
 size of rewritten chunks: 0
 rewritten rate in size: 0.000
-read_time : 0.085s, 50.76MB/s
-chunk_time : 0.032s, 134.51MB/s
-hash_time : 0.023s, 183.19MB/s
-dedup_time : 0.002s, 2634.62MB/s
-rewrite_time : 0.020s, 212.48MB/s
-filter_time : 0.051s, 84.06MB/s
-write_time : 0.017s, 256.32MB/s
+read_time : 0.056s, 77.47MB/s
+chunk_time : 0.043s, 100.81MB/s
+hash_time : 0.029s, 148.35MB/s
+dedup_time : 0.002s, 2034.20MB/s
+rewrite_time : 0.014s, 313.19MB/s
+filter_time : 0.027s, 158.39MB/s
+write_time : 0.000s, infMB/s
 1
 2
 destor_server_process
@@ -954,30 +97,29 @@ Init recipe store successfully
 Init container store successfully
 Init index module successfully
 ==== backup begin ====
+Read 6 inherited sparse containers
 pkt size: 5
-Read 2 inherited sparse containers
-write container buffer2
 read phase stops successfully!
 chunk phase stops successfully!
 hash phase stops successfully!
 dedup phase stops successfully: 1 segments of 1024 chunks on average
 rewrite phase stops successfully!
-Record 1 sparse containers, and 0 of them are inherited
-CMA: read 30 records.
-CMA: update 31 records.
+Record 4 sparse containers, and 0 of them are inherited
+CMA: read 75 records.
+CMA: update 75 records.
 filter phase stops successfully!
 flushing hash table!
 flushing hash table successfully!
 append phase stops successfully!
 ==== backup end ====
-job id: 20
-backup path: /hadoop34
+job id: 501
+backup path: /hadoop62
 number of files: 1
-number of chunks: 1024 (4655 bytes on average)
-number of unique chunks: 489
-total size(B): 4767599
-stored data size(B): 2630366
-deduplication ratio: 0.4483, 1.8125
+number of chunks: 1024 (4795 bytes on average)
+number of unique chunks: 0
+total size(B): 4910709
+stored data size(B): 0
+deduplication ratio: 1.0000, inf
 total time(s): 0.000
 throughput(MB/s): inf
 number of zero chunks: 0
@@ -985,202 +127,13 @@ size of zero chunks: 0
 number of rewritten chunks: 0
 size of rewritten chunks: 0
 rewritten rate in size: 0.000
-read_time : 0.033s, 138.87MB/s
-chunk_time : 0.053s, 85.93MB/s
-hash_time : 0.022s, 202.57MB/s
-dedup_time : 0.001s, 3524.60MB/s
-rewrite_time : 0.011s, 406.94MB/s
-filter_time : 0.044s, 104.41MB/s
-write_time : 0.004s, 1189.62MB/s
-1
-2
-destor_server_process
-destor_server_process: receive a request!
-type: 0 
-Init recipe store successfully
-Init container store successfully
-Init index module successfully
-==== backup begin ====
-pkt size: 5
-Read 1 inherited sparse containers
-write container buffer2
-read phase stops successfully!
-chunk phase stops successfully!
-hash phase stops successfully!
-dedup phase stops successfully: 1 segments of 1024 chunks on average
-rewrite phase stops successfully!
-Record 1 sparse containers, and 0 of them are inherited
-CMA: read 31 records.
-CMA: update 32 records.
-filter phase stops successfully!
-flushing hash table!
-flushing hash table successfully!
-append phase stops successfully!
-==== backup end ====
-job id: 21
-backup path: /hadoop35
-number of files: 1
-number of chunks: 1024 (4670 bytes on average)
-number of unique chunks: 599
-total size(B): 4783039
-stored data size(B): 3189321
-deduplication ratio: 0.3332, 1.4997
-total time(s): 0.000
-throughput(MB/s): inf
-number of zero chunks: 0
-size of zero chunks: 0
-number of rewritten chunks: 0
-size of rewritten chunks: 0
-rewritten rate in size: 0.000
-read_time : 0.038s, 119.71MB/s
-chunk_time : 0.037s, 123.00MB/s
-hash_time : 0.032s, 142.97MB/s
-dedup_time : 0.001s, 3902.02MB/s
-rewrite_time : 0.011s, 404.06MB/s
-filter_time : 0.030s, 149.65MB/s
-write_time : 0.017s, 274.70MB/s
-1
-2
-destor_server_process
-destor_server_process: receive a request!
-type: 0 
-Init recipe store successfully
-Init container store successfully
-Init index module successfully
-==== backup begin ====
-pkt size: 5
-Read 1 inherited sparse containers
-write container buffer2
-read phase stops successfully!
-chunk phase stops successfully!
-hash phase stops successfully!
-dedup phase stops successfully: 1 segments of 1024 chunks on average
-rewrite phase stops successfully!
-Record 2 sparse containers, and 0 of them are inherited
-CMA: read 32 records.
-CMA: update 33 records.
-filter phase stops successfully!
-flushing hash table!
-flushing hash table successfully!
-append phase stops successfully!
-==== backup end ====
-job id: 22
-backup path: /hadoop36
-number of files: 1
-number of chunks: 1024 (4916 bytes on average)
-number of unique chunks: 611
-total size(B): 5034553
-stored data size(B): 3586436
-deduplication ratio: 0.2876, 1.4038
-total time(s): 0.000
-throughput(MB/s): inf
-number of zero chunks: 0
-size of zero chunks: 0
-number of rewritten chunks: 0
-size of rewritten chunks: 0
-rewritten rate in size: 0.000
-read_time : 0.070s, 68.19MB/s
-chunk_time : 0.031s, 152.47MB/s
-hash_time : 0.033s, 145.61MB/s
-dedup_time : 0.001s, 3765.74MB/s
-rewrite_time : 0.019s, 254.63MB/s
-filter_time : 0.045s, 106.10MB/s
-write_time : 0.036s, 133.89MB/s
-1
-2
-destor_server_process
-destor_server_process: receive a request!
-type: 0 
-Init recipe store successfully
-Init container store successfully
-Init index module successfully
-==== backup begin ====
-pkt size: 5
-Read 2 inherited sparse containers
-write container buffer1
-write container buffer2
-read phase stops successfully!
-chunk phase stops successfully!
-hash phase stops successfully!
-dedup phase stops successfully: 1 segments of 1024 chunks on average
-rewrite phase stops successfully!
-Record 3 sparse containers, and 0 of them are inherited
-CMA: read 33 records.
-CMA: update 35 records.
-filter phase stops successfully!
-flushing hash table!
-flushing hash table successfully!
-append phase stops successfully!
-==== backup end ====
-job id: 23
-backup path: /hadoop37
-number of files: 1
-number of chunks: 1024 (4733 bytes on average)
-number of unique chunks: 819
-total size(B): 4847526
-stored data size(B): 4443367
-deduplication ratio: 0.0834, 1.0910
-total time(s): 0.000
-throughput(MB/s): inf
-number of zero chunks: 0
-size of zero chunks: 0
-number of rewritten chunks: 0
-size of rewritten chunks: 0
-rewritten rate in size: 0.000
-read_time : 0.063s, 73.07MB/s
-chunk_time : 0.028s, 163.70MB/s
-hash_time : 0.034s, 136.99MB/s
-dedup_time : 0.001s, 3958.01MB/s
-rewrite_time : 0.015s, 307.58MB/s
-filter_time : 0.050s, 93.20MB/s
-write_time : 0.043s, 106.39MB/s
-1
-2
-destor_server_process
-destor_server_process: receive a request!
-type: 0 
-Init recipe store successfully
-Init container store successfully
-Init index module successfully
-==== backup begin ====
-Read 3 inherited sparse containers
-pkt size: 5
-write container buffer2
-read phase stops successfully!
-chunk phase stops successfully!
-hash phase stops successfully!
-dedup phase stops successfully: 1 segments of 745 chunks on average
-rewrite phase stops successfully!
-Record 4 sparse containers, and 2 of them are inherited
-CMA: read 35 records.
-CMA: update 36 records.
-filter phase stops successfully!
-flushing hash table!
-flushing hash table successfully!
-append phase stops successfully!
-==== backup end ====
-job id: 24
-backup path: /hadoop38
-number of files: 1
-number of chunks: 745 (6137 bytes on average)
-number of unique chunks: 580
-total size(B): 4572661
-stored data size(B): 4056985
-deduplication ratio: 0.1128, 1.1271
-total time(s): 0.000
-throughput(MB/s): inf
-number of zero chunks: 0
-size of zero chunks: 0
-number of rewritten chunks: 0
-size of rewritten chunks: 0
-rewritten rate in size: 0.000
-read_time : 0.026s, 166.39MB/s
-chunk_time : 0.029s, 148.30MB/s
-hash_time : 0.022s, 196.74MB/s
-dedup_time : 0.001s, 3953.61MB/s
-rewrite_time : 0.013s, 342.51MB/s
-filter_time : 0.044s, 99.15MB/s
-write_time : 0.029s, 152.15MB/s
+read_time : 0.063s, 74.93MB/s
+chunk_time : 0.052s, 90.57MB/s
+hash_time : 0.049s, 95.66MB/s
+dedup_time : 0.002s, 2840.03MB/s
+rewrite_time : 0.011s, 426.87MB/s
+filter_time : 0.025s, 183.94MB/s
+write_time : 0.000s, infMB/s
 1
 2
 destor_server_process
@@ -1191,406 +144,28 @@ Init container store successfully
 Init index module successfully
 ==== backup begin ====
 Read 4 inherited sparse containers
-pkt size: 5
-write container buffer2
+pkt size: 1
 read phase stops successfully!
 chunk phase stops successfully!
 hash phase stops successfully!
-dedup phase stops successfully: 1 segments of 1024 chunks on average
-rewrite phase stops successfully!
-Record 3 sparse containers, and 0 of them are inherited
-CMA: read 36 records.
-CMA: update 37 records.
-filter phase stops successfully!
-flushing hash table!
-flushing hash table successfully!
-append phase stops successfully!
-==== backup end ====
-job id: 25
-backup path: /hadoop40
-number of files: 1
-number of chunks: 1024 (4755 bytes on average)
-number of unique chunks: 277
-total size(B): 4869435
-stored data size(B): 1439893
-deduplication ratio: 0.7043, 3.3818
-total time(s): 0.000
-throughput(MB/s): inf
-number of zero chunks: 0
-size of zero chunks: 0
-number of rewritten chunks: 0
-size of rewritten chunks: 0
-rewritten rate in size: 0.000
-read_time : 0.086s, 54.26MB/s
-chunk_time : 0.051s, 91.14MB/s
-hash_time : 0.029s, 159.61MB/s
-dedup_time : 0.001s, 4233.23MB/s
-rewrite_time : 0.019s, 246.01MB/s
-filter_time : 0.047s, 98.37MB/s
-write_time : 0.012s, 393.08MB/s
-1
-2
-destor_server_process
-destor_server_process: receive a request!
-type: 0 
-Init recipe store successfully
-Init container store successfully
-Init index module successfully
-==== backup begin ====
-Read 3 inherited sparse containers
-pkt size: 5
-write container buffer2
-read phase stops successfully!
-chunk phase stops successfully!
-hash phase stops successfully!
-dedup phase stops successfully: 1 segments of 1024 chunks on average
-rewrite phase stops successfully!
-Record 4 sparse containers, and 1 of them are inherited
-CMA: read 37 records.
-CMA: update 38 records.
-filter phase stops successfully!
-flushing hash table!
-flushing hash table successfully!
-append phase stops successfully!
-==== backup end ====
-job id: 26
-backup path: /hadoop41
-number of files: 1
-number of chunks: 1024 (4625 bytes on average)
-number of unique chunks: 784
-total size(B): 4736279
-stored data size(B): 3998715
-deduplication ratio: 0.1557, 1.1845
-total time(s): 0.000
-throughput(MB/s): inf
-number of zero chunks: 0
-size of zero chunks: 0
-number of rewritten chunks: 0
-size of rewritten chunks: 0
-rewritten rate in size: 0.000
-read_time : 0.023s, 195.86MB/s
-chunk_time : 0.046s, 98.92MB/s
-hash_time : 0.028s, 163.22MB/s
-dedup_time : 0.001s, 4036.52MB/s
-rewrite_time : 0.011s, 406.34MB/s
-filter_time : 0.045s, 100.72MB/s
-write_time : 0.020s, 224.60MB/s
-1
-2
-destor_server_process
-destor_server_process: receive a request!
-type: 0 
-Init recipe store successfully
-Init container store successfully
-Init index module successfully
-==== backup begin ====
-pkt size: 5
-Read 4 inherited sparse containers
-write container buffer2
-read phase stops successfully!
-chunk phase stops successfully!
-hash phase stops successfully!
-dedup phase stops successfully: 1 segments of 1024 chunks on average
-rewrite phase stops successfully!
-Record 5 sparse containers, and 0 of them are inherited
-CMA: read 38 records.
-CMA: update 39 records.
-filter phase stops successfully!
-flushing hash table!
-flushing hash table successfully!
-append phase stops successfully!
-==== backup end ====
-job id: 27
-backup path: /hadoop43
-number of files: 1
-number of chunks: 1024 (4508 bytes on average)
-number of unique chunks: 730
-total size(B): 4617093
-stored data size(B): 3673267
-deduplication ratio: 0.2044, 1.2569
-total time(s): 0.000
-throughput(MB/s): inf
-number of zero chunks: 0
-size of zero chunks: 0
-number of rewritten chunks: 0
-size of rewritten chunks: 0
-rewritten rate in size: 0.000
-read_time : 0.081s, 54.14MB/s
-chunk_time : 0.054s, 81.10MB/s
-hash_time : 0.034s, 128.44MB/s
-dedup_time : 0.001s, 3842.24MB/s
-rewrite_time : 0.011s, 409.07MB/s
-filter_time : 0.027s, 161.25MB/s
-write_time : 0.010s, 435.87MB/s
-1
-2
-destor_server_process
-destor_server_process: receive a request!
-type: 0 
-Init recipe store successfully
-Init container store successfully
-Init index module successfully
-==== backup begin ====
-Read 5 inherited sparse containers
-pkt size: 5
-write container buffer2
-read phase stops successfully!
-chunk phase stops successfully!
-hash phase stops successfully!
-dedup phase stops successfully: 1 segments of 1024 chunks on average
-rewrite phase stops successfully!
-Record 4 sparse containers, and 1 of them are inherited
-CMA: read 39 records.
-CMA: update 40 records.
-filter phase stops successfully!
-flushing hash table!
-flushing hash table successfully!
-append phase stops successfully!
-==== backup end ====
-job id: 28
-backup path: /hadoop44
-number of files: 1
-number of chunks: 1024 (4671 bytes on average)
-number of unique chunks: 537
-total size(B): 4783697
-stored data size(B): 2709866
-deduplication ratio: 0.4335, 1.7653
-total time(s): 0.000
-throughput(MB/s): inf
-number of zero chunks: 0
-size of zero chunks: 0
-number of rewritten chunks: 0
-size of rewritten chunks: 0
-rewritten rate in size: 0.000
-read_time : 0.128s, 35.61MB/s
-chunk_time : 0.041s, 110.99MB/s
-hash_time : 0.042s, 109.51MB/s
-dedup_time : 0.002s, 2697.86MB/s
-rewrite_time : 0.015s, 304.50MB/s
-filter_time : 0.036s, 128.00MB/s
-write_time : 0.019s, 235.63MB/s
-1
-2
-destor_server_process
-destor_server_process: receive a request!
-type: 0 
-Init recipe store successfully
-Init container store successfully
-Init index module successfully
-==== backup begin ====
-Read 4 inherited sparse containers
-pkt size: 5
-write container buffer2
-read phase stops successfully!
-chunk phase stops successfully!
-hash phase stops successfully!
-dedup phase stops successfully: 1 segments of 1024 chunks on average
-rewrite phase stops successfully!
-Record 2 sparse containers, and 1 of them are inherited
-CMA: read 40 records.
-CMA: update 41 records.
-filter phase stops successfully!
-flushing hash table!
-flushing hash table successfully!
-append phase stops successfully!
-==== backup end ====
-job id: 29
-backup path: /hadoop45
-number of files: 1
-number of chunks: 1024 (4599 bytes on average)
-number of unique chunks: 592
-total size(B): 4709677
-stored data size(B): 3041231
-deduplication ratio: 0.3543, 1.5486
-total time(s): 0.000
-throughput(MB/s): inf
-number of zero chunks: 0
-size of zero chunks: 0
-number of rewritten chunks: 0
-size of rewritten chunks: 0
-rewritten rate in size: 0.000
-read_time : 0.063s, 71.14MB/s
-chunk_time : 0.032s, 140.87MB/s
-hash_time : 0.033s, 136.28MB/s
-dedup_time : 0.002s, 2817.75MB/s
-rewrite_time : 0.011s, 418.55MB/s
-filter_time : 0.027s, 165.77MB/s
-write_time : 0.014s, 326.30MB/s
-1
-2
-destor_server_process
-destor_server_process: receive a request!
-type: 0 
-Init recipe store successfully
-Init container store successfully
-Init index module successfully
-==== backup begin ====
-Read 2 inherited sparse containers
-pkt size: 5
-write container buffer2
-read phase stops successfully!
-chunk phase stops successfully!
-hash phase stops successfully!
-dedup phase stops successfully: 1 segments of 1024 chunks on average
-rewrite phase stops successfully!
-Record 1 sparse containers, and 0 of them are inherited
-CMA: read 41 records.
-CMA: update 42 records.
-filter phase stops successfully!
-flushing hash table!
-flushing hash table successfully!
-append phase stops successfully!
-==== backup end ====
-job id: 30
-backup path: /hadoop46
-number of files: 1
-number of chunks: 1024 (4355 bytes on average)
-number of unique chunks: 707
-total size(B): 4460316
-stored data size(B): 3278290
-deduplication ratio: 0.2650, 1.3606
-total time(s): 0.000
-throughput(MB/s): inf
-number of zero chunks: 0
-size of zero chunks: 0
-number of rewritten chunks: 0
-size of rewritten chunks: 0
-rewritten rate in size: 0.000
-read_time : 0.190s, 22.33MB/s
-chunk_time : 0.094s, 45.12MB/s
-hash_time : 0.029s, 145.85MB/s
-dedup_time : 0.002s, 2606.43MB/s
-rewrite_time : 0.025s, 170.37MB/s
-filter_time : 0.053s, 80.02MB/s
-write_time : 0.019s, 220.56MB/s
-1
-2
-destor_server_process
-destor_server_process: receive a request!
-type: 0 
-Init recipe store successfully
-Init container store successfully
-Init index module successfully
-==== backup begin ====
-Read 1 inherited sparse containers
-pkt size: 5
-write container buffer1
-write container buffer2
-read phase stops successfully!
-chunk phase stops successfully!
-hash phase stops successfully!
-dedup phase stops successfully: 1 segments of 1024 chunks on average
-rewrite phase stops successfully!
-Record 5 sparse containers, and 1 of them are inherited
-CMA: read 42 records.
-CMA: update 44 records.
-filter phase stops successfully!
-flushing hash table!
-flushing hash table successfully!
-append phase stops successfully!
-==== backup end ====
-job id: 31
-backup path: /hadoop47
-number of files: 1
-number of chunks: 1024 (4922 bytes on average)
-number of unique chunks: 892
-total size(B): 5040745
-stored data size(B): 4678477
-deduplication ratio: 0.0719, 1.0774
-total time(s): 0.000
-throughput(MB/s): inf
-number of zero chunks: 0
-size of zero chunks: 0
-number of rewritten chunks: 0
-size of rewritten chunks: 0
-rewritten rate in size: 0.000
-read_time : 0.067s, 71.35MB/s
-chunk_time : 0.042s, 113.65MB/s
-hash_time : 0.026s, 185.08MB/s
-dedup_time : 0.003s, 1555.23MB/s
-rewrite_time : 0.022s, 220.49MB/s
-filter_time : 0.069s, 69.63MB/s
-write_time : 0.034s, 141.80MB/s
-1
-2
-destor_server_process
-destor_server_process: receive a request!
-type: 0 
-Init recipe store successfully
-Init container store successfully
-Init index module successfully
-==== backup begin ====
-Read 5 inherited sparse containers
-pkt size: 5
-write container buffer2
-read phase stops successfully!
-chunk phase stops successfully!
-hash phase stops successfully!
-dedup phase stops successfully: 1 segments of 1024 chunks on average
-rewrite phase stops successfully!
-Record 4 sparse containers, and 2 of them are inherited
-CMA: read 44 records.
-CMA: update 45 records.
-filter phase stops successfully!
-flushing hash table!
-flushing hash table successfully!
-append phase stops successfully!
-==== backup end ====
-job id: 32
-backup path: /hadoop48
-number of files: 1
-number of chunks: 1024 (4640 bytes on average)
-number of unique chunks: 780
-total size(B): 4751910
-stored data size(B): 4089722
-deduplication ratio: 0.1394, 1.1619
-total time(s): 0.000
-throughput(MB/s): inf
-number of zero chunks: 0
-size of zero chunks: 0
-number of rewritten chunks: 0
-size of rewritten chunks: 0
-rewritten rate in size: 0.000
-read_time : 0.077s, 58.91MB/s
-chunk_time : 0.058s, 78.77MB/s
-hash_time : 0.025s, 184.84MB/s
-dedup_time : 0.002s, 2136.62MB/s
-rewrite_time : 0.012s, 372.19MB/s
-filter_time : 0.037s, 121.87MB/s
-write_time : 0.021s, 216.88MB/s
-1
-2
-destor_server_process
-destor_server_process: receive a request!
-type: 0 
-Init recipe store successfully
-Init container store successfully
-Init index module successfully
-==== backup begin ====
-Read 4 inherited sparse containers
-pkt size: 3
-write container buffer2
-read phase stops successfully!
-chunk phase stops successfully!
-hash phase stops successfully!
-dedup phase stops successfully: 1 segments of 459 chunks on average
+dedup phase stops successfully: 1 segments of 34 chunks on average
 rewrite phase stops successfully!
 Record 0 sparse containers, and 0 of them are inherited
-CMA: read 45 records.
-CMA: update 46 records.
+CMA: read 75 records.
+CMA: update 75 records.
 filter phase stops successfully!
 flushing hash table!
 flushing hash table successfully!
 append phase stops successfully!
 ==== backup end ====
-job id: 33
-backup path: /hadoop49
+job id: 502
+backup path: /hadoop710
 number of files: 1
-number of chunks: 459 (6720 bytes on average)
-number of unique chunks: 459
-total size(B): 3084926
-stored data size(B): 3084926
-deduplication ratio: 0.0000, 1.0000
+number of chunks: 34 (5366 bytes on average)
+number of unique chunks: 0
+total size(B): 182459
+stored data size(B): 0
+deduplication ratio: 1.0000, inf
 total time(s): 0.000
 throughput(MB/s): inf
 number of zero chunks: 0
@@ -1598,13 +173,13 @@ size of zero chunks: 0
 number of rewritten chunks: 0
 size of rewritten chunks: 0
 rewritten rate in size: 0.000
-read_time : 0.028s, 104.19MB/s
-chunk_time : 0.032s, 91.34MB/s
-hash_time : 0.016s, 183.54MB/s
-dedup_time : 0.000s, 11628.52MB/s
-rewrite_time : 0.004s, 667.12MB/s
-filter_time : 0.017s, 174.02MB/s
-write_time : 0.028s, 103.54MB/s
+read_time : 0.002s, 94.67MB/s
+chunk_time : 0.001s, 193.77MB/s
+hash_time : 0.003s, 67.21MB/s
+dedup_time : 0.000s, 2636.46MB/s
+rewrite_time : 0.001s, 224.24MB/s
+filter_time : 0.001s, 147.21MB/s
+write_time : 0.000s, infMB/s
 1
 2
 destor_server_process
@@ -1614,30 +189,29 @@ Init recipe store successfully
 Init container store successfully
 Init index module successfully
 ==== backup begin ====
+pkt size: 5
 Read 0 inherited sparse containers
-pkt size: 5
-write container buffer2
 read phase stops successfully!
 chunk phase stops successfully!
 hash phase stops successfully!
 dedup phase stops successfully: 1 segments of 1024 chunks on average
 rewrite phase stops successfully!
-Record 3 sparse containers, and 0 of them are inherited
-CMA: read 46 records.
-CMA: update 47 records.
+Record 10 sparse containers, and 0 of them are inherited
+CMA: read 75 records.
+CMA: update 75 records.
 filter phase stops successfully!
 flushing hash table!
 flushing hash table successfully!
 append phase stops successfully!
 ==== backup end ====
-job id: 34
-backup path: /hadoop50
+job id: 503
+backup path: /hadoop92
 number of files: 1
-number of chunks: 1024 (4818 bytes on average)
-number of unique chunks: 260
-total size(B): 4934077
-stored data size(B): 1379754
-deduplication ratio: 0.7204, 3.5761
+number of chunks: 1024 (4876 bytes on average)
+number of unique chunks: 0
+total size(B): 4993882
+stored data size(B): 0
+deduplication ratio: 1.0000, inf
 total time(s): 0.000
 throughput(MB/s): inf
 number of zero chunks: 0
@@ -1645,13 +219,13 @@ size of zero chunks: 0
 number of rewritten chunks: 0
 size of rewritten chunks: 0
 rewritten rate in size: 0.000
-read_time : 0.109s, 43.12MB/s
-chunk_time : 0.051s, 92.52MB/s
-hash_time : 0.035s, 134.24MB/s
-dedup_time : 0.001s, 3670.44MB/s
-rewrite_time : 0.020s, 230.35MB/s
-filter_time : 0.052s, 90.24MB/s
-write_time : 0.005s, 1037.83MB/s
+read_time : 0.073s, 64.94MB/s
+chunk_time : 0.046s, 103.61MB/s
+hash_time : 0.024s, 196.09MB/s
+dedup_time : 0.004s, 1266.30MB/s
+rewrite_time : 0.010s, 461.71MB/s
+filter_time : 0.023s, 204.06MB/s
+write_time : 0.000s, infMB/s
 1
 2
 destor_server_process
@@ -1661,30 +235,29 @@ Init recipe store successfully
 Init container store successfully
 Init index module successfully
 ==== backup begin ====
-pkt size: 5
-Read 3 inherited sparse containers
-write container buffer2
+pkt size: 3
+Read 10 inherited sparse containers
 read phase stops successfully!
 chunk phase stops successfully!
 hash phase stops successfully!
-dedup phase stops successfully: 1 segments of 1024 chunks on average
+dedup phase stops successfully: 1 segments of 354 chunks on average
 rewrite phase stops successfully!
-Record 3 sparse containers, and 1 of them are inherited
-CMA: read 47 records.
-CMA: update 48 records.
+Record 0 sparse containers, and 0 of them are inherited
+CMA: read 75 records.
+CMA: update 75 records.
 filter phase stops successfully!
 flushing hash table!
 flushing hash table successfully!
 append phase stops successfully!
 ==== backup end ====
-job id: 35
-backup path: /hadoop51
+job id: 504
+backup path: /hadoop910
 number of files: 1
-number of chunks: 1024 (4575 bytes on average)
-number of unique chunks: 607
-total size(B): 4685003
-stored data size(B): 3213604
-deduplication ratio: 0.3141, 1.4579
+number of chunks: 354 (7263 bytes on average)
+number of unique chunks: 0
+total size(B): 2571273
+stored data size(B): 0
+deduplication ratio: 1.0000, inf
 total time(s): 0.000
 throughput(MB/s): inf
 number of zero chunks: 0
@@ -1692,247 +265,12 @@ size of zero chunks: 0
 number of rewritten chunks: 0
 size of rewritten chunks: 0
 rewritten rate in size: 0.000
-read_time : 0.065s, 68.55MB/s
-chunk_time : 0.053s, 84.81MB/s
-hash_time : 0.045s, 99.26MB/s
-dedup_time : 0.002s, 2873.29MB/s
-rewrite_time : 0.011s, 405.52MB/s
-filter_time : 0.033s, 134.02MB/s
-write_time : 0.061s, 73.39MB/s
-1
-2
-destor_server_process
-destor_server_process: receive a request!
-type: 0 
-Init recipe store successfully
-Init container store successfully
-Init index module successfully
-==== backup begin ====
-pkt size: 5
-Read 3 inherited sparse containers
-write container buffer2
-read phase stops successfully!
-chunk phase stops successfully!
-hash phase stops successfully!
-dedup phase stops successfully: 1 segments of 1024 chunks on average
-rewrite phase stops successfully!
-Record 7 sparse containers, and 0 of them are inherited
-CMA: read 48 records.
-CMA: update 49 records.
-filter phase stops successfully!
-flushing hash table!
-flushing hash table successfully!
-append phase stops successfully!
-==== backup end ====
-job id: 36
-backup path: /hadoop53
-number of files: 1
-number of chunks: 1024 (4649 bytes on average)
-number of unique chunks: 761
-total size(B): 4761022
-stored data size(B): 3965019
-deduplication ratio: 0.1672, 1.2008
-total time(s): 0.000
-throughput(MB/s): inf
-number of zero chunks: 0
-size of zero chunks: 0
-number of rewritten chunks: 0
-size of rewritten chunks: 0
-rewritten rate in size: 0.000
-read_time : 0.121s, 37.45MB/s
-chunk_time : 0.068s, 67.05MB/s
-hash_time : 0.063s, 72.35MB/s
-dedup_time : 0.002s, 1968.13MB/s
-rewrite_time : 0.015s, 305.80MB/s
-filter_time : 0.065s, 69.34MB/s
-write_time : 0.034s, 133.37MB/s
-1
-2
-destor_server_process
-destor_server_process: receive a request!
-type: 0 
-Init recipe store successfully
-Init container store successfully
-Init index module successfully
-==== backup begin ====
-Read 7 inherited sparse containers
-pkt size: 5
-write container buffer2
-read phase stops successfully!
-chunk phase stops successfully!
-hash phase stops successfully!
-dedup phase stops successfully: 1 segments of 1024 chunks on average
-rewrite phase stops successfully!
-Record 5 sparse containers, and 3 of them are inherited
-CMA: read 49 records.
-CMA: update 50 records.
-filter phase stops successfully!
-flushing hash table!
-flushing hash table successfully!
-append phase stops successfully!
-==== backup end ====
-job id: 37
-backup path: /hadoop54
-number of files: 1
-number of chunks: 1024 (4589 bytes on average)
-number of unique chunks: 516
-total size(B): 4699341
-stored data size(B): 2525651
-deduplication ratio: 0.4626, 1.8606
-total time(s): 0.000
-throughput(MB/s): inf
-number of zero chunks: 0
-size of zero chunks: 0
-number of rewritten chunks: 0
-size of rewritten chunks: 0
-rewritten rate in size: 0.000
-read_time : 0.066s, 68.06MB/s
-chunk_time : 0.046s, 96.98MB/s
-hash_time : 0.031s, 143.25MB/s
-dedup_time : 0.003s, 1297.15MB/s
-rewrite_time : 0.014s, 312.29MB/s
-filter_time : 0.034s, 132.49MB/s
-write_time : 0.016s, 278.87MB/s
-1
-2
-destor_server_process
-destor_server_process: receive a request!
-type: 0 
-Init recipe store successfully
-Init container store successfully
-Init index module successfully
-==== backup begin ====
-pkt size: 5
-Read 5 inherited sparse containers
-write container buffer2
-read phase stops successfully!
-chunk phase stops successfully!
-hash phase stops successfully!
-dedup phase stops successfully: 1 segments of 1024 chunks on average
-rewrite phase stops successfully!
-Record 3 sparse containers, and 0 of them are inherited
-CMA: read 50 records.
-CMA: update 51 records.
-filter phase stops successfully!
-flushing hash table!
-flushing hash table successfully!
-append phase stops successfully!
-==== backup end ====
-job id: 38
-backup path: /hadoop60
-number of files: 1
-number of chunks: 1024 (4815 bytes on average)
-number of unique chunks: 203
-total size(B): 4930976
-stored data size(B): 1096079
-deduplication ratio: 0.7777, 4.4987
-total time(s): 0.000
-throughput(MB/s): inf
-number of zero chunks: 0
-size of zero chunks: 0
-number of rewritten chunks: 0
-size of rewritten chunks: 0
-rewritten rate in size: 0.000
-read_time : 0.106s, 44.23MB/s
-chunk_time : 0.035s, 135.44MB/s
-hash_time : 0.030s, 159.18MB/s
-dedup_time : 0.011s, 435.50MB/s
-rewrite_time : 0.021s, 229.36MB/s
-filter_time : 0.036s, 130.80MB/s
-write_time : 0.004s, 1246.04MB/s
-1
-2
-destor_server_process
-destor_server_process: receive a request!
-type: 0 
-Init recipe store successfully
-Init container store successfully
-Init index module successfully
-==== backup begin ====
-pkt size: 5
-Read 3 inherited sparse containers
-write container buffer2
-read phase stops successfully!
-chunk phase stops successfully!
-hash phase stops successfully!
-dedup phase stops successfully: 1 segments of 1024 chunks on average
-rewrite phase stops successfully!
-Record 4 sparse containers, and 1 of them are inherited
-CMA: read 51 records.
-CMA: update 52 records.
-filter phase stops successfully!
-flushing hash table!
-flushing hash table successfully!
-append phase stops successfully!
-==== backup end ====
-job id: 39
-backup path: /hadoop61
-number of files: 1
-number of chunks: 1024 (4626 bytes on average)
-number of unique chunks: 570
-total size(B): 4737349
-stored data size(B): 3164019
-deduplication ratio: 0.3321, 1.4973
-total time(s): 0.000
-throughput(MB/s): inf
-number of zero chunks: 0
-size of zero chunks: 0
-number of rewritten chunks: 0
-size of rewritten chunks: 0
-rewritten rate in size: 0.000
-read_time : 0.071s, 64.08MB/s
-chunk_time : 0.039s, 116.69MB/s
-hash_time : 0.032s, 139.32MB/s
-dedup_time : 0.001s, 3088.10MB/s
-rewrite_time : 0.010s, 457.69MB/s
-filter_time : 0.026s, 177.05MB/s
-write_time : 0.036s, 125.18MB/s
-1
-2
-destor_server_process
-destor_server_process: receive a request!
-type: 0 
-Init recipe store successfully
-Init container store successfully
-Init index module successfully
-==== backup begin ====
-Read 4 inherited sparse containers
-pkt size: 5
-write container buffer2
-read phase stops successfully!
-chunk phase stops successfully!
-hash phase stops successfully!
-dedup phase stops successfully: 1 segments of 1024 chunks on average
-rewrite phase stops successfully!
-Record 6 sparse containers, and 0 of them are inherited
-CMA: read 52 records.
-CMA: update 53 records.
-filter phase stops successfully!
-flushing hash table!
-flushing hash table successfully!
-append phase stops successfully!
-==== backup end ====
-job id: 40
-backup path: /hadoop63
-number of files: 1
-number of chunks: 1024 (4672 bytes on average)
-number of unique chunks: 586
-total size(B): 4784751
-stored data size(B): 3353707
-deduplication ratio: 0.2991, 1.4267
-total time(s): 0.000
-throughput(MB/s): inf
-number of zero chunks: 0
-size of zero chunks: 0
-number of rewritten chunks: 0
-size of rewritten chunks: 0
-rewritten rate in size: 0.000
-read_time : 0.104s, 43.72MB/s
-chunk_time : 0.049s, 92.50MB/s
-hash_time : 0.047s, 97.10MB/s
-dedup_time : 0.002s, 2058.23MB/s
-rewrite_time : 0.011s, 413.44MB/s
-filter_time : 0.028s, 162.60MB/s
-write_time : 0.020s, 230.18MB/s
+read_time : 0.025s, 99.05MB/s
+chunk_time : 0.016s, 149.66MB/s
+hash_time : 0.013s, 188.02MB/s
+dedup_time : 0.001s, 3974.32MB/s
+rewrite_time : 0.003s, 748.06MB/s
+filter_time : 0.009s, 280.73MB/s
+write_time : 0.000s, infMB/s
 1
 2
