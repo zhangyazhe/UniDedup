@@ -28,9 +28,9 @@ Take the example of building a cluster with four nodes (one master node and thre
 ### Compile
 - Compile destor. Go to the `destor/` directory and execute
   ```
-    ./configure
-    autoreconf -vfi
-    make
+  ./configure
+  autoreconf -vfi
+  make
   ```
 - Compile client. Go to the `client/` directory and execute
   ```
